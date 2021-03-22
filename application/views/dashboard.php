@@ -40,12 +40,12 @@
         <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
         <div class="input-group-append">
           <button class="btn btn-navbar" type="submit">
-            <i class="fa fa-search"></i>
+            <i class="fa fa-search"></i>            
           </button>
         </div>
       </div>
     </form>
-
+    
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
       <!-- Messages Dropdown Menu -->
@@ -150,7 +150,7 @@
            alt="AdminLTE Logo"
            class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+      <span class="brand-text font-weight-light">AdminLTE 3 </span>
     </a>
 
     <!-- Sidebar -->
@@ -352,7 +352,7 @@
               <li class="nav-item">
                 <a href="../mailbox/compose.html" class="nav-link">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Compose</p>
+                  <p>Compose </p>
                 </a>
               </li>
               <li class="nav-item">
@@ -428,7 +428,7 @@
               <li class="nav-item">
                 <a href="../examples/blank.html" class="nav-link active">
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Blank Page</p>
+                  <p>Blank Page </p>
                 </a>
               </li>
               <li class="nav-item">
@@ -507,7 +507,7 @@
           </div>
         </div>
         <div class="card-body">
-          Start creating your amazing application!
+          Start creating your amazing application! <?= site_url();?><br>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
