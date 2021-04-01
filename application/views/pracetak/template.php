@@ -86,7 +86,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=base_url()?>pracetak/SuratOrder"
+                <a href="<?=base_url()?>pracetak"
                     <?php  if($judul == "Surat Order Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
