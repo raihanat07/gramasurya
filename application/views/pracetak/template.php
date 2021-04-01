@@ -27,7 +27,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link"><h3>Dashboard/Pracetak</h3></a>
+        <a href="index3.html" class="nav-link"><h3>Dashboard/Pracetak </h3></a>
       </li>
     </ul>
 
@@ -80,31 +80,55 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fa fa-dashboard"></i>
               <p>
-                Pracetak
+                Pracetak 
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./dashboard-pracetak.html" class="nav-link active">
+                <a href="<?=base_url()?>pracetak/SuratOrder"
+                    <?php  if($judul == "Surat Order Pracetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Surat Order</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./imposisi.html" class="nav-link">
+                <a href="<?=base_url()?>pracetak/Imposisi" 
+                <?php  if($judul == "Imposisi"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Imposisi</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./ctcp.html" class="nav-link">
+                <a href="<?=base_url()?>pracetak/Ctcp" 
+                 <?php  if($judul == "CTCP"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>CTCP</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./laporan.html" class="nav-link">
+                <a href="<?=base_url()?>pracetak/Laporan" 
+                 <?php  if($judul == "Laporan"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>LAPORAN</p>
                 </a>

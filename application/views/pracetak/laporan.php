@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="card-body">
-          Start creating your amazing application! 
+          INI LAPORAN
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
