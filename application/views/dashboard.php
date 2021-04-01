@@ -31,7 +31,7 @@
           </div>
         </div>
         <div class="card-body">
-          Start creating your amazing application! 
+          Start creating your amazing application! WOW AMAZINS
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
