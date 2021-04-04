@@ -80,7 +80,7 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fa fa-dashboard"></i>
               <p>
-                Pracetak 
+                PRACETAK
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
@@ -130,7 +130,7 @@
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>LAPORAN</p>
+                  <p>Laporan</p>
                 </a>
               </li>
             </ul>
