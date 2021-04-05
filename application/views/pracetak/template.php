@@ -91,7 +91,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=base_url()?>pracetak"
+                <a href="<?=site_url()?>pracetak"
                     <?php  if($judul == "Surat Order Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -103,7 +103,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url()?>pracetak/Imposisi" 
+                <a href="<?=site_url()?>pracetak/Imposisi" 
                 <?php  if($judul == "Imposisi"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -115,7 +115,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url()?>pracetak/Ctcp" 
+                <a href="<?=site_url()?>pracetak/Ctcp" 
                  <?php  if($judul == "CTCP"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -127,7 +127,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url()?>pracetak/Laporan" 
+                <a href="<?=site_url()?>pracetak/Laporan" 
                  <?php  if($judul == "Laporan"){?>
                       class= "nav-link active"
                     <?php }else {?>
