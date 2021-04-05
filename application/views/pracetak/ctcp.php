@@ -8,7 +8,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">
-                <a href="SuratOrderTambah" class="btn btn-success tombol"><img src="assets/dist/img/icon/tambah.png" > TAMBAH </a>
+                <a href="SuratOrderTambah" class="btn btn-success tombol"><img src="<?=base_url()?>assets/dist/img/icon/tambah.png" > TAMBAH </a>
               </li>
               <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Blank Page</li> -->
