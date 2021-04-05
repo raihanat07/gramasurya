@@ -12,9 +12,10 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?=base_url()?>assets/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?=site_url()?>assets/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -27,7 +28,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link"><h3>Dashboard/Pracetak </h3></a>
+        <a href="index3.html" class="nav-link">Dashboard/Pracetak</a>
       </li>
     </ul>
 
@@ -39,8 +40,7 @@
           <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <!-- <img src="<?= base_url() ?>assets//dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
-                <span class="hiden-xs">Nama Orang</span>
+                <span class="hiden-xs">ORANG</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="">Logout</a>
@@ -76,7 +76,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=base_url()?>pracetak"
+                <a href="<?=site_url()?>pracetak"
                     <?php  if($judul == "Surat Order Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -88,7 +88,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url()?>pracetak/Imposisi" 
+                <a href="<?=site_url()?>pracetak/Imposisi" 
                 <?php  if($judul == "Imposisi"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -100,7 +100,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url()?>pracetak/Ctcp" 
+                <a href="<?=site_url()?>pracetak/Ctcp" 
                  <?php  if($judul == "CTCP"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -112,7 +112,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url()?>pracetak/Laporan" 
+                <a href="<?=site_url()?>pracetak/Laporan" 
                  <?php  if($judul == "Laporan"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -138,11 +138,11 @@
       </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    <!-- <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 3.0.0-alpha
-    </div>
+    </div> -->
   </footer>
 
   <!-- Control Sidebar -->
@@ -150,20 +150,50 @@
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
-</div>
-<!-- ./wrapper -->
+  </div>
+  <!-- ./wrapper -->
 
-<!-- jQuery -->
-<script src="<?=base_url()?>assets/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="<?=base_url()?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- SlimScroll -->
-<script src="<?=base_url()?>assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="<?=base_url()?>assets/plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="<?=base_url()?>assets/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?=base_url()?>assets/dist/js/demo.js"></script>
+  <!-- jQuery -->
+  <script src="<?=base_url()?>assets/plugins/jquery/jquery.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="<?=base_url()?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- SlimScroll -->
+  <script src="<?=base_url()?>assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- FastClick -->
+  <script src="<?=base_url()?>assets/plugins/fastclick/fastclick.js"></script>
+  <!-- AdminLTE App -->
+  <script src="<?=base_url()?>assets/dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="<?=base_url()?>assets/dist/js/demo.js"></script>
+  <!-- DataTables -->
+  <script src="../../plugins/datatables/jquery.dataTables.js"></script>
+  <script src="../../plugins/datatables/dataTables.bootstrap4.js"></script>
+  <!-- SlimScroll -->
+  <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+  <!-- iCheck 1.0.1 -->
+  <script src="../../plugins/iCheck/icheck.min.js"></script>
+
+  <!-- Page script -->
+  <script>
+    $(function () {
+      
+      //iCheck for checkbox and radio inputs
+      $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+        checkboxClass: 'icheckbox_minimal-blue',
+        radioClass   : 'iradio_minimal-blue'
+      })
+      //Red color scheme for iCheck
+      $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+        checkboxClass: 'icheckbox_minimal-red',
+        radioClass   : 'iradio_minimal-red'
+      })
+      //Flat red color scheme for iCheck
+      $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+        checkboxClass: 'icheckbox_flat-green',
+        radioClass   : 'iradio_flat-green'
+      })
+
+    })
+  </script>
 </body>
 </html>

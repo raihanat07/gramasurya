@@ -5,15 +5,6 @@
           <div class="col-sm-6">
             <h1>LAPORAN</h1>
           </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item">
-                <a href="SuratOrderTambah" class="btn btn-success tombol"><img src="<?=base_url();?>assets/dist/img/icon/tambah.png" > TAMBAH </a>
-              </li>
-              <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li> -->
-            </ol>
-          </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
@@ -34,23 +25,38 @@
           </div>
         </div>
         <div class="card-body">
-          <div class="card-body">
-            <div class="row bg-info baris">
-              <div class="col">Nomor SO</div>
-              <div class="col">Tanggal Masuk</div>
-              <div class="col">Nama Pemesan</div>
-              <div class="col">Deadline</div>
-              <div class="col">Nama Order</div>
-              <div class="col">SO CU</div>
-              <div class="col">Status</div>
-              <div class="col"></div>
-            </div>
-          </div>
+          <table id="example2" class="table table-bordered table-hover">
+            <thead>
+            <tr>
+              <td>Nomor SO</td>
+              <td>Tanggal Masuk</td>
+              <td>Nama Pemesan</td>
+              <td>Deadline</td>
+              <td>Nama Order</td>
+              <td>SO CU</td>
+              <td>Status</td>
+              <td>Actions</td>
+            </tr>
+            </thead>
+            <tr>
+              <td>1</td>
+              <td>5/4/2021</td>
+              <td>Mr X</td>
+              <td>Deadline</td>
+              <td>Nama Order</td>
+              <td>SO CU</td>
+              <td>Status</td>
+              <td>
+                <i class="fa fa-eye" style="font-size:24px"></i>
+                <i class="fa fa-pencil" style="font-size:24px"></i>
+              </td>
+            </tr> 
+          </table>
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
+        <!-- <div class="card-footer">
           Footer
-        </div>
+        </div> -->
         <!-- /.card-footer-->
       </div>
       <!-- /.card -->
