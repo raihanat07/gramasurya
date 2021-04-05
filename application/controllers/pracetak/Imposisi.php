@@ -6,6 +6,6 @@ class Imposisi extends CI_Controller {
 	public function index()
 	{
 		$data['judul'] = 'Imposisi';
-		$this->template->load('pracetak/template','pracetak/imposisi',$data);
+		$this->template->load('pracetak/template','pracetak/imposisi/imposisi',$data);
 	}
 }

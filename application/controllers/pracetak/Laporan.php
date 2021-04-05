@@ -6,6 +6,6 @@ class Laporan extends CI_Controller {
 	public function index()
 	{
 		$data['judul'] = 'Laporan';
-		$this->template->load('pracetak/template','pracetak/laporan',$data);
+		$this->template->load('pracetak/template','pracetak/laporan/laporan',$data);
 	}
 }
