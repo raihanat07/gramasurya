@@ -23,7 +23,7 @@ class Auth extends CI_Controller {
                 $this->session->set_userdata($params);
                 echo "<script>
                     alert('Selamat Login Berhasil')
-                    window.location = '".site_url('dashboard')."';
+                    window.location = '".site_url('pracetak/suratorder')."';
                 </script>";
             }else {
                 echo "<script>

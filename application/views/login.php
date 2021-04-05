@@ -30,11 +30,11 @@
 
       <form action="<?=site_url('auth/process')?>" method="post">
         <div class="form-group has-feedback">
-          <input type="username" class="form-control" placeholder="Username">
+          <input type="username" name="username" class="form-control" placeholder="Username">
           <span class="fa fa-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" name="password" class="form-control" placeholder="Password">
           <span class="fa fa-lock form-control-feedback"></span>
         </div>
         <div class="row">
@@ -47,7 +47,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Log In</button>
+            <button type="submit" name="login" class="btn btn-primary btn-block btn-flat">Log In</button>
           </div>
           <!-- /.col -->
         </div>
