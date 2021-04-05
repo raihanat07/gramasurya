@@ -8,4 +8,13 @@ class SuratOrder extends CI_Controller {
 		$data['judul'] = 'Surat Order Pracetak';
 		$this->template->load('pracetak/template','pracetak/suratorder',$data);
 	}
+	public function tambah_so()
+	{
+		$data['judul'] = 'Tambah SO Pracetak';
+		$this->template->load('pracetak/template','pracetak/suratorder-tambah', $data);
+		
+	}
+
+	
+
 }

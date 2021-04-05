@@ -3,13 +3,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>SURAT ORDER</h1>
+            <h1>LAPORAN</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">
-                <a href="<?=base_url()?>pracetak/suratorder-tambah"  class="btn btn-success tombol">
-                <img src="assets/dist/img/icon/tambah.png" >TAMBAH</a>
+                <a href="SuratOrderTambah" class="btn btn-success tombol"><img src="<?=base_url();?>assets/dist/img/icon/tambah.png" > TAMBAH </a>
               </li>
               <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item active">Blank Page</li> -->
@@ -25,7 +24,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Data Surat Order</h3>
+          <h3 class="card-title">Data Laporan</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
