@@ -46,19 +46,24 @@
         
 
     <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Messages Dropdown Menu -->
-      <li>
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-            <div class="image">
-              <img src="<?=base_url()?>/assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-            </div>
-            <div class="info">
-              <a href="#" class="d-block">Alexander Pierce</a>
-            </div>
-        </div>
-      </li>
-    </ul>
+         <!-- Right navbar links -->
+         <ul class="navbar-nav ml-auto">
+        <li class="dropdown user user-menu">
+          <ul class="navbar-nav ml-auto ml-md-0">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!-- <img src="<?= base_url() ?>assets//dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
+                <span class="hiden-xs"><?= $this->fungsi->user_login()->username ?></span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+
+
+                <a class="dropdown-item" href="<?= site_url('auth/logout') ?>">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
   </nav>
   <!-- /.navbar -->
 
