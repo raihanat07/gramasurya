@@ -31,20 +31,6 @@
       </li>
     </ul>
 
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fa fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-
-        
-
     <!-- Right navbar links -->
          <!-- Right navbar links -->
          <ul class="navbar-nav ml-auto">
@@ -56,9 +42,9 @@
                 <span class="hiden-xs"></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-              <!-- <?= $this->fungsi->user_login()->username ?>
-              href="<?= site_url('auth/logout') ?>" -->
-                <a class="dropdown-item" >Logout</a>
+
+
+                <a class="dropdown-item" href="">Logout</a>
               </div>
             </li>
           </ul>
@@ -91,7 +77,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak"
+                <a href="<?=base_url()?>pracetak"
                     <?php  if($judul == "Surat Order Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -103,7 +89,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak/Imposisi" 
+                <a href="<?=base_url()?>pracetak/Imposisi" 
                 <?php  if($judul == "Imposisi"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -115,7 +101,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak/Ctcp" 
+                <a href="<?=base_url()?>pracetak/Ctcp" 
                  <?php  if($judul == "CTCP"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -127,7 +113,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak/Laporan" 
+                <a href="<?=base_url()?>pracetak/Laporan" 
                  <?php  if($judul == "Laporan"){?>
                       class= "nav-link active"
                     <?php }else {?>
