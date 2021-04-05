@@ -53,12 +53,12 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <!-- <img src="<?= base_url() ?>assets//dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> -->
-                <span class="hiden-xs"><?= $this->fungsi->user_login()->username ?></span>
+                <span class="hiden-xs"></span>
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-
-
-                <a class="dropdown-item" href="<?= site_url('auth/logout') ?>">Logout</a>
+              <!-- <?= $this->fungsi->user_login()->username ?>
+              href="<?= site_url('auth/logout') ?>" -->
+                <a class="dropdown-item" >Logout</a>
               </div>
             </li>
           </ul>
