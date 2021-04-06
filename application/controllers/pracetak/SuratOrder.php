@@ -5,7 +5,6 @@ class SuratOrder extends CI_Controller {
 
 	public function index()
 	{
-		
 		$data['judul'] = 'Surat Order Pracetak';
 		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder',$data);
 	}
