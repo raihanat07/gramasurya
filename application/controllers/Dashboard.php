@@ -1,10 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends CI_Controller {
+class Auth extends CI_Controller {
 
-	public function index()
+	public function login()
 	{
-		$this->template->load('template','dashboard');
+		$this->load->view('login');
 	}
+
 }
+  
+    
