@@ -8,4 +8,10 @@ class Ctcp extends CI_Controller {
 		$data['judul'] = 'CTCP';
 		$this->template->load('pracetak/template','pracetak/ctcp/ctcp',$data);
 	}
+	public function edit_ctcp()
+	{
+		$data['judul'] = 'Edit Ctcp Pracetak';
+		$this->template->load('pracetak/template','pracetak/ctcp/ctcp-edit', $data);
+		
+	}
 }

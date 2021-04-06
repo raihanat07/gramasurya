@@ -49,83 +49,83 @@
                   <input type="text" class="form-control" name="ukuran" placeholder="Masukan Ukuran">
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Kode Pemesan</label>
+                  <br><label class="form-label">Kode Pemesan</label>
                   <select id="inputState" class="form-select form-control">
                     <option selected disabled="disabled">Masukan Kode Pemesan</option>
                     <option>...</option>
                   </select>
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Tanggal Masuk</label>
+                  <br><label class="form-label">Tanggal Masuk</label>
                   <input type="date" class="form-control" name="tanggalmasuk" placeholder="Tanggal Masuk" required="required">
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Oplag</label>
+                  <br><label class="form-label">Oplag</label>
                   <input type="number" class="form-control" name="oplag" placeholder="Masukan Oplag">
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Pemesan Pdk</label>
+                  <br><label class="form-label">Pemesan Pdk</label>
                   <input type="text" class="form-control" name="pemesanpdk" placeholder="Masukan Pemesan Pdk">
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Nego</label>
+                  <br><label class="form-label">Nego</label>
                   <input type="text" class="form-control" name="nego" placeholder="Nego">
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Satuan</label>
+                  <br><label class="form-label">Satuan</label>
                   <select id="inputState" class="form-select form-control">
                     <option selected disabled="disabled">Satuan</option>
                     <option>...</option>
                   </select>
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Kode Order</label>
+                  <br><label class="form-label">Kode Order</label>
                   <select id="inputState" class="form-select form-control">
                     <option selected disabled="disabled">Masukan Kode Order</option>
                     <option>...</option>
                   </select>
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Deadline</label>
+                  <br><label class="form-label">Deadline</label>
                   <input type="date" class="form-control" name="deadline" placeholder="Deadline" required="required">
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Hal</label>
+                  <br><label class="form-label">Hal</label>
                   <input type="text" class="form-control" name="hal" placeholder="Masukan Hal">
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Nama Orderan</label>
+                  <br><label class="form-label">Nama Orderan</label>
                   <input type="text" class="form-control" name="namaorderan" placeholder="Masukan Orderan">
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Status</label>
+                  <br><label class="form-label">Status</label>
                   <select id="inputState" class="form-select form-control">
                     <option selected disabled="disabled">Marketing</option>
                   </select>
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">FC</label>
+                  <br><label class="form-label">FC</label>
                   <input type="text" class="form-control" name="fc" placeholder="FC">
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Nama Orderan Pendek</label>
+                  <br><label class="form-label">Nama Orderan Pendek</label>
                   <input type="text" class="form-control" name="namaorderanpendek" placeholder="Masukan Nama Pendek">
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Surat Order</label>
+                  <br><label class="form-label">Surat Order</label>
                   <input type="text" class="form-control" name="so" placeholder="Masukan Surat Order">
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">BW</label>
+                  <br><label class="form-label">BW</label>
                   <input type="text" class="form-control" name="bw" placeholder="BW">
                 </div>
                 <div class="col-md-4">
-                  <label class="form-label">Hal</label>
+                  <br><label class="form-label">Hal</label>
                   <input type="text" class="form-control" name="hal" placeholder="Masukan Hal">
                 </div>
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                  <label class="form-label">KETERANGAN</label>
+                  <br><label class="form-label">KETERANGAN</label>
                   <textarea class="form-control" name="hal" placeholder="keterangan"></textarea>
                 </div>
               </div><br>
@@ -161,63 +161,63 @@
                           </div>
                           <div class="row">
                             <div class="col-md-6">
-                              <label class="form-label">CTCP COVER 1</label>
+                              <br><label class="form-label">CTCP COVER 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled">Masukan Cover</option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">CTCP ISI 1</label>
+                              <br><label class="form-label">CTCP ISI 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled">Masukan Cover</option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">PLAT COVER 1</label>
+                              <br><label class="form-label">PLAT COVER 1</label>
                               <input type="text" class="form-control" name="platcover1" placeholder="Masukan Orderan">
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">PLAT ISI 1</label>
+                              <br><label class="form-label">PLAT ISI 1</label>
                               <input type="text" class="form-control" name="platisi1" placeholder="Masukan Orderan">
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">CTCP COVER 2</label>
+                              <br><label class="form-label">CTCP COVER 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled">Masukan Cover</option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">CTCP ISI 2</label>
+                              <br><label class="form-label">CTCP ISI 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled">Masukan Cover</option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">PLAT COVER 2</label>
+                              <br><label class="form-label">PLAT COVER 2</label>
                               <input type="text" class="form-control" name="platcover3" placeholder="Masukan Orderan">
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">PLAT ISI 2</label>
+                              <br><label class="form-label">PLAT ISI 2</label>
                               <input type="text" class="form-control" name="platisi2" placeholder="Masukan Orderan">
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">CTCP COVER 3</label>
+                              <br><label class="form-label">CTCP COVER 3</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled">Masukan Cover</option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">CTCP ISI 3</label>
+                              <br><label class="form-label">CTCP ISI 3</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled">Masukan Cover</option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">PLAT COVER 3</label>
+                              <br><label class="form-label">PLAT COVER 3</label>
                               <input type="text" class="form-control" name="platCover3" placeholder="Masukan Orderan">
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">PLAT ISI 3</label>
+                              <br><label class="form-label">PLAT ISI 3</label>
                               <input type="text" class="form-control" name="platisi3" placeholder="Masukan Orderan">
                             </div>
                           </div>
@@ -241,109 +241,109 @@
                           </div>
                           <div class="row">
                             <div class="col-md-6">
-                              <label class="form-label">KERTAS COVER 1</label>
+                              <br><label class="form-label">KERTAS COVER 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">KERTAS ISI 1</label>
+                              <br><label class="form-label">KERTAS ISI 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">UKURAN KERTAS COVER 1</label>
+                              <br><label class="form-label">UKURAN KERTAS COVER 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">UKURAN KERTAS ISI 1</label>
+                              <br><label class="form-label">UKURAN KERTAS ISI 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">JUMLAH KERTAS COVER 1</label>
+                              <br><label class="form-label">JUMLAH KERTAS COVER 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">JUMLAH KERTAS ISI 1</label>
+                              <br><label class="form-label">JUMLAH KERTAS ISI 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">KERTAS COVER 2</label>
+                              <br><label class="form-label">KERTAS COVER 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">KERTAS ISI 2</label>
+                              <br><label class="form-label">KERTAS ISI 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">UKURAN KERTAS COVER 2</label>
+                              <br><label class="form-label">UKURAN KERTAS COVER 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">UKURAN KERTAS ISI 2</label>
+                              <br><label class="form-label">UKURAN KERTAS ISI 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">JUMLAH KERTAS COVER 2</label>
+                              <br><label class="form-label">JUMLAH KERTAS COVER 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">JUMLAH KERTAS ISI 2</label>
+                              <br><label class="form-label">JUMLAH KERTAS ISI 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">KERTAS COVER 3</label>
+                              <br><label class="form-label">KERTAS COVER 3</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">KERTAS ISI 3</label>
+                              <br><label class="form-label">KERTAS ISI 3</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">UKURAN KERTAS COVER 3</label>
+                              <br><label class="form-label">UKURAN KERTAS COVER 3</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">UKURAN KERTAS ISI 3</label>
+                              <br><label class="form-label">UKURAN KERTAS ISI 3</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">JUMLAH KERTAS COVER 3</label>
+                              <br><label class="form-label">JUMLAH KERTAS COVER 3</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">JUMLAH KERTAS ISI 3</label>
+                              <br><label class="form-label">JUMLAH KERTAS ISI 3</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
@@ -369,130 +369,130 @@
                           </div>
                           <div class="row">
                             <div class="col-md-6">
-                              <label class="form-label">MESIN COVER 1</label>
+                              <br><label class="form-label">MESIN COVER 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">CETAK ISI 1</label>
+                              <br><label class="form-label">CETAK ISI 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">WARNA COVER 1</label>
+                              <br><label class="form-label">WARNA COVER 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">WARNA ISI 1</label>
+                              <br><label class="form-label">WARNA ISI 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">INSIT COVER 1</label>
+                              <br><label class="form-label">INSIT COVER 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">WARNA CETAK 1</label>
-                              <select id="inputState" class="form-select form-control">
-                                <option selected disabled="disabled"> </option>
-                              </select>
-                            </div>
-                            <div class="col-md-6"></div>
-                            <div class="col-md-6">
-                              <label class="form-label">INSIT ISI 2</label>
-                              <select id="inputState" class="form-select form-control">
-                                <option selected disabled="disabled"> </option>
-                              </select>
-                            </div>
-                            <div class="col-md-6">
-                              <label class="form-label">MESIN COVER 2</label>
-                              <select id="inputState" class="form-select form-control">
-                                <option selected disabled="disabled"> </option>
-                              </select>
-                            </div>
-                            <div class="col-md-6">
-                              <label class="form-label">CETAK ISI 2</label>
-                              <select id="inputState" class="form-select form-control">
-                                <option selected disabled="disabled"> </option>
-                              </select>
-                            </div>
-                            <div class="col-md-6">
-                              <label class="form-label">WARNA COVER 2</label>
-                              <select id="inputState" class="form-select form-control">
-                                <option selected disabled="disabled"> </option>
-                              </select>
-                            </div>
-                            <div class="col-md-6">
-                              <label class="form-label">WARNA ISI 2</label>
-                              <select id="inputState" class="form-select form-control">
-                                <option selected disabled="disabled"> </option>
-                              </select>
-                            </div>
-                            <div class="col-md-6">
-                              <label class="form-label">INSIT COVER 2</label>
-                              <select id="inputState" class="form-select form-control">
-                                <option selected disabled="disabled"> </option>
-                              </select>
-                            </div>
-                            <div class="col-md-6">
-                              <label class="form-label">WARNA CETAK 2</label>
+                              <br><label class="form-label">WARNA CETAK 1</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6"></div>
                             <div class="col-md-6">
-                              <label class="form-label">INSIT ISI 2</label>
+                              <br><label class="form-label">INSIT ISI 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">MESIN COVER 3</label>
+                              <br><label class="form-label">MESIN COVER 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">CETAK ISI 3</label>
+                              <br><label class="form-label">CETAK ISI 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">WARNA COVER 3</label>
+                              <br><label class="form-label">WARNA COVER 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">WARNA ISI 3</label>
+                              <br><label class="form-label">WARNA ISI 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">INSIT COVER 3</label>
+                              <br><label class="form-label">INSIT COVER 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <label class="form-label">WARNA CETAK 3</label>
+                              <br><label class="form-label">WARNA CETAK 2</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
                             </div>
                             <div class="col-md-6"></div>
                             <div class="col-md-6">
-                              <label class="form-label">INSIT ISI 3</label>
+                              <br><label class="form-label">INSIT ISI 2</label>
+                              <select id="inputState" class="form-select form-control">
+                                <option selected disabled="disabled"> </option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <br><label class="form-label">MESIN COVER 3</label>
+                              <select id="inputState" class="form-select form-control">
+                                <option selected disabled="disabled"> </option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <br><label class="form-label">CETAK ISI 3</label>
+                              <select id="inputState" class="form-select form-control">
+                                <option selected disabled="disabled"> </option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <br><label class="form-label">WARNA COVER 3</label>
+                              <select id="inputState" class="form-select form-control">
+                                <option selected disabled="disabled"> </option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <br><label class="form-label">WARNA ISI 3</label>
+                              <select id="inputState" class="form-select form-control">
+                                <option selected disabled="disabled"> </option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <br><label class="form-label">INSIT COVER 3</label>
+                              <select id="inputState" class="form-select form-control">
+                                <option selected disabled="disabled"> </option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <br><label class="form-label">WARNA CETAK 3</label>
+                              <select id="inputState" class="form-select form-control">
+                                <option selected disabled="disabled"> </option>
+                              </select>
+                            </div>
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6">
+                              <br><label class="form-label">INSIT ISI 3</label>
                               <select id="inputState" class="form-select form-control">
                                 <option selected disabled="disabled"> </option>
                               </select>
@@ -638,7 +638,7 @@
               <div class="row">
                 <div class="col">
                   <button type="reset" class="btn btn-default">Reset</button>
-                  <button type="submit" class="btn btn-info float-right">Simpan</button>
+                  <button type="submit" class="btn btn-success float-right">Simpan</button>
                 </div>
               </div>
             </form>
