@@ -12,7 +12,11 @@ class SuratOrder extends CI_Controller {
 	public function index()
 	{
 		check_not_login();
-		$data['judul'] = 'Surat Order Pracetak';
+		// $query = $this->so->get();
+		$data = array(
+			'judul' => 'Surat Order Pracetak',
+			// 'so' => $query->result(),
+		);		
 		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder',$data);
 	}
 
@@ -37,7 +41,7 @@ class SuratOrder extends CI_Controller {
 		} else if(isset($_POST['edit'])){
 			echo"edit";
 		}	
-		redirect('buku');
+		redirect('pracetak/so_pracetak/suratorder');
 	}
 	
 	

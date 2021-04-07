@@ -39,7 +39,7 @@
               <td>Tanggal Masuk</td>
               <td>Nama Pemesan</td>
               <td>Deadline</td>
-              <td>Nama Order</td>
+              <td>Nama Orderan</td>
               <td>SO CU</td>
               <td>Status</td>
               <td>Actions</td>
