@@ -587,7 +587,9 @@
                     </div>
                 </div><br>
                 <div class="row">
-                    <div class="col-md-10"></div>
+                    <div class="col-md-10">
+                        <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Kembali</a>
+                    </div>
                     <div class="col-md-2">
                         <button type="reset" class="btn btn-default">Reset</button>
                         <button type="submit" class="btn btn-success">Simpan</button>

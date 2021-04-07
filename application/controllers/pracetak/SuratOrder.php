@@ -14,6 +14,12 @@ class SuratOrder extends CI_Controller {
 		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder-tambah', $data);
 		
 	}
+	public function lihat_so()
+	{
+		$data['judul'] = 'Tambah SO Pracetak';
+		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder-lihat', $data);
+		
+	}
 
 	
 

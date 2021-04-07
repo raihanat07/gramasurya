@@ -647,7 +647,7 @@
                     </div>
                 </div><br>
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-9">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Launch demo modal
@@ -672,8 +672,8 @@
                         </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <button type="reset" class="btn btn-default">Reset</button>
+                    <div class="col-md-3">
+                        <a href="<?=site_url()?>pracetak/Laporan" class="btn btn-default">Kembali</a>
                         <button type="submit" class="btn btn-success">Simpan</button>
                     </div>
                 </div>
