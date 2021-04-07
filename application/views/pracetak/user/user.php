@@ -8,7 +8,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">
-                <a href="<?=site_url('pracetak/SuratOrder/tambah_so')?>"  class="btn btn-success btn-lg">
+                <a href="<?=site_url('pracetak/User/tambah_user')?>"  class="btn btn-success btn-lg">
                   <i class="fa fa-plus"></i> TAMBAH USER
                 </a>
               </li>
@@ -31,7 +31,7 @@
               <i class="fa fa-minus"></i></button>
           </div>
         </div>
-        <div class="card-body">
+        <div class="card-body text-center">
           <table id="example2" class="table table-bordered table-hover">
             <thead>
             <tr>
@@ -54,7 +54,7 @@
               <td>
                 <div class="btn-group me-2" role="group" aria-label="First group">
                   <a class="btn btn-primary" href="<?=site_url('pracetak/SuratOrder/lihat_so')?>">
-                    <i class="fa fa-eye" style="font-size:24px"></i>
+                    <i class="fa fa-trash" style="font-size:24px"></i>
                   </a>
                   <a class="btn btn-primary" href="<?=site_url('pracetak/SuratOrder/edit_so')?>">
                     <i class="fa fa-pencil" style="font-size:24px"></i>

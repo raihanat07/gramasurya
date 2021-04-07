@@ -11,5 +11,10 @@ class User extends CI_Controller {
 		$this->template->load('pracetak/template','pracetak/user/user',$data );
 	}
 	
+	public function tambah_user()
+	{
+		$data['judul'] = 'Tambah User';
+		$this->template->load('pracetak/template','pracetak/user/tambah_user', $data );
+	}
 	
 }
