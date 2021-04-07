@@ -1,4 +1,4 @@
-<!-- Content Header (Page header) -->
+Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -16,7 +16,7 @@
     <div class="card">
     <div class="card-header">
         <!-- <label>SO</label> -->
-        <h3 class="card-title">SO dari db</h3>
+        <h3 class="card-title"><label>SO dari db</label></h3>
         
 
         <div class="card-tools">
@@ -35,132 +35,142 @@
                         <label class="form-label">SO 2021.4.798</label>
                     </div>
                     <div class="col-md-4">
-                        Nama Pemesan<br>
-                        <label class="form-label">GRAMASURYA</label>
-                    </div>
-                    <div class="col-md-4">
-                        Ukuran<br>
-                        <label class="form-label">21*10.5</label>
-                    </div>
-                    <div class="col-md-4">
                         Tanggal Masuk<br>
                         <label class="form-label">23 Maret 2021</label>
-                    </div>
-                    <div class="col-md-4">
-                        Nama Order<br>
-                        <label class="form-label">Nota Tanda Terima</label>
-                    </div>
-                    <div class="col-md-4">
-                        Halaman<br>
-                        <label class="form-label">1</label>
                     </div>
                     <div class="col-md-4">
                         Deadline<br>
                         <label class="form-label">15 Juni 2021</label>
                     </div>
                     <div class="col-md-4">
-                        Kode Order<br>
-                        <label class="form-label">Barang Cetakan</label>
+                        Nama Pemesan<br>
+                        <label class="form-label">GRAMASURYA</label>
                     </div>
                     <div class="col-md-4">
-                        Oplag<br>
-                        <label class="form-label">3</label>
+                        Nama Order<br>
+                        <label class="form-label">Nota Tanda Terima</label>
                     </div>
                     <div class="col-md-4">
                         Catatan<br>
                         <label class="form-label">NCR Putih, Kuning Pink @ 1RIM</label>
                     </div>
-                    <div class="col-md-2">
-                        Kapasistas Mesin<br>
-                        Mesin 102<br>
-                        Mesin 74<br>
+                    <div class="col-md-4">
+                        <br>Ukuran :
+                        <label class="form-label">21*10.5</label>
                     </div>
-                    <div class="col-md-2">
-                        <br>
-                        : 130 LPH<br>
-                        : 190 LPH
+                    <div class="col-md-4">
+                        <br>Oplag :
+                        <label class="form-label">3</label>
                     </div>
-                    <div class="col-md-2">
-                        <br>
-                        Mesin Tokko<br>
-                        Ket LPH
-                    </div>
-                    <div class="col-md-2">
-                        <br>
-                        : 500 LPH<br>
-                        : Lembar Per Hari
+                    <div class="col-md-4">
+                        <br>Halaman :
+                        <label class="form-label">1</label>
                     </div>
                 </div><br>
-                <div class="row">
-                    <div class="col-md-3">
-                        <label>Stok Plate 102</label>
-                        <br><label></label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate 74</label>
-                        <br><label></label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate 72</label>
-                        <br><label></label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>Stok Paperplate</label>
-                        <br><label></label>
-                    </div>
-                    <div class="col-md-12">
-                        <label>Status</label>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label>
-                        </div>
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card border bg-success">
+                <div class="card" style="background: #A9A9A9">
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-3">
                             <div class="card-header text-center">
-                                CTCP COVER 1
+                                COVER
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card-header text-center">
+                                ISI
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card-header text-center">
+                                AKHIR
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card border bg-info">
-                        <div class="card-header text-center">
-                            CTCP ISI 1
-                        </div>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 text-center" style="background: #A9A9A9">
+                        CTCP
+                    </div>
+                    <div class="col-md-3 text-center">
+                        Ctcp Cover1 Plat 74<br>
+                        Jum Ctcp Cover1 4
+                    </div>
+                    <div class="col-md-3 text-center">
+                        Ctcp Isi1 Plat 72<br>
+                        Jum Ctcp Isi1 8
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <b>FINISHING AKHIR</b><br>
+                        Finishing Akhir Jahit Kawat
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-3 text-center" style="background: #A9A9A9">
+                        KERTAS
+                    </div>
+                    <div class="col-md-3 text-center">
+                        Kertas Cov1 AC/Ivory_2Muka 230gr<br>
+                        Ukuran Kertas Cov1 79 x 109<br>
+                        Jum Kertas Cov1 530
+                    </div>
+                    <div class="col-md-3 text-center">
+                        Kertas Isi1 HVS 60gr<br>
+                        Ukuran Kertas Isi1 65 x 100<br>
+                        Jum Kertas Isi1 8300
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <b>PRAPACKING</b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 text-center" style="background: #A9A9A9">
+                        CETAK
+                    </div>
+                    <div class="col-md-3 text-center">
+                        Mesin Cov1 SM 74 4w - A<br>
+                        Warna Cov1 4/0<br>
+                        Insit Cover1 50<br>
+                        Ket Cov1 1 SET 2UP
+                    </div>
+                    <div class="col-md-3 text-center">
+                        Mesin Isi1 Oliver 72 1w<br>
+                        Warna Isi1 1/1<br>
+                        Insit Isi1 50<br>
+                        Ket Isi1 1/1 WARNA WARNI 8 PLAT GANTI
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <b>KIRIM</b><br>
+                        Kirim Langsung
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 text-center card" style="background: #A9A9A9">
+                        FINISHING
+                    </div>
+                    <div class="col-md-3 text-center">
+                        Finishing Cover1 Uvi
+                    </div>
+                    <div class="col-md-3 text-center">
+                        Finishing Isi 1Lipat,Susun
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <b>ALAMAT KIRIM</b>
+                    </div>
+                </div><br><br>
+                <!-- <div class="row">
+                    <div class="col-md-4 bg-info">
+                        <div class="row">
+                            <div class="col-md-12">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br> -->
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <label class="form-label">Jumlah Plate</label>
                             <input type="text" class="form-control" name="jumlahplatecover1" placeholder="Masukan Jumlah Plate"><br>
-                            <label class="form-label">Jumlah Sisa</label>
-                            <input type="text" class="form-control" name="jumlahplatesisacover1" placeholder="Masukan Jumlah Sisa"><br>
-                            <label class="form-label">Jumlah Rusak</label>
-                            <input type="text" class="form-control" name="jumlahplaterusakcover1" placeholder="Masukan Jumlah Rusak"><br>
                             <label class="form-label">Rincian Imposisi</label>
                             <div class="row">
                                 <div class="col">
@@ -229,10 +239,6 @@
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <label class="form-label">Jumlah Plate</label>
                             <input type="text" class="form-control" name="jumlahplateisi1" placeholder="Masukan Jumlah Plate"><br>
-                            <label class="form-label">Jumlah Sisa</label>
-                            <input type="text" class="form-control" name="jumlahplatesisaisi1" placeholder="Masukan Jumlah Sisa"><br>
-                            <label class="form-label">Jumlah Rusak</label>
-                            <input type="text" class="form-control" name="jumlahplaterusakisi1" placeholder="Masukan Jumlah Rusak"><br>
                             <label class="form-label">Rincian Imposisi</label>
                             <div class="row">
                                 <div class="col">
@@ -319,10 +325,6 @@
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <label class="form-label">Jumlah Plate</label>
                             <input type="text" class="form-control" name="jumlahplatecover2" placeholder="Masukan Jumlah Plate"><br>
-                            <label class="form-label">Jumlah Sisa</label>
-                            <input type="text" class="form-control" name="jumlahplatesisacover2" placeholder="Masukan Jumlah Sisa"><br>
-                            <label class="form-label">Jumlah Rusak</label>
-                            <input type="text" class="form-control" name="jumlahplaterusakcover2" placeholder="Masukan Jumlah Rusak"><br>
                             <label class="form-label">Rincian Imposisi</label>
                             <div class="row">
                                 <div class="col">
@@ -391,10 +393,6 @@
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <label class="form-label">Jumlah Plate</label>
                             <input type="text" class="form-control" name="jumlahplateisi2" placeholder="Masukan Jumlah Plate"><br>
-                            <label class="form-label">Jumlah Sisa</label>
-                            <input type="text" class="form-control" name="jumlahplatesisaisi2" placeholder="Masukan Jumlah Sisa"><br>
-                            <label class="form-label">Jumlah Rusak</label>
-                            <input type="text" class="form-control" name="jumlahplaterusakisi2" placeholder="Masukan Jumlah Rusak"><br>
                             <label class="form-label">Rincian Imposisi</label>
                             <div class="row">
                                 <div class="col">
@@ -481,10 +479,6 @@
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <label class="form-label">Jumlah Plate</label>
                             <input type="text" class="form-control" name="jumlahplatecover3" placeholder="Masukan Jumlah Plate"><br>
-                            <label class="form-label">Jumlah Sisa</label>
-                            <input type="text" class="form-control" name="jumlahplatesisacover3" placeholder="Masukan Jumlah Sisa"><br>
-                            <label class="form-label">Jumlah Rusak</label>
-                            <input type="text" class="form-control" name="jumlahplaterusakcover3" placeholder="Masukan Jumlah Rusak"><br>
                             <label class="form-label">Rincian Imposisi</label>
                             <div class="row">
                                 <div class="col">
@@ -553,10 +547,6 @@
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <label class="form-label">Jumlah Plate</label>
                             <input type="text" class="form-control" name="jumlahplateisi3" placeholder="Masukan Jumlah Plate"><br>
-                            <label class="form-label">Jumlah Sisa</label>
-                            <input type="text" class="form-control" name="jumlahplatesisaisi2" placeholder="Masukan Jumlah Sisa"><br>
-                            <label class="form-label">Jumlah Rusak</label>
-                            <input type="text" class="form-control" name="jumlahplaterusakisi3" placeholder="Masukan Jumlah Rusak"><br>
                             <label class="form-label">Rincian Imposisi</label>
                             <div class="row">
                                 <div class="col">
@@ -623,27 +613,7 @@
                     </div>
                 </div><br>
                 <div class="row">
-                    <div class="col-md-6">
-                        <label class="form-label">Tanggal Out CTCP Cover</label>
-                        <input type="date" class="form-control" name="tanggaloutctcpcover">
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label">Tanggal Out CTCP Isi</label>
-                        <input type="date" class="form-control" name="tanggaloutctcpisi">
-                    </div>
-                    <div class="col-md-6">
-                        <br><label class="form-label">Keterangan CTCP Cover</label>
-                        <textarea class="form-control" name="keterangancover"></textarea>
-                    </div>
-                    <div class="col-md-6">
-                    <br><label class="form-label">Keterangan Isi</label>
-                        <textarea class="form-control" name="keteranganisi"></textarea>
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="col-md-10">
-                        <a href="<?=site_url()?>pracetak/Ctcp" class="btn btn-default">Kembali</a>
-                    </div>
+                    <div class="col-md-10"></div>
                     <div class="col-md-2">
                         <button type="reset" class="btn btn-default">Reset</button>
                         <button type="submit" class="btn btn-success">Simpan</button>
@@ -661,4 +631,4 @@
     <!-- /.card -->
 
 </section>
-<!-- /.content -->
+<!-- /.content

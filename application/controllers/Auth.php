@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Auth extends CI_Controller {
 
 	public function index() 
-	{
-        
+	{   
+        check_already_login();     
 		$this->load->view('login');
 	}
   
@@ -54,6 +54,6 @@ class Auth extends CI_Controller {
 	{
         $params = array ('id_user' , 'level');
 		$this->session->unset_userdata($params);
-        redirect('auth/login');  
+        redirect('auth/index');  
     }
 }
