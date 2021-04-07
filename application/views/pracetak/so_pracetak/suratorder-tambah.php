@@ -120,8 +120,8 @@
                   <input type="text" class="form-control" name="bw" placeholder="BW">
                 </div>
                 <div class="col-md-4">
-                  <br><label class="form-label">Hal</label>
-                  <input type="text" class="form-control" name="hal" placeholder="Masukan Hal">
+                  <br><label class="form-label">Hal 2</label>
+                  <input type="text" class="form-control" name="hal_2" placeholder="Masukan Hal 2">
                 </div>
                 <div class="col-md-4"></div>
                 <div class="col-md-4">

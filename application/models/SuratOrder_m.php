@@ -24,9 +24,9 @@ class SuratOrder_m extends CI_Model {
             '' =>$data['status'],
             '' =>$data['fc'],
             '' =>$data['nama_orderan_pendek'],
-            '' =>$data['so'],
+            '' =>$data['surat_order'],
             '' =>$data['bw'],
-            '' =>$data['hal'],
+            '' =>$data['hal_2'],
             '' =>$data['keterangan'],
         );
         $this->db->insert('tabel_db',$tambah_so);
