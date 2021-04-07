@@ -43,7 +43,7 @@
               <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 
 
-                <span class="hiden-xs"><?=$this->fungsi->user_login()->username?></span>
+                <span class="hiden-xs"><?=ucfirst($this->fungsi->user_login()->nama)?></span>
               
               
               </a>
