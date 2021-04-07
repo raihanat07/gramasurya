@@ -32,15 +32,16 @@
           </div>
         </div>
         <div class="card-body">
-        <?php echo validation_errors(); ?>
-            <form action="" method="post">
+            <form action="<?=site_url('pracetak/User/tambah_user')?>" method="post">
                 <div class="form-group">
                     <label>Nama</label>
                     <input type="text" name="nama" value="<?=set_value('nama')?>" class="form-control">
+                    <?=form_error('nama')?>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
                     <input type="text" name="email" value="<?=set_value('email')?>" class="form-control">
+                    <?=form_error('email')?>
                 </div>
                 <div class="form-group">
                     <label>Level</label>
@@ -50,18 +51,22 @@
                         <option value="2">Cetak</option>
                         <option value="3">Finishing</option>
                     </select>
+                    <?=form_error('level')?>
                 </div>
                 <div class="form-group">
                     <label>Username</label>
                     <input type="text" name="username" value="<?=set_value('username')?>" class="form-control">
+                    <?=form_error('username')?>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
                     <input type="password" name="password" class="form-control">
+                    <?=form_error('password')?>
                 </div>
                 <div class="form-group">
                     <label>Konfirmasi Password</label>
                     <input type="password" name="passconf" class="form-control">
+                    <?=form_error('passconf')?>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-success btn-flat">Save</button>

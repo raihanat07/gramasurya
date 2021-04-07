@@ -3,9 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class User extends CI_Controller {
 
+	function __construct(){
+		parent::__construct();
+		$this->load->model('user_m');		
+	 }
+
 	public function index()
 	{
-		$this->load->model('user_m');
+		check_not_login();
+		//$this->load->model('user_m');
 		$data['row'] = $this->user_m->get();
 		$data['judul'] = 'User';
 		$this->template->load('pracetak/template','pracetak/user/user',$data );
@@ -31,7 +37,13 @@ class User extends CI_Controller {
 		}
 		else
 		{
-				echo "berhasil";
+				$post = $this->input->post(null, TRUE);
+				$this->user_m->tambah_user($post);
+				if($this->db->affected_rows() > 0){
+					echo "<script>alert('Data Berhasil Disimpan');</script>";
+				}
+				echo "<script>window.location='".site_url('pracetak/User/index')."';</script>";
+
 		}
 		
 	}

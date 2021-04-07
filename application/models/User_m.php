@@ -22,5 +22,14 @@ class User_m extends CI_Model {
         return $query;
     }
 
+    public function tambah_user($post){
+        $params['nama'] = $post['nama'];
+        $params['email'] = $post['email'];
+        $params['level'] = $post['level'];
+        $params['username'] = $post['username'];
+        $params['password'] = sha1($post['password']);
+        $this->db->insert('user' , $params);
+    }
+
     
 }
