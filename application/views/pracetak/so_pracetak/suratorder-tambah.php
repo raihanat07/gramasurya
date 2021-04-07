@@ -38,11 +38,11 @@
               <div class="row">
                 <div class="col-md-4">
                   <label class="form-label">Nama Pemesan</label>
-                  <input type="text" class="form-control" name="namapemesan" placeholder="Masukan Nama Pemesan" required="required">
+                  <input type="text" class="form-control" name="nama_pemesan" placeholder="Masukan Nama Pemesan" required="required">
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">SO CU</label>
-                  <input type="text" class="form-control" name="socu" placeholder="Masukan SO CU">
+                  <input type="text" class="form-control" name="so_cu" placeholder="Masukan SO CU">
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">Ukuran</label>
@@ -50,14 +50,14 @@
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Kode Pemesan</label>
-                  <select id="inputState" class="form-select form-control">
+                  <select id="inputState" class="form-select form-control" name="kode_pemesan">
                     <option selected disabled="disabled">Masukan Kode Pemesan</option>
                     <option>...</option>
                   </select>
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Tanggal Masuk</label>
-                  <input type="date" class="form-control" name="tanggalmasuk" placeholder="Tanggal Masuk" required="required">
+                  <input type="date" class="form-control" name="tanggal_masuk" placeholder="Tanggal Masuk" required="required">
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Oplag</label>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Pemesan Pdk</label>
-                  <input type="text" class="form-control" name="pemesanpdk" placeholder="Masukan Pemesan Pdk">
+                  <input type="text" class="form-control" name="pemesan_pdk" placeholder="Masukan Pemesan Pdk">
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Nego</label>
@@ -73,14 +73,14 @@
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Satuan</label>
-                  <select id="inputState" class="form-select form-control">
+                  <select id="inputState" class="form-select form-control" name="satuan">
                     <option selected disabled="disabled">Satuan</option>
                     <option>...</option>
                   </select>
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Kode Order</label>
-                  <select id="inputState" class="form-select form-control">
+                  <select id="inputState" class="form-select form-control" name="kode_order">
                     <option selected disabled="disabled">Masukan Kode Order</option>
                     <option>...</option>
                   </select>
@@ -95,11 +95,11 @@
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Nama Orderan</label>
-                  <input type="text" class="form-control" name="namaorderan" placeholder="Masukan Orderan">
+                  <input type="text" class="form-control" name="nama_orderan" placeholder="Masukan Orderan">
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Status</label>
-                  <select id="inputState" class="form-select form-control">
+                  <select id="inputState" class="form-select form-control" name="status">
                     <option selected disabled="disabled">Marketing</option>
                   </select>
                 </div>
@@ -109,7 +109,7 @@
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Nama Orderan Pendek</label>
-                  <input type="text" class="form-control" name="namaorderanpendek" placeholder="Masukan Nama Pendek">
+                  <input type="text" class="form-control" name="nama_orderan_pendek" placeholder="Masukan Nama Pendek">
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Surat Order</label>
@@ -126,7 +126,7 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
                   <br><label class="form-label">KETERANGAN</label>
-                  <textarea class="form-control" name="hal" placeholder="keterangan"></textarea>
+                  <textarea class="form-control" name="keterangan" placeholder="keterangan"></textarea>
                 </div>
               </div><br>
               <div class="row">
@@ -638,7 +638,7 @@
               <div class="row">
                 <div class="col">
                   <button type="reset" class="btn btn-default">Reset</button>
-                  <button type="submit" class="btn btn-success float-right">Simpan</button>
+                  <button type="submit" name="add" class="btn btn-success float-right">Submit</button>
                 </div>
               </div>
             </form>

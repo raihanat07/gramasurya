@@ -102,7 +102,7 @@
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Ctcp" 
-                 <?php  if($judul == "CTCP"){?>
+                 <?php  if($judul == "CTCP" || $judul == "Edit Ctcp Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
