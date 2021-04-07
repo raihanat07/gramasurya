@@ -41,7 +41,11 @@
           <ul class="navbar-nav ml-auto ml-md-0">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="hiden-xs">ORANG</span>
+                
+
+                <span class="hiden-xs"><?=$this->fungsi->user_login()->username?></span>
+              
+              
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="<?=site_url('auth/logout')?>">Logout</a>
