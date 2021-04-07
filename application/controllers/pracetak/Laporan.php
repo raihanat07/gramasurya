@@ -8,4 +8,10 @@ class Laporan extends CI_Controller {
 		$data['judul'] = 'Laporan';
 		$this->template->load('pracetak/template','pracetak/laporan/laporan',$data);
 	}
+	public function edit_laporan()
+	{
+		$data['judul'] = 'Edit Laporan Pracetak';
+		$this->template->load('pracetak/template','pracetak/laporan/laporan-edit', $data);
+		
+	}
 }

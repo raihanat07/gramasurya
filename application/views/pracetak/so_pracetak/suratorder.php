@@ -54,8 +54,14 @@
               <td>SO CU</td>
               <td>Status</td>
               <td>
-                <i class="fa fa-eye" style="font-size:24px"></i>
-                <i class="fa fa-pencil" style="font-size:24px"></i>
+                <div class="btn-group me-2" role="group" aria-label="First group">
+                  <a class="btn btn-primary" href="<?=site_url('pracetak/SuratOrder/lihat_so')?>">
+                    <i class="fa fa-eye" style="font-size:24px"></i>
+                  </a>
+                  <a class="btn btn-primary" href="<?=site_url('pracetak/SuratOrder/edit_so')?>">
+                    <i class="fa fa-pencil" style="font-size:24px"></i>
+                  </a>
+                </div>
               </td>
             </tr> 
           </table>
