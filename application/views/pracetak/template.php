@@ -128,6 +128,18 @@
                   <p>Laporan</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>pracetak/User" 
+                 <?php  if($judul == "User"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>User</p>
+                </a>
+              </li>
             </ul>
           </li>
         </ul>
