@@ -54,6 +54,6 @@ class Auth extends CI_Controller {
 	{
         $params = array ('id_user' , 'level');
 		$this->session->unset_userdata($params);
-        redirect('auth/login');  
+        redirect('auth/index');  
     }
 }
