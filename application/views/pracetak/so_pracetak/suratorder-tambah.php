@@ -34,11 +34,11 @@
         </div>
         <div class="card-body">
           <div class="card-body">
-            <form>
+            <form action="<?=site_url('pracetak/SuratOrder/proses')?>" method="POST">
               <div class="row">
                 <div class="col-md-4">
                   <label class="form-label">Nama Pemesan</label>
-                  <input type="text" class="form-control" name="nama_pemesan" placeholder="Masukan Nama Pemesan" required="required">
+                  <input type="text" class="form-control" name="nama_pemesan" placeholder="Masukan Nama Pemesan" >
                 </div>
                 <div class="col-md-4">
                   <label class="form-label">SO CU</label>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Tanggal Masuk</label>
-                  <input type="date" class="form-control" name="tanggal_masuk" placeholder="Tanggal Masuk" required="required">
+                  <input type="date" class="form-control" name="tanggal_masuk" placeholder="Tanggal Masuk" >
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Oplag</label>
@@ -243,109 +243,109 @@
                             <div class="col-md-6">
                               <br><label class="form-label">KERTAS COVER 1</label>
                               <select id="inputState" class="form-select form-control" name="kertas_cover_1">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">KERTAS ISI 1</label>
                               <select id="inputState" class="form-select form-control" name="kertas_isi_1">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">UKURAN KERTAS COVER 1</label>
                               <select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_1">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">UKURAN KERTAS ISI 1</label>
                               <select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_1">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">JUMLAH KERTAS COVER 1</label>
                               <select id="inputState" class="form-select form-control" name="jumlah_kertas_cover_1">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">JUMLAH KERTAS ISI 1</label>
                               <select id="inputState" class="form-select form-control" name="jumlah_kertas_isi_1">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">KERTAS COVER 2</label>
                               <select id="inputState" class="form-select form-control" name="kertas_cover_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">KERTAS ISI 2</label>
                               <select id="inputState" class="form-select form-control" name="kertas_isi_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">UKURAN KERTAS COVER 2</label>
                               <select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">UKURAN KERTAS ISI 2</label>
                               <select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">JUMLAH KERTAS COVER 2</label>
                               <select id="inputState" class="form-select form-control" name="jumlah_kertas_cover_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">JUMLAH KERTAS ISI 2</label>
                               <select id="inputState" class="form-select form-control" name="jumlah_kertas_isi_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">KERTAS COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="kertas_cover_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">KERTAS ISI 3</label>
                               <select id="inputState" class="form-select form-control" name="kertas_isi_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">UKURAN KERTAS COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">UKURAN KERTAS ISI 3</label>
                               <select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">JUMLAH KERTAS COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="jumlah_kertas_cover_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">JUMLAH KERTAS ISI 3</label>
                               <select id="inputState" class="form-select form-control" name="jumlah_kertas_isi_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                           </div>
@@ -371,130 +371,130 @@
                             <div class="col-md-6">
                               <br><label class="form-label">MESIN COVER 1</label>
                               <select id="inputState" class="form-select form-control" name="mesin_cover_1">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">CETAK ISI 1</label>
                               <select id="inputState" class="form-select form-control" name="cetak_isi_1">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA COVER 1</label>
                               <select id="inputState" class="form-select form-control" name="warna_cover_1">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA ISI 1</label>
                               <select id="inputState" class="form-select form-control" name="warna_isi_1">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT COVER 1</label>
                               <select id="inputState" class="form-select form-control" name="insit_cover_1">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA CETAK 1</label>
                               <select id="inputState" class="form-select form-control" name="warna_cetak_1">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6"></div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT ISI 2</label>
                               <select id="inputState" class="form-select form-control" name="insit_isi_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">MESIN COVER 2</label>
                               <select id="inputState" class="form-select form-control" name="mesin_cover_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">CETAK ISI 2</label>
                               <select id="inputState" class="form-select form-control" name="cetak_isi_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA COVER 2</label>
                               <select id="inputState" class="form-select form-control" name="warna_cover_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA ISI 2</label>
                               <select id="inputState" class="form-select form-control" name="warna_isi_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT COVER 2</label>
                               <select id="inputState" class="form-select form-control" name="insit_cover_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA CETAK 2</label>
                               <select id="inputState" class="form-select form-control" name="warna_cetak_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6"></div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT ISI 2</label>
                               <select id="inputState" class="form-select form-control" name="insit_isi_2">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">MESIN COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="mesin_cover_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">CETAK ISI 3</label>
                               <select id="inputState" class="form-select form-control" name="cetak_isi_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="warna_cover_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA ISI 3</label>
                               <select id="inputState" class="form-select form-control" name="warna_isi_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="insit_cover_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA CETAK 3</label>
                               <select id="inputState" class="form-select form-control" name="warna_cetak_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6"></div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT ISI 3</label>
                               <select id="inputState" class="form-select form-control" name="insit_isi_3">
-                                <option selected disabled="disabled"> </option>
+                                <option selected value="a"> </option>
                               </select>
                             </div>
                           </div>
