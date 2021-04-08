@@ -87,19 +87,19 @@ Content Header (Page header) -->
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-3 text-center" style="background: #A9A9A9">
+                <!-- <div class="row text-center">
+                    <div class="col-md-3" style="background: #A9A9A9">
                         CTCP
                     </div>
-                    <div class="col-md-3 text-center">
+                    <div class="col-md-3">
                         Ctcp Cover1 Plat 74<br>
                         Jum Ctcp Cover1 4
                     </div>
-                    <div class="col-md-3 text-center">
+                    <div class="col-md-3">
                         Ctcp Isi1 Plat 72<br>
                         Jum Ctcp Isi1 8
                     </div>
-                    <div class="col-md-3 text-center">
+                    <div class="col-md-3">
                         <b>FINISHING AKHIR</b><br>
                         Finishing Akhir Jahit Kawat
                     </div>
@@ -156,16 +156,114 @@ Content Header (Page header) -->
                     <div class="col-md-3 text-center">
                         <b>ALAMAT KIRIM</b>
                     </div>
-                </div><br><br>
-                <!-- <div class="row">
-                    <div class="col-md-4 bg-info">
-                        <div class="row">
-                            <div class="col-md-12">
-                                
+                </div><br><br> -->
+                <div class="row text-center">
+                    <div class="col-md-12">
+                        <div class="card" style="background: #A9A9A9">
+                            <div class="row">
+                                <div class="col-md-3">S
+                                    CTCP
+                                </div>
+                                <div class="col-md-3">
+                                    Ctcp Cover1 Plat 74<br>
+                                    Jum Ctcp Cover1 4
+                                </div>
+                                <div class="col-md-3">
+                                    Ctcp Isi1 Plat 72<br>
+                                    Jum Ctcp Isi1 8
+                                </div>
+                                <div class="col-md-3">
+                                    <b>FINISHING AKHIR</b><br>
+                                    Finishing Akhir Jahit Kawat
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div><br><br> -->
+                    <div class="col-md-3">
+                        <div class="card" style="background: #A9A9A9">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    CTCP
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    KERTAS
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    CETAK
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    FINISHING
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-4">
+                                Ctcp Cover1 Plat 74<br>
+                                Jum Ctcp Cover1 4
+                            </div>
+                            <div class="col-md-4">
+                                Ctcp Isi1 Plat 72<br>
+                                Jum Ctcp Isi1 8
+                            </div>
+                            <div class="col-md-4">
+                                <b>FINISHING AKHIR</b><br>
+                                Finishing Akhir Jahit Kawat
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                Kertas Cov1 AC/Ivory_2Muka 230gr<br>
+                                Ukuran Kertas Cov1 79 x 109<br>
+                                Jum Kertas Cov1 530
+                            </div>
+                            <div class="col-md-4 text-center">
+                                Kertas Isi1 HVS 60gr<br>
+                                Ukuran Kertas Isi1 65 x 100<br>
+                                Jum Kertas Isi1 8300
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <b>PRAPACKING</b>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                Mesin Cov1 SM 74 4w - A<br>
+                                Warna Cov1 4/0<br>
+                                Insit Cover1 50<br>
+                                Ket Cov1 1 SET 2UP
+                            </div>
+                            <div class="col-md-4 text-center">
+                                Mesin Isi1 Oliver 72 1w<br>
+                                Warna Isi1 1/1<br>
+                                Insit Isi1 50<br>
+                                Ket Isi1 1/1 WARNA WARNI 8 PLAT GANTI
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <b>KIRIM</b><br>
+                                Kirim Langsung
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-4 text-center">
+                                Finishing Cover1 Uvi
+                            </div>
+                            <div class="col-md-4 text-center">
+                                Finishing Isi 1Lipat,Susun
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <b>ALAMAT KIRIM</b>
+                            </div>
+                        </div>
+                    </div>
+                </div><br><br>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
