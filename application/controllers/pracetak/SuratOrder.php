@@ -40,8 +40,11 @@ class SuratOrder extends CI_Controller {
 			$this->so->add($inputan);
 		} else if(isset($_POST['edit'])){
 			echo"edit";
-		}	
-		redirect('pracetak/so_pracetak/suratorder');
+		}
+		if($this->db->affected_rows() > 0){
+			echo "<script> alert('Data Berhasil Disimpan'); </script>";
+		}
+		redirect('pracetak/suratorder');
 	}
 	
 	
