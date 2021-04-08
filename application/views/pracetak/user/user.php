@@ -3,13 +3,13 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>SURAT ORDER</h1>
+            <h1>USER</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">
-                <a href="<?=site_url('pracetak/SuratOrder/tambah_so')?>"  class="btn btn-success btn-lg">
-                  <i class="fa fa-plus"></i> TAMBAH
+                <a href="<?=site_url('pracetak/User/tambah_user')?>"  class="btn btn-success btn-lg">
+                  <i class="fa fa-plus"></i> TAMBAH USER
                 </a>
               </li>
             </ol>
@@ -24,46 +24,49 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title coba">Data Surat Order</h3>
+          <h3 class="card-title coba">Data User</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
               <i class="fa fa-minus"></i></button>
           </div>
         </div>
-        <div class="card-body">
+        <div class="card-body text-center">
           <table id="example2" class="table table-bordered table-hover">
             <thead>
             <tr>
-              <td>Nomor SO</td>
-              <td>Tanggal Masuk</td>
-              <td>Nama Pemesan</td>
-              <td>Deadline</td>
-              <td>Nama Orderan</td>
-              <td>SO CU</td>
-              <td>Status</td>
+              <td>Nomor</td>
+              <td>Nama</td>
+              <td>Email</td>
+              <td>Username</td>
+              <td>Level</td>
               <td>Actions</td>
             </tr>
             </thead>
+           <?php $no=1;
+           foreach($row->result() as $key => $data){ ?>
             <tr>
-              <td>1</td>
-              <td>5/4/2021</td>
-              <td>Mr X</td>
-              <td>Deadline</td>
-              <td>Nama Order</td>
-              <td>SO CU</td>
-              <td>Status</td>
+              <td><?=$no++?></td>
+              <td><?=$data->nama?></td>
+              <td><?=$data->email?></td>
+              <td><?=$data->username?></td>
+              <td><?=$data->level?></td>
               <td>
                 <div class="btn-group me-2" role="group" aria-label="First group">
-                  <a class="btn btn-primary" href="<?=site_url('pracetak/SuratOrder/lihat_so')?>">
-                    <i class="fa fa-eye" style="font-size:24px"></i>
-                  </a>
-                  <a class="btn btn-primary" href="<?=site_url('pracetak/SuratOrder/edit_so')?>">
+                  <a class="btn btn-primary" href="<?=site_url('pracetak/User/edit_user')?>">
                     <i class="fa fa-pencil" style="font-size:24px"></i>
                   </a>
+                  <form action="<?=site_url('pracetak/User/hapus_user')?>" method="post">
+                    <input type="hidden" name="id_user" value="<?=$data->id_user?>">
+                    <button class="btn btn-primary">
+                      <i class="fa fa-trash" style="font-size:24px"></i>
+                    </button>
+                  </form>
                 </div>
               </td>
-            </tr> 
+            </tr>
+            <?php
+            } ?>
           </table>
         </div>
         <!-- /.card-body -->

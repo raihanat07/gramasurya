@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Blank Page</title>
+  <title>Pracetak Gramasurya</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -126,6 +126,18 @@
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Laporan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>pracetak/User" 
+                 <?php  if($judul == "User"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>User</p>
                 </a>
               </li>
             </ul>
