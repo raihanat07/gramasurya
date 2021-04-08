@@ -5,7 +5,8 @@ class User extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->model('user_m');		
+		$this->load->model('user_m');	
+		$this->load->library('form_validation');	
 	 }
 
 	public function index()
@@ -57,6 +58,49 @@ class User extends CI_Controller {
 			echo "<script>alert('Data Berhasil Dihapus');</script>";
 		}
 		echo "<script>window.location='".site_url('pracetak/User/index')."';</script>";
+	}
+	
+	public function edit_user($id)
+	{
+		$this->form_validation->set_rules('nama', 'Nama', 'required');
+		$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('level', 'Level', 'required');
+		$this->form_validation->set_rules('username', 'Username', 'required');
+		if($this->input->post('password')){
+			$this->form_validation->set_rules('password', 'Password');
+			$this->form_validation->set_rules('passconf', 'Konfirmasi Password', 'matches[password]',
+				array('matches' => '%s tidak sesuai dengan password')
+			);
+		}
+		if($this->input->post('passconf')){
+			$this->form_validation->set_rules('passconf', 'Konfirmasi Password', 'matches[password]',
+				array('matches' => '%s tidak sesuai dengan password')
+			);
+		}
+		$this->form_validation->set_message('required', '%s masih kosong');
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			$query = $this->user_m->get($id);
+			if($query->num_rows() > 0 ){
+				$data['row'] = $query->row();
+				$data['judul'] = 'Edit User';
+				$this->template->load('pracetak/template','pracetak/user/edit_user', $data );	
+			}else{
+				echo "<script>alert('Data Tidak Ditemukan');";
+				echo "window.location='".site_url('pracetak/User/index')."';</script>";
+			}
+		}
+		else
+		{
+				$post = $this->input->post(null, TRUE);
+				$this->user_m->edit_user($post);
+				if($this->db->affected_rows() > 0){
+					echo "<script>alert('Data Berhasil Disimpan');</script>";
+				}
+				echo "<script>window.location='".site_url('pracetak/User/index')."';</script>";
+
+		}
 	}
 	
 }

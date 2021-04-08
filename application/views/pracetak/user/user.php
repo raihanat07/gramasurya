@@ -53,15 +53,15 @@
               <td><?=$data->level?></td>
               <td>
                 <div class="btn-group me-2" role="group" aria-label="First group">
-                  <a class="btn btn-primary" href="<?=site_url('pracetak/User/edit_user')?>">
+                <form action="<?=site_url('pracetak/User/hapus_user')?>" method="post">
+                  <a class="btn btn-primary" href="<?=site_url('pracetak/User/edit_user/'.$data->id_user)?>">
                     <i class="fa fa-pencil" style="font-size:24px"></i>
                   </a>
-                  <form action="<?=site_url('pracetak/User/hapus_user')?>" method="post">
-                    <input type="hidden" name="id_user" value="<?=$data->id_user?>">
-                    <button class="btn btn-primary">
-                      <i class="fa fa-trash" style="font-size:24px"></i>
-                    </button>
-                  </form>
+                  <input type="hidden" name="id_user" value="<?=$data->id_user?>">
+                  <button onclick="return confirm('Apakah anda yakin ?')" class="btn btn-primary">
+                  <i class="fa fa-trash" style="font-size:24px"></i>
+                  </button>
+                </form>
                 </div>
               </td>
             </tr>

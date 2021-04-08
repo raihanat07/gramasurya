@@ -31,6 +31,18 @@ class User_m extends CI_Model {
         $this->db->insert('user' , $params);
     }
 
+    public function edit_user($post){
+        $params['nama'] = $post['nama'];
+        $params['email'] = $post['email'];
+        $params['level'] = $post['level'];
+        $params['username'] = $post['username'];
+        if(!empty($post['password'])){
+            $params['password'] = sha1($post['password']);
+        }
+        $this->db->where('id_user', $post['id_user']);
+        $this->db->update('user' , $params);
+    }
+
     public function hapus_user($id)
 	{
 		$this->db->where('id_user', $id);

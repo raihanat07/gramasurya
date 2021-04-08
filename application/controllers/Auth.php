@@ -5,10 +5,10 @@ class Auth extends CI_Controller {
 
 	public function index() 
 	{   
-        check_already_login();     
+        check_already_login_pracetak();     
 		$this->load->view('login');
 	}
-  
+
     public function process()
     {
         $post = $this->input->post(null, TRUE);
@@ -29,13 +29,13 @@ class Auth extends CI_Controller {
                 </script>";
                 }else if($this->session->userdata('level') == 2){
                     echo "<script>
-                    alert('Astaga Login Gagal')
-                    window.location = '".site_url('auth/index')."';
+                    alert('Selamat Login Berhasil')
+                    window.location = '".site_url('cetak/Cetak')."';
                 </script>";
                 }else if($this->session->userdata('level') == 3){
                     echo "<script>
-                    alert('Astaga Login Gagal')
-                    window.location = '".site_url('auth/index')."';
+                    alert('Selamat Login Berhasil')
+                    window.location = '".site_url('finishing/Finishing')."';
                 </script>";
                 }
                 
