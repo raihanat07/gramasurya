@@ -31,5 +31,11 @@ class User_m extends CI_Model {
         $this->db->insert('user' , $params);
     }
 
+    public function hapus_user($id)
+	{
+		$this->db->where('id_user', $id);
+        $this->db->delete('user');
+	}
+
     
 }

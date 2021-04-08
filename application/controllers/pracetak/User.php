@@ -47,5 +47,16 @@ class User extends CI_Controller {
 		}
 		
 	}
+
+	public function hapus_user()
+	{
+		$id = $this->input->post('id_user');
+		$this->user_m->hapus_user($id);
+
+		if($this->db->affected_rows() > 0){
+			echo "<script>alert('Data Berhasil Dihapus');</script>";
+		}
+		echo "<script>window.location='".site_url('pracetak/User/index')."';</script>";
+	}
 	
 }
