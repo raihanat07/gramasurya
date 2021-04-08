@@ -12,6 +12,10 @@ class Imposisi extends CI_Controller {
 	{
 		$data['judul'] = 'Edit Imposisi Pracetak';
 		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-edit', $data);
-		
+	}
+	public function lihat_imposisi()
+	{
+		$data['judul'] = 'Lihat Imposisi Pracetak';
+		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-lihat', $data);
 	}
 }

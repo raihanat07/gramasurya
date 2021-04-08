@@ -24,13 +24,16 @@ class SuratOrder extends CI_Controller {
 	{
 		$data['judul'] = 'Tambah SO Pracetak';
 		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder-tambah', $data);
-		
+	}
+	public function edit_so()
+	{
+		$data['judul'] = 'Edit SO Pracetak';
+		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder-edit', $data);
 	}
 	public function lihat_so()
 	{
-		$data['judul'] = 'Tambah SO Pracetak';
+		$data['judul'] = 'Lihat SO Pracetak';
 		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder-lihat', $data);
-		
 	}
 
 	public function proses()

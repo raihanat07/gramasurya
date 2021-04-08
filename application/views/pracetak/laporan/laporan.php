@@ -25,17 +25,25 @@
           </div>
         </div>
         <div class="card-body">
-          <table id="example2" class="table table-bordered table-hover">
+          <table id="example2" class="table table-bordered table-hover" style="font-size: 12px">
             <thead>
-            <tr>
-              <td>Nomor SO</td>
-              <td>Tanggal Masuk</td>
-              <td>Nama Pemesan</td>
-              <td>Deadline</td>
-              <td>Nama Order</td>
-              <td>SO CU</td>
-              <td>Status</td>
-              <td>Actions</td>
+            <tr align="center">
+              <td rowspan="2">No SO</td>
+              <td rowspan="2">Tanggal Masuk</td>
+              <td rowspan="2">Nama Pemesan</td>
+              <td rowspan="2">Deadline</td>
+              <td rowspan="2">Nama Order</td>
+              <td rowspan="2">Ukuran</td>
+              <td rowspan="2">SO CU</td>
+              <td colspan="2">plat</td>
+              <td rowspan="2">Lembar Yang Dihasilkan</td>
+              <td rowspan="2">Imposisi</td>
+              <td rowspan="2">Status</td>
+              <td rowspan="2">Actions</td>
+            </tr>
+            <tr align="center">
+              <td>Cover</td>
+              <td>Isi</td>
             </tr>
             </thead>
             <tr>
@@ -44,20 +52,23 @@
               <td>Mr X</td>
               <td>Deadline</td>
               <td>Nama Order</td>
+              <td>Ukuran</td>
               <td>SO CU</td>
+              <td>Cover</td>
+              <td>Isi</td>
+              <td>Lembar Yang Dihasilkann</td>
+              <td>Imposisi</td>
               <td>Status</td>
-              <td>
-                <div class="btn-group me-2" role="group" aria-label="First group">
-                  <a class="btn btn-primary" href="<?=site_url('pracetak/Laporan/lihat_laporan')?>">
-                    <i class="fa fa-eye" style="font-size:24px"></i>
-                  </a>
-                  <a class="btn btn-primary" href="<?=site_url('pracetak/Laporan/edit_laporan')?>">
-                    <i class="fa fa-pencil" style="font-size:24px"></i>
-                  </a>
-                </div>
+              <td align="center">
+                <a class="btn btn-primary" href="<?=site_url('pracetak/Laporan/lihat_laporan')?>">
+                  <i class="fa fa-eye" style="font-size:12px"></i>
+                </a>
+                <a class="btn btn-primary" href="<?=site_url('pracetak/Laporan/edit_laporan')?>">
+                  <i class="fa fa-pencil" style="font-size:12px"></i>
+                </a>
               </td>
             </tr> 
-          </table>
+          </table>  
         </div>
         <!-- /.card-body -->
         <!-- <div class="card-footer">

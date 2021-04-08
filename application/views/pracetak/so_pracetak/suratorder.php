@@ -34,7 +34,7 @@
         <div class="card-body">
           <table id="example2" class="table table-bordered table-hover">
             <thead>
-            <tr>
+            <tr align="center">
               <td>Nomor SO</td>
               <td>Tanggal Masuk</td>
               <td>Nama Pemesan</td>
@@ -53,15 +53,13 @@
               <td>Nama Order</td>
               <td>SO CU</td>
               <td>Status</td>
-              <td>
-                <div class="btn-group me-2" role="group" aria-label="First group">
-                  <a class="btn btn-primary" href="<?=site_url('pracetak/SuratOrder/lihat_so')?>">
-                    <i class="fa fa-eye" style="font-size:24px"></i>
-                  </a>
-                  <a class="btn btn-primary" href="<?=site_url('pracetak/SuratOrder/edit_so')?>">
-                    <i class="fa fa-pencil" style="font-size:24px"></i>
-                  </a>
-                </div>
+              <td align="center">
+                <a class="btn btn-primary" href="<?=site_url('pracetak/SuratOrder/lihat_so')?>">
+                  <i class="fa fa-eye" style="font-size:24px"></i>
+                </a>
+                <a class="btn btn-primary" href="<?=site_url('pracetak/SuratOrder/edit_so')?>">
+                  <i class="fa fa-pencil" style="font-size:24px"></i>
+                </a>
               </td>
             </tr> 
           </table>
