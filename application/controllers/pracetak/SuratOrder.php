@@ -11,11 +11,11 @@ class SuratOrder extends CI_Controller {
 
 	public function index()
 	{
-		// check_not_login();
-		// $query = $this->so->get();
+		check_not_login();
+		$query = $this->so->get();
 		$data = array(
 			'judul' => 'Surat Order Pracetak',
-			// 'so' => $query->result(),
+			'so' => $query->result(),
 		);		
 		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder',$data);
 	}
@@ -45,7 +45,7 @@ class SuratOrder extends CI_Controller {
 			echo"edit";
 		}
 		if($this->db->affected_rows() > 0){
-			echo "<script> alert('Data Berhasil Disimpan'); </script>";
+			echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
 		}
 		echo "<script>window.location='".site_url('pracetak/suratorder')."'; </script>"; 
 		

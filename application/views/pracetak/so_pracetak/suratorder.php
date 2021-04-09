@@ -48,26 +48,43 @@
               <td>Actions</td>
             </tr>
             </thead>
+            <?php foreach($so as $s => $row) {?>
             <tr>
-              <td align="center">1</td>
-              <td>5/4/2021</td>
-              <td>5/5/2021</td>
-              <td>Mr X</td>
-              <td>Buku</td>
-              <td>Ukuran</td>
-              <td>Halaman</td>
-              <td>Oplag</td>
-              <td>Finishing Akhir</td>
-              <td>Status</td>
+              <td align="center"><?= $row->id_order; ?></td>
+              <td><?= $row->tanggal_masuk; ?></td>
+              <td><?= $row->deadline; ?></td>
+              <td><?= $row->nama_pemesan; ?></td>
+              <td><?= $row->nama_orderan; ?></td>
+              <td><?= $row->ukuran; ?></td>
+              <td><?= $row->halaman; ?></td>
+              <td><?= $row->oplag; ?></td>
+              <td>
+                <?php 
+                  if($row->bending != null){
+                    echo 'bending, ';}
+                  if($row->hard_cover != null){
+                    echo 'hard cover, ';}   
+                  if($row->jahit_benang != null){
+                    echo 'jahit benang, ';} 
+                  if($row->jahit_kawat != null){
+                    echo 'jahit kawat, ';}    
+                  if($row->pond != null){
+                    echo 'pond, ';}   
+                  if($row->spiral != null){
+                    echo 'Spiral, ';}                                   
+                ?>
+              </td>
+              <td><?= $row->so_status; ?></td>
               <td align="center">
-                <a href="<?=site_url('pracetak/SuratOrder/lihat_so')?>">
+                <a href="<?=site_url('pracetak/SuratOrder/lihat_so'.$row->id_order)?>">
                   <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
-                <a href="<?=site_url('pracetak/SuratOrder/edit_so')?>">
+                <a href="<?=site_url('pracetak/SuratOrder/edit_so'.$row->id_order)?>)?>">
                   <i class="fa fa-pencil" style="font-size:18px"></i>
                 </a>
               </td>
             </tr> 
+            <?php } ?>
           </table>
         </div>
         <!-- /.card-body -->
