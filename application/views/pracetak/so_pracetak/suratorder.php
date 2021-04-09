@@ -32,33 +32,39 @@
           </div>
         </div>
         <div class="card-body">
-          <table id="example2" class="table table-bordered table-hover">
+          <table id="example2" class="table table-bordered table-hover" style="font-size: 12px;">
             <thead>
             <tr align="center">
               <td>Nomor SO</td>
               <td>Tanggal Masuk</td>
-              <td>Nama Pemesan</td>
               <td>Deadline</td>
+              <td>Nama Pemesan</td>
               <td>Nama Orderan</td>
-              <td>SO CU</td>
+              <td>Ukuran</td>
+              <td>Halaman</td>
+              <td>Oplag</td>
+              <td>Finishing Akhir</td>
               <td>Status</td>
               <td>Actions</td>
             </tr>
             </thead>
             <tr>
-              <td>1</td>
+              <td align="center">1</td>
               <td>5/4/2021</td>
+              <td>5/5/2021</td>
               <td>Mr X</td>
-              <td>Deadline</td>
-              <td>Nama Order</td>
-              <td>SO CU</td>
+              <td>Buku</td>
+              <td>Ukuran</td>
+              <td>Halaman</td>
+              <td>Oplag</td>
+              <td>Finishing Akhir</td>
               <td>Status</td>
               <td align="center">
-                <a class="btn btn-primary" href="<?=site_url('pracetak/SuratOrder/lihat_so')?>">
-                  <i class="fa fa-eye" style="font-size:24px"></i>
+                <a href="<?=site_url('pracetak/SuratOrder/lihat_so')?>">
+                  <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
-                <a class="btn btn-primary" href="<?=site_url('pracetak/SuratOrder/edit_so')?>">
-                  <i class="fa fa-pencil" style="font-size:24px"></i>
+                <a href="<?=site_url('pracetak/SuratOrder/edit_so')?>">
+                  <i class="fa fa-pencil" style="font-size:18px"></i>
                 </a>
               </td>
             </tr> 

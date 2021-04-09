@@ -28,43 +28,34 @@
           <table id="example2" class="table table-bordered table-hover" style="font-size: 12px">
             <thead>
             <tr align="center">
-              <td rowspan="2">No SO</td>
-              <td rowspan="2">Tanggal Masuk</td>
-              <td rowspan="2">Nama Pemesan</td>
-              <td rowspan="2">Deadline</td>
-              <td rowspan="2">Nama Order</td>
-              <td rowspan="2">Ukuran</td>
-              <td rowspan="2">SO CU</td>
-              <td colspan="2">plat</td>
-              <td rowspan="2">Lembar Yang Dihasilkan</td>
-              <td rowspan="2">Imposisi</td>
-              <td rowspan="2">Status</td>
-              <td rowspan="2">Actions</td>
-            </tr>
-            <tr align="center">
-              <td>Cover</td>
-              <td>Isi</td>
+              <td>Nomor SO</td>
+              <td>Tanggal Masuk</td>
+              <td>Deadline</td>
+              <td>Nama Pemesan</td>
+              <td>Nama Orderan</td>
+              <td>Ukuran</td>
+              <td>Halaman</td>
+              <td>Finishing Akhir</td>
+              <td>Status</td>
+              <td>Actions</td>
             </tr>
             </thead>
             <tr>
-              <td>1</td>
-              <td>5/4/2021</td>
-              <td>Mr X</td>
+              <td align="center">Nomor SO</td>
+              <td>Tanggal Masuk</td>
               <td>Deadline</td>
-              <td>Nama Order</td>
+              <td>Nama Pemesan</td>
+              <td>Nama Orderan</td>
               <td>Ukuran</td>
-              <td>SO CU</td>
-              <td>Cover</td>
-              <td>Isi</td>
-              <td>Lembar Yang Dihasilkann</td>
-              <td>Imposisi</td>
+              <td>Halaman</td>
+              <td>Finishing Akhir</td>
               <td>Status</td>
               <td align="center">
-                <a class="btn btn-primary" href="<?=site_url('pracetak/Laporan/lihat_laporan')?>">
-                  <i class="fa fa-eye" style="font-size:12px"></i>
+                <a href="<?=site_url('pracetak/Laporan/lihat_laporan')?>">
+                  <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
-                <a class="btn btn-primary" href="<?=site_url('pracetak/Laporan/edit_laporan')?>">
-                  <i class="fa fa-pencil" style="font-size:12px"></i>
+                <a href="<?=site_url('pracetak/Laporan/edit_laporan')?>">
+                  <i class="fa fa-pencil" style="font-size:18px"></i>
                 </a>
               </td>
             </tr> 

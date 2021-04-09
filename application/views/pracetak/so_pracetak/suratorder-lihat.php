@@ -1,4 +1,4 @@
-<!-- Content Header (Page header) -->
+Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -66,7 +66,7 @@
                     </div>
                 </div>
                 <!-- VER 1.0 START -->
-                <br><div class="card" style="background: #A9A9A9">
+                <!-- <br><div class="card" style="background: #A9A9A9">
                     <div class="row">
                         <div class="col-md-3"></div>
                         <div class="col-md-3">
@@ -159,7 +159,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- VER 1.0 END -->
 
 
@@ -305,4 +305,4 @@
       <!-- /.card -->
 
     </section>
-    <!-- /.content -->
+    <!-- /.content

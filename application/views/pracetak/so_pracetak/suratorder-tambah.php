@@ -37,96 +37,42 @@
             <form action="<?=site_url('pracetak/SuratOrder/proses')?>" method="POST">
               <div class="row">
                 <div class="col-md-4">
-                  <label class="form-label">Nama Pemesan</label>
-                  <input type="text" class="form-control" name="nama_pemesan" placeholder="Masukan Nama Pemesan" >
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label">SO CU</label>
-                  <input type="text" class="form-control" name="so_cu" placeholder="Masukan SO CU">
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label">Ukuran</label>
-                  <input type="text" class="form-control" name="ukuran" placeholder="Masukan Ukuran">
-                </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Kode Pemesan</label>
-                  <select id="inputState" class="form-select form-control" name="kode_pemesan">
-                    <option selected disabled="disabled">Masukan Kode Pemesan</option>
-                    <option>...</option>
-                  </select>
+                  <br><label class="form-label">Nomor SO</label>
+                  <input type="text" class="form-control" name="nomor_so" placeholder="Masukan Nomor SO" required>
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Tanggal Masuk</label>
-                  <input type="date" class="form-control" name="tanggal_masuk" placeholder="Tanggal Masuk" >
-                </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Oplag</label>
-                  <input type="number" class="form-control" name="oplag" placeholder="Masukan Oplag">
-                </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Pemesan Pdk</label>
-                  <input type="text" class="form-control" name="pemesan_pdk" placeholder="Masukan Pemesan Pdk">
-                </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Nego</label>
-                  <input type="date" class="form-control" name="nego" placeholder="Nego">
-                </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Satuan</label>
-                  <select id="inputState" class="form-select form-control" name="satuan">
-                    <option selected disabled="disabled">Satuan</option>
-                    <option>...</option>
-                  </select>
-                </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Kode Order</label>
-                  <select id="inputState" class="form-select form-control" name="kode_order">
-                    <option selected disabled="disabled">Masukan Kode Order</option>
-                    <option>...</option>
-                  </select>
+                  <input type="date" class="form-control" name="tanggal_masuk" placeholder="Tanggal Masuk" required>
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Deadline</label>
-                  <input type="date" class="form-control" name="deadline" placeholder="Deadline" required="required">
+                  <input type="date" class="form-control" name="deadline" placeholder="Deadline" required>
                 </div>
                 <div class="col-md-4">
-                  <br><label class="form-label">Hal</label>
-                  <input type="text" class="form-control" name="hal" placeholder="Masukan Hal">
+                  <br><label class="form-label">Nama Pemesan</label>
+                  <input type="text" class="form-control" name="nama_pemesan" placeholder="Masukan Nama Pemesan" required>
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Nama Orderan</label>
-                  <input type="text" class="form-control" name="nama_orderan" placeholder="Masukan Orderan">
+                  <input type="text" class="form-control" name="nama_orderan" placeholder="Masukan Orderan" required>
+                </div>
+                <div class="col-md-4">
+                  <br><label class="form-label">Ukuran</label>
+                  <input type="text" class="form-control" name="ukuran" placeholder="Masukan Ukuran" required>
+                </div>
+                <div class="col-md-4">
+                  <br><label class="form-label">Halaman</label>
+                  <input type="text" class="form-control" name="halaman" placeholder="Masukan Hal" required>
+                </div>
+                <div class="col-md-4">
+                  <br><label class="form-label">Oplag</label>
+                  <input type="number" class="form-control" name="oplag" placeholder="Masukan Oplag" required>
                 </div>
                 <div class="col-md-4">
                   <br><label class="form-label">Status</label>
                   <select id="inputState" class="form-select form-control" name="status">
-                    <option selected disabled="disabled">Marketing</option>
+                    <option selected value="Marketing" disabled="disabled">Marketing</option>
                   </select>
-                </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">FC</label>
-                  <input type="text" class="form-control" name="fc" placeholder="FC">
-                </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Nama Orderan Pendek</label>
-                  <input type="text" class="form-control" name="nama_orderan_pendek" placeholder="Masukan Nama Pendek">
-                </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Surat Order</label>
-                  <input type="text" class="form-control" name="surat_order" placeholder="Masukan Surat Order">
-                </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">BW</label>
-                  <input type="text" class="form-control" name="bw" placeholder="BW">
-                </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Hal 2</label>
-                  <input type="text" class="form-control" name="hal_2" placeholder="Masukan Hal 2">
-                </div>
-                <div class="col-md-4"></div>
-                <div class="col-md-4">
-                  <br><label class="form-label">KETERANGAN</label>
-                  <textarea class="form-control" name="keterangan" placeholder="keterangan"></textarea>
                 </div>
               </div><br>
               <div class="row">
@@ -137,7 +83,7 @@
                         <li class="nav-item"><a class="nav-link active" href="#ctcp" data-toggle="tab">CTCP</a></li>
                         <li class="nav-item"><a class="nav-link" href="#kertas" data-toggle="tab">KERTAS</a></li>
                         <li class="nav-item"><a class="nav-link" href="#cetak" data-toggle="tab">CETAK</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#finish" data-toggle="tab">FINISH</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#finish" data-toggle="tab">FINISHING</a></li>
                       </ul>
                     </div><!-- /.card-header -->
                     <div class="card-body">
@@ -163,62 +109,116 @@
                             <div class="col-md-6">
                               <br><label class="form-label">CTCP COVER 1</label>
                               <select id="inputState" class="form-select form-control" name="ctcp_cover_1">
-                                <option selected disabled="disabled">Masukan Cover</option>
+                                <option selected disabled="disabled">CTCP Cover</option>
+                                <option value="Plat 58">Plat 58</option>
+                                <option value="Plat 72">Plat 72</option>
+                                <option value="Plat 74">Plat 74</option>
+                                <option value="Plat 102">Plat 102</option>
+                                <option value="Plat paperplate">Plat paperplate</option>
+                                <option value="Plat 72.4 x 59.2">Plat 72.4 x 59.2</option>
+                                <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
+                                <option value="Plat 770 x 1030">Plat 770 x 1030</option>
+                                <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">CTCP ISI 1</label>
                               <select id="inputState" class="form-select form-control" name="ctcp_isi_1">
-                                <option selected disabled="disabled">Masukan Cover</option>
+                                <option selected disabled="disabled">CTCP Isi</option>
+                                <option value="Plat 58">Plat 58</option>
+                                <option value="Plat 72">Plat 72</option>
+                                <option value="Plat 74">Plat 74</option>
+                                <option value="Plat 102">Plat 102</option>
+                                <option value="Plat paperplate">Plat paperplate</option>
+                                <option value="Plat 72.4 x 59.2">Plat 72.4 x 59.2</option>
+                                <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
+                                <option value="Plat 770 x 1030">Plat 770 x 1030</option>
+                                <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">PLAT COVER 1</label>
-                              <input type="text" class="form-control" name="plat_cover_1" placeholder="Masukan Orderan" name="plat_cover_1">
+                              <input type="number" class="form-control" name="plat_cover_1" placeholder="Masukan Plat Cover" name="plat_cover_1">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">PLAT ISI 1</label>
-                              <input type="text" class="form-control" name="plat_isi_1" placeholder="Masukan Orderan">
+                              <input type="number" class="form-control" name="plat_isi_1" placeholder="Masukan Plat Isi">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">CTCP COVER 2</label>
                               <select id="inputState" class="form-select form-control" name="ctcp_cover_2">
-                                <option selected disabled="disabled">Masukan Cover</option>
+                                <option selected disabled="disabled">CTCP Cover</option>
+                                <option value="Plat 58">Plat 58</option>
+                                <option value="Plat 72">Plat 72</option>
+                                <option value="Plat 74">Plat 74</option>
+                                <option value="Plat 102">Plat 102</option>
+                                <option value="Plat paperplate">Plat paperplate</option>
+                                <option value="Plat 72.4 x 59.2">Plat 72.4 x 59.2</option>
+                                <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
+                                <option value="Plat 770 x 1030">Plat 770 x 1030</option>
+                                <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">CTCP ISI 2</label>
                               <select id="inputState" class="form-select form-control" name="ctcp_isi_2">
-                                <option selected disabled="disabled">Masukan Cover</option>
+                                <option selected disabled="disabled">CTCP Isi</option>
+                                <option value="Plat 58">Plat 58</option>
+                                <option value="Plat 72">Plat 72</option>
+                                <option value="Plat 74">Plat 74</option>
+                                <option value="Plat 102">Plat 102</option>
+                                <option value="Plat paperplate">Plat paperplate</option>
+                                <option value="Plat 72.4 x 59.2">Plat 72.4 x 59.2</option>
+                                <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
+                                <option value="Plat 770 x 1030">Plat 770 x 1030</option>
+                                <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">PLAT COVER 2</label>
-                              <input type="text" class="form-control" name="plat_cover_2" placeholder="Masukan Orderan">
+                              <input type="number" class="form-control" name="plat_cover_2" placeholder="Masukan Plat Cover">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">PLAT ISI 2</label>
-                              <input type="text" class="form-control" name="plat_isi_2" placeholder="Masukan Orderan">
+                              <input type="number" class="form-control" name="plat_isi_2" placeholder="Masukan Plat Isi">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">CTCP COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="ctcp_cover_3">
-                                <option selected disabled="disabled">Masukan Cover</option>
+                                <option selected disabled="disabled">CTCP Cover</option>
+                                <option value="Plat 58">Plat 58</option>
+                                <option value="Plat 72">Plat 72</option>
+                                <option value="Plat 74">Plat 74</option>
+                                <option value="Plat 102">Plat 102</option>
+                                <option value="Plat paperplate">Plat paperplate</option>
+                                <option value="Plat 72.4 x 59.2">Plat 72.4 x 59.2</option>
+                                <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
+                                <option value="Plat 770 x 1030">Plat 770 x 1030</option>
+                                <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">CTCP ISI 3</label>
                               <select id="inputState" class="form-select form-control" name="ctcp_isi_3">
-                                <option selected disabled="disabled">Masukan Cover</option>
+                                <option selected disabled="disabled">CTCP Isi</option>
+                                <option value="Plat 58">Plat 58</option>
+                                <option value="Plat 72">Plat 72</option>
+                                <option value="Plat 74">Plat 74</option>
+                                <option value="Plat 102">Plat 102</option>
+                                <option value="Plat paperplate">Plat paperplate</option>
+                                <option value="Plat 72.4 x 59.2">Plat 72.4 x 59.2</option>
+                                <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
+                                <option value="Plat 770 x 1030">Plat 770 x 1030</option>
+                                <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">PLAT COVER 3</label>
-                              <input type="text" class="form-control" name="plat_cover_3" placeholder="Masukan Orderan">
+                              <input type="number" class="form-control" name="plat_cover_3" placeholder="Masukan Plat Cover">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">PLAT ISI 3</label>
-                              <input type="text" class="form-control" name="plat_isi_3" placeholder="Masukan Orderan">
+                              <input type="number" class="form-control" name="plat_isi_3" placeholder="Masukan Plat Isi">
                             </div>
                           </div>
                         </div>
@@ -243,110 +243,553 @@
                             <div class="col-md-6">
                               <br><label class="form-label">KERTAS COVER 1</label>
                               <select id="inputState" class="form-select form-control" name="kertas_cover_1">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Kertas Cover</option>
+                                <option value="ACCO(isi50)">ACCO(isi50)</option>
+                                <option value="Acquarello white 118">Acquarello white 118</option>
+                                <option value="Amplop coklat jadi">Amplop coklat jadi</option>
+                                <option value="Amplop paperline">Amplop paperline</option>
+                                <option value="AP 90">AP 90 gr</option>
+                                <option value="Aster">Aster</option>
+                                <option value="BC biru muda">BC biru muda</option>
+                                <option value="BC hijau">BC hijau</option>
+                                <option value="BC kuning">BC kuning</option>
+                                <option value="BC pink">BC pink</option>
+                                <option value="Buffalo biru">Buffalo biru</option>
+                                <option value="Bufallo W.tua">Bufallo W.tua</option>
+                                <option value="Corcodre tebal">Corcodre tebal</option>
+                                <option value="Corcodre tipis">Corcodre tipis</option>
+                                <option value="COG 176">COG 176 gr</option>
+                                <option value="COG 216">COG 216 gr</option>
+                                <option value="COG 270">COG 270 gr</option>
+                                <option value="Hammer tebal">Hammer tebal</option>
+                                <option value="HVS biru">HVS biru</option>
+                                <option value="HVS hijau">HVS hijau</option>
+                                <option value="HVS kuning">HVS kuning</option>
+                                <option value="HVS pink">HVS pink</option>
+                                <option value="Jasmin_Putih tebal">Jasmin_Putih tebal</option>
+                                <option value="Jasmin_Putih tipis">Jasmin_Putih tipis</option>
+                                <option value="Karton tebal 30">Karton tebal 30</option>
+                                <option value="Krungut">Krungut</option>
+                                <option value="Linen tebal">Linen tebal</option>
+                                <option value="LWC">LWC</option>
+                                <option value="MP 85 gr">MP 85 gr</option>
+                                <option value="MP 100 gr">MP 100 gr</option>
+                                <option value="NCR biru">NCR biru</option>
+                                <option value="NCR hijau">NCR hijau</option>
+                                <option value="NCR kuning">NCR kuning</option>
+                                <option value="NCR pink">NCR pink</option>
+                                <option value="NCR putih">NCR putih</option>
+                                <option value="Sticker chromo">Sticker chromo</option>
+                                <option value="Spendorgel ivory 100">Spendorgel ivory 100</option>
+                                <option value="Sticker kertas">Sticker kertas</option>
+                                <option value="Sticker transparan">Sticker transparan</option>
+                                <option value="Sticker vinil">Sticker vinil</option>
+                                <option value="Vinil biru">Vinil biru</option>
+                                <option value="Vinil hijau">Vinil hijau</option>
+                                <option value="Vinil hitam">Vinil hitam</option>
+                                <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">KERTAS ISI 1</label>
                               <select id="inputState" class="form-select form-control" name="kertas_isi_1">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Kertas Isi</option>
+                                <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
+                                <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
+                                <option value="AC/Ivory 2Muka 230 gr">AC/Ivory 2Muka 230 gr</option>
+                                <option value="AC/Ivory 2Muka 260 gr">AC/Ivory 2Muka 260 gr</option>
+                                <option value="AC/Ivory 2Muka 310 gr">AC/Ivory 2Muka 310 gr</option>
+                                <option value="ACCO(isi50)">ACCO(isi50)</option>
+                                <option value="Acquarello white 118">Acquarello white 118</option>
+                                <option value="Amplop coklat jadi">Amplop coklat jadi</option>
+                                <option value="Amplop paperline">Amplop paperline</option>
+                                <option value="AP 85 gr">AP 85 gr</option>
+                                <option value="AP 90 gr">AP 90 gr</option>
+                                <option value="AP 100 gr">AP 100 gr</option>
+                                <option value="AP 120 gr">AP 120 gr</option>
+                                <option value="AP 150 gr">AP 150 gr</option>
+                                <option value="Aster">Aster</option>
+                                <option value="BC biru muda">BC biru muda</option>
+                                <option value="BC hijau">BC hijau</option>
+                                <option value="BC kuning">BC kuning</option>
+                                <option value="BC pink">BC pink</option>
+                                <option value="BC_I_putih">BC_I_putih</option>
+                                <option value="BC_I_warna muda">BC_I_warna muda</option>
+                                <option value="BC_I_warna tua">BC_I_warna tua</option>
+                                <option value="BP 52 gr">BP 52 gr</option>
+                                <option value="BP 57.5 gr">BP 57.5 gr</option>
+                                <option value="Buffalo biru">Buffalo biru</option>
+                                <option value="Bufallo W.tua">Bufallo W.tua</option>
+                                <option value="CD buram 50 gr">CD buram 50 gr</option>
+                                <option value="COG 176">COG 176 gr</option>
+                                <option value="COG 216">COG 216 gr</option>
+                                <option value="COG 270">COG 270 gr</option>
+                                <option value="Corcodre tebal">Corcodre tebal</option>
+                                <option value="Corcodre tipis">Corcodre tipis</option>
+                                <option value="Hammer tebal">Hammer tebal</option>
+                                <option value="HVS 60 gr">HVS 60 gr</option>
+                                <option value="HVS 64 gr">HVS 64 gr</option>
+                                <option value="HVS 70 gr">HVS 70 gr</option>
+                                <option value="HVS 80 gr">HVS 80 gr</option>
+                                <option value="HVS 100 gr">HVS 100 gr</option>
+                                <option value="HVS biru">HVS biru</option>
+                                <option value="HVS hijau">HVS hijau</option>
+                                <option value="HVS kuning">HVS kuning</option>
+                                <option value="HVS pink">HVS pink</option>
+                                <option value="Ivory 210 gr">Ivory 210 gr</option>
+                                <option value="Ivory 230 gr">Ivory 230 gr</option>
+                                <option value="Ivory 250 gr">Ivory 250 gr</option>
+                                <option value="Jasmin_Putih tebal">Jasmin_Putih tebal</option>
+                                <option value="Jasmin_Putih tipis">Jasmin_Putih tipis</option>
+                                <option value="Karton tebal 30">Karton tebal 30</option>
+                                <option value="Khusus SM 57.5 gr">Khusus SM 57.5 gr</option>
+                                <option value="Khusus SM 85 gr">Khusus SM 85 gr</option>
+                                <option value="Krungut">Krungut</option>
+                                <option value="Linen tebal">Linen tebal</option>
+                                <option value="LWC">LWC</option>
+                                <option value="Marga/Duplek 250 gr">Marga/Duplek 250 gr</option>
+                                <option value="Marga/Duplek 310 gr">Marga/Duplek 310 gr</option>
+                                <option value="Marga/Duplek 350 gr">Marga/Duplek 350 gr</option>
+                                <option value="MP 85 gr">MP 85 gr</option>
+                                <option value="MP 100 gr">MP 100 gr</option>
+                                <option value="MP 120 gr">MP 120 gr</option>
+                                <option value="MP 150 gr">MP 150 gr</option>
+                                <option value="NCR biru">NCR biru</option>
+                                <option value="NCR hijau">NCR hijau</option>
+                                <option value="NCR kuning">NCR kuning</option>
+                                <option value="NCR pink">NCR pink</option>
+                                <option value="NCR putih">NCR putih</option>
+                                <option value="QP 50 gr">QP 50 gr</option>
+                                <option value="Samson tipis">Samson tipis</option>
+                                <option value="Sticker chromo">Sticker chromo</option>
+                                <option value="Spendorgel ivory 100">Spendorgel ivory 100</option>
+                                <option value="Sticker kertas">Sticker kertas</option>
+                                <option value="Sticker transparan">Sticker transparan</option>
+                                <option value="Vinil biru">Vinil biru</option>
+                                <option value="Vinil hijau">Vinil hijau</option>
+                                <option value="Vinil hitam">Vinil hitam</option>
+                                <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">UKURAN KERTAS COVER 1</label>
                               <select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_1">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Ukuran Kertas Cover</option>
+                                <option value="21.50 x 33">21.5 x 33</option>
+                                <option value="54 x 70">54 x 70</option>
+                                <option value="58 x 84">58 x 84</option>
+                                <option value="61 x 84">61 x 84</option>
+                                <option value="61 x 86">61 x 86</option>
+                                <option value="61 x 88">61 x 88</option>
+                                <option value="61 x 92">61 x 92</option>
+                                <option value="64 x 88">64 x 88</option>
+                                <option value="65 x 77">65 x 77</option>
+                                <option value="65 x 90">65 x 90</option>
+                                <option value="65 x 100">65 x 100</option>
+                                <option value="66 x 101.1">66 x 101.1</option>
+                                <option value="72 x 100">72 x 100</option>
+                                <option value="79 x 109">79 x 109</option>
+                                <option value="90 x 120">90 x 120</option>
+                                <option value="120 x 16">120 x 16</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">UKURAN KERTAS ISI 1</label>
                               <select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_1">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Ukuran Kertas Isi</option>
+                                <option value="21.50 x 33">21.5 x 33</option>
+                                <option value="54 x 70">54 x 70</option>
+                                <option value="58 x 84">58 x 84</option>
+                                <option value="61 x 84">61 x 84</option>
+                                <option value="61 x 86">61 x 86</option>
+                                <option value="61 x 88">61 x 88</option>
+                                <option value="61 x 92">61 x 92</option>
+                                <option value="64 x 88">64 x 88</option>
+                                <option value="65 x 77">65 x 77</option>
+                                <option value="65 x 90">65 x 90</option>
+                                <option value="65 x 100">65 x 100</option>
+                                <option value="66 x 101.1">66 x 101.1</option>
+                                <option value="72 x 100">72 x 100</option>
+                                <option value="79 x 109">79 x 109</option>
+                                <option value="90 x 120">90 x 120</option>
+                                <option value="120 x 16">120 x 16</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">JUMLAH KERTAS COVER 1</label>
-                              <select id="inputState" class="form-select form-control" name="jumlah_kertas_cover_1">
-                                <option selected value="a"> </option>
-                              </select>
+                              <input type="number" class="form-select form-control" name="jumlah_kertas_cover_1">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">JUMLAH KERTAS ISI 1</label>
-                              <select id="inputState" class="form-select form-control" name="jumlah_kertas_isi_1">
-                                <option selected value="a"> </option>
-                              </select>
+                              <input type="number" class="form-select form-control" name="jumlah_kertas_isi_1">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">KERTAS COVER 2</label>
                               <select id="inputState" class="form-select form-control" name="kertas_cover_2">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Kertas Cover</option>
+                                <option value="ACCO(isi50)">ACCO(isi50)</option>
+                                <option value="Acquarello white 118">Acquarello white 118</option>
+                                <option value="Amplop coklat jadi">Amplop coklat jadi</option>
+                                <option value="Amplop paperline">Amplop paperline</option>
+                                <option value="AP 90">AP 90 gr</option>
+                                <option value="Aster">Aster</option>
+                                <option value="BC biru muda">BC biru muda</option>
+                                <option value="BC hijau">BC hijau</option>
+                                <option value="BC kuning">BC kuning</option>
+                                <option value="BC pink">BC pink</option>
+                                <option value="Buffalo biru">Buffalo biru</option>
+                                <option value="Bufallo W.tua">Bufallo W.tua</option>
+                                <option value="Corcodre tebal">Corcodre tebal</option>
+                                <option value="Corcodre tipis">Corcodre tipis</option>
+                                <option value="COG 176">COG 176 gr</option>
+                                <option value="COG 216">COG 216 gr</option>
+                                <option value="COG 270">COG 270 gr</option>
+                                <option value="Hammer tebal">Hammer tebal</option>
+                                <option value="HVS biru">HVS biru</option>
+                                <option value="HVS hijau">HVS hijau</option>
+                                <option value="HVS kuning">HVS kuning</option>
+                                <option value="HVS pink">HVS pink</option>
+                                <option value="Jasmin_Putih tebal">Jasmin_Putih tebal</option>
+                                <option value="Jasmin_Putih tipis">Jasmin_Putih tipis</option>
+                                <option value="Karton tebal 30">Karton tebal 30</option>
+                                <option value="Krungut">Krungut</option>
+                                <option value="Linen tebal">Linen tebal</option>
+                                <option value="LWC">LWC</option>
+                                <option value="MP 85 gr">MP 85 gr</option>
+                                <option value="MP 100 gr">MP 100 gr</option>
+                                <option value="NCR biru">NCR biru</option>
+                                <option value="NCR hijau">NCR hijau</option>
+                                <option value="NCR kuning">NCR kuning</option>
+                                <option value="NCR pink">NCR pink</option>
+                                <option value="NCR putih">NCR putih</option>
+                                <option value="Sticker chromo">Sticker chromo</option>
+                                <option value="Spendorgel ivory 100">Spendorgel ivory 100</option>
+                                <option value="Sticker kertas">Sticker kertas</option>
+                                <option value="Sticker transparan">Sticker transparan</option>
+                                <option value="Sticker vinil">Sticker vinil</option>
+                                <option value="Vinil biru">Vinil biru</option>
+                                <option value="Vinil hijau">Vinil hijau</option>
+                                <option value="Vinil hitam">Vinil hitam</option>
+                                <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">KERTAS ISI 2</label>
                               <select id="inputState" class="form-select form-control" name="kertas_isi_2">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Kertas Isi</option>
+                                <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
+                                <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
+                                <option value="AC/Ivory 2Muka 230 gr">AC/Ivory 2Muka 230 gr</option>
+                                <option value="AC/Ivory 2Muka 260 gr">AC/Ivory 2Muka 260 gr</option>
+                                <option value="AC/Ivory 2Muka 310 gr">AC/Ivory 2Muka 310 gr</option>
+                                <option value="ACCO(isi50)">ACCO(isi50)</option>
+                                <option value="Acquarello white 118">Acquarello white 118</option>
+                                <option value="Amplop coklat jadi">Amplop coklat jadi</option>
+                                <option value="Amplop paperline">Amplop paperline</option>
+                                <option value="AP 85 gr">AP 85 gr</option>
+                                <option value="AP 90 gr">AP 90 gr</option>
+                                <option value="AP 100 gr">AP 100 gr</option>
+                                <option value="AP 120 gr">AP 120 gr</option>
+                                <option value="AP 150 gr">AP 150 gr</option>
+                                <option value="Aster">Aster</option>
+                                <option value="BC biru muda">BC biru muda</option>
+                                <option value="BC hijau">BC hijau</option>
+                                <option value="BC kuning">BC kuning</option>
+                                <option value="BC pink">BC pink</option>
+                                <option value="BC_I_putih">BC_I_putih</option>
+                                <option value="BC_I_warna muda">BC_I_warna muda</option>
+                                <option value="BC_I_warna tua">BC_I_warna tua</option>
+                                <option value="BP 52 gr">BP 52 gr</option>
+                                <option value="BP 57.5 gr">BP 57.5 gr</option>
+                                <option value="Buffalo biru">Buffalo biru</option>
+                                <option value="Bufallo W.tua">Bufallo W.tua</option>
+                                <option value="CD buram 50 gr">CD buram 50 gr</option>
+                                <option value="COG 176">COG 176 gr</option>
+                                <option value="COG 216">COG 216 gr</option>
+                                <option value="COG 270">COG 270 gr</option>
+                                <option value="Corcodre tebal">Corcodre tebal</option>
+                                <option value="Corcodre tipis">Corcodre tipis</option>
+                                <option value="Hammer tebal">Hammer tebal</option>
+                                <option value="HVS 60 gr">HVS 60 gr</option>
+                                <option value="HVS 64 gr">HVS 64 gr</option>
+                                <option value="HVS 70 gr">HVS 70 gr</option>
+                                <option value="HVS 80 gr">HVS 80 gr</option>
+                                <option value="HVS 100 gr">HVS 100 gr</option>
+                                <option value="HVS biru">HVS biru</option>
+                                <option value="HVS hijau">HVS hijau</option>
+                                <option value="HVS kuning">HVS kuning</option>
+                                <option value="HVS pink">HVS pink</option>
+                                <option value="Ivory 210 gr">Ivory 210 gr</option>
+                                <option value="Ivory 230 gr">Ivory 230 gr</option>
+                                <option value="Ivory 250 gr">Ivory 250 gr</option>
+                                <option value="Jasmin_Putih tebal">Jasmin_Putih tebal</option>
+                                <option value="Jasmin_Putih tipis">Jasmin_Putih tipis</option>
+                                <option value="Karton tebal 30">Karton tebal 30</option>
+                                <option value="Khusus SM 57.5 gr">Khusus SM 57.5 gr</option>
+                                <option value="Khusus SM 85 gr">Khusus SM 85 gr</option>
+                                <option value="Krungut">Krungut</option>
+                                <option value="Linen tebal">Linen tebal</option>
+                                <option value="LWC">LWC</option>
+                                <option value="Marga/Duplek 250 gr">Marga/Duplek 250 gr</option>
+                                <option value="Marga/Duplek 310 gr">Marga/Duplek 310 gr</option>
+                                <option value="Marga/Duplek 350 gr">Marga/Duplek 350 gr</option>
+                                <option value="MP 85 gr">MP 85 gr</option>
+                                <option value="MP 100 gr">MP 100 gr</option>
+                                <option value="MP 120 gr">MP 120 gr</option>
+                                <option value="MP 150 gr">MP 150 gr</option>
+                                <option value="NCR biru">NCR biru</option>
+                                <option value="NCR hijau">NCR hijau</option>
+                                <option value="NCR kuning">NCR kuning</option>
+                                <option value="NCR pink">NCR pink</option>
+                                <option value="NCR putih">NCR putih</option>
+                                <option value="QP 50 gr">QP 50 gr</option>
+                                <option value="Samson tipis">Samson tipis</option>
+                                <option value="Sticker chromo">Sticker chromo</option>
+                                <option value="Spendorgel ivory 100">Spendorgel ivory 100</option>
+                                <option value="Sticker kertas">Sticker kertas</option>
+                                <option value="Sticker transparan">Sticker transparan</option>
+                                <option value="Vinil biru">Vinil biru</option>
+                                <option value="Vinil hijau">Vinil hijau</option>
+                                <option value="Vinil hitam">Vinil hitam</option>
+                                <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">UKURAN KERTAS COVER 2</label>
                               <select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_2">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Ukuran Kertas Cover</option>
+                                <option value="21.50 x 33">21.5 x 33</option>
+                                <option value="54 x 70">54 x 70</option>
+                                <option value="58 x 84">58 x 84</option>
+                                <option value="61 x 84">61 x 84</option>
+                                <option value="61 x 86">61 x 86</option>
+                                <option value="61 x 88">61 x 88</option>
+                                <option value="61 x 92">61 x 92</option>
+                                <option value="64 x 88">64 x 88</option>
+                                <option value="65 x 77">65 x 77</option>
+                                <option value="65 x 90">65 x 90</option>
+                                <option value="65 x 100">65 x 100</option>
+                                <option value="66 x 101.1">66 x 101.1</option>
+                                <option value="72 x 100">72 x 100</option>
+                                <option value="79 x 109">79 x 109</option>
+                                <option value="90 x 120">90 x 120</option>
+                                <option value="120 x 16">120 x 16</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">UKURAN KERTAS ISI 2</label>
                               <select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_2">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Ukuran Kertas Isi</option>
+                                <option value="21.50 x 33">21.5 x 33</option>
+                                <option value="54 x 70">54 x 70</option>
+                                <option value="58 x 84">58 x 84</option>
+                                <option value="61 x 84">61 x 84</option>
+                                <option value="61 x 86">61 x 86</option>
+                                <option value="61 x 88">61 x 88</option>
+                                <option value="61 x 92">61 x 92</option>
+                                <option value="64 x 88">64 x 88</option>
+                                <option value="65 x 77">65 x 77</option>
+                                <option value="65 x 90">65 x 90</option>
+                                <option value="65 x 100">65 x 100</option>
+                                <option value="66 x 101.1">66 x 101.1</option>
+                                <option value="72 x 100">72 x 100</option>
+                                <option value="79 x 109">79 x 109</option>
+                                <option value="90 x 120">90 x 120</option>
+                                <option value="120 x 16">120 x 16</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">JUMLAH KERTAS COVER 2</label>
-                              <select id="inputState" class="form-select form-control" name="jumlah_kertas_cover_2">
-                                <option selected value="a"> </option>
-                              </select>
+                              <input type="number" class="form-select form-control" name="jumlah_kertas_cover_2">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">JUMLAH KERTAS ISI 2</label>
-                              <select id="inputState" class="form-select form-control" name="jumlah_kertas_isi_2">
+                              <input type="number" class="form-select form-control" name="jumlah_kertas_isi_2">
                                 <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">KERTAS COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="kertas_cover_3">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Kertas Cover</option>
+                                <option value="ACCO(isi50)">ACCO(isi50)</option>
+                                <option value="Acquarello white 118">Acquarello white 118</option>
+                                <option value="Amplop coklat jadi">Amplop coklat jadi</option>
+                                <option value="Amplop paperline">Amplop paperline</option>
+                                <option value="AP 90">AP 90 gr</option>
+                                <option value="Aster">Aster</option>
+                                <option value="BC biru muda">BC biru muda</option>
+                                <option value="BC hijau">BC hijau</option>
+                                <option value="BC kuning">BC kuning</option>
+                                <option value="BC pink">BC pink</option>
+                                <option value="Buffalo biru">Buffalo biru</option>
+                                <option value="Bufallo W.tua">Bufallo W.tua</option>
+                                <option value="Corcodre tebal">Corcodre tebal</option>
+                                <option value="Corcodre tipis">Corcodre tipis</option>
+                                <option value="COG 176">COG 176 gr</option>
+                                <option value="COG 216">COG 216 gr</option>
+                                <option value="COG 270">COG 270 gr</option>
+                                <option value="Hammer tebal">Hammer tebal</option>
+                                <option value="HVS biru">HVS biru</option>
+                                <option value="HVS hijau">HVS hijau</option>
+                                <option value="HVS kuning">HVS kuning</option>
+                                <option value="HVS pink">HVS pink</option>
+                                <option value="Jasmin_Putih tebal">Jasmin_Putih tebal</option>
+                                <option value="Jasmin_Putih tipis">Jasmin_Putih tipis</option>
+                                <option value="Karton tebal 30">Karton tebal 30</option>
+                                <option value="Krungut">Krungut</option>
+                                <option value="Linen tebal">Linen tebal</option>
+                                <option value="LWC">LWC</option>
+                                <option value="MP 85 gr">MP 85 gr</option>
+                                <option value="MP 100 gr">MP 100 gr</option>
+                                <option value="NCR biru">NCR biru</option>
+                                <option value="NCR hijau">NCR hijau</option>
+                                <option value="NCR kuning">NCR kuning</option>
+                                <option value="NCR pink">NCR pink</option>
+                                <option value="NCR putih">NCR putih</option>
+                                <option value="Sticker chromo">Sticker chromo</option>
+                                <option value="Spendorgel ivory 100">Spendorgel ivory 100</option>
+                                <option value="Sticker kertas">Sticker kertas</option>
+                                <option value="Sticker transparan">Sticker transparan</option>
+                                <option value="Sticker vinil">Sticker vinil</option>
+                                <option value="Vinil biru">Vinil biru</option>
+                                <option value="Vinil hijau">Vinil hijau</option>
+                                <option value="Vinil hitam">Vinil hitam</option>
+                                <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">KERTAS ISI 3</label>
                               <select id="inputState" class="form-select form-control" name="kertas_isi_3">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Kertas Isi</option>
+                                <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
+                                <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
+                                <option value="AC/Ivory 2Muka 230 gr">AC/Ivory 2Muka 230 gr</option>
+                                <option value="AC/Ivory 2Muka 260 gr">AC/Ivory 2Muka 260 gr</option>
+                                <option value="AC/Ivory 2Muka 310 gr">AC/Ivory 2Muka 310 gr</option>
+                                <option value="ACCO(isi50)">ACCO(isi50)</option>
+                                <option value="Acquarello white 118">Acquarello white 118</option>
+                                <option value="Amplop coklat jadi">Amplop coklat jadi</option>
+                                <option value="Amplop paperline">Amplop paperline</option>
+                                <option value="AP 85 gr">AP 85 gr</option>
+                                <option value="AP 90 gr">AP 90 gr</option>
+                                <option value="AP 100 gr">AP 100 gr</option>
+                                <option value="AP 120 gr">AP 120 gr</option>
+                                <option value="AP 150 gr">AP 150 gr</option>
+                                <option value="Aster">Aster</option>
+                                <option value="BC biru muda">BC biru muda</option>
+                                <option value="BC hijau">BC hijau</option>
+                                <option value="BC kuning">BC kuning</option>
+                                <option value="BC pink">BC pink</option>
+                                <option value="BC_I_putih">BC_I_putih</option>
+                                <option value="BC_I_warna muda">BC_I_warna muda</option>
+                                <option value="BC_I_warna tua">BC_I_warna tua</option>
+                                <option value="BP 52 gr">BP 52 gr</option>
+                                <option value="BP 57.5 gr">BP 57.5 gr</option>
+                                <option value="Buffalo biru">Buffalo biru</option>
+                                <option value="Bufallo W.tua">Bufallo W.tua</option>
+                                <option value="CD buram 50 gr">CD buram 50 gr</option>
+                                <option value="COG 176">COG 176 gr</option>
+                                <option value="COG 216">COG 216 gr</option>
+                                <option value="COG 270">COG 270 gr</option>
+                                <option value="Corcodre tebal">Corcodre tebal</option>
+                                <option value="Corcodre tipis">Corcodre tipis</option>
+                                <option value="Hammer tebal">Hammer tebal</option>
+                                <option value="HVS 60 gr">HVS 60 gr</option>
+                                <option value="HVS 64 gr">HVS 64 gr</option>
+                                <option value="HVS 70 gr">HVS 70 gr</option>
+                                <option value="HVS 80 gr">HVS 80 gr</option>
+                                <option value="HVS 100 gr">HVS 100 gr</option>
+                                <option value="HVS biru">HVS biru</option>
+                                <option value="HVS hijau">HVS hijau</option>
+                                <option value="HVS kuning">HVS kuning</option>
+                                <option value="HVS pink">HVS pink</option>
+                                <option value="Ivory 210 gr">Ivory 210 gr</option>
+                                <option value="Ivory 230 gr">Ivory 230 gr</option>
+                                <option value="Ivory 250 gr">Ivory 250 gr</option>
+                                <option value="Jasmin_Putih tebal">Jasmin_Putih tebal</option>
+                                <option value="Jasmin_Putih tipis">Jasmin_Putih tipis</option>
+                                <option value="Karton tebal 30">Karton tebal 30</option>
+                                <option value="Khusus SM 57.5 gr">Khusus SM 57.5 gr</option>
+                                <option value="Khusus SM 85 gr">Khusus SM 85 gr</option>
+                                <option value="Krungut">Krungut</option>
+                                <option value="Linen tebal">Linen tebal</option>
+                                <option value="LWC">LWC</option>
+                                <option value="Marga/Duplek 250 gr">Marga/Duplek 250 gr</option>
+                                <option value="Marga/Duplek 310 gr">Marga/Duplek 310 gr</option>
+                                <option value="Marga/Duplek 350 gr">Marga/Duplek 350 gr</option>
+                                <option value="MP 85 gr">MP 85 gr</option>
+                                <option value="MP 100 gr">MP 100 gr</option>
+                                <option value="MP 120 gr">MP 120 gr</option>
+                                <option value="MP 150 gr">MP 150 gr</option>
+                                <option value="NCR biru">NCR biru</option>
+                                <option value="NCR hijau">NCR hijau</option>
+                                <option value="NCR kuning">NCR kuning</option>
+                                <option value="NCR pink">NCR pink</option>
+                                <option value="NCR putih">NCR putih</option>
+                                <option value="QP 50 gr">QP 50 gr</option>
+                                <option value="Samson tipis">Samson tipis</option>
+                                <option value="Sticker chromo">Sticker chromo</option>
+                                <option value="Spendorgel ivory 100">Spendorgel ivory 100</option>
+                                <option value="Sticker kertas">Sticker kertas</option>
+                                <option value="Sticker transparan">Sticker transparan</option>
+                                <option value="Vinil biru">Vinil biru</option>
+                                <option value="Vinil hijau">Vinil hijau</option>
+                                <option value="Vinil hitam">Vinil hitam</option>
+                                <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">UKURAN KERTAS COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_3">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Ukuran Kertas Cover</option>
+                                <option value="21.50 x 33">21.5 x 33</option>
+                                <option value="54 x 70">54 x 70</option>
+                                <option value="58 x 84">58 x 84</option>
+                                <option value="61 x 84">61 x 84</option>
+                                <option value="61 x 86">61 x 86</option>
+                                <option value="61 x 88">61 x 88</option>
+                                <option value="61 x 92">61 x 92</option>
+                                <option value="64 x 88">64 x 88</option>
+                                <option value="65 x 77">65 x 77</option>
+                                <option value="65 x 90">65 x 90</option>
+                                <option value="65 x 100">65 x 100</option>
+                                <option value="66 x 101.1">66 x 101.1</option>
+                                <option value="72 x 100">72 x 100</option>
+                                <option value="79 x 109">79 x 109</option>
+                                <option value="90 x 120">90 x 120</option>
+                                <option value="120 x 16">120 x 16</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">UKURAN KERTAS ISI 3</label>
                               <select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_3">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Ukuran Kertas Isi</option>
+                                <option value="21.50 x 33">21.5 x 33</option>
+                                <option value="54 x 70">54 x 70</option>
+                                <option value="58 x 84">58 x 84</option>
+                                <option value="61 x 84">61 x 84</option>
+                                <option value="61 x 86">61 x 86</option>
+                                <option value="61 x 88">61 x 88</option>
+                                <option value="61 x 92">61 x 92</option>
+                                <option value="64 x 88">64 x 88</option>
+                                <option value="65 x 77">65 x 77</option>
+                                <option value="65 x 90">65 x 90</option>
+                                <option value="65 x 100">65 x 100</option>
+                                <option value="66 x 101.1">66 x 101.1</option>
+                                <option value="72 x 100">72 x 100</option>
+                                <option value="79 x 109">79 x 109</option>
+                                <option value="90 x 120">90 x 120</option>
+                                <option value="120 x 16">120 x 16</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">JUMLAH KERTAS COVER 3</label>
-                              <select id="inputState" class="form-select form-control" name="jumlah_kertas_cover_3">
-                                <option selected value="a"> </option>
-                              </select>
+                              <input type="number" class="form-select form-control" name="jumlah_kertas_cover_3">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">JUMLAH KERTAS ISI 3</label>
-                              <select id="inputState" class="form-select form-control" name="jumlah_kertas_isi_3">
-                                <option selected value="a"> </option>
-                              </select>
+                              <input type="number" class="form-select form-control" name="jumlah_kertas_isi_3">
                             </div>
                           </div>
                         </div>
@@ -371,75 +814,149 @@
                             <div class="col-md-6">
                               <br><label class="form-label">MESIN COVER 1</label>
                               <select id="inputState" class="form-select form-control" name="mesin_cover_1">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Mesin Cover</option>
+                                <option value="Oliver 58 2w">Oliver 58 2w</option>
+                                <option value="Oliver 72 1w">Oliver 72 1w</option>
+                                <option value="SM 74 4W - A">SM 74 4W - A</option>
+                                <option value="SM 74 4W - B">SM 74 4W - B</option>
+                                <option value="SM 102 2wP - A">SM 102 2wP - A</option>
+                                <option value="SM 102 2wP - B">SM 102 2wP - B</option>
+                                <option value="Fotocopy">Fotocopy</option>
+                                <option value="Tokko">Tokko</option>
+                                <option value="Print banner">Print banner</option>
+                                <option value="Print digital">Print digital</option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <br><label class="form-label">CETAK ISI 1</label>
-                              <select id="inputState" class="form-select form-control" name="cetak_isi_1">
-                                <option selected value="a"> </option>
+                              <br><label class="form-label">MESIN ISI 1</label>
+                              <select id="inputState" class="form-select form-control" name="mesin_isi_1">
+                                <option selected disabled="disabled">Mesin Isi</option>
+                                <option value="Oliver 58 2w">Oliver 58 2w</option>
+                                <option value="Oliver 72 1w">Oliver 72 1w</option>
+                                <option value="SM 74 4W - A">SM 74 4W - A</option>
+                                <option value="SM 74 4W - B">SM 74 4W - B</option>
+                                <option value="SM 102 2wP - A">SM 102 2wP - A</option>
+                                <option value="SM 102 2wP - B">SM 102 2wP - B</option>
+                                <option value="Fotocopy">Fotocopy</option>
+                                <option value="Tokko">Tokko</option>
+                                <option value="Print banner">Print banner</option>
+                                <option value="Print digital">Print digital</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA COVER 1</label>
                               <select id="inputState" class="form-select form-control" name="warna_cover_1">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Warna Cover</option>
+                                <option value="1/0">1/0</option>
+                                <option value="1/1">1/1</option>
+                                <option value="2/0">2/0</option>
+                                <option value="2/1">2/1</option>
+                                <option value="2/2">2/2</option>
+                                <option value="3/0">3/0</option>
+                                <option value="4/0">4/0</option>
+                                <option value="4/1">4/1</option>
+                                <option value="4/2">4/2</option>
+                                <option value="4/4">4/4</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA ISI 1</label>
                               <select id="inputState" class="form-select form-control" name="warna_isi_1">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Warna Isi</option>
+                                <option value="1/0">1/0</option>
+                                <option value="1/1">1/1</option>
+                                <option value="2/0">2/0</option>
+                                <option value="2/1">2/1</option>
+                                <option value="2/2">2/2</option>
+                                <option value="3/0">3/0</option>
+                                <option value="4/0">4/0</option>
+                                <option value="4/1">4/1</option>
+                                <option value="4/2">4/2</option>
+                                <option value="4/4">4/4</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT COVER 1</label>
-                              <select id="inputState" class="form-select form-control" name="insit_cover_1">
-                                <option selected value="a"> </option>
-                              </select>
+                              <input type="text" class="form-select form-control" name="insit_cover_1">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA CETAK 1</label>
-                              <select id="inputState" class="form-select form-control" name="warna_cetak_1">
+                              <select class="form-select form-control" name="warna_cetak_1">
                                 <option selected value="a"> </option>
                               </select>
                             </div>
                             <div class="col-md-6"></div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT ISI 2</label>
-                              <select id="inputState" class="form-select form-control" name="insit_isi_2">
-                                <option selected value="a"> </option>
-                              </select>
+                              <input type="text" class="form-select form-control" name="insit_isi_2">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">MESIN COVER 2</label>
                               <select id="inputState" class="form-select form-control" name="mesin_cover_2">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Mesin Cover</option>
+                                <option value="Oliver 58 2w">Oliver 58 2w</option>
+                                <option value="Oliver 72 1w">Oliver 72 1w</option>
+                                <option value="SM 74 4W - A">SM 74 4W - A</option>
+                                <option value="SM 74 4W - B">SM 74 4W - B</option>
+                                <option value="SM 102 2wP - A">SM 102 2wP - A</option>
+                                <option value="SM 102 2wP - B">SM 102 2wP - B</option>
+                                <option value="Fotocopy">Fotocopy</option>
+                                <option value="Tokko">Tokko</option>
+                                <option value="Print banner">Print banner</option>
+                                <option value="Print digital">Print digital</option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <br><label class="form-label">CETAK ISI 2</label>
-                              <select id="inputState" class="form-select form-control" name="cetak_isi_2">
-                                <option selected value="a"> </option>
+                              <br><label class="form-label">MESIN ISI 2</label>
+                              <select id="inputState" class="form-select form-control" name="mesin_isi_2">
+                                <option selected disabled="disabled">Mesin Isi</option>
+                                <option value="Oliver 58 2w">Oliver 58 2w</option>
+                                <option value="Oliver 72 1w">Oliver 72 1w</option>
+                                <option value="SM 74 4W - A">SM 74 4W - A</option>
+                                <option value="SM 74 4W - B">SM 74 4W - B</option>
+                                <option value="SM 102 2wP - A">SM 102 2wP - A</option>
+                                <option value="SM 102 2wP - B">SM 102 2wP - B</option>
+                                <option value="Fotocopy">Fotocopy</option>
+                                <option value="Tokko">Tokko</option>
+                                <option value="Print banner">Print banner</option>
+                                <option value="Print digital">Print digital</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA COVER 2</label>
                               <select id="inputState" class="form-select form-control" name="warna_cover_2">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Warna Cover</option>
+                                <option value="1/0">1/0</option>
+                                <option value="1/1">1/1</option>
+                                <option value="2/0">2/0</option>
+                                <option value="2/1">2/1</option>
+                                <option value="2/2">2/2</option>
+                                <option value="3/0">3/0</option>
+                                <option value="4/0">4/0</option>
+                                <option value="4/1">4/1</option>
+                                <option value="4/2">4/2</option>
+                                <option value="4/4">4/4</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA ISI 2</label>
                               <select id="inputState" class="form-select form-control" name="warna_isi_2">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Warna Isi</option>
+                                <option value="1/0">1/0</option>
+                                <option value="1/1">1/1</option>
+                                <option value="2/0">2/0</option>
+                                <option value="2/1">2/1</option>
+                                <option value="2/2">2/2</option>
+                                <option value="3/0">3/0</option>
+                                <option value="4/0">4/0</option>
+                                <option value="4/1">4/1</option>
+                                <option value="4/2">4/2</option>
+                                <option value="4/4">4/4</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT COVER 2</label>
-                              <select id="inputState" class="form-select form-control" name="insit_cover_2">
-                                <option selected value="a"> </option>
-                              </select>
+                              <input type="text" class="form-select form-control" name="insit_cover_2">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA CETAK 2</label>
@@ -450,39 +967,75 @@
                             <div class="col-md-6"></div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT ISI 2</label>
-                              <select id="inputState" class="form-select form-control" name="insit_isi_2">
-                                <option selected value="a"> </option>
-                              </select>
+                              <input type="text" class="form-select form-control" name="insit_isi_2">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">MESIN COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="mesin_cover_3">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Mesin Cover</option>
+                                <option value="Oliver 58 2w">Oliver 58 2w</option>
+                                <option value="Oliver 72 1w">Oliver 72 1w</option>
+                                <option value="SM 74 4W - A">SM 74 4W - A</option>
+                                <option value="SM 74 4W - B">SM 74 4W - B</option>
+                                <option value="SM 102 2wP - A">SM 102 2wP - A</option>
+                                <option value="SM 102 2wP - B">SM 102 2wP - B</option>
+                                <option value="Fotocopy">Fotocopy</option>
+                                <option value="Tokko">Tokko</option>
+                                <option value="Print banner">Print banner</option>
+                                <option value="Print digital">Print digital</option>
                               </select>
                             </div>
                             <div class="col-md-6">
-                              <br><label class="form-label">CETAK ISI 3</label>
-                              <select id="inputState" class="form-select form-control" name="cetak_isi_3">
-                                <option selected value="a"> </option>
+                              <br><label class="form-label">MESIN ISI 3</label>
+                              <select id="inputState" class="form-select form-control" name="mesin_isi_3">
+                                <option selected disabled="disabled">Mesin Isi</option>
+                                <option value="Oliver 58 2w">Oliver 58 2w</option>
+                                <option value="Oliver 72 1w">Oliver 72 1w</option>
+                                <option value="SM 74 4W - A">SM 74 4W - A</option>
+                                <option value="SM 74 4W - B">SM 74 4W - B</option>
+                                <option value="SM 102 2wP - A">SM 102 2wP - A</option>
+                                <option value="SM 102 2wP - B">SM 102 2wP - B</option>
+                                <option value="Fotocopy">Fotocopy</option>
+                                <option value="Tokko">Tokko</option>
+                                <option value="Print banner">Print banner</option>
+                                <option value="Print digital">Print digital</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="warna_cover_3">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Warna Cover</option>
+                                <option value="1/0">1/0</option>
+                                <option value="1/1">1/1</option>
+                                <option value="2/0">2/0</option>
+                                <option value="2/1">2/1</option>
+                                <option value="2/2">2/2</option>
+                                <option value="3/0">3/0</option>
+                                <option value="4/0">4/0</option>
+                                <option value="4/1">4/1</option>
+                                <option value="4/2">4/2</option>
+                                <option value="4/4">4/4</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA ISI 3</label>
                               <select id="inputState" class="form-select form-control" name="warna_isi_3">
-                                <option selected value="a"> </option>
+                                <option selected disabled="disabled">Warna Isi</option>
+                                <option value="1/0">1/0</option>
+                                <option value="1/1">1/1</option>
+                                <option value="2/0">2/0</option>
+                                <option value="2/1">2/1</option>
+                                <option value="2/2">2/2</option>
+                                <option value="3/0">3/0</option>
+                                <option value="4/0">4/0</option>
+                                <option value="4/1">4/1</option>
+                                <option value="4/2">4/2</option>
+                                <option value="4/4">4/4</option>
                               </select>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT COVER 3</label>
-                              <select id="inputState" class="form-select form-control" name="insit_cover_3">
-                                <option selected value="a"> </option>
-                              </select>
+                              <input type="text" class="form-select form-control" name="insit_cover_3">
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA CETAK 3</label>
@@ -493,9 +1046,7 @@
                             <div class="col-md-6"></div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT ISI 3</label>
-                              <select id="inputState" class="form-select form-control" name="insit_isi_3">
-                                <option selected value="a"> </option>
-                              </select>
+                              <input type="text" class="form-select form-control" name="insit_isi_3">
                             </div>
                           </div>
                         </div>
@@ -645,10 +1196,6 @@
           </div>
         </div>
         <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
-        </div>
-        <!-- /.card-footer-->
       </div>
       <!-- /.card -->
 
