@@ -47,7 +47,8 @@ class SuratOrder extends CI_Controller {
 		if($this->db->affected_rows() > 0){
 			echo "<script> alert('Data Berhasil Disimpan'); </script>";
 		}
-		redirect('pracetak/suratorder');
+		echo "<script>window.location='".site_url('pracetak/suratorder')."'; </script>"; 
+		
 	}
 	
 	
