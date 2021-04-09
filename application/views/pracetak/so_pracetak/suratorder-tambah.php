@@ -34,8 +34,7 @@
         </div>
         <div class="card-body">
           <div class="card-body">
-            <form action="<?=site_url('pracetak/SuratOrder/proses')?>" method="POST">
-            <!-- <input type="text"  name="id_order"  hidden> -->
+            <form action="<?=site_url('pracetak/SuratOrder/proses')?>" method="POST">            
               <div class="row">
                 <div class="col-md-4">
                   <br><label class="form-label">Nomor SO</label>

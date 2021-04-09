@@ -11,7 +11,7 @@ class SuratOrder extends CI_Controller {
 
 	public function index()
 	{
-		check_not_login();
+		// check_not_login();
 		// $query = $this->so->get();
 		$data = array(
 			'judul' => 'Surat Order Pracetak',
@@ -38,7 +38,7 @@ class SuratOrder extends CI_Controller {
 
 	public function proses()
 	{
-		if(isset($_POST['add'])){
+		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->so->add($inputan);
 		} else if(isset($_POST['edit'])){
