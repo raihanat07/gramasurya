@@ -48,7 +48,7 @@
               <td>Actions</td>
             </tr>
             </thead>
-            <?php foreach($so as $s => $row) {?>
+            <?php foreach($so as $s => $row) {?>  
             <tr>
               <td align="center"><?= $row->id_order; ?></td>
               <td><?= $row->tanggal_masuk; ?></td>
@@ -60,19 +60,28 @@
               <td><?= $row->oplag; ?></td>
               <td>
                 <?php 
+                  $finishing = "";
                   if($row->bending != null){
-                    echo 'bending, ';}
+                    $finishing .= "bending, ";
+                  }
                   if($row->hard_cover != null){
-                    echo 'hard cover, ';}   
+                    $finishing .= 'hard cover, ';
+                  }   
                   if($row->jahit_benang != null){
-                    echo 'jahit benang, ';} 
+                    $finishing .= 'jahit benang, ';
+                  } 
                   if($row->jahit_kawat != null){
-                    echo 'jahit kawat, ';}    
+                    $finishing .= 'jahit kawat, ';
+                  }    
                   if($row->pond != null){
-                    echo 'pond, ';}   
+                    $finishing .= 'pond, ';
+                  }   
                   if($row->spiral != null){
-                    echo 'Spiral, ';}                                   
-                ?>
+                    $finishing .= 'Spiral, ';
+                  }
+                  $finishing = rtrim($finishing, ", ");
+                  echo $finishing;
+                  ?>
               </td>
               <td><?= $row->so_status; ?></td>
               <td align="center">
