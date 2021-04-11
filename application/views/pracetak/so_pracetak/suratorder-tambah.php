@@ -1,4 +1,4 @@
-Content Header (Page header) -->
+<!-- Content Header (Page header) --> 
 <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -308,7 +308,7 @@ Content Header (Page header) -->
                               <br><label class="form-label">KERTAS COVER 1</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="kertas_cover_1" required>
+                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_cover_1" required>
                                 <option value="">Kertas Cover</option>
                                 <option value="ACCO(isi50)">ACCO(isi50)</option>
                                 <option value="Acquarello white 118">Acquarello white 118</option>
@@ -360,7 +360,7 @@ Content Header (Page header) -->
                               <br><label class="form-label">KERTAS ISI 1</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="kertas_isi_1" required>
+                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_isi_1" required>
                                 <option value="">Kertas Isi</option>
                                 <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
                                 <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
@@ -442,11 +442,11 @@ Content Header (Page header) -->
                           </div>
                           <div class="row">
                             <div class="col-md-3">
-                              <br><label class="form-label">UKURAN KERTAS COVER 1</label>
+                              <br><label class="form-label">UKURAN PLANO COVER 1</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_1" required>
-                                <option value="">Ukuran Kertas Cover</option>
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_cover_1" required>
+                                <option value="">Ukuran plano Cover</option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -466,11 +466,11 @@ Content Header (Page header) -->
                               </select>
                             </div>
                             <div class="col-md-3">
-                              <br><label class="form-label">UKURAN KERTAS ISI 1</label>
+                              <br><label class="form-label">UKURAN PLANO ISI 1</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_1" required>
-                                <option value="">Ukuran Kertas Isi</option>
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_isi_1" required>
+                                <option value="">Ukuran plano Isi</option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -509,7 +509,7 @@ Content Header (Page header) -->
                               <br><label class="form-label">KERTAS COVER 2</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="kertas_cover_2" required>
+                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_cover_2" required>
                                 <option value="">Kertas Cover</option>
                                 <option value="ACCO(isi50)">ACCO(isi50)</option>
                                 <option value="Acquarello white 118">Acquarello white 118</option>
@@ -561,7 +561,7 @@ Content Header (Page header) -->
                               <br><label class="form-label">KERTAS ISI 2</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="kertas_isi_2" required>
+                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_isi_2" required>
                                 <option value="">Kertas Isi</option>
                                 <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
                                 <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
@@ -643,11 +643,11 @@ Content Header (Page header) -->
                           </div>
                           <div class="row">
                             <div class="col-md-3">
-                              <br><label class="form-label">UKURAN KERTAS COVER 2</label>
+                              <br><label class="form-label">UKURAN PLANO COVER 2</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_2" required>
-                                <option value="">Ukuran Kertas Cover</option>
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_cover_2" required>
+                                <option value="">Ukuran plano Cover</option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -667,11 +667,11 @@ Content Header (Page header) -->
                               </select>
                             </div>
                             <div class="col-md-3">
-                              <br><label class="form-label">UKURAN KERTAS ISI 2</label>
+                              <br><label class="form-label">UKURAN PLANO ISI 2</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_2" required>
-                                <option value="">Ukuran Kertas Isi</option>
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_isi_2" required>
+                                <option value="">Ukuran plano Isi</option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -710,7 +710,7 @@ Content Header (Page header) -->
                               <br><label class="form-label">KERTAS COVER 3</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="kertas_cover_3" required>
+                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_cover_3" required>
                                 <option value="">Kertas Cover</option>
                                 <option value="ACCO(isi50)">ACCO(isi50)</option>
                                 <option value="Acquarello white 118">Acquarello white 118</option>
@@ -762,7 +762,7 @@ Content Header (Page header) -->
                               <br><label class="form-label">KERTAS ISI 3</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="kertas_isi_3" required>
+                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_isi_3" required>
                                 <option value="">Kertas Isi</option>
                                 <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
                                 <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
@@ -844,11 +844,11 @@ Content Header (Page header) -->
                           </div>
                           <div class="row">
                             <div class="col-md-3">
-                              <br><label class="form-label">UKURAN KERTAS COVER 3</label>
+                              <br><label class="form-label">UKURAN PLANO COVER 3</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_3" required>
-                                <option value="">Ukuran Kertas Cover</option>
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_cover_3" required>
+                                <option value="">Ukuran plano Cover</option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -868,11 +868,11 @@ Content Header (Page header) -->
                               </select>
                             </div>
                             <div class="col-md-3">
-                              <br><label class="form-label">UKURAN KERTAS ISI 3</label>
+                              <br><label class="form-label">UKURAN PLANO ISI 3</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_3" required>
-                                <option value="">Ukuran Kertas Isi</option>
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_isi_3" required>
+                                <option value="">Ukuran plano Isi</option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -1299,11 +1299,11 @@ Content Header (Page header) -->
                           <div class="row">
                             <div class="col-md-6">
                               <br><label class="form-label">KETERANGAN CETAK COVER</label>
-                              <textarea class="form-control" placeholder="keterangan" name="keterangan_finishing_cover"></textarea>
+                              <textarea class="form-control" placeholder="keterangan" name="keterangan_cetak_cover"></textarea>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">KETERANGAN CETAK ISI</label>
-                              <textarea class="form-control" placeholder="keterangan" name="keterangan_finishing_isi"></textarea>
+                              <textarea class="form-control" placeholder="keterangan" name="keterangan_cetak_isi"></textarea>
                             </div>
                           </div>
                         </div>
@@ -1355,17 +1355,17 @@ Content Header (Page header) -->
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_cover_hot_print" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_cover_hot_print" value="hot_print" id="flexCheckDefault">
+                              <input class="form-check-input" type="text" name="finishing_cover_hotprint" value="" hidden>
+                                <input class="form-check-input" type="checkbox" name="finishing_cover_hotprint" value="hotprint" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                  Hot Print
+                                  Hotprint
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_cover_spot" value="" hidden>
-                                <input class="form-check-input" name="finishing_cover_spot" type="checkbox" value="spot" id="flexCheckDefault">
+                              <input class="form-check-input" type="text" name="finishing_cover_spot_uvi" value="" hidden>
+                                <input class="form-check-input" name="finishing_cover_spot_uvi" type="checkbox" value="spot_uvi" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                  Spot
+                                  Spot Ui
                                 </label>
                               </div>
                               <div class="form-check">
@@ -1433,6 +1433,14 @@ Content Header (Page header) -->
                                 <input class="form-check-input" type="checkbox" name="finishing_akhir_spiral" value="spiral" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Spiral
+                                </label>
+                              </div>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="text" name="finishing_akhir_klem" value="" hidden>
+                                <input class="form-check-input" type="checkbox" name="finishing_akhir_klem" value="klem" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Klem
                                 </label>
                               </div>
                             </div>
