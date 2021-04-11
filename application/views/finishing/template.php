@@ -29,7 +29,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#"><i class="fa fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Dashboard/Pracetak</a>
+        <a href="index3.html" class="nav-link">Dashboard/Finishing</a>
       </li>
     </ul>
 
@@ -75,7 +75,7 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fa fa-dashboard"></i>
               <p>
-                PRACETAK
+                Finishing
                 <i class="right fa fa-angle-left"></i>
               </p>
             </a>
