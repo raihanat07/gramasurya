@@ -185,6 +185,7 @@
                               <br><input type="number" class="form-control" name="plat_isi_1" placeholder="Masukan Plat Isi">
                             </div>
                           </div>
+                          <br><hr>
                           <div class="row">
                             <div class="col-md-3">
                               <br><label class="form-label">CTCP COVER 2</label>
@@ -235,6 +236,7 @@
                               <br><input type="number" class="form-control" name="plat_isi_2" placeholder="Masukan Plat Isi">
                             </div>
                           </div>
+                          <br><hr>
                           <div class="row">
                             <div class="col-md-3">
                               <br><label class="form-label">CTCP COVER 3</label>
@@ -504,6 +506,7 @@
                               <br><input type="number" class="form-select form-control" name="jumlah_kertas_isi_1">
                             </div>
                           </div>
+                          <br><hr>
                           <div class="row">
                             <div class="col-md-3">
                               <br><label class="form-label">KERTAS COVER 2</label>
@@ -705,6 +708,7 @@
                               <br><input type="number" class="form-select form-control" name="jumlah_kertas_isi_2" value="Masukan Jumlah Kertas Isi">
                             </div>
                           </div>
+                          <br><hr>
                           <div class="row">
                             <div class="col-md-3">
                               <br><label class="form-label">KERTAS COVER 3</label>
@@ -938,6 +942,7 @@
                               <br><input type="number" class="form-select form-control" name="potong_isi_1">
                             </div>
                           </div>
+                          <br><hr>
                           <div class="row">
                             <div class="col-md-3">
                               <br><label class="form-label">POTONG COVER 2</label>
@@ -952,6 +957,7 @@
                               <br><input type="number" class="form-select form-control" name="potong_isi_2">
                             </div>
                           </div>
+                          <br><hr>
                           <div class="row">
                             <div class="col-md-3">
                               <br><label class="form-label">POTONG COVER 3</label>
@@ -966,6 +972,7 @@
                               <br><input type="number" class="form-select form-control" name="potong_isi_3">
                             </div>
                           </div>
+                          <br><hr>
                           <div class="row">
                             <div class="col-md-6"></div>
                             <div class="col-md-3">
@@ -1077,23 +1084,13 @@
                               <br><input type="text" class="form-select form-control" name="insit_cover_1">
                             </div>
                             <div class="col-md-3">
-                              <br><label class="form-label">WARNA CETAK 1</label>
-                            </div>
-                            <div class="col-md-3">
-                              <br><select class="form-select form-control" name="warna_cetak_1" required>
-                                <option selected value="a"> </option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6"></div>
-                            <div class="col-md-3">
                               <br><label class="form-label">INSIT ISI 1</label>
                             </div>
                             <div class="col-md-3">
                               <br><input type="text" class="form-select form-control" name="insit_isi_1">
                             </div>
                           </div>
+                          <br><hr>
                           <div class="row">
                             <div class="col-md-3">
                               <br><label class="form-label">MESIN COVER 2</label>
@@ -1178,23 +1175,13 @@
                               <br><input type="text" class="form-select form-control" name="insit_cover_2">
                             </div>
                             <div class="col-md-3">
-                              <br><label class="form-label">WARNA CETAK 2</label>
-                            </div>
-                            <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="warna_cetak_2" >
-                                <option selected value="a"> </option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6"></div>
-                            <div class="col-md-3">
                               <br><label class="form-label">INSIT ISI 2</label>
                             </div>
                             <div class="col-md-3">
                               <br><input type="text" class="form-select form-control" name="insit_isi_2">
                             </div>
                           </div>
+                          <br><hr>
                           <div class="row">
                             <div class="col-md-3">
                               <br><label class="form-label">MESIN COVER 3</label>
@@ -1279,23 +1266,13 @@
                               <br><input type="text" class="form-select form-control" name="insit_cover_3">
                             </div>
                             <div class="col-md-3">
-                              <br><label class="form-label">WARNA CETAK 3</label>
-                            </div>
-                            <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="warna_cetak_3">
-                                <option selected value="a"> </option>
-                              </select>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6"></div>
-                            <div class="col-md-3">
                               <br><label class="form-label">INSIT ISI 3</label>
                             </div>
                             <div class="col-md-3">
                               <br><input type="text" class="form-select form-control" name="insit_isi_3">
                             </div>
                           </div>
+                          <br><hr>
                           <div class="row">
                             <div class="col-md-6">
                               <br><label class="form-label">KETERANGAN CETAK COVER</label>
@@ -1334,42 +1311,42 @@
                           <div class="row">
                             <div class="col-md-4">
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_cover_doff" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_cover_doff" value="" hidden>
                                 <input class="form-check-input" type="checkbox" name="finishing_cover_doff" value="doff" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Doff
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_cover_emboss" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_cover_emboss" value="" hidden>
                                 <input class="form-check-input" type="checkbox" name="finishing_cover_emboss" value="emboss" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Emboss
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_cover_glossy" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_cover_glossy" value="" hidden>
                                 <input class="form-check-input" type="checkbox" name="finishing_cover_glossy" value="glossy" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Glossy
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_cover_hotprint" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_cover_hotprint" value="" hidden>
                                 <input class="form-check-input" type="checkbox" name="finishing_cover_hotprint" value="hotprint" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Hotprint
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_cover_spot_uvi" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_cover_spot_uvi" value="" hidden>
                                 <input class="form-check-input" name="finishing_cover_spot_uvi" type="checkbox" value="spot_uvi" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Spot Ui
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_cover_uvi" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_cover_uvi" value="" hidden>
                                 <input class="form-check-input" type="checkbox" name="finishing_cover_uvi" value="uvi" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Uvi
@@ -1378,14 +1355,14 @@
                             </div>
                             <div class="col-md-4">
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_isi_lipat" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_isi_lipat" value="" hidden>
                                 <input class="form-check-input" type="checkbox" name="finishing_isi_lipat" value="lipat" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Lipat
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_isi_susun" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_isi_susun" value="" hidden>
                                 <input class="form-check-input" type="checkbox" name="finishing_isi_susun" value="susun" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Susun
@@ -1394,53 +1371,52 @@
                             </div>
                             <div class="col-md-4">
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_akhir_bending" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_akhir_bending" value="" hidden>
                                 <input class="form-check-input" type="checkbox" name="finishing_akhir_bending" value="bending" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Bending
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_akhir_hard_cover" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_akhir_hard_cover" value="" hidden>
                                 <input class="form-check-input" type="checkbox" name="finishing_akhir_hard_cover" value="hard_cover" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Hard Cover
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_akhir_jahit_benang" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_akhir_jahit_benang" value="" hidden>
                                 <input class="form-check-input" name="finishing_akhir_jahit_benang" type="checkbox" value="jahit_benang" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Jahit Benang
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_akhir_jahit_kawat" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_akhir_jahit_kawat" value="" hidden>
                                 <input class="form-check-input" type="checkbox" name="finishing_akhir_jahit_kawat" value="jahit_kawat" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Jahit Kawat
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_akhir_pond" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_akhir_klem" value="" hidden>
+                                <input class="form-check-input" type="checkbox" name="finishing_akhir_klem" value="klem" id="flexCheckDefault">
+                                <label class="form-check-label" for="flexCheckDefault">
+                                  Klem
+                                </label>
+                              </div>
+                              <div class="form-check">
+                                <input class="form-check-input" type="text" name="finishing_akhir_pond" value="" hidden>
                                 <input class="form-check-input" type="checkbox" name="finishing_akhir_pond" value="pond" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Pond
                                 </label>
                               </div>
                               <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_akhir_spiral" value="" hidden>
+                                <input class="form-check-input" type="text" name="finishing_akhir_spiral" value="" hidden>
                                 <input class="form-check-input" type="checkbox" name="finishing_akhir_spiral" value="spiral" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Spiral
-                                </label>
-                              </div>
-                            </div>
-                            <div class="form-check">
-                              <input class="form-check-input" type="text" name="finishing_akhir_klem" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_akhir_klem" value="klem" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                  Klem
                                 </label>
                               </div>
                             </div>

@@ -26,7 +26,6 @@
           <table id="example2" class="table table-bordered table-hover" style="font-size: 12px">
             <thead>
             <tr align="center">
-            <tr align="center">
               <td>Nomor SO</td>
               <td>Tanggal Masuk</td>
               <td>Deadline</td>
