@@ -36,41 +36,71 @@
           <div class="card-body">
             <form action="<?=site_url('pracetak/SuratOrder/proses')?>" method="POST">            
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-2" align="right">
                   <br><label class="form-label">Nomor SO</label>
-                  <input type="text" class="form-control" name="nomor_so" placeholder="Masukan Nomor SO" required>
                 </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Tanggal Masuk</label>
-                  <input type="date" class="form-control" name="tanggal_masuk" placeholder="Tanggal Masuk" required>
+                <div class="col-md-2">
+                  <br><input type="text" class="form-control" name="nomor_so" placeholder="Masukan Nomor SO" required>
                 </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Deadline</label>
-                  <input type="date" class="form-control" name="deadline" placeholder="Deadline" required>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-2" align="right">
                   <br><label class="form-label">Nama Pemesan</label>
-                  <input type="text" class="form-control" name="nama_pemesan" placeholder="Masukan Nama Pemesan" required>
                 </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Nama Orderan</label>
-                  <input type="text" class="form-control" name="nama_orderan" placeholder="Masukan Orderan" required>
+                <div class="col-md-2">
+                  <br><input type="text" class="form-control" name="nama_pemesan" placeholder="Masukan Nama Pemesan" required>
                 </div>
-                <div class="col-md-4">
-                  <br><label class="form-label">Ukuran</label>
-                  <input type="text" class="form-control" name="ukuran" placeholder="Masukan Ukuran" required>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-2" align="right">
                   <br><label class="form-label">Halaman</label>
-                  <input type="text" class="form-control" name="halaman" placeholder="Masukan Hal" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
+                  <br><input type="text" class="form-control" name="halaman" placeholder="Masukan Hal" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2" align="right">
+                  <br><label class="form-label">Tanggal Masuk</label>
+                </div>
+                <div class="col-md-2">
+                  <br><input type="date" class="form-control" name="tanggal_masuk" placeholder="Tanggal Masuk" required>
+                </div>
+                <div class="col-md-2" align="right">
+                  <br><label class="form-label">Nama Orderan</label>
+                </div>
+                <div class="col-md-2">
+                  <br><input type="text" class="form-control" name="nama_orderan" placeholder="Masukan Orderan" required>
+                </div>
+                <div class="col-md-2" align="right">
                   <br><label class="form-label">Oplag</label>
-                  <input type="number" class="form-control" name="oplag" placeholder="Masukan Oplag" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-2">
+                  <br><input type="number" class="form-control" name="oplag" placeholder="Masukan Oplag" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-2" align="right">
+                  <br><label class="form-label">Deadline</label>
+                </div>
+                <div class="col-md-2">
+                  <br><input type="date" class="form-control" name="deadline" placeholder="Deadline" required>
+                </div>
+                <div class="col-md-2" align="right">
+                  <br><label class="form-label">Ukuran</label>
+                </div>
+                <div class="col-md-2">
+                  <br><input type="text" class="form-control" name="ukuran" placeholder="Masukan Ukuran" required>
+                </div>
+                <div class="col-md-2" align="right">
+                  <br><label class="form-label">Finsihing Akhir</label>
+                </div>
+                <div class="col-md-2">
+                  <br><input type="text" class="form-control" name="finishing_akhir" placeholder="Masukan Oplag" required>
+                </div>
+              </div>
+              <div class="row" align="right">
+                <div class="col-md-2">
                   <br><label class="form-label">Status</label>
-                  <input type="text" class="form-control" name="so_status" value="marketing" hidden>
+                </div>
+                <div class="col-md-2">
+                  <br><input type="text" class="form-control" name="so_status" value="marketing" hidden>
                   <input type="text" class="form-control" value="marketing" disabled>
                 </div>
               </div><br>
@@ -81,6 +111,7 @@
                       <ul class="nav nav-pills">
                         <li class="nav-item"><a class="nav-link active" href="#ctcp" data-toggle="tab">CTCP</a></li>
                         <li class="nav-item"><a class="nav-link" href="#kertas" data-toggle="tab">KERTAS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#potong" data-toggle="tab">POTONG</a></li>
                         <li class="nav-item"><a class="nav-link" href="#cetak" data-toggle="tab">CETAK</a></li>
                         <li class="nav-item"><a class="nav-link" href="#finish" data-toggle="tab">FINISHING</a></li>
                       </ul>
@@ -105,9 +136,11 @@
                             </div>
                           </div>
                           <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">CTCP COVER 1</label>
-                              <select id="inputState" class="form-select form-control" name="ctcp_cover_1" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="ctcp_cover_1" required>
                                 <option value="">CTCP Cover</option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
@@ -120,9 +153,11 @@
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">CTCP ISI 1</label>
-                              <select id="inputState" class="form-select form-control" name="ctcp_isi_1" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="ctcp_isi_1" required>
                                 <option value="">CTCP Isi</option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
@@ -135,17 +170,27 @@
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">PLAT COVER 1</label>
-                              <input type="number" class="form-control" name="plat_cover_1" placeholder="Masukan Plat Cover" name="plat_cover_1">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-control" name="plat_cover_1" placeholder="Masukan Plat Cover" name="plat_cover_1">
+                            </div>
+                            <div class="col-md-3">
                               <br><label class="form-label">PLAT ISI 1</label>
-                              <input type="number" class="form-control" name="plat_isi_1" placeholder="Masukan Plat Isi">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-control" name="plat_isi_1" placeholder="Masukan Plat Isi">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">CTCP COVER 2</label>
-                              <select id="inputState" class="form-select form-control" name="ctcp_cover_2" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="ctcp_cover_2" required>
                                 <option value="">CTCP Cover</option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
@@ -158,9 +203,11 @@
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">CTCP ISI 2</label>
-                              <select id="inputState" class="form-select form-control" name="ctcp_isi_2" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="ctcp_isi_2" required>
                                 <option value="">CTCP Isi</option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
@@ -173,17 +220,27 @@
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">PLAT COVER 2</label>
-                              <input type="number" class="form-control" name="plat_cover_2" placeholder="Masukan Plat Cover">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-control" name="plat_cover_2" placeholder="Masukan Plat Cover">
+                            </div>
+                            <div class="col-md-3">
                               <br><label class="form-label">PLAT ISI 2</label>
-                              <input type="number" class="form-control" name="plat_isi_2" placeholder="Masukan Plat Isi">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-control" name="plat_isi_2" placeholder="Masukan Plat Isi">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">CTCP COVER 3</label>
-                              <select id="inputState" class="form-select form-control" name="ctcp_cover_3" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="ctcp_cover_3" required>
                                 <option value="">CTCP Cover</option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
@@ -196,9 +253,11 @@
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">CTCP ISI 3</label>
-                              <select id="inputState" class="form-select form-control" name="ctcp_isi_3" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="ctcp_isi_3" required>
                                 <option value="">CTCP Isi</option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
@@ -211,13 +270,19 @@
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">PLAT COVER 3</label>
-                              <input type="number" class="form-control" name="plat_cover_3" placeholder="Masukan Plat Cover">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-control" name="plat_cover_3" placeholder="Masukan Plat Cover">
+                            </div>
+                            <div class="col-md-3">
                               <br><label class="form-label">PLAT ISI 3</label>
-                              <input type="number" class="form-control" name="plat_isi_3" placeholder="Masukan Plat Isi">
+                            </div>
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-control" name="plat_isi_3" placeholder="Masukan Plat Isi">
                             </div>
                           </div>
                         </div>
@@ -239,9 +304,11 @@
                             </div>
                           </div>
                           <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">KERTAS COVER 1</label>
-                              <select id="inputState" class="form-select form-control" name="kertas_cover_1" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="kertas_cover_1" required>
                                 <option value="">Kertas Cover</option>
                                 <option value="ACCO(isi50)">ACCO(isi50)</option>
                                 <option value="Acquarello white 118">Acquarello white 118</option>
@@ -289,9 +356,11 @@
                                 <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">KERTAS ISI 1</label>
-                              <select id="inputState" class="form-select form-control" name="kertas_isi_1" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="kertas_isi_1" required>
                                 <option value="">Kertas Isi</option>
                                 <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
                                 <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
@@ -370,9 +439,13 @@
                                 <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">UKURAN KERTAS COVER 1</label>
-                              <select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_1" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_1" required>
                                 <option value="">Ukuran Kertas Cover</option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
@@ -392,9 +465,11 @@
                                 <option value="120 x 16">120 x 16</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">UKURAN KERTAS ISI 1</label>
-                              <select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_1" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_1" required>
                                 <option value="">Ukuran Kertas Isi</option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
@@ -414,17 +489,27 @@
                                 <option value="120 x 16">120 x 16</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">JUMLAH KERTAS COVER 1</label>
-                              <input type="number" class="form-select form-control" name="jumlah_kertas_cover_1">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="jumlah_kertas_cover_1">
+                            </div>
+                            <div class="col-md-3">
                               <br><label class="form-label">JUMLAH KERTAS ISI 1</label>
-                              <input type="number" class="form-select form-control" name="jumlah_kertas_isi_1">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="jumlah_kertas_isi_1">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">KERTAS COVER 2</label>
-                              <select id="inputState" class="form-select form-control" name="kertas_cover_2" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="kertas_cover_2" required>
                                 <option value="">Kertas Cover</option>
                                 <option value="ACCO(isi50)">ACCO(isi50)</option>
                                 <option value="Acquarello white 118">Acquarello white 118</option>
@@ -472,9 +557,11 @@
                                 <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">KERTAS ISI 2</label>
-                              <select id="inputState" class="form-select form-control" name="kertas_isi_2" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="kertas_isi_2" required>
                                 <option value="">Kertas Isi</option>
                                 <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
                                 <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
@@ -553,9 +640,13 @@
                                 <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">UKURAN KERTAS COVER 2</label>
-                              <select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_2" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_2" required>
                                 <option value="">Ukuran Kertas Cover</option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
@@ -575,9 +666,11 @@
                                 <option value="120 x 16">120 x 16</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">UKURAN KERTAS ISI 2</label>
-                              <select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_2" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_2" required>
                                 <option value="">Ukuran Kertas Isi</option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
@@ -597,17 +690,27 @@
                                 <option value="120 x 16">120 x 16</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">JUMLAH KERTAS COVER 2</label>
-                              <input type="number" class="form-select form-control" name="jumlah_kertas_cover_2">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="jumlah_kertas_cover_2" value="Masukan Jumlah Kertas Cover">
+                            </div>
+                            <div class="col-md-3">
                               <br><label class="form-label">JUMLAH KERTAS ISI 2</label>
-                              <input type="number" class="form-select form-control" name="jumlah_kertas_isi_2">                                
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="jumlah_kertas_isi_2" value="Masukan Jumlah Kertas Isi">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">KERTAS COVER 3</label>
-                              <select id="inputState" class="form-select form-control" name="kertas_cover_3" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="kertas_cover_3" required>
                                 <option value="">Kertas Cover</option>
                                 <option value="ACCO(isi50)">ACCO(isi50)</option>
                                 <option value="Acquarello white 118">Acquarello white 118</option>
@@ -655,9 +758,11 @@
                                 <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">KERTAS ISI 3</label>
-                              <select id="inputState" class="form-select form-control" name="kertas_isi_3" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="kertas_isi_3" required>
                                 <option value="">Kertas Isi</option>
                                 <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
                                 <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
@@ -736,9 +841,13 @@
                                 <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">UKURAN KERTAS COVER 3</label>
-                              <select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_3" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_kertas_cover_3" required>
                                 <option value="">Ukuran Kertas Cover</option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
@@ -758,9 +867,11 @@
                                 <option value="120 x 16">120 x 16</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">UKURAN KERTAS ISI 3</label>
-                              <select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_3" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_kertas_isi_3" required>
                                 <option value="">Ukuran Kertas Isi</option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
@@ -780,13 +891,88 @@
                                 <option value="120 x 16">120 x 16</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">JUMLAH KERTAS COVER 3</label>
-                              <input type="number" class="form-select form-control" name="jumlah_kertas_cover_3">
+                            </div>
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="jumlah_kertas_cover_3">
+                            </div>
+                            <div class="col-md-3">
+                              <br><label class="form-label">JUMLAH KERTAS ISI 3</label>
+                            </div>
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="jumlah_kertas_isi_3">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="tab-pane" id="potong">
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="card border border-success">
+                                <div class="card-header text-center">
+                                  POTONG COVER
+                                </div>
+                              </div>
                             </div>
                             <div class="col-md-6">
-                              <br><label class="form-label">JUMLAH KERTAS ISI 3</label>
-                              <input type="number" class="form-select form-control" name="jumlah_kertas_isi_3">
+                              <div class="card border border-success">
+                                <div class="card-header text-center">
+                                  POTONG ISI
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <br><label class="form-label">POTONG COVER 1</label>
+                            </div>
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="potong_cover_1">
+                            </div>
+                            <div class="col-md-3">
+                              <br><label class="form-label">POTONG ISI 1</label>
+                            </div>
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="potong_isi_1">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <br><label class="form-label">POTONG COVER 2</label>
+                            </div>
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="potong_cover_2">
+                            </div>
+                            <div class="col-md-3">
+                              <br><label class="form-label">POTONG ISI 2</label>
+                            </div>
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="potong_isi_2">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <br><label class="form-label">POTONG COVER 3</label>
+                            </div>
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="potong_cover_3">
+                            </div>
+                            <div class="col-md-3">
+                              <br><label class="form-label">POTONG ISI 3</label>
+                            </div>
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="potong_isi_3">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-3">
+                              <br><label class="form-label">POTONG ISI 4</label>
+                            </div>
+                            <div class="col-md-3">
+                              <br><input type="number" class="form-select form-control" name="potong_isi_4">
                             </div>
                           </div>
                         </div>
@@ -808,9 +994,11 @@
                             </div>
                           </div>
                           <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">MESIN COVER 1</label>
-                              <select id="inputState" class="form-select form-control" name="mesin_cover_1" required>
+                             </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="mesin_cover_1" required>
                                 <option value="">Mesin Cover</option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
@@ -824,9 +1012,11 @@
                                 <option value="Print digital">Print digital</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">MESIN ISI 1</label>
-                              <select id="inputState" class="form-select form-control" name="mesin_isi_1" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="mesin_isi_1" required>
                                 <option value="">Mesin Isi</option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
@@ -840,9 +1030,13 @@
                                 <option value="Print digital">Print digital</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">WARNA COVER 1</label>
-                              <select id="inputState" class="form-select form-control" name="warna_cover_1" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="warna_cover_1" required>
                                 <option value="">Warna Cover</option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
@@ -856,9 +1050,11 @@
                                 <option value="4/4">4/4</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">WARNA ISI 1</label>
-                              <select id="inputState" class="form-select form-control" name="warna_isi_1" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="warna_isi_1" required>
                                 <option value="">Warna Isi</option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
@@ -872,24 +1068,38 @@
                                 <option value="4/4">4/4</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">INSIT COVER 1</label>
-                              <input type="text" class="form-select form-control" name="insit_cover_1">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                              <br><input type="text" class="form-select form-control" name="insit_cover_1">
+                            </div>
+                            <div class="col-md-3">
                               <br><label class="form-label">WARNA CETAK 1</label>
-                              <select class="form-select form-control" name="warna_cetak_1" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select class="form-select form-control" name="warna_cetak_1" required>
                                 <option selected value="a"> </option>
                               </select>
                             </div>
+                          </div>
+                          <div class="row">
                             <div class="col-md-6"></div>
-                            <div class="col-md-6">
-                              <br><label class="form-label">INSIT ISI 2</label>
-                              <input type="text" class="form-select form-control" name="insit_isi_2">
+                            <div class="col-md-3">
+                              <br><label class="form-label">INSIT ISI 1</label>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
+                              <br><input type="text" class="form-select form-control" name="insit_isi_1">
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">MESIN COVER 2</label>
-                              <select id="inputState" class="form-select form-control" name="mesin_cover_2" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="mesin_cover_2" required>
                                 <option value="">Mesin Cover</option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
@@ -903,9 +1113,11 @@
                                 <option value="Print digital">Print digital</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">MESIN ISI 2</label>
-                              <select id="inputState" class="form-select form-control" name="mesin_isi_2" required>
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="mesin_isi_2" required>
                                 <option value="">Mesin Isi</option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
@@ -919,6 +1131,8 @@
                                 <option value="Print digital">Print digital</option>
                               </select>
                             </div>
+                          </div>
+                          <div class="row">
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA COVER 2</label>
                               <select id="inputState" class="form-select form-control" name="warna_cover_2" required>
@@ -951,6 +1165,8 @@
                                 <option value="4/4">4/4</option>
                               </select>
                             </div>
+                          </div>
+                          <div class="row">
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT COVER 2</label>
                               <input type="text" class="form-select form-control" name="insit_cover_2">
@@ -961,11 +1177,15 @@
                                 <option selected value="a"> </option>
                               </select>
                             </div>
+                          </div>
+                          <div class="row">
                             <div class="col-md-6"></div>
                             <div class="col-md-6">
                               <br><label class="form-label">INSIT ISI 2</label>
                               <input type="text" class="form-select form-control" name="insit_isi_2">
                             </div>
+                          </div>
+                          <div class="row">
                             <div class="col-md-6">
                               <br><label class="form-label">MESIN COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="mesin_cover_3" required>
@@ -998,6 +1218,8 @@
                                 <option value="Print digital">Print digital</option>
                               </select>
                             </div>
+                          </div>
+                          <div class="row">
                             <div class="col-md-6">
                               <br><label class="form-label">WARNA COVER 3</label>
                               <select id="inputState" class="form-select form-control" name="warna_cover_3" required>
@@ -1030,20 +1252,28 @@
                                 <option value="4/4">4/4</option>
                               </select>
                             </div>
-                            <div class="col-md-6">
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
                               <br><label class="form-label">INSIT COVER 3</label>
                               <input type="text" class="form-select form-control" name="insit_cover_3">
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">WARNA CETAK 3</label>
-                              <select id="inputState" class="form-select form-control" name="warna_cetak_3">
+                            </div>
+                            <div class="col-md-3">
+                              <br><select id="inputState" class="form-select form-control" name="warna_cetak_3">
                                 <option selected value="a"> </option>
                               </select>
                             </div>
+                          </div>
+                          <div class="row">
                             <div class="col-md-6"></div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                               <br><label class="form-label">INSIT ISI 3</label>
-                              <input type="text" class="form-select form-control" name="insit_isi_3">
+                            </div>
+                            <div class="col-md-3">
+                              <br><input type="text" class="form-select form-control" name="insit_isi_3">
                             </div>
                           </div>
                         </div>
