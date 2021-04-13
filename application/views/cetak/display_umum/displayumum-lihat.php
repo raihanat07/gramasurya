@@ -28,47 +28,47 @@
         <div class="card-body">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-md-4">
-                        <br>Nomor SO
-                        <br><label class="form-label">2021.04.829</label>
-                    </div>
-                    <div class="col-md-4">
-                        <br>Nama Pemesan
-                        <br><label class="form-label">UAD</label>
-                    </div>
-                    <div class="col-md-4">
-                        <br>Halaman
-                        <br><label class="form-label">12</label>
-                    </div>
+                <div class="col-md-4">
+                  <br>Nomor SO
+                  <br><label class="form-label">2021.04.829</label>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <br>anggal Masuk
-                        <br><label class="form-label">10 04 2021</label>
-                    </div>
-                    <div class="col-md-4">
-                        <br>Nama Orderan
-                        <br><label class="form-label">Buku PMB</label>
-                    </div>
-                    <div class="col-md-4">
-                        <br>Oplag
-                        <br><label class="form-label">200</label>
-                    </div>
+                <div class="col-md-4">
+                  <br>Nama Pemesan
+                  <br><label class="form-label">UAD</label>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <br>Deadline
-                        <br><label class="form-label">10 05 2021</label>
-                    </div>
-                    <div class="col-md-4">
-                        <br>Ukuran
-                        <br><label class="form-label">18 x 26.5</label>
-                    </div>
-                    <div class="col-md-4">
-                        <br>Finsihing Akhir
-                        <br><label class="form-label">Jahit Kawat</label>
-                    </div>
+                <div class="col-md-4">
+                  <br>Halaman
+                  <br><label class="form-label">12</label>
                 </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <br>anggal Masuk
+                  <br><label class="form-label">10 04 2021</label>
+                </div>
+                <div class="col-md-4">
+                  <br>Nama Orderan
+                  <br><label class="form-label">Buku PMB</label>
+                </div>
+                <div class="col-md-4">
+                  <br>Oplag
+                  <br><label class="form-label">200</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <br>Deadline
+                  <br><label class="form-label">10 05 2021</label>
+                </div>
+                <div class="col-md-4">
+                  <br>Ukuran
+                  <br><label class="form-label">18 x 26.5</label>
+                </div>
+                <div class="col-md-4">
+                  <br>Finsihing Akhir
+                  <br><label class="form-label">Jahit Kawat</label>
+                </div>
+              </div>
                 <!-- VER 1.0 START -->
                 <!-- <br><div class="card" style="background: #A9A9A9">
                     <div class="row">
@@ -302,7 +302,7 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-            <a href="<?=site_url()?>pracetak" class="btn btn-default float-right">Kembali</a>
+            <a href="<?=site_url()?>cetak/DisplayUmum" class="btn btn-default float-right">Kembali</a>
         </div>
         <!-- /.card-footer-->
       </div>

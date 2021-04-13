@@ -81,44 +81,68 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak"
-                    <?php  if($judul == "Surat Order Pracetak"){?>
+                <a href="<?=site_url()?>cetak/DisplayUmum" 
+                <?php  if($judul == "Display Umum Cetak" || $judul == "Lihat Display Umum"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Surat Order</p>
+                  <p>Display Umum</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak/Imposisi" 
-                <?php  if($judul == "Imposisi"){?>
+                <a href="<?=site_url()?>cetak/DisplayCetak"
+                    <?php  if($judul == "Display Cetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Imposisi</p>
+                  <p>Display Cetak</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak/Ctcp" 
-                 <?php  if($judul == "CTCP" || $judul == "Edit Ctcp Pracetak"){?>
+                <a href="<?=site_url()?>cetak/Spk"
+                    <?php  if($judul == "SPK Cetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>CTCP</p>
+                  <p>SPK</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak/Laporan" 
-                 <?php  if($judul == "Laporan"){?>
+                <a href="<?=site_url()?>cetak/JadwalUmum" 
+                <?php  if($judul == "Jadwal Umum Cetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Jadwal Umum</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>cetak/JadwalMesin" 
+                 <?php  if($judul == "Jadwal Mesin Cetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Jadwal Mesin</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>cetak/Laporan" 
+                 <?php  if($judul == "Laporan Cetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"

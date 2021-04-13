@@ -89,14 +89,6 @@
                   <br><input type="text" class="form-control" name="ukuran" placeholder="Masukan Ukuran" required>
                 </div>
                 <div class="col-md-2" align="right">
-                  <br><label class="form-label">Finsihing Akhir</label>
-                </div>
-                <div class="col-md-2">
-                  <br><input type="text" class="form-control" name="finishing_akhir" placeholder="Masukan Oplag" required>
-                </div>
-              </div>
-              <div class="row" align="right">
-                <div class="col-md-2">
                   <br><label class="form-label">Status</label>
                 </div>
                 <div class="col-md-2">
@@ -930,13 +922,15 @@
                           </div>
                           <div class="row">
                             <div class="col-md-3">
-                              <br><label class="form-label">POTONG COVER 1</label>
+                              <br><label class="form-label">POTONG COVER 1 </label>
+                              <i class="fa fa-crop" style="font-size:18px"></i>
                             </div>
                             <div class="col-md-3">
                               <br><input type="number" class="form-select form-control" name="potong_cover_1">
                             </div>
                             <div class="col-md-3">
                               <br><label class="form-label">POTONG ISI 1</label>
+                              <i class="fa fa-crop" style="font-size:18px"></i>
                             </div>
                             <div class="col-md-3">
                               <br><input type="number" class="form-select form-control" name="potong_isi_1">
@@ -946,12 +940,14 @@
                           <div class="row">
                             <div class="col-md-3">
                               <br><label class="form-label">POTONG COVER 2</label>
+                              <i class="fa fa-crop" style="font-size:18px"></i>
                             </div>
                             <div class="col-md-3">
                               <br><input type="number" class="form-select form-control" name="potong_cover_2">
                             </div>
                             <div class="col-md-3">
                               <br><label class="form-label">POTONG ISI 2</label>
+                              <i class="fa fa-crop" style="font-size:18px"></i>
                             </div>
                             <div class="col-md-3">
                               <br><input type="number" class="form-select form-control" name="potong_isi_2">
@@ -961,12 +957,14 @@
                           <div class="row">
                             <div class="col-md-3">
                               <br><label class="form-label">POTONG COVER 3</label>
+                              <i class="fa fa-crop" style="font-size:18px"></i>
                             </div>
                             <div class="col-md-3">
                               <br><input type="number" class="form-select form-control" name="potong_cover_3">
                             </div>
                             <div class="col-md-3">
                               <br><label class="form-label">POTONG ISI 3</label>
+                              <i class="fa fa-crop" style="font-size:18px"></i>
                             </div>
                             <div class="col-md-3">
                               <br><input type="number" class="form-select form-control" name="potong_isi_3">
@@ -977,6 +975,7 @@
                             <div class="col-md-6"></div>
                             <div class="col-md-3">
                               <br><label class="form-label">POTONG ISI 4</label>
+                              <i class="fa fa-crop" style="font-size:18px"></i>
                             </div>
                             <div class="col-md-3">
                               <br><input type="number" class="form-select form-control" name="potong_isi_4">

@@ -30,66 +30,47 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-md-4">
-                    No SO CU<br>
-                    <label class="form-label">SO 2021.4.798</label>
+                    <br>Nomor SO
+                    <br><label class="form-label">2021.04.829</label>
                 </div>
                 <div class="col-md-4">
-                    Nama Pemesan<br>
-                    <label class="form-label">GRAMASURYA</label>
+                    <br>Nama Pemesan
+                    <br><label class="form-label">UAD</label>
                 </div>
                 <div class="col-md-4">
-                    Ukuran<br>
-                    <label class="form-label">21*10.5</label>
+                    <br>Halaman
+                    <br><label class="form-label">12</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <br>anggal Masuk
+                    <br><label class="form-label">10 04 2021</label>
                 </div>
                 <div class="col-md-4">
-                    Tanggal Masuk<br>
-                    <label class="form-label">23 Maret 2021</label>
+                    <br>Nama Orderan
+                    <br><label class="form-label">Buku PMB</label>
                 </div>
                 <div class="col-md-4">
-                    Nama Order<br>
-                    <label class="form-label">Nota Tanda Terima</label>
+                    <br>Oplag
+                    <br><label class="form-label">200</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <br>Deadline
+                    <br><label class="form-label">10 05 2021</label>
                 </div>
                 <div class="col-md-4">
-                    Halaman<br>
-                    <label class="form-label">1</label>
+                    <br>Ukuran
+                    <br><label class="form-label">18 x 26.5</label>
                 </div>
                 <div class="col-md-4">
-                    Deadline<br>
-                    <label class="form-label">15 Juni 2021</label>
+                    <br>Finsihing Akhir
+                    <br><label class="form-label">Jahit Kawat</label>
                 </div>
-                <div class="col-md-4">
-                    Kode Order<br>
-                    <label class="form-label">Barang Cetakan</label>
-                </div>
-                <div class="col-md-4">
-                    Oplag<br>
-                    <label class="form-label">3</label>
-                </div>
-                <div class="col-md-4">
-                    Catatan<br>
-                    <label class="form-label">NCR Putih, Kuning Pink @ 1RIM</label>
-                </div>
-                <div class="col-md-2">
-                    Kapasistas Mesin<br>
-                    Mesin 102<br>
-                    Mesin 74<br>
-                </div>
-                <div class="col-md-2">
-                    <br>
-                    : 130 LPH<br>
-                    : 190 LPH
-                </div>
-                <div class="col-md-2">
-                    <br>
-                    Mesin Tokko<br>
-                    Ket LPH
-                </div>
-                <div class="col-md-2">
-                    <br>
-                    : 500 LPH<br>
-                    : Lembar Per Hari
-                </div>
-            </div><br>
+            </div>
+            <br><hr><br>
             <div class="row">
                 <div class="col-md-3">
                     <label>Stok Plate 102</label>
