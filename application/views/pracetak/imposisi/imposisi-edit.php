@@ -36,25 +36,25 @@
     </div>
     <div class="card-body">
         <div class="card-body">
-            <form>        
+            <form action="" method="post">        
                 <div class="row">
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Nomor SO</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nomor_so" placeholder="Masukan Nomor SO" required>
+                        <br><input type="text" class="form-control" name="nomor_so" value="<?=$this->input->post('nomor_so') ? $this->input->post('nomor_so') : $row->nomor_so ?>" placeholder="Masukan Nomor SO" required>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Nama Pemesan</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nama_pemesan" placeholder="Masukan Nama Pemesan" required>
+                        <br><input type="text" class="form-control" name="nama_pemesan" value="<?=$this->input->post('nama_pemesan') ? $this->input->post('nama_pemesan') : $row->nama_pemesan ?>" placeholder="Masukan Nama Pemesan" required>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Halaman</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="halaman" placeholder="Masukan Hal" required>
+                        <br><input type="text" class="form-control" name="halaman" value="<?=$this->input->post('halaman') ? $this->input->post('halaman') : $row->halaman ?>" placeholder="Masukan Hal" required>
                     </div>
                 </div>
                 <div class="row">
@@ -62,19 +62,19 @@
                         <br><label class="form-label">Tanggal Masuk</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="date" class="form-control" name="tanggal_masuk" placeholder="Tanggal Masuk" required>
+                        <br><input type="date" class="form-control" name="tanggal_masuk" value="<?=$this->input->post('tanggal_masuk') ? $this->input->post('tanggal_masuk') : $row->tanggal_masuk ?>" placeholder="Tanggal Masuk" required>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Nama Orderan</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nama_orderan" placeholder="Masukan Orderan" required>
+                        <br><input type="text" class="form-control" name="nama_orderan" value="<?=$this->input->post('nama_orderan') ? $this->input->post('nama_orderan') : $row->nama_orderan ?>" placeholder="Masukan Orderan" required>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Oplag</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="number" class="form-control" name="oplag" placeholder="Masukan Oplag" required>
+                        <br><input type="number" class="form-control" name="oplag" value="<?=$this->input->post('oplag') ? $this->input->post('oplag') : $row->oplag ?>" placeholder="Masukan Oplag" required>
                     </div>
                 </div>
                 <div class="row">
@@ -82,19 +82,19 @@
                         <br><label class="form-label">Deadline</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="date" class="form-control" name="deadline" placeholder="Deadline" required>
+                        <br><input type="date" class="form-control" name="deadline" value="<?=$this->input->post('deadline') ? $this->input->post('deadline') : $row->deadline ?>" placeholder="Deadline" required>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Ukuran</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="ukuran" placeholder="Masukan Ukuran" required>
+                        <br><input type="text" class="form-control" name="ukuran" value="<?=$this->input->post('ukuran') ? $this->input->post('ukuran') : $row->ukuran ?>" placeholder="Masukan Ukuran" required>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Finishing Akhir</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="finishing_akhir" placeholder="Finishing Akhir" required>
+                        <br><input type="text" class="form-control" name="finishing_akhir" value="<?=$this->input->post('finishing_akhir') ? $this->input->post('finishing_akhir') : $row->finishing_akhir ?>" placeholder="Finishing Akhir" required>
                     </div>
                 </div>
                 <br><hr><br>

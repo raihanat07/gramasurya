@@ -38,25 +38,51 @@
               <td>Actions</td>
             </tr>
             </thead>
+            <?php foreach($imposisi as $s => $row) {?>  
             <tr>
-              <td align="center">Nomor SO</td>
-              <td>Tanggal Masuk</td>
-              <td>Deadline</td>
-              <td>Nama Pemesan</td>
-              <td>Nama Orderan</td>
-              <td>Ukuran</td>
-              <td>Halaman</td>
-              <td>Finishing Akhir</td>
-              <td>Status</td>
+              <td align="center"><?= $row->id_order; ?></td>
+              <td><?= $row->tanggal_masuk; ?></td>
+              <td><?= $row->deadline; ?></td>
+              <td><?= $row->nama_pemesan; ?></td>
+              <td><?= $row->nama_orderan; ?></td>
+              <td><?= $row->ukuran; ?></td>
+              <td><?= $row->halaman; ?></td>
+              <td>
+                <?php 
+                  $finishing = "";
+                  if($row->bending != null){
+                    $finishing .= "bending, ";
+                  }
+                  if($row->hard_cover != null){
+                    $finishing .= 'hard cover, ';
+                  }   
+                  if($row->jahit_benang != null){
+                    $finishing .= 'jahit benang, ';
+                  } 
+                  if($row->jahit_kawat != null){
+                    $finishing .= 'jahit kawat, ';
+                  }    
+                  if($row->pond != null){
+                    $finishing .= 'pond, ';
+                  }   
+                  if($row->spiral != null){
+                    $finishing .= 'Spiral, ';
+                  }
+                  $finishing = rtrim($finishing, ", ");
+                  echo $finishing;
+                  ?>
+              </td>
+              <td><?= $row->so_status; ?></td>
               <td align="center">
-                <a href="<?=site_url('pracetak/Imposisi/lihat_imposisi')?>">
+                <a href="<?=site_url('pracetak/Imposisi/lihat_imposisi/'.$row->id_order)?>">
                   <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
-                <a href="<?=site_url('pracetak/Imposisi/edit_imposisi')?>">
+                <a href="<?=site_url('pracetak/Imposisi/edit_imposisi/'.$row->id_order)?>">
                   <i class="fa fa-pencil" style="font-size:18px"></i>
                 </a>
               </td>
             </tr> 
+            <?php } ?> 
           </table>
         </div>
         <!-- /.card-body -->
