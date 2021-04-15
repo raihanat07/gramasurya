@@ -31,8 +31,7 @@ class SuratOrder_m extends CI_Model {
             'ukuran' =>$data['ukuran'],
             'halaman' =>$data['halaman'],
             'oplag' =>$data['oplag'],
-            'so_status' =>$data['so_status'],            
-            'finishing_akhir' =>$data['finishing_akhir'],
+            'so_status' =>$data['so_status'],                        
         );
         $this->db->insert('order',$tambah_so);
 
@@ -92,34 +91,31 @@ class SuratOrder_m extends CI_Model {
         $this->db->insert('potong',$tambah_potong);
 
         // tambah bagian cetak
-        // $tambah_cetak = array(
-        //     'id_order' =>$data['nomor_so'],
-        //     'mesin_cover_1' =>$data['mesin_cover_1'],
-        //     'mesin_isi_1' =>$data['mesin_isi_1'],
-        //     'warna_cover_1' =>$data['warna_cover_1'],
-        //     'warna_isi_1' =>$data['warna_isi_1'],
-        //     'insit_cover_1' =>$data['insit_cover_1'],
-        //     // 'warna_cetak_1' =>$data['warna_cetak_1'],
-        //     'insit_isi_2' =>$data['insit_isi_2'],
-        //     'mesin_cover_2' =>$data['mesin_cover_2'],
-        //     'mesin_isi_2' =>$data['mesin_isi_2'],
-        //     'warna_cover_2' =>$data['warna_cover_2'],
-        //     'warna_isi_2' =>$data['warna_isi_2'],
-        //     'insit_cover_2' =>$data['insit_cover_2'],
-        //     // 'warna_cetak_2' =>$data['warna_cetak_2'],
-        //     'insit_isi_2' =>$data['insit_isi_2'],
-        //     'mesin_cover_3' =>$data['mesin_cover_3'],
-        //     'mesin_isi_3' =>$data['mesin_isi_3'],
-        //     'warna_cover_3' =>$data['warna_cover_3'],
-        //     'warna_isi_3' =>$data['warna_isi_3'],
-        //     'insit_cover_3' =>$data['insit_cover_3'],
-        //     // 'warna_cetak_3' =>$data['warna_cetak_3'],
-        //     'insit_isi_3' =>$data['insit_isi_3'],
-        //     'keterangan_cetak_cover' =>$data['keterangan_cetak_cover'],  
-        //     'keterangan_cetak_isi' =>$data['keterangan_cetak_isi'],    
+        $tambah_cetak = array(
+            'id_order' =>$data['nomor_so'],
+            'mesin_cover_1' =>$data['mesin_cover_1'],
+            'mesin_isi_1' =>$data['mesin_isi_1'],
+            'warna_cover_1' =>$data['warna_cover_1'],
+            'warna_isi_1' =>$data['warna_isi_1'],
+            'insit_cover_1' =>$data['insit_cover_1'],
+            'insit_isi_1' =>$data['insit_isi_1'],
+            'mesin_cover_2' =>$data['mesin_cover_2'],
+            'mesin_isi_2' =>$data['mesin_isi_2'],
+            'warna_cover_2' =>$data['warna_cover_2'],
+            'warna_isi_2' =>$data['warna_isi_2'],
+            'insit_cover_2' =>$data['insit_cover_2'],
+            'insit_isi_2' =>$data['insit_isi_2'],
+            'mesin_cover_3' =>$data['mesin_cover_3'],
+            'mesin_isi_3' =>$data['mesin_isi_3'],
+            'warna_cover_3' =>$data['warna_cover_3'],
+            'warna_isi_3' =>$data['warna_isi_3'],
+            'insit_cover_3' =>$data['insit_cover_3'],
+            'insit_isi_3' =>$data['insit_isi_3'],
+            'keterangan_cetak_cover' =>$data['keterangan_cetak_cover'],  
+            'keterangan_cetak_isi' =>$data['keterangan_cetak_isi'],    
             
-        // );
-        // $this->db->insert('cetak',$tambah_cetak);
+        );
+        $this->db->insert('cetak',$tambah_cetak);
 
         // tambah bagian finishing
         $tambah_finishing = array(
