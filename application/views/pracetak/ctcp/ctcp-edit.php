@@ -188,7 +188,7 @@
                                             <label class="form-label">Rincian Imposisi</label>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row" align="center">
                                         <div class="col">
                                             <label class="form-label">Plate</label>
                                             <input type="number" class="form-control" name="cover1plat1"><br>
@@ -280,7 +280,7 @@
                                             <label class="form-label">Rincian Imposisi</label>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row" align="center">
                                         <div class="col">
                                             <label class="form-label">Plate</label>
                                             <input type="number" class="form-control" name="isi1plat1"><br>
@@ -390,7 +390,7 @@
                                             <label class="form-label">Rincian Imposisi</label>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row" align="center">
                                         <div class="col">
                                             <label class="form-label">Plate</label>
                                             <input type="number" class="form-control" name="cover2plat1"><br>
@@ -482,7 +482,7 @@
                                             <label class="form-label">Rincian Imposisi</label>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row" align="center">
                                         <div class="col">
                                             <label class="form-label">Plate</label>
                                             <input type="number" class="form-control" name="isi2plat1"><br>
@@ -672,7 +672,7 @@
                                             <input type="number" class="form-control" name="jumlahplateisi3">
                                         </div>
                                     </div><br>
-                                    <div class="row">
+                                    <div class="row" align="center">
                                         <div class="col-md-12">
                                             <div class="row">
                                                 <div class="col-md-12">
