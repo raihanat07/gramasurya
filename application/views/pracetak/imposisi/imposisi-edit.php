@@ -195,7 +195,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <select name="cover1mesin1" class="form-select form-control">
-                                        <option disabled selected></option>
+                                        <option ></option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
                                         <option value="72">72</option>
