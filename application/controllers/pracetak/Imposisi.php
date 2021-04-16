@@ -19,32 +19,42 @@ class Imposisi extends CI_Controller {
 		);	
 		$this->template->load('pracetak/template','pracetak/imposisi/imposisi',$data);
 	}
-	public function edit_imposisi($id)
-	{	
-			$query = $this->imposisi_m->get($id);
-			if($query->num_rows() > 0 ){
-				$data['row'] = $query->row();
-				$data['judul'] = 'Edit Imposisi';
-				$this->template->load('pracetak/template','pracetak/imposisi/imposisi-edit', $data );	
-			}else{
-				echo "<script>alert('Data Tidak Ditemukan');";
-				echo "window.location='".site_url('pracetak/Imposisi/index')."';</script>";
-			}
-				
-			$post = $this->input->post(null, TRUE);
-			$this->user_m->edit_user($post);
-			if($this->db->affected_rows() > 0){
-				echo "<script>alert('Data Berhasil Disimpan');</script>";
-			}
-			echo "<script>window.location='".site_url('pracetak/User/index')."';</script>";
 
-		
+	public function edit_imposisi($id)
+	{		
+		check_not_login();
+		$query = $this->imposisi->get($id);
+		$data = array(
+			'judul' => 'Edit Imposisi',
+			'imposisi' => $query->result(),
+		);		
+		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-edit',$data);		
 	}
 
-	public function lihat_imposisi()
+	public function tambah_imposisi()
+	{		
+		if(isset($_POST['tambah_imposisi'])){							
+			$inputan = $this->input->post(null, TRUE);
+			$this->imposisi->tambah_imposisi($inputan);
+		} else if(isset($_POST['edit'])){
+			echo"edit";
+		}
+		if($this->db->affected_rows() > 0){
+			echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
+		}
+		echo "<script>window.location='".site_url('pracetak/imposisi/index')."'; </script>"; 
+	
+	}
+
+	public function lihat_imposisi($id)
 	{
-		$data['judul'] = 'Lihat Imposisi Pracetak';
-		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-lihat', $data);
+		check_not_login();
+		$query = $this->imposisi->get($id);
+		$data = array(
+			'judul' => 'Edit Imposisi',
+			'imposisi' => $query->result(),
+		);		
+		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-lihat',$data);		
 	}
 
 

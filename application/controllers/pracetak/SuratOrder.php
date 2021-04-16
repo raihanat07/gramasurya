@@ -41,7 +41,7 @@ class SuratOrder extends CI_Controller {
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->so->add($inputan);
-		} else if(isset($_POST['edit'])){
+		} else if(isset($_POST['edit'])){ 
 			echo"edit";
 		}
 		if($this->db->affected_rows() > 0){
