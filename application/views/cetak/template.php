@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Blank Page</title>
+  <title>Cetak Gramasurya</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -105,18 +105,6 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>cetak/Spk"
-                    <?php  if($judul == "SPK Cetak"){?>
-                      class= "nav-link active"
-                    <?php }else {?>
-                      class= "nav-link"
-                    <?php } ?>
-                    >
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>SPK</p>
-                </a>
-              </li>
-              <li class="nav-item">
                 <a href="<?=site_url()?>cetak/JadwalUmum" 
                 <?php  if($judul == "Jadwal Umum Cetak"){?>
                       class= "nav-link active"
@@ -141,15 +129,15 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>cetak/Laporan" 
-                 <?php  if($judul == "Laporan Cetak"){?>
+                <a href="<?=site_url()?>cetak/Spk"
+                    <?php  if($judul == "SPK Cetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Laporan</p>
+                  <p>SPK</p>
                 </a>
               </li>
             </ul>

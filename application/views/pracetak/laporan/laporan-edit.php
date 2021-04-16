@@ -109,6 +109,30 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="card">
+                            <div class="row card-body">
+                                <div class="col-md-12">
+                                    <div class="row card-body">
+                                        <div class="col-md-6">
+                                            <input class="form-check-input" type="checkbox" value="Imposisi Cover">
+                                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
+                                            <input class="form-check-input" type="checkbox" value="CTCP Cover">
+                                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
+                                            <input class="form-check-input" type="checkbox" value="Khusus">
+                                            <label class="form-check-label" for="flexCheckDefault">Khusus</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input class="form-check-input" type="checkbox" value="Imposisi Cover">
+                                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
+                                            <input class="form-check-input" type="checkbox" value="CTCP Cover">
+                                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
+                                            <input class="form-check-input" type="checkbox" value="Pracetak">
+                                            <label class="form-check-label" for="flexCheckDefault">Pracetak</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card">
@@ -396,6 +420,12 @@
                             <div class="col-md-8"></div>
                             <div class="col-md-2"><label>)</label></div>
                         </div>
+                    </div>
+                </div><br>
+                <div class="row" align="right">
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="reset" class="btn btn-default">Reset</button>
                     </div>
                 </div>
             </form>

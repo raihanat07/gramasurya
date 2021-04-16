@@ -121,8 +121,10 @@
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Imposisi Isi">
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label>
+                            <input class="form-check-input" type="checkbox" value="Imposisi Cover">
+                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
+                            <input class="form-check-input" type="checkbox" value="Khusus">
+                            <label class="form-check-label" for="flexCheckDefault">Khusus</label>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -162,7 +164,7 @@
                                     <label class="form-label">Mesin</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <select name="cover1mesin1" class="form-select form-control">
+                                    <select name="cover1mesin" class="form-select form-control">
                                         <option disabled selected></option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
@@ -254,7 +256,7 @@
                                     <label class="form-label">Mesin</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <select name="isi1mesin1" class="form-select form-control">
+                                    <select name="isi1mesin" class="form-select form-control">
                                         <option disabled selected></option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
@@ -364,7 +366,7 @@
                                     <label class="form-label">Mesin</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <select name="cover2mesin1" class="form-select form-control">
+                                    <select name="cover2mesin" class="form-select form-control">
                                         <option disabled selected></option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
@@ -456,7 +458,7 @@
                                     <label class="form-label">Mesin</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <select name="isi2mesin1" class="form-select form-control">
+                                    <select name="isi2mesin" class="form-select form-control">
                                         <option disabled selected></option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
@@ -589,7 +591,7 @@
                                             <label class="form-label">Mesin</label>
                                         </div>
                                         <div class="col-md-3">
-                                            <select name="isi3mesin1" class="form-select form-control">
+                                            <select name="isi3mesin" class="form-select form-control">
                                                 <option disabled selected></option>
                                                 <option value="102">102</option>
                                                 <option value="74">74</option>

@@ -123,8 +123,10 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="Imposisi Cover">
                             <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
-                            <input class="form-check-input" type="checkbox" value="CTCP Cover" id="flexCheckDefault">
-                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label>
+                            <input class="form-check-input" type="checkbox" value="CTCP Cover">
+                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
+                            <input class="form-check-input" type="checkbox" value="Khusus">
+                            <label class="form-check-label" for="flexCheckDefault">Khusus</label>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -185,7 +187,7 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <label class="form-label">Rincian Imposisi</label>
+                                            <label class="form-label">Rincian CTCP</label>
                                         </div>
                                     </div>
                                     <div class="row" align="center">
@@ -277,7 +279,7 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <label class="form-label">Rincian Imposisi</label>
+                                            <label class="form-label">Rincian CTCP</label>
                                         </div>
                                     </div>
                                     <div class="row" align="center">
@@ -387,7 +389,7 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <label class="form-label">Rincian Imposisi</label>
+                                            <label class="form-label">Rincian CTCP</label>
                                         </div>
                                     </div>
                                     <div class="row" align="center">
@@ -479,7 +481,7 @@
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <label class="form-label">Rincian Imposisi</label>
+                                            <label class="form-label">Rincian CTCP</label>
                                         </div>
                                     </div>
                                     <div class="row" align="center">
@@ -625,7 +627,7 @@
                                         <div class="col-md-4">
                                             <textarea name="catatan_imposisi" class="form-control" placeholder="catatan" name="catatan_imposisi" style="height: 240px;"></textarea>
                                         </div>
-                                    </div><br><br>
+                                    </div>
                                 </div>
                             </div>
                         </div><br>
@@ -672,14 +674,14 @@
                                             <input type="number" class="form-control" name="jumlahplateisi3">
                                         </div>
                                     </div><br>
-                                    <div class="row" align="center">
+                                    <div class="row">
                                         <div class="col-md-12">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <label class="form-label">Rincian Imposisi</label>
+                                                    <label class="form-label">Rincian CTCP</label>
                                                 </div>
                                             </div>
-                                            <div class="row">
+                                            <div class="row" align="center">
                                                 <div class="col">
                                                     <label class="form-label">Plate</label>
                                                     <input type="number" class="form-control" name="isi3plat1"><br>

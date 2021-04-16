@@ -15,5 +15,11 @@ class DisplayCetak extends CI_Controller {
 		$data['judul'] = 'Lihat Display Cetak';
 		$this->template->load('cetak/template','cetak/display_cetak/displaycetak-lihat',$data);
 	}
+	public function edit_dc()
+	{
+		// check_already_login_cetak();
+		$data['judul'] = 'Edit Display Cetak';
+		$this->template->load('cetak/template','cetak/display_cetak/displaycetak-edit',$data);
+	}
 
 }

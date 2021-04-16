@@ -72,34 +72,43 @@
             </div>
             <br><hr><br>
             <div class="row">
-                <div class="col-md-3">
-                    <label>Stok Plate 102</label>
-                    <br><label></label>
+                <div class="col-md-3" align="center">
+                    <label class="form-label">Nama Operator</label>
                 </div>
                 <div class="col-md-3">
-                    <label>Stok Plate 74</label>
-                    <br><label></label>
+                    <input type="text" class="form-control" name="namaoperator1" disabled>
+                </div>
+                <div class="col-md-3" align="center">
+                    <label class="form-label">Nama Operator</label>
                 </div>
                 <div class="col-md-3">
-                    <label>Stok Plate 72</label>
-                    <br><label></label>
+                    <input type="text" class="form-control" name="namaoperator2" disabled>
                 </div>
-                <div class="col-md-3">
-                    <label>Stok Paperplate</label>
-                    <br><label></label>
+            </div><br>
+            <div class="row">
+                <div class="col-md-2">
+                    <label class="form-label">Total Plat Cover</label>
                 </div>
-                <div class="col-md-12">
-                    <label>Status</label>
+                <div class="col-md-1">
+                    <input type="number" class="form-control" name="total_plat_cover" disabled>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-3" align="left">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" disabled="disabled">
-                        <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label>
+                        <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled>
+                        <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
+                        <input class="form-check-input" type="checkbox" value="Khusus" disabled>
+                        <label class="form-check-label" for="flexCheckDefault">Khusus</label>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-2">
+                    <label class="form-label">Total Plat Isi</label>
+                </div>
+                <div class="col-md-1">
+                    <input type="number" class="form-control" name="total_plat_cover" disabled>
+                </div>
+                <div class="col-md-3" align="left">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" disabled="disabled">
+                        <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled>
                         <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label>
                     </div>
                 </div>
@@ -108,14 +117,14 @@
                 <div class="col-md-6">
                     <div class="card border bg-success">
                         <div class="card-header text-center">
-                            CTCP COVER 1
+                            IMPOSISI COVER 1
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card border bg-info">
                     <div class="card-header text-center">
-                        CTCP ISI 1
+                        IMPOSISI ISI 1
                     </div>
                     </div>
                 </div>
@@ -123,88 +132,142 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card-body p-3 mb-2 bg-light text-dark">
-                        <label class="form-label">Jumlah Plate</label>
-                        <input type="text" class="form-control" name="jumlahplatecover1" placeholder="Masukan Jumlah Plate" disabled="disabled"><br>
-                        <label class="form-label">Rincian Imposisi</label>
                         <div class="row">
-                            <div class="col">
-                                <label class="form-label">Plate</label>
-                                <input type="number" class="form-control" name="cover1plat1" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="cover1plat2" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="cover1plat3" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="cover1plat4" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Satuan</label>
-                                <input name="cover1satuan1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover1satuan2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover1satuan3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover1satuan4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Up</label>
-                                <input name="cover1up1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover1up2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover1up3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover1up4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
+                            <div class="col-md-3" align="center">
                                 <label class="form-label">Mesin</label>
-                                <input name="cover1mesin1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover1mesin2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover1mesin3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover1mesin4" class="form-select form-control" disabled="disabled"><br>
                             </div>
-                            <div class="col">
-                                <label class="form-label">Operator</label>
-                                <input type="text" class="form-control" name="cover1operator1" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="cover1operator2" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="cover1operator3" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="cover1operator4" disabled="disabled"><br>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" name="cover1mesin" disabled>
+                            </div>
+                            <div class="col-md-3" align="center">
+                                <label class="form-label">Plate</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" name="jumlahplatecover1" disabled>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="form-label">Rincian Imposisi</label>
+                                    </div>
+                                </div>
+                                <div class="row" align="center">
+                                    <div class="col">
+                                        <label class="form-label">Plate</label>
+                                        <input type="number" class="form-control" name="cover1plat1" disabled><br>
+                                        <input type="number" class="form-control" name="cover1plat2" disabled><br>
+                                        <input type="number" class="form-control" name="cover1plat3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Set</label>
+                                        <input class="form-control" name="cover1set1" value="p/w" disabled><br>
+                                        <input class="form-control" name="cover1set2" value="p/w" disabled><br>
+                                        <input class="form-control" name="cover1set3" value="p/w" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Lbr.Cetak</label>
+                                        <input class="form-control" name="cover1lbrcetak1" value="s/2" disabled=""><br>
+                                        <input class="form-control" name="cover1lbrcetak2" value="s/2" disabled=""><br>
+                                        <input class="form-control" name="cover1lbrcetak3" value="s/2" disabled="">
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Up</label>
+                                        <input type="number" class="form-control" name="cover1up1" disabled><br>
+                                        <input type="number" class="form-control" name="cover1up2" disabled><br>
+                                        <input type="number" class="form-control" name="cover1up3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Warna</label>
+                                        <input type="number" class="form-control" name="cover1warna1" disabled><br>
+                                        <input type="number" class="form-control" name="cover1warna2" disabled><br>
+                                        <input type="number" class="form-control" name="cover1warna3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Status</label>
+                                        <input type="number" class="form-control" name="cover1status1" disabled><br>
+                                        <input type="number" class="form-control" name="cover1status2" disabled><br>
+                                        <input type="number" class="form-control" name="cover1status3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Keterangan</label>
+                                        <input type="text" class="form-control" name="cover1keterangan1" disabled><br>
+                                        <input type="text" class="form-control" name="cover1keterangan2" disabled><br>
+                                        <input type="text" class="form-control" name="cover1keterangan3" disabled>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card-body p-3 mb-2 bg-light text-dark">
-                        <label class="form-label">Jumlah Plate</label>
-                        <input type="text" class="form-control" name="jumlahplateisi1" placeholder="Masukan Jumlah Plate" disabled="disabled"><br>
-                        <label class="form-label">Rincian Imposisi</label>
                         <div class="row">
-                            <div class="col">
-                                <label class="form-label">Plate</label>
-                                <input type="number" class="form-control" name="isi1plat1" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="isi1plat2" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="isi1plat3" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="isi1plat4" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Satuan</label>
-                                <input name="isi1satuan1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi1satuan2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi1satuan3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi1satuan4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Up</label>
-                                <input name="isi1up1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi1up2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi1up3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi1up4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
+                            <div class="col-md-3" align="center">
                                 <label class="form-label">Mesin</label>
-                                <input name="isi1mesin1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi1mesin2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi1mesin3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi1mesin4" class="form-select form-control" disabled="disabled"><br>
                             </div>
-                            <div class="col">
-                                <label class="form-label">Operator</label>
-                                <input type="text" class="form-control" name="isi1operator1" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="isi1operator2" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="isi1operator3" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="isi1operator4" disabled="disabled"><br>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" name="isi1mesin" disabled>
+                            </div>
+                            <div class="col-md-3" align="center">
+                                <label class="form-label">Plate</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" name="jumlahplateisi1" disabled>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="form-label">Rincian Imposisi</label>
+                                    </div>
+                                </div>
+                                <div class="row" align="center">
+                                    <div class="col">
+                                        <label class="form-label">Plate</label>
+                                        <input type="number" class="form-control" name="isi1plat1" disabled><br>
+                                        <input type="number" class="form-control" name="isi1plat2" disabled><br>
+                                        <input type="number" class="form-control" name="isi1plat3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Set</label>
+                                        <input class="form-control" name="isi1set1" value="p/w" disabled><br>
+                                        <input class="form-control" name="isi1set2" value="p/w" disabled><br>
+                                        <input class="form-control" name="isi1set3" value="p/w" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Lbr.Cetak</label>
+                                        <input class="form-control" name="isi1lbrcetak1" value="s/2" disabled><br>
+                                        <input class="form-control" name="isi1lbrcetak2" value="s/2" disabled><br>
+                                        <input class="form-control" name="isi1lbrcetak3" value="s/2" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Up</label>
+                                        <input type="number" class="form-control" name="isi1up1" disabled><br>
+                                        <input type="number" class="form-control" name="isi1up2" disabled><br>
+                                        <input type="number" class="form-control" name="isi1up3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Warna</label>
+                                        <input type="number" class="form-control" name="isi1warna1" disabled><br>
+                                        <input type="number" class="form-control" name="isi1warna2" disabled><br>
+                                        <input type="number" class="form-control" name="isi1warna3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Status</label>
+                                        <input type="number" class="form-control" name="isi1status1" disabled><br>
+                                        <input type="number" class="form-control" name="isi1status2" disabled><br>
+                                        <input type="number" class="form-control" name="isi1status3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Keterangan</label>
+                                        <input type="text" class="form-control" name="isi1keterangan1" disabled><br>
+                                        <input type="text" class="form-control" name="isi1keterangan2" disabled><br>
+                                        <input type="text" class="form-control" name="isi1keterangan3" disabled>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -214,14 +277,14 @@
                 <div class="col-md-6">
                     <div class="card border bg-success">
                         <div class="card-header text-center">
-                            CTCP COVER 2
+                            IMPOSISI COVER 2
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card border bg-info">
                     <div class="card-header text-center">
-                        CTCP ISI 2
+                        IMPOSISI ISI 2
                     </div>
                     </div>
                 </div>
@@ -229,88 +292,142 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="card-body p-3 mb-2 bg-light text-dark">
-                        <label class="form-label">Jumlah Plate</label>
-                        <input type="text" class="form-control" name="jumlahplatecover2" placeholder="Masukan Jumlah Plate" disabled="disabled"><br>
-                        <label class="form-label">Rincian Imposisi</label>
                         <div class="row">
-                            <div class="col">
-                                <label class="form-label">Plate</label>
-                                <input type="number" class="form-control" name="cover2plat1" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="cover2plat2" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="cover2plat3" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="cover2plat4" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Satuan</label>
-                                <input name="cover2satuan1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover2satuan2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover2satuan3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover2satuan4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Up</label>
-                                <input name="cover2up1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover2up2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover2up3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover2up4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
+                            <div class="col-md-3" align="center">
                                 <label class="form-label">Mesin</label>
-                                <input name="cover2mesin1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover2mesin2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover2mesin3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover2mesin4" class="form-select form-control" disabled="disabled"><br>
                             </div>
-                            <div class="col">
-                                <label class="form-label">Operator</label>
-                                <input type="text" class="form-control" name="cover2operator1" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="cover2operator2" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="cover2operator3" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="cover2operator4" disabled="disabled"><br>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" name="cover2mesin" disabled>
+                            </div>
+                            <div class="col-md-3" align="center">
+                                <label class="form-label">Plate</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" name="jumlahplatecover2" disabled>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="form-label">Rincian Imposisi</label>
+                                    </div>
+                                </div>
+                                <div class="row" align="center">
+                                    <div class="col">
+                                        <label class="form-label">Plate</label>
+                                        <input type="number" class="form-control" name="cover2plat1" disabled><br>
+                                        <input type="number" class="form-control" name="cover2plat2" disabled><br>
+                                        <input type="number" class="form-control" name="cover2plat3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Set</label>
+                                        <input class="form-control" name="cover2set1" value="p/w" disabled><br>
+                                        <input class="form-control" name="cover2set2" value="p/w" disabled><br>
+                                        <input class="form-control" name="cover2set3" value="p/w" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Lbr.Cetak</label>
+                                        <input class="form-control" name="cover2lbrcetak1" value="s/2" disabled><br>
+                                        <input class="form-control" name="cover2lbrcetak2" value="s/2" disabled><br>
+                                        <input class="form-control" name="cover2lbrcetak3" value="s/2" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Up</label>
+                                        <input type="number" class="form-control" name="cover2up1" disabled><br>
+                                        <input type="number" class="form-control" name="cover2up2" disabled><br>
+                                        <input type="number" class="form-control" name="cover2up3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Warna</label>
+                                        <input type="number" class="form-control" name="cover2warna1" disabled><br>
+                                        <input type="number" class="form-control" name="cover2warna2" disabled><br>
+                                        <input type="number" class="form-control" name="cover2warna3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Status</label>
+                                        <input type="number" class="form-control" name="cover2status1" disabled><br>
+                                        <input type="number" class="form-control" name="cover2status2" disabled><br>
+                                        <input type="number" class="form-control" name="cover2status3" disabled><br>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Keterangan</label>
+                                        <input type="text" class="form-control" name="cover2keterangan1" disabled><br>
+                                        <input type="text" class="form-control" name="cover2keterangan2" disabled><br>
+                                        <input type="text" class="form-control" name="cover2keterangan3" disabled>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card-body p-3 mb-2 bg-light text-dark">
-                        <label class="form-label">Jumlah Plate</label>
-                        <input type="text" class="form-control" name="jumlahplateisi2" placeholder="Masukan Jumlah Plate" disabled="disabled"><br>
-                        <label class="form-label">Rincian Imposisi</label>
                         <div class="row">
-                            <div class="col">
-                                <label class="form-label">Plate</label>
-                                <input type="number" class="form-control" name="isi2plat1" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="isi2plat2" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="isi2plat3" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="isi2plat4" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Satuan</label>
-                                <input name="isi2satuan1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi2satuan2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi2satuan3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi2satuan4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Up</label>
-                                <input name="isi2up1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi2up2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi2up3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi2up4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
+                            <div class="col-md-3" align="center">
                                 <label class="form-label">Mesin</label>
-                                <input name="isi2mesin1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi2mesin2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi2mesin3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi2mesin4" class="form-select form-control" disabled="disabled"><br>
                             </div>
-                            <div class="col">
-                                <label class="form-label">Operator</label>
-                                <input type="text" class="form-control" name="isi2operator1" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="isi2operator2" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="isi2operator3" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="isi2operator4" disabled="disabled"><br>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" name="isi2mesin" disabled>
+                            </div>
+                            <div class="col-md-3" align="center">
+                                <label class="form-label">Plate</label>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="number" class="form-control" name="jumlahplateisi2" disabled>
+                            </div>
+                        </div><br>
+                        <div class="row" align="center">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label class="form-label">Rincian Imposisi</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label class="form-label">Plate</label>
+                                        <input type="number" class="form-control" name="isi2plat1" disabled><br>
+                                        <input type="number" class="form-control" name="isi2plat2" disabled><br>
+                                        <input type="number" class="form-control" name="isi2plat3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Set</label>
+                                        <input class="form-control" name="isi2set1" value="p/w" disabled><br>
+                                        <input class="form-control" name="isi2set2" value="p/w" disabled><br>
+                                        <input class="form-control" name="isi2set3" value="p/w" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Lbr.Cetak</label>
+                                        <input class="form-control" name="isi2lbrcetak1" value="s/2" disabled><br>
+                                        <input class="form-control" name="isi2lbrcetak2" value="s/2" disabled><br>
+                                        <input class="form-control" name="isi2lbrcetak3" value="s/2" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Up</label>
+                                        <input type="number" class="form-control" name="isi2up1" disabled><br>
+                                        <input type="number" class="form-control" name="isi2up2" disabled><br>
+                                        <input type="number" class="form-control" name="isi2up3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Warna</label>
+                                        <input type="number" class="form-control" name="isi2warna1" disabled><br>
+                                        <input type="number" class="form-control" name="isi2warna2" disabled><br>
+                                        <input type="number" class="form-control" name="isi2warna3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Status</label>
+                                        <input type="number" class="form-control" name="isi2status1" disabled><br>
+                                        <input type="number" class="form-control" name="isi2status2" disabled><br>
+                                        <input type="number" class="form-control" name="isi2status3" disabled>
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label">Keterangan</label>
+                                        <input type="text" class="form-control" name="isi2keterangan1" disabled><br>
+                                        <input type="text" class="form-control" name="isi2keterangan2" disabled><br>
+                                        <input type="text" class="form-control" name="isi2keterangan3" disabled>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -318,113 +435,115 @@
             </div><br>
             <div class="row">
                 <div class="col-md-6">
-                    <div class="card border bg-success">
-                        <div class="card-header text-center">
-                            CTCP COVER 3
+                    <div class="row">
+                        <div class="col">
+                            <div class="card-body p-3 mb-2 bg-light text-dark">
+                                <br><br><div class="row">
+                                    <div class="col-md-6">
+                                        <label class="form-label">Tanggal Imposisi Cover</label>
+                                        <br><input type="date" class="form-control" name="tanggal_imposisi_cover" disabled>
+                                        <br><label class="form-label">Tanggal Imposisi Isi</label>
+                                        <br><input type="date" class="form-control" name="tanggal_imposisi_isi" disabled>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <br><textarea name="catatan_imposisi" class="form-control" placeholder="catatan" name="catatan_imposisi" style="height: 150px;" disabled></textarea>
+                                    </div>
+                                </div><br><br>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="row">
+                        <div class="col-md-6" align="left">
+                            <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Kembali</a>
+                        </div>
+                        <div class="col-md-6" align="right">
+                            <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Print</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card border bg-info">
-                    <div class="card-header text-center">
-                        CTCP ISI 3
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card-body p-3 mb-2 bg-light text-dark">
-                        <label class="form-label">Jumlah Plate</label>
-                        <input type="text" class="form-control" name="jumlahplatecover3" placeholder="Masukan Jumlah Plate" disabled="disabled"><br>
-                        <label class="form-label">Rincian Imposisi</label>
-                        <div class="row">
-                            <div class="col">
-                                <label class="form-label">Plate</label>
-                                <input type="number" class="form-control" name="cover3plat1" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="cover3plat2" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="cover3plat3" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="cover3plat4" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Satuan</label>
-                                <input name="cover3satuan1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover3satuan2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover3satuan3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover3satuan4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Up</label>
-                                <input name="cover3up1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover3up2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover3up3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover3up4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Mesin</label>
-                                <input name="cover3mesin1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover3mesin2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover3mesin3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="cover3mesin4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Operator</label>
-                                <input type="text" class="form-control" name="cover3operator1" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="cover3operator2" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="cover3operator3" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="cover3operator4" disabled="disabled"><br>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card border bg-info">
+                                <div class="card-header text-center">
+                                    IMPOSISI ISI 3
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body p-3 mb-2 bg-light text-dark">
-                        <label class="form-label">Jumlah Plate</label>
-                        <input type="text" class="form-control" name="jumlahplateisi3" placeholder="Masukan Jumlah Plate" disabled="disabled"><br>
-                        <label class="form-label">Rincian Imposisi</label>
-                        <div class="row">
-                            <div class="col">
-                                <label class="form-label">Plate</label>
-                                <input type="number" class="form-control" name="isi3plat1" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="isi3plat2" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="isi3plat3" disabled="disabled"><br>
-                                <input type="number" class="form-control" name="isi3plat4" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Satuan</label>
-                                <input name="isi3satuan1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi3satuan2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi3satuan3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi3satuan4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Up</label>
-                                <input name="isi3up1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi3up2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi3up3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi3up4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Mesin</label>
-                                <input name="isi3mesin1" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi3mesin2" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi3mesin3" class="form-select form-control" disabled="disabled"><br>
-                                <input name="isi3mesin4" class="form-select form-control" disabled="disabled"><br>
-                            </div>
-                            <div class="col">
-                                <label class="form-label">Operator</label>
-                                <input type="text" class="form-control" name="isi3operator1" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="isi3operator2" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="isi3operator3" disabled="disabled"><br>
-                                <input type="text" class="form-control" name="isi3operator4" disabled="disabled"><br>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card-body p-3 mb-2 bg-light text-dark">
+                                <div class="row">
+                                    <div class="col-md-3" align="center">
+                                        <label class="form-label">Mesin</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="number" class="form-control" name="isi3mesin" disabled>
+                                    </div>
+                                    <div class="col-md-3" align="center">
+                                        <label class="form-label">Plate</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="number" class="form-control" name="jumlahplateisi3" disabled>
+                                    </div>
+                                </div><br>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label class="form-label">Rincian Imposisi</label>
+                                            </div>
+                                        </div>
+                                        <div class="row" align="center">
+                                            <div class="col">
+                                                <label class="form-label">Plate</label>
+                                                <input type="number" class="form-control" name="isi3plat1" disabled><br>
+                                                <input type="number" class="form-control" name="isi3plat2" disabled><br>
+                                                <input type="number" class="form-control" name="isi3plat3" disabled>
+                                            </div>
+                                            <div class="col">
+                                                <label class="form-label">Set</label>
+                                                <input class="form-control" name="isi3set1" value="p/w" disabled><br>
+                                                <input class="form-control" name="isi3set2" value="p/w" disabled><br>
+                                                <input class="form-control" name="isi3set3" value="p/w" disabled>
+                                            </div>
+                                            <div class="col">
+                                                <label class="form-label">Lbr.Cetak</label>
+                                                <input class="form-control" name="isi3lbrcetak1" value="s/2" disabled><br>
+                                                <input class="form-control" name="isi3lbrcetak2" value="s/2" disabled><br>
+                                                <input class="form-control" name="isi3lbrcetak3" value="s/2" disabled>
+                                            </div>
+                                            <div class="col">
+                                                <label class="form-label">Up</label>
+                                                <input type="number" class="form-control" name="isi3up1" disabled><br>
+                                                <input type="number" class="form-control" name="isi3up2" disabled><br>
+                                                <input type="number" class="form-control" name="isi3up3" disabled>
+                                            </div>
+                                            <div class="col">
+                                                <label class="form-label">Warna</label>
+                                                <input type="number" class="form-control" name="isi3warna1" disabled><br>
+                                                <input type="number" class="form-control" name="isi3warna2" disabled><br>
+                                                <input type="number" class="form-control" name="isi3warna3" disabled>
+                                            </div>
+                                            <div class="col">
+                                                <label class="form-label">Status</label>
+                                                <input type="number" class="form-control" name="isi3status1" disabled><br>
+                                                <input type="number" class="form-control" name="isi3status2" disabled><br>
+                                                <input type="number" class="form-control" name="isi3status3" disabled>
+                                            </div>
+                                            <div class="col">
+                                                <label class="form-label">Keterangan</label>
+                                                <input type="text" class="form-control" name="isi3keterangan1" disabled><br>
+                                                <input type="text" class="form-control" name="isi3keterangan2" disabled><br>
+                                                <input type="text" class="form-control" name="isi3keterangan3" disabled>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div><br>
-            <div class="row">
-                <div class="col-md-12">
-                    <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default float-right">Kembali</a>
                 </div>
             </div>
         </div>
