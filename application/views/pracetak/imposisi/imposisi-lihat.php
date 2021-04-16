@@ -100,13 +100,13 @@
             <br><hr><br>
         </form>
 
-        <form action="<?=site_url('pracetak/imposisi/lihat_imposisi_bawah')?>" method="post">        
+        <form action="<?=site_url('pracetak/imposisi/lihat_imposisi')?>" method="post">        
             <div class="row">
                 <div class="col-md-3" align="center">
                     <label class="form-label">Nama Operator</label>
                 </div>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" name="namaoperator1" value="<?=$row->namaoperator1; ?>" disabled>
+                    <input type="text" class="form-control" name="namaoperator1" value="<?=$row->namaoperator1;?>" disabled>
                 </div>
                 <div class="col-md-3" align="center">
                     <label class="form-label">Nama Operator</label>
