@@ -13,7 +13,7 @@
 <section class="content">
 
     <!-- Default box -->
-    <div class="card">
+<div class="card">
     <div class="card-header">
         <!-- <label>SO</label> -->
         <h3 class="card-title">SO dari db</h3>
@@ -99,12 +99,14 @@
             <?php } ?>
             <br><hr><br>
         </form>
+
+        <form action="<?=site_url('pracetak/imposisi/lihat_imposisi_bawah')?>" method="post">        
             <div class="row">
                 <div class="col-md-3" align="center">
                     <label class="form-label">Nama Operator</label>
                 </div>
                 <div class="col-md-3">
-                    <input type="text" class="form-control" name="namaoperator1" disabled>
+                    <input type="text" class="form-control" name="namaoperator1" value="<?=$row->namaoperator1; ?>" disabled>
                 </div>
                 <div class="col-md-3" align="center">
                     <label class="form-label">Nama Operator</label>
@@ -574,8 +576,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
+</div>
     <!-- /.card-body -->
     <!-- <div class="card-footer">
         Footer
