@@ -7,7 +7,7 @@ class Imposisi_m extends CI_Model {
     {
         $this->db->select(
             'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
-            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral'
+            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral',
         );
         $this->db->from('order');
         $this->db->join('finishing','finishing.id_order = order.id_order');
@@ -18,6 +18,40 @@ class Imposisi_m extends CI_Model {
         $query = $this->db->get();
         return $query;   
     }
+
+    public function get_lihat($id = null)
+    {
+        $this->db->select(
+            'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
+            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral, imposisi.namaoperator1 as namaoperator1, imposisi.namaoperator2 as namaoperator2, imposisi.total_plat_cover as total_plat_cover, imposisi.total_plat_isi as total_plat_isi,  imposisi.cover1mesin1 as cover1mesin1, imposisi.jumlahplatecover1 as jumlahplatecover1, imposisi.cover1plat1 as cover1plat1, imposisi.cover1set1 as cover1set1, imposisi.isi1mesin1 as isi1mesin1, 
+            imposisi.jumlahplateisi1 as jumlahplateisi1, imposisi.isi1plat1 as isi1plat1, imposisi.isi1plat2 as isi1plat2, imposisi.isi1set1 as isi1set1, imposisi.tanggal_imposisi_cover as tanggal_imposisi_cover, imposisi.tanggal_imposisi_isi as tanggal_imposisi_isi',
+        );
+        $this->db->from('order');
+        $this->db->join('finishing','finishing.id_order = order.id_order');
+        $this->db->join('imposisi','imposisi.id_order = order.id_order');
+        if($id != null){
+            $this->db->where('order.id_order', $id);
+        }
+        $query = $this->db->get();
+        return $query;         
+    }
+
+    // public function get_lihat($id = null)
+    // {
+    //     $this->db->select(
+    //         'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
+    //         finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral, imposisi.namaoperator1 as namaoperator1, imposisi.namaoperator2 as namaoperator2, imposisi.total_plat_cover as total_plat_cover, imposisi.total_plat_isi as total_plat_isi,  imposisi.cover1mesin1 as cover1mesin1, imposisi.jumlahplatecover1 as jumlahplatecover1, imposisi.cover1plat1 as cover1plat1, imposisi.cover1set1 as cover1set1, imposisi.isi1mesin1 as isi1mesin1, 
+    //         imposisi.jumlahplateisi1 as jumlahplateisi1, imposisi.isi1plat1 as isi1plat1, imposisi.isi1plat2 as isi1plat2, imposisi.isi1set1 as isi1set1, imposisi.tanggal_imposisi_cover as tanggal_imposisi_cover, imposisi.tanggal_imposisi_isi as tanggal_imposisi_isi',
+    //     );
+    //     $this->db->from('order');
+    //     $this->db->join('finishing','finishing.id_order = order.id_order');
+    //     $this->db->join('imposisi','imposisi.id_order = order.id_order');
+    //     if($id != null){
+    //         $this->db->where('order.id_order', $id);
+    //     }
+    //     $query = $this->db->get();
+    //     return $query;         
+    // }
 
     public function tambah_imposisi($data)
 	{

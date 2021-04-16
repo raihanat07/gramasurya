@@ -49,7 +49,7 @@ class Imposisi extends CI_Controller {
 	public function lihat_imposisi($id)
 	{
 		check_not_login();
-		$query = $this->imposisi->get($id);
+		$query = $this->imposisi->get_lihat($id);
 		$data = array(
 			'judul' => 'Edit Imposisi',
 			'imposisi' => $query->result(),
