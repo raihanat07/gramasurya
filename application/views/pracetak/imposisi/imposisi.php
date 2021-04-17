@@ -75,7 +75,7 @@
               <td><?= $row->so_status; ?></td>
               <td align="center">
                 <a href="<?=site_url('pracetak/Imposisi/lihat_imposisi/'.$row->id_order)?>">
-                  <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
+                  <i class="fa fa-eye" style="font-size:18px;ma rgin-right: 20px;"></i>
                 </a>
                 <a href="<?=site_url('pracetak/Imposisi/edit_imposisi/'.$row->id_order)?>">
                   <i class="fa fa-pencil" style="font-size:18px"></i>

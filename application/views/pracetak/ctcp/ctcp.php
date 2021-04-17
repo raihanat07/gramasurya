@@ -38,25 +38,51 @@
               <td rowspan="2">Actions</td>
             </tr>
             </thead>
+            <?php foreach($ctcp as $s => $row) {?>  
             <tr>
-              <td align="center">Nomor SO</td>
-              <td>Tanggal Masuk</td>
-              <td>Deadline</td>
-              <td>Nama Pemesan</td>
-              <td>Nama Orderan</td>
-              <td>Ukuran</td>
-              <td>Halaman</td>
-              <td>Finishing Akhir</td>
-              <td>Status</td>
+            <td align="center"><?= $row->id_order; ?></td>
+              <td><?= $row->tanggal_masuk; ?></td>
+              <td><?= $row->deadline; ?></td>
+              <td><?= $row->nama_pemesan; ?></td>
+              <td><?= $row->nama_orderan; ?></td>
+              <td><?= $row->ukuran; ?></td>
+              <td><?= $row->halaman; ?></td>
+              <td>
+                <?php 
+                  $finishing = "";
+                  if($row->bending != null){
+                    $finishing .= "bending, ";
+                  }
+                  if($row->hard_cover != null){
+                    $finishing .= 'hard cover, ';
+                  }   
+                  if($row->jahit_benang != null){
+                    $finishing .= 'jahit benang, ';
+                  } 
+                  if($row->jahit_kawat != null){
+                    $finishing .= 'jahit kawat, ';
+                  }    
+                  if($row->pond != null){
+                    $finishing .= 'pond, ';
+                  }   
+                  if($row->spiral != null){
+                    $finishing .= 'Spiral, ';
+                  }
+                  $finishing = rtrim($finishing, ", ");
+                  echo $finishing;
+                  ?>
+              </td>
+              <td><?= $row->so_status; ?></td>
               <td align="center">
-                <a href="<?=site_url('pracetak/Ctcp/lihat_ctcp')?>">
+                <a href="<?=site_url('pracetak/Ctcp/lihat_ctcp/'.$row->id_order)?>">
                   <i class="fa fa-eye" style="font-size:18px;margin-right: 20px"></i>
                 </a>
-                <a href="<?=site_url('pracetak/Ctcp/edit_ctcp')?>">
+                <a href="<?=site_url('pracetak/Ctcp/edit_ctcp/'.$row->id_order)?>">
                   <i class="fa fa-pencil" style="font-size:18px;"></i>
                 </a>
               </td>
             </tr> 
+            <?php } ?> 
           </table>
         </div>
         <!-- /.card-body -->
