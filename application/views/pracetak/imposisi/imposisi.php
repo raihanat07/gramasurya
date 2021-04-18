@@ -65,6 +65,9 @@
                   if($row->pond != null){
                     $finishing .= 'pond, ';
                   }   
+                  if($row->klem != null){
+                    $finishing .= 'klem, ';
+                  } 
                   if($row->spiral != null){
                     $finishing .= 'Spiral, ';
                   }

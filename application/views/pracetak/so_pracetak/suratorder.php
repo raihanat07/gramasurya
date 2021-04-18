@@ -50,7 +50,8 @@
             </thead>
             <?php foreach($so as $s => $row) {?>  
             <tr>
-              <td align="center"><?= $row->id_order; ?></td>
+            
+              <td align="center"><?= $row->nomor_so; ?></td>
               <td><?= $row->tanggal_masuk; ?></td>
               <td><?= $row->deadline; ?></td>
               <td><?= $row->nama_pemesan; ?></td>
@@ -76,6 +77,9 @@
                   if($row->pond != null){
                     $finishing .= 'pond, ';
                   }   
+                  if($row->klem != null){
+                    $finishing .= 'klem, ';
+                  } 
                   if($row->spiral != null){
                     $finishing .= 'Spiral, ';
                   }
@@ -85,10 +89,10 @@
               </td>
               <td><?= $row->so_status; ?></td>
               <td align="center">
-                <a href="<?=site_url('pracetak/SuratOrder/lihat_so'.$row->id_order)?>">
+                <a href="<?=site_url('pracetak/SuratOrder/lihat_so/'.$row->id_order)?>">
                   <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
-                <a href="<?=site_url('pracetak/SuratOrder/edit_so'.$row->id_order)?>)?>">
+                <a href="<?=site_url('pracetak/SuratOrder/edit_so/'.$row->id_order)?>">
                   <i class="fa fa-pencil" style="font-size:18px"></i>
                 </a>
               </td>
