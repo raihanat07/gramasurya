@@ -3,17 +3,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class SuratOrder_m extends CI_Model {
 
-	public function get($id = null)
+	public function get()
     {
         $this->db->select(
             'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
-            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral',
+            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_klem as klem,finishing.finishing_akhir_spiral as spiral'
         );
         $this->db->from('order');
-        $this->db->join('finishing','finishing.id_order = order.id_order');
-        if($id != null){
-            $this->db->where('id_order', $id);
-        }
+        $this->db->join('finishing','finishing.id_order = order.id_order');        
         $query = $this->db->get();
         return $query;   
     }
@@ -133,6 +130,7 @@ class SuratOrder_m extends CI_Model {
             'finishing_akhir_jahit_benang' =>$data['finishing_akhir_jahit_benang'],
             'finishing_akhir_jahit_kawat' =>$data['finishing_akhir_jahit_kawat'],
             'finishing_akhir_pond' =>$data['finishing_akhir_pond'],
+            'finishing_akhir_klem' =>$data['finishing_akhir_klem'],
             'finishing_akhir_spiral' =>$data['finishing_akhir_spiral'],
             // 'keterangan_finishing_cover' =>$data['keterangan_finishing_cover'],
             // 'keterangan_finishing_isi' =>$data['keterangan_finishing_isi'],
@@ -141,6 +139,115 @@ class SuratOrder_m extends CI_Model {
         $this->db->insert('finishing',$tambah_finishing);
     }
 
+    // data edit
+    public function get_edit($id)
+    {
+        $this->db->select(
+            'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status,                     
+
+            ct.ctcp_cover_1 as ctcp_cover_1,
+            ct.ctcp_isi_1 as ctcp_isi_1,
+            ct.plat_cover_1 as plat_cover_1,
+            ct.plat_isi_1 as plat_isi_1,
+            ct.ctcp_cover_2 as ctcp_cover_2,
+            ct.ctcp_isi_2 as ctcp_isi_2,
+            ct.plat_cover_2 as plat_cover_2,
+            ct.plat_isi_2 as plat_isi_2,
+            ct.ctcp_cover_3 as ctcp_cover_3,
+            ct.ctcp_isi_3 as ctcp_isi_3,
+            ct.plat_cover_3 as plat_cover_3,
+            ct.plat_isi_3 as plat_isi_3,        
+               
+            ke.jenis_kertas_cover_1 as jenis_kertas_cover_1,
+            ke.jenis_kertas_isi_1 as jenis_kertas_isi_1,
+            ke.ukuran_plano_cover_1 as ukuran_plano_cover_1,
+            ke.ukuran_plano_isi_1  as ukuran_plano_isi_1,
+            ke.jumlah_kertas_cover_1 as jumlah_kertas_cover_1,
+            ke.jumlah_kertas_isi_1 as jumlah_kertas_isi_1,
+            ke.jenis_kertas_cover_2 as jenis_kertas_cover_2,
+            ke.jenis_kertas_isi_2 as jenis_kertas_isi_2,
+            ke.ukuran_plano_cover_2 as ukuran_plano_cover_2,
+            ke.ukuran_plano_isi_2 as ukuran_plano_isi_2,
+            ke.jumlah_kertas_cover_2 as jumlah_kertas_cover_2,
+            ke.jumlah_kertas_isi_2 as jumlah_kertas_isi_2,
+            ke.jenis_kertas_cover_3 as jenis_kertas_cover_3,
+            ke.jenis_kertas_isi_3 as jenis_kertas_isi_3,
+            ke.ukuran_plano_cover_3 as ukuran_plano_cover_3,
+            ke.ukuran_plano_isi_3 as ukuran_plano_isi_3,
+            ke.jumlah_kertas_cover_3 as jumlah_kertas_cover_3,
+            ke.jumlah_kertas_isi_3 as jumlah_kertas_isi_3,
+            
+            po.potong_cover_1 as potong_cover_1,
+            po.potong_isi_1 as potong_isi_1,
+            po.potong_cover_2 as potong_cover_2,
+            po.potong_isi_2 as potong_isi_2,
+            po.potong_cover_3 as potong_cover_3,
+            po.potong_isi_3 as potong_isi_3,
+            po.potong_isi_4 as potong_isi_4,
+            
+            ce.mesin_cover_1 as mesin_cover_1,
+            ce.mesin_isi_1 as mesin_isi_1,
+            ce.warna_cover_1 as warna_cover_1,
+            ce.warna_isi_1 as warna_isi_1,
+            ce.insit_cover_1 as insit_cover_1,
+            ce.insit_isi_1 as insit_isi_1,
+            ce.mesin_cover_2 as mesin_cover_2,
+            ce.mesin_isi_2 as mesin_isi_2,
+            ce.warna_cover_2 as warna_cover_2,
+            ce.warna_isi_2 as warna_isi_2,
+            ce.insit_cover_2 as insit_cover_2,
+            ce.insit_isi_2 as insit_isi_2,
+            ce.mesin_cover_3 as mesin_cover_3,
+            ce.mesin_isi_3 as mesin_isi_3,
+            ce.warna_cover_3 as warna_cover_3,
+            ce.warna_isi_3 as warna_isi_3,
+            ce.insit_cover_3 as insit_cover_3,
+            ce.insit_isi_3 as insit_isi_3,
+            ce.keterangan_cetak_cover as keterangan_cetak_cover,
+            ce.keterangan_cetak_isi as keterangan_cetak_isi,
+
+            fi.finishing_cover_doff as doff,
+            fi.finishing_cover_emboss as emboss,
+            fi.finishing_cover_glossy as glossy,
+            fi.finishing_cover_hotprint as hotprint,
+            fi.finishing_cover_spot_uvi as spot_uvi,
+            fi.finishing_cover_uvi as uvi,
+            fi.finishing_isi_lipat as lipat,
+            fi.finishing_isi_susun as susun,
+            fi.finishing_akhir_bending as bending, 
+            fi.finishing_akhir_hard_cover as hard_cover, 
+            fi.finishing_akhir_jahit_benang as jahit_benang, 
+            fi.finishing_akhir_jahit_kawat as jahit_kawat, 
+            fi.finishing_akhir_pond as pond, 
+            fi.finishing_akhir_klem as klem,
+            fi.finishing_akhir_spiral as spiral'                        
+        );
+        $this->db->from('order');
+        
+        $this->db->join('ctcp as ct','ct.id_order = order.id_order'); 
+        $this->db->join('kertas as ke','ke.id_order = order.id_order'); 
+        $this->db->join('potong as po','po.id_order = order.id_order'); 
+        $this->db->join('cetak as ce','ce.id_order = order.id_order');         
+        $this->db->join('finishing as fi','fi.id_order = order.id_order');    
+        
+        $this->db->where('order.id_order', $id);
+        $query = $this->db->get();
+        return $query;   
+    }
+
+
+    public function get_($id)
+    {
+        $this->db->select(
+            'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
+            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_klem as klem,finishing.finishing_akhir_spiral as spiral'
+        );
+        $this->db->from('order');
+        $this->db->join('finishing','finishing.id_order = order.id_order');    
+        $this->db->where('order.id_order', $id);    
+        $query = $this->db->get();
+        return $query;   
+    }
 	
 
 }
