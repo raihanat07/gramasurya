@@ -36,13 +36,14 @@
         <div class="card-body">
           <div class="card-body">
           
-            <form>
+            <form action="<?=site_url('pracetak/SuratOrder/proses')?>" method="POST">
             <?php foreach($so as $s => $row) {?>  
               <div class="row">
                 <div class="col-md-2" align="right">
                   <br><label class="form-label">Nomor SO</label>
                 </div>
                 <div class="col-md-2">
+                <input type="text" class="form-control" name="id" value="<?= $row->id_order; ?>" placeholder="Masukan Nomor SO" hidden>
                   <br><input type="text" class="form-control" name="nomor_so" value="<?= $row->id_order; ?>" placeholder="Masukan Nomor SO" required>
                 </div>
                 <div class="col-md-2" align="right">
@@ -134,9 +135,9 @@
                             <div class="col-md-3">
                               <br><label class="form-label">CTCP COVER 1</label>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3">  
                               <br><select id="inputState" class="form-select form-control" name="ctcp_cover_1"  required>
-                                <option value="<?= $row->ctcp_cover_1; ?>"><?= $row->ctcp_cover_1; ?></option>
+                                <option value=" <?php  echo ($row->ctcp_cover_1 != null ?   $row->ctcp_cover_1  : '' )?>"><?php  echo ($row->ctcp_cover_1 != null ?   $row->ctcp_cover_1  : 'ctcp_cover_1' )?></option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>
@@ -153,7 +154,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ctcp_isi_1"  required>
-                                <option value="<?= $row->ctcp_isi_1; ?>"><?= $row->ctcp_isi_1; ?></option>
+                              <option value=" <?php  echo $row->ctcp_isi_1 != null ?   $row->ctcp_isi_1  : '' ?>"><?php  echo $row->ctcp_isi_1 != null ?   $row->ctcp_isi_1  : "ctcp_isi_1" ?></option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>
@@ -187,7 +188,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ctcp_cover_2" required>
-                                <option value="<?= $row->ctcp_cover_2; ?>"><?= $row->ctcp_cover_2; ?></option>
+                              <option value=" <?php  echo $row->ctcp_cover_2 != null ?   $row->ctcp_cover_2  : '' ?>"><?php  echo $row->ctcp_cover_2 != null ?   $row->ctcp_cover_2  : "ctcp_cover_2" ?></option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>
@@ -204,7 +205,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ctcp_isi_2"  required>
-                                <option value="<?= $row->ctcp_isi_2; ?>"><?= $row->ctcp_isi_2; ?></option>
+                              <option value=" <?php  echo $row->ctcp_isi_2 != null ?   $row->ctcp_isi_2  : '' ?>"><?php  echo $row->ctcp_isi_2 != null ?   $row->ctcp_isi_2  : "ctcp_isi_2" ?></option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>
@@ -238,7 +239,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ctcp_cover_3"  required>
-                                <option value="<?= $row->ctcp_cover_3; ?>"><?= $row->ctcp_cover_3; ?></option>
+                              <option value=" <?php  echo $row->ctcp_cover_3 != null ?   $row->ctcp_cover_3  : '' ?>"><?php  echo $row->ctcp_cover_3 != null ?   $row->ctcp_cover_3  : "ctcp_cover_3" ?></option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>
@@ -255,13 +256,13 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ctcp_isi_3"  required>
-                                <option value="<?= $row->ctcp_isi_3; ?>"><?= $row->ctcp_isi_3; ?></option>
+                              <option value=" <?php  echo $row->ctcp_isi_3 != null ?   $row->ctcp_isi_3  : '' ?>"><?php  echo $row->ctcp_isi_3 != null ?   $row->ctcp_isi_3  : "ctcp_isi_3" ?></option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>
                                 <option value="Plat 102">Plat 102</option>
                                 <option value="Plat paperplate">Plat paperplate</option>
-                                <option value="Plat 72.4 x 59.2">Plat 72.4 x 59.2</option>
+                                <option value="Plat 72.4 x 59.2">Plat 72.4 x 59.2</option>  
                                 <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
                                 <option value="Plat 770 x 1030">Plat 770 x 1030</option>
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
@@ -305,8 +306,8 @@
                               <br><label class="form-label">KERTAS COVER 1</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_cover_1" value="<?= $row->jenis_kertas_cover; ?>" required>
-                                <option value="">Kertas Cover</option>
+                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_cover_1"  required>
+                              <option value=" <?php  echo $row->jenis_kertas_cover_1 != null ?   $row->jenis_kertas_cover_1  : '' ?>"><?php  echo $row->jenis_kertas_cover_1 != null ?   $row->jenis_kertas_cover_1  : "jenis_kertas_cover_1" ?></option>
                                 <option value="ACCO(isi50)">ACCO(isi50)</option>
                                 <option value="Acquarello white 118">Acquarello white 118</option>
                                 <option value="Amplop coklat jadi">Amplop coklat jadi</option>
@@ -357,8 +358,8 @@
                               <br><label class="form-label">KERTAS ISI 1</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_isi_1" value="<?= $row->jenis_kertas_isi_1; ?>" required>
-                                <option value="">Kertas Isi</option>
+                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_isi_1"  required>
+                              <option value=" <?php  echo $row->jenis_kertas_isi_1 != null ?   $row->jenis_kertas_isi_1  : '' ?>"><?php  echo $row->jenis_kertas_isi_1 != null ?   $row->jenis_kertas_isi_1  : "jenis_kertas_isi_1" ?></option>
                                 <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
                                 <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
                                 <option value="AC/Ivory 2Muka 230 gr">AC/Ivory 2Muka 230 gr</option>
@@ -442,8 +443,8 @@
                               <br><label class="form-label">UKURAN PLANO COVER 1</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_cover_1" value="<?= $row->ukuran_plano_cover_1; ?>" required>
-                                <option value="">Ukuran plano Cover</option>
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_cover_1"  required>
+                              <option value=" <?php  echo $row->ukuran_plano_cover_1 != null ?   $row->ukuran_plano_cover_1  : '' ?>"><?php  echo $row->ukuran_plano_cover_1 != null ?   $row->ukuran_plano_cover_1  : "ukuran_plano_cover_1" ?></option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -466,8 +467,8 @@
                               <br><label class="form-label">UKURAN PLANO ISI 1</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_isi_1" value="<?= $row->ukuran_plano_isi_1; ?>" required>
-                                <option value="">Ukuran plano Isi</option>
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_isi_1"  required>
+                              <option value=" <?php  echo $row->ukuran_plano_isi_1 != null ?   $row->ukuran_plano_isi_1  : '' ?>"><?php  echo $row->ukuran_plano_isi_1 != null ?   $row->ukuran_plano_isi_1  : "ukuran_plano_isi_1" ?></option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -507,8 +508,8 @@
                               <br><label class="form-label">KERTAS COVER 2</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_cover_2" value="<?= $row->jenis_kertas_cover_2; ?>" required>
-                                <option value="">Kertas Cover</option>
+                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_cover_2"  required>
+                              <option value=" <?php  echo $row->jenis_kertas_cover_2 != null ?   $row->jenis_kertas_cover_2  : '' ?>"><?php  echo $row->jenis_kertas_cover_2 != null ?   $row->jenis_kertas_cover_2  : "jenis_kertas_cover_2" ?></option>
                                 <option value="ACCO(isi50)">ACCO(isi50)</option>
                                 <option value="Acquarello white 118">Acquarello white 118</option>
                                 <option value="Amplop coklat jadi">Amplop coklat jadi</option>
@@ -559,8 +560,8 @@
                               <br><label class="form-label">KERTAS ISI 2</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_isi_2" value="<?= $row->jenis_kertas_isi_2; ?>"required>
-                                <option value="">Kertas Isi</option>
+                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_isi_2" required>
+                              <option value=" <?php  echo $row->jenis_kertas_isi_2 != null ?   $row->jenis_kertas_isi_2  : '' ?>"><?php  echo $row->jenis_kertas_isi_2 != null ?   $row->jenis_kertas_isi_2  : "jenis_kertas_isi_2" ?></option>
                                 <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
                                 <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
                                 <option value="AC/Ivory 2Muka 230 gr">AC/Ivory 2Muka 230 gr</option>
@@ -644,8 +645,8 @@
                               <br><label class="form-label">UKURAN PLANO COVER 2</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_cover_2" value="<?= $row->ukuran_plano_cover_2; ?>" required>
-                                <option value="">Ukuran plano Cover</option>
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_cover_2" required>
+                              <option value=" <?php  echo $row->ukuran_plano_cover_2 != null ?   $row->ukuran_plano_cover_2  : '' ?>"><?php  echo $row->ukuran_plano_cover_2 != null ?   $row->ukuran_plano_cover_2  : "ukuran_plano_cover_2" ?></option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -668,8 +669,8 @@
                               <br><label class="form-label">UKURAN PLANO ISI 2</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_isi_2" value="<?= $row->ukuran_plano_isi_2; ?>" required>
-                                <option value="">Ukuran plano Isi</option>
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_isi_2"  required>
+                              <option value=" <?php  echo $row->ukuran_plano_isi_2 != null ?   $row->ukuran_plano_isi_2  : '' ?>"><?php  echo $row->ukuran_plano_isi_2 != null ?   $row->ukuran_plano_isi_2  : "ukuran_plano_isi_2" ?></option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -709,8 +710,8 @@
                               <br><label class="form-label">KERTAS COVER 3</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_cover_3" value="<?= $row->jenis_kertas_cover_3; ?>" required>
-                                <option value="">Kertas Cover</option>
+                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_cover_3"  required>
+                              <option value=" <?php  echo $row->jenis_kertas_cover_3 != null ?   $row->jenis_kertas_cover_3  : '' ?>"><?php  echo $row->jenis_kertas_cover_3 != null ?   $row->jenis_kertas_cover_3  : "jenis_kertas_cover_3" ?></option>
                                 <option value="ACCO(isi50)">ACCO(isi50)</option>
                                 <option value="Acquarello white 118">Acquarello white 118</option>
                                 <option value="Amplop coklat jadi">Amplop coklat jadi</option>
@@ -761,8 +762,8 @@
                               <br><label class="form-label">KERTAS ISI 3</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_isi_3" value="<?= $row->jenis_kertas_isi_3; ?>" required>
-                                <option value="">Kertas Isi</option>
+                              <br><select id="inputState" class="form-select form-control" name="jenis_kertas_isi_3"  required>
+                              <option value=" <?php  echo $row->jenis_kertas_isi_3 != null ?   $row->jenis_kertas_isi_3  : '' ?>"><?php  echo $row->jenis_kertas_isi_3 != null ?   $row->jenis_kertas_isi_3  : "jenis_kertas_isi_3" ?></option>
                                 <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
                                 <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
                                 <option value="AC/Ivory 2Muka 230 gr">AC/Ivory 2Muka 230 gr</option>
@@ -846,8 +847,8 @@
                               <br><label class="form-label">UKURAN PLANO COVER 3</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_cover_3" value="<?= $row->ukuran_plano_cover_3; ?>" required>
-                                <option value="">Ukuran plano Cover</option>
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_cover_3"  required>
+                              <option value=" <?php  echo $row->ukuran_plano_cover_3 != null ?   $row->ukuran_plano_cover_3  : '' ?>"><?php  echo $row->ukuran_plano_cover_3 != null ?   $row->ukuran_plano_cover_3  : "ukuran_plano_cover_3" ?></option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -870,8 +871,8 @@
                               <br><label class="form-label">UKURAN PLANO ISI 3</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_isi_3" value="<?= $row->ukuran_plano_isi_3; ?>" required>
-                                <option value="">Ukuran plano Isi</option>
+                              <br><select id="inputState" class="form-select form-control" name="ukuran_plano_isi_3"  required>
+                              <option value=" <?php  echo $row->ukuran_plano_isi_3 != null ?   $row->ukuran_plano_isi_3  : '' ?>"><?php  echo $row->ukuran_plano_isi_3 != null ?   $row->ukuran_plano_isi_3  : "ukuran_plano_isi_3" ?></option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -1000,8 +1001,8 @@
                               <br><label class="form-label">MESIN COVER 1</label>
                              </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="mesin_cover_1" value="<?= $row->mesin_cover_1; ?>" required>
-                                <option value="">Mesin Cover</option>
+                              <br><select id="inputState" class="form-select form-control" name="mesin_cover_1"  required>
+                              <option value=" <?php  echo $row->mesin_cover_1 != null ?   $row->mesin_cover_1  : '' ?>"><?php  echo $row->mesin_cover_1 != null ?   $row->mesin_cover_1  : "mesin_cover_1" ?></option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
                                 <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -1018,8 +1019,8 @@
                               <br><label class="form-label">MESIN ISI 1</label>
                             </div>
                             <div class="col-md-3">
-                              <br><select id="inputState" class="form-select form-control" name="mesin_isi_1" value="<?= $row->mesin_isi_1; ?>" required>
-                                <option value="">Mesin Isi</option>
+                              <br><select id="inputState" class="form-select form-control" name="mesin_isi_1"  required>
+                              <option value=" <?php  echo $row->mesin_isi_1 != null ?   $row->mesin_isi_1  : '' ?>"><?php  echo $row->mesin_isi_1 != null ?   $row->mesin_isi_1  : "mesin_isi_1" ?></option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
                                 <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -1039,7 +1040,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="warna_cover_1" required>
-                                <option value="">Warna Cover</option>
+                              <option value=" <?php  echo $row->warna_cover_1 != null ?   $row->warna_cover_1  : '' ?>"><?php  echo $row->warna_cover_1 != null ?   $row->warna_cover_1  : "warna_cover_1" ?></option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
                                 <option value="2/0">2/0</option>
@@ -1057,7 +1058,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="warna_isi_1" required>
-                                <option value="">Warna Isi</option>
+                              <option value=" <?php  echo $row->warna_isi_1 != null ?   $row->warna_isi_1  : '' ?>"><?php  echo $row->warna_isi_1 != null ?   $row->warna_isi_1  : "warna_isi_1" ?></option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
                                 <option value="2/0">2/0</option>
@@ -1076,13 +1077,13 @@
                               <br><label class="form-label">INSIT COVER 1</label>
                             </div>
                             <div class="col-md-3">
-                              <br><input type="text" class="form-select form-control" name="insit_cover_1">
+                              <br><input type="text" class="form-select form-control" name="insit_cover_1" value="<?= $row->insit_cover_1; ?>">
                             </div>
                             <div class="col-md-3">
                               <br><label class="form-label">INSIT ISI 1</label>
                             </div>
                             <div class="col-md-3">
-                              <br><input type="text" class="form-select form-control" name="insit_isi_1">
+                              <br><input type="text" class="form-select form-control" name="insit_isi_1" value="<?= $row->insit_isi_1; ?>">
                             </div>
                           </div>
                           <br><hr>
@@ -1092,7 +1093,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="mesin_cover_2" required>
-                                <option value="">Mesin Cover</option>
+                              <option value=" <?php  echo $row->mesin_cover_2 != null ?   $row->mesin_cover_2  : '' ?>"><?php  echo $row->mesin_cover_2 != null ?   $row->mesin_cover_2  : "mesin_cover_2" ?></option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
                                 <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -1110,7 +1111,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="mesin_isi_2" required>
-                                <option value="">Mesin Isi</option>
+                              <option value=" <?php  echo $row->mesin_isi_2 != null ?   $row->mesin_isi_2  : '' ?>"><?php  echo $row->mesin_isi_2 != null ?   $row->mesin_isi_2  : "mesin_isi_2" ?></option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
                                 <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -1130,7 +1131,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="warna_cover_2" required>
-                                <option value="">Warna Cover</option>
+                              <option value=" <?php  echo $row->warna_cover_2 != null ?   $row->warna_cover_2  : '' ?>"><?php  echo $row->warna_cover_2 != null ?   $row->warna_cover_2  : "warna_cover_2" ?></option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
                                 <option value="2/0">2/0</option>
@@ -1148,7 +1149,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="warna_isi_2" required>
-                                <option value="">Warna Isi</option>
+                              <option value=" <?php  echo $row->warna_isi_2 != null ?   $row->warna_isi_2  : '' ?>"><?php  echo $row->warna_isi_2 != null ?   $row->warna_isi_2  : "warna_isi_2" ?></option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
                                 <option value="2/0">2/0</option>
@@ -1167,13 +1168,13 @@
                               <br><label class="form-label">INSIT COVER 2</label>
                             </div>
                             <div class="col-md-3">
-                              <br><input type="text" class="form-select form-control" name="insit_cover_2">
+                              <br><input type="text" class="form-select form-control" name="insit_cover_2" value="<?= $row->insit_cover_2; ?>">
                             </div>
                             <div class="col-md-3">
                               <br><label class="form-label">INSIT ISI 2</label>
                             </div>
                             <div class="col-md-3">
-                              <br><input type="text" class="form-select form-control" name="insit_isi_2">
+                              <br><input type="text" class="form-select form-control" name="insit_isi_2" value="<?= $row->insit_isi_2; ?>">
                             </div>
                           </div>
                           <br><hr>
@@ -1183,7 +1184,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="mesin_cover_3" required>
-                                <option value="">Mesin Cover</option>
+                              <option value=" <?php  echo $row->mesin_cover_3 != null ?   $row->mesin_cover_3  : '' ?>"><?php  echo $row->mesin_cover_3 != null ?   $row->mesin_cover_3  : "mesin_cover_3" ?></option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
                                 <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -1201,7 +1202,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="mesin_isi_3" required>
-                                <option value="">Mesin Isi</option>
+                              <option value=" <?php  echo $row->mesin_isi_3 != null ?   $row->mesin_isi_3  : '' ?>"><?php  echo $row->mesin_isi_3 != null ?   $row->mesin_isi_3  : "mesin_isi_3" ?></option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
                                 <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -1221,7 +1222,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="warna_cover_3" required>
-                                <option value="">Warna Cover</option>
+                              <option value=" <?php  echo $row->warna_cover_3 != null ?   $row->warna_cover_3  : '' ?>"><?php  echo $row->warna_cover_3 != null ?   $row->warna_cover_3  : "warna_cover_3" ?></option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
                                 <option value="2/0">2/0</option>
@@ -1239,7 +1240,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="warna_isi_3" required>
-                                <option value="">Warna Isi</option>
+                              <option value=" <?php  echo $row->warna_isi_3 != null ?   $row->warna_isi_3  : '' ?>"><?php  echo $row->warna_isi_3 != null ?   $row->warna_isi_3  : "warna_isi_3" ?></option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
                                 <option value="2/0">2/0</option>
@@ -1258,24 +1259,24 @@
                               <br><label class="form-label">INSIT COVER 3</label>
                             </div>
                             <div class="col-md-3">
-                              <br><input type="text" class="form-select form-control" name="insit_cover_3">
+                              <br><input type="text" class="form-select form-control" name="insit_cover_3" value="<?= $row->insit_cover_3; ?>">
                             </div>
                             <div class="col-md-3">
                               <br><label class="form-label">INSIT ISI 3</label>
                             </div>
                             <div class="col-md-3">
-                              <br><input type="text" class="form-select form-control" name="insit_isi_3">
+                              <br><input type="text" class="form-select form-control" name="insit_isi_3" value="<?= $row->insit_isi_3; ?>">
                             </div>
                           </div>
                           <br><hr>
                           <div class="row">
                             <div class="col-md-6">
                               <br><label class="form-label">KETERANGAN CETAK COVER</label>
-                              <textarea class="form-control" placeholder="keterangan" name="keterangan_cetak_cover"></textarea>
+                              <textarea class="form-control" placeholder="keterangan" name="keterangan_cetak_cover" value="<?= $row->keterangan_cetak_cover; ?>"><?= $row->keterangan_cetak_cover; ?></textarea>
                             </div>
                             <div class="col-md-6">
                               <br><label class="form-label">KETERANGAN CETAK ISI</label>
-                              <textarea class="form-control" placeholder="keterangan" name="keterangan_cetak_isi"></textarea>
+                              <textarea class="form-control" placeholder="keterangan" name="keterangan_cetak_isi" value="<?= $row->keterangan_cetak_isi; ?>"><?= $row->keterangan_cetak_isi; ?></textarea>
                             </div>
                           </div>
                         </div>
@@ -1307,42 +1308,42 @@
                             <div class="col-md-4">
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_cover_doff" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_cover_doff" value="doff" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_cover_doff" value="doff" id="flexCheckDefault" <?php echo $row->doff == "doff" ?  "checked" : "" ?> >
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Doff
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_cover_emboss" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_cover_emboss" value="emboss" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_cover_emboss" value="emboss" id="flexCheckDefault" <?php echo $row->emboss == "emboss" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Emboss
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_cover_glossy" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_cover_glossy" value="glossy" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_cover_glossy" value="glossy" id="flexCheckDefault" <?php echo $row->glossy == "glossy" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Glossy
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_cover_hotprint" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_cover_hotprint" value="hotprint" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_cover_hotprint" value="hotprint" id="flexCheckDefault" <?php echo $row->hotprint == "hotprint" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Hotprint
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_cover_spot_uvi" value="" hidden>
-                                <input class="form-check-input" name="finishing_cover_spot_uvi" type="checkbox" value="spot_uvi" id="flexCheckDefault">
+                                <input class="form-check-input" name="finishing_cover_spot_uvi" type="checkbox" value="spot_uvi" id="flexCheckDefault" <?php echo $row->spot_uvi == "spot_uvi" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Spot Ui
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_cover_uvi" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_cover_uvi" value="uvi" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_cover_uvi" value="uvi" id="flexCheckDefault" <?php echo $row->uvi == "uvi" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Uvi
                                 </label>
@@ -1351,14 +1352,14 @@
                             <div class="col-md-4">
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_isi_lipat" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_isi_lipat" value="lipat" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_isi_lipat" value="lipat" id="flexCheckDefault" <?php echo $row->lipat == "lipat" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Lipat
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_isi_susun" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_isi_susun" value="susun" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_isi_susun" value="susun" id="flexCheckDefault" <?php echo $row->susun == "susun" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Susun
                                 </label>
@@ -1367,49 +1368,49 @@
                             <div class="col-md-4">
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_akhir_bending" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_akhir_bending" value="bending" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_akhir_bending" value="bending" id="flexCheckDefault" <?php echo $row->bending == "bending" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Bending
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_akhir_hard_cover" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_akhir_hard_cover" value="hard_cover" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_akhir_hard_cover" value="hard_cover" id="flexCheckDefault" <?php echo $row->hard_cover == "hard_cover" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Hard Cover
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_akhir_jahit_benang" value="" hidden>
-                                <input class="form-check-input" name="finishing_akhir_jahit_benang" type="checkbox" value="jahit_benang" id="flexCheckDefault">
+                                <input class="form-check-input" name="finishing_akhir_jahit_benang" type="checkbox" value="jahit_benang" id="flexCheckDefault" <?php echo $row->jahit_benang == "jahit_benang" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Jahit Benang
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_akhir_jahit_kawat" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_akhir_jahit_kawat" value="jahit_kawat" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_akhir_jahit_kawat" value="jahit_kawat" id="flexCheckDefault" <?php echo $row->jahit_kawat == "jahit_kawat" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Jahit Kawat
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_akhir_klem" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_akhir_klem" value="klem" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_akhir_klem" value="klem" id="flexCheckDefault" <?php echo $row->klem == "klem" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Klem
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_akhir_pond" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_akhir_pond" value="pond" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_akhir_pond" value="pond" id="flexCheckDefault" <?php echo $row->pond == "pond" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Pond
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="text" name="finishing_akhir_spiral" value="" hidden>
-                                <input class="form-check-input" type="checkbox" name="finishing_akhir_spiral" value="spiral" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" name="finishing_akhir_spiral" value="spiral" id="flexCheckDefault" <?php echo $row->spiral == "spiral" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
                                   Spiral
                                 </label>
@@ -1440,7 +1441,7 @@
               <div class="row">
                 <div class="col">
                   <button type="reset" class="btn btn-default">Reset</button>
-                  <button type="submit" name="add" class="btn btn-success float-right">Submit</button>
+                  <button type="submit" name="edit" class="btn btn-success float-right">Ubah Data</button>
                 </div>
               </div>
             </form>
