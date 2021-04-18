@@ -34,7 +34,9 @@
         </div>
         <div class="card-body">
           <div class="card-body">
-            <form action="<?=site_url('pracetak/SuratOrder/proses')?>" method="POST">            
+            <form action="<?=site_url('pracetak/SuratOrder/proses')?>" method="POST">
+            <?php  $so->id_order+=1; ?>        
+            <input type="text" name="id_order"  value="<?php echo $so->id_order; ?>" hidden>
               <div class="row">
                 <div class="col-md-2" align="right">
                   <br><label class="form-label">Nomor SO</label>

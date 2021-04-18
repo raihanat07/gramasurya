@@ -20,9 +20,14 @@ class SuratOrder extends CI_Controller {
 		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder',$data);
 	}
 
+
 	public function tambah_so()
 	{
-		$data['judul'] = 'Tambah SO Pracetak';
+		$query = $this->so->get_id_order();
+		$data = array(
+			'judul' => 'Tambah SO Pracetak',
+			'so' => $query->row(),
+		);	
 		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder-tambah', $data);
 	}
 	public function edit_so($id)
@@ -45,14 +50,19 @@ class SuratOrder extends CI_Controller {
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->so->add($inputan);
+				if($this->db->affected_rows() > 0){
+					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
+				}
+				echo "<script>window.location='".site_url('pracetak/suratorder')."'; </script>"; 
 		} else if(isset($_POST['edit'])){ 
 			$inputan = $this->input->post(null, TRUE);			
 			$this->so->edit($inputan);
+				if($this->db->affected_rows() > 0){
+					echo "<script> alert('Data Berhasil Diubah'); </script>";
+				}
+				echo "<script>window.location='".site_url('pracetak/suratorder')."'; </script>"; 
 		}
-		if($this->db->affected_rows() > 0){
-			echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
-		}
-		echo "<script>window.location='".site_url('pracetak/suratorder')."'; </script>"; 
+		
 		
 	}
 	

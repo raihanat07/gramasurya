@@ -3,10 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class SuratOrder_m extends CI_Model {
 
+    // ambil data nilai id_order yang paling akhir
+    public function get_id_order()
+    {
+        $this->db->select_max('id_order');
+        $this->db->from('order');        
+        $query = $this->db->get();
+        return $query;   
+    }
+
 	public function get()
     {
         $this->db->select(
-            'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
+            'order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_klem as klem,finishing.finishing_akhir_spiral as spiral'
         );
         $this->db->from('order');
@@ -20,7 +29,8 @@ class SuratOrder_m extends CI_Model {
 	{
         // tambah bagian surat order  
 		$tambah_so = array(            
-            'id_order' =>$data['nomor_so'],
+            'id_order' =>$data['id_order'],            
+            'nomor_so' =>$data['nomor_so'],
             'tanggal_masuk' =>$data['tanggal_masuk'],
             'deadline' =>$data['deadline'],
             'nama_pemesan' =>$data['nama_pemesan'],
@@ -34,7 +44,7 @@ class SuratOrder_m extends CI_Model {
 
         // // tambah bagian ctcp
         $tambah_ctcp = array(
-            'id_order' =>$data['nomor_so'],
+            'id_order' =>$data['id_order'],
             'ctcp_cover_1' =>$data['ctcp_cover_1'],
             'ctcp_isi_1' =>$data['ctcp_isi_1'],
             'plat_cover_1' =>$data['plat_cover_1'],
@@ -52,7 +62,7 @@ class SuratOrder_m extends CI_Model {
 
         // tambah bagian kertas
         $tambah_kertas = array(
-            'id_order' =>$data['nomor_so'],
+            'id_order' =>$data['id_order'],
             'jenis_kertas_cover_1' =>$data['jenis_kertas_cover_1'],
             'jenis_kertas_isi_1' =>$data['jenis_kertas_isi_1'],
             'ukuran_plano_cover_1' =>$data['ukuran_plano_cover_1'],
@@ -76,7 +86,7 @@ class SuratOrder_m extends CI_Model {
 
          // tambah bagian kertas
          $tambah_potong = array(
-            'id_order' =>$data['nomor_so'],
+            'id_order' =>$data['id_order'],
             'potong_cover_1' =>$data['potong_cover_1'],
             'potong_isi_1' =>$data['potong_isi_1'],
             'potong_cover_2' =>$data['potong_cover_2'],
@@ -89,7 +99,7 @@ class SuratOrder_m extends CI_Model {
 
         // tambah bagian cetak
         $tambah_cetak = array(
-            'id_order' =>$data['nomor_so'],
+            'id_order' =>$data['id_order'],
             'mesin_cover_1' =>$data['mesin_cover_1'],
             'mesin_isi_1' =>$data['mesin_isi_1'],
             'warna_cover_1' =>$data['warna_cover_1'],
@@ -116,7 +126,7 @@ class SuratOrder_m extends CI_Model {
 
         // tambah bagian finishing
         $tambah_finishing = array(
-            'id_order' =>$data['nomor_so'],
+            'id_order' =>$data['id_order'],
             'finishing_cover_doff' =>$data['finishing_cover_doff'],
             'finishing_cover_emboss' =>$data['finishing_cover_emboss'],
             'finishing_cover_glossy' =>$data['finishing_cover_glossy'],
@@ -143,7 +153,7 @@ class SuratOrder_m extends CI_Model {
     public function get_edit($id)
     {
         $this->db->select(
-            'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status,                     
+            'order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status,                     
 
             ct.ctcp_cover_1 as ctcp_cover_1,
             ct.ctcp_isi_1 as ctcp_isi_1,
@@ -239,8 +249,9 @@ class SuratOrder_m extends CI_Model {
     public function edit($data)
 	{
         // ubah bagian surat order  
-		$tambah_so = array(            
-            'id_order' =>$data['nomor_so'],
+		$ubah_so = array(            
+            'id_order' =>$data['id_order'],
+            'nomor_so' =>$data['nomor_so'],
             'tanggal_masuk' =>$data['tanggal_masuk'],
             'deadline' =>$data['deadline'],
             'nama_pemesan' =>$data['nama_pemesan'],
@@ -250,13 +261,14 @@ class SuratOrder_m extends CI_Model {
             'oplag' =>$data['oplag'],
             'so_status' =>$data['so_status'],                        
         );
-        $this->db->set($tambah_so);
-        $this->db->where('id_order',$data['nomor_so']);
+        $this->db->set($ubah_so);
+        $this->db->where('id_order',$data['id_order']);
         $this->db->update('order');
+        $data['perubahan'] = 1;
 
         // // ubah bagian ctcp
-        $tambah_ctcp = array(
-            'id_order' =>$data['nomor_so'],
+        $ubah_ctcp = array(
+            'id_order' =>$data['id_order'],
             'ctcp_cover_1' =>$data['ctcp_cover_1'],
             'ctcp_isi_1' =>$data['ctcp_isi_1'],
             'plat_cover_1' =>$data['plat_cover_1'],
@@ -270,13 +282,13 @@ class SuratOrder_m extends CI_Model {
             'plat_cover_3' =>$data['plat_cover_3'],
             'plat_isi_3' =>$data['plat_isi_3']
         );
-        $this->db->set($tambah_ctcp);
-        $this->db->where('id_order',$data['nomor_so']);
+        $this->db->set($ubah_ctcp);
+        $this->db->where('id_order',$data['id_order']);
         $this->db->update('ctcp');
 
         // ubah bagian kertas
-        $tambah_kertas = array(
-            'id_order' =>$data['nomor_so'],
+        $ubah_kertas = array(
+            'id_order' =>$data['id_order'],
             'jenis_kertas_cover_1' =>$data['jenis_kertas_cover_1'],
             'jenis_kertas_isi_1' =>$data['jenis_kertas_isi_1'],
             'ukuran_plano_cover_1' =>$data['ukuran_plano_cover_1'],
@@ -296,13 +308,13 @@ class SuratOrder_m extends CI_Model {
             'jumlah_kertas_cover_3' =>$data['jumlah_kertas_cover_3'],
             'jumlah_kertas_isi_3' =>$data['jumlah_kertas_isi_3']
         );
-        $this->db->set($tambah_kertas);
-        $this->db->where('id_order',$data['nomor_so']);
+        $this->db->set($ubah_kertas);
+        $this->db->where('id_order',$data['id_order']);
         $this->db->update('kertas');
 
          // ubah bagian kertas
-         $tambah_potong = array(
-            'id_order' =>$data['nomor_so'],
+         $ubah_potong = array(
+            'id_order' =>$data['id_order'],
             'potong_cover_1' =>$data['potong_cover_1'],
             'potong_isi_1' =>$data['potong_isi_1'],
             'potong_cover_2' =>$data['potong_cover_2'],
@@ -311,13 +323,13 @@ class SuratOrder_m extends CI_Model {
             'potong_isi_3' =>$data['potong_isi_3'],
             'potong_isi_4' =>$data['potong_isi_4'],
          );
-         $this->db->set($tambah_potong);
-         $this->db->where('id_order',$data['nomor_so']);
+         $this->db->set($ubah_potong);
+         $this->db->where('id_order',$data['id_order']);
          $this->db->update('potong');
 
         // ubah bagian cetak
-        $tambah_cetak = array(
-            'id_order' =>$data['nomor_so'],
+        $ubah_cetak = array(
+            'id_order' =>$data['id_order'],
             'mesin_cover_1' =>$data['mesin_cover_1'],
             'mesin_isi_1' =>$data['mesin_isi_1'],
             'warna_cover_1' =>$data['warna_cover_1'],
@@ -340,13 +352,13 @@ class SuratOrder_m extends CI_Model {
             'keterangan_cetak_isi' =>$data['keterangan_cetak_isi'],    
             
         );
-        $this->db->set($tambah_cetak);
-        $this->db->where('id_order',$data['nomor_so']);
+        $this->db->set($ubah_cetak);
+        $this->db->where('id_order',$data['id_order']);
         $this->db->update('cetak');
 
         // ubah bagian finishing
-        $tambah_finishing = array(
-            'id_order' =>$data['nomor_so'],
+        $ubah_finishing = array(
+            'id_order' =>$data['id_order'],
             'finishing_cover_doff' =>$data['finishing_cover_doff'],
             'finishing_cover_emboss' =>$data['finishing_cover_emboss'],
             'finishing_cover_glossy' =>$data['finishing_cover_glossy'],
@@ -366,8 +378,8 @@ class SuratOrder_m extends CI_Model {
             // 'keterangan_finishing_isi' =>$data['keterangan_finishing_isi'],
             // 'keterangan_finishing_akhir' =>$data['keterangan_finishing_akhir']
         );
-        $this->db->set($tambah_finishing);
-        $this->db->where('id_order',$data['nomor_so']);
+        $this->db->set($ubah_finishing);
+        $this->db->where('id_order',$data['id_order']);
         $this->db->update('finishing');
     }
 	
