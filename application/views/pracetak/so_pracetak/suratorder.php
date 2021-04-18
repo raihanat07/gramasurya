@@ -85,10 +85,10 @@
               </td>
               <td><?= $row->so_status; ?></td>
               <td align="center">
-                <a href="<?=site_url('pracetak/SuratOrder/lihat_so/'.$row->id_order)?>">
+                <a href="<?=site_url('pracetak/SuratOrder/lihat_so'.$row->id_order)?>">
                   <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
-                <a href="<?=site_url('pracetak/SuratOrder/edit_so/'.$row->id_order)?>)?>">
+                <a href="<?=site_url('pracetak/SuratOrder/edit_so'.$row->id_order)?>)?>">
                   <i class="fa fa-pencil" style="font-size:18px"></i>
                 </a>
               </td>
