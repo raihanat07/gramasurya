@@ -2,17 +2,9 @@
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="<?=site_url()?>pracetak/Ctcp" class="btn btn-warning btn-lg">
-                <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
-                </a>
-              </li>
-              <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li> -->
-            </ol>
-          </div>
+            <div class="col-sm-6">
+                <h1>CTCP</h1>
+            </div>
         </div>
     </div><!-- /.container-fluid -->
 </section>
@@ -24,7 +16,7 @@
     <div class="card">
     <div class="card-header">
         <!-- <label>SO</label> -->
-        <h3 class="card-title">Data CTCP</h3>
+        <h3 class="card-title">SO dari db</h3>
         
 
         <div class="card-tools">
@@ -36,134 +28,110 @@
     </div>
     <div class="card-body">
         <div class="card-body">
-        <form action="<?=site_url('pracetak/ctcp/edit_ctcp')?>" method="post">        
+            <form>
                 <div class="row">
-                    <?php foreach($ctcp as $s => $row) {?>  
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Nomor SO</label>
+                    <div class="col-md-4">
+                        No SO CU<br>
+                        <label class="form-label">SO 2021.4.798</label>
+                    </div>
+                    <div class="col-md-4">
+                        Nama Pemesan<br>
+                        <label class="form-label">GRAMASURYA</label>
+                    </div>
+                    <div class="col-md-4">
+                        Ukuran<br>
+                        <label class="form-label">21*10.5</label>
+                    </div>
+                    <div class="col-md-4">
+                        Tanggal Masuk<br>
+                        <label class="form-label">23 Maret 2021</label>
+                    </div>
+                    <div class="col-md-4">
+                        Nama Order<br>
+                        <label class="form-label">Nota Tanda Terima</label>
+                    </div>
+                    <div class="col-md-4">
+                        Halaman<br>
+                        <label class="form-label">1</label>
+                    </div>
+                    <div class="col-md-4">
+                        Deadline<br>
+                        <label class="form-label">15 Juni 2021</label>
+                    </div>
+                    <div class="col-md-4">
+                        Kode Order<br>
+                        <label class="form-label">Barang Cetakan</label>
+                    </div>
+                    <div class="col-md-4">
+                        Oplag<br>
+                        <label class="form-label">3</label>
+                    </div>
+                    <div class="col-md-4">
+                        Catatan<br>
+                        <label class="form-label">NCR Putih, Kuning Pink @ 1RIM</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nomor_so" value="<?=$row->id_order; ?>" placeholder="Masukan Nomor SO" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Nama Pemesan</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nama_pemesan" value="<?=$row->nama_pemesan; ?>" placeholder="Masukan Nama Pemesan" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Halaman</label>
+                        Kapasistas Mesin<br>
+                        Mesin 102<br>
+                        Mesin 74<br>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="halaman" value="<?=$row->halaman; ?>" placeholder="Masukan Hal" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Tanggal Masuk</label>
+                        <br>
+                        : 130 LPH<br>
+                        : 190 LPH
                     </div>
                     <div class="col-md-2">
-                        <br><input type="date" class="form-control" name="tanggal_masuk" value="<?=$row->tanggal_masuk; ?>" placeholder="Tanggal Masuk" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Nama Orderan</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nama_orderan" value="<?=$row->nama_orderan; ?>" placeholder="Masukan Orderan" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Oplag</label>
+                        <br>
+                        Mesin Tokko<br>
+                        Ket LPH
                     </div>
                     <div class="col-md-2">
-                        <br><input type="number" class="form-control" name="oplag" value="<?=$row->oplag; ?>" placeholder="Masukan Oplag" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Deadline</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="date" class="form-control" name="deadline" value="<?=$row->deadline; ?>" placeholder="Deadline" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Ukuran</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="ukuran" value="<?=$row->ukuran; ?>" placeholder="Masukan Ukuran" >
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Finishing Akhir</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><?php 
-                  $finishing = "";
-                  if($row->bending != null){
-                    $finishing .= "bending, ";
-                  }
-                  if($row->hard_cover != null){
-                    $finishing .= 'hard cover, ';
-                  }   
-                  if($row->jahit_benang != null){
-                    $finishing .= 'jahit benang, ';
-                  } 
-                  if($row->jahit_kawat != null){
-                    $finishing .= 'jahit kawat, ';
-                  }    
-                  if($row->pond != null){
-                    $finishing .= 'pond, ';
-                  }   
-                  if($row->spiral != null){
-                    $finishing .= 'Spiral, ';
-                  }
-                  $finishing = rtrim($finishing, ", ");
-                  echo $finishing;
-                  ?>
-                    </div>
-                </div>
-                
-                <br><hr><br>
-                <div class="row">
-                    <div class="col-md-3" align="center">
-                        <label class="form-label">Nama Operator</label>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" name="namaoperator1" value="<?=$row->namaoperator1; ?>"  required>
-                    </div>
-                    <div class="col-md-3" align="center">
-                        <label class="form-label">Nama Operator</label>
-                    </div>
-                    <div class="col-md-3">
-                        <input type="text" class="form-control" name="namaoperator2" value="<?=$row->namaoperator2; ?>" required>
+                        <br>
+                        : 500 LPH<br>
+                        : Lembar Per Hari
                     </div>
                 </div><br>
                 <div class="row">
-                    <div class="col-md-2">
-                        <label class="form-label">Total Plat Cover</label>
+                    <div class="col-md-3">
+                        <label>Stok Plate 102</label>
+                        <br><label></label>
                     </div>
-                    <div class="col-md-1">
-                        <input type="number" class="form-control" name="total_plat_cover" value="<?=$row->total_plat_cover; ?>" required>
+                    <div class="col-md-3">
+                        <label>Stok Plate 74</label>
+                        <br><label></label>
                     </div>
-                    <div class="col-md-3" align="left">
+                    <div class="col-md-3">
+                        <label>Stok Plate 72</label>
+                        <br><label></label>
+                    </div>
+                    <div class="col-md-3">
+                        <label>Stok Paperplate</label>
+                        <br><label></label>
+                    </div>
+                    <div class="col-md-12">
+                        <label>Status</label>
+                    </div>
+                    <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Imposisi Cover">
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
-                            <input class="form-check-input" type="checkbox" value="CTCP Cover">
-                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-                            <input class="form-check-input" type="checkbox" value="Khusus">
-                            <label class="form-check-label" for="flexCheckDefault">Khusus</label>
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <label class="form-label">Total Plat Isi</label>
-                    </div>
-                    <div class="col-md-1">
-                        <input type="number" class="form-control" name="total_plat_isi" value="<?=$row->total_plat_isi; ?>" required>
-                    </div>
-                    <div class="col-md-3" align="left">
+                    <div class="col-md-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Imposisi isi">
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label><br>
-                            <input class="form-check-input" type="checkbox" value="CTCP isi">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label>
                         </div>
                     </div>
@@ -187,184 +155,144 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
+                            <label class="form-label">Jumlah Plate</label>
+                            <input type="text" class="form-control" name="jumlahplatecover1" placeholder="Masukan Jumlah Plate"><br>
+                            <label class="form-label">Jumlah Sisa</label>
+                            <input type="text" class="form-control" name="jumlahplatesisacover1" placeholder="Masukan Jumlah Sisa"><br>
+                            <label class="form-label">Jumlah Rusak</label>
+                            <input type="text" class="form-control" name="jumlahplaterusakcover1" placeholder="Masukan Jumlah Rusak"><br>
+                            <label class="form-label">Rincian Imposisi</label>
                             <div class="row">
-                                <div class="col-md-3" align="center">
-                                    <label class="form-label">Mesin</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="cover1mesin1" value="<?=$row->cover1mesin1; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                        <option value="102">102</option>
-                                        <option value="74">74</option>
-                                        <option value="72">72</option>
-                                        <option value="Tokko">Tokko</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" align="center">
+                                <div class="col">
                                     <label class="form-label">Plate</label>
+                                    <input type="number" class="form-control" name="cover1plat1"><br>
+                                    <input type="number" class="form-control" name="cover1plat2"><br>
+                                    <input type="number" class="form-control" name="cover1plat3"><br>
+                                    <input type="number" class="form-control" name="cover1plat4"><br>
                                 </div>
-                                <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplatecover1" value="<?=$row->jumlahplatecover1; ?>">
+                                <div class="col">
+                                    <label class="form-label">Satuan</label>
+                                    <select name="cover1satuan1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover1satuan2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover1satuan3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover1satuan4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
                                 </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label class="form-label">Rincian CTCP</label>
-                                        </div>
-                                    </div>
-                                    <div class="row" align="center">
-                                        <div class="col">
-                                            <label class="form-label">Plate</label>
-                                            <input type="number" class="form-control" name="cover1plat1" value="<?=$row->cover1plat1; ?>"><br>
-                                            <input type="number" class="form-control" name="cover1plat2" value="<?=$row->cover1plat2; ?>"><br>
-                                            <input type="number" class="form-control" name="cover1plat3" value="<?=$row->cover1plat3; ?>">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Set</label>
-                                            <input class="form-control" name="cover1set1" value="<?=$row->cover1set1; ?>" disabled><br>
-                                            <input class="form-control" name="cover1set2" value="<?=$row->cover1set2; ?>" disabled><br>
-                                            <input class="form-control" name="cover1set3" value="<?=$row->cover1set3; ?>" disabled>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Lbr.Cetak</label>
-                                            <input class="form-control" name="cover1lbrcetak1" value="<?=$row->cover1lbrcetak1; ?>" disabled=""><br>
-                                            <input class="form-control" name="cover1lbrcetak2" value="<?=$row->cover1lbrcetak2; ?>" disabled=""><br>
-                                            <input class="form-control" name="cover1lbrcetak3" value="<?=$row->cover1lbrcetak3; ?>" disabled="">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Up</label>
-                                            <input type="number" class="form-control" name="cover1up1" value="<?=$row->cover1up1; ?>"><br>
-                                            <input type="number" class="form-control" name="cover1up2" value="<?=$row->cover1up2; ?>"><br>
-                                            <input type="number" class="form-control" name="cover1up3" value="<?=$row->cover1up3; ?>">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Warna</label>
-                                            <input type="number" class="form-control" name="cover1warna1" value="<?=$row->cover1warna1; ?>"><br>
-                                            <input type="number" class="form-control" name="cover1warna2" value="<?=$row->cover1warna2; ?>"><br>
-                                            <input type="number" class="form-control" name="cover1warna3" value="<?=$row->cover1warna3; ?>">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Status</label>
-                                            <select name="cover1status1" value="<?=$row->cover1status1; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select><br>
-                                            <select name="cover1status2" value="<?=$row->cover1status2; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select><br>
-                                            <select name="cover1status3" value="<?=$row->cover1status3; ?>"  class="form-select form-control">
-                                        <option disabled selected></option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control" name="cover1keterangan1" value="<?=$row->cover1keterangan1; ?>"><br>
-                                            <input type="text" class="form-control" name="cover1keterangan2" value="<?=$row->cover1keterangan2; ?>"><br>
-                                            <input type="text" class="form-control" name="cover1keterangan3" value="<?=$row->cover1keterangan3; ?>">
-                                        </div>
-                                    </div>
+                                <div class="col">
+                                    <label class="form-label">Up</label>
+                                    <select name="cover1up1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover1up2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover1up3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover1up4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Mesin</label>
+                                    <select name="cover1mesin1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover1mesin2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover1mesin3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover1mesin4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Operator</label>
+                                    <input type="text" class="form-control" name="cover1operator1"><br>
+                                    <input type="text" class="form-control" name="cover1operator2"><br>
+                                    <input type="text" class="form-control" name="cover1operator3"><br>
+                                    <input type="text" class="form-control" name="cover1operator4"><br>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
+                            <label class="form-label">Jumlah Plate</label>
+                            <input type="text" class="form-control" name="jumlahplateisi1" placeholder="Masukan Jumlah Plate"><br>
+                            <label class="form-label">Jumlah Sisa</label>
+                            <input type="text" class="form-control" name="jumlahplatesisaisi1" placeholder="Masukan Jumlah Sisa"><br>
+                            <label class="form-label">Jumlah Rusak</label>
+                            <input type="text" class="form-control" name="jumlahplaterusakisi1" placeholder="Masukan Jumlah Rusak"><br>
+                            <label class="form-label">Rincian Imposisi</label>
                             <div class="row">
-                                <div class="col-md-3" align="center">
-                                    <label class="form-label">Mesin</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="isi1mesin1" value="<?=$row->isi1mesin1; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                        <option value="102">102</option>
-                                        <option value="74">74</option>
-                                        <option value="72">72</option>
-                                        <option value="Tokko">Tokko</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" align="center">
+                                <div class="col">
                                     <label class="form-label">Plate</label>
+                                    <input type="number" class="form-control" name="isi1plat1"><br>
+                                    <input type="number" class="form-control" name="isi1plat2"><br>
+                                    <input type="number" class="form-control" name="isi1plat3"><br>
+                                    <input type="number" class="form-control" name="isi1plat4"><br>
                                 </div>
-                                <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplateisi1" value="<?=$row->jumlahplateisi1; ?>">
+                                <div class="col">
+                                    <label class="form-label">Satuan</label>
+                                    <select name="isi1satuan1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi1satuan2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi1satuan3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi1satuan4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
                                 </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label class="form-label">Rincian CTCP</label>
-                                        </div>
-                                    </div>
-                                    <div class="row" align="center">
-                                        <div class="col">
-                                            <label class="form-label">Plate</label>
-                                            <input type="number" class="form-control" name="isi1plat1" value="<?=$row->isi1plat1; ?>"><br>
-                                            <input type="number" class="form-control" name="isi1plat2" value="<?=$row->isi1plat2; ?>"><br>
-                                            <input type="number" class="form-control" name="isi1plat3" value="<?=$row->isi1plat3; ?>">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Set</label>
-                                            <input class="form-control" name="isi1set1" value="<?=$row->isi1set1; ?>" disabled><br>
-                                            <input class="form-control" name="isi1set2" value="<?=$row->isi1set2; ?>" disabled><br>
-                                            <input class="form-control" name="isi1set3" value="<?=$row->isi1set3; ?>"disabled>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Lbr.Cetak</label>
-                                            <input class="form-control" name="isi1lbrcetak1" value="<?=$row->isi1lbrcetak1; ?>" disabled=""><br>
-                                            <input class="form-control" name="isi1lbrcetak2" value="<?=$row->isi1lbrcetak2; ?>" disabled=""><br>
-                                            <input class="form-control" name="isi1lbrcetak3" value="<?=$row->isi1lbrcetak3; ?>" disabled="">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Up</label>
-                                            <input type="number" class="form-control" name="isi1up1" value="<?=$row->isi1up1; ?>"><br>
-                                            <input type="number" class="form-control" name="isi1up2" value="<?=$row->isi1up2; ?>"><br>
-                                            <input type="number" class="form-control" name="isi1up3" value="<?=$row->isi1up3; ?>">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Warna</label>
-                                            <input type="number" class="form-control" name="isi1warna1" value="<?=$row->isi1warna1; ?>"><br>
-                                            <input type="number" class="form-control" name="isi1warna2" value="<?=$row->isi1warna2; ?>"><br>
-                                            <input type="number" class="form-control" name="isi1warna3" value="<?=$row->isi1warna3; ?>">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Status</label>
-                                            <select name="isi1status1" value="<?=$row->isi1status1; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select><br>
-                                            <select name="isi1status2" value="<?=$row->isi1status2; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select><br>
-                                            <select name="isi1status3" value="<?=$row->isi1status3; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control" name="isi1keterangan1" value="<?=$row->isi1keterangan1; ?>"><br>
-                                            <input type="text" class="form-control" name="isi1keterangan2" value="<?=$row->isi1keterangan2; ?>"><br>
-                                            <input type="text" class="form-control" name="isi1keterangan3" value="<?=$row->isi1keterangan3; ?>">
-                                        </div>
-                                    </div>
+                                <div class="col">
+                                    <label class="form-label">Up</label>
+                                    <select name="isi1up1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi1up2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi1up3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi1up4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Mesin</label>
+                                    <select name="isi1mesin1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi1mesin2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi1mesin3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi1mesin4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Operator</label>
+                                    <input type="text" class="form-control" name="isi1operator1"><br>
+                                    <input type="text" class="form-control" name="isi1operator2"><br>
+                                    <input type="text" class="form-control" name="isi1operator3"><br>
+                                    <input type="text" class="form-control" name="isi1operator4"><br>
                                 </div>
                             </div>
                         </div>
@@ -389,393 +317,339 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
+                            <label class="form-label">Jumlah Plate</label>
+                            <input type="text" class="form-control" name="jumlahplatecover2" placeholder="Masukan Jumlah Plate"><br>
+                            <label class="form-label">Jumlah Sisa</label>
+                            <input type="text" class="form-control" name="jumlahplatesisacover2" placeholder="Masukan Jumlah Sisa"><br>
+                            <label class="form-label">Jumlah Rusak</label>
+                            <input type="text" class="form-control" name="jumlahplaterusakcover2" placeholder="Masukan Jumlah Rusak"><br>
+                            <label class="form-label">Rincian Imposisi</label>
                             <div class="row">
-                                <div class="col-md-3" align="center">
-                                    <label class="form-label">Mesin</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="cover2mesin1" value="<?=$row->cover2mesin1; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                        <option value="102">102</option>
-                                        <option value="74">74</option>
-                                        <option value="72">72</option>
-                                        <option value="Tokko">Tokko</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" align="center">
+                                <div class="col">
                                     <label class="form-label">Plate</label>
+                                    <input type="number" class="form-control" name="cover2plat1"><br>
+                                    <input type="number" class="form-control" name="cover2plat2"><br>
+                                    <input type="number" class="form-control" name="cover2plat3"><br>
+                                    <input type="number" class="form-control" name="cover2plat4"><br>
                                 </div>
-                                <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplatecover2" value="<?=$row->jumlahplatecover2; ?>">
+                                <div class="col">
+                                    <label class="form-label">Satuan</label>
+                                    <select name="cover2satuan1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover2satuan2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover2satuan3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover2satuan4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
                                 </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label class="form-label">Rincian CTCP</label>
-                                        </div>
-                                    </div>
-                                    <div class="row" align="center">
-                                        <div class="col">
-                                            <label class="form-label">Plate</label>
-                                            <input type="number" class="form-control" name="cover2plat1" value="<?=$row->cover2plat1; ?>"><br>
-                                            <input type="number" class="form-control" name="cover2plat2" value="<?=$row->cover2plat2; ?>"><br>
-                                            <input type="number" class="form-control" name="cover2plat3" value="<?=$row->cover2plat3; ?>"
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Set</label>
-                                            <input class="form-control" name="cover2set1" value="<?=$row->cover2set1; ?>" disabled><br>
-                                            <input class="form-control" name="cover2set2" value="<?=$row->cover2set2; ?>" disabled><br>
-                                            <input class="form-control" name="cover2set3" value="<?=$row->cover2set3; ?>" disabled>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Lbr.Cetak</label>
-                                            <input class="form-control" name="cover2lbrcetak1" value="<?=$row->cover2lbrcetak1; ?>" disabled=""><br>
-                                            <input class="form-control" name="cover2lbrcetak2" value="<?=$row->cover2lbrcetak2; ?>" disabled=""><br>
-                                            <input class="form-control" name="cover2lbrcetak3" value="<?=$row->cover2lbrcetak3; ?>" disabled="">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Up</label>
-                                            <input type="number" class="form-control" name="cover2up1" value="<?=$row->cover2up1; ?>"><br>
-                                            <input type="number" class="form-control" name="cover2up2" value="<?=$row->cover2up2; ?>"><br>
-                                            <input type="number" class="form-control" name="cover2up3" value="<?=$row->cover2up3; ?>">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Warna</label>
-                                            <input type="number" class="form-control" name="cover2warna1" value="<?=$row->cover2warna1; ?>"><br>
-                                            <input type="number" class="form-control" name="cover2warna2" value="<?=$row->cover2warna2; ?>"><br>
-                                            <input type="number" class="form-control" name="cover2warna3" value="<?=$row->cover2warna3; ?>">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Status</label>
-                                            <select name="cover2status1" value="<?=$row->cover2status1; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select><br>
-                                            <select name="cover2status2" value="<?=$row->cover2status2; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select><br>
-                                            <select name="cover2status3" value="<?=$row->cover2status3; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control" name="cover2keterangan1" value="<?=$row->cover2keterangan1; ?>"><br>
-                                            <input type="text" class="form-control" name="cover2keterangan2" value="<?=$row->cover2keterangan2; ?>"><br>
-                                            <input type="text" class="form-control" name="cover2keterangan3" value="<?=$row->cover2keterangan3; ?>">
-                                        </div>
-                                    </div>
+                                <div class="col">
+                                    <label class="form-label">Up</label>
+                                    <select name="cover2up1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover2up2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover2up3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover2up4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Mesin</label>
+                                    <select name="cover2mesin1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover2mesin2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover2mesin3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover2mesin4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Operator</label>
+                                    <input type="text" class="form-control" name="cover2operator1"><br>
+                                    <input type="text" class="form-control" name="cover2operator2"><br>
+                                    <input type="text" class="form-control" name="cover2operator3"><br>
+                                    <input type="text" class="form-control" name="cover2operator4"><br>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
+                            <label class="form-label">Jumlah Plate</label>
+                            <input type="text" class="form-control" name="jumlahplateisi2" placeholder="Masukan Jumlah Plate"><br>
+                            <label class="form-label">Jumlah Sisa</label>
+                            <input type="text" class="form-control" name="jumlahplatesisaisi2" placeholder="Masukan Jumlah Sisa"><br>
+                            <label class="form-label">Jumlah Rusak</label>
+                            <input type="text" class="form-control" name="jumlahplaterusakisi2" placeholder="Masukan Jumlah Rusak"><br>
+                            <label class="form-label">Rincian Imposisi</label>
                             <div class="row">
-                                <div class="col-md-3" align="center">
-                                    <label class="form-label">Mesin</label>
-                                </div>
-                                <div class="col-md-3">
-                                    <select name="isi2mesin1" value="<?=$row->isi2mesin1; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                        <option value="102">102</option>
-                                        <option value="74">74</option>
-                                        <option value="72">72</option>
-                                        <option value="Tokko">Tokko</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-3" align="center">
+                                <div class="col">
                                     <label class="form-label">Plate</label>
+                                    <input type="number" class="form-control" name="isi2plat1"><br>
+                                    <input type="number" class="form-control" name="isi2plat2"><br>
+                                    <input type="number" class="form-control" name="isi2plat3"><br>
+                                    <input type="number" class="form-control" name="isi2plat4"><br>
                                 </div>
-                                <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplateisi2" value="<?=$row->jumlahplateisi2; ?>">
+                                <div class="col">
+                                    <label class="form-label">Satuan</label>
+                                    <select name="isi2satuan1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi2satuan2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi2satuan3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi2satuan4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
                                 </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label class="form-label">Rincian CTCP</label>
-                                        </div>
-                                    </div>
-                                    <div class="row" align="center">
-                                        <div class="col">
-                                            <label class="form-label">Plate</label>
-                                            <input type="number" class="form-control" name="isi2plat1" value="<?=$row->isi2plat1; ?>"><br>
-                                            <input type="number" class="form-control" name="isi2plat2" value="<?=$row->isi2plat2; ?>"><br>
-                                            <input type="number" class="form-control" name="isi2plat3" value="<?=$row->isi2plat3; ?>">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Set</label>
-                                            <input class="form-control" name="isi2set1" value="<?=$row->isi2set1; ?>" disabled><br>
-                                            <input class="form-control" name="isi2set2" value="<?=$row->isi2set2; ?>" disabled><br>
-                                            <input class="form-control" name="isi2set3" value="<?=$row->isi2set3; ?>" disabled>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Lbr.Cetak</label>
-                                            <input class="form-control" name="isi2lbrcetak1" value="<?=$row->isi2lbrcetak1; ?>" disabled=""><br>
-                                            <input class="form-control" name="isi2lbrcetak2" value="<?=$row->isi2lbrcetak2; ?>" disabled=""><br>
-                                            <input class="form-control" name="isi2lbrcetak3" value="<?=$row->isi2lbrcetak3; ?>" disabled="">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Up</label>
-                                            <input type="number" class="form-control" name="isi2up1" value="<?=$row->isi2up1; ?>"><br>
-                                            <input type="number" class="form-control" name="isi2up2" value="<?=$row->isi2up2; ?>"><br>
-                                            <input type="number" class="form-control" name="isi2up3" value="<?=$row->isi2up2; ?>">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Warna</label>
-                                            <input type="number" class="form-control" name="isi2warna1" value="<?=$row->isi2warna1; ?>"><br>
-                                            <input type="number" class="form-control" name="isi2warna2" value="<?=$row->isi2warna2; ?>"><br>
-                                            <input type="number" class="form-control" name="isi2warna3" value="<?=$row->isi2warna2; ?>">
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Status</label>
-                                            <select name="isi2status1" value="<?=$row->isi2status1; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select><br>
-                                            <select name="isi2status2" value="<?=$row->isi2status1; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select><br>
-                                            <select name="isi2status3" value="<?=$row->isi2status3; ?>" class="form-select form-control">
-                                        <option disabled selected></option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control" name="isi2keterangan1" value="<?=$row->isi2keterangan1; ?>"><br>
-                                            <input type="text" class="form-control" name="isi2keterangan2" value="<?=$row->isi2keterangan2; ?>"><br>
-                                            <input type="text" class="form-control" name="isi2keterangan3" value="<?=$row->isi2keterangan3; ?>">
-                                        </div>
-                                    </div>
+                                <div class="col">
+                                    <label class="form-label">Up</label>
+                                    <select name="isi2up1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi2up2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi2up3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi2up4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Mesin</label>
+                                    <select name="isi2mesin1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi2mesin2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi2mesin3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi2mesin4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Operator</label>
+                                    <input type="text" class="form-control" name="isi2operator1"><br>
+                                    <input type="text" class="form-control" name="isi2operator2"><br>
+                                    <input type="text" class="form-control" name="isi2operator3"><br>
+                                    <input type="text" class="form-control" name="isi2operator4"><br>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <?php } ?>
+                    
                 </div><br>
         <!-- </form> -->
                 <div class="row">
                     <div class="col-md-6">
-        <form action="<?=site_url('pracetak/ctcp/tambah_ctcp')?>" method="post">    
-                        <div class="row">
-                            <div class="col">
-                                <div class="card-body p-3 mb-2 bg-light text-dark">
-                                    <br><br><div class="row">
-                                        <div class="col-md-4">
-                                            <label class="form-label">Tanggal Out CTCP Cover</label>
-                                            <br>
-                                            <input type="hidden" name="nomor_so" value="<?=$row->id_order?>">
-                                            <input type="date" class="form-control" name="tanggal_out_ctcp_cover" required>
-                                            <br><label class="form-label">Tanggal Out CTCP Isi</label>
-                                            <div class="row">
-                                                <div class="col-md-3">Ke 1 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" required></div>
-                                            </div><br>
-                                            <div class="row">
-                                                <div class="col-md-3">Ke 2 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" required></div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="row" align="center">
-                                                <div class="col-md-12">
-                                                    <label class="form-label">Plate Gagal</label>
-                                                </div>
-                                            </div><br>
-                                            <div class="row" align="center">
-                                                <div class="col-md-6">
-                                                    Plate
-                                                </div>
-                                                <div class="col-md-6">
-                                                    Mesin
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <input type="number" class="form-control" name="plate_gagal1" required>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <select name="mesin_gagal1" class="form-select form-control">
-                                                        <option ></option>
-                                                        <option value="102">102</option>
-                                                        <option value="74">74</option>
-                                                        <option value="72">72</option>
-                                                        <option value="Tokko">Tokko</option>
-                                                    </select>
-                                                </div>
-                                            </div><br>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <input type="number" class="form-control" name="plate_gagal2" required>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <select name="mesin_gagal2" class="form-select form-control">
-                                                        <option ></option>
-                                                        <option value="102">102</option>
-                                                        <option value="74">74</option>
-                                                        <option value="72">72</option>
-                                                        <option value="Tokko">Tokko</option>
-                                                    </select>
-                                                </div>
-                                            </div><br>
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <input type="number" class="form-control" name="plate_gagal3" required>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <select name="mesin_gagal3" class="form-select form-control">
-                                                        <option ></option>
-                                                        <option value="102">102</option>
-                                                        <option value="74">74</option>
-                                                        <option value="72">72</option>
-                                                        <option value="Tokko">Tokko</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        </form>     
-                                        <div class="col-md-4">
-                                            <textarea name="catatan_imposisi" class="form-control" placeholder="catatan" name="catatan_imposisi" style="height: 240px;"></textarea>
-                                        </div>
-                                    </div>
+                        <div class="card border bg-success">
+                            <div class="card-header text-center">
+                                CTCP COVER 3
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border bg-info">
+                        <div class="card-header text-center">
+                            CTCP ISI 3
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card-body p-3 mb-2 bg-light text-dark">
+                            <label class="form-label">Jumlah Plate</label>
+                            <input type="text" class="form-control" name="jumlahplatecover3" placeholder="Masukan Jumlah Plate"><br>
+                            <label class="form-label">Jumlah Sisa</label>
+                            <input type="text" class="form-control" name="jumlahplatesisacover3" placeholder="Masukan Jumlah Sisa"><br>
+                            <label class="form-label">Jumlah Rusak</label>
+                            <input type="text" class="form-control" name="jumlahplaterusakcover3" placeholder="Masukan Jumlah Rusak"><br>
+                            <label class="form-label">Rincian Imposisi</label>
+                            <div class="row">
+                                <div class="col">
+                                    <label class="form-label">Plate</label>
+                                    <input type="number" class="form-control" name="cover3plat1"><br>
+                                    <input type="number" class="form-control" name="cover3plat2"><br>
+                                    <input type="number" class="form-control" name="cover3plat3"><br>
+                                    <input type="number" class="form-control" name="cover3plat4"><br>
                                 </div>
-                            </div>
-                        </div><br>
-                      
-                        <div class="row">
-                            <div class="col-md-6" align="left">
-                                <button type="submit" name="tambah_ctcp" class="btn btn-success">Simpan</button>
-                                <button type="reset" class="btn btn-default">Reset</button>
-                            </div>
-                            <div class="col-md-6" align="right">
-                                <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Print</a>
+                                <div class="col">
+                                    <label class="form-label">Satuan</label>
+                                    <select name="cover3satuan1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover3satuan2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover3satuan3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover3satuan4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Up</label>
+                                    <select name="cover3up1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover3up2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover3up3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover3up4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Mesin</label>
+                                    <select name="cover3mesin1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover3mesin2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover3mesin3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="cover3mesin4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Operator</label>
+                                    <input type="text" class="form-control" name="cover3operator1"><br>
+                                    <input type="text" class="form-control" name="cover3operator2"><br>
+                                    <input type="text" class="form-control" name="cover3operator3"><br>
+                                    <input type="text" class="form-control" name="cover3operator4"><br>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="row">
-                            <div class="col">
-                                <div class="card border bg-info">
-                                    <div class="card-header text-center">
-                                        CTCP ISI 3
-                                    </div>
+                        <div class="card-body p-3 mb-2 bg-light text-dark">
+                            <label class="form-label">Jumlah Plate</label>
+                            <input type="text" class="form-control" name="jumlahplateisi3" placeholder="Masukan Jumlah Plate"><br>
+                            <label class="form-label">Jumlah Sisa</label>
+                            <input type="text" class="form-control" name="jumlahplatesisaisi2" placeholder="Masukan Jumlah Sisa"><br>
+                            <label class="form-label">Jumlah Rusak</label>
+                            <input type="text" class="form-control" name="jumlahplaterusakisi3" placeholder="Masukan Jumlah Rusak"><br>
+                            <label class="form-label">Rincian Imposisi</label>
+                            <div class="row">
+                                <div class="col">
+                                    <label class="form-label">Plate</label>
+                                    <input type="number" class="form-control" name="isi3plat1"><br>
+                                    <input type="number" class="form-control" name="isi3plat2"><br>
+                                    <input type="number" class="form-control" name="isi3plat3"><br>
+                                    <input type="number" class="form-control" name="isi3plat4"><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Satuan</label>
+                                    <select name="isi3satuan1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi3satuan2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi3satuan3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi3satuan4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Up</label>
+                                    <select name="isi3up1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi3up2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi3up3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi3up4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Mesin</label>
+                                    <select name="isi3mesin1" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi3mesin2" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi3mesin3" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                    <select name="isi3mesin4" class="form-select form-control">
+                                        <option selected disabled="disabled"> </option>
+                                    </select><br>
+                                </div>
+                                <div class="col">
+                                    <label class="form-label">Operator</label>
+                                    <input type="text" class="form-control" name="isi3operator1"><br>
+                                    <input type="text" class="form-control" name="isi3operator2"><br>
+                                    <input type="text" class="form-control" name="isi3operator3"><br>
+                                    <input type="text" class="form-control" name="isi3operator4"><br>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="card-body p-3 mb-2 bg-light text-dark">
-                                    <div class="row">
-                                        <div class="col-md-3" align="center">
-                                            <label class="form-label">Mesin</label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <select name="isi3mesin1" value="<?=$row->isi3mesin1; ?>" class="form-select form-control">
-                                                <option disabled selected></option>
-                                                <option value="102">102</option>
-                                                <option value="74">74</option>
-                                                <option value="72">72</option>
-                                                <option value="Tokko">Tokko</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-3" align="center">
-                                            <label class="form-label">Plate</label>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <input type="number" class="form-control" name="jumlahplateisi3" value="<?=$row->jumlahplateisi3; ?>">
-                                        </div>
-                                    </div><br>
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <label class="form-label">Rincian CTCP</label>
-                                                </div>
-                                            </div>
-                                            <div class="row" align="center">
-                                                <div class="col">
-                                                    <label class="form-label">Plate</label>
-                                                    <input type="number" class="form-control" name="isi3plat1" value="<?=$row->isi3plat1; ?>"><br>
-                                                    <input type="number" class="form-control" name="isi3plat2" value="<?=$row->isi3plat2; ?>"><br>
-                                                    <input type="number" class="form-control" name="isi3plat3" value="<?=$row->isi3plat3; ?>">
-                                                </div>
-                                                <div class="col">
-                                                    <label class="form-label">Set</label>
-                                                    <input class="form-control" name="isi3set1" value="<?=$row->isi3set1; ?>" disabled><br>
-                                                    <input class="form-control" name="isi3set2" value="<?=$row->isi3set2; ?>" disabled><br>
-                                                    <input class="form-control" name="isi3set3" value="<?=$row->isi3set3; ?>" disabled>
-                                                </div>
-                                                <div class="col">
-                                                    <label class="form-label">Lbr.Cetak</label>
-                                                    <input class="form-control" name="isi3lbrcetak1" value="<?=$row->isi3lbrcetak1; ?>" disabled=""><br>
-                                                    <input class="form-control" name="isi3lbrcetak2" value="<?=$row->isi3lbrcetak2; ?>" disabled=""><br>
-                                                    <input class="form-control" name="isi3lbrcetak3" value="<?=$row->isi3lbrcetak3; ?>" disabled="">
-                                                </div>
-                                                <div class="col">
-                                                    <label class="form-label">Up</label>
-                                                    <input type="number" class="form-control" name="isi3up1" value="<?=$row->isi3up1; ?>"><br>
-                                                    <input type="number" class="form-control" name="isi3up2" value="<?=$row->isi3up2; ?>"><br>
-                                                    <input type="number" class="form-control" name="isi3up3" value="<?=$row->isi3up3; ?>">
-                                                </div>
-                                                <div class="col">
-                                                    <label class="form-label">Warna</label>
-                                                    <input type="number" class="form-control" name="isi3warna1" value="<?=$row->isi3warna1; ?>"><br>
-                                                    <input type="number" class="form-control" name="isi3warna2" value="<?=$row->isi3warna2; ?>"><br>
-                                                    <input type="number" class="form-control" name="isi3warna3" value="<?=$row->isi3warna3; ?>">
-                                                </div>
-                                                <div class="col">
-                                                    <label class="form-label">Status</label>
-                                                    <select name="isi3status1" value="<?=$row->isi2keterangan1; ?>" class="form-select form-control">
-                                                <option disabled selected></option>
-                                                        <option value="GP">GP</option>
-                                                        <option value="BLK">BLK</option>
-                                                        <option value="BLG">BLG</option>
-                                                    </select><br>
-                                                    <select name="isi3status2" value="<?=$row->isi3status2; ?>" class="form-select form-control">
-                                                <option disabled selected></option>
-                                                        <option value="GP">GP</option>
-                                                        <option value="BLK">BLK</option>
-                                                        <option value="BLG">BLG</option>
-                                                    </select><br>
-                                                    <select name="isi3status3" value="<?=$row->isi3status3; ?>" class="form-select form-control">
-                                                <option disabled selected></option>
-                                                        <option value="GP">GP</option>
-                                                        <option value="BLK">BLK</option>
-                                                        <option value="BLG">BLG</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col">
-                                                    <label class="form-label">Keterangan</label>
-                                                    <input type="text" class="form-control" name="isi3keterangan1" value="<?=$row->isi3keterangan1; ?>"><br>
-                                                    <input type="text" class="form-control" name="isi3keterangan2" value="<?=$row->isi3keterangan2; ?>"><br>
-                                                    <input type="text" class="form-control" name="isi3keterangan3" value="<?=$row->isi2keterangan3; ?>">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="form-label">Tanggal Out CTCP Cover</label>
+                        <input type="date" class="form-control" name="tanggaloutctcpcover">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Tanggal Out CTCP Isi</label>
+                        <input type="date" class="form-control" name="tanggaloutctcpisi">
+                    </div>
+                    <div class="col-md-6">
+                        <br><label class="form-label">Keterangan CTCP Cover</label>
+                        <textarea class="form-control" name="keterangancover"></textarea>
+                    </div>
+                    <div class="col-md-6">
+                    <br><label class="form-label">Keterangan Isi</label>
+                        <textarea class="form-control" name="keteranganisi"></textarea>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-10">
+                        <a href="<?=site_url()?>pracetak/Ctcp" class="btn btn-default">Kembali</a>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="reset" class="btn btn-default">Reset</button>
+                        <button type="submit" class="btn btn-success">Simpan</button>
                     </div>
                 </div>
             </form>
