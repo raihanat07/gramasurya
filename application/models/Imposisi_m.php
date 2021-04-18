@@ -299,7 +299,7 @@ class Imposisi_m extends CI_Model {
 	{
             $tambah_imposisi = array(
                 'id_order' =>$data['nomor_so'],
-                'id_imposisi' =>$data['id_imposisi'],
+                // 'id_imposisi' =>$data['id_imposisi'],
                 'namaoperator1' =>$data['namaoperator1'],
                 'namaoperator2' =>$data['namaoperator2'],
                 'total_plat_cover' =>$data['total_plat_cover'],

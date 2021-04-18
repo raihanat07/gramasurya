@@ -20,16 +20,16 @@ class Ctcp extends CI_Controller {
 		$this->template->load('pracetak/template','pracetak/ctcp/ctcp',$data);
 	}
 
-	public function tambah_ctcp()
+	public function tambah_ctcp($id)
 	{		
 		if(isset($_POST['tambah_ctcp'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->imposisi->tambah_ctcp($inputan);
-		} else if(isset($_POST['edit'])){
-			echo"edit";
 		}
 		if($this->db->affected_rows() > 0){
 			echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
+		}else if($this->db->affected_rows() < 0){
+			echo "<script> alert('Data Gagal Ditambahkan'); </script>";
 		}
 		echo "<script>window.location='".site_url('pracetak/ctcp/index')."'; </script>"; 
 	

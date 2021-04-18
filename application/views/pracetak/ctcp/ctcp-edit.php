@@ -36,7 +36,7 @@
     </div>
     <div class="card-body">
         <div class="card-body">
-        <form action="<?=site_url('pracetak/ctcp/edit_ctcp')?>" method="post">        
+        <form action="<?=site_url('')?>" method="post">        
                 <div class="row">
                     <?php foreach($ctcp as $s => $row) {?>  
                     <div class="col-md-2" align="right">
@@ -576,11 +576,12 @@
         <!-- </form> -->
                 <div class="row">
                     <div class="col-md-6">
-        <form action="<?=site_url('pracetak/ctcp/tambah_ctcp')?>" method="post">    
                         <div class="row">
                             <div class="col">
                                 <div class="card-body p-3 mb-2 bg-light text-dark">
-                                    <br><br><div class="row">
+                                    <br><br>
+                                    <form action="<?=site_url('pracetak/ctcp/tambah_ctcp')?>" method="post">    
+                                    <div class="row">
                                         <div class="col-md-4">
                                             <label class="form-label">Tanggal Out CTCP Cover</label>
                                             <br>
@@ -653,15 +654,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        </form>     
+                                            
                                         <div class="col-md-4">
-                                            <textarea name="catatan_imposisi" class="form-control" placeholder="catatan" name="catatan_imposisi" style="height: 240px;"></textarea>
+                                            <textarea name="catatan_imposisi" value="<?=$row->catatan_imposisi; ?>"  class="form-control" placeholder="catatan" name="catatan_imposisi" style="height: 240px;"></textarea>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div><br>
-                      
+                        </div><br>                     
                         <div class="row">
                             <div class="col-md-6" align="left">
                                 <button type="submit" name="tambah_ctcp" class="btn btn-success">Simpan</button>
@@ -671,6 +671,7 @@
                                 <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Print</a>
                             </div>
                         </div>
+                        </form>
                     </div>
                     <div class="col-md-6">
                         <div class="row">
