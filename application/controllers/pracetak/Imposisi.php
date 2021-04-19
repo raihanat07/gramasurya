@@ -16,7 +16,9 @@ class Imposisi extends CI_Controller {
 		$data = array(
 			'judul' => 'Imposisi',
 			'imposisi' => $query->result(),
-		);	
+		);
+		//  var_dump($query->result_array()[0]['id_order']);
+		//  die;
 		$this->template->load('pracetak/template','pracetak/imposisi/imposisi',$data);
 	}
 
