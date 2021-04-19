@@ -478,7 +478,7 @@
                                         <br><input type="date" class="form-control" name="tanggal_imposisi_isi" value="<?=$row->tanggal_imposisi_isi;?>" disabled>
                                     </div>
                                     <div class="col-md-6">
-                                        <br><textarea name="catatan_imposisi" class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?=$row->namaoperator1;?>" style="height: 150px;" disabled></textarea>
+                                        <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?=$row->catatan_imposisi;?>" style="height: 150px;" disabled></textarea>
                                     </div>
                                 </div><br><br>
                             </div>

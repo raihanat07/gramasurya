@@ -588,7 +588,7 @@
                                             <br><input type="date" class="form-control" name="tanggal_imposisi_isi" required>
                                         </div>
                                         <div class="col-md-6">
-                                            <br><textarea name="catatan_imposisi" class="form-control" placeholder="catatan" name="catatan_imposisi" style="height: 150px;"></textarea>
+                                            <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" style="height: 150px;"></textarea>
                                         </div>
                                     </div><br><br>
                                 </div>

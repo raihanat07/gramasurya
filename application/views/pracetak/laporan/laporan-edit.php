@@ -109,6 +109,7 @@
                                 </div>
                             </div>
                         </div>
+                        <form action="<?=site_url('pracetak/ctcp/tambah_ctcp')?>" method="post">
                         <div class="card">
                             <div class="row card-body">
                                 <div class="col-md-12">
@@ -160,11 +161,11 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_cover1">
+                                                        <input type="number" class="form-control" name="plate_1_keluar_cover">
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_cover1" class="form-select form-control">
-                                                            <option disabled selected></option>
+                                                        <select name="mesin_1_keluar_cover" class="form-select form-control">
+                                                            <option></option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -174,11 +175,11 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_cover2">
+                                                        <input type="number" class="form-control" name="plate_2_keluar_cover">
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_cover2" class="form-select form-control">
-                                                            <option disabled selected></option>
+                                                        <select name="mesin_2_keluar_cover" class="form-select form-control">
+                                                            <option></option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -188,11 +189,11 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_cover3">
+                                                        <input type="number" class="form-control" name="plate_3_keluar_cover">
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_cover3" class="form-select form-control">
-                                                            <option disabled selected></option>
+                                                        <select name="mesin_3_keluar_cover" class="form-select form-control">
+                                                            <option></option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -226,11 +227,11 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_isi1">
+                                                        <input type="number" class="form-control" name="plate_1_keluar_isi">
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_isi1" class="form-select form-control">
-                                                            <option disabled selected></option>
+                                                        <select name="mesin_1_keluar_isi" class="form-select form-control">
+                                                            <option></option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -240,11 +241,11 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_isi2">
+                                                        <input type="number" class="form-control" name="plate_2_keluar_isi">
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_isi2" class="form-select form-control">
-                                                            <option disabled selected></option>
+                                                        <select name="mesin_2_keluar_isi" class="form-select form-control">
+                                                            <option></option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -254,11 +255,11 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_isi3">
+                                                        <input type="number" class="form-control" name="plate_3_keluar_isi">
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_isi3" class="form-select form-control">
-                                                            <option disabled selected></option>
+                                                        <select name="mesin_3_keluar_isi" class="form-select form-control">
+                                                            <option></option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -297,7 +298,7 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_gagal1" class="form-select form-control">
-                                                            <option disabled selected></option>
+                                                            <option></option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -311,7 +312,7 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_gagal2" class="form-select form-control">
-                                                            <option disabled selected></option>
+                                                            <option></option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -325,7 +326,7 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_gagal3" class="form-select form-control">
-                                                            <option disabled selected></option>
+                                                            <option></option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -340,6 +341,7 @@
                             </div>
                         </div>
                     </div>
+                    </form>
                     <div class="col-md-3">
                         <div class="card">
                             <div class="row card-body">
