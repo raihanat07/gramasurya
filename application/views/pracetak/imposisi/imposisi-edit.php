@@ -39,11 +39,12 @@
             <form action="<?=site_url('pracetak/imposisi/edit_imposisi')?>" method="post">        
                 <div class="row">
                 <?php foreach($imposisi as $s => $row) {?>  
+                    
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Nomor SO</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nomor_so" value="<?=$row->id_order; ?>" placeholder="Masukan Nomor SO" required>
+                        <br><input type="text" class="form-control" name="nomor_so" value="<?=$row->nomor_so; ?>" placeholder="Masukan Nomor SO" required>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Nama Pemesan</label>
@@ -126,7 +127,7 @@
             </form>
 
             <form action="<?=site_url('pracetak/imposisi/tambah_imposisi')?>" method="post">
-    
+            <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
                 <div class="row">
                     <div class="col-md-3" align="center">
                         <label class="form-label">Nama Operator</label>

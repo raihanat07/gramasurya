@@ -33,7 +33,7 @@
             <?php foreach($imposisi as $s => $row) {?>  
                 <div class="col-md-4">
                     <br>Nomor SO
-                    <br><label class="form-label" ><?=$row->id_order?></label>
+                    <br><label class="form-label" ><?=$row->nomor_so?></label>
                 </div>
                 <div class="col-md-4">
                     <br>Nama Pemesan
@@ -100,7 +100,9 @@
             <br><hr><br>
         </form>
 
-        <form action="<?=site_url('pracetak/imposisi/lihat_imposisi')?>" method="post">        
+        <form action="<?=site_url('pracetak/imposisi/lihat_imposisi')?>" method="post">   
+     
+        <?php foreach($imposisi as $s => $row) {?>  
             <div class="row">
                 <div class="col-md-3" align="center">
                     <label class="form-label">Nama Operator</label>
@@ -576,6 +578,7 @@
                     </div>
                 </div>
             </div>
+            <?php } ?>
         </form>
     </div>
 </div>
