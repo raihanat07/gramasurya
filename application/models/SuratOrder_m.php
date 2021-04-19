@@ -263,9 +263,8 @@ class SuratOrder_m extends CI_Model {
         );
         $this->db->set($ubah_so);
         $this->db->where('id_order',$data['id_order']);
-        $this->db->update('order');
-        $data['perubahan'] = 1;
-
+        $this->db->update('order');                        
+        
         // // ubah bagian ctcp
         $ubah_ctcp = array(
             'id_order' =>$data['id_order'],
@@ -285,6 +284,7 @@ class SuratOrder_m extends CI_Model {
         $this->db->set($ubah_ctcp);
         $this->db->where('id_order',$data['id_order']);
         $this->db->update('ctcp');
+        
 
         // ubah bagian kertas
         $ubah_kertas = array(

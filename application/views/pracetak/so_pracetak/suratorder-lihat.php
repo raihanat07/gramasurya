@@ -14,8 +14,9 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
+        <?php foreach($so as $s => $row) {?>  
             <!-- <label>SO</label> -->
-            <h3 class="card-title"><label>SO dari db</label></h3>
+            <h3 class="card-title"><label>LIHAT SURAT ORDER</label></h3>
             
 
             <div class="card-tools">
@@ -30,43 +31,70 @@
                 <div class="row">
                     <div class="col-md-4">
                         <br>Nomor SO
-                        <br><label class="form-label">2021.04.829</label>
+                        <br><label class="form-label"><?= $row->nomor_so; ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Nama Pemesan
-                        <br><label class="form-label">UAD</label>
+                        <br><label class="form-label"><?= $row->nama_pemesan; ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Halaman
-                        <br><label class="form-label">12</label>
+                        <br><label class="form-label"><?= $row->halaman; ?></label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <br>anggal Masuk
-                        <br><label class="form-label">10 04 2021</label>
+                        <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Nama Orderan
-                        <br><label class="form-label">Buku PMB</label>
+                        <br><label class="form-label"><?= $row->nama_orderan; ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Oplag
-                        <br><label class="form-label">200</label>
+                        <br><label class="form-label"><?= $row->oplag; ?></label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <br>Deadline
-                        <br><label class="form-label">10 05 2021</label>
+                        <br><label class="form-label"><?= $row->deadline; ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Ukuran
-                        <br><label class="form-label">18 x 26.5</label>
+                        <br><label class="form-label"><?= $row->ukuran; ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Finsihing Akhir
-                        <br><label class="form-label">Jahit Kawat</label>
+                        <br><label class="form-label">
+                        <?php 
+                            $finishing = "";
+                            if($row->bending != null){
+                                $finishing .= "bending, ";
+                            }
+                            if($row->hard_cover != null){
+                                $finishing .= 'hard cover, ';
+                            }   
+                            if($row->jahit_benang != null){
+                                $finishing .= 'jahit benang, ';
+                            } 
+                            if($row->jahit_kawat != null){
+                                $finishing .= 'jahit kawat, ';
+                            }    
+                            if($row->pond != null){
+                                $finishing .= 'pond, ';
+                            }   
+                            if($row->klem != null){
+                                $finishing .= 'klem, ';
+                            } 
+                            if($row->spiral != null){
+                                $finishing .= 'Spiral, ';
+                            }
+                            $finishing = rtrim($finishing, ", ");
+                            echo $finishing;
+                        ?>
+                        </label>
                     </div>
                 </div>
                 <!-- VER 1.0 START -->
@@ -305,6 +333,7 @@
             <a href="<?=site_url()?>pracetak" class="btn btn-default float-right">Kembali</a>
         </div>
         <!-- /.card-footer-->
+        <?php } ?>
       </div>
       <!-- /.card -->
 

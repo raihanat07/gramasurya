@@ -39,9 +39,13 @@ class SuratOrder extends CI_Controller {
 		);			
 		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder-edit', $data);
 	}
-	public function lihat_so()
+	public function lihat_so($id)
 	{
-		$data['judul'] = 'Lihat SO Pracetak';
+		$query = $this->so->get_edit($id);
+		$data = array(
+			'judul' => 'Lihat SO Pracetak',
+			'so' => $query->result(),
+		);			
 		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder-lihat', $data);
 	}
 
@@ -57,8 +61,8 @@ class SuratOrder extends CI_Controller {
 		} else if(isset($_POST['edit'])){ 
 			$inputan = $this->input->post(null, TRUE);			
 			$this->so->edit($inputan);
-				if($this->db->affected_rows() > 0){
-					echo "<script> alert('Data Berhasil Diubah'); </script>";
+				if($this->db->affected_rows() > 0){					
+					// echo "<script> alert('Data Berhasil Diubah'); </script>";
 				}
 				echo "<script>window.location='".site_url('pracetak/suratorder')."'; </script>"; 
 		}
