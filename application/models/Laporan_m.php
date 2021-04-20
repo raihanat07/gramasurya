@@ -24,6 +24,7 @@ class Laporan_m extends CI_Model {
     {
         $this->db->select(
             'order.id_order as id_order,
+            order.nomor_so as nomor_so,
             order.tanggal_masuk as tanggal_masuk,
             order.deadline as deadline,
             order.nama_pemesan as nama_pemesan,
@@ -46,7 +47,7 @@ class Laporan_m extends CI_Model {
             
             data_ctcp.tanggal_out_ctcp_cover as tanggal_out_ctcp_cover,
             data_ctcp.tanggal_out_ctcp_isi1 as tanggal_out_ctcp_isi1,
-            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_isi',
+            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2',
         );
         $this->db->from('order');
         $this->db->join('finishing','finishing.id_order = order.id_order');
