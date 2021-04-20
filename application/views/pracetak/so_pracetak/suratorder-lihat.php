@@ -170,22 +170,22 @@
                 <!-- VER 1.1 START -->
                 <br><div class="card" style="background: #A9A9A9">
                     <div class="row">
-                        <div class="col-md-2"></div>
-                        <div class="col-md-5">
+                        <div class="col"></div>
+                        <div class="col-md-3">
                             <div class="card-header text-center">
                                 <b>COVER</b>
                             </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <div class="card-header text-center">
                                 <b>AKHIR</b>
                             </div>
                         </div>
-                        <!-- <div class="col-md-3">
+                        <div class="col-md-3">
                             <div class="card-header text-center">
                                 <b>AKHIR</b>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="row text-center">
@@ -203,6 +203,11 @@
                             </div><hr>
                             <div class="row" style="min-height: 150px;padding-top: 50px;">
                                 <div class="col-md-12">
+                                    <b>POTONG</b>
+                                </div>
+                            </div><hr>
+                            <div class="row" style="min-height: 150px;padding-top: 50px;">
+                                <div class="col-md-12">
                                     <b>CETAK</b>
                                 </div>
                             </div><hr>
@@ -215,62 +220,71 @@
                     </div>
                     <div class="col-md-10">
                         <div class="row" style="min-height: 150px;padding-top: 20px;">
-                            <div class="col-md-6">
+                            <div class="col-md-4 text-center">
                                 Ctcp Cover1 Plat 74<br>
                                 Jum Ctcp Cover1 4
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4 text-center">
                                 Ctcp Isi1 Plat 72<br>
                                 Jum Ctcp Isi1 8
                             </div>
-                            <!-- <div class="col-md-4">
-                                <b>FINISHING AKHIR</b><br>
-                                Finishing Akhir Jahit Kawat
-                            </div> -->
+                            <div class="col-md-4">
+                                
+                            </div>
                         </div><hr>
                         <div class="row" style="min-height: 150px;padding-top: 20px;">
-                            <div class="col-md-6 text-center">
+                            <div class="col-md-4 text-center">
                                 Kertas Cov1 AC/Ivory_2Muka 230gr<br>
                                 Ukuran Kertas Cov1 79 x 109<br>
                                 Jum Kertas Cov1 530
                             </div>
-                            <div class="col-md-6 text-center">
+                            <div class="col-md-4 text-center">
                                 Kertas Isi1 HVS 60gr<br>
                                 Ukuran Kertas Isi1 65 x 100<br>
                                 Jum Kertas Isi1 8300
                             </div>
-                            <!-- <div class="col-md-4 text-center">
-                                <b>PRAPACKING</b>
-                            </div> -->
+                            <div class="col-md-4 text-center">
+                                
+                            </div>
                         </div><hr>
                         <div class="row" style="min-height: 150px;padding-top: 20px;">
-                            <div class="col-md-6 text-center">
+                            <div class="col-md-4 text-center">
+
+                            </div>
+                            <div class="col-md-4 text-center">
+
+                            </div>
+                            <div class="col-md-4 text-center">
+                                
+                            </div>
+                        </div><hr>
+                        <div class="row" style="min-height: 150px;padding-top: 20px;">
+                            <div class="col-md-4 text-center">
                                 Mesin Cov1 SM 74 4w - A<br>
                                 Warna Cov1 4/0<br>
                                 Insit Cover1 50<br>
                                 Ket Cov1 1 SET 2UP
                             </div>
-                            <div class="col-md-6 text-center">
+                            <div class="col-md-4 text-center">
                                 Mesin Isi1 Oliver 72 1w<br>
                                 Warna Isi1 1/1<br>
                                 Insit Isi1 50<br>
                                 Ket Isi1 1/1 WARNA WARNI 8 PLAT GANTI
                             </div>
-                            <!-- <div class="col-md-4 text-center">
-                                <b>KIRIM</b><br>
-                                Kirim Langsung
-                            </div> -->
+                            <div class="col-md-4 text-center">
+                                
+                            </div>
                         </div><hr>
                         <div class="row" style="min-height: 150px;padding-top: 20px;">
-                            <div class="col-md-6 text-center">
+                            <div class="col-md-4 text-center">
                                 Finishing Cover1 Uvi
                             </div>
-                            <div class="col-md-6 text-center">
+                            <div class="col-md-4 text-center">
                                 Finishing Isi 1Lipat,Susun
                             </div>
-                            <!-- <div class="col-md-4 text-center">
-                                <b>ALAMAT KIRIM</b>
-                            </div> -->
+                            <div class="col-md-4 text-center">
+
+                            </div>
                         </div>
                     </div>
                 </div>
