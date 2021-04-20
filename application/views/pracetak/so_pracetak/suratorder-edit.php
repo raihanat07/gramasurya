@@ -138,7 +138,7 @@
                             </div>
                             <div class="col-md-3">  
                               <br><select id="inputState" class="form-select form-control" name="ctcp_cover_1"  required>
-                                <option value="<?php  echo $row->ctcp_cover_1 != "-" ?   $row->ctcp_cover_1  : '-' ?>"><?php  echo $row->ctcp_cover_1 != "-" ?   $row->ctcp_cover_1  : '-' ?>  </option>
+                                <option value="<?php  echo $row->ctcp_cover_1 != "-" ?   $row->ctcp_cover_1  : '-' ?>"><?php  echo $row->ctcp_cover_1 != "-" ?   $row->ctcp_cover_1  : '-' ?>   </option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>

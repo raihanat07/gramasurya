@@ -94,7 +94,7 @@
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Imposisi" 
-                <?php  if($judul == "Imposisi" || $judul == "Edit Imposisi Pracetak" || $judul == "Lihat Imposisi Pracetak"){?>
+                <?php  if($judul == "Imposisi" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
