@@ -36,68 +36,73 @@
     </div>
     <div class="card-body">
         <div class="card-body">
-            <form action="<?=site_url('')?>" method="post">        
-                <div class="row">
-                <?php foreach($ctcp as $s => $row) {?>  
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Nomor SO</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nomor_so" value="<?=$row->nomor_so?>" placeholder="Masukan Nomor SO" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Nama Pemesan</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nama_pemesan" value="<?=$row->nama_pemesan?>" placeholder="Masukan Nama Pemesan" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Halaman</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="halaman" value="<?=$row->halaman?>" placeholder="Masukan Hal" required>
-                    </div>
+        <?php foreach($ctcp as $s => $row) {?>  
+            <div class="row">            
+                <div class="col-md-4">
+                    <br>Nomor SO
+                    <br><label class="form-label" ><?=$row->nomor_so?></label>
                 </div>
-                <div class="row">
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Tanggal Masuk</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="date" class="form-control" name="tanggal_masuk" value="<?=$row->tanggal_masuk?>" placeholder="Tanggal Masuk" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Nama Orderan</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nama_orderan" value="<?=$row->nama_orderan?>" placeholder="Masukan Orderan" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Oplag</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="number" class="form-control" name="oplag" value="<?=$row->oplag?>" placeholder="Masukan Oplag" required>
-                    </div>
+                <div class="col-md-4">
+                    <br>Nama Pemesan
+                    <br><label class="form-label"><?=$row->nama_pemesan?></label>
                 </div>
-                <div class="row">
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Deadline</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="date" class="form-control" name="deadline" value="<?=$row->deadline?>" placeholder="Deadline" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Ukuran</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="ukuran" value="<?=$row->ukuran?>" placeholder="Masukan Ukuran" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Finishing Akhir</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="finishing_akhir" placeholder="Finishing Akhir" required>
-                    </div>
+                <div class="col-md-4">
+                    <br>Halaman
+                    <br><label class="form-label"><?=$row->halaman?></label>
                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <br>Tanggal Masuk
+                    <br><label class="form-label"><?=$row->tanggal_masuk?></label>
+                </div>
+                <div class="col-md-4">
+                    <br>Nama Orderan
+                    <br><label class="form-label"><?=$row->nama_orderan?></label>
+                </div>
+                <div class="col-md-4">
+                    <br>Oplag
+                    <br><label class="form-label"><?=$row->oplag?></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <br>Deadline
+                    <br><label class="form-label"><?=$row->deadline?></label>
+                </div>
+                <div class="col-md-4">
+                    <br>Ukuran
+                    <br><label class="form-label"><?=$row->ukuran?></label>
+                </div>
+                <div class="col-md-4">
+                    <br>Finsihing Akhir
+                    <br><label class="form-label">
+                    <?php 
+                  $finishing = "";
+                  if($row->bending != null){
+                    $finishing .= "bending, ";
+                  }
+                  if($row->hard_cover != null){
+                    $finishing .= 'hard cover, ';
+                  }   
+                  if($row->jahit_benang != null){
+                    $finishing .= 'jahit benang, ';
+                  } 
+                  if($row->jahit_kawat != null){
+                    $finishing .= 'jahit kawat, ';
+                  }    
+                  if($row->pond != null){
+                    $finishing .= 'pond, ';
+                  }   
+                  if($row->spiral != null){
+                    $finishing .= 'Spiral, ';
+                  }
+                  $finishing = rtrim($finishing, ", ");
+                  echo $finishing;
+                  ?>
+                    </label>
+                </div>
+            </div>
                 <br><hr><br>
                 <div class="row">
                     <div class="col-md-3" align="center">
@@ -550,7 +555,6 @@
                     </div>
                 </div>
                 <?php } ?>
-                </form>
                 <br>
                 <div class="row">
                     <div class="col-md-6">
@@ -563,7 +567,7 @@
                                         <div class="col-md-4">
                                             <label class="form-label">Tanggal Out CTCP Cover</label>
                                             <br>
-                                            <input type="hidden" name="id_order" value="<?=$row->id_order?>">
+                                            <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
                                             <input type="date" class="form-control" name="tanggal_out_ctcp_cover" required>
                                             <br><label class="form-label">Tanggal Out CTCP Isi</label>
                                             <div class="row">
@@ -631,6 +635,12 @@
                                                     </select>
                                                 </div>
                                             </div>
+                                            <div class="row">   
+                                                <div class="col-md-6" align="left">
+                                                    <button type="submit" name="add" class="btn btn-success">Simpan</button>
+                                                    <button type="reset" class="btn btn-default">Reset</button>
+                                                </div>
+                                            </div>
                                         </div>
                                         </form>
                                         <div class="col-md-4">
@@ -640,11 +650,7 @@
                                 </div>
                             </div>
                         </div><br>
-                        <div class="row">
-                            <div class="col-md-6" align="left">
-                                <button type="submit" name="tambah_ctcp" class="btn btn-success">Simpan</button>
-                                <button type="reset" class="btn btn-default">Reset</button>
-                            </div>
+                        <div class="row">                           
                             <div class="col-md-6" align="right">
                                 <a href="<?=site_url()?>pracetak/Ctcp" class="btn btn-default">Print</a>
                             </div>
@@ -756,7 +762,7 @@
                         </div>
                     </div>
                 </div>
-            
+            </form>
         </div>
     </div>
     <!-- /.card-body -->

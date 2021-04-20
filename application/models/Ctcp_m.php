@@ -3,18 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Ctcp_m extends CI_Model {
 
-	public function get($id = null)
+	public function get()
     {
         $this->db->select(
-            'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
+            'order.id_order as id_order, data_ctcp.id_data_ctcp as id_data_ctcp, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral',
         );
         $this->db->from('order');
-        $this->db->join('finishing','finishing.id_order = order.id_order');
-        // $this->db->join('imposisi','imposisi.id_order = order.id_order');
-        if($id != null){
-            $this->db->where('order.id_order', $id);
-        }
+        $this->db->join('data_ctcp','data_ctcp.id_order = order.id_order','left');
+        $this->db->join('finishing','finishing.id_order = order.id_order');        
         $query = $this->db->get();
         return $query;   
     }
@@ -468,8 +465,8 @@ class Ctcp_m extends CI_Model {
             $tambah_ctcp = array(
                 'id_order' =>$data['id_order'],
                 // 'id_data_ctcp' =>$data['id_data_ctcp'],
-                'status_ctcp_cover' =>$data['status_ctcp_cover'],
-                'status_ctcp_isi' =>$data['status_ctcp_isi'],
+                // 'status_ctcp_cover' =>$data['status_ctcp_cover'],
+                // 'status_ctcp_isi' =>$data['status_ctcp_isi'],
                 'plate_gagal1' =>$data['plate_gagal1'],
                 'plate_gagal2' =>$data['plate_gagal2'],
                 'plate_gagal3' =>$data['plate_gagal3'],

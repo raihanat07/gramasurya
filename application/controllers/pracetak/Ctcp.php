@@ -22,14 +22,14 @@ class Ctcp extends CI_Controller {
 
 	public function tambah_ctcp()
 	{		
-		if(isset($_POST['tambah_ctcp'])){							
+		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->ctcp->tambah_ctcp($inputan);
 		}
 		if($this->db->affected_rows() > 0){
 			echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
 		}
-		// echo "<script>window.location='".site_url('pracetak/ctcp/index')."'; </script>"; 
+		echo "<script>window.location='".site_url('pracetak/ctcp/index')."'; </script>"; 
 	
 	}
 
