@@ -138,7 +138,7 @@
                             </div>
                             <div class="col-md-3">  
                               <br><select id="inputState" class="form-select form-control" name="ctcp_cover_1"  required>
-                                <option value=" <?php  echo ($row->ctcp_cover_1 != null ?   $row->ctcp_cover_1  : '' )?>"><?php  echo ($row->ctcp_cover_1 != null ?   $row->ctcp_cover_1  : 'ctcp_cover_1' )?></option>
+                                <option value="<?php  echo $row->ctcp_cover_1 != "-" ?   $row->ctcp_cover_1  : '-' ?>"><?php  echo $row->ctcp_cover_1 != "-" ?   $row->ctcp_cover_1  : '-' ?>  </option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>
@@ -148,6 +148,7 @@
                                 <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
                                 <option value="Plat 770 x 1030">Plat 770 x 1030</option>
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -155,7 +156,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ctcp_isi_1"  required>
-                              <option value=" <?php  echo $row->ctcp_isi_1 != null ?   $row->ctcp_isi_1  : '' ?>"><?php  echo $row->ctcp_isi_1 != null ?   $row->ctcp_isi_1  : "ctcp_isi_1" ?></option>
+                              <option value="<?php  echo $row->ctcp_isi_1 != "-" ?   $row->ctcp_isi_1  : '-' ?>"><?php  echo $row->ctcp_isi_1 != "-" ?   $row->ctcp_isi_1  : "-" ?></option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>
@@ -165,6 +166,7 @@
                                 <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
                                 <option value="Plat 770 x 1030">Plat 770 x 1030</option>
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -189,7 +191,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ctcp_cover_2" required>
-                              <option value=" <?php  echo $row->ctcp_cover_2 != null ?   $row->ctcp_cover_2  : '' ?>"><?php  echo $row->ctcp_cover_2 != null ?   $row->ctcp_cover_2  : "ctcp_cover_2" ?></option>
+                              <option value="<?php  echo $row->ctcp_cover_2 != "-" ?   $row->ctcp_cover_2  : '-' ?>"><?php  echo $row->ctcp_cover_2 != "-" ?   $row->ctcp_cover_2  : "-" ?></option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>
@@ -199,6 +201,7 @@
                                 <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
                                 <option value="Plat 770 x 1030">Plat 770 x 1030</option>
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -206,7 +209,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ctcp_isi_2"  required>
-                              <option value=" <?php  echo $row->ctcp_isi_2 != null ?   $row->ctcp_isi_2  : '' ?>"><?php  echo $row->ctcp_isi_2 != null ?   $row->ctcp_isi_2  : "ctcp_isi_2" ?></option>
+                              <option value="<?php  echo $row->ctcp_isi_2 != "-" ?   $row->ctcp_isi_2  : '-' ?>"><?php  echo $row->ctcp_isi_2 != "-" ?   $row->ctcp_isi_2  : "-" ?></option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>
@@ -216,6 +219,7 @@
                                 <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
                                 <option value="Plat 770 x 1030">Plat 770 x 1030</option>
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -240,7 +244,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ctcp_cover_3"  required>
-                              <option value=" <?php  echo $row->ctcp_cover_3 != null ?   $row->ctcp_cover_3  : '' ?>"><?php  echo $row->ctcp_cover_3 != null ?   $row->ctcp_cover_3  : "ctcp_cover_3" ?></option>
+                              <option value="<?php  echo $row->ctcp_cover_3 != "-" ?   $row->ctcp_cover_3  : '-' ?>"><?php  echo $row->ctcp_cover_3 != "-" ?   $row->ctcp_cover_3  : "-" ?></option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>
@@ -250,6 +254,7 @@
                                 <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
                                 <option value="Plat 770 x 1030">Plat 770 x 1030</option>
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -257,7 +262,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ctcp_isi_3"  required>
-                              <option value=" <?php  echo $row->ctcp_isi_3 != null ?   $row->ctcp_isi_3  : '' ?>"><?php  echo $row->ctcp_isi_3 != null ?   $row->ctcp_isi_3  : "ctcp_isi_3" ?></option>
+                              <option value="<?php  echo $row->ctcp_isi_3 != "-" ?   $row->ctcp_isi_3  : '-' ?>"><?php  echo $row->ctcp_isi_3 != "-" ?   $row->ctcp_isi_3  : "-" ?></option>
                                 <option value="Plat 58">Plat 58</option>
                                 <option value="Plat 72">Plat 72</option>
                                 <option value="Plat 74">Plat 74</option>
@@ -267,6 +272,7 @@
                                 <option value="Plat 74.2 x 60.5">Plat 74.2 x 60.5</option>
                                 <option value="Plat 770 x 1030">Plat 770 x 1030</option>
                                 <option value="Paperplate 25.5 x 39.5">Paperplate 25.5 x 39.5</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -308,7 +314,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="jenis_kertas_cover_1"  required>
-                              <option value=" <?php  echo $row->jenis_kertas_cover_1 != null ?   $row->jenis_kertas_cover_1  : '' ?>"><?php  echo $row->jenis_kertas_cover_1 != null ?   $row->jenis_kertas_cover_1  : "jenis_kertas_cover_1" ?></option>
+                              <option value="<?php  echo $row->jenis_kertas_cover_1 != "-" ?   $row->jenis_kertas_cover_1  : '-' ?>"><?php  echo $row->jenis_kertas_cover_1 != "-" ?   $row->jenis_kertas_cover_1  : "-" ?></option>
                                 <option value="ACCO(isi50)">ACCO(isi50)</option>
                                 <option value="Acquarello white 118">Acquarello white 118</option>
                                 <option value="Amplop coklat jadi">Amplop coklat jadi</option>
@@ -353,6 +359,7 @@
                                 <option value="Vinil hijau">Vinil hijau</option>
                                 <option value="Vinil hitam">Vinil hitam</option>
                                 <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -360,7 +367,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="jenis_kertas_isi_1"  required>
-                              <option value=" <?php  echo $row->jenis_kertas_isi_1 != null ?   $row->jenis_kertas_isi_1  : '' ?>"><?php  echo $row->jenis_kertas_isi_1 != null ?   $row->jenis_kertas_isi_1  : "jenis_kertas_isi_1" ?></option>
+                              <option value="<?php  echo $row->jenis_kertas_isi_1 != "-" ?   $row->jenis_kertas_isi_1  : '-' ?>"><?php  echo $row->jenis_kertas_isi_1 != "-" ?   $row->jenis_kertas_isi_1  : "-" ?></option>
                                 <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
                                 <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
                                 <option value="AC/Ivory 2Muka 230 gr">AC/Ivory 2Muka 230 gr</option>
@@ -436,6 +443,7 @@
                                 <option value="Vinil hijau">Vinil hijau</option>
                                 <option value="Vinil hitam">Vinil hitam</option>
                                 <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -445,7 +453,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ukuran_plano_cover_1"  required>
-                              <option value=" <?php  echo $row->ukuran_plano_cover_1 != null ?   $row->ukuran_plano_cover_1  : '' ?>"><?php  echo $row->ukuran_plano_cover_1 != null ?   $row->ukuran_plano_cover_1  : "ukuran_plano_cover_1" ?></option>
+                              <option value="<?php  echo $row->ukuran_plano_cover_1 != "-" ?   $row->ukuran_plano_cover_1  : '-' ?>"><?php  echo $row->ukuran_plano_cover_1 != "-" ?   $row->ukuran_plano_cover_1  : "-" ?></option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -462,6 +470,7 @@
                                 <option value="79 x 109">79 x 109</option>
                                 <option value="90 x 120">90 x 120</option>
                                 <option value="120 x 16">120 x 16</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -469,7 +478,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ukuran_plano_isi_1"  required>
-                              <option value=" <?php  echo $row->ukuran_plano_isi_1 != null ?   $row->ukuran_plano_isi_1  : '' ?>"><?php  echo $row->ukuran_plano_isi_1 != null ?   $row->ukuran_plano_isi_1  : "ukuran_plano_isi_1" ?></option>
+                              <option value="<?php  echo $row->ukuran_plano_isi_1 != "-" ?   $row->ukuran_plano_isi_1  : '-' ?>"><?php  echo $row->ukuran_plano_isi_1 != "-" ?   $row->ukuran_plano_isi_1  : "-" ?></option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -486,6 +495,7 @@
                                 <option value="79 x 109">79 x 109</option>
                                 <option value="90 x 120">90 x 120</option>
                                 <option value="120 x 16">120 x 16</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -510,7 +520,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="jenis_kertas_cover_2"  required>
-                              <option value=" <?php  echo $row->jenis_kertas_cover_2 != null ?   $row->jenis_kertas_cover_2  : '' ?>"><?php  echo $row->jenis_kertas_cover_2 != null ?   $row->jenis_kertas_cover_2  : "jenis_kertas_cover_2" ?></option>
+                              <option value="<?php  echo $row->jenis_kertas_cover_2 != "-" ?   $row->jenis_kertas_cover_2  : '-' ?>"><?php  echo $row->jenis_kertas_cover_2 != "-" ?   $row->jenis_kertas_cover_2  : "-" ?></option>
                                 <option value="ACCO(isi50)">ACCO(isi50)</option>
                                 <option value="Acquarello white 118">Acquarello white 118</option>
                                 <option value="Amplop coklat jadi">Amplop coklat jadi</option>
@@ -555,6 +565,7 @@
                                 <option value="Vinil hijau">Vinil hijau</option>
                                 <option value="Vinil hitam">Vinil hitam</option>
                                 <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -562,7 +573,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="jenis_kertas_isi_2" required>
-                              <option value=" <?php  echo $row->jenis_kertas_isi_2 != null ?   $row->jenis_kertas_isi_2  : '' ?>"><?php  echo $row->jenis_kertas_isi_2 != null ?   $row->jenis_kertas_isi_2  : "jenis_kertas_isi_2" ?></option>
+                              <option value="<?php  echo $row->jenis_kertas_isi_2 != "-" ?   $row->jenis_kertas_isi_2  : '-' ?>"><?php  echo $row->jenis_kertas_isi_2 != "-" ?   $row->jenis_kertas_isi_2  : "-" ?></option>
                                 <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
                                 <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
                                 <option value="AC/Ivory 2Muka 230 gr">AC/Ivory 2Muka 230 gr</option>
@@ -638,6 +649,7 @@
                                 <option value="Vinil hijau">Vinil hijau</option>
                                 <option value="Vinil hitam">Vinil hitam</option>
                                 <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -647,7 +659,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ukuran_plano_cover_2" required>
-                              <option value=" <?php  echo $row->ukuran_plano_cover_2 != null ?   $row->ukuran_plano_cover_2  : '' ?>"><?php  echo $row->ukuran_plano_cover_2 != null ?   $row->ukuran_plano_cover_2  : "ukuran_plano_cover_2" ?></option>
+                              <option value="<?php  echo $row->ukuran_plano_cover_2 != "-" ?   $row->ukuran_plano_cover_2  : '-' ?>"><?php  echo $row->ukuran_plano_cover_2 != "-" ?   $row->ukuran_plano_cover_2  : "-" ?></option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -664,6 +676,7 @@
                                 <option value="79 x 109">79 x 109</option>
                                 <option value="90 x 120">90 x 120</option>
                                 <option value="120 x 16">120 x 16</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -671,7 +684,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ukuran_plano_isi_2"  required>
-                              <option value=" <?php  echo $row->ukuran_plano_isi_2 != null ?   $row->ukuran_plano_isi_2  : '' ?>"><?php  echo $row->ukuran_plano_isi_2 != null ?   $row->ukuran_plano_isi_2  : "ukuran_plano_isi_2" ?></option>
+                              <option value="<?php  echo $row->ukuran_plano_isi_2 != "-" ?   $row->ukuran_plano_isi_2  : '-' ?>"><?php  echo $row->ukuran_plano_isi_2 != "-" ?   $row->ukuran_plano_isi_2  : "-" ?></option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -688,6 +701,7 @@
                                 <option value="79 x 109">79 x 109</option>
                                 <option value="90 x 120">90 x 120</option>
                                 <option value="120 x 16">120 x 16</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -712,7 +726,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="jenis_kertas_cover_3"  required>
-                              <option value=" <?php  echo $row->jenis_kertas_cover_3 != null ?   $row->jenis_kertas_cover_3  : '' ?>"><?php  echo $row->jenis_kertas_cover_3 != null ?   $row->jenis_kertas_cover_3  : "jenis_kertas_cover_3" ?></option>
+                              <option value="<?php  echo $row->jenis_kertas_cover_3 != "-" ?   $row->jenis_kertas_cover_3  : '-' ?>"><?php  echo $row->jenis_kertas_cover_3 != "-" ?   $row->jenis_kertas_cover_3  : "-" ?></option>
                                 <option value="ACCO(isi50)">ACCO(isi50)</option>
                                 <option value="Acquarello white 118">Acquarello white 118</option>
                                 <option value="Amplop coklat jadi">Amplop coklat jadi</option>
@@ -757,6 +771,7 @@
                                 <option value="Vinil hijau">Vinil hijau</option>
                                 <option value="Vinil hitam">Vinil hitam</option>
                                 <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -764,7 +779,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="jenis_kertas_isi_3"  required>
-                              <option value=" <?php  echo $row->jenis_kertas_isi_3 != null ?   $row->jenis_kertas_isi_3  : '' ?>"><?php  echo $row->jenis_kertas_isi_3 != null ?   $row->jenis_kertas_isi_3  : "jenis_kertas_isi_3" ?></option>
+                              <option value="<?php  echo $row->jenis_kertas_isi_3 != "-" ?   $row->jenis_kertas_isi_3  : '-' ?>"><?php  echo $row->jenis_kertas_isi_3 != "-" ?   $row->jenis_kertas_isi_3  : "-" ?></option>
                                 <option value="AC/Ivory 2Muka 190 gr">AC/Ivory 2Muka 190 gr</option>
                                 <option value="AC/Ivory 2Muka 210 gr">AC/Ivory 2Muka 210 gr</option>
                                 <option value="AC/Ivory 2Muka 230 gr">AC/Ivory 2Muka 230 gr</option>
@@ -840,6 +855,7 @@
                                 <option value="Vinil hijau">Vinil hijau</option>
                                 <option value="Vinil hitam">Vinil hitam</option>
                                 <option value="Vinil htm/br/hj">Vinil htm/br/hj</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -849,7 +865,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ukuran_plano_cover_3"  required>
-                              <option value=" <?php  echo $row->ukuran_plano_cover_3 != null ?   $row->ukuran_plano_cover_3  : '' ?>"><?php  echo $row->ukuran_plano_cover_3 != null ?   $row->ukuran_plano_cover_3  : "ukuran_plano_cover_3" ?></option>
+                              <option value="<?php  echo $row->ukuran_plano_cover_3 != "-" ?   $row->ukuran_plano_cover_3  : '-' ?>"><?php  echo $row->ukuran_plano_cover_3 != "-" ?   $row->ukuran_plano_cover_3  : "-" ?></option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -866,6 +882,7 @@
                                 <option value="79 x 109">79 x 109</option>
                                 <option value="90 x 120">90 x 120</option>
                                 <option value="120 x 16">120 x 16</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -873,7 +890,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="ukuran_plano_isi_3"  required>
-                              <option value=" <?php  echo $row->ukuran_plano_isi_3 != null ?   $row->ukuran_plano_isi_3  : '' ?>"><?php  echo $row->ukuran_plano_isi_3 != null ?   $row->ukuran_plano_isi_3  : "ukuran_plano_isi_3" ?></option>
+                              <option value="<?php  echo $row->ukuran_plano_isi_3 != "-" ?   $row->ukuran_plano_isi_3  : '-' ?>"><?php  echo $row->ukuran_plano_isi_3 != "-" ?   $row->ukuran_plano_isi_3  : "-" ?></option>
                                 <option value="21.50 x 33">21.5 x 33</option>
                                 <option value="54 x 70">54 x 70</option>
                                 <option value="58 x 84">58 x 84</option>
@@ -890,6 +907,7 @@
                                 <option value="79 x 109">79 x 109</option>
                                 <option value="90 x 120">90 x 120</option>
                                 <option value="120 x 16">120 x 16</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -1003,7 +1021,7 @@
                              </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="mesin_cover_1"  required>
-                              <option value=" <?php  echo $row->mesin_cover_1 != null ?   $row->mesin_cover_1  : '' ?>"><?php  echo $row->mesin_cover_1 != null ?   $row->mesin_cover_1  : "mesin_cover_1" ?></option>
+                              <option value="<?php  echo $row->mesin_cover_1 != "-" ?   $row->mesin_cover_1  : '-' ?>"><?php  echo $row->mesin_cover_1 != "-" ?   $row->mesin_cover_1  : "-" ?></option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
                                 <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -1014,6 +1032,7 @@
                                 <option value="Tokko">Tokko</option>
                                 <option value="Print banner">Print banner</option>
                                 <option value="Print digital">Print digital</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -1021,7 +1040,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="mesin_isi_1"  required>
-                              <option value=" <?php  echo $row->mesin_isi_1 != null ?   $row->mesin_isi_1  : '' ?>"><?php  echo $row->mesin_isi_1 != null ?   $row->mesin_isi_1  : "mesin_isi_1" ?></option>
+                              <option value="<?php  echo $row->mesin_isi_1 != "-" ?   $row->mesin_isi_1  : '-' ?>"><?php  echo $row->mesin_isi_1 != "-" ?   $row->mesin_isi_1  : "-" ?></option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
                                 <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -1032,6 +1051,7 @@
                                 <option value="Tokko">Tokko</option>
                                 <option value="Print banner">Print banner</option>
                                 <option value="Print digital">Print digital</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -1041,7 +1061,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="warna_cover_1" required>
-                              <option value=" <?php  echo $row->warna_cover_1 != null ?   $row->warna_cover_1  : '' ?>"><?php  echo $row->warna_cover_1 != null ?   $row->warna_cover_1  : "warna_cover_1" ?></option>
+                              <option value="<?php  echo $row->warna_cover_1 != "-" ?   $row->warna_cover_1  : '-' ?>"><?php  echo $row->warna_cover_1 != "-" ?   $row->warna_cover_1  : "-" ?></option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
                                 <option value="2/0">2/0</option>
@@ -1052,6 +1072,7 @@
                                 <option value="4/1">4/1</option>
                                 <option value="4/2">4/2</option>
                                 <option value="4/4">4/4</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -1059,7 +1080,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="warna_isi_1" required>
-                              <option value=" <?php  echo $row->warna_isi_1 != null ?   $row->warna_isi_1  : '' ?>"><?php  echo $row->warna_isi_1 != null ?   $row->warna_isi_1  : "warna_isi_1" ?></option>
+                              <option value="<?php  echo $row->warna_isi_1 != "-" ?   $row->warna_isi_1  : '-' ?>"><?php  echo $row->warna_isi_1 != "-" ?   $row->warna_isi_1  : "-" ?></option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
                                 <option value="2/0">2/0</option>
@@ -1070,6 +1091,7 @@
                                 <option value="4/1">4/1</option>
                                 <option value="4/2">4/2</option>
                                 <option value="4/4">4/4</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -1094,7 +1116,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="mesin_cover_2" required>
-                              <option value=" <?php  echo $row->mesin_cover_2 != null ?   $row->mesin_cover_2  : '' ?>"><?php  echo $row->mesin_cover_2 != null ?   $row->mesin_cover_2  : "mesin_cover_2" ?></option>
+                              <option value="<?php  echo $row->mesin_cover_2 != "-" ?   $row->mesin_cover_2  : '-' ?>"><?php  echo $row->mesin_cover_2 != "-" ?   $row->mesin_cover_2  : "-" ?></option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
                                 <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -1112,7 +1134,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="mesin_isi_2" required>
-                              <option value=" <?php  echo $row->mesin_isi_2 != null ?   $row->mesin_isi_2  : '' ?>"><?php  echo $row->mesin_isi_2 != null ?   $row->mesin_isi_2  : "mesin_isi_2" ?></option>
+                              <option value="<?php  echo $row->mesin_isi_2 != "-" ?   $row->mesin_isi_2  : '-' ?>"><?php  echo $row->mesin_isi_2 != "-" ?   $row->mesin_isi_2  : "-" ?></option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
                                 <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -1123,6 +1145,7 @@
                                 <option value="Tokko">Tokko</option>
                                 <option value="Print banner">Print banner</option>
                                 <option value="Print digital">Print digital</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -1132,7 +1155,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="warna_cover_2" required>
-                              <option value=" <?php  echo $row->warna_cover_2 != null ?   $row->warna_cover_2  : '' ?>"><?php  echo $row->warna_cover_2 != null ?   $row->warna_cover_2  : "warna_cover_2" ?></option>
+                              <option value="<?php  echo $row->warna_cover_2 != "-" ?   $row->warna_cover_2  : '-' ?>"><?php  echo $row->warna_cover_2 != "-" ?   $row->warna_cover_2  : "-" ?></option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
                                 <option value="2/0">2/0</option>
@@ -1143,6 +1166,7 @@
                                 <option value="4/1">4/1</option>
                                 <option value="4/2">4/2</option>
                                 <option value="4/4">4/4</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -1150,7 +1174,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="warna_isi_2" required>
-                              <option value=" <?php  echo $row->warna_isi_2 != null ?   $row->warna_isi_2  : '' ?>"><?php  echo $row->warna_isi_2 != null ?   $row->warna_isi_2  : "warna_isi_2" ?></option>
+                              <option value="<?php  echo $row->warna_isi_2 != "-" ?   $row->warna_isi_2  : '-' ?>"><?php  echo $row->warna_isi_2 != "-" ?   $row->warna_isi_2  : "-" ?></option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
                                 <option value="2/0">2/0</option>
@@ -1161,6 +1185,7 @@
                                 <option value="4/1">4/1</option>
                                 <option value="4/2">4/2</option>
                                 <option value="4/4">4/4</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -1185,7 +1210,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="mesin_cover_3" required>
-                              <option value=" <?php  echo $row->mesin_cover_3 != null ?   $row->mesin_cover_3  : '' ?>"><?php  echo $row->mesin_cover_3 != null ?   $row->mesin_cover_3  : "mesin_cover_3" ?></option>
+                              <option value="<?php  echo $row->mesin_cover_3 != "-" ?   $row->mesin_cover_3  : '-' ?>"><?php  echo $row->mesin_cover_3 != "-" ?   $row->mesin_cover_3  : "-" ?></option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
                                 <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -1196,6 +1221,7 @@
                                 <option value="Tokko">Tokko</option>
                                 <option value="Print banner">Print banner</option>
                                 <option value="Print digital">Print digital</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -1203,7 +1229,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="mesin_isi_3" required>
-                              <option value=" <?php  echo $row->mesin_isi_3 != null ?   $row->mesin_isi_3  : '' ?>"><?php  echo $row->mesin_isi_3 != null ?   $row->mesin_isi_3  : "mesin_isi_3" ?></option>
+                              <option value="<?php  echo $row->mesin_isi_3 != "-" ?   $row->mesin_isi_3  : '-' ?>"><?php  echo $row->mesin_isi_3 != "-" ?   $row->mesin_isi_3  : "-" ?></option>
                                 <option value="Oliver 58 2w">Oliver 58 2w</option>
                                 <option value="Oliver 72 1w">Oliver 72 1w</option>
                                 <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -1214,6 +1240,7 @@
                                 <option value="Tokko">Tokko</option>
                                 <option value="Print banner">Print banner</option>
                                 <option value="Print digital">Print digital</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -1223,7 +1250,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="warna_cover_3" required>
-                              <option value=" <?php  echo $row->warna_cover_3 != null ?   $row->warna_cover_3  : '' ?>"><?php  echo $row->warna_cover_3 != null ?   $row->warna_cover_3  : "warna_cover_3" ?></option>
+                              <option value="<?php  echo $row->warna_cover_3 != "-" ?   $row->warna_cover_3  : '-' ?>"><?php  echo $row->warna_cover_3 != "-" ?   $row->warna_cover_3  : "-" ?></option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
                                 <option value="2/0">2/0</option>
@@ -1234,6 +1261,7 @@
                                 <option value="4/1">4/1</option>
                                 <option value="4/2">4/2</option>
                                 <option value="4/4">4/4</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
@@ -1241,7 +1269,7 @@
                             </div>
                             <div class="col-md-3">
                               <br><select id="inputState" class="form-select form-control" name="warna_isi_3" required>
-                              <option value=" <?php  echo $row->warna_isi_3 != null ?   $row->warna_isi_3  : '' ?>"><?php  echo $row->warna_isi_3 != null ?   $row->warna_isi_3  : "warna_isi_3" ?></option>
+                              <option value="<?php  echo $row->warna_isi_3 != "-" ?   $row->warna_isi_3  : '-' ?>"><?php  echo $row->warna_isi_3 != "-" ?   $row->warna_isi_3  : "-" ?></option>
                                 <option value="1/0">1/0</option>
                                 <option value="1/1">1/1</option>
                                 <option value="2/0">2/0</option>
@@ -1252,6 +1280,7 @@
                                 <option value="4/1">4/1</option>
                                 <option value="4/2">4/2</option>
                                 <option value="4/4">4/4</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>

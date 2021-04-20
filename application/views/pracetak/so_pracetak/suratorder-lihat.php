@@ -249,20 +249,20 @@
                     <div class="col-md-10">
                         <div class="row" style="min-height: 150px;padding-top: 20px;">
                             <div class="col-md-4 text-center">
-                                <?php echo $row->ctcp_cover_1!=null? "cover 1 : ".$row->ctcp_cover_1."<br>": "" ?>
-                                <?php echo $row->plat_cover_1!=null? "plat cover 1 : ".$row->plat_cover_1."<br>": "" ?>
-                                <?php echo $row->ctcp_cover_2!=null? "cover 2 : ".$row->ctcp_cover_2."<br>": "" ?>
-                                <?php echo $row->plat_cover_2!=null? "plat cover 2 : ".$row->plat_cover_2."<br>": "" ?>
-                                <?php echo $row->ctcp_cover_3!=null? "cover 3 : ".$row->ctcp_cover_3."<br>": "" ?>
-                                <?php echo $row->plat_cover_3!=null? "plat cover 3 : ".$row->plat_cover_3."<br>": "" ?>
+                                <?php echo $row->ctcp_cover_1!=null && $row->ctcp_cover_1!='-'? "cover 1 : ".$row->ctcp_cover_1."<br>": "" ?>
+                                <?php echo $row->plat_cover_1!=null && $row->plat_cover_1!='-'? "plat cover 1 : ".$row->plat_cover_1."<br>": "" ?>
+                                <?php echo $row->ctcp_cover_2!=null && $row->ctcp_cover_2!='-'? "cover 2 : ".$row->ctcp_cover_2."<br>": "" ?>
+                                <?php echo $row->plat_cover_2!=null && $row->plat_cover_2!='-'? "plat cover 2 : ".$row->plat_cover_2."<br>": "" ?>
+                                <?php echo $row->ctcp_cover_3!=null && $row->ctcp_cover_3!='-'? "cover 3 : ".$row->ctcp_cover_3."<br>": "" ?>
+                                <?php echo $row->plat_cover_3!=null && $row->plat_cover_3!='-'? "plat cover 3 : ".$row->plat_cover_3."<br>": "" ?>
                             </div>
                             <div class="col-md-4 text-center">
-                                <?php echo $row->ctcp_isi_1!=null? "isi 1 : ".$row->ctcp_isi_1."<br>": "" ?>
-                                <?php echo $row->plat_isi_1!=null? "plat isi 1 : ".$row->plat_isi_1."<br>": "" ?>
-                                <?php echo $row->ctcp_isi_2!=null? "isi 2 : ".$row->ctcp_isi_2."<br>": "" ?>
-                                <?php echo $row->plat_isi_2!=null? "plat isi 2 : ".$row->plat_isi_2."<br>": "" ?>
-                                <?php echo $row->ctcp_isi_3!=null? "isi 3 : ".$row->ctcp_isi_3."<br>": "" ?>
-                                <?php echo $row->plat_isi_3!=null? "plat isi 3 : ".$row->plat_isi_3."<br>": "" ?>
+                                <?php echo $row->ctcp_isi_1!=null && $row->ctcp_isi_1!='-'? "isi 1 : ".$row->ctcp_isi_1."<br>": "" ?>
+                                <?php echo $row->plat_isi_1!=null && $row->plat_isi_1!='-'? "plat isi 1 : ".$row->plat_isi_1."<br>": "" ?>
+                                <?php echo $row->ctcp_isi_2!=null && $row->ctcp_isi_2!='-'? "isi 2 : ".$row->ctcp_isi_2."<br>": "" ?>
+                                <?php echo $row->plat_isi_2!=null && $row->plat_isi_2!='-'? "plat isi 2 : ".$row->plat_isi_2."<br>": "" ?>
+                                <?php echo $row->ctcp_isi_3!=null && $row->ctcp_isi_3!='-'? "isi 3 : ".$row->ctcp_isi_3."<br>": "" ?>
+                                <?php echo $row->plat_isi_3!=null && $row->plat_isi_3!='-'? "plat isi 3 : ".$row->plat_isi_3."<br>": "" ?>
                             </div>
                             <div class="col-md-4">
                             <h1>-</h1>
@@ -271,27 +271,27 @@
                         <div class="row" style="min-height: 150px;padding-top: 20px;">
                             <div class="col-md-4 text-center">
 
-                                <?php echo $row->jenis_kertas_cover_1!=null? "kertas 1 : ".$row->jenis_kertas_cover_1."<br>": "" ?>
-                                <?php echo $row->ukuran_plano_cover_1!=null? "ukuran 1 : ".$row->ukuran_plano_cover_1."<br>": "" ?>
-                                <?php echo $row->jumlah_kertas_cover_1!=null? "jumlah 1 : ".$row->jumlah_kertas_cover_1."<br>": "" ?>
-                                <?php echo $row->jenis_kertas_cover_2!=null? "kertas 2 : ".$row->jenis_kertas_cover_2."<br>": "" ?>
-                                <?php echo $row->ukuran_plano_cover_2!=null? "ukuran 2 : ".$row->ukuran_plano_cover_2."<br>": "" ?>
-                                <?php echo $row->jumlah_kertas_cover_2!=null? "jumlah 2 : ".$row->jumlah_kertas_cover_2."<br>": "" ?>
-                                <?php echo $row->jenis_kertas_cover_3!=null? "kertas 3 : ".$row->jenis_kertas_cover_3."<br>": "" ?>
-                                <?php echo $row->ukuran_plano_cover_3!=null? "ukuran 3 : ".$row->ukuran_plano_cover_3."<br>": "" ?>
-                                <?php echo $row->jumlah_kertas_cover_3!=null? "jumlah 3 : ".$row->jumlah_kertas_cover_3."<br>": "" ?>
+                                <?php echo $row->jenis_kertas_cover_1!=null && $row->jenis_kertas_cover_1!='-'? "kertas 1 : ".$row->jenis_kertas_cover_1."<br>": "" ?>
+                                <?php echo $row->ukuran_plano_cover_1!=null && $row->ukuran_plano_cover_1!='-'? "ukuran 1 : ".$row->ukuran_plano_cover_1."<br>": "" ?>
+                                <?php echo $row->jumlah_kertas_cover_1!=null && $row->jumlah_kertas_cover_1!='-'? "jumlah 1 : ".$row->jumlah_kertas_cover_1."<br>": "" ?>
+                                <?php echo $row->jenis_kertas_cover_2!=null && $row->jenis_kertas_cover_2!='-'? "kertas 2 : ".$row->jenis_kertas_cover_2."<br>": "" ?>
+                                <?php echo $row->ukuran_plano_cover_2!=null && $row->ukuran_plano_cover_2!='-'? "ukuran 2 : ".$row->ukuran_plano_cover_2."<br>": "" ?>
+                                <?php echo $row->jumlah_kertas_cover_2!=null && $row->jumlah_kertas_cover_2!='-'? "jumlah 2 : ".$row->jumlah_kertas_cover_2."<br>": "" ?>
+                                <?php echo $row->jenis_kertas_cover_3!=null && $row->jenis_kertas_cover_3!='-'? "kertas 3 : ".$row->jenis_kertas_cover_3."<br>": "" ?>
+                                <?php echo $row->ukuran_plano_cover_3!=null && $row->ukuran_plano_cover_3!='-'? "ukuran 3 : ".$row->ukuran_plano_cover_3."<br>": "" ?>
+                                <?php echo $row->jumlah_kertas_cover_3!=null && $row->jumlah_kertas_cover_3!='-'? "jumlah 3 : ".$row->jumlah_kertas_cover_3."<br>": "" ?>
                                 
                             </div>
                             <div class="col-md-4 text-center">
-                                <?php echo $row->jenis_kertas_isi_1!=null? "kertas 1 : ".$row->jenis_kertas_isi_1."<br>": "" ?>
-                                <?php echo $row->ukuran_plano_isi_1!=null? "ukuran 1 : ".$row->ukuran_plano_isi_1."<br>": "" ?>
-                                <?php echo $row->jumlah_kertas_isi_1!=null? "jumlah 1 : ".$row->jumlah_kertas_isi_1."<br>": "" ?>
-                                <?php echo $row->jenis_kertas_isi_2!=null? "kertas 2 : ".$row->jenis_kertas_isi_2."<br>": "" ?>
-                                <?php echo $row->ukuran_plano_isi_2!=null? "ukuran 2 : ".$row->ukuran_plano_isi_2."<br>": "" ?>
-                                <?php echo $row->jumlah_kertas_isi_2!=null? "jumlah 2 : ".$row->jumlah_kertas_isi_2."<br>": "" ?>
-                                <?php echo $row->jenis_kertas_isi_3!=null? "kertas 3 : ".$row->jenis_kertas_isi_3."<br>": "" ?>
-                                <?php echo $row->ukuran_plano_isi_3!=null? "ukuran 3 : ".$row->ukuran_plano_isi_3."<br>": "" ?>
-                                <?php echo $row->jumlah_kertas_isi_3!=null? "jumlah 3 : ".$row->jumlah_kertas_isi_3."<br>": "" ?>
+                                <?php echo $row->jenis_kertas_isi_1!=null && $row->jenis_kertas_isi_1!='-'? "kertas 1 : ".$row->jenis_kertas_isi_1."<br>": "" ?>
+                                <?php echo $row->ukuran_plano_isi_1!=null && $row->ukuran_plano_isi_1!='-'? "ukuran 1 : ".$row->ukuran_plano_isi_1."<br>": "" ?>
+                                <?php echo $row->jumlah_kertas_isi_1!=null && $row->jumlah_kertas_isi_1!='-'? "jumlah 1 : ".$row->jumlah_kertas_isi_1."<br>": "" ?>
+                                <?php echo $row->jenis_kertas_isi_2!=null && $row->jenis_kertas_isi_2!='-'? "kertas 2 : ".$row->jenis_kertas_isi_2."<br>": "" ?>
+                                <?php echo $row->ukuran_plano_isi_2!=null && $row->ukuran_plano_isi_2!='-'? "ukuran 2 : ".$row->ukuran_plano_isi_2."<br>": "" ?>
+                                <?php echo $row->jumlah_kertas_isi_2!=null && $row->jumlah_kertas_isi_2!='-'? "jumlah 2 : ".$row->jumlah_kertas_isi_2."<br>": "" ?>
+                                <?php echo $row->jenis_kertas_isi_3!=null && $row->jenis_kertas_isi_3!='-'? "kertas 3 : ".$row->jenis_kertas_isi_3."<br>": "" ?>
+                                <?php echo $row->ukuran_plano_isi_3!=null && $row->ukuran_plano_isi_3!='-'? "ukuran 3 : ".$row->ukuran_plano_isi_3."<br>": "" ?>
+                                <?php echo $row->jumlah_kertas_isi_3!=null && $row->jumlah_kertas_isi_3!='-'? "jumlah 3 : ".$row->jumlah_kertas_isi_3."<br>": "" ?>
                             </div>
                             <div class="col-md-4 text-center">
                             <h1>-</h1>
@@ -315,26 +315,26 @@
                         </div><hr>
                         <div class="row" style="min-height: 150px;padding-top: 20px;">
                             <div class="col-md-4 text-center">
-                                <?php echo $row->mesin_cover_1!=null? "Mesin 1 : ".$row->mesin_cover_1."<br>": "" ?>
-                                <?php echo $row->warna_cover_1!=null? "Warna 1 : ".$row->warna_cover_1."<br>": "" ?>
+                                <?php echo $row->mesin_cover_1!=null && $row->mesin_cover_1!='-'? "Mesin 1 : ".$row->mesin_cover_1."<br>": "" ?>
+                                <?php echo $row->warna_cover_1!=null && $row->warna_cover_1!='-'? "Warna 1 : ".$row->warna_cover_1."<br>": "" ?>
                                 <?php echo $row->insit_cover_1!=null? "Insit 1 : ".$row->insit_cover_1."<br>": "" ?>
-                                <?php echo $row->mesin_cover_2!=null? "Mesin 2 : ".$row->mesin_cover_2."<br>": "" ?>
-                                <?php echo $row->warna_cover_2!=null? "Warna 2 : ".$row->warna_cover_2."<br>": "" ?>
+                                <?php echo $row->mesin_cover_2!=null && $row->mesin_cover_2!='-'? "Mesin 2 : ".$row->mesin_cover_2."<br>": "" ?>
+                                <?php echo $row->warna_cover_2!=null && $row->warna_cover_2!='-'? "Warna 2 : ".$row->warna_cover_2."<br>": "" ?>
                                 <?php echo $row->insit_cover_2!=null? "Insit 2 : ".$row->insit_cover_2."<br>": "" ?>
-                                <?php echo $row->mesin_cover_3!=null? "Mesin 3 : ".$row->mesin_cover_3."<br>": "" ?>
-                                <?php echo $row->warna_cover_3!=null? "Warna 3 : ".$row->warna_cover_3."<br>": "" ?>
+                                <?php echo $row->mesin_cover_3!=null && $row->mesin_cover_3!='-'? "Mesin 3 : ".$row->mesin_cover_3."<br>": "" ?>
+                                <?php echo $row->warna_cover_3!=null && $row->warna_cover_3!='-'? "Warna 3 : ".$row->warna_cover_3."<br>": "" ?>
                                 <?php echo $row->insit_cover_3!=null? "Insit 3 : ".$row->insit_cover_3."<br>": "" ?>
                                 <?php echo $row->keterangan_cetak_cover!=null? "keterangan : ".$row->keterangan_cetak_cover."<br>": "" ?>
                             </div>
                             <div class="col-md-4 text-center">
-                                <?php echo $row->mesin_isi_1!=null? "Mesin 1 : ".$row->mesin_isi_1."<br>": "" ?>
-                                <?php echo $row->warna_isi_1!=null? "Warna 1 : ".$row->warna_isi_1."<br>": "" ?>
+                                <?php echo $row->mesin_isi_1!=null && $row->mesin_isi_1!='-'? "Mesin 1 : ".$row->mesin_isi_1."<br>": "" ?>
+                                <?php echo $row->warna_isi_1!=null && $row->warna_isi_1!='-'? "Warna 1 : ".$row->warna_isi_1."<br>": "" ?>
                                 <?php echo $row->insit_isi_1!=null? "Insit 1 : ".$row->insit_isi_1."<br>": "" ?>
-                                <?php echo $row->mesin_isi_2!=null? "Mesin 2 : ".$row->mesin_isi_2."<br>": "" ?>
-                                <?php echo $row->warna_isi_2!=null? "Warna 2 : ".$row->warna_isi_2."<br>": "" ?>
+                                <?php echo $row->mesin_isi_2!=null && $row->mesin_isi_2!='-'? "Mesin 2 : ".$row->mesin_isi_2."<br>": "" ?>
+                                <?php echo $row->warna_isi_2!=null && $row->warna_isi_2!='-'? "Warna 2 : ".$row->warna_isi_2."<br>": "" ?>
                                 <?php echo $row->insit_isi_2!=null? "Insit 2 : ".$row->insit_isi_2."<br>": "" ?>
-                                <?php echo $row->mesin_isi_3!=null? "Mesin 3 : ".$row->mesin_isi_3."<br>": "" ?>
-                                <?php echo $row->warna_isi_3!=null? "Warna 3 : ".$row->warna_isi_3."<br>": "" ?>
+                                <?php echo $row->mesin_isi_3!=null && $row->mesin_isi_3!='-'? "Mesin 3 : ".$row->mesin_isi_3."<br>": "" ?>
+                                <?php echo $row->warna_isi_3!=null && $row->warna_isi_3!='-'? "Warna 3 : ".$row->warna_isi_3."<br>": "" ?>
                                 <?php echo $row->insit_isi_3!=null? "Insit 3 : ".$row->insit_isi_3."<br>": "" ?>
                                 <?php echo $row->keterangan_cetak_isi!=null? "keterangan : ".$row->keterangan_cetak_isi."<br>": "" ?>
                             </div>
