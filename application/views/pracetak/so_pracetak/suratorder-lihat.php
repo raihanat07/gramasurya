@@ -79,7 +79,7 @@
                             if($row->jahit_benang != null){
                                 $finishing .= 'jahit benang, ';
                             } 
-                            if($row->jahit_kawat != null){
+                            if($row->hotprint != null){
                                 $finishing .= 'jahit kawat, ';
                             }    
                             if($row->pond != null){
@@ -206,7 +206,7 @@
                         </div>
                         <div class="col-md-3">
                             <div class="card-header text-center">
-                                <b>AKHIR</b>
+                                <b>ISI</b>
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -249,69 +249,168 @@
                     <div class="col-md-10">
                         <div class="row" style="min-height: 150px;padding-top: 20px;">
                             <div class="col-md-4 text-center">
-                                Ctcp Cover1 Plat 74<br>
-                                Jum Ctcp Cover1 4
+                                <?php echo $row->ctcp_cover_1!=null? "cover 1 : ".$row->ctcp_cover_1."<br>": "" ?>
+                                <?php echo $row->plat_cover_1!=null? "plat cover 1 : ".$row->plat_cover_1."<br>": "" ?>
+                                <?php echo $row->ctcp_cover_2!=null? "cover 2 : ".$row->ctcp_cover_2."<br>": "" ?>
+                                <?php echo $row->plat_cover_2!=null? "plat cover 2 : ".$row->plat_cover_2."<br>": "" ?>
+                                <?php echo $row->ctcp_cover_3!=null? "cover 3 : ".$row->ctcp_cover_3."<br>": "" ?>
+                                <?php echo $row->plat_cover_3!=null? "plat cover 3 : ".$row->plat_cover_3."<br>": "" ?>
                             </div>
                             <div class="col-md-4 text-center">
-                                Ctcp Isi1 Plat 72<br>
-                                Jum Ctcp Isi1 8
+                                <?php echo $row->ctcp_isi_1!=null? "isi 1 : ".$row->ctcp_isi_1."<br>": "" ?>
+                                <?php echo $row->plat_isi_1!=null? "plat isi 1 : ".$row->plat_isi_1."<br>": "" ?>
+                                <?php echo $row->ctcp_isi_2!=null? "isi 2 : ".$row->ctcp_isi_2."<br>": "" ?>
+                                <?php echo $row->plat_isi_2!=null? "plat isi 2 : ".$row->plat_isi_2."<br>": "" ?>
+                                <?php echo $row->ctcp_isi_3!=null? "isi 3 : ".$row->ctcp_isi_3."<br>": "" ?>
+                                <?php echo $row->plat_isi_3!=null? "plat isi 3 : ".$row->plat_isi_3."<br>": "" ?>
                             </div>
                             <div class="col-md-4">
-                                
-                            </div>
-                        </div><hr>
-                        <div class="row" style="min-height: 150px;padding-top: 20px;">
-                            <div class="col-md-4 text-center">
-                                Kertas Cov1 AC/Ivory_2Muka 230gr<br>
-                                Ukuran Kertas Cov1 79 x 109<br>
-                                Jum Kertas Cov1 530
-                            </div>
-                            <div class="col-md-4 text-center">
-                                Kertas Isi1 HVS 60gr<br>
-                                Ukuran Kertas Isi1 65 x 100<br>
-                                Jum Kertas Isi1 8300
-                            </div>
-                            <div class="col-md-4 text-center">
-                                
+                            <h1>-</h1>
                             </div>
                         </div><hr>
                         <div class="row" style="min-height: 150px;padding-top: 20px;">
                             <div class="col-md-4 text-center">
 
+                                <?php echo $row->jenis_kertas_cover_1!=null? "kertas 1 : ".$row->jenis_kertas_cover_1."<br>": "" ?>
+                                <?php echo $row->ukuran_plano_cover_1!=null? "ukuran 1 : ".$row->ukuran_plano_cover_1."<br>": "" ?>
+                                <?php echo $row->jumlah_kertas_cover_1!=null? "jumlah 1 : ".$row->jumlah_kertas_cover_1."<br>": "" ?>
+                                <?php echo $row->jenis_kertas_cover_2!=null? "kertas 2 : ".$row->jenis_kertas_cover_2."<br>": "" ?>
+                                <?php echo $row->ukuran_plano_cover_2!=null? "ukuran 2 : ".$row->ukuran_plano_cover_2."<br>": "" ?>
+                                <?php echo $row->jumlah_kertas_cover_2!=null? "jumlah 2 : ".$row->jumlah_kertas_cover_2."<br>": "" ?>
+                                <?php echo $row->jenis_kertas_cover_3!=null? "kertas 3 : ".$row->jenis_kertas_cover_3."<br>": "" ?>
+                                <?php echo $row->ukuran_plano_cover_3!=null? "ukuran 3 : ".$row->ukuran_plano_cover_3."<br>": "" ?>
+                                <?php echo $row->jumlah_kertas_cover_3!=null? "jumlah 3 : ".$row->jumlah_kertas_cover_3."<br>": "" ?>
+                                
                             </div>
                             <div class="col-md-4 text-center">
-
+                                <?php echo $row->jenis_kertas_isi_1!=null? "kertas 1 : ".$row->jenis_kertas_isi_1."<br>": "" ?>
+                                <?php echo $row->ukuran_plano_isi_1!=null? "ukuran 1 : ".$row->ukuran_plano_isi_1."<br>": "" ?>
+                                <?php echo $row->jumlah_kertas_isi_1!=null? "jumlah 1 : ".$row->jumlah_kertas_isi_1."<br>": "" ?>
+                                <?php echo $row->jenis_kertas_isi_2!=null? "kertas 2 : ".$row->jenis_kertas_isi_2."<br>": "" ?>
+                                <?php echo $row->ukuran_plano_isi_2!=null? "ukuran 2 : ".$row->ukuran_plano_isi_2."<br>": "" ?>
+                                <?php echo $row->jumlah_kertas_isi_2!=null? "jumlah 2 : ".$row->jumlah_kertas_isi_2."<br>": "" ?>
+                                <?php echo $row->jenis_kertas_isi_3!=null? "kertas 3 : ".$row->jenis_kertas_isi_3."<br>": "" ?>
+                                <?php echo $row->ukuran_plano_isi_3!=null? "ukuran 3 : ".$row->ukuran_plano_isi_3."<br>": "" ?>
+                                <?php echo $row->jumlah_kertas_isi_3!=null? "jumlah 3 : ".$row->jumlah_kertas_isi_3."<br>": "" ?>
                             </div>
                             <div class="col-md-4 text-center">
+                            <h1>-</h1>
+                            </div>
+                        </div><hr>
+                        <div class="row" style="min-height: 150px;padding-top: 20px;">
+                            <div class="col-md-4 text-center">
+                                <?php echo $row->potong_cover_1!=null? "potong 1 : ".$row->potong_cover_1."<br>": "" ?>
+                                <?php echo $row->potong_cover_2!=null? "potong 2 : ".$row->potong_cover_2."<br>": "" ?>
+                                <?php echo $row->potong_cover_3!=null? "potong 3 : ".$row->potong_cover_3."<br>": "" ?>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <?php echo $row->potong_isi_1!=null? "potong 1 : ".$row->potong_isi_1."<br>": "" ?>
+                                <?php echo $row->potong_isi_2!=null? "potong 2 : ".$row->potong_isi_2."<br>": "" ?>
+                                <?php echo $row->potong_isi_3!=null? "potong 3 : ".$row->potong_isi_3."<br>": "" ?>
+                                <?php echo $row->potong_isi_4!=null? "potong 4 : ".$row->potong_isi_4."<br>": "" ?>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h1>-</h1>
+                            </div>
+                        </div><hr>
+                        <div class="row" style="min-height: 150px;padding-top: 20px;">
+                            <div class="col-md-4 text-center">
+                                <?php echo $row->mesin_cover_1!=null? "Mesin 1 : ".$row->mesin_cover_1."<br>": "" ?>
+                                <?php echo $row->warna_cover_1!=null? "Warna 1 : ".$row->warna_cover_1."<br>": "" ?>
+                                <?php echo $row->insit_cover_1!=null? "Insit 1 : ".$row->insit_cover_1."<br>": "" ?>
+                                <?php echo $row->mesin_cover_2!=null? "Mesin 2 : ".$row->mesin_cover_2."<br>": "" ?>
+                                <?php echo $row->warna_cover_2!=null? "Warna 2 : ".$row->warna_cover_2."<br>": "" ?>
+                                <?php echo $row->insit_cover_2!=null? "Insit 2 : ".$row->insit_cover_2."<br>": "" ?>
+                                <?php echo $row->mesin_cover_3!=null? "Mesin 3 : ".$row->mesin_cover_3."<br>": "" ?>
+                                <?php echo $row->warna_cover_3!=null? "Warna 3 : ".$row->warna_cover_3."<br>": "" ?>
+                                <?php echo $row->insit_cover_3!=null? "Insit 3 : ".$row->insit_cover_3."<br>": "" ?>
+                                <?php echo $row->keterangan_cetak_cover!=null? "keterangan : ".$row->keterangan_cetak_cover."<br>": "" ?>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <?php echo $row->mesin_isi_1!=null? "Mesin 1 : ".$row->mesin_isi_1."<br>": "" ?>
+                                <?php echo $row->warna_isi_1!=null? "Warna 1 : ".$row->warna_isi_1."<br>": "" ?>
+                                <?php echo $row->insit_isi_1!=null? "Insit 1 : ".$row->insit_isi_1."<br>": "" ?>
+                                <?php echo $row->mesin_isi_2!=null? "Mesin 2 : ".$row->mesin_isi_2."<br>": "" ?>
+                                <?php echo $row->warna_isi_2!=null? "Warna 2 : ".$row->warna_isi_2."<br>": "" ?>
+                                <?php echo $row->insit_isi_2!=null? "Insit 2 : ".$row->insit_isi_2."<br>": "" ?>
+                                <?php echo $row->mesin_isi_3!=null? "Mesin 3 : ".$row->mesin_isi_3."<br>": "" ?>
+                                <?php echo $row->warna_isi_3!=null? "Warna 3 : ".$row->warna_isi_3."<br>": "" ?>
+                                <?php echo $row->insit_isi_3!=null? "Insit 3 : ".$row->insit_isi_3."<br>": "" ?>
+                                <?php echo $row->keterangan_cetak_isi!=null? "keterangan : ".$row->keterangan_cetak_isi."<br>": "" ?>
+                            </div>
+                            <div class="col-md-4 text-center">
+                            <h1>-</h1>
                                 
                             </div>
                         </div><hr>
                         <div class="row" style="min-height: 150px;padding-top: 20px;">
                             <div class="col-md-4 text-center">
-                                Mesin Cov1 SM 74 4w - A<br>
-                                Warna Cov1 4/0<br>
-                                Insit Cover1 50<br>
-                                Ket Cov1 1 SET 2UP
+                                    <?php 
+                                    $finishing = "";
+                                    if($row->doff != null){
+                                        $finishing .= "doff, ";
+                                    }
+                                    if($row->emboss != null){
+                                        $finishing .= 'emboss, ';
+                                    }   
+                                    if($row->glossy != null){
+                                        $finishing .= 'Glossy, ';
+                                    } 
+                                    if($row->hotprint != null){
+                                        $finishing .= 'hotprint, ';
+                                    }    
+                                    if($row->spot_uvi != null){
+                                        $finishing .= 'spot uvi, ';
+                                    }   
+                                    if($row->uvi != null){
+                                        $finishing .= 'uvi, ';
+                                    } 
+                                    
+                                    $finishing = rtrim($finishing, ", ");
+                                    echo $finishing;
+                                    ?>
                             </div>
                             <div class="col-md-4 text-center">
-                                Mesin Isi1 Oliver 72 1w<br>
-                                Warna Isi1 1/1<br>
-                                Insit Isi1 50<br>
-                                Ket Isi1 1/1 WARNA WARNI 8 PLAT GANTI
+                                    <?php 
+                                    $finishing = "";                                   
+                                    if($row->lipat != null){
+                                        $finishing .= 'lipat, ';
+                                    }   
+                                    if($row->susun != null){
+                                        $finishing .= 'susun, ';
+                                    } 
+                                    
+                                    $finishing = rtrim($finishing, ", ");
+                                    echo $finishing;
+                                    ?>
                             </div>
                             <div class="col-md-4 text-center">
-                                
-                            </div>
-                        </div><hr>
-                        <div class="row" style="min-height: 150px;padding-top: 20px;">
-                            <div class="col-md-4 text-center">
-                                Finishing Cover1 Uvi
-                            </div>
-                            <div class="col-md-4 text-center">
-                                Finishing Isi 1Lipat,Susun
-                            </div>
-                            <div class="col-md-4 text-center">
-
+                                    <?php 
+                                    $finishing = "";
+                                    if($row->bending != null){
+                                        $finishing .= "bending, ";
+                                    }
+                                    if($row->hard_cover != null){
+                                        $finishing .= 'hard cover, ';
+                                    }   
+                                    if($row->jahit_benang != null){
+                                        $finishing .= 'jahit benang, ';
+                                    } 
+                                    if($row->jahit_kawat != null){
+                                        $finishing .= 'jahit kawat, ';
+                                    }    
+                                    if($row->pond != null){
+                                        $finishing .= 'pond, ';
+                                    }   
+                                    if($row->klem != null){
+                                        $finishing .= 'klem, ';
+                                    } 
+                                    if($row->spiral != null){
+                                        $finishing .= 'Spiral, ';
+                                    }
+                                    $finishing = rtrim($finishing, ", ");
+                                    echo $finishing;
+                                    ?>
                             </div>
                         </div>
                     </div>

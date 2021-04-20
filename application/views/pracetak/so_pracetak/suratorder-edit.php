@@ -1339,7 +1339,7 @@
                                 <input class="form-check-input" type="text" name="finishing_cover_spot_uvi" value="" hidden>
                                 <input class="form-check-input" name="finishing_cover_spot_uvi" type="checkbox" value="spot_uvi" id="flexCheckDefault" <?php echo $row->spot_uvi == "spot_uvi" ?  "checked" : "" ?>>
                                 <label class="form-check-label" for="flexCheckDefault">
-                                  Spot Ui
+                                  Spot Uvi
                                 </label>
                               </div>
                               <div class="form-check">

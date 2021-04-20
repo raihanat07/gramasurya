@@ -1343,7 +1343,7 @@
                                 <input class="form-check-input" type="text" name="finishing_cover_spot_uvi" value="" hidden>
                                 <input class="form-check-input" name="finishing_cover_spot_uvi" type="checkbox" value="spot_uvi" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                  Spot Ui
+                                  Spot Uvi
                                 </label>
                               </div>
                               <div class="form-check">
