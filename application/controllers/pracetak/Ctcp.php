@@ -20,23 +20,40 @@ class Ctcp extends CI_Controller {
 		$this->template->load('pracetak/template','pracetak/ctcp/ctcp',$data);
 	}
 
-	public function tambah_ctcp()
+	public function tambah_ctcp($id)
+	{
+		check_not_login();
+		$query = $this->ctcp->get_lihat($id);
+		$data = array(
+			'judul' => 'Tambah Ctcp',
+			'ctcp' => $query->result(),
+		);		
+		$this->template->load('pracetak/template','pracetak/ctcp/ctcp-tambah',$data);		
+	}
+
+	public function proses()
 	{		
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->ctcp->tambah_ctcp($inputan);
-		}
-		if($this->db->affected_rows() > 0){
-			echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
-		}
-		echo "<script>window.location='".site_url('pracetak/ctcp/index')."'; </script>"; 
-	
+				if($this->db->affected_rows() > 0){
+					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
+				}
+				echo "<script>window.location='".site_url('pracetak/ctcp')."'; </script>"; 
+		} else if(isset($_POST['edit'])){ 
+			$inputan = $this->input->post(null, TRUE);			
+			$this->ctcp->edit_ctcp($inputan);
+				if($this->db->affected_rows() > 0){					
+					echo "<script> alert('Data Berhasil Diubah'); </script>";
+				}
+				echo "<script>window.location='".site_url('pracetak/ctcp')."'; </script>"; 
+		}	
 	}
 
 	public function edit_ctcp($id)
 	{
 		check_not_login();
-		$query = $this->ctcp->get_lihat($id);
+		$query = $this->ctcp->get_lihatctcp($id);
 		$data = array(
 			'judul' => 'Edit Ctcp',
 			'ctcp' => $query->result(),

@@ -77,19 +77,19 @@
                 
               <!-- lihat detail imposisi -->
                 <?php if($row->id_data_ctcp != null) {?>
-                  <a href="<?=site_url('pracetak/Imposisi/lihat_imposisi/'.$row->id_order)?>">
+                  <a href="<?=site_url('pracetak/Ctcp/lihat_ctcp/'.$row->id_order)?>">
                     <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
 
               <!-- tambah imposisi -->
                 <?php } if($row->id_data_ctcp == null) {?>
-                  <a href="<?=site_url('pracetak/Imposisi/tambah_imposisi/'.$row->id_order)?>">
+                  <a href="<?=site_url('pracetak/Ctcp/tambah_ctcp/'.$row->id_order)?>">
                     <i class="fa fa-plus" style="font-size:18px"></i>
                   </a>
                 <?php }else {?>
 
               <!-- edit imposisi -->
-                  <a href="<?=site_url('pracetak/Imposisi/edit_imposisi/'.$row->id_order)?>">
+                  <a href="<?=site_url('pracetak/Ctcp/edit_ctcp/'.$row->id_order)?>">
                     <i class="fa fa-pencil" style="font-size:18px"></i>
                   </a>
               <?php } ?>

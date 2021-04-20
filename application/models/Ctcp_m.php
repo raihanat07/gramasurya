@@ -20,7 +20,7 @@ class Ctcp_m extends CI_Model {
     {
         $this->db->select(
             'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
-            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,
+            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,
             imposisi.id_order as nomor_so, 
             imposisi.id_imposisi as id_imposisi, 
             imposisi.namaoperator1 as namaoperator1, 
@@ -156,7 +156,7 @@ class Ctcp_m extends CI_Model {
             // data_ctcp.mesin_gagal3 as mesin_gagal3,
             // data_ctcp.tanggal_out_ctcp_cover as tanggal_out_ctcp_cover,
             // data_ctcp.tanggal_out_ctcp_isi1 as tanggal_out_ctcp_isi1,
-            // data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_isi',
+            // data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2',
         );
         $this->db->from('order');
         $this->db->join('finishing','finishing.id_order = order.id_order');
@@ -173,7 +173,7 @@ class Ctcp_m extends CI_Model {
     {
         $this->db->select(
             'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
-            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,
+            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,
             imposisi.id_order as nomor_so, 
             imposisi.id_imposisi as id_imposisi, 
             imposisi.namaoperator1 as namaoperator1, 
@@ -481,6 +481,32 @@ class Ctcp_m extends CI_Model {
             );
             
             $this->db->insert('data_ctcp',$tambah_ctcp);
+    }
+
+    public function edit_ctcp($data)
+	{
+        // ubah bagian surat order  
+		$edit_ctcp = array(
+            // 'id_order' =>$data['id_order'],
+            // 'id_data_ctcp' =>$data['id_data_ctcp'],
+            // 'status_ctcp_cover' =>$data['status_ctcp_cover'],
+            // 'status_ctcp_isi' =>$data['status_ctcp_isi'],
+            'plate_gagal1' =>$data['plate_gagal1'],
+            'plate_gagal2' =>$data['plate_gagal2'],
+            'plate_gagal3' =>$data['plate_gagal3'],
+            // 'status_imposisi_cover' =>$data['jumlah_kertas_cover_1'],
+            // 'status_imposisi_isi' =>$data['jumlah_kertas_isi_1'],
+            'mesin_gagal1' =>$data['mesin_gagal1'],
+            'mesin_gagal2' =>$data['mesin_gagal2'],
+            'mesin_gagal3' =>$data['mesin_gagal3'],
+            'tanggal_out_ctcp_cover' =>$data['tanggal_out_ctcp_cover'],
+            'tanggal_out_ctcp_isi1' =>$data['tanggal_out_ctcp_cover'],
+            'tanggal_out_ctcp_isi2' =>$data['tanggal_out_ctcp_cover']        
+        );
+        $this->db->set($edit_ctcp);
+        $this->db->where('id_order',$data['id_order']);
+        $this->db->update('data_ctcp');                        
+        
     }
 
 }    
