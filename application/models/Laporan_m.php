@@ -1,37 +1,69 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Imposisi_m extends CI_Model {
+class Laporan_m extends CI_Model {
 
 	public function get($id = null)
     {
         $this->db->select(
-            'order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
-            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, finishing.finishing_akhir_spiral as spiral, imposisi.id_imposisi as id_imposisi',
+            'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
+            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral, finishing.finishing_akhir_klem as klem',
         );
         $this->db->from('order');
-        $this->db->join('imposisi','imposisi.id_order = order.id_order','left'); 
         $this->db->join('finishing','finishing.id_order = order.id_order');
-               
+        // $this->db->join('imposisi','imposisi.id_order = order.id_order');
+        if($id != null){
+            $this->db->where('order.id_order', $id);
+        }
         $query = $this->db->get();
-        return $query; 
+        return $query;   
     }
-    // mengambil id imposisi untuk mengecek apakah ada datanya atau kaga
-    // public function cek_isi_imposisi($id)
-    // {
-    //     $this->db->select('id_order');
-    //     $this->db->from('imposisi');
-    //     $this->db->where('id_order',$id);
-    //     $query = $this->db->get();
-    //     return $query; 
-    // }
 
     public function get_lihat($id = null)
     {
         $this->db->select(
-            'order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
+            'order.id_order as id_order,
+            order.tanggal_masuk as tanggal_masuk,
+            order.deadline as deadline,
+            order.nama_pemesan as nama_pemesan,
+            order.nama_orderan as nama_orderan,
+            order.ukuran as ukuran,
+            order.halaman as halaman,
+            order.oplag as oplag,
+            order.so_status as so_status,
+
+            finishing.finishing_akhir_bending as bending,
+            finishing.finishing_akhir_hard_cover as hard_cover,
+            finishing.finishing_akhir_jahit_benang as jahit_benang,
+            finishing.finishing_akhir_jahit_kawat as jahit_kawat,
+            finishing.finishing_akhir_pond as pond,
+            finishing.finishing_akhir_spiral as spiral,
+             
+            imposisi.tanggal_imposisi_cover as tanggal_imposisi_cover,
+            imposisi.tanggal_imposisi_isi as tanggal_imposisi_isi, 
+            imposisi.catatan_imposisi as catatan_imposisi,
+            
+            data_ctcp.tanggal_out_ctcp_cover as tanggal_out_ctcp_cover,
+            data_ctcp.tanggal_out_ctcp_isi1 as tanggal_out_ctcp_isi1,
+            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_isi',
+        );
+        $this->db->from('order');
+        $this->db->join('finishing','finishing.id_order = order.id_order');
+        $this->db->join('imposisi','imposisi.id_order = order.id_order');
+        $this->db->join('data_ctcp','data_ctcp.id_order = order.id_order');
+        if($id != null){
+            $this->db->where('order.id_order', $id);
+        }
+        $query = $this->db->get();
+        return $query;          
+    }
+
+    public function get_lihatctcp($id = null)
+    {
+        $this->db->select(
+            'order.id_order as id_order, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,
-            imposisi.id_order as id_order, 
+            imposisi.id_order as nomor_so, 
             imposisi.id_imposisi as id_imposisi, 
             imposisi.namaoperator1 as namaoperator1, 
             imposisi.namaoperator2 as namaoperator2, 
@@ -154,11 +186,24 @@ class Imposisi_m extends CI_Model {
             imposisi.isi3keterangan3 as isi3keterangan3, 
             imposisi.tanggal_imposisi_cover as tanggal_imposisi_cover,
             imposisi.tanggal_imposisi_isi as tanggal_imposisi_isi, 
-            imposisi.catatan_imposisi as catatan_imposisi',
+            imposisi.catatan_imposisi as catatan_imposisi,
+            
+            data_ctcp.status_ctcp_cover as status_ctcp_cover,
+            data_ctcp.status_ctcp_isi as status_ctcp_isi,
+            data_ctcp.plate_gagal1 as plate_gagal1,
+            data_ctcp.plate_gagal2 as plate_gagal2,
+            data_ctcp.plate_gagal3 as plate_gagal3,
+            data_ctcp.mesin_gagal1 as mesin_gagal1,
+            data_ctcp.mesin_gagal2 as mesin_gagal2,
+            data_ctcp.mesin_gagal3 as mesin_gagal3,
+            data_ctcp.tanggal_out_ctcp_cover as tanggal_out_ctcp_cover,
+            data_ctcp.tanggal_out_ctcp_isi1 as tanggal_out_ctcp_isi1,
+            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2',
         );
         $this->db->from('order');
         $this->db->join('finishing','finishing.id_order = order.id_order');
         $this->db->join('imposisi','imposisi.id_order = order.id_order');
+        $this->db->join('data_ctcp','data_ctcp.id_order = order.id_order');
         if($id != null){
             $this->db->where('order.id_order', $id);
         }
@@ -166,10 +211,10 @@ class Imposisi_m extends CI_Model {
         return $query;          
     }
 
-    // public function get_lihat_bawah($id = null)
+    // public function get_impo($id = null)
     // {
     //     $this->db->select(
-    //         'imposisi.id_order as nomor_so, 
+    //         'oimposisi.id_order as nomor_so, 
     //         imposisi.id_imposisi as id_imposisi, 
     //         imposisi.namaoperator1 as namaoperator1, 
     //         imposisi.namaoperator2 as namaoperator2, 
@@ -185,7 +230,7 @@ class Imposisi_m extends CI_Model {
     //         imposisi.cover1set3 as cover1set3, 
     //         imposisi.cover1up1 as cover1up1,
     //         imposisi.cover1up2 as cover1up2,
-    //         imposisi.cover1up3 as cover1up2, 
+    //         imposisi.cover1up3 as cover1up3, 
     //         imposisi.cover1lbrcetak1 as cover1lbrcetak1,
     //         imposisi.cover1lbrcetak2 as cover1lbrcetak2,
     //         imposisi.cover1lbrcetak3 as cover1lbrcetak3,
@@ -228,7 +273,7 @@ class Imposisi_m extends CI_Model {
     //         imposisi.isi1plat3 as isi1plat3,
     //         imposisi.isi1set1 as isi1set1,
     //         imposisi.isi1set2 as isi1set2,
-    //         imposisi.isi1set3 as isi1set2,
+    //         imposisi.isi1set3 as isi1set3,
     //         imposisi.isi1up1 as isi1up1,
     //         imposisi.isi1up2 as isi1up2,
     //         imposisi.isi1up3 as isi1up3,
@@ -295,146 +340,36 @@ class Imposisi_m extends CI_Model {
     //         imposisi.catatan_imposisi as catatan_imposisi',
     //     );
     //     $this->db->from('imposisi');
+    //     // $this->db->join('finishing','finishing.id_order = order.id_order');
+    //     // $this->db->join('imposisi','imposisi.id_order = order.id_order');
     //     if($id != null){
     //         $this->db->where('id_imposisi', $id);
     //     }
-    //     $query = $this->db->get_lihat_bawah();
-    //     return $query;         
+    //     $query = $this->db->get();
+    //     return $query;          
     // }
 
-    public function tambah_imposisi($data)
+    public function tambah_laporan($data)
 	{
-            $tambah_imposisi = array(
+            $tambah_laporan = array(
                 'id_order' =>$data['id_order'],
-                
-                // 'id_imposisi' =>$data['id_imposisi'],
-                'namaoperator1' =>$data['namaoperator1'],
-                'namaoperator2' =>$data['namaoperator2'],
-                'total_plat_cover' =>$data['total_plat_cover'],
-                'total_plat_isi' =>$data['total_plat_isi'],
+                // 'id_data_ctcp' =>$data['id_data_ctcp'],
+                'status_ctcp_cover' =>$data['status_ctcp_cover'],
+                'status_ctcp_isi' =>$data['status_ctcp_isi'],
+                'plate_gagal1' =>$data['plate_gagal1'],
+                'plate_gagal2' =>$data['plate_gagal2'],
+                'plate_gagal3' =>$data['plate_gagal3'],
                 // 'status_imposisi_cover' =>$data['jumlah_kertas_cover_1'],
                 // 'status_imposisi_isi' =>$data['jumlah_kertas_isi_1'],
-                'cover1mesin1' =>$data['cover1mesin1'],
-                'jumlahplatecover1' =>$data['jumlahplatecover1'],
-                'cover1plat1' =>$data['cover1plat1'],
-                'cover1plat2' =>$data['cover1plat2'],
-                'cover1plat3' =>$data['cover1plat3'],
-                'cover1set1' =>$data['cover1set1'],
-                'cover1set2' =>$data['cover1set2'],
-                'cover1set3' =>$data['cover1set3'],
-                'cover1up1' =>$data['cover1up1'],
-                'cover1up2' =>$data['cover1up2'],
-                'cover1up3' =>$data['cover1up3'],
-                'cover1lbrcetak1' =>$data['cover1lbrcetak1'],
-                'cover1lbrcetak2' =>$data['cover1lbrcetak2'],
-                'cover1lbrcetak3' =>$data['cover1lbrcetak3'],
-                'cover1warna1' =>$data['cover1warna1'],
-                'cover1warna2' =>$data['cover1warna2'],
-                'cover1warna3' =>$data['cover1warna3'],
-                'cover1status1' =>$data['cover1status1'],
-                'cover1status2' =>$data['cover1status2'],
-                'cover1status3' =>$data['cover1status3'],
-                'cover1keterangan1' =>$data['cover1keterangan1'],
-                'cover1keterangan2' =>$data['cover1keterangan2'],
-                'cover1keterangan3' =>$data['cover1keterangan3'],
-                'cover2mesin1' =>$data['cover2mesin1'],
-                'jumlahplatecover2' =>$data['jumlahplatecover2'],
-                'cover2plat1' =>$data['cover2plat1'],
-                'cover2plat2' =>$data['cover2plat2'],
-                'cover2plat3' =>$data['cover2plat3'],
-                'cover2set1' =>$data['cover2set1'],
-                'cover2set2' =>$data['cover2set2'],
-                'cover2set3' =>$data['cover2set3'],
-                'cover2up1' =>$data['cover2up1'],
-                'cover2up2' =>$data['cover2up2'],
-                'cover2up3' =>$data['cover2up3'],
-                'cover2lbrcetak1' =>$data['cover2lbrcetak1'],
-                'cover2lbrcetak2' =>$data['cover2lbrcetak2'],
-                'cover2lbrcetak3' =>$data['cover2lbrcetak3'],
-                'cover2warna1' =>$data['cover2warna1'],
-                'cover2warna2' =>$data['cover2warna2'],
-                'cover2warna3' =>$data['cover2warna3'],
-                'cover2status1' =>$data['cover2status1'],
-                'cover2status2' =>$data['cover2status2'],
-                'cover2status3' =>$data['cover2status3'],
-                'cover2keterangan1' =>$data['cover2keterangan1'],
-                'cover2keterangan2' =>$data['cover2keterangan2'],
-                'cover2keterangan3' =>$data['cover2keterangan3'],
-                'isi1mesin1' =>$data['isi1mesin1'],
-                'jumlahplateisi1' =>$data['jumlahplateisi1'],
-                'isi1plat1' =>$data['isi1plat1'],
-                'isi1plat2' =>$data['isi1plat2'],
-                'isi1plat3' =>$data['isi1plat3'],
-                'isi1set1' =>$data['isi1set1'],
-                'isi1set2' =>$data['isi1set2'],
-                'isi1set3' =>$data['isi1set3'],
-                'isi1up1' =>$data['isi1up1'],
-                'isi1up2' =>$data['isi1up2'],
-                'isi1up3' =>$data['isi1up3'],
-                'isi1lbrcetak1' =>$data['isi1lbrcetak1'],
-                'isi1lbrcetak2' =>$data['isi1lbrcetak2'],
-                'isi1lbrcetak3' =>$data['isi1lbrcetak3'],
-                'isi1warna1' =>$data['isi1warna1'],
-                'isi1warna2' =>$data['isi1warna2'],
-                'isi1warna3' =>$data['isi1warna3'],
-                'isi1status1' =>$data['isi1status1'],
-                'isi1status2' =>$data['isi1status2'],
-                'isi1status3' =>$data['isi1status3'],
-                'isi1keterangan1' =>$data['isi1keterangan1'],
-                'isi1keterangan2' =>$data['isi1keterangan2'],
-                'isi1keterangan3' =>$data['isi1keterangan3'],
-                'isi2mesin1' =>$data['isi2mesin1'],
-                'jumlahplateisi2' =>$data['jumlahplateisi2'],
-                'isi2plat1' =>$data['isi2plat1'],
-                'isi2plat2' =>$data['isi2plat2'],
-                'isi2plat3' =>$data['isi2plat3'],
-                'isi2set1' =>$data['isi2set1'],
-                'isi2set2' =>$data['isi2set2'],
-                'isi2set3' =>$data['isi2set3'],
-                'isi2up1' =>$data['isi2up1'],
-                'isi2up2' =>$data['isi2up2'],
-                'isi2up3' =>$data['isi2up3'],
-                'isi2lbrcetak1' =>$data['isi2lbrcetak1'],
-                'isi2lbrcetak2' =>$data['isi2lbrcetak2'],
-                'isi2lbrcetak3' =>$data['isi2lbrcetak3'],
-                'isi2warna1' =>$data['isi2warna1'],
-                'isi2warna2' =>$data['isi2warna2'],
-                'isi2warna3' =>$data['isi2warna3'],
-                'isi2status1' =>$data['isi2status1'],
-                'isi2status2' =>$data['isi2status2'],
-                'isi2status3' =>$data['isi2status3'],
-                'isi2keterangan1' =>$data['isi2keterangan1'],
-                'isi2keterangan2' =>$data['isi2keterangan2'],
-                'isi2keterangan3' =>$data['isi2keterangan3'],
-                'isi3mesin1' =>$data['isi3mesin1'],
-                'jumlahplateisi3' =>$data['jumlahplateisi3'],
-                'isi3plat1' =>$data['isi3plat1'],
-                'isi3plat2' =>$data['isi3plat2'],
-                'isi3plat3' =>$data['isi3plat3'],
-                'isi3set1' =>$data['isi3set1'],
-                'isi3set2' =>$data['isi3set2'],
-                'isi3set3' =>$data['isi3set3'],
-                'isi3up1' =>$data['isi3up1'],
-                'isi3up2' =>$data['isi3up2'],
-                'isi3up3' =>$data['isi3up3'],
-                'isi3lbrcetak1' =>$data['isi3lbrcetak1'],
-                'isi3lbrcetak2' =>$data['isi3lbrcetak2'],
-                'isi3lbrcetak3' =>$data['isi3lbrcetak3'],
-                'isi3warna1' =>$data['isi3warna1'],
-                'isi3warna2' =>$data['isi3warna2'],
-                'isi3warna3' =>$data['isi3warna3'],
-                'isi3status1' =>$data['isi3status1'],
-                'isi3status2' =>$data['isi3status2'],
-                'isi3status3' =>$data['isi3status3'],
-                'isi3keterangan1' =>$data['isi3keterangan1'],
-                'isi3keterangan2' =>$data['isi3keterangan2'],
-                'isi3keterangan3' =>$data['isi3keterangan3'],
-                'tanggal_imposisi_cover' =>$data['tanggal_imposisi_cover'],
-                'tanggal_imposisi_isi' =>$data['tanggal_imposisi_isi'],
-                'catatan_imposisi' =>$data['catatan_imposisi']
+                'mesin_gagal1' =>$data['mesin_gagal1'],
+                'mesin_gagal2' =>$data['mesin_gagal2'],
+                'mesin_gagal3' =>$data['mesin_gagal3'],
+                'tanggal_out_ctcp_cover' =>$data['tanggal_out_ctcp_cover'],
+                'tanggal_out_ctcp_isi1' =>$data['tanggal_out_ctcp_cover'],
+                'tanggal_out_ctcp_isi2' =>$data['tanggal_out_ctcp_cover']        
             );
             
-            $this->db->insert('imposisi',$tambah_imposisi);
+            $this->db->insert('laporan_pracetak',$tambah_laporan);
     }
 
-}
+}    

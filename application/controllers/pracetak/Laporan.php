@@ -3,15 +3,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Laporan extends CI_Controller {
 
+	public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Laporan_m', 'laporan');
+    }
+
 	public function index()
 	{
-		$data['judul'] = 'Laporan';
+		check_not_login();
+		$query = $this->laporan->get();
+		$data = array(
+			'judul' => 'Laporan',
+			'laporan' => $query->result(),
+		);	
 		$this->template->load('pracetak/template','pracetak/laporan/laporan',$data);
 	}
 	public function edit_laporan()
 	{
-		$data['judul'] = 'Edit Laporan Pracetak';
-		$this->template->load('pracetak/template','pracetak/laporan/laporan-edit', $data);	
+		check_not_login();
+		$query = $this->laporan->get_lihat();
+		$data = array(
+			'judul' => 'Laporan',
+			'laporan' => $query->result(),
+		);	
+		$this->template->load('pracetak/template','pracetak/laporan/laporan',$data);
 	}
 	public function lihat_laporan()
 	{
