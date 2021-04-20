@@ -48,12 +48,12 @@ class Imposisi extends CI_Controller {
 	public function edit_imposisi($id)
 	{
 
-		$query = $this->imposisi->get_lihat_bawah($id);
+		$query = $this->imposisi->get_lihat($id);
 		$data = array(
 			'judul' => 'Edit Imposisi',
 			'imposisi' => $query->result(),
 		);		
-		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-lihat',$data);		
+		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-edit',$data);		
 	}
 
 
@@ -63,9 +63,14 @@ class Imposisi extends CI_Controller {
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->imposisi->tambah_imposisi($inputan);
-		} else if(isset($_POST['edit'])){
-			echo"edit";
-		}
+		} 
+		// else if(isset($_POST['edit'])){ 
+		// 	$inputan = $this->input->post(null, TRUE);			
+		// 	$this->imposisi->edit_imposisi($inputan);
+		// 		if($this->db->affected_rows() > 0){					
+		// 			// echo "<script> alert('Data Berhasil Diubah'); </script>";
+		// 		}
+		// 		echo "<script>window.location='".site_url('pracetak/suratorder')."'; </script>"; 
 		if($this->db->affected_rows() > 0){
 			echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
 		}

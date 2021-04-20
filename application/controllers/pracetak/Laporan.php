@@ -27,7 +27,7 @@ class Laporan extends CI_Controller {
 			'judul' => 'Laporan',
 			'laporan' => $query->result(),
 		);	
-		$this->template->load('pracetak/template','pracetak/laporan/laporan',$data);
+		$this->template->load('pracetak/template','pracetak/laporan/laporan-edit',$data);
 	}
 	public function lihat_laporan()
 	{

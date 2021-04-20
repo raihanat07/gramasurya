@@ -550,6 +550,7 @@
                     </div>
                 </div>
                 <?php } ?>
+                </form>
                 <br>
                 <div class="row">
                     <div class="col-md-6">
@@ -755,7 +756,7 @@
                         </div>
                     </div>
                 </div>
-            </form>
+            
         </div>
     </div>
     <!-- /.card-body -->

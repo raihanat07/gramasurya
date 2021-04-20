@@ -44,7 +44,7 @@ class Imposisi_m extends CI_Model {
     {
         $this->db->select(
             'order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
-            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,
+            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral, finishing.finishing_akhir_klem as klem,
             imposisi.id_order as id_order, 
             imposisi.id_imposisi as id_imposisi, 
             imposisi.namaoperator1 as namaoperator1, 
@@ -450,5 +450,142 @@ class Imposisi_m extends CI_Model {
             
             $this->db->insert('imposisi',$tambah_imposisi);
     }
+
+    // public function edit($data)
+	// {
+    //     // ubah bagian surat order  
+	// 	$ubah_so = array(            
+    //         'id_order' =>$data['id_order'],
+    //         'nomor_so' =>$data['nomor_so'],
+    //         'tanggal_masuk' =>$data['tanggal_masuk'],
+    //         'deadline' =>$data['deadline'],
+    //         'nama_pemesan' =>$data['nama_pemesan'],
+    //         'nama_orderan' =>$data['nama_orderan'],
+    //         'ukuran' =>$data['ukuran'],
+    //         'halaman' =>$data['halaman'],
+    //         'oplag' =>$data['oplag'],
+    //         'so_status' =>$data['so_status'],                        
+    //     );
+    //     $this->db->set($ubah_so);
+    //     $this->db->where('id_order',$data['id_order']);
+    //     $this->db->update('order');                        
+        
+    //     // // ubah bagian ctcp
+    //     $ubah_ctcp = array(
+    //         'id_order' =>$data['id_order'],
+    //         'ctcp_cover_1' =>$data['ctcp_cover_1'],
+    //         'ctcp_isi_1' =>$data['ctcp_isi_1'],
+    //         'plat_cover_1' =>$data['plat_cover_1'],
+    //         'plat_isi_1' =>$data['plat_isi_1'],
+    //         'ctcp_cover_2' =>$data['ctcp_cover_2'],
+    //         'ctcp_isi_2' =>$data['ctcp_isi_2'],
+    //         'plat_cover_2' =>$data['plat_cover_2'],
+    //         'plat_isi_2' =>$data['plat_isi_2'],
+    //         'ctcp_cover_3' =>$data['ctcp_cover_3'],
+    //         'ctcp_isi_3' =>$data['ctcp_isi_3'],
+    //         'plat_cover_3' =>$data['plat_cover_3'],
+    //         'plat_isi_3' =>$data['plat_isi_3']
+    //     );
+    //     $this->db->set($ubah_ctcp);
+    //     $this->db->where('id_order',$data['id_order']);
+    //     $this->db->update('ctcp');
+        
+
+    //     // ubah bagian kertas
+    //     $ubah_kertas = array(
+    //         'id_order' =>$data['id_order'],
+    //         'jenis_kertas_cover_1' =>$data['jenis_kertas_cover_1'],
+    //         'jenis_kertas_isi_1' =>$data['jenis_kertas_isi_1'],
+    //         'ukuran_plano_cover_1' =>$data['ukuran_plano_cover_1'],
+    //         'ukuran_plano_isi_1' =>$data['ukuran_plano_isi_1'],
+    //         'jumlah_kertas_cover_1' =>$data['jumlah_kertas_cover_1'],
+    //         'jumlah_kertas_isi_1' =>$data['jumlah_kertas_isi_1'],
+    //         'jenis_kertas_cover_2' =>$data['jenis_kertas_cover_2'],
+    //         'jenis_kertas_isi_2' =>$data['jenis_kertas_isi_2'],
+    //         'ukuran_plano_cover_2' =>$data['ukuran_plano_cover_2'],
+    //         'ukuran_plano_isi_2' =>$data['ukuran_plano_isi_2'],
+    //         'jumlah_kertas_cover_2' =>$data['jumlah_kertas_cover_2'],
+    //         'jumlah_kertas_isi_2' =>$data['jumlah_kertas_isi_2'],
+    //         'jenis_kertas_cover_3' =>$data['jenis_kertas_cover_3'],
+    //         'jenis_kertas_isi_3' =>$data['jenis_kertas_isi_3'],
+    //         'ukuran_plano_cover_3' =>$data['ukuran_plano_cover_3'],
+    //         'ukuran_plano_isi_3' =>$data['ukuran_plano_isi_3'],
+    //         'jumlah_kertas_cover_3' =>$data['jumlah_kertas_cover_3'],
+    //         'jumlah_kertas_isi_3' =>$data['jumlah_kertas_isi_3']
+    //     );
+    //     $this->db->set($ubah_kertas);
+    //     $this->db->where('id_order',$data['id_order']);
+    //     $this->db->update('kertas');
+
+    //      // ubah bagian kertas
+    //      $ubah_potong = array(
+    //         'id_order' =>$data['id_order'],
+    //         'potong_cover_1' =>$data['potong_cover_1'],
+    //         'potong_isi_1' =>$data['potong_isi_1'],
+    //         'potong_cover_2' =>$data['potong_cover_2'],
+    //         'potong_isi_2' =>$data['potong_isi_2'],
+    //         'potong_cover_3' =>$data['potong_cover_3'],
+    //         'potong_isi_3' =>$data['potong_isi_3'],
+    //         'potong_isi_4' =>$data['potong_isi_4'],
+    //      );
+    //      $this->db->set($ubah_potong);
+    //      $this->db->where('id_order',$data['id_order']);
+    //      $this->db->update('potong');
+
+    //     // ubah bagian cetak
+    //     $ubah_cetak = array(
+    //         'id_order' =>$data['id_order'],
+    //         'mesin_cover_1' =>$data['mesin_cover_1'],
+    //         'mesin_isi_1' =>$data['mesin_isi_1'],
+    //         'warna_cover_1' =>$data['warna_cover_1'],
+    //         'warna_isi_1' =>$data['warna_isi_1'],
+    //         'insit_cover_1' =>$data['insit_cover_1'],
+    //         'insit_isi_1' =>$data['insit_isi_1'],
+    //         'mesin_cover_2' =>$data['mesin_cover_2'],
+    //         'mesin_isi_2' =>$data['mesin_isi_2'],
+    //         'warna_cover_2' =>$data['warna_cover_2'],
+    //         'warna_isi_2' =>$data['warna_isi_2'],
+    //         'insit_cover_2' =>$data['insit_cover_2'],
+    //         'insit_isi_2' =>$data['insit_isi_2'],
+    //         'mesin_cover_3' =>$data['mesin_cover_3'],
+    //         'mesin_isi_3' =>$data['mesin_isi_3'],
+    //         'warna_cover_3' =>$data['warna_cover_3'],
+    //         'warna_isi_3' =>$data['warna_isi_3'],
+    //         'insit_cover_3' =>$data['insit_cover_3'],
+    //         'insit_isi_3' =>$data['insit_isi_3'],
+    //         'keterangan_cetak_cover' =>$data['keterangan_cetak_cover'],  
+    //         'keterangan_cetak_isi' =>$data['keterangan_cetak_isi'],    
+            
+    //     );
+    //     $this->db->set($ubah_cetak);
+    //     $this->db->where('id_order',$data['id_order']);
+    //     $this->db->update('cetak');
+
+    //     // ubah bagian finishing
+    //     $ubah_finishing = array(
+    //         'id_order' =>$data['id_order'],
+    //         'finishing_cover_doff' =>$data['finishing_cover_doff'],
+    //         'finishing_cover_emboss' =>$data['finishing_cover_emboss'],
+    //         'finishing_cover_glossy' =>$data['finishing_cover_glossy'],
+    //         'finishing_cover_hotprint' =>$data['finishing_cover_hotprint'],
+    //         'finishing_cover_spot_uvi' =>$data['finishing_cover_spot_uvi'],
+    //         'finishing_cover_uvi' =>$data['finishing_cover_uvi'],
+    //         'finishing_isi_lipat' =>$data['finishing_isi_lipat'],
+    //         'finishing_isi_susun' =>$data['finishing_isi_susun'],
+    //         'finishing_akhir_bending' =>$data['finishing_akhir_bending'],
+    //         'finishing_akhir_hard_cover' =>$data['finishing_akhir_hard_cover'],
+    //         'finishing_akhir_jahit_benang' =>$data['finishing_akhir_jahit_benang'],
+    //         'finishing_akhir_jahit_kawat' =>$data['finishing_akhir_jahit_kawat'],
+    //         'finishing_akhir_pond' =>$data['finishing_akhir_pond'],
+    //         'finishing_akhir_klem' =>$data['finishing_akhir_klem'],
+    //         'finishing_akhir_spiral' =>$data['finishing_akhir_spiral'],
+    //         // 'keterangan_finishing_cover' =>$data['keterangan_finishing_cover'],
+    //         // 'keterangan_finishing_isi' =>$data['keterangan_finishing_isi'],
+    //         // 'keterangan_finishing_akhir' =>$data['keterangan_finishing_akhir']
+    //     );
+    //     $this->db->set($ubah_finishing);
+    //     $this->db->where('id_order',$data['id_order']);
+    //     $this->db->update('finishing');
+    // }
 
 }
