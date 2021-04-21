@@ -184,7 +184,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <select name="cover1mesin1" class="form-select form-control">
-                                        <option ></option>
+                                    <option value="-">-</option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
                                         <option value="72">72</option>
@@ -239,19 +239,19 @@
                                         <div class="col">
                                             <label class="form-label">Status</label>
                                             <select name="cover1status1" class="form-select form-control">
-                                        <option ></option>
+                                            <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                             </select><br>
                                             <select name="cover1status2" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                             </select><br>
                                             <select name="cover1status3" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
@@ -276,7 +276,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <select name="isi1mesin1" class="form-select form-control">
-                                        <option  ></option>
+                                    <option value="-">-</option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
                                         <option value="72">72</option>
@@ -331,19 +331,19 @@
                                         <div class="col">
                                             <label class="form-label">Status</label>
                                             <select name="isi1status1" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                             </select><br>
                                             <select name="isi1status2" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                             </select><br>
                                             <select name="isi1status3" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
@@ -386,7 +386,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <select name="cover2mesin1" class="form-select form-control">
-                                        <option  ></option>
+                                    <option value="-">-</option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
                                         <option value="72">72</option>
@@ -441,19 +441,19 @@
                                         <div class="col">
                                             <label class="form-label">Status</label>
                                             <select name="cover2status1" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                             </select><br>
                                             <select name="cover2status2" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                             </select><br>
                                             <select name="cover2status3" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
@@ -478,7 +478,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <select name="isi2mesin1" class="form-select form-control">
-                                        <option  ></option>
+                                    <option value="-">-</option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
                                         <option value="72">72</option>
@@ -533,19 +533,19 @@
                                         <div class="col">
                                             <label class="form-label">Status</label>
                                             <select name="isi2status1" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                             </select><br>
                                             <select name="isi2status2" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                             </select><br>
                                             <select name="isi2status3" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
@@ -610,7 +610,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <select name="isi3mesin1" class="form-select form-control">
-                                                <option  ></option>
+                                            <option value="-">-</option>
                                                 <option value="102">102</option>
                                                 <option value="74">74</option>
                                                 <option value="72">72</option>
@@ -665,19 +665,19 @@
                                                 <div class="col">
                                                     <label class="form-label">Status</label>
                                                     <select name="isi3status1" class="form-select form-control">
-                                                <option  ></option>
+                                                    <option value="-">-</option>
                                                         <option value="GP">GP</option>
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>
                                                     </select><br>
                                                     <select name="isi3status2" class="form-select form-control">
-                                                <option  ></option>
+                                                    <option value="-">-</option>
                                                         <option value="GP">GP</option>
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>
                                                     </select><br>
                                                     <select name="isi3status3" class="form-select form-control">
-                                                <option  ></option>
+                                                    <option value="-">-</option>
                                                         <option value="GP">GP</option>
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>

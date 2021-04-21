@@ -183,11 +183,13 @@
                                 </div>
                                 <div class="col-md-3">
                                     <select name="cover1mesin1" value="<?= $row->cover1mesin1; ?>" class="form-select form-control">
-                                        <option ></option>
+                                    <option value="<?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?>"><?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?>   </option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
                                         <option value="72">72</option>
                                         <option value="Tokko">Tokko</option>
+                                        <option value="-">-</option>
+
                                     </select>
                                 </div>
                                 <div class="col-md-3" align="center">
@@ -238,22 +240,28 @@
                                         <div class="col">
                                             <label class="form-label">Status</label>
                                             <select name="cover1status1" value="<?= $row->cover1status1; ?>" class="form-select form-control">
-                                        <option ></option>
+                                            <option value="<?php  echo $row->cover1status1 != "-" ?   $row->cover1status1  : '-' ?>"><?php  echo $row->cover1status1 != "-" ?   $row->cover1status1  : '-' ?>   </option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
+                                                <option value="-">-</option>
+
                                             </select><br>
                                             <select name="cover1status2" value="<?= $row->cover1status2; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="<?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?>"><?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?>   </option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
+                                                <option value="-">-</option>
+
                                             </select><br>
                                             <select name="cover1status3" value="<?= $row->cover1status3; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="<?php  echo $row->cover1status3 != "-" ?   $row->cover1status3  : '-' ?>"><?php  echo $row->cover1status3 != "-" ?   $row->cover1status3  : '-' ?>   </option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
+                                                <option value="-">-</option>
+
                                             </select>
                                         </div>
                                         <div class="col">
@@ -275,11 +283,13 @@
                                 </div>
                                 <div class="col-md-3">
                                     <select name="isi1mesin1" value="<?= $row->isi1mesin1; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                    <option value="<?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?>"><?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?>   </option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
                                         <option value="72">72</option>
                                         <option value="Tokko">Tokko</option>
+                                        <option value="-">-</option>
+
                                     </select>
                                 </div>
                                 <div class="col-md-3" align="center">
@@ -330,22 +340,28 @@
                                         <div class="col">
                                             <label class="form-label">Status</label>
                                             <select name="isi1status1" value="<?= $row->isi1status1; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="<?php  echo $row->isi1status1 != "-" ?   $row->isi1status1  : '-' ?>"><?php  echo $row->isi1status1 != "-" ?   $row->isi1status1  : '-' ?>   </option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
+                                                <option value="-">-</option>
+
                                             </select><br>
                                             <select name="isi1status2" value="<?= $row->isi1status2; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="<?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?>"><?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?>   </option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
+                                                <option value="-">-</option>
+
                                             </select><br>
                                             <select name="isi1status3" value="<?= $row->isi1status3; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="<?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?>"><?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?>   </option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
+                                                <option value="-">-</option>
+
                                             </select>
                                         </div>
                                         <div class="col">
@@ -385,11 +401,13 @@
                                 </div>
                                 <div class="col-md-3">
                                     <select name="cover2mesin1" value="<?= $row->cover2mesin1; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                    <option value="<?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?>"><?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?>   </option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
                                         <option value="72">72</option>
                                         <option value="Tokko">Tokko</option>
+                                        <option value="-">-</option>
+
                                     </select>
                                 </div>
                                 <div class="col-md-3" align="center">
@@ -440,22 +458,28 @@
                                         <div class="col">
                                             <label class="form-label">Status</label>
                                             <select name="cover2status1" value="<?= $row->cover2status1; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="<?php  echo $row->cover2status1 != "-" ?   $row->cover2status1  : '-' ?>"><?php  echo $row->cover2status1 != "-" ?   $row->cover2status1  : '-' ?>   </option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
+                                                <option value="-">-</option>
+
                                             </select><br>
                                             <select name="cover2status2" value="<?= $row->cover2status2; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="<?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?>"><?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?>   </option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
+                                                <option value="-">-</option>
+
                                             </select><br>
                                             <select name="cover2status3" value="<?= $row->cover2status3; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="<?php  echo $row->cover2status3 != "-" ?   $row->cover2status3  : '-' ?>"><?php  echo $row->cover2status3 != "-" ?   $row->cover2status3  : '-' ?>   </option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
+                                                <option value="-">-</option>
+
                                             </select>
                                         </div>
                                         <div class="col">
@@ -477,11 +501,13 @@
                                 </div>
                                 <div class="col-md-3">
                                     <select name="isi2mesin1" value="<?= $row->isi2mesin1; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                    <option value="<?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?>"><?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?>   </option>
                                         <option value="102">102</option>
                                         <option value="74">74</option>
                                         <option value="72">72</option>
                                         <option value="Tokko">Tokko</option>
+                                        <option value="-">-</option>
+
                                     </select>
                                 </div>
                                 <div class="col-md-3" align="center">
@@ -532,22 +558,28 @@
                                         <div class="col">
                                             <label class="form-label">Status</label>
                                             <select name="isi2status1" value="<?= $row->isi2status1; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="<?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?>"><?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?>   </option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
+                                                <option value="-">-</option>
+
                                             </select><br>
                                             <select name="isi2status2" value="<?= $row->isi2status2; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="<?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?>"><?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?>   </option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
+                                                <option value="-">-</option>
+
                                             </select><br>
                                             <select name="isi2status3" value="<?= $row->isi2status3; ?>" class="form-select form-control">
-                                        <option  ></option>
+                                            <option value="<?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>"><?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>   </option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
+                                                <option value="-">-</option>
+
                                             </select>
                                         </div>
                                         <div class="col">
@@ -609,11 +641,13 @@
                                         </div>
                                         <div class="col-md-3">
                                             <select name="isi3mesin1" value="<?= $row->isi3mesin1; ?>" class="form-select form-control">
-                                                <option  ></option>
+                                            <option value="<?php  echo $row->isi3mesin1 != "-" ?   $row->isi3mesin1  : '-' ?>"><?php  echo $row->isi3mesin1 != "-" ?   $row->isi3mesin1  : '-' ?>   </option>
                                                 <option value="102">102</option>
                                                 <option value="74">74</option>
                                                 <option value="72">72</option>
                                                 <option value="Tokko">Tokko</option>
+                                                <option value="-">-</option>
+
                                             </select>
                                         </div>
                                         <div class="col-md-3" align="center">
@@ -664,22 +698,28 @@
                                                 <div class="col">
                                                     <label class="form-label">Status</label>
                                                     <select name="isi3status1" value="<?= $row->isi3status1; ?>" class="form-select form-control">
-                                                <option  ></option>
+                                                    <option value="<?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?>"><?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?>   </option>
                                                         <option value="GP">GP</option>
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>
+                                                        <option value="-">-</option>
+
                                                     </select><br>
                                                     <select name="isi3status2" value="<?= $row->isi3status2; ?>" class="form-select form-control">
-                                                <option  ></option>
+                                                    <option value="<?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?>"><?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?>   </option>
                                                         <option value="GP">GP</option>
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>
+                                                        <option value="-">-</option>
+
                                                     </select><br>
                                                     <select name="isi3status3" value="<?= $row->isi3status3; ?>" class="form-select form-control">
-                                                <option  ></option>
+                                                    <option value="<?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?>"><?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?>   </option>
                                                         <option value="GP">GP</option>
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>
+                                                        <option value="-">-</option>
+
                                                     </select>
                                                 </div>
                                                 <div class="col">

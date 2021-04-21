@@ -53,6 +53,17 @@ class Laporan extends CI_Controller {
 		$this->template->load('pracetak/template','pracetak/laporan/laporan-lihat',$data);
 	}
 
+	public function print_laporan($id)
+	{
+		check_not_login();
+		$query = $this->laporan->get_lihatlaporan($id);
+		$data = array(
+			'judul' => 'Print Laporan',
+			'laporan' => $query->result(),
+		);	
+		$this->template->load('pracetak/template','pracetak/laporan/laporan-print',$data);
+	}
+
 	public function proses()
 	{		
 		if(isset($_POST['add'])){							

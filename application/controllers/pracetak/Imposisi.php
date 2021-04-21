@@ -32,6 +32,17 @@ class Imposisi extends CI_Controller {
 		);		
 		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-tambah',$data);		
 	}
+
+	public function print_imposisi($id)
+	{
+		check_not_login();
+		$query = $this->imposisi->get_lihat($id);
+		$data = array(
+			'judul' => 'Print Imposisi',
+			'imposisi' => $query->result(),
+		);		
+		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-print',$data);		
+	}
 	
 
 	public function lihat_imposisi($id)
