@@ -7,7 +7,7 @@
                     <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
                 </a>
             </div>
-            <div class="col-sm-6" align="right">
+            <!-- <div class="col-sm-6" align="right">
                 <a href="<?=site_url()?>pracetak/Laporan" class="btn btn-success btn-lg">
                     PRINT
                 </a>
@@ -16,7 +16,7 @@
                 <a href="<?=site_url()?>pracetak/Laporan" class="btn btn-success btn-lg">
                     PRINT
                 </a>
-            </div>
+            </div> -->
         </div>
     </div><!-- /.container-fluid -->
 </section>
@@ -41,7 +41,8 @@
     <div class="card-body">
      <form action="<?=site_url('pracetak/laporan/proses')?>" method="post">
         <div class="card-body">
-        <?php foreach($laporan as $s => $row) {?>  
+        <?php foreach($laporan as $s => $row) {?>
+           
                 <div class="row">
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Nomor SO</label>
@@ -458,6 +459,11 @@
                     </div>
                 </div>
                 <br>
+                <div class="col-sm-6" align="left">
+                <a href="<?=site_url('pracetak/Laporan/print_laporan/'.$row->id_order)?>" class="btn btn-success btn-lg">
+                    PRINT
+                </a>
+            </div>  
             </div>
         </form>
     </div>
