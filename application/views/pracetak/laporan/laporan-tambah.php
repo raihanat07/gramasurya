@@ -29,6 +29,7 @@
         </div>
     </div>
     <div class="card-body">
+     <form action="<?=site_url('pracetak/laporan/proses')?>" method="post">
         <div class="card-body">
         <?php foreach($laporan as $s => $row) {?>  
                 <div class="row">
@@ -104,9 +105,9 @@
                             <div class="row card-body">
                                 <div class="col-md-12">
                                     <label class="form-label">Tanggal Imposisi Cover</label>
-                                    <br><input type="date" class="form-control" name="tanggal_imposisi_cover" value="<?=$row->ukuran?>" required>
+                                    <br><input type="date" class="form-control" name="tanggal_imposisi_cover" value="<?=$row->tanggal_imposisi_cover?>" required>
                                     <br><label class="form-label">Tanggal Imposisi Isi</label>
-                                    <br><input type="date" class="form-control" name="tanggal_imposisi_isi" value="<?=$row->ukuran?>" required>
+                                    <br><input type="date" class="form-control" name="tanggal_imposisi_isi" value="<?=$row->tanggal_imposisi_isi?>" required>
                                 </div>
                             </div>
                         </div>
@@ -124,11 +125,10 @@
                                             <label class="form-check-label" for="flexCheckDefault">Khusus</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <input class="form-check-input" type="checkbox" value="Imposisi Isi"  >
+                                            <input class="form-check-input" type="checkbox" value="Imposisi Isi" checked disabled >
                                             <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label><br>
                                             <input class="form-check-input" type="checkbox" value="CTCP Cover">
                                             <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-                                            <form action="<?=site_url('pracetak/laporan/proses')?>" method="post">
                                             <input class="form-check-input" type="checkbox" value="Pracetak" >
                                             <label class="form-check-label" for="flexCheckDefault">Pracetak</label>
                                         </div>
@@ -163,6 +163,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
+                                                    <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
                                                         <input type="number" class="form-control" name="plate_1_keluar_cover">
                                                     </div>
                                                     <div class="col-md-6" align="center">
@@ -343,7 +344,6 @@
                             </div>
                         </div>
                     </div>
-                    </form>
                     <div class="col-md-3">
                         <div class="card">
                             <div class="row card-body">
@@ -369,12 +369,12 @@
                 <br>
                 <div class="row" align="right">
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-success">Simpan</button>
+                        <button type="submit" name="add" class="btn btn-success">Simpan</button>
                         <button type="reset" class="btn btn-default">Reset</button>
                     </div>
                 </div>
-               
-        </div>
+            </div>
+        </form>
     </div>
     <!-- /.card-body -->
     <!-- <div class="card-footer">
