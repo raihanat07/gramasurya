@@ -31,10 +31,10 @@ class Laporan extends CI_Controller {
 		$this->template->load('pracetak/template','pracetak/laporan/laporan-edit',$data);
 	}
 
-	public function tambah_laporan()
+	public function tambah_laporan($id)
 	{
 		check_not_login();
-		$query = $this->laporan->get_lihat();
+		$query = $this->laporan->get_lihat($id);
 		$data = array(
 			'judul' => 'Tambah Laporan Pracetak',
 			'laporan' => $query->result(),
