@@ -7,11 +7,6 @@
                     <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
                 </a>
             </div>
-            <div class="col-sm-6" align="right">
-                <a href="<?=site_url()?>pracetak/Laporan" class="btn btn-success btn-lg">
-                    PRINT
-                </a>
-            </div>
         </div>
     </div><!-- /.container-fluid -->
 </section>
@@ -37,89 +32,70 @@
         <div class="card-body">
         <?php foreach($laporan as $s => $row) {?>  
                 <div class="row">
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Nomor SO</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nomor_so" value="<?=$row->nomor_so?>" placeholder="Masukan Nomor SO" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Nama Pemesan</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nama_pemesan" value="<?=$row->nama_pemesan?>" placeholder="Masukan Nama Pemesan" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Halaman</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="halaman" value="<?=$row->halaman?>" placeholder="Masukan Hal" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Tanggal Masuk</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="date" class="form-control" name="tanggal_masuk" value="<?=$row->tanggal_masuk?>" placeholder="Tanggal Masuk" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Nama Orderan</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nama_orderan" value="<?=$row->nama_orderan?>" placeholder="Masukan Orderan" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Oplag</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="number" class="form-control" name="oplag" value="<?=$row->oplag?>" placeholder="Masukan Oplag" required>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Deadline</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="date" class="form-control" name="deadline" value="<?=$row->deadline?>" placeholder="Deadline" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Ukuran</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="ukuran" value="<?=$row->ukuran?>" placeholder="Masukan Ukuran" required>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Finishing Akhir</label>
+                    <div class="col-md-4">
+                        <br>Nomor SO
+                        <br><label class="form-label"><?= $row->nomor_so; ?></label>
                     </div>
                     <div class="col-md-4">
-                    <br>Finsihing Akhir
-                    <br><label class="form-label">
-                    <?php 
-                  $finishing = "";
-                  if($row->bending != null){
-                    $finishing .= "bending, ";
-                  }
-                  if($row->hard_cover != null){
-                    $finishing .= 'hard cover, ';
-                  }   
-                  if($row->jahit_benang != null){
-                    $finishing .= 'jahit benang, ';
-                  } 
-                  if($row->jahit_kawat != null){
-                    $finishing .= 'jahit kawat, ';
-                  }    
-                  if($row->pond != null){
-                    $finishing .= 'pond, ';
-                  }   
-                  if($row->spiral != null){
-                    $finishing .= 'Spiral, ';
-                  }
-                  $finishing = rtrim($finishing, ", ");
-                  echo $finishing;
-                  ?>
-                    </label>
+                        <br>Nama Pemesan
+                        <br><label class="form-label"><?= $row->nama_pemesan; ?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Halaman
+                        <br><label class="form-label"><?= $row->halaman; ?></label>
+                    </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <br>Tanggal Masuk
+                        <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Nama Orderan
+                        <br><label class="form-label"><?= $row->nama_orderan; ?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Oplag
+                        <br><label class="form-label"><?= $row->oplag; ?></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <br>Deadline
+                        <br><label class="form-label"><?= $row->deadline; ?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Ukuran
+                        <br><label class="form-label"><?= $row->ukuran; ?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Finsihing Akhir
+                        <br><label class="form-label">
+                        <?php 
+                          $finishing = "";
+                          if($row->bending != null){
+                            $finishing .= "bending, ";
+                          }
+                          if($row->hard_cover != null){
+                            $finishing .= 'hard cover, ';
+                          }   
+                          if($row->jahit_benang != null){
+                            $finishing .= 'jahit benang, ';
+                          } 
+                          if($row->jahit_kawat != null){
+                            $finishing .= 'jahit kawat, ';
+                          }    
+                          if($row->pond != null){
+                            $finishing .= 'pond, ';
+                          }   
+                          if($row->spiral != null){
+                            $finishing .= 'Spiral, ';
+                          }
+                          $finishing = rtrim($finishing, ", ");
+                          echo $finishing;
+                      ?>
+                        </label>
+                    </div>
                 </div>
                 <br><hr><br>
                 <div class="row">
@@ -390,68 +366,6 @@
                 </div>
                 <?php } ?> 
 
-                <br><hr><br>
-                <div class="row" align="center">
-                    <div class="col-md-3">
-                        <label>Stok Plate 102</label>
-                        <label>2000</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate 74</label>
-                        <label>4500</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate 72</label>
-                        <label>1000</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate Paper Plate</label>
-                        <label>500</label>
-                    </div>
-                </div>
-                <br><hr><br>
-                <div class="row" align="center">
-                    <div class="col-md-3">
-                        <div class="row">
-                            <div class="col">
-                                <label>Kasi Pengadaan</label>
-                            </div>
-                        </div>
-                        <div class="row" style="height: 100px;"></div>
-                        <div class="row">
-                            <div class="col-md-2"><label>(</label></div>
-                            <div class="col-md-8"></div>
-                            <div class="col-md-2"><label>)</label></div>
-                        </div>
-                    </div>
-                    <div class="col-md-3"></div>
-                    <div class="col-md-3">
-                        <div class="row">
-                            <div class="col">
-                                <label>Adm. 2 Pracetak</label>
-                            </div>
-                        </div>
-                        <div class="row" style="height: 100px;"></div>
-                        <div class="row">
-                            <div class="col-md-2"><label>(</label></div>
-                            <div class="col-md-8"></div>
-                            <div class="col-md-2"><label>)</label></div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="row">
-                            <div class="col">
-                                <label>Kasi Pracetak</label>
-                            </div>
-                        </div>
-                        <div class="row" style="height: 100px;"></div>
-                        <div class="row">
-                            <div class="col-md-2"><label>(</label></div>
-                            <div class="col-md-8"></div>
-                            <div class="col-md-2"><label>)</label></div>
-                        </div>
-                    </div>
-                </div>
                 <br>
                 <div class="row" align="right">
                     <div class="col-md-12">

@@ -119,7 +119,7 @@
                         <label class="form-label">Nama Operator</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="namaoperator2" value="<?=$row->namaoperator2?>" required>
+                        <input type="text" class="form-control" name="namaoperator2" value="<?=$row->namaoperator2?>">
                     </div>
                 </div><br>
                 <div class="row">
@@ -144,7 +144,7 @@
                         <label class="form-label">Total Plat Isi</label>
                     </div>
                     <div class="col-md-1">
-                        <input type="number" class="form-control" name="total_plat_cover" value="<?=$row->total_plat_cover?>" required>
+                        <input type="number" class="form-control" name="total_plat_cover" value="<?=$row->total_plat_cover?>">
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
@@ -641,14 +641,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row">   
-                                                <div class="col-md-6" align="left">
-                                                    <button type="submit" name="edit" class="btn btn-success">Simpan</button>
-                                                    <button type="reset" class="btn btn-default">Reset</button>
-                                                </div>
-                                            </div>
                                         </div>
-                                        
                                         <div class="col-md-4">
                                             <textarea name="catatan_imposisi" class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?=$row->catatan_imposisi?>" style="height: 240px;"></textarea>
                                         </div>
@@ -656,9 +649,12 @@
                                 </div>
                             </div>
                         </div><br>
-                        <div class="row">                           
+                        <div class="row">
+                            <div class="col-md-6" align="left">
+                                <button type="submit" name="edit" class="btn btn-success">Simpan</button>
+                            </div>
                             <div class="col-md-6" align="right">
-                                <a href="<?=site_url()?>pracetak/Ctcp" class="btn btn-default">Print</a>
+                                <button type="reset" class="btn btn-default">Reset</button>
                             </div>
                         </div>
                     </div>

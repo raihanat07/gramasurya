@@ -53,7 +53,7 @@
             
               <td align="center"><?= $row->nomor_so; ?></td>
               <td><?= $row->tanggal_masuk; ?></td>
-              <td><?= $row->deadline; ?></td>
+              <td style="color: red"><?= $row->deadline; ?></td>
               <td><?= $row->nama_pemesan; ?></td>
               <td><?= $row->nama_orderan; ?></td>
               <td><?= $row->ukuran; ?></td>

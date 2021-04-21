@@ -39,7 +39,7 @@ class Imposisi extends CI_Controller {
 		check_not_login();
 		$query = $this->imposisi->get_lihat($id);
 		$data = array(
-			'judul' => 'Edit Imposisi',
+			'judul' => 'Lihat Imposisi Pracetak',
 			'imposisi' => $query->result(),
 		);		
 		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-lihat',$data);		
@@ -50,7 +50,7 @@ class Imposisi extends CI_Controller {
 
 		$query = $this->imposisi->get_lihat($id);
 		$data = array(
-			'judul' => 'Edit Imposisi',
+			'judul' => 'Edit Imposisi Pracetak',
 			'imposisi' => $query->result(),
 		);		
 		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-edit',$data);		

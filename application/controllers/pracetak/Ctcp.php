@@ -25,7 +25,7 @@ class Ctcp extends CI_Controller {
 		check_not_login();
 		$query = $this->ctcp->get_lihat($id);
 		$data = array(
-			'judul' => 'Tambah Ctcp',
+			'judul' => 'Tambah Ctcp Pracetak',
 			'ctcp' => $query->result(),
 		);		
 		$this->template->load('pracetak/template','pracetak/ctcp/ctcp-tambah',$data);		
@@ -37,7 +37,7 @@ class Ctcp extends CI_Controller {
 		check_not_login();
 		$query = $this->ctcp->get_lihatctcp($id);
 		$data = array(
-			'judul' => 'Edit Ctcp',
+			'judul' => 'Edit Ctcp Pracetak',
 			'ctcp' => $query->result(),
 		);		
 		$this->template->load('pracetak/template','pracetak/ctcp/ctcp-edit',$data);		
@@ -48,7 +48,7 @@ class Ctcp extends CI_Controller {
 		check_not_login();
 		$query = $this->ctcp->get_lihatctcp($id);
 		$data = array(
-			'judul' => 'lihat Ctcp',
+			'judul' => 'Lihat Ctcp Pracetak',
 			'ctcp' => $query->result(),
 		);		
 		$this->template->load('pracetak/template','pracetak/ctcp/ctcp-lihat',$data);		

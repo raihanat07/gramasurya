@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-warning btn-lg">
+                <a href="<?=site_url()?>pracetak/Laporan" class="btn btn-warning btn-lg">
                     <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
                 </a>
             </div>
@@ -359,68 +359,6 @@
                                 <div class="col-md-3">Ke 2 </div>
                                 <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" required></div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <br><hr><br>
-                <div class="row" align="center">
-                    <div class="col-md-3">
-                        <label>Stok Plate 102</label>
-                        <label>2000</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate 74</label>
-                        <label>4500</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate 72</label>
-                        <label>1000</label>
-                    </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate Paper Plate</label>
-                        <label>500</label>
-                    </div>
-                </div>
-                <br><hr><br>
-                <div class="row" align="center">
-                    <div class="col-md-3">
-                        <div class="row">
-                            <div class="col">
-                                <label>Kasi Pengadaan</label>
-                            </div>
-                        </div>
-                        <div class="row" style="height: 100px;"></div>
-                        <div class="row">
-                            <div class="col-md-2"><label>(</label></div>
-                            <div class="col-md-8"></div>
-                            <div class="col-md-2"><label>)</label></div>
-                        </div>
-                    </div>
-                    <div class="col-md-3"></div>
-                    <div class="col-md-3">
-                        <div class="row">
-                            <div class="col">
-                                <label>Adm. 2 Pracetak</label>
-                            </div>
-                        </div>
-                        <div class="row" style="height: 100px;"></div>
-                        <div class="row">
-                            <div class="col-md-2"><label>(</label></div>
-                            <div class="col-md-8"></div>
-                            <div class="col-md-2"><label>)</label></div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="row">
-                            <div class="col">
-                                <label>Kasi Pracetak</label>
-                            </div>
-                        </div>
-                        <div class="row" style="height: 100px;"></div>
-                        <div class="row">
-                            <div class="col-md-2"><label>(</label></div>
-                            <div class="col-md-8"></div>
-                            <div class="col-md-2"><label>)</label></div>
                         </div>
                     </div>
                 </div><br>

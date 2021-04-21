@@ -94,7 +94,7 @@
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Imposisi" 
-                <?php  if($judul == "Imposisi" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak"){?>
+                <?php  if($judul == "Imposisi" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak" || $judul == "Edit Imposisi Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
@@ -106,7 +106,7 @@
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Ctcp" 
-                 <?php  if($judul == "CTCP" || $judul == "Edit Ctcp Pracetak" || $judul == "Lihat Ctcp Pracetak"){?>
+                 <?php  if($judul == "CTCP" || $judul == "Tambah Ctcp Pracetak" || $judul == "Edit Ctcp Pracetak" || $judul == "Lihat Ctcp Pracetak" || $judul == "Edit Ctcp Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
@@ -118,7 +118,7 @@
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Laporan" 
-                 <?php  if($judul == "Laporan" || $judul == "Edit Laporan Pracetak" || $judul == "Lihat Laporan Pracetak"){?>
+                 <?php  if($judul == "Laporan" || $judul == "Tambah Laporan Pracetak" || $judul == "Edit Laporan Pracetak" || $judul == "Lihat Laporan Pracetak" || $judul == "Edit Laporan Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"

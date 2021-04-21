@@ -54,7 +54,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <br>anggal Masuk
+                        <br>Tanggal Masuk
                         <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
                     </div>
                     <div class="col-md-4">
@@ -108,6 +108,7 @@
                     </div>
                 </div>
                 <?php } ?>
+            <br><hr><br>
 
             <form action="<?=site_url('pracetak/imposisi/proses')?>" method="post">
             <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
@@ -123,7 +124,7 @@
                         <label class="form-label">Nama Operator</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="namaoperator2" required>
+                        <input type="text" class="form-control" name="namaoperator2">
                     </div>
                 </div><br>
                 <div class="row">
@@ -148,7 +149,7 @@
                         <label class="form-label">Total Plat Isi</label>
                     </div>
                     <div class="col-md-1">
-                        <input type="number" class="form-control" name="total_plat_isi" required>
+                        <input type="number" class="form-control" name="total_plat_isi">
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
@@ -584,10 +585,9 @@
                         <div class="row">
                             <div class="col-md-6" align="left">
                                 <button type="submit" name="add" class="btn btn-success">Simpan</button>
-                                <button type="reset" class="btn btn-default">Reset</button>
                             </div>
                             <div class="col-md-6" align="right">
-                                <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Print</a>
+                                <button type="reset" class="btn btn-default">Reset</button>
                             </div>
                         </div>
                     </div>

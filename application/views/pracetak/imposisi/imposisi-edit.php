@@ -108,6 +108,7 @@
                     </div>
                 </div>
                 <?php } ?>
+            <br><hr><br>
             <?php foreach($imposisi as $s => $row) {?>  
             <form action="<?=site_url('pracetak/imposisi/proses')?>" method="post">            
             <input type="text" name="id_order"  value="<?= $row->id_order; ?>" hidden>
@@ -583,10 +584,9 @@
                         <div class="row">
                             <div class="col-md-6" align="left">
                                 <button type="submit" name="edit" class="btn btn-success">Simpan</button>
-                                <button type="reset" class="btn btn-default">Reset</button>
                             </div>
                             <div class="col-md-6" align="right">
-                                <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Print</a>
+                                <button type="reset" class="btn btn-default">Reset</button>
                             </div>
                         </div>
                     </div>

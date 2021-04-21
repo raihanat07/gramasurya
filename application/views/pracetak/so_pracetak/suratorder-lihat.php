@@ -219,27 +219,27 @@
                 <div class="row text-center">
                     <div class="col-md-2">
                         <div class="card" style="background: #A9A9A9">
-                            <div class="row" style="min-height: 150px;padding-top: 50px;">
+                            <div class="row" style="min-height: 300px;padding-top: 120px;">
                                 <div class="col-md-12">
                                     <b>CTCP</b>
                                 </div>
                             </div><hr>
-                            <div class="row" style="min-height: 150px;padding-top: 50px;">
+                            <div class="row" style="min-height: 300px;padding-top: 120px;">
                                 <div class="col-md-12">
                                     <b>KERTAS</b>
                                 </div>
                             </div><hr>
-                            <div class="row" style="min-height: 150px;padding-top: 50px;">
+                            <div class="row" style="min-height: 300px;padding-top: 120px;">
                                 <div class="col-md-12">
                                     <b>POTONG</b>
                                 </div>
                             </div><hr>
-                            <div class="row" style="min-height: 150px;padding-top: 50px;">
+                            <div class="row" style="min-height: 300px;padding-top: 120px;">
                                 <div class="col-md-12">
                                     <b>CETAK</b>
                                 </div>
                             </div><hr>
-                            <div class="row" style="min-height: 150px;padding-top: 50px;">
+                            <div class="row" style="min-height: 300px;padding-top: 120px;">
                                 <div class="col-md-12">
                                     <b>FINISHING</b>
                                 </div>
@@ -247,7 +247,7 @@
                         </div>
                     </div>
                     <div class="col-md-10">
-                        <div class="row" style="min-height: 150px;padding-top: 20px;">
+                        <div class="row" style="min-height: 300px;padding-top: 20px;">
                             <div class="col-md-4 text-center">
                                 <?php echo $row->ctcp_cover_1!=null && $row->ctcp_cover_1!='-'? "cover 1 : ".$row->ctcp_cover_1."<br>": "" ?>
                                 <?php echo $row->plat_cover_1!=null && $row->plat_cover_1!='-'? "plat cover 1 : ".$row->plat_cover_1."<br>": "" ?>
@@ -268,7 +268,7 @@
                             <h1>-</h1>
                             </div>
                         </div><hr>
-                        <div class="row" style="min-height: 150px;padding-top: 20px;">
+                        <div class="row" style="min-height: 300px;padding-top: 20px;">
                             <div class="col-md-4 text-center">
 
                                 <?php echo $row->jenis_kertas_cover_1!=null && $row->jenis_kertas_cover_1!='-'? "kertas 1 : ".$row->jenis_kertas_cover_1."<br>": "" ?>
@@ -297,7 +297,7 @@
                             <h1>-</h1>
                             </div>
                         </div><hr>
-                        <div class="row" style="min-height: 150px;padding-top: 20px;">
+                        <div class="row" style="min-height: 300px;padding-top: 20px;">
                             <div class="col-md-4 text-center">
                                 <?php echo $row->potong_cover_1!=null? "potong 1 : ".$row->potong_cover_1."<br>": "" ?>
                                 <?php echo $row->potong_cover_2!=null? "potong 2 : ".$row->potong_cover_2."<br>": "" ?>
@@ -313,7 +313,7 @@
                                 <h1>-</h1>
                             </div>
                         </div><hr>
-                        <div class="row" style="min-height: 150px;padding-top: 20px;">
+                        <div class="row" style="min-height: 300px;padding-top: 20px;">
                             <div class="col-md-4 text-center">
                                 <?php echo $row->mesin_cover_1!=null && $row->mesin_cover_1!='-'? "Mesin 1 : ".$row->mesin_cover_1."<br>": "" ?>
                                 <?php echo $row->warna_cover_1!=null && $row->warna_cover_1!='-'? "Warna 1 : ".$row->warna_cover_1."<br>": "" ?>
@@ -343,7 +343,7 @@
                                 
                             </div>
                         </div><hr>
-                        <div class="row" style="min-height: 150px;padding-top: 20px;">
+                        <div class="row" style="min-height: 300px;padding-top: 20px;">
                             <div class="col-md-4 text-center">
                                     <?php 
                                     $finishing = "";

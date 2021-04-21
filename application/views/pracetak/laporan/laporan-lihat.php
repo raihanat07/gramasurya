@@ -5,6 +5,11 @@
             <div class="col-sm-6">
                 <h1>LAPORAN</h1>
             </div>
+            <div class="col-sm-6" align="right">
+                <a href="<?=site_url()?>pracetak/Laporan" class="btn btn-success btn-lg">
+                    PRINT
+                </a>
+            </div>
         </div>
     </div><!-- /.container-fluid -->
 </section>

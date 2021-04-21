@@ -25,7 +25,7 @@ class Laporan extends CI_Controller {
 		check_not_login();
 		$query = $this->laporan->get_lihat();
 		$data = array(
-			'judul' => 'Edit Laporan',
+			'judul' => 'Edit Laporan Pracetak',
 			'laporan' => $query->result(),
 		);	
 		$this->template->load('pracetak/template','pracetak/laporan/laporan-edit',$data);
@@ -36,7 +36,7 @@ class Laporan extends CI_Controller {
 		check_not_login();
 		$query = $this->laporan->get_lihat();
 		$data = array(
-			'judul' => 'Tambah Laporan',
+			'judul' => 'Tambah Laporan Pracetak',
 			'laporan' => $query->result(),
 		);	
 		$this->template->load('pracetak/template','pracetak/laporan/laporan-tambah',$data);
