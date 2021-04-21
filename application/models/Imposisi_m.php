@@ -19,7 +19,7 @@ class Imposisi_m extends CI_Model {
         $this->db->join('data_ctcp','imposisi.id_order = data_ctcp.id_order','left' );
         $this->db->join('finishing','finishing.id_order = order.id_order');                
         $this->db->where_in('order.so_status',$status_umum);
-        $this->db->where('data_ctcp.id_data_ctcp', null);  
+        $this->db->where('data_ctcp.ctcp_status', "");
         // $this->db->where_in('imposisi.imposisi_status', $status_impo);
               
 
