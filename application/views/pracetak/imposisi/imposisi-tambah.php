@@ -135,10 +135,13 @@
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Imposisi Cover">
+                            <input type="text" name="status_imposisi_cover" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_imposisi_cover" value="imposisi cover">
                             <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
-                            <input class="form-check-input" type="checkbox" value="Khusus">
-                            <label class="form-check-label" for="flexCheckDefault">Khusus</label>
+
+                            <input type="text" name="status_imposisi_khusus" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_imposisi_khusus" value="imposisi khusus">
+                            <label class="form-check-label" for="flexCheckDefault">Khusus</label><br>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -149,8 +152,9 @@
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Imposisi Isi">
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label>
+                            <input type="text" name="status_imposisi_isi" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_imposisi_isi" value="imposisi isi">
+                            <label class="form-check-label" for="flexCheckDefault">Imposisi isi</label><br>
                         </div>
                     </div>
                 </div><br>

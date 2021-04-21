@@ -75,7 +75,18 @@
                   echo $finishing;
                   ?>
               </td>
-              <td><?= $row->so_status; ?></td>
+              <td>
+
+              <?php if($row->status_khusus != null) 
+                      echo $row->status_khusus;
+                    else if($row->status_cover !=null && $row->status_isi !=null)
+                      echo "imposisi";
+                    else if($row->status_cover !=null || $row->status_isi !=null)
+                      echo $row->status_cover.$row->status_isi;
+                    else echo $row->so_status;
+              ?>
+              
+              </td>
               <td align="center">
               
               <!-- lihat detail imposisi -->

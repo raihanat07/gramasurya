@@ -108,16 +108,14 @@
                     </div>
                 </div>
                 <?php } ?>
-
-            <form action="<?=site_url('pracetak/imposisi/proses')?>" method="post">
             <?php foreach($imposisi as $s => $row) {?>  
-            <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
+            <form action="<?=site_url('pracetak/imposisi/proses')?>" method="post">            
+            <input type="text" name="id_order"  value="<?= $row->id_order; ?>" hidden>
                 <div class="row">
                     <div class="col-md-3" align="center">
                         <label class="form-label">Nama Operator</label>
                     </div>
-                    <div class="col-md-3">
-                      <input type="hidden" name="nomor_so" value="<?=$row->id_order?>">
+                    <div class="col-md-3">                      
                         <input type="text" class="form-control" name="namaoperator1" value="<?= $row->namaoperator1; ?>" required>
                     </div>
                     <div class="col-md-3" align="center">
@@ -572,7 +570,7 @@
                                             <br><input type="date" class="form-control" name="tanggal_imposisi_isi" value="<?= $row->tanggal_imposisi_isi; ?>" required>
                                         </div>
                                         <div class="col-md-6">
-                                            <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?= $row->catatan_imposisi; ?>" style="height: 150px;"></textarea>
+                                            <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?= $row->catatan_imposisi; ?>" style="height: 150px;"><?= $row->catatan_imposisi; ?></textarea>
                                         </div>
                                     </div><br><br>
                                 </div>
@@ -693,9 +691,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <?php } ?>
+                </div>                
             </form>
+            <?php } ?>
         </div>
     </div>
     <!-- /.card-body -->

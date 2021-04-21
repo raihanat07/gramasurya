@@ -68,7 +68,7 @@
                     <br><label class="form-label"><?=$row->ukuran?></label>
                 </div>
                 <div class="col-md-4">
-                    <br>Finsihing Akhir
+                    <br>Finsihing Akhir 
                     <br><label class="form-label">
                     <?php 
                   $finishing = "";
@@ -478,7 +478,7 @@
                                         <br><input type="date" class="form-control" name="tanggal_imposisi_isi" value="<?=$row->tanggal_imposisi_isi;?>" disabled>
                                     </div>
                                     <div class="col-md-6">
-                                        <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?=$row->catatan_imposisi;?>" style="height: 150px;" disabled></textarea>
+                                        <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?=$row->catatan_imposisi;?>" style="height: 150px;" disabled><?=$row->catatan_imposisi;?></textarea>
                                     </div>
                                 </div><br><br>
                             </div>

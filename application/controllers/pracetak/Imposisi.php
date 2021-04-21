@@ -23,7 +23,7 @@ class Imposisi extends CI_Controller {
 	}
 
 	public function tambah_imposisi($id)
-	{		
+	{
 		check_not_login();
 		$query = $this->imposisi->tampil_tambah_imposisi($id);
 		$data = array(
@@ -62,19 +62,28 @@ class Imposisi extends CI_Controller {
 	{		
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
+			
+			$inputan['status_order'] = "marketing";
+			if($inputan['status_imposisi_khusus'] != null)
+					$inputan['status_order'] = "imposisi";
+			if($inputan['status_imposisi_cover'] !=null && $inputan['status_imposisi_isi_'] !=null && $inputan['status_imposisi_khusus_'] ==null){
+					$inputan['status_order'] = "imposisi";
+			}			
+			
 			$this->imposisi->tambah_imposisi($inputan);
+			$this->imposisi->status_umum($inputan);
+				
+				echo "<script>window.location='".site_url('pracetak/imposisi')."'; </script>";
 		} 
-		// else if(isset($_POST['edit'])){ 
-		// 	$inputan = $this->input->post(null, TRUE);			
-		// 	$this->imposisi->edit_imposisi($inputan);
-		// 		if($this->db->affected_rows() > 0){					
-		// 			// echo "<script> alert('Data Berhasil Diubah'); </script>";
-		// 		}
-		// 		echo "<script>window.location='".site_url('pracetak/suratorder')."'; </script>"; 
-		if($this->db->affected_rows() > 0){
-			echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
+		else if(isset($_POST['edit'])){ 
+			$inputan = $this->input->post(null, TRUE);			
+			$this->imposisi->edit_imposisi($inputan);
+				if($this->db->affected_rows() > 0){
+					echo "<script> alert('Data Berhasil Diubah'); </script>";
+				}
+				echo "<script>window.location='".site_url('pracetak/imposisi')."'; </script>"; 					
 		}
-		echo "<script>window.location='".site_url('pracetak/imposisi/index')."'; </script>"; 
+		
 	
 	}
 
