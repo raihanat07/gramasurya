@@ -170,7 +170,7 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_1_keluar_cover" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="-">-</option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -184,7 +184,7 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_2_keluar_cover" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="-">-</option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -198,7 +198,7 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_3_keluar_cover" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="-">-</option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -236,7 +236,7 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_1_keluar_isi" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="-">-</option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -250,7 +250,7 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_2_keluar_isi" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="-">-</option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -264,7 +264,7 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_3_keluar_isi" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="-">-</option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -303,7 +303,7 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_gagal1" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="-">-</option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -317,7 +317,7 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_gagal2" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="-">-</option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -331,7 +331,7 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_gagal3" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="-">-</option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>

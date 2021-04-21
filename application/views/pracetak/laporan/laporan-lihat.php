@@ -198,12 +198,14 @@
                                                         <input type="number" class="form-control" name="plate_1_keluar_cover" value="<?=$row->plate_1_keluar_cover?>">
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_1_keluar_cover" value="<?=$row->tanggmesin_1_keluar_coveral_imposisi_isi?>" class="form-select form-control">
-                                                            <option></option>
+                                                        <select name="mesin_1_keluar_cover" value="<?=$row->mesin_1_keluar_cover?>" class="form-select form-control">
+                                                        <option value="<?php  echo $row->mesin_1_keluar_cover != "-" ?   $row->mesin_1_keluar_cover  : '-' ?>"><?php  echo $row->mesin_1_keluar_cover != "-" ?   $row->mesin_1_keluar_cover  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
                                                             <option value="Tokko">Tokko</option>
+                                                            <option value="-">-</option>
+
                                                         </select>
                                                     </div>
                                                 </div><br>
@@ -213,11 +215,13 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_2_keluar_cover" value="<?=$row->mesin_2_keluar_cover?>" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="<?php  echo $row->mesin_2_keluar_cover != "-" ?   $row->mesin_2_keluar_cover  : '-' ?>"><?php  echo $row->mesin_2_keluar_cover != "-" ?   $row->mesin_2_keluar_cover  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
                                                             <option value="Tokko">Tokko</option>
+                                                            <option value="-">-</option>
+
                                                         </select>
                                                     </div>
                                                 </div><br>
@@ -227,11 +231,13 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_3_keluar_cover" value="<?=$row->mesin_3_keluar_cover?>" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="<?php  echo $row->mesin_3_keluar_cover != "-" ?   $row->mesin_3_keluar_cover  : '-' ?>"><?php  echo $row->mesin_3_keluar_cover != "-" ?   $row->mesin_3_keluar_cover  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
                                                             <option value="Tokko">Tokko</option>
+                                                            <option value="-">-</option>
+
                                                         </select>
                                                     </div>
                                                 </div>
@@ -265,11 +271,13 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_1_keluar_isi" value="<?=$row->mesin_1_keluar_isi?>" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="<?php  echo $row->mesin_1_keluar_isi != "-" ?   $row->mesin_1_keluar_isi  : '-' ?>"><?php  echo $row->mesin_1_keluar_isi != "-" ?   $row->mesin_1_keluar_isi  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
                                                             <option value="Tokko">Tokko</option>
+                                                            <option value="-">-</option>
+
                                                         </select>
                                                     </div>
                                                 </div><br>
@@ -279,11 +287,13 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_2_keluar_isi" value="<?=$row->mesin_2_keluar_isi?>" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="<?php  echo $row->mesin_2_keluar_isi != "-" ?   $row->mesin_2_keluar_isi  : '-' ?>"><?php  echo $row->mesin_2_keluar_isi != "-" ?   $row->mesin_2_keluar_isi  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
                                                             <option value="Tokko">Tokko</option>
+                                                            <option value="-">-</option>
+
                                                         </select>
                                                     </div>
                                                 </div><br>
@@ -293,11 +303,13 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_3_keluar_isi" value="<?=$row->mesin_3_keluar_isi?>" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="<?php  echo $row->mesin_3_keluar_isi != "-" ?   $row->mesin_3_keluar_isi  : '-' ?>"><?php  echo $row->mesin_3_keluar_isi != "-" ?   $row->mesin_3_keluar_isi  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
                                                             <option value="Tokko">Tokko</option>
+                                                            <option value="-">-</option>
+
                                                         </select>
                                                     </div>
                                                 </div>
@@ -332,11 +344,13 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_gagal1" value="<?=$row->mesin_gagal1?>" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="<?php  echo $row->mesin_gagal1 != "-" ?   $row->mesin_gagal1  : '-' ?>"><?php  echo $row->mesin_gagal1 != "-" ?   $row->mesin_gagal1  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
                                                             <option value="Tokko">Tokko</option>
+                                                            <option value="-">-</option>
+
                                                         </select>
                                                     </div>
                                                 </div><br>
@@ -346,11 +360,13 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_gagal2" value="<?=$row->mesin_gagal2?>" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="<?php  echo $row->mesin_gagal2 != "-" ?   $row->mesin_gagal2  : '-' ?>"><?php  echo $row->mesin_gagal2 != "-" ?   $row->mesin_gagal2  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
                                                             <option value="Tokko">Tokko</option>
+                                                            <option value="-">-</option>
+
                                                         </select>
                                                     </div>
                                                 </div><br>
@@ -360,11 +376,13 @@
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_gagal3" value="<?=$row->mesin_gagal3?>" class="form-select form-control">
-                                                            <option></option>
+                                                        <option value="<?php  echo $row->mesin_gagal3 != "-" ?   $row->mesin_gagal3  : '-' ?>"><?php  echo $row->mesin_gagal3 != "-" ?   $row->mesin_gagal3  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
                                                             <option value="Tokko">Tokko</option>
+                                                            <option value="-">-</option>
+
                                                         </select>
                                                     </div>
                                                 </div>
