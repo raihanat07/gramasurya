@@ -62,26 +62,55 @@ class Imposisi extends CI_Controller {
 	{		
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
-			
+						
 			$inputan['status_order'] = "marketing";
-			if($inputan['status_imposisi_khusus'] != null)
+			if($inputan['status_imposisi_khusus'] != null){
 					$inputan['status_order'] = "imposisi";
-			if($inputan['status_imposisi_cover'] !=null && $inputan['status_imposisi_isi_'] !=null && $inputan['status_imposisi_khusus_'] ==null){
+					$inputan['imposisi_status'] = "imposisi khusus";
+			}
+			else if($inputan['status_imposisi_cover'] !=null && $inputan['status_imposisi_isi'] !=null){
 					$inputan['status_order'] = "imposisi";
-			}			
-			
-			$this->imposisi->tambah_imposisi($inputan);
-			$this->imposisi->status_umum($inputan);
-				
+					$inputan['imposisi_status'] = "imposisi";
+			}
+			else if($inputan['status_imposisi_cover'] !=null ){				
+				$inputan['imposisi_status'] = "imposisi cover";
+			}
+			else if($inputan['status_imposisi_isi'] !=null ){				
+				$inputan['imposisi_status'] = "imposisi isi";
+			}
+			else
+				$inputan['imposisi_status'] = "";
+
+			$this->imposisi->tambah_imposisi($inputan);							
+			$this->imposisi->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
 				echo "<script>window.location='".site_url('pracetak/imposisi')."'; </script>";
 		} 
 		else if(isset($_POST['edit'])){ 
-			$inputan = $this->input->post(null, TRUE);			
+			$inputan = $this->input->post(null, TRUE);	
+			
+			$inputan['status_order'] = "marketing";
+			if($inputan['status_imposisi_khusus'] != null){
+					$inputan['status_order'] = "imposisi";
+					$inputan['imposisi_status'] = "imposisi khusus";
+			}
+			else if($inputan['status_imposisi_cover'] !=null && $inputan['status_imposisi_isi'] !=null){
+					$inputan['status_order'] = "imposisi";
+					$inputan['imposisi_status'] = "imposisi";
+			}
+			else if($inputan['status_imposisi_cover'] !=null ){				
+				$inputan['imposisi_status'] = "imposisi cover";
+			}
+			else if($inputan['status_imposisi_isi'] !=null ){				
+				$inputan['imposisi_status'] = "imposisi isi";
+			}
+			else
+				$inputan['imposisi_status'] = "";
+			
 			$this->imposisi->edit_imposisi($inputan);
-				if($this->db->affected_rows() > 0){
-					echo "<script> alert('Data Berhasil Diubah'); </script>";
-				}
-				echo "<script>window.location='".site_url('pracetak/imposisi')."'; </script>"; 					
+			$this->imposisi->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Diubah'); </script>";		
+				echo "<script>window.location='".site_url('pracetak/imposisi')."'; </script>";; 					
 		}
 		
 	

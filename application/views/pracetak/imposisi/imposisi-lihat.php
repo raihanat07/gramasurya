@@ -126,10 +126,13 @@
                 </div>
                 <div class="col-md-3" align="left">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled>
-                        <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
-                        <input class="form-check-input" type="checkbox" value="Khusus" disabled>
-                        <label class="form-check-label" for="flexCheckDefault">Khusus</label>
+                            <input type="text" name="status_imposisi_cover" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_imposisi_cover" value="imposisi cover" <?php echo $row->imposisi_status == "imposisi cover" || $row->imposisi_status == "imposisi" ?  "checked" : "" ?>>
+                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
+
+                            <input type="text" name="status_imposisi_khusus" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_imposisi_khusus" value="imposisi khusus" <?php echo $row->imposisi_status == "imposisi khusus" ?  "checked" : "" ?>>
+                            <label class="form-check-label" for="flexCheckDefault">Khusus</label><br>
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -140,8 +143,9 @@
                 </div>
                 <div class="col-md-3" align="left">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled>
-                        <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label>
+                            <input type="text" name="status_imposisi_isi" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_imposisi_isi" value="imposisi isi" <?php echo $row->imposisi_status == "imposisi isi" || $row->imposisi_status == "imposisi" ?  "checked" : "" ?>>
+                            <label class="form-check-label" for="flexCheckDefault">Imposisi isi</label><br>
                     </div>
                 </div>
             </div><br>
