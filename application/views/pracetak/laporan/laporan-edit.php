@@ -149,7 +149,9 @@
                                             <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label><br>
                                             <input class="form-check-input" type="checkbox" value="CTCP Cover">
                                             <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-                                            <input class="form-check-input" type="checkbox" value="Pracetak" >
+
+                                            <input  type="text" name="status_laporan_pracetak" value="ctcp" hidden>
+                                            <input class="form-check-input" type="checkbox" name="status_laporan_pracetak" value="pracetak" <?php echo $row->so_status == "pracetak" ?  "checked" : "" ?> >
                                             <label class="form-check-label" for="flexCheckDefault">Pracetak</label>
                                         </div>
                                     </div>

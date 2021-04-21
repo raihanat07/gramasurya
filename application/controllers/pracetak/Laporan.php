@@ -20,10 +20,10 @@ class Laporan extends CI_Controller {
 		$this->template->load('pracetak/template','pracetak/laporan/laporan',$data);
 	}
 
-	public function edit_laporan()
+	public function edit_laporan($id)
 	{
 		check_not_login();
-		$query = $this->laporan->get_lihatlaporan();
+		$query = $this->laporan->get_lihatlaporan($id);
 		$data = array(
 			'judul' => 'Edit Laporan Pracetak',
 			'laporan' => $query->result(),
@@ -42,10 +42,10 @@ class Laporan extends CI_Controller {
 		$this->template->load('pracetak/template','pracetak/laporan/laporan-tambah',$data);
 	}
 
-	public function lihat_laporan()
+	public function lihat_laporan($id)
 	{
 		check_not_login();
-		$query = $this->laporan->get_lihatlaporan();
+		$query = $this->laporan->get_lihatlaporan($id);
 		$data = array(
 			'judul' => 'Lihat Laporan',
 			'laporan' => $query->result(),

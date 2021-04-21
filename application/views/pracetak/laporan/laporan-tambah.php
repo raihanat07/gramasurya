@@ -125,7 +125,7 @@
                                             <label class="form-check-label" for="flexCheckDefault">Khusus</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <input class="form-check-input" type="checkbox" value="Imposisi Isi" checked disabled >
+                                            <input class="form-check-input" type="checkbox" value="Imposisi Isi" >
                                             <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label><br>
                                             <input class="form-check-input" type="checkbox" value="CTCP Cover">
                                             <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
