@@ -38,7 +38,7 @@
         <div class="card-body">
                             
             <?php foreach($imposisi as $s => $row) {?>  
-                  <div class="row">
+                <div class="row">
                     <div class="col-md-4">
                         <br>Nomor SO
                         <br><label class="form-label"><?= $row->nomor_so; ?></label>

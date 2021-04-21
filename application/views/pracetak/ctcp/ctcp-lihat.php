@@ -498,7 +498,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-4">
-                                        <textarea name="catatan_imposisi" class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?=$row->catatan_imposisi;?>" style="height: 240px;" disabled></textarea>
+                                        <textarea name="catatan_imposisi" class="form-control" placeholder="catatan" value="<?=$row->catatan_imposisi;?>" style="height: 240px;" disabled></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -524,73 +524,77 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
-                            <div class="card-body p-3 mb-2 bg-light text-dark">
-                                <div class="row">
-                                    <div class="col-md-3" align="center">
-                                        <label class="form-label">Mesin</label>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input type="number" class="form-control" name="isi3mesin1" value="<?=$row->isi3mesin1;?>" disabled>
-                                    </div>
-                                    <div class="col-md-3" align="center">
-                                        <label class="form-label">Plate</label>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input type="number" class="form-control" name="jumlahplateisi3" value="<?=$row->jumlahplateisi3;?>" disabled>
-                                    </div>
-                                </div><br>
-                                <div class="row">
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <label class="form-label">Rincian CTCP</label>
+                                                <label class="form-label">Rincian Ctcp</label>
                                             </div>
                                         </div>
                                         <div class="row" align="center">
-                                            <div class="col">
-                                                <label class="form-label">Plate</label>
-                                                <input type="number" class="form-control" name="isi3plat1" value="<?=$row->isi3plat1;?>" disabled><br>
-                                                <input type="number" class="form-control" name="isi3plat2" value="<?=$row->isi3plat2;?>" disabled><br>
-                                                <input type="number" class="form-control" name="isi3plat3" value="<?=$row->isi3plat3;?>" disabled>
+                                                <div class="col">
+                                                    <label class="form-label">Plate</label>
+                                                    <input type="number" class="form-control" name="isi3plat1" value="<?= $row->isi3plat1; ?>"><br>
+                                                    <input type="number" class="form-control" name="isi3plat2" value="<?= $row->isi3plat2; ?>"><br>
+                                                    <input type="number" class="form-control" name="isi3plat3" value="<?= $row->isi3plat3; ?>">
+                                                </div>
+                                                <div class="col">
+                                                    <label class="form-label">Set</label>
+                                                    <input class="form-control" name="isi3set1" value="<?= $row->isi3set1; ?>" ><br>
+                                                    <input class="form-control" name="isi3set2" value="<?= $row->isi3set2; ?>" ><br>
+                                                    <input class="form-control" name="isi3set3" value="<?= $row->isi3set3; ?>" >
+                                                </div>
+                                                <div class="col">
+                                                    <label class="form-label">Lbr.Cetak</label>
+                                                    <input class="form-control" name="isi3lbrcetak1" value="<?= $row->isi3lbrcetak1; ?>" ><br>
+                                                    <input class="form-control" name="isi3lbrcetak2" value="<?= $row->isi3lbrcetak2; ?>" ><br>
+                                                    <input class="form-control" name="isi3lbrcetak3" value="<?= $row->isi3lbrcetak3; ?>" >
+                                                </div>
+                                                <div class="col">
+                                                    <label class="form-label">Up</label>
+                                                    <input type="number" class="form-control" name="isi3up1" value="<?= $row->isi3up1; ?>"><br>
+                                                    <input type="number" class="form-control" name="isi3up2" value="<?= $row->isi3up2; ?>"><br>
+                                                    <input type="number" class="form-control" name="isi3up3" value="<?= $row->isi3up3; ?>">
+                                                </div>
+                                                <div class="col">
+                                                    <label class="form-label">Warna</label>
+                                                    <input type="number" class="form-control" name="isi3warna1" value="<?= $row->isi3warna1; ?>"><br>
+                                                    <input type="number" class="form-control" name="isi3warna2" value="<?= $row->isi3warna2; ?>"><br>
+                                                    <input type="number" class="form-control" name="isi3warna3" value="<?= $row->isi3warna3; ?>">
+                                                </div>
+                                                <div class="col">
+                                                    <label class="form-label">Status</label>
+                                                    <select name="isi3status1" value="<?= $row->isi3status1; ?>" class="form-select form-control">
+                                                    <option value="<?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?>"><?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?>   </option>
+                                                        <option value="GP">GP</option>
+                                                        <option value="BLK">BLK</option>
+                                                        <option value="BLG">BLG</option>
+                                                        <option value="-">-</option>
+
+                                                    </select><br>
+                                                    <select name="isi3status2" value="<?= $row->isi3status2; ?>" class="form-select form-control">
+                                                    <option value="<?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?>"><?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?>   </option>
+                                                        <option value="GP">GP</option>
+                                                        <option value="BLK">BLK</option>
+                                                        <option value="BLG">BLG</option>
+                                                        <option value="-">-</option>
+
+                                                    </select><br>
+                                                    <select name="isi3status3" value="<?= $row->isi3status3; ?>" class="form-select form-control">
+                                                    <option value="<?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?>"><?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?>   </option>
+                                                        <option value="GP">GP</option>
+                                                        <option value="BLK">BLK</option>
+                                                        <option value="BLG">BLG</option>
+                                                        <option value="-">-</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="col">
+                                                    <label class="form-label">Keterangan</label>
+                                                    <input type="text" class="form-control" name="isi3keterangan1" value="<?= $row->isi3keterangan1; ?>"><br>
+                                                    <input type="text" class="form-control" name="isi3keterangan2" value="<?= $row->isi3keterangan2; ?>"><br>
+                                                    <input type="text" class="form-control" name="isi3keterangan3" value="<?= $row->isi3keterangan3; ?>">
+                                                </div>
                                             </div>
-                                            <div class="col">
-                                                <label class="form-label">Set</label>
-                                                <input class="form-control" name="isi3set1" value="<?=$row->isi3set1;?>" disabled><br>
-                                                <input class="form-control" name="isi3set2" value="<?=$row->isi3set2;?>" disabled><br>
-                                                <input class="form-control" name="isi3set3" value="<?=$row->isi3set3;?>" disabled>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Lbr.Cetak</label>
-                                                <input class="form-control" name="isi3lbrcetak1" value="<?=$row->isi3lbrcetak1;?>" disabled><br>
-                                                <input class="form-control" name="isi3lbrcetak2" value="<?=$row->isi3lbrcetak2;?>" disabled><br>
-                                                <input class="form-control" name="isi3lbrcetak3" value="<?=$row->isi3lbrcetak3;?>" disabled>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Up</label>
-                                                <input type="number" class="form-control" name="isi3up1" value="<?=$row->isi3up1;?>" disabled><br>
-                                                <input type="number" class="form-control" name="isi3up2" value="<?=$row->isi3up2;?>" disabled><br>
-                                                <input type="number" class="form-control" name="isi3up3" value="<?=$row->isi3up3;?>" disabled>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Warna</label>
-                                                <input type="number" class="form-control" name="isi3warna1" value="<?=$row->isi3warna1;?>"  disabled><br>
-                                                <input type="number" class="form-control" name="isi3warna2" value="<?=$row->isi3warna2;?>" disabled><br>
-                                                <input type="number" class="form-control" name="isi3warna3" value="<?=$row->isi3warna3;?>" disabled>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Status</label>
-                                                <input type="number" class="form-control" name="isi3status1" value="<?=$row->isi3status1;?>" disabled><br>
-                                                <input type="number" class="form-control" name="isi3status2" value="<?=$row->isi3status2;?>" disabled><br>
-                                                <input type="number" class="form-control" name="isi3status3" value="<?=$row->isi3status3;?>" disabled>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Keterangan</label>
-                                                <input type="text" class="form-control" name="isi3keterangan1" value="<?=$row->isi3keterangan1;?>" disabled><br>
-                                                <input type="text" class="form-control" name="isi3keterangan2" value="<?=$row->isi3keterangan2;?>" disabled><br>
-                                                <input type="text" class="form-control" name="isi3keterangan3" value="<?=$row->isi3keterangan3;?>" disabled>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
