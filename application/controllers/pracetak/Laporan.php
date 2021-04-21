@@ -19,16 +19,29 @@ class Laporan extends CI_Controller {
 		);	
 		$this->template->load('pracetak/template','pracetak/laporan/laporan',$data);
 	}
+
 	public function edit_laporan()
 	{
 		check_not_login();
 		$query = $this->laporan->get_lihat();
 		$data = array(
-			'judul' => 'Laporan',
+			'judul' => 'Edit Laporan',
 			'laporan' => $query->result(),
 		);	
 		$this->template->load('pracetak/template','pracetak/laporan/laporan-edit',$data);
 	}
+
+	public function tambah_laporan()
+	{
+		check_not_login();
+		$query = $this->laporan->get_lihat();
+		$data = array(
+			'judul' => 'Tambah Laporan',
+			'laporan' => $query->result(),
+		);	
+		$this->template->load('pracetak/template','pracetak/laporan/laporan-tambah',$data);
+	}
+
 	public function lihat_laporan()
 	{
 		$data['judul'] = 'Lihat Laporan Pracetak';
