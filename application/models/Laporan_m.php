@@ -153,6 +153,13 @@ class Laporan_m extends CI_Model {
             );
             
             $this->db->insert('laporan_pracetak',$tambah_laporan);
+
+            $ganti_status = array(
+                'so_status' =>$data['status_laporan_pracetak'],
+            );
+            $this->db->set($ganti_status);
+            $this->db->where('id_order',$data['id_order']);
+            $this->db->update('order');
     }
 
     public function edit_laporan($data)
@@ -186,6 +193,13 @@ class Laporan_m extends CI_Model {
             $this->db->set($edit_laporan);
             $this->db->where('id_order',$data['id_order']);
             $this->db->update('laporan_pracetak'); 
+
+            $ganti_status = array(
+                'so_status' =>$data['status_laporan_pracetak'],
+            );
+            $this->db->set($ganti_status);
+            $this->db->where('id_order',$data['id_order']);
+            $this->db->update('order');
     }
 
 }    
