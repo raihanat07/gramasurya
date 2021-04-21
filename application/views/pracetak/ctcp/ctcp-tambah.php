@@ -104,6 +104,7 @@
                 </div>
             </div>
                 <br><hr><br>
+                <form action="<?=site_url('pracetak/ctcp/proses')?>" method="post">
                 <div class="row">
                     <div class="col-md-3" align="center">
                         <label class="form-label">Nama Operator</label>
@@ -127,12 +128,13 @@
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Imposisi Cover">
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
-                            <input class="form-check-input" type="checkbox" value="CTCP Cover">
-                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-                            <input class="form-check-input" type="checkbox" value="Khusus">
-                            <label class="form-check-label" for="flexCheckDefault">Khusus</label>
+                            <input type="text" name="status_ctcp_cover" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_ctcp_cover" value="ctcp cover">
+                            <label class="form-check-label" for="flexCheckDefault">ctcp Cover</label><br>
+
+                            <input type="text" name="status_ctcp_khusus" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_ctcp_khusus" value="ctcp khusus">
+                            <label class="form-check-label" for="flexCheckDefault">Khusus</label><br>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -143,10 +145,9 @@
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Imposisi isi">
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label><br>
-                            <input class="form-check-input" type="checkbox" value="CTCP isi">
-                            <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label>
+                            <input type="text" name="status_ctcp_isi" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_ctcp_isi" value="ctcp isi">
+                            <label class="form-check-label" for="flexCheckDefault">ctcp isi</label><br>
                         </div>
                     </div>
                 </div><br>
@@ -560,8 +561,7 @@
                         <div class="row">
                             <div class="col">
                                 <div class="card-body p-3 mb-2 bg-light text-dark">
-                                    <br><br>
-                                    <form action="<?=site_url('pracetak/ctcp/proses')?>" method="post">
+                                    <br><br>                                    
                                     <div class="row">
                                         <div class="col-md-4">
                                             <label class="form-label">Tanggal Out CTCP Cover</label>
@@ -634,14 +634,9 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="row">   
-                                                <div class="col-md-6" align="left">
-                                                    <button type="submit" name="add" class="btn btn-success">Simpan</button>
-                                                    <button type="reset" class="btn btn-default">Reset</button>
-                                                </div>
-                                            </div>
+                                            
                                         </div>
-                                        </form>
+                                        
                                         <div class="col-md-4">
                                             <textarea name="catatan_imposisi" value="<?=$row->catatan_imposisi?>" class="form-control" placeholder="catatan" style="height: 240px;"></textarea>
                                         </div>
@@ -649,6 +644,12 @@
                                 </div>
                             </div>
                         </div><br>
+                        <div class="row">   
+                                <div class="col-md-6" align="left">
+                                <button type="submit" name="add" class="btn btn-success">Simpan</button>
+                                 <button type="reset" class="btn btn-default">Reset</button>
+                                 </div>
+                        </div>
                         <div class="row">                           
                             <div class="col-md-6" align="right">
                                 <a href="<?=site_url()?>pracetak/Ctcp" class="btn btn-default">Print</a>
@@ -760,8 +761,11 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
-            <?php } ?>    
+                </form> 
+            <?php } ?>   
+                
         </div>
     </div>
     <!-- /.card-body -->

@@ -48,7 +48,7 @@ class Ctcp extends CI_Controller {
 		check_not_login();
 		$query = $this->ctcp->get_lihatctcp($id);
 		$data = array(
-			'judul' => 'Edit Ctcp',
+			'judul' => 'lihat Ctcp',
 			'ctcp' => $query->result(),
 		);		
 		$this->template->load('pracetak/template','pracetak/ctcp/ctcp-lihat',$data);		
@@ -58,18 +58,55 @@ class Ctcp extends CI_Controller {
 	{		
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
-			$this->ctcp->tambah_ctcp($inputan);
-				if($this->db->affected_rows() > 0){
-					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
-				}
-				echo "<script>window.location='".site_url('pracetak/ctcp')."'; </script>"; 
+
+			$inputan['status_order'] = "imposisi";
+			if($inputan['status_ctcp_khusus'] != null){
+					$inputan['status_order'] = "ctcp";
+					$inputan['ctcp_status'] = "ctcp khusus";
+			}
+			else if($inputan['status_ctcp_cover'] !=null && $inputan['status_ctcp_isi'] !=null){
+					$inputan['status_order'] = "ctcp";
+					$inputan['ctcp_status'] = "ctcp";
+			}
+			else if($inputan['status_ctcp_cover'] !=null ){				
+				$inputan['ctcp_status'] = "ctcp cover";
+			}
+			else if($inputan['status_ctcp_isi'] !=null ){				
+				$inputan['ctcp_status'] = "ctcp isi";
+			}
+			else
+				$inputan['ctcp_status'] = "";
+
+			$this->ctcp->tambah_ctcp($inputan);							
+			$this->ctcp->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
+				echo "<script>window.location='".site_url('pracetak/ctcp')."'; </script>";
+
 		} else if(isset($_POST['edit'])){ 
-			$inputan = $this->input->post(null, TRUE);			
-			$this->ctcp->edit_ctcp($inputan);
-				if($this->db->affected_rows() > 0){					
-					echo "<script> alert('Data Berhasil Diubah'); </script>";
-				}
-				echo "<script>window.location='".site_url('pracetak/ctcp')."'; </script>"; 
+			$inputan = $this->input->post(null, TRUE);
+
+			$inputan['status_order'] = "imposisi";
+			if($inputan['status_ctcp_khusus'] != null){
+					$inputan['status_order'] = "ctcp";
+					$inputan['ctcp_status'] = "ctcp khusus";
+			}
+			else if($inputan['status_ctcp_cover'] !=null && $inputan['status_ctcp_isi'] !=null){
+					$inputan['status_order'] = "ctcp";
+					$inputan['ctcp_status'] = "ctcp";
+			}
+			else if($inputan['status_ctcp_cover'] !=null ){				
+				$inputan['ctcp_status'] = "ctcp cover";
+			}
+			else if($inputan['status_ctcp_isi'] !=null ){				
+				$inputan['ctcp_status'] = "ctcp isi";
+			}
+			else
+				$inputan['ctcp_status'] = "";
+
+			$this->ctcp->edit_ctcp($inputan);							
+			$this->ctcp->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Diubah'); </script>";		
+				echo "<script>window.location='".site_url('pracetak/ctcp')."'; </script>";
 		}	
 	}
 }

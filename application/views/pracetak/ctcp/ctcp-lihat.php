@@ -96,12 +96,13 @@
                 </div>
                 <div class="col-md-3" align="left">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Imposisi Cover" disabled>
-                        <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
-                            <input class="form-check-input" type="checkbox" value="CTCP Cover" disabled>
-                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-                        <input class="form-check-input" type="checkbox" value="Khusus" disabled>
-                        <label class="form-check-label" for="flexCheckDefault">Khusus</label>
+                            <input type="text" name="status_ctcp_cover" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_ctcp_cover" value="ctcp cover" <?php echo $row->ctcp_status == "ctcp cover" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
+                            <label class="form-check-label" for="flexCheckDefault">ctcp Cover</label><br>
+
+                            <input type="text" name="status_ctcp_khusus" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_ctcp_khusus" value="ctcp khusus" <?php echo $row->ctcp_status == "ctcp khusus" ?  "checked" : "" ?>>
+                            <label class="form-check-label" for="flexCheckDefault">Khusus</label><br>
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -111,11 +112,10 @@
                     <input type="number" class="form-control" name="total_plat_isi" value="<?=$row->total_plat_isi;?>" disabled>
                 </div>
                 <div class="col-md-3" align="left">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled>
-                        <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label><br>
-                            <input class="form-check-input" type="checkbox" value="CTCP isi" disabled>
-                            <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label>
+                    <div class="form-check">                        
+                            <input type="text" name="status_ctcp_isi" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_ctcp_isi" value="ctcp isi" <?php echo $row->ctcp_status == "ctcp isi" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
+                            <label class="form-check-label" for="flexCheckDefault">ctcp isi</label><br>
                     </div>
                 </div>
             </div><br>

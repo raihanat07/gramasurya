@@ -72,7 +72,16 @@
                   echo $finishing;
                   ?>
               </td>
-              <td><?= $row->so_status; ?></td>
+              <td>
+              
+              <?php if($row->so_status == "imposisi" && $row->ctcp_status ==null) 
+                      echo $row->so_status;
+                    else
+                     echo $row->ctcp_status;
+                    
+              ?>
+
+              </td>
               <td align="center">
                 
               <!-- lihat detail imposisi -->

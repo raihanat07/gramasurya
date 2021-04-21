@@ -107,6 +107,7 @@
                     </div>
                 </div>
                 <br><hr><br>
+                <form action="<?=site_url('pracetak/ctcp/proses')?>" method="post">             
                 <div class="row">
                     <div class="col-md-3" align="center">
                         <label class="form-label">Nama Operator</label>
@@ -130,12 +131,13 @@
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Imposisi Cover">
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
-                            <input class="form-check-input" type="checkbox" value="CTCP Cover">
-                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-                            <input class="form-check-input" type="checkbox" value="Khusus">
-                            <label class="form-check-label" for="flexCheckDefault">Khusus</label>
+                            <input type="text" name="status_ctcp_cover" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_ctcp_cover" value="ctcp cover" <?php echo $row->ctcp_status == "ctcp cover" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
+                            <label class="form-check-label" for="flexCheckDefault">ctcp Cover</label><br>
+
+                            <input type="text" name="status_ctcp_khusus" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_ctcp_khusus" value="ctcp khusus" <?php echo $row->ctcp_status == "ctcp khusus" ?  "checked" : "" ?>>
+                            <label class="form-check-label" for="flexCheckDefault">Khusus</label><br>
                         </div>
                     </div>
                     <div class="col-md-2">
@@ -146,10 +148,9 @@
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="Imposisi isi">
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label><br>
-                            <input class="form-check-input" type="checkbox" value="CTCP isi">
-                            <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label>
+                            <input type="text" name="status_ctcp_isi" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_ctcp_isi" value="ctcp isi" <?php echo $row->ctcp_status == "ctcp isi" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
+                            <label class="form-check-label" for="flexCheckDefault">ctcp isi</label><br>
                         </div>
                     </div>
                 </div><br>
@@ -556,8 +557,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <?php } ?>
+                </div>                
                 <br>
                 <div class="row">
                     <div class="col-md-6">
@@ -565,7 +565,7 @@
                             <div class="col">
                                 <div class="card-body p-3 mb-2 bg-light text-dark">
                                     <br><br>
-                                    <form action="<?=site_url('pracetak/ctcp/proses')?>" method="post">
+                                    
                                     <div class="row">
                                         <div class="col-md-4">
                                             <label class="form-label">Tanggal Out CTCP Cover</label>
@@ -648,7 +648,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        </form>
+                                        
                                         <div class="col-md-4">
                                             <textarea name="catatan_imposisi" class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?=$row->catatan_imposisi?>" style="height: 240px;"></textarea>
                                         </div>
@@ -767,6 +767,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
             </form>
         </div>
