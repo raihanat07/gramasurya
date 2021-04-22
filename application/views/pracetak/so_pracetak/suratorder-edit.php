@@ -1127,6 +1127,7 @@
                                 <option value="Tokko">Tokko</option>
                                 <option value="Print banner">Print banner</option>
                                 <option value="Print digital">Print digital</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                             <div class="col-md-3">
