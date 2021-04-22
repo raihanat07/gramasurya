@@ -48,19 +48,19 @@
                         <br><label class="form-label">Nomor SO</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nomor_so" value="<?=$row->nomor_so?>" placeholder="Masukan Nomor SO" required>
+                        <br><input type="text" class="form-control" name="nomor_so" value="<?=$row->nomor_so?>" placeholder="Masukan Nomor SO" required disabled>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Nama Pemesan</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nama_pemesan" value="<?=$row->nama_pemesan?>" placeholder="Masukan Nama Pemesan" required>
+                        <br><input type="text" class="form-control" name="nama_pemesan" value="<?=$row->nama_pemesan?>" placeholder="Masukan Nama Pemesan" required disabled>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Halaman</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="halaman" value="<?=$row->halaman?>" placeholder="Masukan Hal" required>
+                        <br><input type="text" class="form-control" name="halaman" value="<?=$row->halaman?>" placeholder="Masukan Hal" required disabled>
                     </div>
                 </div>
                 <div class="row">
@@ -68,19 +68,19 @@
                         <br><label class="form-label">Tanggal Masuk</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="date" class="form-control" name="tanggal_masuk" value="<?=$row->tanggal_masuk?>" placeholder="Tanggal Masuk" required>
+                        <br><input type="date" class="form-control" name="tanggal_masuk" value="<?=$row->tanggal_masuk?>" placeholder="Tanggal Masuk" required disabled>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Nama Orderan</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nama_orderan" value="<?=$row->nama_orderan?>" placeholder="Masukan Orderan" required>
+                        <br><input type="text" class="form-control" name="nama_orderan" value="<?=$row->nama_orderan?>" placeholder="Masukan Orderan" required disabled>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Oplag</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="number" class="form-control" name="oplag" value="<?=$row->oplag?>" placeholder="Masukan Oplag" required>
+                        <br><input type="number" class="form-control" name="oplag" value="<?=$row->oplag?>" placeholder="Masukan Oplag" required disabled>
                     </div>
                 </div>
                 <div class="row">
@@ -88,43 +88,43 @@
                         <br><label class="form-label">Deadline</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="date" class="form-control" name="deadline" value="<?=$row->deadline?>" placeholder="Deadline" required>
+                        <br><input type="date" class="form-control" name="deadline" value="<?=$row->deadline?>" placeholder="Deadline" required disabled>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Ukuran</label>
                     </div>
                     <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="ukuran" value="<?=$row->ukuran?>" placeholder="Masukan Ukuran" required>
+                        <br><input type="text" class="form-control" name="ukuran" value="<?=$row->ukuran?>" placeholder="Masukan Ukuran" required disabled>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Finishing Akhir</label>
                     </div>
-                    <div class="col-md-4">
-                    <br>Finsihing Akhir
-                    <br><label class="form-label">
-                    <?php 
-                  $finishing = "";
-                  if($row->bending != null){
-                    $finishing .= "bending, ";
-                  }
-                  if($row->hard_cover != null){
-                    $finishing .= 'hard cover, ';
-                  }   
-                  if($row->jahit_benang != null){
-                    $finishing .= 'jahit benang, ';
-                  } 
-                  if($row->jahit_kawat != null){
-                    $finishing .= 'jahit kawat, ';
-                  }    
-                  if($row->pond != null){
-                    $finishing .= 'pond, ';
-                  }   
-                  if($row->spiral != null){
-                    $finishing .= 'Spiral, ';
-                  }
-                  $finishing = rtrim($finishing, ", ");
-                  echo $finishing;
-                  ?>
+                    <br>   
+                    <br>
+                    <label class="form-label">
+                        <?php 
+                        $finishing = "";
+                        if($row->bending != null){
+                            $finishing .= "bending, ";
+                        }
+                        if($row->hard_cover != null){
+                            $finishing .= 'hard cover, ';
+                        }   
+                        if($row->jahit_benang != null){
+                            $finishing .= 'jahit benang, ';
+                        } 
+                        if($row->jahit_kawat != null){
+                            $finishing .= 'jahit kawat, ';
+                        }    
+                        if($row->pond != null){
+                            $finishing .= 'pond, ';
+                        }   
+                        if($row->spiral != null){
+                            $finishing .= 'Spiral, ';
+                        }
+                        $finishing = rtrim($finishing, ", ");
+                        echo $finishing;
+                        ?>
                     </label>
                 </div>
                 </div>
@@ -135,9 +135,9 @@
                             <div class="row card-body">
                                 <div class="col-md-12">
                                     <label class="form-label">Tanggal Imposisi Cover</label>
-                                    <br><input type="date" class="form-control" name="tanggal_imposisi_cover" value="<?=$row->tanggal_imposisi_cover?>" required>
+                                    <br><input type="date" class="form-control" name="tanggal_imposisi_cover" value="<?=$row->tanggal_imposisi_cover?>" required disabled>
                                     <br><label class="form-label">Tanggal Imposisi Isi</label>
-                                    <br><input type="date" class="form-control" name="tanggal_imposisi_isi" value="<?=$row->tanggal_imposisi_isi?>" required>
+                                    <br><input type="date" class="form-control" name="tanggal_imposisi_isi" value="<?=$row->tanggal_imposisi_isi?>" required disabled>
                                 </div>
                             </div>
                         </div>
@@ -195,10 +195,10 @@
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
                                                     <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
-                                                        <input type="number" class="form-control" name="plate_1_keluar_cover" value="<?=$row->plate_1_keluar_cover?>">
+                                                        <input type="number" class="form-control" name="plate_1_keluar_cover" value="<?=$row->plate_1_keluar_cover?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_1_keluar_cover" value="<?=$row->mesin_1_keluar_cover?>" class="form-select form-control">
+                                                        <select name="mesin_1_keluar_cover" value="<?=$row->mesin_1_keluar_cover?>" class="form-select form-control" disabled>
                                                         <option value="<?php  echo $row->mesin_1_keluar_cover != "-" ?   $row->mesin_1_keluar_cover  : '-' ?>"><?php  echo $row->mesin_1_keluar_cover != "-" ?   $row->mesin_1_keluar_cover  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
@@ -211,10 +211,10 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_2_keluar_cover" value="<?=$row->plate_2_keluar_cover?>">
+                                                        <input type="number" class="form-control" name="plate_2_keluar_cover" value="<?=$row->plate_2_keluar_cover?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_2_keluar_cover" value="<?=$row->mesin_2_keluar_cover?>" class="form-select form-control">
+                                                        <select name="mesin_2_keluar_cover" value="<?=$row->mesin_2_keluar_cover?>" class="form-select form-control" disabled>
                                                         <option value="<?php  echo $row->mesin_2_keluar_cover != "-" ?   $row->mesin_2_keluar_cover  : '-' ?>"><?php  echo $row->mesin_2_keluar_cover != "-" ?   $row->mesin_2_keluar_cover  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
@@ -227,10 +227,10 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_3_keluar_cover" value="<?=$row->plate_3_keluar_cover?>">
+                                                        <input type="number" class="form-control" name="plate_3_keluar_cover" value="<?=$row->plate_3_keluar_cover?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_3_keluar_cover" value="<?=$row->mesin_3_keluar_cover?>" class="form-select form-control">
+                                                        <select name="mesin_3_keluar_cover" value="<?=$row->mesin_3_keluar_cover?>" class="form-select form-control" disabled>
                                                         <option value="<?php  echo $row->mesin_3_keluar_cover != "-" ?   $row->mesin_3_keluar_cover  : '-' ?>"><?php  echo $row->mesin_3_keluar_cover != "-" ?   $row->mesin_3_keluar_cover  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
@@ -267,10 +267,10 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_1_keluar_isi" value="<?=$row->plate_1_keluar_isi?>">
+                                                        <input type="number" class="form-control" name="plate_1_keluar_isi" value="<?=$row->plate_1_keluar_isi?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_1_keluar_isi" value="<?=$row->mesin_1_keluar_isi?>" class="form-select form-control">
+                                                        <select name="mesin_1_keluar_isi" value="<?=$row->mesin_1_keluar_isi?>" class="form-select form-control" disabled>
                                                         <option value="<?php  echo $row->mesin_1_keluar_isi != "-" ?   $row->mesin_1_keluar_isi  : '-' ?>"><?php  echo $row->mesin_1_keluar_isi != "-" ?   $row->mesin_1_keluar_isi  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
@@ -283,10 +283,10 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_2_keluar_isi" value="<?=$row->plate_2_keluar_isi?>">
+                                                        <input type="number" class="form-control" name="plate_2_keluar_isi" value="<?=$row->plate_2_keluar_isi?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_2_keluar_isi" value="<?=$row->mesin_2_keluar_isi?>" class="form-select form-control">
+                                                        <select name="mesin_2_keluar_isi" value="<?=$row->mesin_2_keluar_isi?>" class="form-select form-control" disabled>
                                                         <option value="<?php  echo $row->mesin_2_keluar_isi != "-" ?   $row->mesin_2_keluar_isi  : '-' ?>"><?php  echo $row->mesin_2_keluar_isi != "-" ?   $row->mesin_2_keluar_isi  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
@@ -299,10 +299,10 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_3_keluar_isi" value="<?=$row->plate_3_keluar_isi?>">
+                                                        <input type="number" class="form-control" name="plate_3_keluar_isi" value="<?=$row->plate_3_keluar_isi?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_3_keluar_isi" value="<?=$row->mesin_3_keluar_isi?>" class="form-select form-control">
+                                                        <select name="mesin_3_keluar_isi" value="<?=$row->mesin_3_keluar_isi?>" class="form-select form-control" disabled>
                                                         <option value="<?php  echo $row->mesin_3_keluar_isi != "-" ?   $row->mesin_3_keluar_isi  : '-' ?>"><?php  echo $row->mesin_3_keluar_isi != "-" ?   $row->mesin_3_keluar_isi  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
@@ -340,10 +340,10 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_gagal1" value="<?=$row->plate_gagal1?>">
+                                                        <input type="number" class="form-control" name="plate_gagal1" value="<?=$row->plate_gagal1?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_gagal1" value="<?=$row->mesin_gagal1?>" class="form-select form-control">
+                                                        <select name="mesin_gagal1" value="<?=$row->mesin_gagal1?>" class="form-select form-control" disabled>
                                                         <option value="<?php  echo $row->mesin_gagal1 != "-" ?   $row->mesin_gagal1  : '-' ?>"><?php  echo $row->mesin_gagal1 != "-" ?   $row->mesin_gagal1  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
@@ -356,10 +356,10 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_gagal2" value="<?=$row->plate_gagal2?>">
+                                                        <input type="number" class="form-control" name="plate_gagal2" value="<?=$row->plate_gagal2?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_gagal2" value="<?=$row->mesin_gagal2?>" class="form-select form-control">
+                                                        <select name="mesin_gagal2" value="<?=$row->mesin_gagal2?>" class="form-select form-control" disabled>
                                                         <option value="<?php  echo $row->mesin_gagal2 != "-" ?   $row->mesin_gagal2  : '-' ?>"><?php  echo $row->mesin_gagal2 != "-" ?   $row->mesin_gagal2  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
@@ -372,10 +372,10 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_gagal3" value="<?=$row->plate_gagal3?>">
+                                                        <input type="number" class="form-control" name="plate_gagal3" value="<?=$row->plate_gagal3?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_gagal3" value="<?=$row->mesin_gagal3?>" class="form-select form-control">
+                                                        <select name="mesin_gagal3" value="<?=$row->mesin_gagal3?>" class="form-select form-control" disabled>
                                                         <option value="<?php  echo $row->mesin_gagal3 != "-" ?   $row->mesin_gagal3  : '-' ?>"><?php  echo $row->mesin_gagal3 != "-" ?   $row->mesin_gagal3  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
@@ -398,17 +398,17 @@
                             <div class="row card-body">
                                 <div class="col-md-12">
                                     <label class="form-label">Tanggal Out CTCP Cover</label>
-                                    <br><input type="date" class="form-control" name="tanggal_out_ctcp_cover" value="<?=$row->tanggal_out_ctcp_cover?>" required>
+                                    <br><input type="date" class="form-control" name="tanggal_out_ctcp_cover" value="<?=$row->tanggal_out_ctcp_cover?>" required disabled> 
                                     <br><label class="form-label">Tanggal Out CTCP Isi</label>
                                 </div>
                             </div>
                             <div class="row card-body">
                                 <div class="col-md-3">Ke 1 </div>
-                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" value="<?=$row->tanggal_out_ctcp_isi1?>" required></div>
+                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" value="<?=$row->tanggal_out_ctcp_isi1?>" required disabled></div>
                             </div><br>
                             <div class="row card-body">
                                 <div class="col-md-3">Ke 2 </div>
-                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2" value="<?=$row->tanggal_out_ctcp_isi2?>" required></div>
+                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2" value="<?=$row->tanggal_out_ctcp_isi2?>" required disabled></div>
                             </div>
                         </div>
                     </div>
@@ -419,19 +419,19 @@
                 <div class="row" align="center">
                     <div class="col-md-3">
                         <label>Stok Plate 102</label>
-                        <label>2000</label>
+                        <!-- <label>2000</label> -->
                     </div>
                     <div class="col-md-3">
                         <label>Stok Plate 74</label>
-                        <label>4500</label>
+                        <!-- <label>4500</label> -->
                     </div>
                     <div class="col-md-3">
                         <label>Stok Plate 72</label>
-                        <label>1000</label>
+                        <!-- <label>1000</label> -->
                     </div>
                     <div class="col-md-3">
                         <label>Stok Plate Paper Plate</label>
-                        <label>500</label>
+                        <!-- <label>500</label> -->
                     </div>
                 </div>
                 <br><hr><br>
