@@ -14,7 +14,8 @@ class Laporan_m extends CI_Model {
         $this->db->from('order');
         $this->db->join('laporan_pracetak as lap','lap.id_order = order.id_order','left');
         $this->db->join('finishing','finishing.id_order = order.id_order');              
-        $this->db->where_in('order.so_status',$status_order);         
+        $this->db->where_in('order.so_status',$status_order); 
+        $this->db->order_by('order.id_order', 'desc');        
         $query = $this->db->get();
         return $query;   
     }

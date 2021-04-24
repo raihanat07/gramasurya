@@ -18,6 +18,7 @@ class Ctcp_m extends CI_Model {
         $this->db->join('laporan_pracetak','data_ctcp.id_order = laporan_pracetak.id_order','left' );      
         $this->db->join('finishing','finishing.id_order = order.id_order');        
         $this->db->where_in('order.so_status',$status_umum);
+        $this->db->order_by('order.id_order', 'desc');        
         // $this->db->where('laporan_pracetak.id_laporan_pracetak', null);  
         // $this->db->or_where_in('data_ctcp.ctcp_status', $status_ctcp);       
         

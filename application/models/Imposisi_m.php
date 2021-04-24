@@ -15,12 +15,13 @@ class Imposisi_m extends CI_Model {
         $status_umum = array('marketing','imposisi');
 
         $this->db->from('order');
-        $this->db->join('imposisi','imposisi.id_order = order.id_order','left'); 
+        $this->db->join('imposisi','imposisi.id_order = order.id_order','left');
         $this->db->join('data_ctcp','imposisi.id_order = data_ctcp.id_order','left' );
-        $this->db->join('finishing','finishing.id_order = order.id_order');                
+        $this->db->join('finishing','finishing.id_order = order.id_order');
         $this->db->where_in('order.so_status',$status_umum);
         $this->db->where('data_ctcp.ctcp_status', "");
         $this->db->OR_where('data_ctcp.ctcp_status', null);
+        $this->db->order_by('order.id_order', 'desc');
         // $this->db->where_in('imposisi.imposisi_status', $status_impo);
               
 
