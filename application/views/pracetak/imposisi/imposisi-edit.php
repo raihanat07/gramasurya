@@ -137,11 +137,7 @@
                         <div class="form-check">
                             <input type="text" name="status_imposisi_cover" value="" hidden>
                             <input class="form-check-input" type="checkbox" name="status_imposisi_cover" value="imposisi cover" <?php echo $row->imposisi_status == "imposisi cover" || $row->imposisi_status == "imposisi" ?  "checked" : "" ?>>
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
-
-                            <input type="text" name="status_imposisi_khusus" value="" hidden>
-                            <input class="form-check-input" type="checkbox" name="status_imposisi_khusus" value="imposisi khusus" <?php echo $row->imposisi_status == "imposisi khusus" ?  "checked" : "" ?>>
-                            <label class="form-check-label" for="flexCheckDefault">Khusus</label><br>
+                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>                            
                         </div>
                     </div>
                     <div class="col-md-2">

@@ -135,9 +135,6 @@
                             <input class="form-check-input" type="checkbox" name="status_ctcp_cover" value="ctcp cover" <?php echo $row->ctcp_status == "ctcp cover" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
                             <label class="form-check-label" for="flexCheckDefault">ctcp Cover</label><br>
 
-                            <input type="text" name="status_ctcp_khusus" value="" hidden>
-                            <input class="form-check-input" type="checkbox" name="status_ctcp_khusus" value="ctcp khusus" <?php echo $row->ctcp_status == "ctcp khusus" ?  "checked" : "" ?>>
-                            <label class="form-check-label" for="flexCheckDefault">Khusus</label><br>
                         </div>
                     </div>
                     <div class="col-md-2">
