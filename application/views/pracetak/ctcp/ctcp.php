@@ -74,10 +74,13 @@
               </td>
               <td>
               
-              <?php if($row->so_status == "imposisi" && $row->ctcp_status ==null) 
+              <?php 
+                    if($row->so_status == "ctcp" || $row->so_status == "imposisi" && $row->imposisi_status ==null  && $row->ctcp_status ==null) 
                       echo $row->so_status;
-                    else
-                     echo $row->ctcp_status;
+                    else if(($row->imposisi_status == "imposisi cover" || $row->imposisi_status == "imposisi isi") && $row->ctcp_status ==null)
+                     echo $row->imposisi_status;
+                    else 
+                    echo $row->ctcp_status;
                     
               ?>
 

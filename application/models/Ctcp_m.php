@@ -6,18 +6,18 @@ class Ctcp_m extends CI_Model {
 	public function get()
     {
         $this->db->select(
-            'data_ctcp.ctcp_status as ctcp_status,
+            'data_ctcp.ctcp_status as ctcp_status, imposisi.imposisi_status as imposisi_status,
             order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, finishing.finishing_akhir_spiral as spiral, data_ctcp.id_data_ctcp as id_data_ctcp',
         );
         // $status_ctcp = array('ctcp', 'ctcp cover', 'ctcp isi','ctcp khusus');        
-        $status_umum = array('imposisi','ctcp');
+        $status_imposisi = array('imposisi cover','imposisi isi');
 
         $this->db->from('order');
-        $this->db->join('data_ctcp','data_ctcp.id_order = order.id_order','left');  
-        $this->db->join('laporan_pracetak','data_ctcp.id_order = laporan_pracetak.id_order','left' );      
+        $this->db->join('imposisi','order.id_order = imposisi.id_order' );      
+        $this->db->join('data_ctcp','data_ctcp.id_order = imposisi.id_order','left');          
         $this->db->join('finishing','finishing.id_order = order.id_order');        
-        $this->db->where_in('order.so_status',$status_umum);
+        $this->db->where_in('imposisi.imposisi_status',$status_imposisi);
         $this->db->order_by('order.id_order', 'desc');        
         // $this->db->where('laporan_pracetak.id_laporan_pracetak', null);  
         // $this->db->or_where_in('data_ctcp.ctcp_status', $status_ctcp);       
