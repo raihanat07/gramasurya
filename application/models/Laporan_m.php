@@ -6,8 +6,8 @@ class Laporan_m extends CI_Model {
 	public function get()
     {
         $this->db->select(
-            'data_ctcp.status_ctcp as status_ctcp, laporan_pracetak.status_laporan_pracetak as pracetak_status, 
-            order.id_order as id_order, order.nomor_so as nomor_so, lap.id_laporan_pracetak as id_laporan_pracetak, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
+            'data_ctcp.ctcp_status as ctcp_status,
+            order.id_order as id_order, order.nomor_so as nomor_so, laporan_pracetak.id_laporan_pracetak as id_laporan_pracetak, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral, finishing.finishing_akhir_klem as klem',
         );
         $status_ctcp = array('ctcp cover','ctcp isi');
