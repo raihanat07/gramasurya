@@ -75,11 +75,7 @@ class Imposisi extends CI_Controller {
 			$inputan = $this->input->post(null, TRUE);
 						
 			$inputan['status_order'] = "marketing";
-			if($inputan['status_imposisi_khusus'] != null){
-					$inputan['status_order'] = "imposisi";
-					$inputan['imposisi_status'] = "imposisi khusus";
-			}
-			else if($inputan['status_imposisi_cover'] !=null && $inputan['status_imposisi_isi'] !=null){
+			if($inputan['status_imposisi_cover'] !=null && $inputan['status_imposisi_isi'] !=null){
 					$inputan['status_order'] = "imposisi";
 					$inputan['imposisi_status'] = "imposisi";
 			}
@@ -101,11 +97,7 @@ class Imposisi extends CI_Controller {
 			$inputan = $this->input->post(null, TRUE);	
 			
 			$inputan['status_order'] = "marketing";
-			if($inputan['status_imposisi_khusus'] != null){
-					$inputan['status_order'] = "imposisi";
-					$inputan['imposisi_status'] = "imposisi khusus";
-			}
-			else if($inputan['status_imposisi_cover'] !=null && $inputan['status_imposisi_isi'] !=null){
+			if($inputan['status_imposisi_cover'] !=null && $inputan['status_imposisi_isi'] !=null){
 					$inputan['status_order'] = "imposisi";
 					$inputan['imposisi_status'] = "imposisi";
 			}

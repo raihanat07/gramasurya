@@ -19,7 +19,8 @@ class SuratOrder_m extends CI_Model {
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_klem as klem,finishing.finishing_akhir_spiral as spiral'
         );
         $this->db->from('order');
-        $this->db->join('finishing','finishing.id_order = order.id_order');        
+        $this->db->join('finishing','finishing.id_order = order.id_order');    
+        $this->db->order_by('id_order', 'desc');    
         $query = $this->db->get();
         return $query;   
     }

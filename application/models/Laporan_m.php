@@ -6,15 +6,19 @@ class Laporan_m extends CI_Model {
 	public function get()
     {
         $this->db->select(
-            'order.id_order as id_order, order.nomor_so as nomor_so, lap.id_laporan_pracetak as id_laporan_pracetak, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
+            'data_ctcp.ctcp_status as ctcp_status,
+            order.id_order as id_order, order.nomor_so as nomor_so, laporan_pracetak.id_laporan_pracetak as id_laporan_pracetak, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral, finishing.finishing_akhir_klem as klem',
         );
-        $status_order = array('ctcp','pracetak');
+        $status_ctcp = array('ctcp cover','ctcp isi');
 
         $this->db->from('order');
-        $this->db->join('laporan_pracetak as lap','lap.id_order = order.id_order','left');
-        $this->db->join('finishing','finishing.id_order = order.id_order');              
-        $this->db->where_in('order.so_status',$status_order);         
+        $this->db->join('data_ctcp','order.id_order = data_ctcp.id_order' );      
+        $this->db->join('laporan_pracetak','laporan_pracetak.id_order = data_ctcp.id_order','left');          
+        $this->db->join('finishing','finishing.id_order = order.id_order');        
+        $this->db->where_in('data_ctcp.ctcp_status',$status_ctcp);
+        $this->db->order_by('order.id_order', 'desc');  
+
         $query = $this->db->get();
         return $query;   
     }

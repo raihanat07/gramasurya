@@ -68,6 +68,21 @@ class Laporan extends CI_Controller {
 	{		
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
+
+			$inputan['status_order'] = "ctcp";
+			if($inputan['status_pracetak_cover'] !=null && $inputan['status_pracetak_isi'] !=null){
+					$inputan['status_order'] = "pracetak";
+					$inputan['pracetak_status'] = "pracetak";
+			}
+			else if($inputan['status_pracetak_cover'] !=null ){				
+				$inputan['pracetak_status'] = "pracetak cover";
+			}
+			else if($inputan['status_ctcp_isi'] !=null ){				
+				$inputan['ctcp_status'] = "ctcp isi";
+			}
+			else
+				$inputan['ctcp_status'] = "";
+
 			$this->laporan->tambah_laporan($inputan);
 				if($this->db->affected_rows() > 0){
 					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";

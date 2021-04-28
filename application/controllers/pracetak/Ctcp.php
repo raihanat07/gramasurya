@@ -60,11 +60,7 @@ class Ctcp extends CI_Controller {
 			$inputan = $this->input->post(null, TRUE);
 
 			$inputan['status_order'] = "imposisi";
-			if($inputan['status_ctcp_khusus'] != null){
-					$inputan['status_order'] = "ctcp";
-					$inputan['ctcp_status'] = "ctcp khusus";
-			}
-			else if($inputan['status_ctcp_cover'] !=null && $inputan['status_ctcp_isi'] !=null){
+			if($inputan['status_ctcp_cover'] !=null && $inputan['status_ctcp_isi'] !=null){
 					$inputan['status_order'] = "ctcp";
 					$inputan['ctcp_status'] = "ctcp";
 			}
@@ -86,11 +82,7 @@ class Ctcp extends CI_Controller {
 			$inputan = $this->input->post(null, TRUE);
 
 			$inputan['status_order'] = "imposisi";
-			if($inputan['status_ctcp_khusus'] != null){
-					$inputan['status_order'] = "ctcp";
-					$inputan['ctcp_status'] = "ctcp khusus";
-			}
-			else if($inputan['status_ctcp_cover'] !=null && $inputan['status_ctcp_isi'] !=null){
+			if($inputan['status_ctcp_cover'] !=null && $inputan['status_ctcp_isi'] !=null){
 					$inputan['status_order'] = "ctcp";
 					$inputan['ctcp_status'] = "ctcp";
 			}
