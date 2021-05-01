@@ -48,7 +48,7 @@
                         <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
                     </div>
                     <div class="col-md-4">
-                        <br>Nama Orderan
+                        <br>Nama Order
                         <br><label class="form-label"><?= $row->nama_orderan; ?></label>
                     </div>
                     <div class="col-md-4">

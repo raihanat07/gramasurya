@@ -30,7 +30,7 @@
               <td>Tanggal Masuk</td>
               <td>Deadline</td>
               <td>Nama Pemesan</td>
-              <td>Nama Orderan</td>
+              <td>Nama Order</td>
               <td>Ukuran</td>
               <td>Halaman</td>
               <td>Finishing Akhir</td>

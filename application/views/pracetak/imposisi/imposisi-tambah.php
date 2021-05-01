@@ -58,7 +58,7 @@
                         <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
                     </div>
                     <div class="col-md-4">
-                        <br>Nama Orderan
+                        <br>Nama Order
                         <br><label class="form-label"><?= $row->nama_orderan; ?></label>
                     </div>
                     <div class="col-md-4">
@@ -132,7 +132,11 @@
                         <label class="form-label">Total Plat Cover</label>
                     </div>
                     <div class="col-md-1">
-                        <input type="number" class="form-control" name="total_plat_cover" required>
+                        10
+
+                        <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN-->
+                        <!-- <input type="number" class="form-control" name="total_plat_cover"> -->
+
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
@@ -145,7 +149,10 @@
                         <label class="form-label">Total Plat Isi</label>
                     </div>
                     <div class="col-md-1">
-                        <input type="number" class="form-control" name="total_plat_isi">
+                        10
+
+                        <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN-->
+                        <!-- <input type="number" class="form-control" name="total_plat_isi"> -->
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
@@ -191,7 +198,11 @@
                                     <label class="form-label">Plate</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplatecover1">
+                                    10
+
+                                    <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
+                                    <!-- <input type="number" class="form-control" name="jumlahplatecover1"> -->
+
                                 </div>
                             </div><br>
                             <div class="row">
@@ -208,18 +219,23 @@
                                             <input type="number" class="form-control" name="cover1plat2"><br>
                                             <input type="number" class="form-control" name="cover1plat3">
                                         </div>
-                                        <div class="col">
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="cover1set1" ><br>
                                             <input class="form-control" name="cover1set2" ><br>
                                             <input class="form-control" name="cover1set3" >
-                                        </div>
-                                        <div class="col">
+                                        </div> -->
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="cover1lbrcetak1" ><br>
                                             <input class="form-control" name="cover1lbrcetak2" ><br>
                                             <input class="form-control" name="cover1lbrcetak3" >
-                                        </div>
+                                        </div> -->
+
                                         <div class="col">
                                             <label class="form-label">Up</label>
                                             <input type="number" class="form-control" name="cover1up1"><br>
@@ -233,7 +249,7 @@
                                             <input type="number" class="form-control" name="cover1warna3">
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Status</label>
+                                            <label class="form-label">Proses</label>
                                             <select name="cover1status1" class="form-select form-control">
                                             <option value="-">-</option>
                                                 <option value="GP">GP</option>
@@ -259,9 +275,15 @@
                                             <input type="text" class="form-control" name="cover1keterangan2"><br>
                                             <input type="text" class="form-control" name="cover1keterangan3">
                                         </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. Imposisi</label>
+                                            <input type="date" class="form-control" name="cover1tglimposisi1"><br>
+                                            <input type="date" class="form-control" name="cover1tglimposisi2"><br>
+                                            <input type="date" class="form-control" name="cover1tglimposisi3">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -283,62 +305,86 @@
                                     <label class="form-label">Plate</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplateisi1">
+                                    10
+
+                                    <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
+                                    <!-- <input type="number" class="form-control" name="jumlahplateisi1"> -->
+
                                 </div>
                             </div><br>
-                            <div class="row" align="center">
+                            <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label class="form-label">Rincian Imposisi</label>
                                         </div>
-                                    </div>
+                                    </div><br>
                                     <div class="row">
-                                        <div class="col">
+                                        <div class="col" align="center">
                                             <label class="form-label">Plate</label>
-                                            <input type="number" class="form-control" name="isi1plat1"><br>
-                                            <input type="number" class="form-control" name="isi1plat2"><br>
-                                            <input type="number" class="form-control" name="isi1plat3">
                                         </div>
                                         <div class="col">
+                                            <input type="number" class="form-control" name="isi1plat1">
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="form-control" name="isi1plat2">
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="form-control" name="isi1plat3">
+                                        </div>
+                                    </div><br>
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="isi1set1" ><br>
                                             <input class="form-control" name="isi1set2" ><br>
                                             <input class="form-control" name="isi1set3" >
-                                        </div>
-                                        <div class="col">
+                                        </div> -->
+
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="isi1lbrcetak1" ><br>
                                             <input class="form-control" name="isi1lbrcetak2" ><br>
                                             <input class="form-control" name="isi1lbrcetak3" >
+                                        </div> -->
+
+                                    <div class="row">
+                                        <div class="col" align="center">
+                                            <label class="form-label">Up</label>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Up</label>
-                                            <input type="number" class="form-control" name="isi1up1"><br>
-                                            <input type="number" class="form-control" name="isi1up2"><br>
+                                            <input type="number" class="form-control" name="isi1up1">
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="form-control" name="isi1up2">
+                                        </div>
+                                        <div class="col">
                                             <input type="number" class="form-control" name="isi1up3">
                                         </div>
-                                        <div class="col">
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="col" align="center">
                                             <label class="form-label">Warna</label>
-                                            <input type="number" class="form-control" name="isi1warna1"><br>
-                                            <input type="number" class="form-control" name="isi1warna2"><br>
-                                            <input type="number" class="form-control" name="isi1warna3">
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Status</label>
+                                            <input type="number" class="form-control" name="isi1warna1">
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="form-control" name="isi1warna2">
+                                        </div>
+                                        <div class="col">
+                                            <input type="number" class="form-control" name="isi1warna3">
+                                        </div>
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="col" align="center">
+                                            <label class="form-label">Proses</label>
+                                        </div>
+                                        <div class="col">
                                             <select name="isi1status1" class="form-select form-control">
-                                            <option value="-">-</option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select><br>
-                                            <select name="isi1status2" class="form-select form-control">
-                                            <option value="-">-</option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                            </select><br>
-                                            <select name="isi1status3" class="form-select form-control">
                                             <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
@@ -346,10 +392,50 @@
                                             </select>
                                         </div>
                                         <div class="col">
+                                            <select name="isi1status2" class="form-select form-control">
+                                            <option value="-">-</option>
+                                                <option value="GP">GP</option>
+                                                <option value="BLK">BLK</option>
+                                                <option value="BLG">BLG</option>
+                                            </select>
+                                        </div>
+                                        <div class="col">
+                                            <select name="isi1status3" class="form-select form-control">
+                                            <option value="-">-</option>
+                                                <option value="GP">GP</option>
+                                                <option value="BLK">BLK</option>
+                                                <option value="BLG">BLG</option>
+                                            </select>
+                                        </div>
+                                    </div><br>
+                                    <div class="row">
+                                        <div class="col" align="center">
                                             <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control" name="isi1keterangan1"><br>
-                                            <input type="text" class="form-control" name="isi1keterangan2"><br>
-                                            <input type="text" class="form-control" name="isi1keterangan3">
+                                        </div>
+                                        <div class="col">
+                                            <textarea class="form-control" name="isi1keterangan1"></textarea>
+                                        </div>
+                                        <div class="col">
+                                            <textarea class="form-control" name="isi1keterangan2"></textarea>
+                                        </div>
+                                        <div class="col">
+                                            <textarea class="form-control" name="isi1keterangan3"></textarea>
+                                        </div>
+                                    </div><br>
+                                    <div class="row" align="left">
+                                        <div class="col">
+                                            <label class="form-label">Tgl. Imposisi</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input type="date" class="form-control" name="isi1tglimposisi1">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="date" class="form-control" name="isi1tglimposisi2">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <input type="date" class="form-control" name="isi1tglimposisi3">
                                         </div>
                                     </div>
                                 </div>
@@ -393,7 +479,11 @@
                                     <label class="form-label">Plate</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplatecover2">
+                                    10
+
+                                    <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
+                                    <!-- <input type="number" class="form-control" name="jumlahplatecover2"> -->
+
                                 </div>
                             </div><br>
                             <div class="row">
@@ -410,18 +500,24 @@
                                             <input type="number" class="form-control" name="cover2plat2"><br>
                                             <input type="number" class="form-control" name="cover2plat3">
                                         </div>
-                                        <div class="col">
+
+                                        
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="cover2set1" ><br>
                                             <input class="form-control" name="cover2set2" ><br>
                                             <input class="form-control" name="cover2set3" >
-                                        </div>
-                                        <div class="col">
+                                        </div> -->
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="cover2lbrcetak1" ><br>
                                             <input class="form-control" name="cover2lbrcetak2" ><br>
                                             <input class="form-control" name="cover2lbrcetak3" >
-                                        </div>
+                                        </div> -->
+
                                         <div class="col">
                                             <label class="form-label">Up</label>
                                             <input type="number" class="form-control" name="cover2up1"><br>
@@ -435,7 +531,7 @@
                                             <input type="number" class="form-control" name="cover2warna3">
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Status</label>
+                                            <label class="form-label">Proses</label>
                                             <select name="cover2status1" class="form-select form-control">
                                             <option value="-">-</option>
                                                 <option value="GP">GP</option>
@@ -461,6 +557,12 @@
                                             <input type="text" class="form-control" name="cover2keterangan2"><br>
                                             <input type="text" class="form-control" name="cover2keterangan3">
                                         </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. Imposisi</label>
+                                            <input type="date" class="form-control" name="cover2tglimposisi1"><br>
+                                            <input type="date" class="form-control" name="cover2tglimposisi2"><br>
+                                            <input type="date" class="form-control" name="cover2tglimposisi3">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -485,10 +587,14 @@
                                     <label class="form-label">Plate</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplateisi2">
+                                    10
+
+                                    <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
+                                    <!-- <input type="number" class="form-control" name="jumlahplateisi2"> -->
+
                                 </div>
                             </div><br>
-                            <div class="row" align="center">
+                            <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -502,18 +608,23 @@
                                             <input type="number" class="form-control" name="isi2plat2"><br>
                                             <input type="number" class="form-control" name="isi2plat3">
                                         </div>
-                                        <div class="col">
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="isi2set1" ><br>
                                             <input class="form-control" name="isi2set2" ><br>
                                             <input class="form-control" name="isi2set3" >
-                                        </div>
-                                        <div class="col">
+                                        </div> -->
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="isi2lbrcetak1" ><br>
                                             <input class="form-control" name="isi2lbrcetak2" ><br>
                                             <input class="form-control" name="isi2lbrcetak3" >
-                                        </div>
+                                        </div> -->
+
                                         <div class="col">
                                             <label class="form-label">Up</label>
                                             <input type="number" class="form-control" name="isi2up1"><br>
@@ -527,7 +638,7 @@
                                             <input type="number" class="form-control" name="isi2warna3">
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Status</label>
+                                            <label class="form-label">Proses</label>
                                             <select name="isi2status1" class="form-select form-control">
                                             <option value="-">-</option>
                                                 <option value="GP">GP</option>
@@ -553,6 +664,12 @@
                                             <input type="text" class="form-control" name="isi2keterangan2"><br>
                                             <input type="text" class="form-control" name="isi2keterangan3">
                                         </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. Imposisi</label>
+                                            <input type="date" class="form-control" name="isi2tglimposisi1"><br>
+                                            <input type="date" class="form-control" name="isi2tglimposisi2"><br>
+                                            <input type="date" class="form-control" name="isi2tglimposisi3">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -565,13 +682,7 @@
                             <div class="col">
                                 <div class="card-body p-3 mb-2 bg-light text-dark">
                                     <br><br><div class="row">
-                                        <div class="col-md-6">
-                                            <label class="form-label">Tanggal Imposisi Cover</label>
-                                            <br><input type="date" class="form-control" name="tanggal_imposisi_cover" required>
-                                            <br><label class="form-label">Tanggal Imposisi Isi</label>
-                                            <br><input type="date" class="form-control" name="tanggal_imposisi_isi" required>
-                                        </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" style="height: 150px;"></textarea>
                                         </div>
                                     </div><br><br>
@@ -617,7 +728,11 @@
                                             <label class="form-label">Plate</label>
                                         </div>
                                         <div class="col-md-3">
-                                            <input type="number" class="form-control" name="jumlahplateisi3">
+                                            10
+
+                                            <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
+                                            <!-- <input type="number" class="form-control" name="jumlahplateisi3"> -->
+
                                         </div>
                                     </div><br>
                                     <div class="row">
@@ -626,52 +741,88 @@
                                                 <div class="col-md-12">
                                                     <label class="form-label">Rincian Imposisi</label>
                                                 </div>
-                                            </div>
-                                            <div class="row" align="center">
-                                                <div class="col">
+                                            </div><br>
+                                            <div class="row">
+                                                <div class="col" align="center">
                                                     <label class="form-label">Plate</label>
-                                                    <input type="number" class="form-control" name="isi3plat1"><br>
-                                                    <input type="number" class="form-control" name="isi3plat2"><br>
-                                                    <input type="number" class="form-control" name="isi3plat3">
                                                 </div>
                                                 <div class="col">
+                                                    <input type="number" class="form-control" name="isi3plat1">
+                                                </div>
+                                                <div class="col">
+                                                    <input type="number" class="form-control" name="isi3plat2">
+                                                </div>
+                                                <div class="col">
+                                                    <input type="number" class="form-control" name="isi3plat3">
+                                                </div>
+                                            </div><br>
+
+                                                <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                                <!-- <div class="col">
                                                     <label class="form-label">Set</label>
                                                     <input class="form-control" name="isi3set1" ><br>
                                                     <input class="form-control" name="isi3set2" ><br>
                                                     <input class="form-control" name="isi3set3" >
-                                                </div>
-                                                <div class="col">
+                                                </div> -->
+                                                
+
+                                                <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                                <!-- <div class="col">
                                                     <label class="form-label">Lbr.Cetak</label>
                                                     <input class="form-control" name="isi3lbrcetak1" ><br>
                                                     <input class="form-control" name="isi3lbrcetak2" ><br>
                                                     <input class="form-control" name="isi3lbrcetak3" >
+                                                </div> -->
+
+                                            <div class="row">
+                                                <div class="col" align="center">
+                                                    <label class="form-label">Up</label>
                                                 </div>
                                                 <div class="col">
-                                                    <label class="form-label">Up</label>
-                                                    <input type="number" class="form-control" name="isi3up1"><br>
-                                                    <input type="number" class="form-control" name="isi3up2"><br>
+                                                    <input type="number" class="form-control" name="isi3up1">
+                                                </div>
+                                                <div class="col">
+                                                    <input type="number" class="form-control" name="isi3up2">
+                                                </div>
+                                                <div class="col">
                                                     <input type="number" class="form-control" name="isi3up3">
                                                 </div>
-                                                <div class="col">
+                                            </div><br>
+                                            <div class="row">
+                                                <div class="col" align="center">
                                                     <label class="form-label">Warna</label>
-                                                    <input type="number" class="form-control" name="isi3warna1"><br>
-                                                    <input type="number" class="form-control" name="isi3warna2"><br>
-                                                    <input type="number" class="form-control" name="isi3warna3">
                                                 </div>
                                                 <div class="col">
-                                                    <label class="form-label">Status</label>
+                                                    <input type="number" class="form-control" name="isi3warna1">
+                                                </div>
+                                                <div class="col">
+                                                    <input type="number" class="form-control" name="isi3warna2">
+                                                </div>
+                                                <div class="col">
+                                                    <input type="number" class="form-control" name="isi3warna3">
+                                                </div>
+                                            </div><br>
+                                            <div class="row">
+                                                <div class="col" align="center">
+                                                    <label class="form-label">Proses</label>
+                                                </div>
+                                                <div class="col">
                                                     <select name="isi3status1" class="form-select form-control">
                                                     <option value="-">-</option>
                                                         <option value="GP">GP</option>
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>
-                                                    </select><br>
+                                                    </select>
+                                                </div>
+                                                <div class="col" align="center">
                                                     <select name="isi3status2" class="form-select form-control">
                                                     <option value="-">-</option>
                                                         <option value="GP">GP</option>
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>
-                                                    </select><br>
+                                                    </select>
+                                                </div>
+                                                <div class="col" align="center">
                                                     <select name="isi3status3" class="form-select form-control">
                                                     <option value="-">-</option>
                                                         <option value="GP">GP</option>
@@ -679,11 +830,35 @@
                                                         <option value="BLG">BLG</option>
                                                     </select>
                                                 </div>
-                                                <div class="col">
+                                            </div><br>
+                                            <div class="row">
+                                                <div class="col" align="center">
                                                     <label class="form-label">Keterangan</label>
-                                                    <input type="text" class="form-control" name="isi3keterangan1"><br>
-                                                    <input type="text" class="form-control" name="isi3keterangan2"><br>
-                                                    <input type="text" class="form-control" name="isi3keterangan3">
+                                                </div>
+                                                <div class="col">
+                                                    <textarea class="form-control" name="isi3keterangan1"></textarea>
+                                                </div>
+                                                <div class="col">
+                                                    <textarea class="form-control" name="isi3keterangan2"></textarea>
+                                                </div>
+                                                <div class="col">
+                                                    <textarea class="form-control" name="isi3keterangan3"></textarea>
+                                                </div>
+                                            </div><br>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <label class="form-label">Tgl. Imposisi</label>
+                                                </div>
+                                            </div><br>
+                                            <div class="row">
+                                                <div class="col-md-4">
+                                                    <input type="date" class="form-control" name="isi2tglimposisi1">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="date" class="form-control" name="isi2tglimposisi2">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="date" class="form-control" name="isi2tglimposisi3">
                                                 </div>
                                             </div>
                                         </div>
@@ -696,7 +871,7 @@
             </form>
         </div>
     </div>
-    <!-- /.card-body -->
+    <!-- /.card-body
     <!-- <div class="card-footer">
         Footer
     </div> -->
@@ -705,4 +880,4 @@
     <!-- /.card -->
 
 </section>
-<!-- /.content -->
+<!-- /.content

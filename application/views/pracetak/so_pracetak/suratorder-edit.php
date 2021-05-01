@@ -68,7 +68,7 @@
                   <br><input type="date" class="form-control" name="tanggal_masuk" value="<?= $row->tanggal_masuk; ?>"placeholder="Tanggal Masuk" required>
                 </div>
                 <div class="col-md-2" align="right">
-                  <br><label class="form-label">Nama Orderan</label>
+                  <br><label class="form-label">Nama Order</label>
                 </div>
                 <div class="col-md-2">
                   <br><input type="text" class="form-control" name="nama_orderan" value="<?= $row->nama_orderan; ?>" placeholder="Masukan Orderan" required>
