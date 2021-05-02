@@ -319,20 +319,13 @@
                                             <label class="form-label">Rincian Imposisi</label>
                                         </div>
                                     </div><br>
-                                    <div class="row">
-                                        <div class="col" align="center">
+                                    <div class="row" align="center">
+                                        <div class="col">
                                             <label class="form-label">Plate</label>
-                                        </div>
-                                        <div class="col">
-                                            <input type="number" class="form-control" name="isi1plat1">
-                                        </div>
-                                        <div class="col">
-                                            <input type="number" class="form-control" name="isi1plat2">
-                                        </div>
-                                        <div class="col">
+                                            <input type="number" class="form-control" name="isi1plat1"><br>
+                                            <input type="number" class="form-control" name="isi1plat2"><br>
                                             <input type="number" class="form-control" name="isi1plat3">
                                         </div>
-                                    </div><br>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
                                         <!-- <div class="col">
@@ -351,55 +344,32 @@
                                             <input class="form-control" name="isi1lbrcetak3" >
                                         </div> -->
 
-                                    <div class="row">
-                                        <div class="col" align="center">
+                                        <div class="col">
                                             <label class="form-label">Up</label>
-                                        </div>
-                                        <div class="col">
-                                            <input type="number" class="form-control" name="isi1up1">
-                                        </div>
-                                        <div class="col">
-                                            <input type="number" class="form-control" name="isi1up2">
-                                        </div>
-                                        <div class="col">
+                                            <input type="number" class="form-control" name="isi1up1"><br>
+                                            <input type="number" class="form-control" name="isi1up2"><br>
                                             <input type="number" class="form-control" name="isi1up3">
                                         </div>
-                                    </div><br>
-                                    <div class="row">
-                                        <div class="col" align="center">
+                                        <div class="col">
                                             <label class="form-label">Warna</label>
-                                        </div>
-                                        <div class="col">
-                                            <input type="number" class="form-control" name="isi1warna1">
-                                        </div>
-                                        <div class="col">
-                                            <input type="number" class="form-control" name="isi1warna2">
-                                        </div>
-                                        <div class="col">
+                                            <input type="number" class="form-control" name="isi1warna1"><br>
+                                            <input type="number" class="form-control" name="isi1warna2"><br>
                                             <input type="number" class="form-control" name="isi1warna3">
                                         </div>
-                                    </div><br>
-                                    <div class="row">
-                                        <div class="col" align="center">
-                                            <label class="form-label">Proses</label>
-                                        </div>
                                         <div class="col">
+                                            <label class="form-label">Proses</label>
                                             <select name="isi1status1" class="form-select form-control">
                                             <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
+                                            </select><br>
                                             <select name="isi1status2" class="form-select form-control">
                                             <option value="-">-</option>
                                                 <option value="GP">GP</option>
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
-                                            </select>
-                                        </div>
-                                        <div class="col">
+                                            </select><br>
                                             <select name="isi1status3" class="form-select form-control">
                                             <option value="-">-</option>
                                                 <option value="GP">GP</option>
@@ -407,34 +377,16 @@
                                                 <option value="BLG">BLG</option>
                                             </select>
                                         </div>
-                                    </div><br>
-                                    <div class="row">
                                         <div class="col" align="center">
                                             <label class="form-label">Keterangan</label>
+                                            <input type="text" class="form-control" name="isi1keterangan1"><br>
+                                            <input type="text" class="form-control" name="isi1keterangan2"><br>
+                                            <input type="text" class="form-control" name="isi1keterangan3">
                                         </div>
-                                        <div class="col">
-                                            <textarea class="form-control" name="isi1keterangan1"></textarea>
-                                        </div>
-                                        <div class="col">
-                                            <textarea class="form-control" name="isi1keterangan2"></textarea>
-                                        </div>
-                                        <div class="col">
-                                            <textarea class="form-control" name="isi1keterangan3"></textarea>
-                                        </div>
-                                    </div><br>
-                                    <div class="row" align="left">
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <input type="date" class="form-control" name="isi1tglimposisi1">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <input type="date" class="form-control" name="isi1tglimposisi2">
-                                        </div>
-                                        <div class="col-md-4">
+                                            <input type="date" class="form-control" name="isi1tglimposisi1"><br>
+                                            <input type="date" class="form-control" name="isi1tglimposisi2"><br>
                                             <input type="date" class="form-control" name="isi1tglimposisi3">
                                         </div>
                                     </div>
@@ -601,7 +553,7 @@
                                             <label class="form-label">Rincian Imposisi</label>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row" align="center">
                                         <div class="col">
                                             <label class="form-label">Plate</label>
                                             <input type="number" class="form-control" name="isi2plat1"><br>
@@ -742,20 +694,13 @@
                                                     <label class="form-label">Rincian Imposisi</label>
                                                 </div>
                                             </div><br>
-                                            <div class="row">
-                                                <div class="col" align="center">
+                                            <div class="row" align="center">
+                                                <div class="col">
                                                     <label class="form-label">Plate</label>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="number" class="form-control" name="isi3plat1">
-                                                </div>
-                                                <div class="col">
-                                                    <input type="number" class="form-control" name="isi3plat2">
-                                                </div>
-                                                <div class="col">
+                                                    <input type="number" class="form-control" name="isi3plat1"><br>
+                                                    <input type="number" class="form-control" name="isi3plat2"><br>
                                                     <input type="number" class="form-control" name="isi3plat3">
                                                 </div>
-                                            </div><br>
 
                                                 <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
                                                 <!-- <div class="col">
@@ -774,55 +719,32 @@
                                                     <input class="form-control" name="isi3lbrcetak3" >
                                                 </div> -->
 
-                                            <div class="row">
-                                                <div class="col" align="center">
+                                                <div class="col">
                                                     <label class="form-label">Up</label>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="number" class="form-control" name="isi3up1">
-                                                </div>
-                                                <div class="col">
-                                                    <input type="number" class="form-control" name="isi3up2">
-                                                </div>
-                                                <div class="col">
+                                                    <input type="number" class="form-control" name="isi3up1"><br>
+                                                    <input type="number" class="form-control" name="isi3up2"><br>
                                                     <input type="number" class="form-control" name="isi3up3">
                                                 </div>
-                                            </div><br>
-                                            <div class="row">
-                                                <div class="col" align="center">
+                                                <div class="col">
                                                     <label class="form-label">Warna</label>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="number" class="form-control" name="isi3warna1">
-                                                </div>
-                                                <div class="col">
-                                                    <input type="number" class="form-control" name="isi3warna2">
-                                                </div>
-                                                <div class="col">
+                                                    <input type="number" class="form-control" name="isi3warna1"><br>
+                                                    <input type="number" class="form-control" name="isi3warna2"><br>
                                                     <input type="number" class="form-control" name="isi3warna3">
                                                 </div>
-                                            </div><br>
-                                            <div class="row">
-                                                <div class="col" align="center">
-                                                    <label class="form-label">Proses</label>
-                                                </div>
                                                 <div class="col">
+                                                    <label class="form-label">Proses</label>
                                                     <select name="isi3status1" class="form-select form-control">
                                                     <option value="-">-</option>
                                                         <option value="GP">GP</option>
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col" align="center">
+                                                    </select><br>
                                                     <select name="isi3status2" class="form-select form-control">
                                                     <option value="-">-</option>
                                                         <option value="GP">GP</option>
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col" align="center">
+                                                    </select><br>
                                                     <select name="isi3status3" class="form-select form-control">
                                                     <option value="-">-</option>
                                                         <option value="GP">GP</option>
@@ -830,34 +752,16 @@
                                                         <option value="BLG">BLG</option>
                                                     </select>
                                                 </div>
-                                            </div><br>
-                                            <div class="row">
-                                                <div class="col" align="center">
+                                                <div class="col">
                                                     <label class="form-label">Keterangan</label>
+                                                    <input type="text" class="form-control" name="isi3keterangan1"><br>
+                                                    <input type="text" class="form-control" name="isi3keterangan2"><br>
+                                                    <input type="text" class="form-control" name="isi3keterangan3">
                                                 </div>
-                                                <div class="col">
-                                                    <textarea class="form-control" name="isi3keterangan1"></textarea>
-                                                </div>
-                                                <div class="col">
-                                                    <textarea class="form-control" name="isi3keterangan2"></textarea>
-                                                </div>
-                                                <div class="col">
-                                                    <textarea class="form-control" name="isi3keterangan3"></textarea>
-                                                </div>
-                                            </div><br>
-                                            <div class="row">
                                                 <div class="col">
                                                     <label class="form-label">Tgl. Imposisi</label>
-                                                </div>
-                                            </div><br>
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <input type="date" class="form-control" name="isi2tglimposisi1">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <input type="date" class="form-control" name="isi2tglimposisi2">
-                                                </div>
-                                                <div class="col-md-4">
+                                                    <input type="date" class="form-control" name="isi2tglimposisi1"><br>
+                                                    <input type="date" class="form-control" name="isi2tglimposisi2"><br>
                                                     <input type="date" class="form-control" name="isi2tglimposisi3">
                                                 </div>
                                             </div>
@@ -871,13 +775,13 @@
             </form>
         </div>
     </div>
-    <!-- /.card-body
-    <!-- <div class="card-footer">
+    <!-- /.card-body -->
+     <!-- <div class="card-footer">
         Footer
     </div> -->
-    <!-- /.card-footer-->
+    <!-- /.card-footer
     </div>
-    <!-- /.card -->
+     /.card -->
 
 </section>
 <!-- /.content

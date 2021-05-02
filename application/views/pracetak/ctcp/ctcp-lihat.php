@@ -28,132 +28,153 @@
     </div>
     <div class="card-body">
         <div class="card-body">
-        <form action="<?=site_url('pracetak/ctcp/lihat_ctcp')?>" method="post">       
-            <div class="row">
-            <?php foreach($ctcp as $s => $row) {?>  
-                <div class="col-md-4">
-                    <br>Nomor SO
-                    <br><label class="form-label"><?=$row->nomor_so?></label>
+            <form action="<?=site_url('pracetak/ctcp/lihat_ctcp')?>" method="post">       
+                <div class="row">
+                <?php foreach($ctcp as $s => $row) {?>  
+                    <div class="col-md-4">
+                        <br>Nomor SO
+                        <br><label class="form-label"><?=$row->nomor_so?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Nama Pemesan
+                        <br><label class="form-label"><?=$row->nama_pemesan?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Halaman
+                        <br><label class="form-label"><?=$row->halaman?></label>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <br>Nama Pemesan
-                    <br><label class="form-label"><?=$row->nama_pemesan?></label>
+                <div class="row">
+                    <div class="col-md-4">
+                        <br>Tanggal Masuk
+                        <br><label class="form-label"><?=$row->tanggal_masuk?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Nama Orderan
+                        <br><label class="form-label"><?=$row->nama_orderan?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Oplag
+                        <br><label class="form-label"><?=$row->oplag?></label>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <br>Halaman
-                    <br><label class="form-label"><?=$row->halaman?></label>
+                <div class="row">
+                    <div class="col-md-4">
+                        <br>Deadline
+                        <br><label class="form-label"><?=$row->deadline?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Ukuran
+                        <br><label class="form-label"><?=$row->ukuran?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Finsihing Akhir
+                        <br><label class="form-label">Jahit Kawat</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <br>Tanggal Masuk
-                    <br><label class="form-label"><?=$row->tanggal_masuk?></label>
-                </div>
-                <div class="col-md-4">
-                    <br>Nama Orderan
-                    <br><label class="form-label"><?=$row->nama_orderan?></label>
-                </div>
-                <div class="col-md-4">
-                    <br>Oplag
-                    <br><label class="form-label"><?=$row->oplag?></label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <br>Deadline
-                    <br><label class="form-label"><?=$row->deadline?></label>
-                </div>
-                <div class="col-md-4">
-                    <br>Ukuran
-                    <br><label class="form-label"><?=$row->ukuran?></label>
-                </div>
-                <div class="col-md-4">
-                    <br>Finsihing Akhir
-                    <br><label class="form-label">Jahit Kawat</label>
-                </div>
-            </div>
-            <br><hr><br>
-            <div class="row">
-                <div class="col-md-3" align="center">
-                    <label class="form-label">Nama Operator</label>
-                </div>
-                <div class="col-md-3">
-                    <input type="text" class="form-control" name="namaoperator1" value="<?=$row->namaoperator1;?>" disabled>
-                </div>
-                <div class="col-md-3" align="center">
-                    <label class="form-label">Nama Operator</label>
-                </div>
-                <div class="col-md-3">
-                    <input type="text" class="form-control" name="namaoperator2" value="<?=$row->namaoperator2;?>" disabled>
-                </div>
-            </div><br>
-            <div class="row">
-                <div class="col-md-2">
-                    <label class="form-label">Total Plat Cover</label>
-                </div>
-                <div class="col-md-1">
-                    <input type="number" class="form-control" name="total_plat_cover" value="<?=$row->total_plat_cover;?>" disabled>
-                </div>
-                <div class="col-md-3" align="left">
-                    <div class="form-check">
+                <br><hr><br>
+                <div class="row">
+                    <div class="col-md-3" align="center">
+                        <label class="form-label">Nama Operator</label>
+                    </div>
+                    <div class="col-md-3">
+                        <?=$row->namaoperator1;?>
+                    </div>
+                    <div class="col-md-3" align="center">
+                        <label class="form-label">Nama Operator</label>
+                    </div>
+                    <div class="col-md-3">
+                        <?=$row->namaoperator2;?>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label class="form-label">Total Plat Cover<br>
+                        <label class="form-label">Total Plat Gagal Cover</label>
+                    </div>
+                    <div class="col-md-1">
+                        <?=$row->total_plat_cover?><br>
+                        <?=$row->total_plat_cover?>  <!-- TEMPAT UNTUK VARIABEL TOTAL PLAT GAGAL COVER -->
+
+                        <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN MENGGUNAKAN TAG LABEL -->
+                        <!-- <input type="number" class="form-control" name="total_plat_cover" value="<?=$row->total_plat_cover?>" required> -->
+                    </div>
+                    <div class="col-md-3" align="left">
+                        <div class="form-check">
+                            <input type="text" name="status_imposisi_cover" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_imposisi_cover" value="imposisi cover" disabled>
+                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>                            
+                        </div>
+
+                        <div class="form-check">
                             <input type="text" name="status_ctcp_cover" value="" hidden>
-                            <input class="form-check-input" type="checkbox" name="status_ctcp_cover" value="ctcp cover" <?php echo $row->ctcp_status == "ctcp cover" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
-                            <label class="form-check-label" for="flexCheckDefault">ctcp Cover</label><br>                            
+                            <input class="form-check-input" type="checkbox" name="status_ctcp_cover" value="ctcp cover">
+                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-2">
-                    <label class="form-label">Total Plat Isi</label>
-                </div>
-                <div class="col-md-1">
-                    <input type="number" class="form-control" name="total_plat_isi" value="<?=$row->total_plat_isi;?>" disabled>
-                </div>
-                <div class="col-md-3" align="left">
-                    <div class="form-check">                        
+                    <div class="col-md-2">
+                        <label class="form-label">Total Plat Isi<br>
+                        <label class="form-label">Total Plat Gagal Isi</label>
+                    </div>
+                    <div class="col-md-1">
+                        <?=$row->total_plat_isi?><br>
+                        <?=$row->total_plat_isi?>  <!-- TEMPAT UNTUK VARIABEL TOTAL PLAT GAGAL ISI -->
+                        
+
+                        <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN MENGGUNAKAN TAG LABEL -->
+                        <!-- <input type="number" class="form-control" name="total_plat_isi" value="<?=$row->total_plat_isi?>"> -->
+                    </div>
+                    <div class="col-md-3" align="left">
+                        <div class="form-check">
+                            <input type="text" name="status_imposisi_isi" value="" hidden>
+                            <input class="form-check-input" type="checkbox" name="status_imposisi_isi" value="imposisi isi" disabled>
+                            <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label><br>                            
+                        </div>
+                        
+                        <div class="form-check">
                             <input type="text" name="status_ctcp_isi" value="" hidden>
-                            <input class="form-check-input" type="checkbox" name="status_ctcp_isi" value="ctcp isi" <?php echo $row->ctcp_status == "ctcp isi" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
-                            <label class="form-check-label" for="flexCheckDefault">ctcp isi</label><br>
+                            <input class="form-check-input" type="checkbox" name="status_ctcp_isi" value="ctcp isi">
+                            <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label><br>
+                        </div>
                     </div>
-                </div>
-            </div><br>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card border bg-success">
+                </div><br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card border bg-success">
+                            <div class="card-header text-center">
+                                CTCP COVER 1
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card border bg-info">
                         <div class="card-header text-center">
-                            CTCP COVER 1
+                            CTCP ISI 1
+                        </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card border bg-info">
-                    <div class="card-header text-center">
-                        CTCP ISI 1
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
+                <div class="row">
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <div class="row">
-                                <div class="col-md-3" align="center">
+                                <div class="col" align="center">
                                     <label class="form-label">Mesin</label>
                                 </div>
-                                <div class="col-md-3">
-                                    <select name="cover1mesin1" value="<?= $row->cover1mesin1; ?>" class="form-select form-control" disabled>
-                                    <option value="<?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?>"><?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?>   </option>
-                                        <option value="102">102</option>
-                                        <option value="74">74</option>
-                                        <option value="72">72</option>
-                                        <option value="Tokko">Tokko</option>
-                                        <option value="-">-</option>
-
-                                    </select>
+                                <div class="col">
+                                    <?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?>
                                 </div>
-                                <div class="col-md-3" align="center">
+                                <div class="col" align="center">
                                     <label class="form-label">Plate</label>
                                 </div>
-                                <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplatecover1" value="<?= $row->jumlahplatecover1; ?>" disabled>
+                                <div class="col">
+                                    <?= $row->jumlahplatecover1; ?>
+                                </div>
+                                <div class="col" align="center">
+                                    <label class="form-label">Plate Gagal</label>
+                                </div>
+                                <div class="col">
+                                    <input type="number" class="form-control" name="jumlahplategagalcover1">
                                 </div>
                             </div><br>
                             <div class="row">
@@ -165,67 +186,46 @@
                                     </div>
                                     <div class="row" align="center">
                                         <div class="col">
-                                            <label class="form-label">Plate</label>
-                                            <input type="number" class="form-control" name="cover1plat1" value="<?= $row->cover1plat1; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="cover1plat2" value="<?= $row->cover1plat2; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="cover1plat3" value="<?= $row->cover1plat3; ?>" disabled>
+                                            <label class="form-label">Plate</label><br><br>
+                                            <?= $row->cover1plat1; ?><br><br>
+                                            <?= $row->cover1plat2; ?><br><br>
+                                            <?= $row->cover1plat3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Set</label>
-                                            <input class="form-control" name="cover1set1" value="<?= $row->cover1set1; ?>"  disabled><br>
-                                            <input class="form-control" name="cover1set2" value="<?= $row->cover1set2; ?>" disabled><br>
-                                            <input class="form-control" name="cover1set3" value="<?= $row->cover1set3; ?>"  disabled>
+                                            <label class="form-label">Set</label><br><br>
+                                            <?= $row->cover1set1; ?><br><br>
+                                            <?= $row->cover1set2; ?><br><br>
+                                            <?= $row->cover1set3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Lbr.Cetak</label>
-                                            <input class="form-control" name="cover1lbrcetak1" value="<?= $row->cover1lbrcetak1; ?>"  disabled><br>
-                                            <input class="form-control" name="cover1lbrcetak2" value="<?= $row->cover1lbrcetak2; ?>"  disabled><br>
-                                            <input class="form-control" name="cover1lbrcetak3" value="<?= $row->cover1lbrcetak3; ?>"  disabled>
+                                            <label class="form-label">Lbr.Cetak</label><br><br>
+                                            <?= $row->cover1lbrcetak1; ?><br><br>
+                                            <?= $row->cover1lbrcetak2; ?><br><br>
+                                            <?= $row->cover1lbrcetak3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Up</label>
-                                            <input type="number" class="form-control" name="cover1up1" value="<?= $row->cover1up1; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="cover1up2" value="<?= $row->cover1up2; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="cover1up3" value="<?= $row->cover1up3; ?>" disabled>
+                                            <label class="form-label">Up</label><br><br>
+                                            <?= $row->cover1up1; ?><br><br>
+                                            <?= $row->cover1up2; ?><br><br>
+                                            <?= $row->cover1up3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Warna</label>
-                                            <input type="number" class="form-control" name="cover1warna1" value="<?= $row->cover1warna1; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="cover1warna2" value="<?= $row->cover1warna2; ?>" disabled> <br>
-                                            <input type="number" class="form-control" name="cover1warna3" value="<?= $row->cover1warna3; ?>" disabled>
+                                            <label class="form-label">Warna</label><br><br>
+                                            <?= $row->cover1warna1; ?><br><br>
+                                            <?= $row->cover1warna2; ?><br><br>
+                                            <?= $row->cover1warna3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Status</label>
-                                            <select name="cover1status1" value="<?= $row->cover1status1; ?>" class="form-select form-control" disabled>
-                                            <option value="<?php  echo $row->cover1status1 != "-" ?   $row->cover1status1  : '-' ?>"><?php  echo $row->cover1status1 != "-" ?   $row->cover1status1  : '-' ?>   </option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                                <option value="-">-</option>
-
-                                            </select><br>
-                                            <select name="cover1status2" value="<?= $row->cover1status2; ?>" class="form-select form-control" disabled>
-                                            <option value="<?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?>"><?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?>   </option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                                <option value="-">-</option>
-
-                                            </select><br>
-                                            <select name="cover1status3" value="<?= $row->cover1status3; ?>" class="form-select form-control" disabled>
-                                            <option value="<?php  echo $row->cover1status3 != "-" ?   $row->cover1status3  : '-' ?>"><?php  echo $row->cover1status3 != "-" ?   $row->cover1status3  : '-' ?>   </option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                                <option value="-">-</option>
-
-                                            </select>
+                                            <label class="form-label">Proses</label><br><br>
+                                            <?php  echo $row->cover1status1 != "-" ?   $row->cover1status1  : '-' ?><br><br>
+                                            <?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?><br><br>
+                                            <?php  echo $row->cover1status3 != "-" ?   $row->cover1status3  : '-' ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control" name="cover1keterangan1" value="<?= $row->cover1keterangan1; ?>" disabled><br>
-                                            <input type="text" class="form-control" name="cover1keterangan2" value="<?= $row->cover1keterangan2; ?>" disabled><br>
-                                            <input type="text" class="form-control" name="cover1keterangan3" value="<?= $row->cover1keterangan3; ?>" disabled>
+                                            <label class="form-label">Keterangan</label><br><br>
+                                            <?= $row->cover1keterangan1; ?><br><br>
+                                            <?= $row->cover1keterangan2; ?><br><br>
+                                            <?= $row->cover1keterangan3; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -235,97 +235,74 @@
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <div class="row">
-                                <div class="col-md-3" align="center">
+                                <div class="col-md-2" align="center">
                                     <label class="form-label">Mesin</label>
                                 </div>
-                                <div class="col-md-3">
-                                    <select name="isi1mesin1" value="<?= $row->isi1mesin1; ?>" class="form-select form-control" disabled>
-                                    <option value="<?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?>"><?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?>   </option>
-                                        <option value="102">102</option>
-                                        <option value="74">74</option>
-                                        <option value="72">72</option>
-                                        <option value="Tokko">Tokko</option>
-                                        <option value="-">-</option>
-
-                                    </select>
+                                <div class="col-md-2">
+                                    <?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?>
                                 </div>
-                                <div class="col-md-3" align="center">
+                                <div class="col-md-2" align="center">
                                     <label class="form-label">Plate</label>
                                 </div>
-                                <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplateisi1" value="<?= $row->jumlahplateisi1; ?>" disabled>
+                                <div class="col-md-2">
+                                    <?= $row->jumlahplateisi1; ?>
+                                </div>
+                                <div class="col-md-2" align="center">
+                                    <label class="form-label">Plate Gagal</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="number" class="form-control" name="jumlahplategagalisi1">
                                 </div>
                             </div><br>
-                            <div class="row" align="center">
+                            <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label class="form-label">Rincian Ctcp</label>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row" align="center">
                                         <div class="col">
-                                            <label class="form-label">Plate</label>
-                                            <input type="number" class="form-control" name="isi1plat1" value="<?= $row->isi1plat1; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="isi1plat2" value="<?= $row->isi1plat2; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="isi1plat3" value="<?= $row->isi1plat3; ?>" disabled>
+                                            <label class="form-label">Plate</label><br><br>
+                                            <?= $row->isi1plat1; ?><br><br>
+                                            <?= $row->isi1plat2; ?><br><br>
+                                            <?= $row->isi1plat3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Set</label>
-                                            <input class="form-control" name="isi1set1" value="<?= $row->isi1set1; ?>"  disabled><br>
-                                            <input class="form-control" name="isi1set2" value="<?= $row->isi1set2; ?>"  disabled><br>
-                                            <input class="form-control" name="isi1set3" value="<?= $row->isi1set3; ?>"  disabled>
+                                            <label class="form-label">Set</label><br><br>
+                                            <?= $row->isi1set1; ?><br><br>
+                                            <?= $row->isi1set2; ?><br><br>
+                                            <?= $row->isi1set3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Lbr.Cetak</label>
-                                            <input class="form-control" name="isi1lbrcetak1" value="<?= $row->isi1lbrcetak1; ?>"  disabled><br>
-                                            <input class="form-control" name="isi1lbrcetak2" value="<?= $row->isi1lbrcetak2; ?>"  disabled><br>
-                                            <input class="form-control" name="isi1lbrcetak3" value="<?= $row->isi1lbrcetak3; ?>"  disabled>
+                                            <label class="form-label">Lbr.Cetak</label><br><br>
+                                            <?= $row->isi1lbrcetak1; ?><br><br>
+                                            <?= $row->isi1lbrcetak2; ?><br><br>
+                                            <?= $row->isi1lbrcetak3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Up</label>
-                                            <input type="number" class="form-control" name="isi1up1" value="<?= $row->isi1up1; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="isi1up2" value="<?= $row->isi1up2; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="isi1up3" value="<?= $row->isi1up3; ?>" disabled>
+                                            <label class="form-label">Up</label><br><br>
+                                            <?= $row->isi1up1; ?><br><br>
+                                            <?= $row->isi1up2; ?><br><br>
+                                            <?= $row->isi1up3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Warna</label>
-                                            <input type="number" class="form-control" name="isi1warna1" value="<?= $row->isi1warna1; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="isi1warna2" value="<?= $row->isi1warna2; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="isi1warna3" value="<?= $row->isi1warna3; ?>" disabled>
+                                            <label class="form-label">Warna</label><br><br>
+                                            <?= $row->isi1warna1; ?><br><br>
+                                            <?= $row->isi1warna2; ?><br><br>
+                                            <?= $row->isi1warna3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Status</label>
-                                            <select name="isi1status1" value="<?= $row->isi1status1; ?>" class="form-select form-control" disabled>
-                                            <option value="<?php  echo $row->isi1status1 != "-" ?   $row->isi1status1  : '-' ?>"><?php  echo $row->isi1status1 != "-" ?   $row->isi1status1  : '-' ?>   </option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                                <option value="-">-</option>
-
-                                            </select><br>
-                                            <select name="isi1status2" value="<?= $row->isi1status2; ?>" class="form-select form-control" disabled>
-                                            <option value="<?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?>"><?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?>   </option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                                <option value="-">-</option>
-
-                                            </select><br>
-                                            <select name="isi1status3" value="<?= $row->isi1status3; ?>" class="form-select form-control" disabled>
-                                            <option value="<?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?>"><?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?>   </option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                                <option value="-">-</option>
-
-                                            </select>
+                                            <label class="form-label">Proses</label><br><br>
+                                            <?php  echo $row->isi1status1 != "-" ?   $row->isi1status1  : '-' ?><br><br>
+                                            <?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?><br><br>
+                                            <?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control" name="isi1keterangan1" value="<?= $row->isi1keterangan1; ?>" disabled><br>
-                                            <input type="text" class="form-control" name="isi1keterangan2" value="<?= $row->isi1keterangan2; ?>" disabled><br>
-                                            <input type="text" class="form-control" name="isi1keterangan3" value="<?= $row->isi1keterangan3; ?>" disabled>
+                                            <label class="form-label">Keterangan</label><br><br>
+                                            <?= $row->isi1keterangan1; ?><br><br>
+                                            <?= $row->isi1keterangan2; ?><br><br>
+                                            <?= $row->isi1keterangan3; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -353,25 +330,23 @@
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <div class="row">
-                                <div class="col-md-3" align="center">
+                                <div class="col-md-2" align="center">
                                     <label class="form-label">Mesin</label>
                                 </div>
-                                <div class="col-md-3">
-                                    <select name="cover2mesin1" value="<?= $row->cover2mesin1; ?>" class="form-select form-control" disabled>
-                                    <option value="<?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?>"><?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?>   </option>
-                                        <option value="102">102</option>
-                                        <option value="74">74</option>
-                                        <option value="72">72</option>
-                                        <option value="Tokko">Tokko</option>
-                                        <option value="-">-</option>
-
-                                    </select>
+                                <div class="col-md-2">
+                                    <?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?>
                                 </div>
-                                <div class="col-md-3" align="center">
+                                <div class="col-md-2" align="center">
                                     <label class="form-label">Plate</label>
                                 </div>
-                                <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplatecover2" value="<?= $row->jumlahplatecover2; ?>" disabled>
+                                <div class="col-md-2">
+                                    <?= $row->jumlahplatecover2; ?>
+                                </div>
+                                <div class="col-md-2" align="center">
+                                    <label class="form-label">Plate Gagal</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="number" class="form-control" name="jumlahplategagalcover2">
                                 </div>
                             </div><br>
                             <div class="row">
@@ -383,67 +358,46 @@
                                     </div>
                                     <div class="row" align="center">
                                         <div class="col">
-                                            <label class="form-label">Plate</label>
-                                            <input type="number" class="form-control" name="cover2plat1" value="<?= $row->cover2plat1; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="cover2plat2" value="<?= $row->cover2plat2; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="cover2plat3" value="<?= $row->cover2plat3; ?>" disabled>
+                                            <label class="form-label">Plate</label><br><br>
+                                            <?= $row->cover2plat1; ?><br><br>
+                                            <?= $row->cover2plat2; ?><br><br>
+                                            <?= $row->cover2plat3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Set</label>
-                                            <input class="form-control" name="cover2set1" value="<?= $row->cover2set1; ?>"  disabled><br>
-                                            <input class="form-control" name="cover2set2" value="<?= $row->cover2set2; ?>" disabled><br>
-                                            <input class="form-control" name="cover2set3"  value="<?= $row->cover2set3; ?>" disabled>
+                                            <label class="form-label">Set</label><br><br>
+                                            <?= $row->cover2set1; ?><br><br>
+                                            <?= $row->cover2set2; ?><br><br>
+                                            <?= $row->cover2set3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Lbr.Cetak</label>
-                                            <input class="form-control" name="cover2lbrcetak1" value="<?= $row->cover2lbrcetak1; ?>" disabled><br>
-                                            <input class="form-control" name="cover2lbrcetak2" value="<?= $row->cover2lbrcetak2; ?>" disabled><br>
-                                            <input class="form-control" name="cover2lbrcetak3" value="<?= $row->cover2lbrcetak3; ?>" disabled>
+                                            <label class="form-label">Lbr.Cetak</label><br><br>
+                                            <?= $row->cover2lbrcetak1; ?><br><br>
+                                            <?= $row->cover2lbrcetak2; ?><br><br>
+                                            <?= $row->cover2lbrcetak3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Up</label>
-                                            <input type="number" class="form-control" name="cover2up1" value="<?= $row->cover2up1; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="cover2up2" value="<?= $row->cover2up2; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="cover2up3" value="<?= $row->cover2up3; ?>" disabled>
+                                            <label class="form-label">Up</label><br><br>
+                                            <?= $row->cover2up1; ?><br><br>
+                                            <?= $row->cover2up2; ?><br><br>
+                                            <?= $row->cover2up3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Warna</label>
-                                            <input type="number" class="form-control" name="cover2warna1" value="<?= $row->cover2warna1; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="cover2warna2" value="<?= $row->cover2warna2; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="cover2warna3" value="<?= $row->cover2warna3; ?>" disabled>
+                                            <label class="form-label">Warna</label><br><br>
+                                            <?= $row->cover2warna1; ?><br><br>
+                                            <?= $row->cover2warna2; ?><br><br>
+                                            <?= $row->cover2warna3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Status</label>
-                                            <select name="cover2status1" value="<?= $row->cover2status1; ?>" class="form-select form-control" disabled>
-                                            <option value="<?php  echo $row->cover2status1 != "-" ?   $row->cover2status1  : '-' ?>"><?php  echo $row->cover2status1 != "-" ?   $row->cover2status1  : '-' ?>   </option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                                <option value="-">-</option>
-
-                                            </select><br>
-                                            <select name="cover2status2" value="<?= $row->cover2status2; ?>" class="form-select form-control" disabled>
-                                            <option value="<?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?>"><?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?>   </option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                                <option value="-">-</option>
-
-                                            </select><br>
-                                            <select name="cover2status3" value="<?= $row->cover2status3; ?>" class="form-select form-control" disabled>
-                                            <option value="<?php  echo $row->cover2status3 != "-" ?   $row->cover2status3  : '-' ?>"><?php  echo $row->cover2status3 != "-" ?   $row->cover2status3  : '-' ?>   </option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                                <option value="-">-</option>
-
-                                            </select>
+                                            <label class="form-label">Proses</label><br><br>
+                                            <?php  echo $row->cover2status1 != "-" ?   $row->cover2status1  : '-' ?><br><br>
+                                            <?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?><br><br>
+                                            <?php  echo $row->cover2status3 != "-" ?   $row->cover2status3  : '-' ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control" name="cover2keterangan1" value="<?= $row->cover2keterangan1; ?>" disabled><br>
-                                            <input type="text" class="form-control" name="cover2keterangan2" value="<?= $row->cover2keterangan2; ?>" disabled><br>
-                                            <input type="text" class="form-control" name="cover2keterangan3" value="<?= $row->cover2keterangan3; ?>" disabled>
+                                            <label class="form-label">Keterangan</label><br><br>
+                                            <?= $row->cover2keterangan1; ?><br><br>
+                                            <?= $row->cover2keterangan2; ?><br><br>
+                                            <?= $row->cover2keterangan3; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -453,286 +407,212 @@
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <div class="row">
-                                <div class="col-md-3" align="center">
+                                <div class="col-md-2" align="center">
                                     <label class="form-label">Mesin</label>
                                 </div>
-                                <div class="col-md-3">
-                                    <select name="isi2mesin1" value="<?= $row->isi2mesin1; ?>" class="form-select form-control" disabled>
-                                    <option value="<?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?>"><?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?>   </option>
-                                        <option value="102">102</option>
-                                        <option value="74">74</option>
-                                        <option value="72">72</option>
-                                        <option value="Tokko">Tokko</option>
-                                        <option value="-">-</option>
-
-                                    </select>
+                                <div class="col-md-2">
+                                    <?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?>
                                 </div>
-                                <div class="col-md-3" align="center">
+                                <div class="col-md-2" align="center">
                                     <label class="form-label">Plate</label>
                                 </div>
-                                <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplateisi2" value="<?= $row->jumlahplateisi2; ?>" disabled>
+                                <div class="col-md-2">
+                                    <?= $row->jumlahplateisi2; ?>
+                                </div>
+                                <div class="col-md-2" align="center">
+                                    <label class="form-label">Plate Gagal</label>
+                                </div>
+                                <div class="col-md-2">
+                                    <input type="number" class="form-control" name="jumlahplategagalisi2">
                                 </div>
                             </div><br>
-                            <div class="row" align="center">
+                            <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label class="form-label">Rincian Ctcp</label>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row" align="center">
                                         <div class="col">
-                                            <label class="form-label">Plate</label>
-                                            <input type="number" class="form-control" name="isi2plat1" value="<?= $row->isi2plat1; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="isi2plat2" value="<?= $row->isi2plat2; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="isi2plat3" value="<?= $row->isi2plat3; ?>" disabled>
+                                            <label class="form-label">Plate</label><br><br>
+                                            <?= $row->isi2plat1; ?><br><br>
+                                            <?= $row->isi2plat2; ?><br><br>
+                                            <?= $row->isi2plat3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Set</label>
-                                            <input class="form-control" name="isi2set1" value="<?= $row->isi2set1; ?>" disabled ><br>
-                                            <input class="form-control" name="isi2set2" value="<?= $row->isi2set2; ?>" disabled ><br>
-                                            <input class="form-control" name="isi2set3" value="<?= $row->isi2set3; ?>" disabled >
+                                            <label class="form-label">Set</label><br><br>
+                                            <?= $row->isi2set1; ?><br><br>
+                                            <?= $row->isi2set2; ?><br><br>
+                                            <?= $row->isi2set3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Lbr.Cetak</label>
-                                            <input class="form-control" name="isi2lbrcetak1" value="<?= $row->isi2lbrcetak1; ?>" disabled ><br>
-                                            <input class="form-control" name="isi2lbrcetak2" value="<?= $row->isi2lbrcetak2; ?>" disabled ><br>
-                                            <input class="form-control" name="isi2lbrcetak3" value="<?= $row->isi2lbrcetak3; ?>" disabled >
+                                            <label class="form-label">Lbr.Cetak</label><br><br>
+                                            <?= $row->isi2lbrcetak1; ?><br><br>
+                                            <?= $row->isi2lbrcetak2; ?><br><br>
+                                            <?= $row->isi2lbrcetak3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Up</label>
-                                            <input type="number" class="form-control" name="isi2up1" value="<?= $row->isi2up1; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="isi2up2" value="<?= $row->isi2up2; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="isi2up3" value="<?= $row->isi2up3; ?>" disabled>
+                                            <label class="form-label">Up</label><br><br>
+                                            <?= $row->isi2up1; ?><br><br>
+                                            <?= $row->isi2up2; ?><br><br>
+                                            <?= $row->isi2up3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Warna</label>
-                                            <input type="number" class="form-control" name="isi2warna1" value="<?= $row->isi2warna1; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="isi2warna2" value="<?= $row->isi2warna2; ?>" disabled><br>
-                                            <input type="number" class="form-control" name="isi2warna3" value="<?= $row->isi2warna3; ?>" disabled>
+                                            <label class="form-label">Warna</label><br><br>
+                                            <?= $row->isi2warna1; ?><br><br>
+                                            <?= $row->isi2warna2; ?><br><br>
+                                            <?= $row->isi2warna3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Status</label>
-                                            <select name="isi2status1" value="<?= $row->isi2status1; ?>" class="form-select form-control" disabled>
-                                            <option value="<?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?>"><?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?>   </option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                                <option value="-">-</option>
-
-                                            </select><br>
-                                            <select name="isi2status2" value="<?= $row->isi2status2; ?>" class="form-select form-control" disabled>
-                                            <option value="<?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?>"><?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?>   </option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                                <option value="-">-</option>
-
-                                            </select><br>
-                                            <select name="isi2status3" value="<?= $row->isi2status3; ?>" class="form-select form-control" disabled>
-                                            <option value="<?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>"><?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>   </option>
-                                                <option value="GP">GP</option>
-                                                <option value="BLK">BLK</option>
-                                                <option value="BLG">BLG</option>
-                                                <option value="-">-</option>
-
-                                            </select>
+                                            <label class="form-label">Proses</label><br><br>
+                                            <?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?><br><br>
+                                            <?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?><br><br>
+                                            <?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Keterangan</label>
-                                            <input type="text" class="form-control" name="isi2keterangan1" value="<?= $row->isi2keterangan1; ?>" disabled><br>
-                                            <input type="text" class="form-control" name="isi2keterangan2" value="<?= $row->isi2keterangan2; ?>" disabled><br>
-                                            <input type="text" class="form-control" name="isi2keterangan3" value="<?= $row->isi2keterangan3; ?>" disabled>
+                                            <?= $row->isi2keterangan1; ?><br><br>
+                                            <?= $row->isi2keterangan2; ?><br><br>
+                                            <?= $row->isi2keterangan3; ?>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                </div>                
+                    </div>
+                </div>
                 <br>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col">
-                            <div class="card-body p-3 mb-2 bg-light text-dark">
-                                <br><br><div class="row">
-                                    <div class="col-md-4">
-                                        <label class="form-label">Tanggal Out CTCP Cover</label>
-                                        <br><input type="date" class="form-control" name="tanggal_out_ctcp_cover" value="<?=$row->tanggal_out_ctcp_cover;?>" disabled>
-                                        <br><label class="form-label">Tanggal Out CTCP Isi</label>
-                                        <div class="row">
-                                            <div class="col-md-3">Ke 1 </div>
-                                            <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" value="<?=$row->tanggal_out_ctcp_isi1;?>" disabled></div>
-                                        </div><br>
-                                        <div class="row">
-                                            <div class="col-md-3">Ke 2 </div>
-                                            <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2" value="<?=$row->tanggal_out_ctcp_isi2;?>" disabled></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card-body p-3 mb-2 bg-light text-dark">
+                                    <br><br>                                    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="form-label">Tanggal Out CTCP Cover</label>
+                                            <br>
+                                            <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
+                                            <input type="date" class="form-control" name="tanggal_out_ctcp_cover" required>
+                                            <br><label class="form-label">Tanggal Out CTCP Isi</label>
+                                            <div class="row">
+                                                <div class="col-md-3">Ke 1 </div>
+                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" required></div>
+                                            </div><br>
+                                            <div class="row">
+                                                <div class="col-md-3">Ke 2 </div>
+                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" required></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea name="catatan_imposisi" value="<?=$row->catatan_imposisi?>" class="form-control" placeholder="catatan" style="height: 240px;"></textarea>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="row" align="center">
-                                            <div class="col-md-12">
-                                                <label class="form-label">Plate Gagal</label>
-                                            </div>
-                                        </div><br>
-                                        <div class="row" align="center">
-                                            <div class="col-md-6">
-                                                Plate
-                                            </div>
-                                            <div class="col-md-6">
-                                                Mesin
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input type="number" class="form-control" name="plate_gagal1" value="<?=$row->plate_gagal1;?>" disabled>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input type="number" class="form-control" name="mesin_gagal1" value="<?=$row->mesin_gagal1;?>" disabled>
-                                            </div>
-                                        </div><br>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input type="number" class="form-control" name="plate_gagal2" value="<?=$row->plate_gagal2;?>" disabled>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input type="number" class="form-control" name="mesin_gagal2" value="<?=$row->mesin_gagal2;?>" disabled>
-                                            </div>
-                                        </div><br>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <input type="number" class="form-control" name="plate_gagal3" value="<?=$row->plate_gagal3;?>" disabled>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input type="number" class="form-control" name="mesin_gagal3" value="<?=$row->mesin_gagal3;?>" disabled>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <textarea name="catatan_imposisi" class="form-control" placeholder="catatan" value="<?=$row->catatan_imposisi;?>" style="height: 240px;" disabled></textarea>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-6" align="left">
+                                <a href="<?=site_url()?>pracetak/Ctcp" class="btn btn-default">Kembali</a>
+                            </div>
+                            <div class="col-md-6" align="right">
+                                <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Print</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card border bg-info">
+                                    <div class="card-header text-center">
+                                        CTCP ISI 3
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-md-6" align="left">
-                            <a href="<?=site_url()?>pracetak/Ctcp" class="btn btn-default">Kembali</a>
-                        </div>
-                        <div class="col-md-6" align="right">
-                            <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Print</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col">
-                            <div class="card border bg-info">
-                                <div class="card-header text-center">
-                                    CTCP ISI 3
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card-body p-3 mb-2 bg-light text-dark">
-                                <div class="row">
-                                    <div class="col-md-3" align="center">
-                                        <label class="form-label">Mesin</label>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input type="number" class="form-control" name="isi3mesin1" value="<?=$row->isi3mesin1;?>" disabled>
-                                    </div>
-                                    <div class="col-md-3" align="center">
-                                        <label class="form-label">Plate</label>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <input type="number" class="form-control" name="jumlahplateisi3" value="<?=$row->jumlahplateisi3;?>" disabled>
-                                    </div>
-                                </div><br>
-                                <div class="row">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card-body p-3 mb-2 bg-light text-dark">
+                                    <div class="row">
+                                        <div class="col-md-2" align="center">
+                                            <label class="form-label">Mesin</label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <?php  echo $row->isi3mesin1 != "-" ?   $row->isi3mesin1  : '-' ?>
+                                        </div>
+                                        <div class="col-md-2" align="center">
+                                            <label class="form-label">Plate</label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <?= $row->jumlahplateisi3; ?>
+                                        </div>
+                                        <div class="col-md-2" align="center">
+                                            <label class="form-label">Plate Gagal</label>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <input type="number" class="form-control" name="jumlahplategagalisi3">
+                                        </div>
+                                    </div><br>
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <label class="form-label">Rincian Imposisi</label>
+                                                <label class="form-label">Rincian Ctcp</label>
                                             </div>
                                         </div>
                                         <div class="row" align="center">
                                                 <div class="col">
-                                                    <label class="form-label">Plate</label>
-                                                    <input type="number" class="form-control" name="isi3plat1" value="<?= $row->isi3plat1; ?>" disabled><br>
-                                                    <input type="number" class="form-control" name="isi3plat2" value="<?= $row->isi3plat2; ?>" disabled><br>
-                                                    <input type="number" class="form-control" name="isi3plat3" value="<?= $row->isi3plat3; ?>" disabled>
+                                                    <label class="form-label">Plate</label><br><br>
+                                                    <?= $row->isi3plat1; ?><br><br>
+                                                    <?= $row->isi3plat2; ?><br><br>
+                                                    <?= $row->isi3plat3; ?>
                                                 </div>
                                                 <div class="col">
-                                                    <label class="form-label">Set</label>
-                                                    <input class="form-control" name="isi3set1" value="<?= $row->isi3set1; ?>" disabled ><br>
-                                                    <input class="form-control" name="isi3set2" value="<?= $row->isi3set2; ?>" disabled ><br>
-                                                    <input class="form-control" name="isi3set3" value="<?= $row->isi3set3; ?>" disabled >
+                                                    <label class="form-label">Set</label><br><br>
+                                                    <?= $row->isi3set1; ?><br><br>
+                                                    <?= $row->isi3set2; ?><br><br>
+                                                    <?= $row->isi3set3; ?>
                                                 </div>
                                                 <div class="col">
-                                                    <label class="form-label">Lbr.Cetak</label>
-                                                    <input class="form-control" name="isi3lbrcetak1" value="<?= $row->isi3lbrcetak1; ?>" disabled ><br>
-                                                    <input class="form-control" name="isi3lbrcetak2" value="<?= $row->isi3lbrcetak2; ?>" disabled ><br>
-                                                    <input class="form-control" name="isi3lbrcetak3" value="<?= $row->isi3lbrcetak3; ?>" disabled >
+                                                    <label class="form-label">Lbr.Cetak</label><br><br>
+                                                    <?= $row->isi3lbrcetak1; ?><br><br>
+                                                    <?= $row->isi3lbrcetak2; ?><br><br><br>
+                                                    <?= $row->isi3lbrcetak3; ?>
                                                 </div>
                                                 <div class="col">
-                                                    <label class="form-label">Up</label>
-                                                    <input type="number" class="form-control" name="isi3up1" value="<?= $row->isi3up1; ?>" disabled><br>
-                                                    <input type="number" class="form-control" name="isi3up2" value="<?= $row->isi3up2; ?>" disabled><br>
-                                                    <input type="number" class="form-control" name="isi3up3" value="<?= $row->isi3up3; ?>" disabled>
+                                                    <label class="form-label">Up</label><br><br>
+                                                    <?= $row->isi3up1; ?><br><br>
+                                                    <?= $row->isi3up2; ?><br><br>
+                                                    <?= $row->isi3up3; ?>
                                                 </div>
                                                 <div class="col">
-                                                    <label class="form-label">Warna</label>
-                                                    <input type="number" class="form-control" name="isi3warna1" value="<?= $row->isi3warna1; ?>" disabled><br>
-                                                    <input type="number" class="form-control" name="isi3warna2" value="<?= $row->isi3warna2; ?>" disabled><br>
-                                                    <input type="number" class="form-control" name="isi3warna3" value="<?= $row->isi3warna3; ?>" disabled>
+                                                    <label class="form-label">Warna</label><br><br>
+                                                    <?= $row->isi3warna1; ?><br><br>
+                                                    <?= $row->isi3warna2; ?><br><br>
+                                                    <?= $row->isi3warna3; ?>
                                                 </div>
                                                 <div class="col">
-                                                    <label class="form-label">Status</label>
-                                                    <select name="isi3status1" value="<?= $row->isi3status1; ?>" class="form-select form-control" disabled>
-                                                    <option value="<?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?>"><?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?>   </option>
-                                                        <option value="GP">GP</option>
-                                                        <option value="BLK">BLK</option>
-                                                        <option value="BLG">BLG</option>
-                                                        <option value="-">-</option>
-
-                                                    </select><br>
-                                                    <select name="isi3status2" value="<?= $row->isi3status2; ?>" class="form-select form-control" disabled>
-                                                    <option value="<?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?>"><?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?>   </option>
-                                                        <option value="GP">GP</option>
-                                                        <option value="BLK">BLK</option>
-                                                        <option value="BLG">BLG</option>
-                                                        <option value="-">-</option>
-
-                                                    </select><br>
-                                                    <select name="isi3status3" value="<?= $row->isi3status3; ?>" class="form-select form-control" disabled>
-                                                    <option value="<?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?>"><?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?>   </option>
-                                                        <option value="GP">GP</option>
-                                                        <option value="BLK">BLK</option>
-                                                        <option value="BLG">BLG</option>
-                                                        <option value="-">-</option>
-
-                                                    </select>
+                                                    <label class="form-label">Proses</label><br><br>
+                                                    <?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?><br><br>
+                                                    <?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?><br><br>
+                                                    <?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?>
                                                 </div>
                                                 <div class="col">
-                                                    <label class="form-label">Keterangan</label>
-                                                    <input type="text" class="form-control" name="isi3keterangan1" value="<?= $row->isi3keterangan1; ?>" disabled><br>
-                                                    <input type="text" class="form-control" name="isi3keterangan2" value="<?= $row->isi3keterangan2; ?>" disabled><br>
-                                                    <input type="text" class="form-control" name="isi3keterangan3" value="<?= $row->isi3keterangan3; ?>" disabled   >
+                                                    <label class="form-label">Keterangan</label><br><br>
+                                                    <?= $row->isi3keterangan1; ?><br><br>
+                                                    <?= $row->isi3keterangan2; ?><br><br>
+                                                    <?= $row->isi3keterangan3; ?>
                                                 </div>
                                             </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <?php } ?>
-            </div>
-        </form>    
+                </div>
+            </form>    
         </div>
     </div>
     <!-- /.card-body -->

@@ -1,4 +1,4 @@
-<!-- Content Header (Page header) -->
+Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -131,7 +131,11 @@
                         <label class="form-label">Total Plat Cover</label>
                     </div>
                     <div class="col-md-1">
-                        <input type="number" class="form-control" name="total_plat_cover" value="<?= $row->total_plat_cover; ?>" required>
+                        <?=$row->total_plat_cover;?>
+
+                        <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN-->
+                        <!-- <input type="number" class="form-control" name="total_plat_cover" value="<?= $row->total_plat_cover; ?>" required> -->
+
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
@@ -144,7 +148,11 @@
                         <label class="form-label">Total Plat Isi</label>
                     </div>
                     <div class="col-md-1">
-                        <input type="number" class="form-control" name="total_plat_isi" value="<?= $row->total_plat_isi; ?>" required>
+                        <?= $row->total_plat_isi; ?>
+
+                        <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN-->
+                        <!-- <input type="number" class="form-control" name="total_plat_isi" value="<?= $row->total_plat_isi; ?>" required> -->
+
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
@@ -185,14 +193,17 @@
                                         <option value="72">72</option>
                                         <option value="Tokko">Tokko</option>
                                         <option value="-">-</option>
-
                                     </select>
                                 </div>
                                 <div class="col-md-3" align="center">
                                     <label class="form-label">Plate</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplatecover1" value="<?= $row->jumlahplatecover1; ?>">
+                                    <?= $row->jumlahplatecover1; ?>
+
+                                    <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
+                                    <!-- <input type="number" class="form-control" name="jumlahplatecover1" value="<?= $row->jumlahplatecover1; ?>"> -->
+
                                 </div>
                             </div><br>
                             <div class="row">
@@ -209,18 +220,23 @@
                                             <input type="number" class="form-control" name="cover1plat2" value="<?= $row->cover1plat2; ?>"><br>
                                             <input type="number" class="form-control" name="cover1plat3" value="<?= $row->cover1plat3; ?>">
                                         </div>
-                                        <div class="col">
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="cover1set1" value="<?= $row->cover1set1; ?>" ><br>
                                             <input class="form-control" name="cover1set2" value="<?= $row->cover1set2; ?>" ><br>
                                             <input class="form-control" name="cover1set3" value="<?= $row->cover1set3; ?>" >
-                                        </div>
-                                        <div class="col">
+                                        </div> -->
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="cover1lbrcetak1" value="<?= $row->cover1lbrcetak1; ?>" ><br>
                                             <input class="form-control" name="cover1lbrcetak2" value="<?= $row->cover1lbrcetak2; ?>" ><br>
                                             <input class="form-control" name="cover1lbrcetak3" value="<?= $row->cover1lbrcetak3; ?>" >
-                                        </div>
+                                        </div> -->
+
                                         <div class="col">
                                             <label class="form-label">Up</label>
                                             <input type="number" class="form-control" name="cover1up1" value="<?= $row->cover1up1; ?>"><br>
@@ -241,7 +257,6 @@
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                                 <option value="-">-</option>
-
                                             </select><br>
                                             <select name="cover1status2" value="<?= $row->cover1status2; ?>" class="form-select form-control">
                                             <option value="<?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?>"><?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?>   </option>
@@ -249,7 +264,6 @@
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                                 <option value="-">-</option>
-
                                             </select><br>
                                             <select name="cover1status3" value="<?= $row->cover1status3; ?>" class="form-select form-control">
                                             <option value="<?php  echo $row->cover1status3 != "-" ?   $row->cover1status3  : '-' ?>"><?php  echo $row->cover1status3 != "-" ?   $row->cover1status3  : '-' ?>   </option>
@@ -257,7 +271,6 @@
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                                 <option value="-">-</option>
-
                                             </select>
                                         </div>
                                         <div class="col">
@@ -265,6 +278,12 @@
                                             <input type="text" class="form-control" name="cover1keterangan1" value="<?= $row->cover1keterangan1; ?>"><br>
                                             <input type="text" class="form-control" name="cover1keterangan2" value="<?= $row->cover1keterangan2; ?>"><br>
                                             <input type="text" class="form-control" name="cover1keterangan3" value="<?= $row->cover1keterangan3; ?>">
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. Imposisi</label>
+                                            <input type="date" class="form-control" name="cover1tglimposisi1"><br>
+                                            <input type="date" class="form-control" name="cover1tglimposisi2"><br>
+                                            <input type="date" class="form-control" name="cover1tglimposisi3">
                                         </div>
                                     </div>
                                 </div>
@@ -285,14 +304,17 @@
                                         <option value="72">72</option>
                                         <option value="Tokko">Tokko</option>
                                         <option value="-">-</option>
-
                                     </select>
                                 </div>
                                 <div class="col-md-3" align="center">
                                     <label class="form-label">Plate</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplateisi1" value="<?= $row->jumlahplateisi1; ?>">
+                                    <?= $row->jumlahplateisi1; ?>
+
+                                    <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
+                                    <!-- <input type="number" class="form-control" name="jumlahplateisi1" value="<?= $row->jumlahplateisi1; ?>"> -->
+
                                 </div>
                             </div><br>
                             <div class="row" align="center">
@@ -309,18 +331,23 @@
                                             <input type="number" class="form-control" name="isi1plat2" value="<?= $row->isi1plat2; ?>"><br>
                                             <input type="number" class="form-control" name="isi1plat3" value="<?= $row->isi1plat3; ?>">
                                         </div>
-                                        <div class="col">
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="isi1set1" value="<?= $row->isi1set1; ?>" ><br>
                                             <input class="form-control" name="isi1set2" value="<?= $row->isi1set2; ?>" ><br>
                                             <input class="form-control" name="isi1set3" value="<?= $row->isi1set3; ?>" >
-                                        </div>
-                                        <div class="col">
+                                        </div> -->
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="isi1lbrcetak1" value="<?= $row->isi1lbrcetak1; ?>" ><br>
                                             <input class="form-control" name="isi1lbrcetak2" value="<?= $row->isi1lbrcetak2; ?>" ><br>
                                             <input class="form-control" name="isi1lbrcetak3" value="<?= $row->isi1lbrcetak3; ?>" >
-                                        </div>
+                                        </div> -->
+
                                         <div class="col">
                                             <label class="form-label">Up</label>
                                             <input type="number" class="form-control" name="isi1up1" value="<?= $row->isi1up1; ?>"><br>
@@ -341,7 +368,6 @@
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                                 <option value="-">-</option>
-
                                             </select><br>
                                             <select name="isi1status2" value="<?= $row->isi1status2; ?>" class="form-select form-control">
                                             <option value="<?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?>"><?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?>   </option>
@@ -349,7 +375,6 @@
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                                 <option value="-">-</option>
-
                                             </select><br>
                                             <select name="isi1status3" value="<?= $row->isi1status3; ?>" class="form-select form-control">
                                             <option value="<?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?>"><?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?>   </option>
@@ -357,7 +382,6 @@
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                                 <option value="-">-</option>
-
                                             </select>
                                         </div>
                                         <div class="col">
@@ -365,6 +389,12 @@
                                             <input type="text" class="form-control" name="isi1keterangan1" value="<?= $row->isi1keterangan1; ?>"><br>
                                             <input type="text" class="form-control" name="isi1keterangan2" value="<?= $row->isi1keterangan2; ?>"><br>
                                             <input type="text" class="form-control" name="isi1keterangan3" value="<?= $row->isi1keterangan3; ?>">
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. Imposisi</label>
+                                            <input type="date" class="form-control" name="isi1tglimposisi1"><br>
+                                            <input type="date" class="form-control" name="isi1tglimposisi2"><br>
+                                            <input type="date" class="form-control" name="isi1tglimposisi3">
                                         </div>
                                     </div>
                                 </div>
@@ -403,14 +433,17 @@
                                         <option value="72">72</option>
                                         <option value="Tokko">Tokko</option>
                                         <option value="-">-</option>
-
                                     </select>
                                 </div>
                                 <div class="col-md-3" align="center">
                                     <label class="form-label">Plate</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplatecover2" value="<?= $row->jumlahplatecover2; ?>">
+                                    <?= $row->jumlahplatecover2; ?>
+
+                                    <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
+                                    <!-- <input type="number" class="form-control" name="jumlahplatecover2" value="<?= $row->jumlahplatecover2; ?>"> -->
+
                                 </div>
                             </div><br>
                             <div class="row">
@@ -427,18 +460,23 @@
                                             <input type="number" class="form-control" name="cover2plat2" value="<?= $row->cover2plat2; ?>"><br>
                                             <input type="number" class="form-control" name="cover2plat3" value="<?= $row->cover2plat3; ?>">
                                         </div>
-                                        <div class="col">
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="cover2set1" value="<?= $row->cover2set1; ?>" ><br>
                                             <input class="form-control" name="cover2set2" value="<?= $row->cover2set2; ?>"><br>
                                             <input class="form-control" name="cover2set3"  value="<?= $row->cover2set3; ?>">
-                                        </div>
-                                        <div class="col">
+                                        </div> -->
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="cover2lbrcetak1" value="<?= $row->cover2lbrcetak1; ?>" ><br>
                                             <input class="form-control" name="cover2lbrcetak2" value="<?= $row->cover2lbrcetak2; ?>" ><br>
                                             <input class="form-control" name="cover2lbrcetak3" value="<?= $row->cover2lbrcetak3; ?>" >
-                                        </div>
+                                        </div> -->
+
                                         <div class="col">
                                             <label class="form-label">Up</label>
                                             <input type="number" class="form-control" name="cover2up1" value="<?= $row->cover2up1; ?>"><br>
@@ -459,7 +497,6 @@
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                                 <option value="-">-</option>
-
                                             </select><br>
                                             <select name="cover2status2" value="<?= $row->cover2status2; ?>" class="form-select form-control">
                                             <option value="<?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?>"><?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?>   </option>
@@ -467,7 +504,6 @@
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                                 <option value="-">-</option>
-
                                             </select><br>
                                             <select name="cover2status3" value="<?= $row->cover2status3; ?>" class="form-select form-control">
                                             <option value="<?php  echo $row->cover2status3 != "-" ?   $row->cover2status3  : '-' ?>"><?php  echo $row->cover2status3 != "-" ?   $row->cover2status3  : '-' ?>   </option>
@@ -475,7 +511,6 @@
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                                 <option value="-">-</option>
-
                                             </select>
                                         </div>
                                         <div class="col">
@@ -483,6 +518,12 @@
                                             <input type="text" class="form-control" name="cover2keterangan1" value="<?= $row->cover2keterangan1; ?>"><br>
                                             <input type="text" class="form-control" name="cover2keterangan2" value="<?= $row->cover2keterangan2; ?>"><br>
                                             <input type="text" class="form-control" name="cover2keterangan3" value="<?= $row->cover2keterangan3; ?>">
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. Imposisi</label>
+                                            <input type="date" class="form-control" name="cover2tglimposisi1"><br>
+                                            <input type="date" class="form-control" name="cover2tglimposisi2"><br>
+                                            <input type="date" class="form-control" name="cover2tglimposisi3">
                                         </div>
                                     </div>
                                 </div>
@@ -503,14 +544,17 @@
                                         <option value="72">72</option>
                                         <option value="Tokko">Tokko</option>
                                         <option value="-">-</option>
-
                                     </select>
                                 </div>
                                 <div class="col-md-3" align="center">
                                     <label class="form-label">Plate</label>
                                 </div>
                                 <div class="col-md-3">
-                                    <input type="number" class="form-control" name="jumlahplateisi2" value="<?= $row->jumlahplateisi2; ?>">
+                                    <?= $row->jumlahplateisi2; ?>
+
+                                    <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
+                                    <!-- <input type="number" class="form-control" name="jumlahplateisi2" value="<?= $row->jumlahplateisi2; ?>"> -->
+
                                 </div>
                             </div><br>
                             <div class="row" align="center">
@@ -527,18 +571,23 @@
                                             <input type="number" class="form-control" name="isi2plat2" value="<?= $row->isi2plat2; ?>"><br>
                                             <input type="number" class="form-control" name="isi2plat3" value="<?= $row->isi2plat3; ?>">
                                         </div>
-                                        <div class="col">
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="isi2set1" value="<?= $row->isi2set1; ?>" ><br>
                                             <input class="form-control" name="isi2set2" value="<?= $row->isi2set2; ?>" ><br>
                                             <input class="form-control" name="isi2set3" value="<?= $row->isi2set3; ?>" >
-                                        </div>
-                                        <div class="col">
+                                        </div> -->
+
+                                        <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                        <!-- <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="isi2lbrcetak1" value="<?= $row->isi2lbrcetak1; ?>" ><br>
                                             <input class="form-control" name="isi2lbrcetak2" value="<?= $row->isi2lbrcetak2; ?>" ><br>
                                             <input class="form-control" name="isi2lbrcetak3" value="<?= $row->isi2lbrcetak3; ?>" >
-                                        </div>
+                                        </div> -->
+
                                         <div class="col">
                                             <label class="form-label">Up</label>
                                             <input type="number" class="form-control" name="isi2up1" value="<?= $row->isi2up1; ?>"><br>
@@ -559,7 +608,6 @@
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                                 <option value="-">-</option>
-
                                             </select><br>
                                             <select name="isi2status2" value="<?= $row->isi2status2; ?>" class="form-select form-control">
                                             <option value="<?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?>"><?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?>   </option>
@@ -567,7 +615,6 @@
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                                 <option value="-">-</option>
-
                                             </select><br>
                                             <select name="isi2status3" value="<?= $row->isi2status3; ?>" class="form-select form-control">
                                             <option value="<?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>"><?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>   </option>
@@ -575,7 +622,6 @@
                                                 <option value="BLK">BLK</option>
                                                 <option value="BLG">BLG</option>
                                                 <option value="-">-</option>
-
                                             </select>
                                         </div>
                                         <div class="col">
@@ -583,6 +629,12 @@
                                             <input type="text" class="form-control" name="isi2keterangan1" value="<?= $row->isi2keterangan1; ?>"><br>
                                             <input type="text" class="form-control" name="isi2keterangan2" value="<?= $row->isi2keterangan2; ?>"><br>
                                             <input type="text" class="form-control" name="isi2keterangan3" value="<?= $row->isi2keterangan3; ?>">
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. Imposisi</label>
+                                            <input type="date" class="form-control" name="isi2tglimposisi1"><br>
+                                            <input type="date" class="form-control" name="isi2tglimposisi2"><br>
+                                            <input type="date" class="form-control" name="isi2tglimposisi3">
                                         </div>
                                     </div>
                                 </div>
@@ -596,13 +648,7 @@
                             <div class="col">
                                 <div class="card-body p-3 mb-2 bg-light text-dark">
                                     <br><br><div class="row">
-                                        <div class="col-md-6">
-                                            <label class="form-label">Tanggal Imposisi Cover</label>
-                                            <br><input type="date" class="form-control" name="tanggal_imposisi_cover" value="<?= $row->tanggal_imposisi_cover; ?>" required>
-                                            <br><label class="form-label">Tanggal Imposisi Isi</label>
-                                            <br><input type="date" class="form-control" name="tanggal_imposisi_isi" value="<?= $row->tanggal_imposisi_isi; ?>" required>
-                                        </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?= $row->catatan_imposisi; ?>" style="height: 150px;"><?= $row->catatan_imposisi; ?></textarea>
                                         </div>
                                     </div><br><br>
@@ -643,14 +689,17 @@
                                                 <option value="72">72</option>
                                                 <option value="Tokko">Tokko</option>
                                                 <option value="-">-</option>
-
                                             </select>
                                         </div>
                                         <div class="col-md-3" align="center">
                                             <label class="form-label">Plate</label>
                                         </div>
                                         <div class="col-md-3">
-                                            <input type="number" class="form-control" name="jumlahplateisi3" value="<?= $row->jumlahplateisi3; ?>">
+                                            <?= $row->jumlahplateisi3; ?>
+
+                                            <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
+                                            <!-- <input type="number" class="form-control" name="jumlahplateisi3" value="<?= $row->jumlahplateisi3; ?>"> -->
+
                                         </div>
                                     </div><br>
                                     <div class="row">
@@ -667,18 +716,23 @@
                                                     <input type="number" class="form-control" name="isi3plat2" value="<?= $row->isi3plat2; ?>"><br>
                                                     <input type="number" class="form-control" name="isi3plat3" value="<?= $row->isi3plat3; ?>">
                                                 </div>
-                                                <div class="col">
+
+                                                <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                                <!-- <div class="col">
                                                     <label class="form-label">Set</label>
                                                     <input class="form-control" name="isi3set1" value="<?= $row->isi3set1; ?>" ><br>
                                                     <input class="form-control" name="isi3set2" value="<?= $row->isi3set2; ?>" ><br>
                                                     <input class="form-control" name="isi3set3" value="<?= $row->isi3set3; ?>" >
-                                                </div>
-                                                <div class="col">
+                                                </div> -->
+
+                                                <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
+                                                <!-- <div class="col">
                                                     <label class="form-label">Lbr.Cetak</label>
                                                     <input class="form-control" name="isi3lbrcetak1" value="<?= $row->isi3lbrcetak1; ?>" ><br>
                                                     <input class="form-control" name="isi3lbrcetak2" value="<?= $row->isi3lbrcetak2; ?>" ><br>
                                                     <input class="form-control" name="isi3lbrcetak3" value="<?= $row->isi3lbrcetak3; ?>" >
-                                                </div>
+                                                </div> -->
+
                                                 <div class="col">
                                                     <label class="form-label">Up</label>
                                                     <input type="number" class="form-control" name="isi3up1" value="<?= $row->isi3up1; ?>"><br>
@@ -699,7 +753,6 @@
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>
                                                         <option value="-">-</option>
-
                                                     </select><br>
                                                     <select name="isi3status2" value="<?= $row->isi3status2; ?>" class="form-select form-control">
                                                     <option value="<?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?>"><?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?>   </option>
@@ -707,7 +760,6 @@
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>
                                                         <option value="-">-</option>
-
                                                     </select><br>
                                                     <select name="isi3status3" value="<?= $row->isi3status3; ?>" class="form-select form-control">
                                                     <option value="<?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?>"><?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?>   </option>
@@ -715,7 +767,6 @@
                                                         <option value="BLK">BLK</option>
                                                         <option value="BLG">BLG</option>
                                                         <option value="-">-</option>
-
                                                     </select>
                                                 </div>
                                                 <div class="col">
@@ -723,6 +774,12 @@
                                                     <input type="text" class="form-control" name="isi3keterangan1" value="<?= $row->isi3keterangan1; ?>"><br>
                                                     <input type="text" class="form-control" name="isi3keterangan2" value="<?= $row->isi3keterangan2; ?>"><br>
                                                     <input type="text" class="form-control" name="isi3keterangan3" value="<?= $row->isi3keterangan3; ?>">
+                                                </div>
+                                                <div class="col">
+                                                    <label class="form-label">Tgl. Imposisi</label>
+                                                    <input type="date" class="form-control" name="isi3tglimposisi1"><br>
+                                                    <input type="date" class="form-control" name="isi3tglimposisi2"><br>
+                                                    <input type="date" class="form-control" name="isi31tglimposisi3">
                                                 </div>
                                             </div>
                                         </div>
@@ -745,4 +802,4 @@
     <!-- /.card -->
 
 </section>
-<!-- /.content -->
+<!-- /.content
