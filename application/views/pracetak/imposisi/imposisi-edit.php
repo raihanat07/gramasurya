@@ -281,9 +281,9 @@ Content Header (Page header) -->
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label>
-                                            <input type="date" class="form-control" name="cover1tglimposisi1"><br>
-                                            <input type="date" class="form-control" name="cover1tglimposisi2"><br>
-                                            <input type="date" class="form-control" name="cover1tglimposisi3">
+                                            <input type="date" class="form-control" name="cover1tglimposisi1" value="<?= $row->cover1tglimposisi1; ?>"><br>
+                                            <input type="date" class="form-control" name="cover1tglimposisi2" value="<?= $row->cover1tglimposisi2; ?>"><br>
+                                            <input type="date" class="form-control" name="cover1tglimposisi3" value="<?= $row->cover1tglimposisi3; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -392,9 +392,9 @@ Content Header (Page header) -->
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label>
-                                            <input type="date" class="form-control" name="isi1tglimposisi1"><br>
-                                            <input type="date" class="form-control" name="isi1tglimposisi2"><br>
-                                            <input type="date" class="form-control" name="isi1tglimposisi3">
+                                            <input type="date" class="form-control" name="isi1tglimposisi1" value="<?= $row->isi1tglimposisi1; ?>"><br>
+                                            <input type="date" class="form-control" name="isi1tglimposisi2" value="<?= $row->isi1tglimposisi2; ?>"><br>
+                                            <input type="date" class="form-control" name="isi1tglimposisi3" value="<?= $row->isi1tglimposisi3; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -521,9 +521,9 @@ Content Header (Page header) -->
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label>
-                                            <input type="date" class="form-control" name="cover2tglimposisi1"><br>
-                                            <input type="date" class="form-control" name="cover2tglimposisi2"><br>
-                                            <input type="date" class="form-control" name="cover2tglimposisi3">
+                                            <input type="date" class="form-control" name="cover2tglimposisi1" value="<?= $row->cover2tglimposisi1; ?>"><br>
+                                            <input type="date" class="form-control" name="cover2tglimposisi2" value="<?= $row->cover2tglimposisi2; ?>"><br>
+                                            <input type="date" class="form-control" name="cover2tglimposisi3" value="<?= $row->cover2tglimposisi3; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -632,9 +632,9 @@ Content Header (Page header) -->
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label>
-                                            <input type="date" class="form-control" name="isi2tglimposisi1"><br>
-                                            <input type="date" class="form-control" name="isi2tglimposisi2"><br>
-                                            <input type="date" class="form-control" name="isi2tglimposisi3">
+                                            <input type="date" class="form-control" name="isi2tglimposisi1" value="<?= $row->isi2tglimposisi1; ?>"><br>
+                                            <input type="date" class="form-control" name="isi2tglimposisi2" value="<?= $row->isi2tglimposisi2; ?>"><br>
+                                            <input type="date" class="form-control" name="isi2tglimposisi3" value="<?= $row->isi2tglimposisi3; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -777,9 +777,9 @@ Content Header (Page header) -->
                                                 </div>
                                                 <div class="col">
                                                     <label class="form-label">Tgl. Imposisi</label>
-                                                    <input type="date" class="form-control" name="isi3tglimposisi1"><br>
-                                                    <input type="date" class="form-control" name="isi3tglimposisi2"><br>
-                                                    <input type="date" class="form-control" name="isi31tglimposisi3">
+                                                    <input type="date" class="form-control" name="isi3tglimposisi1" value="<?= $row->isi3tglimposisi1; ?>"><br>
+                                                    <input type="date" class="form-control" name="isi3tglimposisi2" value="<?= $row->isi3tglimposisi2; ?>"><br>
+                                                    <input type="date" class="form-control" name="isi3tglimposisi3"value="<?= $row->isi3tglimposisi3; ?>">
                                                 </div>
                                             </div>
                                         </div>

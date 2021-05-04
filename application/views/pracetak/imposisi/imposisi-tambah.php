@@ -760,9 +760,9 @@
                                                 </div>
                                                 <div class="col">
                                                     <label class="form-label">Tgl. Imposisi</label>
-                                                    <input type="date" class="form-control" name="isi2tglimposisi1"><br>
-                                                    <input type="date" class="form-control" name="isi2tglimposisi2"><br>
-                                                    <input type="date" class="form-control" name="isi2tglimposisi3">
+                                                    <input type="date" class="form-control" name="isi3tglimposisi1"><br>
+                                                    <input type="date" class="form-control" name="isi3tglimposisi2"><br>
+                                                    <input type="date" class="form-control" name="isi3tglimposisi3">
                                                 </div>
                                             </div>
                                         </div>
