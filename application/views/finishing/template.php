@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+   <!-- DataTables -->
+   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datatables/dataTables.bootstrap4.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?=site_url()?>assets/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
@@ -32,7 +34,7 @@
         <a href="index3.html" class="nav-link">Dashboard/Finishing</a>
       </li>
     </ul>
-
+    
 
     <!-- Right navbar links -->
          <!-- Right navbar links -->
@@ -82,50 +84,50 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak"
-                    <?php  if($judul == "Surat Order Pracetak"){?>
+                    <?php  if($judul == "Display Umum"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Surat Order</p>
+                  <p>Display Umum</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Imposisi" 
-                <?php  if($judul == "Imposisi"){?>
+                <?php  if($judul == "Finishing Proses"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Imposisi</p>
+                  <p>Finishing Proses</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Ctcp" 
-                 <?php  if($judul == "CTCP" || $judul == "Edit Ctcp Pracetak"){?>
+                 <?php  if($judul == "Finishing Akhir"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>CTCP</p>
+                  <p>Finishing Akhir</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Laporan" 
-                 <?php  if($judul == "Laporan"){?>
+                 <?php  if($judul == "Quality Control"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Laporan</p>
+                  <p>Quality Control</p>
                 </a>
               </li>
             </ul>
@@ -168,37 +170,16 @@
   <script src="<?=base_url()?>assets/plugins/fastclick/fastclick.js"></script>
   <!-- AdminLTE App -->
   <script src="<?=base_url()?>assets/dist/js/adminlte.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="<?=base_url()?>assets/dist/js/demo.js"></script>
+ 
   <!-- DataTables -->
-  <script src="../../plugins/datatables/jquery.dataTables.js"></script>
-  <script src="../../plugins/datatables/dataTables.bootstrap4.js"></script>
-  <!-- SlimScroll -->
-  <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
-  <!-- iCheck 1.0.1 -->
-  <script src="../../plugins/iCheck/icheck.min.js"></script>
+  <script src="<?=base_url()?>assets/plugins/datatables/jquery.dataTables.js"></script>
+  <script src="<?=base_url()?>assets/plugins/datatables/dataTables.bootstrap4.js"></script>
 
   <!-- Page script -->
   <script>
-    $(function () {
-      
-      //iCheck for checkbox and radio inputs
-      $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-        checkboxClass: 'icheckbox_minimal-blue',
-        radioClass   : 'iradio_minimal-blue'
-      })
-      //Red color scheme for iCheck
-      $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-        checkboxClass: 'icheckbox_minimal-red',
-        radioClass   : 'iradio_minimal-red'
-      })
-      //Flat red color scheme for iCheck
-      $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-        checkboxClass: 'icheckbox_flat-green',
-        radioClass   : 'iradio_flat-green'
-      })
-
-    })
+      $(function () {
+    $("#table1").DataTable();
+  });
   </script>
 </body>
 </html>
