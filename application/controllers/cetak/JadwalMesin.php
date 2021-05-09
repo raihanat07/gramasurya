@@ -12,13 +12,13 @@ class JadwalMesin extends CI_Controller {
 	public function lihat_jm()
 	{
 		// check_already_login_cetak();
-		$data['judul'] = 'Lihat Jadwal Mesin';
+		$data['judul'] = 'Lihat Jadwal Mesin Cetak';
 		$this->template->load('cetak/template','cetak/jadwal_mesin/jadwalmesin-lihat',$data);
 	}
 	public function edit_jm()
 	{
 		// check_already_login_cetak();
-		$data['judul'] = 'Edit Jadwal Mesin';
+		$data['judul'] = 'Edit Jadwal Mesin Cetak';
 		$this->template->load('cetak/template','cetak/jadwal_mesin/jadwalmesin-edit',$data);
 	}
 

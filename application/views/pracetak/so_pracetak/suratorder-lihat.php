@@ -44,7 +44,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <br>anggal Masuk
+                        <br>Tanggal Masuk
                         <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
                     </div>
                     <div class="col-md-4">

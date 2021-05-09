@@ -1,4 +1,4 @@
-Content Header (Page header) -->
+<!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="container-fluid">
         <div class="row mb-2">
@@ -317,14 +317,14 @@ Content Header (Page header) -->
 
                                 </div>
                             </div><br>
-                            <div class="row" align="center">
+                            <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label class="form-label">Rincian Imposisi</label>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row" align="center">
                                         <div class="col">
                                             <label class="form-label">Plate</label>
                                             <input type="number" class="form-control" name="isi1plat1" value="<?= $row->isi1plat1; ?>"><br>
@@ -557,14 +557,14 @@ Content Header (Page header) -->
 
                                 </div>
                             </div><br>
-                            <div class="row" align="center">
+                            <div class="row">
                                 <div class="col-md-12">
                                     <div class="row">
                                         <div class="col-md-12">
                                             <label class="form-label">Rincian Imposisi</label>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row" align="center">
                                         <div class="col">
                                             <label class="form-label">Plate</label>
                                             <input type="number" class="form-control" name="isi2plat1" value="<?= $row->isi2plat1; ?>"><br>

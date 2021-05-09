@@ -124,7 +124,7 @@
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label class="form-label">Mesin Cover 1</label><br>
+                                                <label class="form-label">Kertas Cover 1</label><br>
                                                 AP 120 gr
                                             </div>
                                             <div class="col-md-6">
@@ -195,7 +195,7 @@
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label class="form-label">Mesin Cover 2</label><br>
+                                                <label class="form-label">Kertas Cover 2</label><br>
                                                 AP 120 gr
                                             </div>
                                             <div class="col-md-6">
@@ -266,7 +266,7 @@
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label class="form-label">Mesin Cover 3</label><br>
+                                                <label class="form-label">Kertas Cover 3</label><br>
                                                 AP 120 gr
                                             </div>
                                             <div class="col-md-6">
@@ -337,7 +337,7 @@
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label class="form-label">Mesin Isi 1</label><br>
+                                                <label class="form-label">Kertas Isi 1</label><br>
                                                 AP 120 gr
                                             </div>
                                             <div class="col-md-6">
@@ -408,7 +408,7 @@
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label class="form-label">Mesin Isi 2</label><br>
+                                                <label class="form-label">Kertas Isi 2</label><br>
                                                 AP 120 gr
                                             </div>
                                             <div class="col-md-6">
@@ -479,7 +479,7 @@
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label class="form-label">Mesin Isi 3</label><br>
+                                                <label class="form-label">Kertas Isi 3</label><br>
                                                 AP 120 gr
                                             </div>
                                             <div class="col-md-6">

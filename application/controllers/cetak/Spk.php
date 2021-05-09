@@ -21,5 +21,11 @@ class Spk extends CI_Controller {
 		$data['judul'] = 'Edit SPK Cetak';
 		$this->template->load('cetak/template','cetak/spk_cetak/spkcetak-edit',$data);
 	}
+	public function buat_spk()
+	{
+		// check_already_login_cetak();
+		$data['judul'] = 'Tambah SPK Mesin Cetak';
+		$this->template->load('cetak/template','cetak/spk_cetak/spkcetak-tambah',$data);
+	}
 
 }
