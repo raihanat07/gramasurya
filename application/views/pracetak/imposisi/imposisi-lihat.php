@@ -232,15 +232,15 @@
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Keterangan</label><br><br>
-                                        <?= $row->cover1keterangan1; ?><br><br>
+                                        <?= $row->cover1keterangan1; ?> 
                                         <?= $row->cover1keterangan2; ?><br><br>
                                         <?= $row->cover1keterangan3; ?>
                                     </div>
                                     <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label><br><br>
-                                        05/02/2021<br><br>
-                                        05/02/2021<br><br>
-                                        05/02/2021
+                                        <label class="form-label">Tgl. Imposisi</label>
+                                        <?= $row->cover1tglimposisi1; ?><br><br>
+                                        <?= $row->cover1tglimposisi2; ?><br><br>
+                                        <?= $row->cover1tglimposisi3; ?>
                                     </div>
                                 </div>
                             </div>
@@ -314,10 +314,10 @@
                                             <?= $row->isi1keterangan3; ?>
                                         </div>
                                     <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label><br><br>
-                                        05/02/2021<br><br>
-                                        05/02/2021<br><br>
-                                        05/02/2021
+                                        <label class="form-label">Tgl. Imposisi</label>
+                                        <?= $row->isi1tglimposisi1; ?><br><br>
+                                        <?= $row->isi1tglimposisi2; ?><br><br>
+                                        <?= $row->isi1tglimposisi3; ?>
                                     </div>
                                 </div>
                             </div>
@@ -409,10 +409,10 @@
                                         <?= $row->cover2keterangan3; ?>
                                     </div>   
                                     <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label><br><br>
-                                        05/02/2021<br><br>
-                                        05/02/2021<br><br>
-                                        05/02/2021
+                                        <label class="form-label">Tgl. Imposisi</label>
+                                        <?= $row->cover2tglimposisi1; ?><br><br>
+                                        <?= $row->cover2tglimposisi2; ?><br><br>
+                                        <?= $row->cover2tglimposisi3; ?>
                                     </div>     
                                 </div>
                             </div>
@@ -486,10 +486,10 @@
                                         <?= $row->isi2keterangan3; ?>
                                     </div>
                                     <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label><br><br>
-                                        05/02/2021<br><br>
-                                        05/02/2021<br><br>
-                                        05/02/2021
+                                        <label class="form-label">Tgl. Imposisi</label>
+                                        <?= $row->isi2tglimposisi1; ?><br><br>
+                                        <?= $row->isi2tglimposisi2; ?><br><br>
+                                        <?= $row->isi2tglimposisi3; ?>
                                     </div>
                                 </div>
                             </div>
@@ -597,10 +597,10 @@
                                                 <?= $row->isi2keterangan3; ?>
                                             </div>
                                             <div class="col">
-                                                <label class="form-label">Tgl. Imposisi</label><br><br>
-                                                05/02/2021<br><br>
-                                                05/02/2021<br><br>
-                                                05/02/2021
+                                                <label class="form-label">Tgl. Imposisi</label>
+                                                <?= $row->isi3tglimposisi1; ?><br><br>
+                                                <?= $row->isi3tglimposisi2; ?><br><br>
+                                                <?= $row->isi3tglimposisi3; ?>
                                             </div>
                                         </div>
                                     </div>
