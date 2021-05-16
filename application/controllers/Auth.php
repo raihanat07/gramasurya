@@ -35,7 +35,7 @@ class Auth extends CI_Controller {
                 }else if($this->session->userdata('level') == 3){
                     echo "<script>
                     alert('Selamat Login Berhasil')
-                    window.location = '".site_url('finishing/Finishing')."';
+                    window.location = '".site_url('finishing/Display')."';
                 </script>";
                 }
                 

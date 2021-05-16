@@ -16,7 +16,7 @@
       <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                <h3 class="card-title">Data Table With Full Features</h3>
+                <h3 class="card-title">Data Surat Order</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -78,7 +78,7 @@
                 </td>
                 <td><?= $row->so_status; ?></td>
                 <td align="center">
-                    <a href="<?=site_url('pracetak/SuratOrder/lihat_so/'.$row->id_order)?>">
+                    <a href="<?=site_url('finishing/Display/lihat_so/'.$row->id_order)?>">
                     <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                     </a>
                 </td>

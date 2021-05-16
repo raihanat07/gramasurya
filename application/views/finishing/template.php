@@ -83,7 +83,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak"
+                <a href="<?=site_url()?>finishing/Display"
                     <?php  if($judul == "Display Umum"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -95,7 +95,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak/Imposisi" 
+                <a href="<?=site_url()?>finishing/FinishingProses" 
                 <?php  if($judul == "Finishing Proses"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -107,7 +107,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak/Ctcp" 
+                <a href="<?=site_url()?>finishing/FinishingAkhir" 
                  <?php  if($judul == "Finishing Akhir"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -119,7 +119,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak/Laporan" 
+                <a href="<?=site_url()?>finishing/QualityControl" 
                  <?php  if($judul == "Quality Control"){?>
                       class= "nav-link active"
                     <?php }else {?>

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Finishing extends CI_Controller {
+class QualityControl extends CI_Controller {
 
 	public function __construct()
     {
@@ -13,10 +13,10 @@ class Finishing extends CI_Controller {
 		// check_already_login_finishing();
 		$query = $this->so->get();
 		$data = array(
-			'judul' => 'Display Umum',
+			'judul' => 'Quality Control',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/display_umum/display',$data);
+		$this->template->load('finishing/template','finishing/quality_control/quality_control',$data);
 	}
-
+	
 }
