@@ -30,7 +30,7 @@
               <td>Tanggal Masuk</td>
               <td>Deadline</td>
               <td>Nama Pemesan</td>
-              <td>Nama Orderan</td>
+              <td>Nama Order</td>
               <td>Ukuran</td>
               <td>Halaman</td>
               <td>Oplag</td>
@@ -40,9 +40,9 @@
             </tr>
             </thead>
             <tr>
-              <td>Nomor SO</td>
+              <td align="center">Nomor SO</td>
               <td>Tanggal Masuk</td>
-              <td>Deadline</td>
+              <td style="color: red">Deadline</td>
               <td>Nama Pemesan</td>
               <td>Nama Order</td>
               <td>Ukuran</td>

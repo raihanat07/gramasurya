@@ -29,4 +29,48 @@ class FinishingProses extends CI_Controller {
 		$this->template->load('finishing/template','finishing/finishing_proses/jadwal_fp',$data);
 	}
 	
+	// MESIN LAMINASI
+    public function tambah_jadwal_fp_laminasi()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Proses',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_proses/tambah_jadwal_fp_laminasi',$data);
+	}
+    public function lihat_jadwal_fp_laminasi()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Proses',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_proses/lihat_jadwal_fp_laminasi',$data);
+	}
+
+	// MESIN SHOE
+    public function jadwal_fp_shoe()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Proses',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_proses/jadwal_fp_shoe',$data);
+	}
+    public function tambah_jadwal_fp_shoe()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Proses',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_proses/tambah_jadwal_fp_shoe',$data);
+	}	
+	
 }

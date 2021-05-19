@@ -1,19 +1,12 @@
+<!-- Content Header (Page header) -->
 <section class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="<?=site_url()?>finishing/FinishingAkhir" class="btn btn-warning btn-lg">
-                <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
-                </a>
-              </li>
-              <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li> -->
-            </ol>
-          </div>
-        </div>
-    </div><!-- /.container-fluid -->
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1>QUALITY CONTROL</h1>
+      </div>
+    </div>
+  </div><!-- /.container-fluid -->
 </section>
 <!-- Main content -->
 <section class="content">
@@ -60,22 +53,30 @@
         <div class="row">
           <div class="col-md-6">
             Tanggal Pelaksanaan<br>
-            <input type="date" class="form-control" name="tanggal_pelaksanaan_mesin_shoe" placeholder="Tanggal Pelaksanaan" required>
+            <input type="date" class="form-control" name="tanggal_pelaksanaan_mesin_binding" placeholder="Tanggal Pelaksanaan" required>
+          </div>
+          <div class="col-md-6">
+            Status<br>
+            <input type="text" class="form-control" name="status" required>
+            </div>
           </div>  
         </div><br>
         <hr><br>
+
         <div class="row">
           <div class="col-md-6">
-            Jenis Mesin<br>
-            <select id="inputState" class="form-select form-control" name="jenis_mesin" >
-              <option value="-">-</option>
-            </select>
+            Hasil QC<br>
+            <input type="number" class="form-control" name="hasil_qc" placeholder="Masukan Jumlah Lembar" required>
+          </div>
+          <div class="col-md-6">
+            Rejek QC<br>
+            <input type="number" class="form-control" name="rejek_qc" placeholder="Masukan Jumlah Lembar" required>
           </div>
         </div><br>
         <hr><br>
 
         <h4>Keterangan</h4>
-        <textarea name="Keterangan_finishing_akhir" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+        <textarea name="keterangan_qc" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
 
         <div class="row">
           <div class="col" align="right">
