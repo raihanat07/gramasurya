@@ -222,20 +222,20 @@
                                         </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="cover1set1" value="<?= $row->cover1set1; ?>" ><br>
                                             <input class="form-control" name="cover1set2" value="<?= $row->cover1set2; ?>" ><br>
                                             <input class="form-control" name="cover1set3" value="<?= $row->cover1set3; ?>" >
-                                        </div> -->
+                                        </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="cover1lbrcetak1" value="<?= $row->cover1lbrcetak1; ?>" ><br>
                                             <input class="form-control" name="cover1lbrcetak2" value="<?= $row->cover1lbrcetak2; ?>" ><br>
                                             <input class="form-control" name="cover1lbrcetak3" value="<?= $row->cover1lbrcetak3; ?>" >
-                                        </div> -->
+                                        </div>
 
                                         <div class="col">
                                             <label class="form-label">Up</label>
@@ -333,20 +333,20 @@
                                         </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="isi1set1" value="<?= $row->isi1set1; ?>" ><br>
                                             <input class="form-control" name="isi1set2" value="<?= $row->isi1set2; ?>" ><br>
                                             <input class="form-control" name="isi1set3" value="<?= $row->isi1set3; ?>" >
-                                        </div> -->
+                                        </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="isi1lbrcetak1" value="<?= $row->isi1lbrcetak1; ?>" ><br>
                                             <input class="form-control" name="isi1lbrcetak2" value="<?= $row->isi1lbrcetak2; ?>" ><br>
                                             <input class="form-control" name="isi1lbrcetak3" value="<?= $row->isi1lbrcetak3; ?>" >
-                                        </div> -->
+                                        </div>
 
                                         <div class="col">
                                             <label class="form-label">Up</label>
@@ -462,20 +462,20 @@
                                         </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="cover2set1" value="<?= $row->cover2set1; ?>" ><br>
                                             <input class="form-control" name="cover2set2" value="<?= $row->cover2set2; ?>"><br>
                                             <input class="form-control" name="cover2set3"  value="<?= $row->cover2set3; ?>">
-                                        </div> -->
+                                        </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="cover2lbrcetak1" value="<?= $row->cover2lbrcetak1; ?>" ><br>
                                             <input class="form-control" name="cover2lbrcetak2" value="<?= $row->cover2lbrcetak2; ?>" ><br>
                                             <input class="form-control" name="cover2lbrcetak3" value="<?= $row->cover2lbrcetak3; ?>" >
-                                        </div> -->
+                                        </div>
 
                                         <div class="col">
                                             <label class="form-label">Up</label>
@@ -573,20 +573,20 @@
                                         </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="isi2set1" value="<?= $row->isi2set1; ?>" ><br>
                                             <input class="form-control" name="isi2set2" value="<?= $row->isi2set2; ?>" ><br>
                                             <input class="form-control" name="isi2set3" value="<?= $row->isi2set3; ?>" >
-                                        </div> -->
+                                        </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="isi2lbrcetak1" value="<?= $row->isi2lbrcetak1; ?>" ><br>
                                             <input class="form-control" name="isi2lbrcetak2" value="<?= $row->isi2lbrcetak2; ?>" ><br>
                                             <input class="form-control" name="isi2lbrcetak3" value="<?= $row->isi2lbrcetak3; ?>" >
-                                        </div> -->
+                                        </div>
 
                                         <div class="col">
                                             <label class="form-label">Up</label>
@@ -718,20 +718,20 @@
                                                 </div>
 
                                                 <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                                <!-- <div class="col">
+                                                <div class="col" hidden>
                                                     <label class="form-label">Set</label>
                                                     <input class="form-control" name="isi3set1" value="<?= $row->isi3set1; ?>" ><br>
                                                     <input class="form-control" name="isi3set2" value="<?= $row->isi3set2; ?>" ><br>
                                                     <input class="form-control" name="isi3set3" value="<?= $row->isi3set3; ?>" >
-                                                </div> -->
+                                                </div>
 
                                                 <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                                <!-- <div class="col">
+                                                <div class="col" hidden>
                                                     <label class="form-label">Lbr.Cetak</label>
                                                     <input class="form-control" name="isi3lbrcetak1" value="<?= $row->isi3lbrcetak1; ?>" ><br>
                                                     <input class="form-control" name="isi3lbrcetak2" value="<?= $row->isi3lbrcetak2; ?>" ><br>
                                                     <input class="form-control" name="isi3lbrcetak3" value="<?= $row->isi3lbrcetak3; ?>" >
-                                                </div> -->
+                                                </div>
 
                                                 <div class="col">
                                                     <label class="form-label">Up</label>

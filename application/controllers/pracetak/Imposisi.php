@@ -329,6 +329,220 @@ class Imposisi extends CI_Controller {
 			}
 			else
 				$inputan['imposisi_status'] = "";
+
+			
+				if($inputan['cover1plat1'] !=null){
+					$inputan["total_plat_cover"] = $inputan["total_plat_cover"] + $inputan['cover1plat1'];
+				}
+				if($inputan['cover1plat2'] !=null){
+					$inputan["total_plat_cover"] = $inputan["total_plat_cover"] + $inputan['cover1plat2'];
+				}	
+				if($inputan['cover1plat3'] !=null){
+					$inputan["total_plat_cover"] = $inputan["total_plat_cover"] + $inputan['cover1plat3'];
+				}
+				
+				if($inputan['cover2plat1'] !=null){
+					$inputan["total_plat_cover"] = $inputan["total_plat_cover"] + $inputan['cover2plat1'];
+				}
+				if($inputan['cover2plat2'] !=null){
+					$inputan["total_plat_cover"] = $inputan["total_plat_cover"] + $inputan['cover2plat2'];
+				}	
+				if($inputan['cover2plat3'] !=null){
+					$inputan["total_plat_cover"] = $inputan["total_plat_cover"] + $inputan['cover2plat3'];
+				}
+				
+	
+	
+				if($inputan['isi1plat1'] !=null){
+					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi1plat1'];
+				}
+				if($inputan['isi1plat2'] !=null){
+					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi1plat2'];
+				}	
+				if($inputan['isi1plat3'] !=null){
+					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi1plat3'];
+				}
+				
+				if($inputan['isi2plat1'] !=null){
+					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi2plat1'];
+				}
+				if($inputan['isi2plat2'] !=null){
+					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi2plat2'];
+				}	
+				if($inputan['isi2plat3'] !=null){
+					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi2plat3'];
+				}
+	
+				if($inputan['isi3plat1'] !=null){
+					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi3plat1'];
+				}
+				if($inputan['isi3plat2'] !=null){
+					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi3plat2'];
+				}	
+				if($inputan['isi3plat3'] !=null){
+					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi3plat3'];
+				}
+	
+	
+	
+				if($inputan["cover1plat1"] && $inputan["cover1warna1"] !=null ){
+					$inputan["cover1set1"] = $inputan["cover1plat1"] / $inputan["cover1warna1"] ;
+				}
+				if($inputan["cover1plat2"] && $inputan["cover1warna2"] !=null ){
+					$inputan["cover1set2"] = $inputan["cover1plat2"] / $inputan["cover1warna2"] ;
+				}
+				if($inputan["cover1plat3"] && $inputan["cover1warna3"] !=null ){
+					$inputan["cover1set3"] = $inputan["cover1plat3"] / $inputan["cover1warna3"] ;
+				}
+	
+				if($inputan["cover2plat1"] && $inputan["cover2warna1"] !=null ){
+					$inputan["cover2set1"] = $inputan["cover2plat1"] / $inputan["cover2warna1"] ;
+				}
+				if($inputan["cover2plat2"] && $inputan["cover2warna2"] !=null ){
+					$inputan["cover2set2"] = $inputan["cover2plat2"] / $inputan["cover2warna2"] ;
+				}
+				if($inputan["cover2plat3"] && $inputan["cover2warna3"] !=null ){
+					$inputan["cover2set3"] = $inputan["cover2plat3"] / $inputan["cover2warna3"] ;
+				}
+	
+	
+	
+				if($inputan["isi1plat1"] && $inputan["isi1warna1"] !=null ){
+					$inputan["isi1set1"] = $inputan["isi1plat1"] / $inputan["isi1warna1"] ;
+				}
+				if($inputan["isi1plat2"] && $inputan["isi1warna2"] !=null ){
+					$inputan["isi1set2"] = $inputan["isi1plat2"] / $inputan["isi1warna2"] ;
+				}
+				if($inputan["isi1plat3"] && $inputan["isi1warna3"] !=null ){
+					$inputan["isi1set3"] = $inputan["isi1plat3"] / $inputan["isi1warna3"] ;
+				}
+	
+				if($inputan["isi2plat1"] && $inputan["isi2warna1"] !=null ){
+					$inputan["isi2set1"] = $inputan["isi2plat1"] / $inputan["isi2warna1"] ;
+				}
+				if($inputan["isi2plat2"] && $inputan["isi2warna2"] !=null ){
+					$inputan["isi2set2"] = $inputan["isi2plat2"] / $inputan["isi2warna2"] ;
+				}
+				if($inputan["isi2plat3"] && $inputan["isi2warna3"] !=null ){
+					$inputan["isi2set3"] = $inputan["isi2plat3"] / $inputan["isi2warna3"] ;
+				}
+	
+				if($inputan["isi3plat1"] && $inputan["isi3warna1"] !=null ){
+					$inputan["isi3set1"] = $inputan["isi3plat1"] / $inputan["isi3warna1"] ;
+				}
+				if($inputan["isi3plat2"] && $inputan["isi3warna2"] !=null ){
+					$inputan["isi3set2"] = $inputan["isi3plat2"] / $inputan["isi3warna2"] ;
+				}
+				if($inputan["isi3plat3"] && $inputan["isi3warna3"] !=null ){
+					$inputan["isi3set3"] = $inputan["isi3plat3"] / $inputan["isi3warna3"] ;
+				}
+	
+	
+	
+				if($inputan["cover1set1"] !=null ){
+					$inputan["cover1lbrcetak1"] = $inputan["cover1set1"] / 2 ;
+				}
+				if($inputan["cover1set2"] !=null ){
+					$inputan["cover1lbrcetak2"] = $inputan["cover1set2"] / 2 ;
+				}
+				if($inputan["cover1set2"] !=null ){
+					$inputan["cover1lbrcetak3"] = $inputan["cover1set3"] / 2 ;
+				}
+	
+				if($inputan["cover2set1"] !=null ){
+					$inputan["cover2lbrcetak1"] = $inputan["cover2set1"] / 2 ;
+				}
+				if($inputan["cover2set2"] !=null ){
+					$inputan["cover2lbrcetak2"] = $inputan["cover2set2"] / 2 ;
+				}
+				if($inputan["cover2set2"] !=null ){
+					$inputan["cover2lbrcetak3"] = $inputan["cover2set3"] / 2 ;
+				}
+	
+	
+				if($inputan["isi1set1"] !=null ){
+					$inputan["isi1lbrcetak1"] = $inputan["isi1set1"] / 2 ;
+				}
+				if($inputan["isi1set2"] !=null ){
+					$inputan["isi1lbrcetak2"] = $inputan["isi1set2"] / 2 ;
+				}
+				if($inputan["isi1set2"] !=null ){
+					$inputan["isi1lbrcetak3"] = $inputan["isi1set3"] / 2 ;
+				}
+	
+				if($inputan["isi2set1"] !=null ){
+					$inputan["isi2lbrcetak1"] = $inputan["isi2set1"] / 2 ;
+				}
+				if($inputan["isi2set2"] !=null ){
+					$inputan["isi2lbrcetak2"] = $inputan["isi2set2"] / 2 ;
+				}
+				if($inputan["isi2set2"] !=null ){
+					$inputan["isi2lbrcetak3"] = $inputan["isi2set3"] / 2 ;
+				}
+	
+				if($inputan["isi3set1"] !=null ){
+					$inputan["isi2lbrcetak1"] = $inputan["isi3set1"] / 2 ;
+				}
+				if($inputan["isi3set2"] !=null ){
+					$inputan["isi3lbrcetak2"] = $inputan["isi3set2"] / 2 ;
+				}
+				if($inputan["isi3set3"] !=null ){
+					$inputan["isi3lbrcetak3"] = $inputan["isi3set3"] / 2 ;
+				}
+	
+	
+	
+				if($inputan["cover1plat1"] !=null ){
+					$inputan["jumlahplatecover1"] = $inputan["jumlahplatecover1"] + $inputan["cover1plat1"] ;
+				}
+				if($inputan["cover1plat2"] !=null ){
+					$inputan["jumlahplatecover1"] = $inputan["jumlahplatecover1"] + $inputan["cover1plat2"] ;
+				}
+				if($inputan["cover1plat3"] !=null ){
+					$inputan["jumlahplatecover1"] = $inputan["jumlahplatecover1"] + $inputan["cover1plat3"] ;
+				}
+	
+				if($inputan["cover2plat1"] !=null ){
+					$inputan["jumlahplatecover2"] = $inputan["jumlahplatecover2"] + $inputan["cover2plat1"] ;
+				}
+				if($inputan["cover2plat2"] !=null ){
+					$inputan["jumlahplatecover2"] = $inputan["jumlahplatecover2"] + $inputan["cover2plat2"] ;
+				}
+				if($inputan["cover2plat3"] !=null ){
+					$inputan["jumlahplatecover2"] = $inputan["jumlahplatecover2"] + $inputan["cover2plat3"] ;
+				}
+	
+	
+	
+				if($inputan["isi1plat1"] !=null ){
+					$inputan["jumlahplateisi1"] = $inputan["jumlahplateisi1"] + $inputan["isi1plat1"] ;
+				}
+				if($inputan["isi1plat2"] !=null ){
+					$inputan["jumlahplateisi1"] = $inputan["jumlahplateisi1"] + $inputan["isi1plat2"] ;
+				}
+				if($inputan["isi1plat3"] !=null ){
+					$inputan["jumlahplateisi1"] = $inputan["jumlahplateisi1"] + $inputan["isi1plat3"] ;
+				}
+	
+				if($inputan["isi2plat1"] !=null ){
+					$inputan["jumlahplateisi2"] = $inputan["jumlahplateisi2"] + $inputan["isi2plat1"] ;
+				}
+				if($inputan["isi2plat2"] !=null ){
+					$inputan["jumlahplateisi2"] = $inputan["jumlahplateisi2"] + $inputan["isi2plat2"] ;
+				}
+				if($inputan["isi2plat3"] !=null ){
+					$inputan["jumlahplateisi2"] = $inputan["jumlahplateisi2"] + $inputan["isi2plat3"] ;
+				}
+	
+				if($inputan["isi3plat1"] !=null ){
+					$inputan["jumlahplateisi3"] = $inputan["jumlahplateisi3"] + $inputan["isi3plat1"] ;
+				}
+				if($inputan["isi3plat2"] !=null ){
+					$inputan["jumlahplateisi3"] = $inputan["jumlahplateisi3"] + $inputan["isi3plat2"] ;
+				}
+				if($inputan["isi3plat3"] !=null ){
+					$inputan["jumlahplateisi3"] = $inputan["jumlahplateisi3"] + $inputan["isi3plat3"] ;
+				}	
 			
 			$this->imposisi->edit_imposisi($inputan);
 			$this->imposisi->status_umum($inputan);						

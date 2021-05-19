@@ -80,23 +80,9 @@
               <td><?= $row->so_status; ?></td>
               <td align="center">
                   <!-- lihat detail imposisi -->
-                <?php if($row->id_laporan_pracetak != null) {?>
                     <a href="<?=site_url('pracetak/Laporan/lihat_laporan/'.$row->id_order)?>">
                       <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                     </a>
-
-                <!-- tambah imposisi -->
-                <?php } if($row->id_laporan_pracetak == null) {?>
-                    <a href="<?=site_url('pracetak/Laporan/tambah_laporan/'.$row->id_order)?>">
-                      <i class="fa fa-plus" style="font-size:18px"></i>
-                    </a>
-                <?php }else {?>
-
-                  <!-- edit imposisi -->
-                    <a href="<?=site_url('pracetak/Laporan/edit_laporan/'.$row->id_order)?>">
-                      <i class="fa fa-pencil" style="font-size:18px"></i>
-                    </a>
-                <?php } ?>
               </td>
             </tr> 
             <?php } ?> 

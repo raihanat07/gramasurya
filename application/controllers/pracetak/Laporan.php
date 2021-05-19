@@ -45,7 +45,7 @@ class Laporan extends CI_Controller {
 	public function lihat_laporan($id)
 	{
 		check_not_login();
-		$query = $this->laporan->get_lihatlaporan($id);
+		$query = $this->laporan->get_lihat($id);
 		$data = array(
 			'judul' => 'Lihat Laporan',
 			'laporan' => $query->result(),

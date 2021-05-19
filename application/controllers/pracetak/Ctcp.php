@@ -73,6 +73,24 @@ class Ctcp extends CI_Controller {
 			else
 				$inputan['ctcp_status'] = "";
 
+			if($inputan["jumlahplategagalcover1"] !=null ){
+				$inputan["total_plat_gagal_cover"] = $inputan["total_plat_gagal_cover"] + $inputan["jumlahplategagalcover1"] ;
+			}
+			if($inputan["jumlahplategagalcover2"] !=null ){
+				$inputan["total_plat_gagal_cover"] = $inputan["total_plat_gagal_cover"] + $inputan["jumlahplategagalcover2"] ;
+			}	
+
+
+			if($inputan["jumlahplategagalisi1"] !=null ){
+				$inputan["total_plat_gagal_isi"] = $inputan["total_plat_gagal_isi"] + $inputan["jumlahplategagalisi1"] ;
+			}
+			if($inputan["jumlahplategagalisi2"] !=null ){
+				$inputan["total_plat_gagal_isi"] = $inputan["total_plat_gagal_isi"] + $inputan["jumlahplategagalisi2"] ;
+			}
+			if($inputan["jumlahplategagalisi3"] !=null ){
+				$inputan["total_plat_gagal_isi"] = $inputan["total_plat_gagal_isi"] + $inputan["jumlahplategagalisi3"] ;
+			}
+
 			$this->ctcp->tambah_ctcp($inputan);							
 			$this->ctcp->status_umum($inputan);						
 				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
@@ -94,6 +112,25 @@ class Ctcp extends CI_Controller {
 			}
 			else
 				$inputan['ctcp_status'] = "";
+
+
+			if($inputan["jumlahplategagalcover1"] !=null ){
+				$inputan["total_plat_gagal_cover"] = $inputan["total_plat_gagal_cover"] + $inputan["jumlahplategagalcover1"] ;
+			}
+			if($inputan["jumlahplategagalcover2"] !=null ){
+				$inputan["total_plat_gagal_cover"] = $inputan["total_plat_gagal_cover"] + $inputan["jumlahplategagalcover2"] ;
+			}
+			
+			
+			if($inputan["jumlahplategagalisi1"] !=null ){
+				$inputan["total_plat_gagal_isi"] = $inputan["total_plat_gagal_isi"] + $inputan["jumlahplategagalisi1"] ;
+			}
+			if($inputan["jumlahplategagalisi2"] !=null ){
+				$inputan["total_plat_gagal_isi"] = $inputan["total_plat_gagal_isi"] + $inputan["jumlahplategagalisi2"] ;
+			}
+			if($inputan["jumlahplategagalisi3"] !=null ){
+				$inputan["total_plat_gagal_isi"] = $inputan["total_plat_gagal_isi"] + $inputan["jumlahplategagalisi3"] ;
+			}
 
 			$this->ctcp->edit_ctcp($inputan);							
 			$this->ctcp->status_umum($inputan);						

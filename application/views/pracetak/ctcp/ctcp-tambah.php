@@ -126,10 +126,10 @@
                     </div>
                     <div class="col-md-1">
                         <?=$row->total_plat_cover?><br>
-                        <?=$row->total_plat_cover?>  <!-- TEMPAT UNTUK VARIABEL TOTAL PLAT GAGAL COVER -->
+                        <!-- TEMPAT UNTUK VARIABEL TOTAL PLAT GAGAL COVER -->
 
                         <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN MENGGUNAKAN TAG LABEL -->
-                        <!-- <input type="number" class="form-control" name="total_plat_cover" value="<?=$row->total_plat_cover?>" required> -->
+                        <input type="number" class="form-control" name="total_plat_gagal_cover" hidden>
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
@@ -150,11 +150,11 @@
                     </div>
                     <div class="col-md-1">
                         <?=$row->total_plat_isi?><br>
-                        <?=$row->total_plat_isi?>  <!-- TEMPAT UNTUK VARIABEL TOTAL PLAT GAGAL ISI -->
+                        <!-- <?=$row->total_plat_gagal_isi?>  TEMPAT UNTUK VARIABEL TOTAL PLAT GAGAL ISI -->
                         
 
                         <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN MENGGUNAKAN TAG LABEL -->
-                        <!-- <input type="number" class="form-control" name="total_plat_isi" value="<?=$row->total_plat_isi?>"> -->
+                        <input type="number" class="form-control" name="total_plat_gagal_isi" hidden>
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
@@ -534,11 +534,11 @@
                                             </div><br>
                                             <div class="row">
                                                 <div class="col-md-3">Ke 2 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" required></div>
+                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2" required></div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <textarea name="catatan_imposisi" value="<?=$row->catatan_imposisi?>" class="form-control" placeholder="catatan" style="height: 240px;"></textarea>
+                                            <textarea name="catatan_imposisi"  class="form-control" placeholder="catatan" style="height: 240px;" disabled><?=$row->catatan_imposisi?></textarea>
                                         </div>
                                     </div>
                                 </div>

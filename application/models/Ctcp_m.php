@@ -166,6 +166,8 @@ class Ctcp_m extends CI_Model {
             imposisi.tanggal_imposisi_isi as tanggal_imposisi_isi, 
             imposisi.catatan_imposisi as catatan_imposisi',
             
+            // data_ctcp.total_plat_gagal_cover as total_plat_gagal_cover,
+            // data_ctcp.total_plat_gagal_isi as total_plat_gagal_isi,
             // data_ctcp.status_ctcp_cover as status_ctcp_cover,
             // data_ctcp.status_ctcp_isi as status_ctcp_isi,
             // data_ctcp.plate_gagal1 as plate_gagal1,
@@ -319,7 +321,9 @@ class Ctcp_m extends CI_Model {
             imposisi.tanggal_imposisi_isi as tanggal_imposisi_isi, 
             imposisi.catatan_imposisi as catatan_imposisi,
             
-            data_ctcp.ctcp_status as ctcp_status,            
+            data_ctcp.ctcp_status as ctcp_status,
+            data_ctcp.total_plat_gagal_cover as total_plat_gagal_cover,
+            data_ctcp.total_plat_gagal_isi as total_plat_gagal_isi,            
             data_ctcp.jumlahplategagalcover1 as jumlahplategagalcover1,
             data_ctcp.jumlahplategagalcover2 as jumlahplategagalcover2,
             data_ctcp.jumlahplategagalisi1 as jumlahplategagalisi1,
@@ -345,12 +349,14 @@ class Ctcp_m extends CI_Model {
 	{
             $tambah_ctcp = array(
                 'id_order' =>$data['id_order'],                
-                'ctcp_status' =>$data['ctcp_status'],                
+                'ctcp_status' =>$data['ctcp_status'],
+                'total_plat_gagal_cover' =>$data['total_plat_gagal_cover'],
+                'total_plat_gagal_isi' =>$data['total_plat_gagal_isi'],                
                 'jumlahplategagalcover1' =>$data['jumlahplategagalcover1'],
                 'jumlahplategagalcover2' =>$data['jumlahplategagalcover2'],
                 'jumlahplategagalisi1' =>$data['jumlahplategagalisi1'],                
                 'jumlahplategagalisi2' =>$data['jumlahplategagalisi2'],
-                'jumlahplategagalisi3' =>$data['jumlahplategagalisi1'],
+                'jumlahplategagalisi3' =>$data['jumlahplategagalisi3'],
                 // 'mesin_gagal1' =>$data['mesin_gagal1'],
                 // 'mesin_gagal2' =>$data['mesin_gagal2'],
                 // 'mesin_gagal3' =>$data['mesin_gagal3'],
@@ -377,11 +383,13 @@ class Ctcp_m extends CI_Model {
         // ubah bagian surat order  
 		$edit_ctcp = array(            
             'ctcp_status' =>$data['ctcp_status'],
+            'total_plat_gagal_cover' =>$data['total_plat_gagal_cover'],
+            'total_plat_gagal_isi' =>$data['total_plat_gagal_isi'],
             'jumlahplategagalcover1' =>$data['jumlahplategagalcover1'],
             'jumlahplategagalcover2' =>$data['jumlahplategagalcover2'],
             'jumlahplategagalisi1' =>$data['jumlahplategagalisi1'],                
             'jumlahplategagalisi2' =>$data['jumlahplategagalisi2'],
-            'jumlahplategagalisi3' =>$data['jumlahplategagalisi1'],           
+            'jumlahplategagalisi3' =>$data['jumlahplategagalisi3'],           
             // 'mesin_gagal1' =>$data['mesin_gagal1'],
             // 'mesin_gagal2' =>$data['mesin_gagal2'],
             // 'mesin_gagal3' =>$data['mesin_gagal3'],

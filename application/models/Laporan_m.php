@@ -43,7 +43,17 @@ class Laporan_m extends CI_Model {
             finishing.finishing_akhir_jahit_kawat as jahit_kawat,
             finishing.finishing_akhir_pond as pond,
             finishing.finishing_akhir_spiral as spiral,
-             
+            
+            imposisi.cover1mesin1
+            imposisi.cover2mesin1
+            imposisi.isi1mesin1
+            imposisi.isi2mesin1
+            imposisi.isi3mesin1
+            imposisi.jumlahplatecover1
+            imposisi.jumlahplatecover2
+            imposisi.jumlahplateisi1
+            imposisi.jumlahplateisi2
+            imposisi.jumlahplateisi3
             imposisi.tanggal_imposisi_cover as tanggal_imposisi_cover,
             imposisi.tanggal_imposisi_isi as tanggal_imposisi_isi, 
             imposisi.catatan_imposisi as catatan_imposisi,

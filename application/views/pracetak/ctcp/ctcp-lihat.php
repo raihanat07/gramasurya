@@ -94,7 +94,7 @@
                     </div>
                     <div class="col-md-1">
                         <?=$row->total_plat_cover?><br>
-                        <?=$row->total_plat_cover?>  <!-- TEMPAT UNTUK VARIABEL TOTAL PLAT GAGAL COVER -->
+                        <?=$row->total_plat_gagal_cover?>  <!-- TEMPAT UNTUK VARIABEL TOTAL PLAT GAGAL COVER -->
 
                         <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN MENGGUNAKAN TAG LABEL -->
                         <!-- <input type="number" class="form-control" name="total_plat_cover" value="<?=$row->total_plat_cover?>" required> -->
@@ -118,7 +118,7 @@
                     </div>
                     <div class="col-md-1">
                         <?=$row->total_plat_isi?><br>
-                        <?=$row->total_plat_isi?>  <!-- TEMPAT UNTUK VARIABEL TOTAL PLAT GAGAL ISI -->
+                        <?=$row->total_plat_gagal_isi?>  <!-- TEMPAT UNTUK VARIABEL TOTAL PLAT GAGAL ISI -->
                         
 
                         <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN MENGGUNAKAN TAG LABEL -->
@@ -174,7 +174,7 @@
                                     <label class="form-label">Plate Gagal</label>
                                 </div>
                                 <div class="col">
-                                    <input type="number" class="form-control" name="jumlahplategagalcover1">
+                                <?= $row->jumlahplategagalcover1; ?>
                                 </div>
                             </div><br>
                             <div class="row">
@@ -251,7 +251,7 @@
                                     <label class="form-label">Plate Gagal</label>
                                 </div>
                                 <div class="col-md-2">
-                                    <input type="number" class="form-control" name="jumlahplategagalisi1">
+                                <?= $row->jumlahplategagalisi1; ?>                                
                                 </div>
                             </div><br>
                             <div class="row">
@@ -346,8 +346,8 @@
                                     <label class="form-label">Plate Gagal</label>
                                 </div>
                                 <div class="col-md-2">
-                                    <input type="number" class="form-control" name="jumlahplategagalcover2">
-                                </div>
+                                <?= $row->jumlahplategagalcover2; ?>                               
+                                 </div>
                             </div><br>
                             <div class="row">
                                 <div class="col-md-12">
@@ -423,7 +423,7 @@
                                     <label class="form-label">Plate Gagal</label>
                                 </div>
                                 <div class="col-md-2">
-                                    <input type="number" class="form-control" name="jumlahplategagalisi2">
+                                <?= $row->jumlahplategagalisi2; ?>                                
                                 </div>
                             </div><br>
                             <div class="row">
@@ -494,19 +494,19 @@
                                             <label class="form-label">Tanggal Out CTCP Cover</label>
                                             <br>
                                             <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
-                                            <input type="date" class="form-control" name="tanggal_out_ctcp_cover" required>
+                                            <input type="date" class="form-control" name="tanggal_out_ctcp_cover" value="<?=$row->tanggal_out_ctcp_cover?>" disabled>
                                             <br><label class="form-label">Tanggal Out CTCP Isi</label>
                                             <div class="row">
                                                 <div class="col-md-3">Ke 1 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" required></div>
+                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" value="<?=$row->tanggal_out_ctcp_isi1?>" disabled></div>
                                             </div><br>
                                             <div class="row">
                                                 <div class="col-md-3">Ke 2 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" required></div>
+                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2" value="<?=$row->tanggal_out_ctcp_isi2?>" disabled></div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
-                                            <textarea name="catatan_imposisi" value="<?=$row->catatan_imposisi?>" class="form-control" placeholder="catatan" style="height: 240px;"></textarea>
+                                            <textarea name="catatan_imposisi"  class="form-control" placeholder="catatan" style="height: 240px;" disabled><?=$row->catatan_imposisi?></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -551,7 +551,7 @@
                                             <label class="form-label">Plate Gagal</label>
                                         </div>
                                         <div class="col-md-2">
-                                            <input type="number" class="form-control" name="jumlahplategagalisi3">
+                                        <?= $row->jumlahplategagalisi3; ?>                                
                                         </div>
                                     </div><br>
                                     <div class="col-md-12">
