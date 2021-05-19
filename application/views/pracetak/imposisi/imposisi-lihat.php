@@ -123,7 +123,6 @@
                 </div>
                 <div class="col-md-1">
                     <?=$row->total_plat_cover;?>
-
                     <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN-->
                     <!-- <input type="number" class="form-control" name="total_plat_cover" value="<?=$row->total_plat_cover;?>" disabled> -->
 
@@ -556,45 +555,45 @@
                                         <div class="row" align="center">
                                             <div class="col">
                                                 <label class="form-label">Plate</label><br><br>
-                                                <?= $row->isi2plat1; ?><br><br>
-                                                <?= $row->isi2plat2; ?><br><br>
-                                                <?= $row->isi2plat3; ?>
+                                                <?= $row->isi3plat1; ?><br><br>
+                                                <?= $row->isi3plat2; ?><br><br>
+                                                <?= $row->isi3plat3; ?>
                                             </div>
                                             <div class="col">
                                                 <label class="form-label">Set</label><br><br>
-                                                <?= $row->isi2set1; ?><br><br>
-                                                <?= $row->isi2set2; ?><br><br>
-                                                <?= $row->isi2set3; ?>
+                                                <?= $row->isi3set1; ?><br><br>
+                                                <?= $row->isi3set2; ?><br><br>
+                                                <?= $row->isi3set3; ?>
                                             </div>
                                             <div class="col">
                                                 <label class="form-label">Lbr.Cetak</label><br><br>
-                                                <?= $row->isi2lbrcetak1; ?><br><br>
-                                                <?= $row->isi2lbrcetak2; ?><br><br>
-                                                <?= $row->isi2lbrcetak3; ?>
+                                                <?= $row->isi3lbrcetak1; ?><br><br>
+                                                <?= $row->isi3lbrcetak2; ?><br><br>
+                                                <?= $row->isi3lbrcetak3; ?>
                                             </div>
                                             <div class="col">
                                                 <label class="form-label">Up</label><br><br>
-                                                <?= $row->isi2up1; ?><br><br>
-                                                <?= $row->isi2up2; ?><br><br>
-                                                <?= $row->isi2up3; ?>
+                                                <?= $row->isi3up1; ?><br><br>
+                                                <?= $row->isi3up2; ?><br><br>
+                                                <?= $row->isi3up3; ?>
                                             </div>
                                             <div class="col">
                                                 <label class="form-label">Warna</label><br><br>
-                                                <?= $row->isi2warna1; ?><br><br>
-                                                <?= $row->isi2warna2; ?><br><br>
-                                                <?= $row->isi2warna3; ?>
+                                                <?= $row->isi3warna1; ?><br><br>
+                                                <?= $row->isi3warna2; ?><br><br>
+                                                <?= $row->isi3warna3; ?>
                                             </div>
                                             <div class="col">
                                                 <label class="form-label">Proses</label><br><br>
-                                                <?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?><br><br>
-                                                <?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?><br><br>
-                                                <?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>
+                                                <?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?><br><br>
+                                                <?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?><br><br>
+                                                <?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?>
                                             </div>
                                             <div class="col">
                                                 <label class="form-label">Keterangan</label>
-                                                <?= $row->isi2keterangan1; ?><br><br>
-                                                <?= $row->isi2keterangan2; ?><br><br>
-                                                <?= $row->isi2keterangan3; ?>
+                                                <?= $row->isi3keterangan1; ?><br><br>
+                                                <?= $row->isi3keterangan2; ?><br><br>
+                                                <?= $row->isi3keterangan3; ?>
                                             </div>
                                             <div class="col">
                                                 <label class="form-label">Tgl. Imposisi</label>

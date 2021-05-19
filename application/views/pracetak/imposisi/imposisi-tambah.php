@@ -127,17 +127,16 @@
                         <input type="text" class="form-control" name="namaoperator2">
                     </div>
                 </div><br>
+                <div class="perhitungan">
                 <div class="row">
                     <div class="col-md-2">
                         <label class="form-label">Total Plat Cover</label>
                     </div>
                     <div class="col-md-1">
-                        10
-
                         <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN-->
-                        <!-- <input type="number" class="form-control" name="total_plat_cover"> -->
-
+                        <input type="number" class="form-control" name="total_plat_cover" hidden>
                     </div>
+                    
                     <div class="col-md-3" align="left">
                         <div class="form-check">
                             <input type="text" name="status_imposisi_cover" value="" hidden>
@@ -149,10 +148,8 @@
                         <label class="form-label">Total Plat Isi</label>
                     </div>
                     <div class="col-md-1">
-                        10
-
                         <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN-->
-                        <!-- <input type="number" class="form-control" name="total_plat_isi"> -->
+                        <input type="number" class="form-control" name="total_plat_isi" hidden>
                     </div>
                     <div class="col-md-3" align="left">
                         <div class="form-check">
@@ -198,10 +195,8 @@
                                     <label class="form-label">Plate</label>
                                 </div>
                                 <div class="col-md-3">
-                                    10
-
                                     <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
-                                    <!-- <input type="number" class="form-control" name="jumlahplatecover1"> -->
+                                    <input type="number" class="form-control" name="jumlahplatecover1" hidden>
 
                                 </div>
                             </div><br>
@@ -215,26 +210,26 @@
                                     <div class="row" align="center">
                                         <div class="col">
                                             <label class="form-label">Plate</label>
-                                            <input type="number" class="form-control" name="cover1plat1"><br>
-                                            <input type="number" class="form-control" name="cover1plat2"><br>
-                                            <input type="number" class="form-control" name="cover1plat3">
+                                            <input type="number" class="form-control" id="cover1plat1" name="cover1plat1"><br>
+                                            <input type="number" class="form-control" id="cover1plat2" name="cover1plat2"><br>
+                                            <input type="number" class="form-control" id="cover1plat3" name="cover1plat3">
                                         </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="cover1set1" ><br>
                                             <input class="form-control" name="cover1set2" ><br>
                                             <input class="form-control" name="cover1set3" >
-                                        </div> -->
+                                        </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="cover1lbrcetak1" ><br>
                                             <input class="form-control" name="cover1lbrcetak2" ><br>
                                             <input class="form-control" name="cover1lbrcetak3" >
-                                        </div> -->
+                                        </div>
 
                                         <div class="col">
                                             <label class="form-label">Up</label>
@@ -305,10 +300,8 @@
                                     <label class="form-label">Plate</label>
                                 </div>
                                 <div class="col-md-3">
-                                    10
-
                                     <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
-                                    <!-- <input type="number" class="form-control" name="jumlahplateisi1"> -->
+                                    <input type="number" class="form-control" name="jumlahplateisi1" hidden>
 
                                 </div>
                             </div><br>
@@ -328,21 +321,21 @@
                                         </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="isi1set1" ><br>
                                             <input class="form-control" name="isi1set2" ><br>
                                             <input class="form-control" name="isi1set3" >
-                                        </div> -->
+                                        </div>
 
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="isi1lbrcetak1" ><br>
                                             <input class="form-control" name="isi1lbrcetak2" ><br>
                                             <input class="form-control" name="isi1lbrcetak3" >
-                                        </div> -->
+                                        </div>
 
                                         <div class="col">
                                             <label class="form-label">Up</label>
@@ -431,10 +424,8 @@
                                     <label class="form-label">Plate</label>
                                 </div>
                                 <div class="col-md-3">
-                                    10
-
                                     <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
-                                    <!-- <input type="number" class="form-control" name="jumlahplatecover2"> -->
+                                    <input type="number" class="form-control" name="jumlahplatecover2" hidden>
 
                                 </div>
                             </div><br>
@@ -448,27 +439,27 @@
                                     <div class="row" align="center">
                                         <div class="col">
                                             <label class="form-label">Plate</label>
-                                            <input type="number" class="form-control" name="cover2plat1"><br>
-                                            <input type="number" class="form-control" name="cover2plat2"><br>
-                                            <input type="number" class="form-control" name="cover2plat3">
+                                            <input type="number" class="form-control" id="cover2plat1" name="cover2plat1"><br>
+                                            <input type="number" class="form-control" id="cover2plat2" name="cover2plat2"><br>
+                                            <input type="number" class="form-control" id="cover2plat3" name="cover2plat3">
                                         </div>
 
                                         
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="cover2set1" ><br>
                                             <input class="form-control" name="cover2set2" ><br>
                                             <input class="form-control" name="cover2set3" >
-                                        </div> -->
+                                        </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="cover2lbrcetak1" ><br>
                                             <input class="form-control" name="cover2lbrcetak2" ><br>
                                             <input class="form-control" name="cover2lbrcetak3" >
-                                        </div> -->
+                                        </div>
 
                                         <div class="col">
                                             <label class="form-label">Up</label>
@@ -539,10 +530,8 @@
                                     <label class="form-label">Plate</label>
                                 </div>
                                 <div class="col-md-3">
-                                    10
-
                                     <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
-                                    <!-- <input type="number" class="form-control" name="jumlahplateisi2"> -->
+                                    <input type="number" class="form-control" name="jumlahplateisi2" hidden>
 
                                 </div>
                             </div><br>
@@ -562,20 +551,20 @@
                                         </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Set</label>
                                             <input class="form-control" name="isi2set1" ><br>
                                             <input class="form-control" name="isi2set2" ><br>
                                             <input class="form-control" name="isi2set3" >
-                                        </div> -->
+                                        </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <!-- <div class="col">
+                                        <div class="col" hidden>
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="isi2lbrcetak1" ><br>
                                             <input class="form-control" name="isi2lbrcetak2" ><br>
                                             <input class="form-control" name="isi2lbrcetak3" >
-                                        </div> -->
+                                        </div>
 
                                         <div class="col">
                                             <label class="form-label">Up</label>
@@ -680,10 +669,8 @@
                                             <label class="form-label">Plate</label>
                                         </div>
                                         <div class="col-md-3">
-                                            10
-
                                             <!-- VARIABEL INPUTAN PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI RINCIAN IMPOSISI COVER DAN ISI, TETAP DI TAMPILKAN -->
-                                            <!-- <input type="number" class="form-control" name="jumlahplateisi3"> -->
+                                            <input type="number" class="form-control" name="jumlahplateisi3" hidden>
 
                                         </div>
                                     </div><br>
@@ -703,21 +690,21 @@
                                                 </div>
 
                                                 <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                                <!-- <div class="col">
+                                                <div class="col" hidden>
                                                     <label class="form-label">Set</label>
                                                     <input class="form-control" name="isi3set1" ><br>
                                                     <input class="form-control" name="isi3set2" ><br>
                                                     <input class="form-control" name="isi3set3" >
-                                                </div> -->
+                                                </div>
                                                 
 
                                                 <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                                <!-- <div class="col">
+                                                <div class="col" hidden>
                                                     <label class="form-label">Lbr.Cetak</label>
                                                     <input class="form-control" name="isi3lbrcetak1" ><br>
                                                     <input class="form-control" name="isi3lbrcetak2" ><br>
                                                     <input class="form-control" name="isi3lbrcetak3" >
-                                                </div> -->
+                                                </div>
 
                                                 <div class="col">
                                                     <label class="form-label">Up</label>
@@ -768,6 +755,30 @@
                                         </div>
                                     </div>
                                 </div>
+                                </div>
+                                <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                        <script type="text/javascript">
+                            $(".perhitungan").keyup(function(){
+                                var bil1 = parseInt($("#cover1plat1").val())
+                                var bil2 = parseInt($("#cover1plat2").val())
+                                var bil3 = parseInt($("#cover1plat3").val())
+                                // var bil4 = parseInt($("#isi1plat1").val())
+                                // var bil5 = parseInt($("#isi1plat2").val())
+                                // var bil6 = parseInt($("#isi1plat2").val())
+                                var bil7 = parseInt($("#cover2plat1").val())
+                                var bil8 = parseInt($("#cover2plat2").val())
+                                var bil9 = parseInt($("#cover2plat3").val())
+                                // var bil10 = parseInt($("#isi2plat1").val())
+                                // var bil11 = parseInt($("#isi2plat2").val())
+                                // var bil12 = parseInt($("#isi2plat3").val())
+                                // var bil13 = parseInt($("#isi3plat1").val())
+                                // var bil14 = parseInt($("#isi3plat2").val())
+                                // var bil15 = parseInt($("#isi3plat3").val())
+
+                                var total_plat_cover = bil1 + bil2 + bil3 + bil7 + bil8 + bili9;
+                                $("#total_plat_cover").attr("value",total_plat_cover)
+                            })
+                        </script> -->
                             </div>
                         </div>
                     </div>
