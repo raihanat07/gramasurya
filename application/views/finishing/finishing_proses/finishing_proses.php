@@ -19,7 +19,7 @@
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
-                <table id="table1" class="table table-bordered table-striped" style="font-size: 12px">
+                <table id="example2" class="table table-bordered table-striped" style="font-size: 12px">
                     <thead>
                       <tr align="center">
                         <td>Nomor SO</td>

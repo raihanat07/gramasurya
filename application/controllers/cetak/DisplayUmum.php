@@ -12,7 +12,7 @@ class DisplayUmum extends CI_Controller {
 	public function lihat_du()
 	{
 		// check_already_login_cetak();
-		$data['judul'] = 'Lihat Display Umum';
+		$data['judul'] = 'Display Umum';
 		$this->template->load('cetak/template','cetak/display_umum/displayumum-lihat',$data);
 	}
 

@@ -186,7 +186,7 @@
 
             <div class="row">
               <div class="col">
-                <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
+                <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;"></textarea>
               </div>
             </div><br>
 
@@ -209,15 +209,16 @@
 
             <div class="row" style="min-height: 250px;">
               <div class="col-md-6">
-                <textarea class="form-control" name="catatan_spk_cetak" placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
+                <textarea class="form-control" name="catatan_spk_cetak" placeholder="Keterangan" style="min-height: 250px;"></textarea>
               </div>
               <div class="col-sm-6">
-                <textarea class="form-control" name="catatan_spk_kertas_dan_potong" placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
+                <textarea class="form-control" name="catatan_spk_kertas_dan_potong" placeholder="Keterangan" style="min-height: 250px;"></textarea>
               </div>
             </div><br>
-            <div class="row" align="right">
-              <div class="col">
+            <div class="row">
+              <div class="col" align="right">
                 <button type="submit" class="btn btn-default">Print</button>
+                <button type="submit" class="btn btn-success">Simpan</button>
               </div>
             </div>
           </div>

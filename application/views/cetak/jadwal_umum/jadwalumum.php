@@ -157,6 +157,12 @@
                             <br>Druk<br>
                             <label>otomatis = target * oplag</label>
                           </div>
+                        </div><br>
+                        <div class="row" align="right">
+                          <div class="col">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
+                            <button type="button" class="btn btn-success">Publish</button>
+                          </div>
                         </div>
                       </div>
                       <div class="tab-pane" id="isi">
@@ -229,16 +235,20 @@
                             <br>Druk<br>
                             <label>otomatis = target * oplag</label>
                           </div>
+                        </div><br>
+                        <div class="row" align="right">
+                          <div class="col">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
+                            <button type="button" class="btn btn-success">Publish</button>
+                          </div>
                         </div>
                       </div>
                     </div><br>
                   </div><!-- /.card-body -->
                 </div>
                 <!-- footer modal -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                  <button type="button" class="btn btn-success" data-dismiss="modal">Publish</button>
-                </div>
+                <!-- <div class="modal-footer">
+                </div> -->
               </div>
             </div>
           </div>
