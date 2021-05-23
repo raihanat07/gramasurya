@@ -481,7 +481,7 @@ class Imposisi extends CI_Controller {
 				}
 	
 				if($inputan["isi3set1"] !=null ){
-					$inputan["isi2lbrcetak1"] = $inputan["isi3set1"] / 2 ;
+					$inputan["isi3lbrcetak1"] = $inputan["isi3set1"] / 2 ;
 				}
 				if($inputan["isi3set2"] !=null ){
 					$inputan["isi3lbrcetak2"] = $inputan["isi3set2"] / 2 ;
