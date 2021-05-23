@@ -44,20 +44,25 @@ class Laporan_m extends CI_Model {
             finishing.finishing_akhir_pond as pond,
             finishing.finishing_akhir_spiral as spiral,
             
-            imposisi.cover1mesin1
-            imposisi.cover2mesin1
-            imposisi.isi1mesin1
-            imposisi.isi2mesin1
-            imposisi.isi3mesin1
-            imposisi.jumlahplatecover1
-            imposisi.jumlahplatecover2
-            imposisi.jumlahplateisi1
-            imposisi.jumlahplateisi2
-            imposisi.jumlahplateisi3
+            imposisi.cover1mesin1,
+            imposisi.cover2mesin1,
+            imposisi.isi1mesin1,
+            imposisi.isi2mesin1,
+            imposisi.isi3mesin1,
+            imposisi.jumlahplatecover1,
+            imposisi.jumlahplatecover2,
+            imposisi.jumlahplateisi1,
+            imposisi.jumlahplateisi2,
+            imposisi.jumlahplateisi3,
             imposisi.tanggal_imposisi_cover as tanggal_imposisi_cover,
             imposisi.tanggal_imposisi_isi as tanggal_imposisi_isi, 
             imposisi.catatan_imposisi as catatan_imposisi,
             
+            data_ctcp.jumlahplategagalcover1,
+            data_ctcp.jumlahplategagalcover2,
+            data_ctcp.jumlahplategagalisi1,
+            data_ctcp.jumlahplategagalisi2,
+            data_ctcp.jumlahplategagalisi3,
             data_ctcp.tanggal_out_ctcp_cover as tanggal_out_ctcp_cover,
             data_ctcp.tanggal_out_ctcp_isi1 as tanggal_out_ctcp_isi1,
             data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2',

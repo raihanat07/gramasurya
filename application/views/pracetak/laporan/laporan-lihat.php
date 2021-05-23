@@ -195,11 +195,11 @@
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
                                                     <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
-                                                        <input type="number" class="form-control" name="plate_1_keluar_cover" value="<?=$row->plate_1_keluar_cover?>" disabled>
+                                                        <input type="number" class="form-control" name="jumlahplatecover1" value="<?=$row->jumlahplatecover1?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_1_keluar_cover" value="<?=$row->mesin_1_keluar_cover?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_1_keluar_cover != "-" ?   $row->mesin_1_keluar_cover  : '-' ?>"><?php  echo $row->mesin_1_keluar_cover != "-" ?   $row->mesin_1_keluar_cover  : '-' ?>   </option>
+                                                        <select name="cover1mesin1" value="<?=$row->cover1mesin1?>" class="form-select form-control" disabled>
+                                                        <option value="<?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?>"><?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -211,11 +211,11 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_2_keluar_cover" value="<?=$row->plate_2_keluar_cover?>" disabled>
+                                                        <input type="number" class="form-control" name="jumlahplatecover2" value="<?=$row->jumlahplatecover2?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_2_keluar_cover" value="<?=$row->mesin_2_keluar_cover?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_2_keluar_cover != "-" ?   $row->mesin_2_keluar_cover  : '-' ?>"><?php  echo $row->mesin_2_keluar_cover != "-" ?   $row->mesin_2_keluar_cover  : '-' ?>   </option>
+                                                        <select name="cover2mesin1" value="<?=$row->cover2mesin1?>" class="form-select form-control" disabled>
+                                                        <option value="<?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?>"><?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -224,8 +224,9 @@
 
                                                         </select>
                                                     </div>
-                                                </div><br>
-                                                <div class="row">
+                                                </div>
+                                                <br>
+                                                <!-- <div class="row">
                                                     <div class="col-md-6" align="center">
                                                         <input type="number" class="form-control" name="plate_3_keluar_cover" value="<?=$row->plate_3_keluar_cover?>" disabled>
                                                     </div>
@@ -240,7 +241,7 @@
 
                                                         </select>
                                                     </div>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -267,11 +268,11 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_1_keluar_isi" value="<?=$row->plate_1_keluar_isi?>" disabled>
+                                                        <input type="number" class="form-control" name="jumlahplateisi1" value="<?=$row->jumlahplateisi1?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_1_keluar_isi" value="<?=$row->mesin_1_keluar_isi?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_1_keluar_isi != "-" ?   $row->mesin_1_keluar_isi  : '-' ?>"><?php  echo $row->mesin_1_keluar_isi != "-" ?   $row->mesin_1_keluar_isi  : '-' ?>   </option>
+                                                        <select name="isi1mesin1" value="<?=$row->isi1mesin1?>" class="form-select form-control" disabled>
+                                                        <option value="<?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?>"><?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -283,11 +284,11 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_2_keluar_isi" value="<?=$row->plate_2_keluar_isi?>" disabled>
+                                                        <input type="number" class="form-control" name="jumlahplateisi2" value="<?=$row->jumlahplateisi2?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_2_keluar_isi" value="<?=$row->mesin_2_keluar_isi?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_2_keluar_isi != "-" ?   $row->mesin_2_keluar_isi  : '-' ?>"><?php  echo $row->mesin_2_keluar_isi != "-" ?   $row->mesin_2_keluar_isi  : '-' ?>   </option>
+                                                        <select name="isi2mesin1" value="<?=$row->isi2mesin1?>" class="form-select form-control" disabled>
+                                                        <option value="<?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?>"><?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -299,11 +300,11 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_3_keluar_isi" value="<?=$row->plate_3_keluar_isi?>" disabled>
+                                                        <input type="number" class="form-control" name="jumlahplateisi3" value="<?=$row->jumlahplateisi3?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_3_keluar_isi" value="<?=$row->mesin_3_keluar_isi?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_3_keluar_isi != "-" ?   $row->mesin_3_keluar_isi  : '-' ?>"><?php  echo $row->mesin_3_keluar_isi != "-" ?   $row->mesin_3_keluar_isi  : '-' ?>   </option>
+                                                        <select name="isi3mesin1" value="<?=$row->isi3mesin1?>" class="form-select form-control" disabled>
+                                                        <option value="<?php  echo $row->isi3mesin1 != "-" ?   $row->isi3mesin1  : '-' ?>"><?php  echo $row->isi3mesin1 != "-" ?   $row->isi3mesin1  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -322,7 +323,7 @@
                                         <div class="col">
                                             <div class="card border bg-info">
                                                 <div class="card-header text-center">
-                                                    Plate Keluar Gagal
+                                                    Plate Keluar Gagal Cover
                                                 </div>
                                             </div>
                                         </div>
@@ -340,11 +341,11 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_gagal1" value="<?=$row->plate_gagal1?>" disabled>
+                                                        <input type="number" class="form-control" name="jumlahplategagalcover1" value="<?=$row->jumlahplategagalcover1?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_gagal1" value="<?=$row->mesin_gagal1?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_gagal1 != "-" ?   $row->mesin_gagal1  : '-' ?>"><?php  echo $row->mesin_gagal1 != "-" ?   $row->mesin_gagal1  : '-' ?>   </option>
+                                                        <select name="cover1mesin1" value="<?=$row->cover1mesin1?>" class="form-select form-control" disabled>
+                                                        <option value="<?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?>"><?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -356,11 +357,11 @@
                                                 </div><br>
                                                 <div class="row">
                                                     <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_gagal2" value="<?=$row->plate_gagal2?>" disabled>
+                                                        <input type="number" class="form-control" name="jumlahplategagalcover2" value="<?=$row->jumlahplategagalcover2?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
-                                                        <select name="mesin_gagal2" value="<?=$row->mesin_gagal2?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_gagal2 != "-" ?   $row->mesin_gagal2  : '-' ?>"><?php  echo $row->mesin_gagal2 != "-" ?   $row->mesin_gagal2  : '-' ?>   </option>
+                                                        <select name="cover2mesin1" value="<?=$row->cover2mesin1?>" class="form-select form-control" disabled>
+                                                        <option value="<?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?>"><?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
@@ -370,13 +371,86 @@
                                                         </select>
                                                     </div>
                                                 </div><br>
-                                                <div class="row">
+                                                <!-- <div class="row">
                                                     <div class="col-md-6" align="center">
                                                         <input type="number" class="form-control" name="plate_gagal3" value="<?=$row->plate_gagal3?>" disabled>
                                                     </div>
                                                     <div class="col-md-6" align="center">
                                                         <select name="mesin_gagal3" value="<?=$row->mesin_gagal3?>" class="form-select form-control" disabled>
                                                         <option value="<?php  echo $row->mesin_gagal3 != "-" ?   $row->mesin_gagal3  : '-' ?>"><?php  echo $row->mesin_gagal3 != "-" ?   $row->mesin_gagal3  : '-' ?>   </option>
+                                                            <option value="102">102</option>
+                                                            <option value="74">74</option>
+                                                            <option value="72">72</option>
+                                                            <option value="Tokko">Tokko</option>
+                                                            <option value="-">-</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card border bg-info">
+                                                <div class="card-header text-center">
+                                                    Plate Keluar Gagal Isi
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card-body p-3 mb-2 bg-light text-dark">
+                                                <div class="row">
+                                                    <div class="col-md-6" align="center">
+                                                        <label class="form-label">Plate</label>
+                                                    </div>
+                                                    <div class="col-md-6" align="center">
+                                                        <label class="form-label">Mesin</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6" align="center">
+                                                        <input type="number" class="form-control" name="jumlahplategagalisi1" value="<?=$row->jumlahplategagalisi1?>" disabled>
+                                                    </div>
+                                                    <div class="col-md-6" align="center">
+                                                        <select name="isi1mesin1" value="<?=$row->isi1mesin1?>" class="form-select form-control" disabled>
+                                                        <option value="<?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?>"><?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?>   </option>
+                                                            <option value="102">102</option>
+                                                            <option value="74">74</option>
+                                                            <option value="72">72</option>
+                                                            <option value="Tokko">Tokko</option>
+                                                            <option value="-">-</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div><br>
+                                                <div class="row">
+                                                    <div class="col-md-6" align="center">
+                                                        <input type="number" class="form-control" name="jumlahplategagalisi2" value="<?=$row->jumlahplategagalisi2?>" disabled>
+                                                    </div>
+                                                    <div class="col-md-6" align="center">
+                                                        <select name="isi2mesin1" value="<?=$row->isi2mesin1?>" class="form-select form-control" disabled>
+                                                        <option value="<?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?>"><?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?>   </option>
+                                                            <option value="102">102</option>
+                                                            <option value="74">74</option>
+                                                            <option value="72">72</option>
+                                                            <option value="Tokko">Tokko</option>
+                                                            <option value="-">-</option>
+
+                                                        </select>
+                                                    </div>
+                                                </div><br>
+                                                <div class="row">
+                                                    <div class="col-md-6" align="center">
+                                                        <input type="number" class="form-control" name="jumlahplateisi3" value="<?=$row->jumlahplateisi3?>" disabled>
+                                                    </div>
+                                                    <div class="col-md-6" align="center">
+                                                        <select name="isi3mesin1" value="<?=$row->isi3mesin1?>" class="form-select form-control" disabled>
+                                                        <option value="<?php  echo $row->isi3mesin1 != "-" ?   $row->isi3mesin1  : '-' ?>"><?php  echo $row->isi3mesin1 != "-" ?   $row->isi3mesin1  : '-' ?>   </option>
                                                             <option value="102">102</option>
                                                             <option value="74">74</option>
                                                             <option value="72">72</option>
