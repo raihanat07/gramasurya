@@ -516,9 +516,9 @@
                             <div class="col-md-6" align="left">
                                 <a href="<?=site_url()?>pracetak/Ctcp" class="btn btn-default">Kembali</a>
                             </div>
-                            <!-- <div class="col-md-6" align="right">
-                                <a href="<?=site_url('pracetak/Ctcp/print_ctcp/'.$row->id_order)?>pracetak/Imposisi" class="btn btn-default">Print</a>
-                            </div> -->
+                            <div class="col-md-6" align="right">
+                                <a href="<?=site_url('pracetak/Ctcpp/print_ctcp/'.$row->id_order)?>pracetak/Imposisi" class="btn btn-default">Print</a>
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -612,7 +612,10 @@
                     </div>
                 <?php } ?>
                 </div>
-            </form>    
+            </form>
+            <script>
+		window.print();
+	</script>    
         </div>
     </div>
     <!-- /.card-body -->

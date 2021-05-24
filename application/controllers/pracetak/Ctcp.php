@@ -31,6 +31,17 @@ class Ctcp extends CI_Controller {
 		$this->template->load('pracetak/template','pracetak/ctcp/ctcp-tambah',$data);		
 	}
 
+	public function print_ctcp($id)
+	{
+		check_not_login();
+		$query = $this->ctcp->get_lihatctcp($id);
+		$data = array(
+			'judul' => 'Print Ctcp',
+			'imposisi' => $query->result(),
+		);		
+		$this->template->load('pracetak/template','pracetak/ctcp/ctcp-print',$data);		
+	}
+
 
 	public function edit_ctcp($id)
 	{
