@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>FINISHING AKHIR</h1>
+        <h1>FINISHING PROSES</h1>
       </div>
     </div>
   </div><!-- /.container-fluid -->
@@ -13,7 +13,7 @@
   <div class="card">
     <div class="card-header">
       <div class="card-title">
-        <h3>Mesin Binding</h3>
+        <h3>Mesin (disesuaikan)</h3>
       </div>
     </div>
     <!-- /.card-header -->
@@ -65,6 +65,7 @@
           </div>  
         </div><br>
         <hr><br>
+
         <div class="row">
           <div class="col-md-6">
             Tanggal Pelaksanaan<br>
@@ -75,46 +76,47 @@
 
         <div class="row">
           <div class="col-md-6">
-            Hasil Berhasil<br>
-            <input type="number" class="form-control" name="hasil_berhasil_mesin_binding" placeholder="Masukan Jumlah Lembar" required>
+            Hasil<br>
+            <input type="number" class="form-control" name="hasil_laminasi" placeholder="Masukan Jumlah Lembar" required>
           </div>
           <div class="col-md-6">
-            Hasil Rejek<br>
-            <input type="number" class="form-control" name="hasil_rejek_mesin_binding" placeholder="Masukan Jumlah Lembar" required>
+            Rejek<br>
+            <input type="number" class="form-control" name="rejek_laminasi" placeholder="Masukan Jumlah Lembar" required>
           </div>
         </div><br>
         <div class="row">
           <div class="col-md-6">
             Keterangan<br>
-            <input type="text" class="form-control" name="keterangan_mesin_binding" required>
+            <input type="text" class="form-control" name="keterangan_laminasi" required>
           </div>
         </div><br>
         <hr><br>
 
-        <h4>Laporan Pengerjaan</h4><br>
         <div class="row">
-          <div class="col-md-2">Hasil</div>
-          <div class="col-md-4">: <label>dari db</label></div>
-          <div class="col-md-2">Rejek</div>
-          <div class="col-md-4">: <label>dari db</label></div>
+          <div class="col-md-6">
+            Nama Operator - 1<br>
+            <input type="text" class="form-control" name="operator1_shoe">
+          </div>
+          <div class="col-md-6">
+            Nama Operator - 2<br>
+            <input type="text" class="form-control" name="operator2_shoe">
+          </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2">Keterangan</div>
-          <div class="col-md-10">: <label>dari db</label></div>
-        </div><br>
-        <div class="row">
-          <div class="col-md-2">Operator</div>
-          <div class="col-md-10">: <label>dari db</label></div>
-        </div><br>
-        <div class="row">
-          <div class="col-md-2">Tanggal</div>
-          <div class="col-md-10">: <label>dari db</label></div>
+          <div class="col-md-6">
+            Tanggal Input - 1<br>
+            <input type="date" class="form-control" name="tanggal_input1_shoe">
+          </div>
+          <div class="col-md-6">
+            Tanggal Input - 2<br>
+            <input type="date" class="form-control" name="tanggal_input2_shoe">
+          </div>
         </div><br>
 
         <div class="row">
           <div class="col" align="right">
             <button type="reset" class="btn btn-default">Kembali</button>
-            <button type="submit" name="simpan" class="btn btn-success">Publish </button>
+            <button type="submit" name="simpan" class="btn btn-success">Jadwal</button>
           </div>
         </div>
 

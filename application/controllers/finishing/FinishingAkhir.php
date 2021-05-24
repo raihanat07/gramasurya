@@ -28,9 +28,7 @@ class FinishingAkhir extends CI_Controller {
 		);		
 		$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa',$data);
 	}
-
-	// MESIN BINDING
-    public function jadwal_fa_binding()
+    public function tambah_jadwal_fa()
 	{
 		// check_already_login_finishing();
 		$query = $this->so->get();
@@ -38,9 +36,9 @@ class FinishingAkhir extends CI_Controller {
 			'judul' => 'Finishing Akhir',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_binding',$data);
+		$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa',$data);
 	}
-    public function tambah_jadwal_fa_binding()
+    public function edit_jadwal_fa()
 	{
 		// check_already_login_finishing();
 		$query = $this->so->get();
@@ -48,9 +46,9 @@ class FinishingAkhir extends CI_Controller {
 			'judul' => 'Finishing Akhir',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/tambah_jadwal_fa_binding',$data);
+		$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa',$data);
 	}
-    public function lihat_jadwal_fa_binding()
+    public function lihat_jadwal_fa()
 	{
 		// check_already_login_finishing();
 		$query = $this->so->get();
@@ -58,7 +56,7 @@ class FinishingAkhir extends CI_Controller {
 			'judul' => 'Finishing Akhir',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/lihat_jadwal_fa_binding',$data);
+		$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa',$data);
 	}
 	
 }
