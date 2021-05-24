@@ -68,8 +68,32 @@
                         <br><label class="form-label"><?=$row->ukuran?></label>
                     </div>
                     <div class="col-md-4">
-                        <br>Finsihing Akhir
-                        <br><label class="form-label">Jahit Kawat</label>
+                        <br>Finsihing Akhir<br>
+                        <label class="form-label">
+                            <?php 
+                                $finishing = "";
+                                if($row->bending != null){
+                                    $finishing .= "bending, ";
+                                }
+                                if($row->hard_cover != null){
+                                    $finishing .= 'hard cover, ';
+                                }   
+                                if($row->jahit_benang != null){
+                                    $finishing .= 'jahit benang, ';
+                                } 
+                                if($row->jahit_kawat != null){
+                                    $finishing .= 'jahit kawat, ';
+                                }    
+                                if($row->pond != null){
+                                    $finishing .= 'pond, ';
+                                }   
+                                if($row->spiral != null){
+                                    $finishing .= 'Spiral, ';
+                                }
+                                $finishing = rtrim($finishing, ", ");
+                                echo $finishing;
+                            ?>
+                        </label>
                     </div>
                 </div>
                 <br><hr><br>
