@@ -18,7 +18,7 @@
     <div class="card">
     <div class="card-header">
         <!-- <label>SO</label> -->
-        <h3 class="card-title">Data Imposisi</h3>
+        <h3 class="card-title">Data Laporan</h3>
         
 
         <div class="card-tools">
@@ -132,26 +132,38 @@
                             </div>
                         </div>
                         <form action="<?=site_url('pracetak/ctcp/tambah_ctcp')?>" method="post">
+                        <div class="row">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="row card-body">
+                                <div class="col-md-12">
+                                    Tanggal Imposisi Cover
+                                    <br><label><?=$row->tanggal_imposisi_cover?></label>
+                                    <br>Tanggal Imposisi Isi
+                                    <br><label><?=$row->tanggal_imposisi_isi?></label>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="<?=site_url('pracetak/ctcp/tambah_ctcp')?>" method="post">
                         <div class="card">
                             <div class="row card-body">
                                 <div class="col-md-12">
                                     <div class="row card-body">
                                         <div class="col-md-6">
-                                            <input class="form-check-input" type="checkbox" value="Imposisi Cover">
+                                            <input class="form-check-input" type="checkbox" value="Imposisi Cover" disabled>
                                             <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
-                                            <input class="form-check-input" type="checkbox" value="CTCP Cover">
+                                            <input class="form-check-input" type="checkbox" value="CTCP Cover" disabled>
                                             <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-                                            <input class="form-check-input" type="checkbox" value="Khusus">
+                                            <input class="form-check-input" type="checkbox" value="Khusus" disabled>
                                             <label class="form-check-label" for="flexCheckDefault">Khusus</label>
                                         </div>
                                         <div class="col-md-6">
-                                            <input class="form-check-input" type="checkbox" value="Imposisi Isi" >
+                                            <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled>
                                             <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label><br>
-                                            <input class="form-check-input" type="checkbox" value="CTCP Cover">
+                                            <input class="form-check-input" type="checkbox" value="CTCP Cover" disabled>
                                             <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-
                                             <input  type="text" name="status_laporan_pracetak" value="ctcp" hidden>
-                                            <input class="form-check-input" type="checkbox" name="status_laporan_pracetak" value="pracetak" <?php echo $row->so_status == "pracetak" ?  "checked" : "" ?> >
+                                            <input class="form-check-input" type="checkbox" name="status_laporan_pracetak" value="pracetak" <?php echo $row->so_status == "pracetak" ?  "checked" : "" ?>  disabled>
                                             <label class="form-check-label" for="flexCheckDefault">Pracetak</label>
                                         </div>
                                     </div>
@@ -160,246 +172,165 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card">
-                            <div class="row card-body">
-                                <div class="col-md-4">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card border bg-info">
-                                                <div class="card-header text-center">
-                                                    Plate Keluar Cover
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card-body p-3 mb-2 bg-light text-dark">
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <label class="form-label">Plate</label>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <label class="form-label">Mesin</label>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                    <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
-                                                        <input type="number" class="form-control" name="plate_1_keluar_cover" value="<?=$row->plate_1_keluar_cover?>">
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_1_keluar_cover" value="<?=$row->mesin_1_keluar_cover?>" class="form-select form-control">
-                                                        <option value="<?php  echo $row->mesin_1_keluar_cover != "-" ?   $row->mesin_1_keluar_cover  : '-' ?>"><?php  echo $row->mesin_1_keluar_cover != "-" ?   $row->mesin_1_keluar_cover  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_2_keluar_cover" value="<?=$row->plate_2_keluar_cover?>">
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_2_keluar_cover" value="<?=$row->mesin_2_keluar_cover?>" class="form-select form-control">
-                                                        <option value="<?php  echo $row->mesin_2_keluar_cover != "-" ?   $row->mesin_2_keluar_cover  : '-' ?>"><?php  echo $row->mesin_2_keluar_cover != "-" ?   $row->mesin_2_keluar_cover  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_3_keluar_cover" value="<?=$row->plate_3_keluar_cover?>">
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_3_keluar_cover" value="<?=$row->mesin_3_keluar_cover?>" class="form-select form-control">
-                                                        <option value="<?php  echo $row->mesin_3_keluar_cover != "-" ?   $row->mesin_3_keluar_cover  : '-' ?>"><?php  echo $row->mesin_3_keluar_cover != "-" ?   $row->mesin_3_keluar_cover  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
+                        <!-- PLAT KELUAR -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header text-center">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card border bg-info">
+                                                    <div class="card-header text-center">
+                                                        Plate Keluar
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div><div class="col-md-4">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card border bg-info">
-                                                <div class="card-header text-center">
-                                                    Plate Keluar Isi
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card-body p-3 mb-2 bg-light text-dark">
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <label class="form-label">Plate</label>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <label class="form-label">Mesin</label>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card border bg-info">
+                                                    <div class="card-header text-center">
+                                                        Cover
                                                     </div>
                                                 </div>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_1_keluar_isi" value="<?=$row->plate_1_keluar_isi?>">
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_1_keluar_isi" value="<?=$row->mesin_1_keluar_isi?>" class="form-select form-control">
-                                                        <option value="<?php  echo $row->mesin_1_keluar_isi != "-" ?   $row->mesin_1_keluar_isi  : '-' ?>"><?php  echo $row->mesin_1_keluar_isi != "-" ?   $row->mesin_1_keluar_isi  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_2_keluar_isi" value="<?=$row->plate_2_keluar_isi?>">
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_2_keluar_isi" value="<?=$row->mesin_2_keluar_isi?>" class="form-select form-control">
-                                                        <option value="<?php  echo $row->mesin_2_keluar_isi != "-" ?   $row->mesin_2_keluar_isi  : '-' ?>"><?php  echo $row->mesin_2_keluar_isi != "-" ?   $row->mesin_2_keluar_isi  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_3_keluar_isi" value="<?=$row->plate_3_keluar_isi?>">
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_3_keluar_isi" value="<?=$row->mesin_3_keluar_isi?>" class="form-select form-control">
-                                                        <option value="<?php  echo $row->mesin_3_keluar_isi != "-" ?   $row->mesin_3_keluar_isi  : '-' ?>"><?php  echo $row->mesin_3_keluar_isi != "-" ?   $row->mesin_3_keluar_isi  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
+                                            </div><br>
+                                            <div class="col-md-6">
+                                                <div class="card border bg-info">
+                                                    <div class="card-header text-center">
+                                                        Isi
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>   
                                     </div>
+                                    <div class="row">
+                                        <!-- PLAT GAGAL COVER -->
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center"><br>Plate</div>
+                                                <div class="col-md-6 text-center"><br>Mesin</div>
+                                            </div><hr>
+                                            <div class="row" align="center">
+                                                <div class="col-md-6"><label><?=$row->jumlahplatecover1?></label></div>
+                                                <div class="col-md-6"><label><?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?></label></div>
+                                            </div><br>
+                                            <div class="row" align="center">
+                                                <div class="col-md-6"><label><?=$row->jumlahplatecover2?></label></div>
+                                                <div class="col-md-6"><label><?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?></label></div>
+                                            </div>
+                                        </div>
+                                        <!-- PLAT GAGAL COVER -->
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center"><br>Plate</div>
+                                                <div class="col-md-6 text-center"><br>Mesin</div>
+                                            </div><hr>
+                                            <div class="row" align="center">
+                                                <div class="col-md-6"><label><?=$row->jumlahplateisi1?></label></div>
+                                                <div class="col-md-6"><label><?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?></label></div>
+                                            </div><br>
+                                            <div class="row" align="center">
+                                                <div class="col-md-6"><label><?=$row->jumlahplateisi2?></label></div>
+                                                <div class="col-md-6"><label><?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?></label></div>
+                                            </div><br>
+                                            <div class="row" align="center">
+                                                <div class="col-md-6"><label><?=$row->jumlahplateisi3?></label></div>
+                                                <div class="col-md-6"><label><?php  echo $row->isi3mesin1 != "-" ?   $row->isi3mesin1  : '-' ?></label></div>
+                                            </div>
+                                        </div>
+                                    </div><br>                                           
                                 </div>
-                                <div class="col-md-4">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card border bg-info">
-                                                <div class="card-header text-center">
-                                                    Plate Keluar Gagal
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card-body p-3 mb-2 bg-light text-dark">
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <label class="form-label">Plate</label>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <label class="form-label">Mesin</label>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_gagal1" value="<?=$row->plate_gagal1?>">
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_gagal1" value="<?=$row->mesin_gagal1?>" class="form-select form-control">
-                                                        <option value="<?php  echo $row->mesin_gagal1 != "-" ?   $row->mesin_gagal1  : '-' ?>"><?php  echo $row->mesin_gagal1 != "-" ?   $row->mesin_gagal1  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_gagal2" value="<?=$row->plate_gagal2?>">
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_gagal2" value="<?=$row->mesin_gagal2?>" class="form-select form-control">
-                                                        <option value="<?php  echo $row->mesin_gagal2 != "-" ?   $row->mesin_gagal2  : '-' ?>"><?php  echo $row->mesin_gagal2 != "-" ?   $row->mesin_gagal2  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_gagal3" value="<?=$row->plate_gagal3?>">
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_gagal3" value="<?=$row->mesin_gagal3?>" class="form-select form-control">
-                                                        <option value="<?php  echo $row->mesin_gagal3 != "-" ?   $row->mesin_gagal3  : '-' ?>"><?php  echo $row->mesin_gagal3 != "-" ?   $row->mesin_gagal3  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
+                            </div>
+                        </div>
+                        <!-- PLAT GAGAL -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header text-center">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="card border bg-info">
+                                                    <div class="card-header text-center">
+                                                        Plate Gagal 
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card border bg-info">
+                                                    <div class="card-header text-center">
+                                                        Cover
+                                                    </div>
+                                                </div>
+                                            </div><br>
+                                            <div class="col-md-6">
+                                                <div class="card border bg-info">
+                                                    <div class="card-header text-center">
+                                                        Isi
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>   
                                     </div>
+                                    <div class="row">
+                                        <!-- PLAT GAGAL COVER -->
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center"><br>Plate</div>
+                                                <div class="col-md-6 text-center"><br>Mesin</div>
+                                            </div><hr>
+                                            <div class="row" align="center">
+                                                <div class="col-md-6"><label><?=$row->jumlahplategagalcover1?></label></div>
+                                                <div class="col-md-6"><label><?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?></label></div>
+                                            </div><br>
+                                            <div class="row" align="center">
+                                                <div class="col-md-6"><label><?=$row->jumlahplategagalcover2?></label></div>
+                                                <div class="col-md-6"><label><?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?></label></div>
+                                            </div>
+                                        </div>
+                                        <!-- PLAT GAGAL COVER -->
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-6 text-center"><br>Plate</div>
+                                                <div class="col-md-6 text-center"><br>Mesin</div>
+                                            </div><hr>
+                                            <div class="row" align="center">
+                                                <div class="col-md-6"><label><?=$row->jumlahplategagalisi1?></label></div>
+                                                <div class="col-md-6"><label><?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?></label></div>
+                                            </div><br>
+                                            <div class="row" align="center">
+                                                <div class="col-md-6"><label><?=$row->jumlahplategagalisi2?></label></div>
+                                                <div class="col-md-6"><label><?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?></label></div>
+                                            </div><br>
+                                            <div class="row" align="center">
+                                                <div class="col-md-6"><label><?=$row->jumlahplategagalisi3?></label></div>
+                                                <div class="col-md-6"><label><?php  echo $row->isi3mesin1 != "-" ?   $row->isi3mesin1  : '-' ?></label></div>
+                                            </div>
+                                        </div>
+                                    </div><br>                                           
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card">
-                            <div class="row card-body">
-                                <div class="col-md-12">
-                                    <label class="form-label">Tanggal Out CTCP Cover</label>
-                                    <br><input type="date" class="form-control" name="tanggal_out_ctcp_cover" value="<?=$row->tanggal_out_ctcp_cover?>" required>
-                                    <br><label class="form-label">Tanggal Out CTCP Isi</label>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        Tanggal Out CTCP Cover
+                                        <br><label><?=$row->tanggal_out_ctcp_cover?></label><br>
+                                        <br>Tanggal Out CTCP Isi<br>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row card-body">
-                                <div class="col-md-3">Ke 1 </div>
-                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" value="<?=$row->tanggal_out_ctcp_isi1?>" required></div>
-                            </div><br>
-                            <div class="row card-body">
-                                <div class="col-md-3">Ke 2 </div>
-                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2" value="<?=$row->tanggal_out_ctcp_isi2?>" required></div>
+                                <div class="row" align="center">
+                                    <div class="col-md-3">Ke 1</div>
+                                    <div class="col"><label><?=$row->tanggal_out_ctcp_isi1?></label></div>
+                                </div>
+                                <div class="row" align="center">
+                                    <div class="col-md-3">Ke 2</div>
+                                    <div class="col"><label><?=$row->tanggal_out_ctcp_isi2?></label></div>
+                                </div>
                             </div>
                         </div>
                     </div>

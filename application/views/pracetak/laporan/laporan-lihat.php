@@ -159,7 +159,7 @@
                                             <div class="col-md-12">
                                                 <div class="card border bg-info">
                                                     <div class="card-header text-center">
-                                                        Plate Keluar Gagal Isi
+                                                        Plate Keluar
                                                     </div>
                                                 </div>
                                             </div>
@@ -229,7 +229,7 @@
                                             <div class="col-md-12">
                                                 <div class="card border bg-info">
                                                     <div class="card-header text-center">
-                                                        Plate Keluar Gagal Isi
+                                                        Plate Gagal 
                                                     </div>
                                                 </div>
                                             </div>
