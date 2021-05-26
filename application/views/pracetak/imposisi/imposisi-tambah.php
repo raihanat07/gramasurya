@@ -37,7 +37,8 @@
     <div class="card-body">
         <div class="card-body">
                             
-            <?php foreach($imposisi as $s => $row) {?>  
+            <?php foreach($imposisi as $s => $row) {?>
+            error_reporting(0);  
                   <div class="row">
                     <div class="col-md-4">
                         <br>Nomor SO
