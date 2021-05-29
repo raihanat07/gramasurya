@@ -479,7 +479,7 @@
                                         <?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>
                                     </div>
                                     <div class="col">
-                                        <label class="form-label">Keterangan</label>
+                                        <label class="form-label">Keterangan</label><br><br>
                                         <?= $row->isi2keterangan1; ?><br><br>
                                         <?= $row->isi2keterangan2; ?><br><br>
                                         <?= $row->isi2keterangan3; ?>
