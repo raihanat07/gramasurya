@@ -204,7 +204,7 @@ class Ctcp_m extends CI_Model {
             imposisi.namaoperator2 as namaoperator2, 
             imposisi.total_plat_cover as total_plat_cover, 
             imposisi.total_plat_isi as total_plat_isi, 
-            imposisi.cover1mesin1 as cover1mesin1, 
+            imposisi.cover1mesin1 as cover1mesin1,
             imposisi.jumlahplatecover1 as jumlahplatecover1,
             imposisi.cover1plat1 as cover1plat1,
             imposisi.cover1plat2 as cover1plat2,
