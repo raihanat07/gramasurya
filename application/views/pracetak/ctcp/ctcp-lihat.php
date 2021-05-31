@@ -252,6 +252,18 @@
                                             <?= $row->cover1keterangan2; ?><br><br>
                                             <?= $row->cover1keterangan3; ?>
                                         </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. Imposisi</label><br>
+                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
+                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
+                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. CTCP</label><br><br>
+                                            dari db<br><br>
+                                            dari db<br><br>
+                                            dari db
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -328,6 +340,18 @@
                                             <?= $row->isi1keterangan1; ?><br><br>
                                             <?= $row->isi1keterangan2; ?><br><br>
                                             <?= $row->isi1keterangan3; ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. Imposisi</label><br>
+                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
+                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
+                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. CTCP</label><br><br>
+                                            dari db<br><br>
+                                            dari db<br><br>
+                                            dari db
                                         </div>
                                     </div>
                                 </div>
@@ -424,6 +448,18 @@
                                             <?= $row->cover2keterangan2; ?><br><br>
                                             <?= $row->cover2keterangan3; ?>
                                         </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. Imposisi</label><br>
+                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
+                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
+                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. CTCP</label><br><br>
+                                            dari db<br><br>
+                                            dari db<br><br>
+                                            dari db
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -496,10 +532,22 @@
                                             <?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Keterangan</label>
+                                            <label class="form-label">Keterangan</label><br><br>
                                             <?= $row->isi2keterangan1; ?><br><br>
                                             <?= $row->isi2keterangan2; ?><br><br>
                                             <?= $row->isi2keterangan3; ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. Imposisi</label><br>
+                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
+                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
+                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Tgl. CTCP</label><br><br>
+                                            dari db<br><br>
+                                            dari db<br><br>
+                                            dari db
                                         </div>
                                     </div>
                                 </div>
@@ -515,7 +563,7 @@
                                 <div class="card-body p-3 mb-2 bg-light text-dark">
                                     <br><br>                                    
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <!-- <div class="col-md-6">
                                             <label class="form-label">Tanggal Out CTCP Cover</label>
                                             <br>
                                             <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
@@ -529,8 +577,8 @@
                                                 <div class="col-md-3">Ke 2 </div>
                                                 <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2" value="<?=$row->tanggal_out_ctcp_isi2?>" disabled></div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-6">
+                                        </div> -->
+                                        <div class="col-md-12">
                                             <textarea name="catatan_imposisi"  class="form-control" placeholder="catatan" style="height: 240px;" disabled><?=$row->catatan_imposisi?></textarea>
                                         </div>
                                     </div>
@@ -627,6 +675,18 @@
                                                     <?= $row->isi3keterangan1; ?><br><br>
                                                     <?= $row->isi3keterangan2; ?><br><br>
                                                     <?= $row->isi3keterangan3; ?>
+                                                </div>
+                                                <div class="col">
+                                                    <label class="form-label">Tgl. Imposisi</label><br>
+                                                    <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
+                                                    <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
+                                                    <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                                </div>
+                                                <div class="col">
+                                                    <label class="form-label">Tgl. CTCP</label><br><br>
+                                                    dari db<br><br>
+                                                    dari db<br><br>
+                                                    dari db
                                                 </div>
                                             </div>
                                         </div>

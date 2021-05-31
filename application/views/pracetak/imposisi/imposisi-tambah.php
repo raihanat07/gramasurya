@@ -312,7 +312,7 @@
                                         <div class="col-md-12">
                                             <label class="form-label">Rincian Imposisi</label>
                                         </div>
-                                    </div><br>
+                                    </div>
                                     <div class="row" align="center">
                                         <div class="col">
                                             <label class="form-label">Plate</label>
@@ -681,7 +681,7 @@
                                                 <div class="col-md-12">
                                                     <label class="form-label">Rincian Imposisi</label>
                                                 </div>
-                                            </div><br>
+                                            </div>
                                             <div class="row" align="center">
                                                 <div class="col">
                                                     <label class="form-label">Plate</label>

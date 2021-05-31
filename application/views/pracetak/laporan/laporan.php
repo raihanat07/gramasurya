@@ -27,18 +27,22 @@
         <div class="card-body">
         <table id="example2" class="table table-bordered table-hover" style="font-size: 12px">
             <thead>
-            <tr align="center">
-              <td>Nomor SO</td>
-              <td>Tanggal Masuk</td>
-              <td>Deadline</td>
-              <td>Nama Pemesan</td>
-              <td>Nama Orderan</td>
-              <td>Ukuran</td>
-              <td>Halaman</td>
-              <td>Finishing Akhir</td>
-              <td>Status</td>
-              <td>Actions</td>
-            </tr>
+              <tr align="center">
+                <td rowspan="2">Nomor SO</td>
+                <td rowspan="2">Tanggal Masuk</td>
+                <td rowspan="2">Deadline</td>
+                <td rowspan="2">Nama Pemesan</td>
+                <td rowspan="2">Nama Orderan</td>
+                <td colspan="4">Plat</td>
+                <td rowspan="2">Status</td>
+                <td rowspan="2">Actions</td>
+              </tr>
+              <tr align="center">
+                <td>102</td>
+                <td>74</td>
+                <td>72</td>
+                <td>Paper Plate</td>
+              </tr>
             </thead>
             <?php foreach($laporan as $s => $row) {?>  
             <tr>
@@ -47,37 +51,12 @@
               <td style="color: red"><?= $row->deadline; ?></td>
               <td><?= $row->nama_pemesan; ?></td>
               <td><?= $row->nama_orderan; ?></td>
-              <td><?= $row->ukuran; ?></td>
-              <td><?= $row->halaman; ?></td>
-              <td>
-                <?php 
-                  $finishing = "";
-                  if($row->bending != null){
-                    $finishing .= "bending, ";
-                  }
-                  if($row->hard_cover != null){
-                    $finishing .= 'hard cover, ';
-                  }   
-                  if($row->jahit_benang != null){
-                    $finishing .= 'jahit benang, ';
-                  } 
-                  if($row->jahit_kawat != null){
-                    $finishing .= 'jahit kawat, ';
-                  }    
-                  if($row->pond != null){
-                    $finishing .= 'pond, ';
-                  }   
-                  if($row->klem != null){
-                    $finishing .= 'klem, ';
-                  } 
-                  if($row->spiral != null){
-                    $finishing .= 'Spiral, ';
-                  }
-                  $finishing = rtrim($finishing, ", ");
-                  echo $finishing;
-                  ?>
-              </td>
-              <td><?= $row->ctcp_status; ?></td>
+              <!--UNTUK TOTAL PLAT YANG DIGUNAKAN -->
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><?= $row->so_status; ?></td>
               <td align="center">
                   <!-- lihat detail imposisi -->
                     <a href="<?=site_url('pracetak/Laporan/lihat_laporan/'.$row->id_order)?>">

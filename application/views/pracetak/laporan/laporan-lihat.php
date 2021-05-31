@@ -131,9 +131,7 @@
                                             <input class="form-check-input" type="checkbox" value="Imposisi Cover" disabled>
                                             <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
                                             <input class="form-check-input" type="checkbox" value="CTCP Cover" disabled>
-                                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-                                            <input class="form-check-input" type="checkbox" value="Khusus" disabled>
-                                            <label class="form-check-label" for="flexCheckDefault">Khusus</label>
+                                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label>
                                         </div>
                                         <div class="col-md-6">
                                             <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled>
@@ -159,7 +157,11 @@
                                             <div class="col-md-12">
                                                 <div class="card border bg-info">
                                                     <div class="card-header text-center">
+<<<<<<< HEAD
+                                                        Plate Keluar Isi
+=======
                                                         Plate Keluar
+>>>>>>> e05497e92c6374372829d9b1da12dd44ca24fd58
                                                     </div>
                                                 </div>
                                             </div>
