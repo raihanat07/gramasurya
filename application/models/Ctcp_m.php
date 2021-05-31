@@ -43,6 +43,7 @@ class Ctcp_m extends CI_Model {
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,
             
             imposisi.id_imposisi as id_imposisi, 
+            imposisi.imposisi_status as imposisi_status,
             imposisi.namaoperator1 as namaoperator1, 
             imposisi.namaoperator2 as namaoperator2, 
             imposisi.total_plat_cover as total_plat_cover, 
@@ -198,6 +199,7 @@ class Ctcp_m extends CI_Model {
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,
             
             imposisi.id_imposisi as id_imposisi, 
+            imposisi.imposisi_status as imposisi_status,
             imposisi.namaoperator1 as namaoperator1, 
             imposisi.namaoperator2 as namaoperator2, 
             imposisi.total_plat_cover as total_plat_cover, 
