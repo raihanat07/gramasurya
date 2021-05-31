@@ -62,6 +62,13 @@
                     <a href="<?=site_url('pracetak/Laporan/lihat_laporan/'.$row->id_order)?>">
                       <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                     </a>
+
+                    <a href="<?=site_url('pracetak/Laporan/edit_laporan/'.$row->id_order)?>">
+                    <i class="fa fa-pencil" style="font-size:18px"></i>
+                  </a>
+
+
+
               </td>
             </tr> 
             <?php } ?> 

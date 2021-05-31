@@ -18,7 +18,7 @@
     <div class="card">
     <div class="card-header">
         <!-- <label>SO</label> -->
-        <h3 class="card-title">Data Imposisi</h3>
+        <h3 class="card-title">Data Laporan</h3>
         
 
         <div class="card-tools">
@@ -132,6 +132,19 @@
                             </div>
                         </div>
                         <form action="<?=site_url('pracetak/ctcp/tambah_ctcp')?>" method="post">
+                        <div class="row">
+                    <div class="col-md-3">
+                        <div class="card">
+                            <div class="row card-body">
+                                <div class="col-md-12">
+                                    Tanggal Imposisi Cover
+                                    <br><label><?=$row->tanggal_imposisi_cover?></label>
+                                    <br>Tanggal Imposisi Isi
+                                    <br><label><?=$row->tanggal_imposisi_isi?></label>
+                                </div>
+                            </div>
+                        </div>
+                        <form action="<?=site_url('pracetak/ctcp/tambah_ctcp')?>" method="post">
                         <div class="card">
                             <div class="row card-body">
                                 <div class="col-md-12">
@@ -140,7 +153,13 @@
                                             <input class="form-check-input" type="checkbox" value="Imposisi Cover" disabled>
                                             <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
                                             <input class="form-check-input" type="checkbox" value="CTCP Cover" disabled>
+<<<<<<< HEAD
                                             <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label>
+=======
+                                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
+                                            <input class="form-check-input" type="checkbox" value="Khusus" disabled>
+                                            <label class="form-check-label" for="flexCheckDefault">Khusus</label>
+>>>>>>> e05497e92c6374372829d9b1da12dd44ca24fd58
                                         </div>
                                         <div class="col-md-6">
                                             <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled>
@@ -148,7 +167,11 @@
                                             <input class="form-check-input" type="checkbox" value="CTCP Cover" disabled>
                                             <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
                                             <input  type="text" name="status_laporan_pracetak" value="ctcp" hidden>
+<<<<<<< HEAD
                                             <input class="form-check-input" type="checkbox" name="status_laporan_pracetak" value="pracetak" <?php echo $row->so_status == "pracetak" ?  "checked" : "" ?>>
+=======
+                                            <input class="form-check-input" type="checkbox" name="status_laporan_pracetak" value="pracetak" <?php echo $row->so_status == "pracetak" ?  "checked" : "" ?>  disabled>
+>>>>>>> e05497e92c6374372829d9b1da12dd44ca24fd58
                                             <label class="form-check-label" for="flexCheckDefault">Pracetak</label>
                                         </div>
                                     </div>
@@ -166,7 +189,11 @@
                                             <div class="col-md-12">
                                                 <div class="card border bg-info">
                                                     <div class="card-header text-center">
+<<<<<<< HEAD
                                                         Plate Keluar Isi
+=======
+                                                        Plate Keluar
+>>>>>>> e05497e92c6374372829d9b1da12dd44ca24fd58
                                                     </div>
                                                 </div>
                                             </div>
@@ -236,7 +263,11 @@
                                             <div class="col-md-12">
                                                 <div class="card border bg-info">
                                                     <div class="card-header text-center">
+<<<<<<< HEAD
                                                         Plate Keluar Gagal Isi
+=======
+                                                        Plate Gagal 
+>>>>>>> e05497e92c6374372829d9b1da12dd44ca24fd58
                                                     </div>
                                                 </div>
                                             </div>

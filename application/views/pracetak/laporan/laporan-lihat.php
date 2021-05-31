@@ -157,7 +157,11 @@
                                             <div class="col-md-12">
                                                 <div class="card border bg-info">
                                                     <div class="card-header text-center">
+<<<<<<< HEAD
                                                         Plate Keluar Isi
+=======
+                                                        Plate Keluar
+>>>>>>> e05497e92c6374372829d9b1da12dd44ca24fd58
                                                     </div>
                                                 </div>
                                             </div>
@@ -227,7 +231,7 @@
                                             <div class="col-md-12">
                                                 <div class="card border bg-info">
                                                     <div class="card-header text-center">
-                                                        Plate Keluar Gagal Isi
+                                                        Plate Gagal 
                                                     </div>
                                                 </div>
                                             </div>
