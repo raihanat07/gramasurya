@@ -77,7 +77,7 @@
               </td>
               <td>
 
-              <?php if(($row->so_status == "marketing" || $row->so_status == "imposisi") && $row->imposisi_status ==null) 
+              <?php if(($row->so_status == "marketing") && $row->imposisi_status ==null) 
                       echo $row->so_status;
                     else
                      echo $row->imposisi_status;

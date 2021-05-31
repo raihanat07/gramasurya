@@ -143,7 +143,7 @@
 
                         <div class="form-check">
                             <input type="text" name="status_ctcp_cover" value="" hidden>
-                            <input class="form-check-input" type="checkbox" name="status_ctcp_cover" value="ctcp cover">
+                            <input class="form-check-input" type="checkbox" name="status_ctcp_cover" value="ctcp cover" <?php echo $row->ctcp_status == "ctcp cover" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
                             <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
                         </div>
                     </div>

@@ -77,7 +77,7 @@
                   echo $finishing;
                   ?>
               </td>
-              <td><?= $row->so_status; ?></td>
+              <td><?= $row->ctcp_status; ?></td>
               <td align="center">
                   <!-- lihat detail imposisi -->
                     <a href="<?=site_url('pracetak/Laporan/lihat_laporan/'.$row->id_order)?>">
