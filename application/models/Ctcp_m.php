@@ -10,8 +10,8 @@ class Ctcp_m extends CI_Model {
             order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, finishing.finishing_akhir_spiral as spiral, data_ctcp.id_data_ctcp as id_data_ctcp',
         );
-        // $status_ctcp = array('ctcp', 'ctcp cover', 'ctcp isi','ctcp khusus');        
-        $status_imposisi = array('imposisi cover','imposisi isi');
+        // $status_ctcp = array('ctcp', 'ctcp cover', 'ctcp isi');        
+        $status_imposisi = array('imposisi cover','imposisi isi','imposisi');
 
         $this->db->from('order');
         $this->db->join('imposisi','order.id_order = imposisi.id_order' );      
@@ -43,6 +43,7 @@ class Ctcp_m extends CI_Model {
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,
             
             imposisi.id_imposisi as id_imposisi, 
+            imposisi.imposisi_status as imposisi_status,
             imposisi.namaoperator1 as namaoperator1, 
             imposisi.namaoperator2 as namaoperator2, 
             imposisi.total_plat_cover as total_plat_cover, 
@@ -198,6 +199,7 @@ class Ctcp_m extends CI_Model {
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,
             
             imposisi.id_imposisi as id_imposisi, 
+            imposisi.imposisi_status as imposisi_status,
             imposisi.namaoperator1 as namaoperator1, 
             imposisi.namaoperator2 as namaoperator2, 
             imposisi.total_plat_cover as total_plat_cover, 
