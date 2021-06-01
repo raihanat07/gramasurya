@@ -7,16 +7,6 @@
                     <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
                 </a>
             </div>
-            <!-- <div class="col-sm-6" align="right">
-                <a href="<?=site_url()?>pracetak/Laporan" class="btn btn-success btn-lg">
-                    PRINT
-                </a>
-            </div>
-            <div class="col-sm-6" align="right">
-                <a href="<?=site_url()?>pracetak/Laporan" class="btn btn-success btn-lg">
-                    PRINT
-                </a>
-            </div> -->
         </div>
     </div><!-- /.container-fluid -->
 </section>
@@ -28,7 +18,7 @@
     <div class="card">
     <div class="card-header">
         <!-- <label>SO</label> -->
-        <h3 class="card-title">Data Imposisi</h3>
+        <h3 class="card-title">Data Laporan</h3>
         
 
         <div class="card-tools">
@@ -41,299 +31,477 @@
     <div class="card-body">
      <form action="<?=site_url('pracetak/laporan/proses')?>" method="post">
         <div class="card-body">
-        <?php foreach($laporan as $s => $row) {?>
-           
+        <?php foreach($laporan as $s => $row) {?>  
                 <div class="row">
                     <div class="col-md-4">
                         <br>Nomor SO
-                        <br><label class="form-label"><?=$row->nomor_so?></label>
+                        <br><label class="form-label"><?= $row->nomor_so; ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Nama Pemesan
-                        <br><label class="form-label"><?=$row->nama_pemesan?></label>
+                        <br><label class="form-label"><?= $row->nama_pemesan; ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Halaman
-                        <br><label class="form-label"><?=$row->halaman?></label>
+                        <br><label class="form-label"><?= $row->halaman; ?></label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <br>Tanggal Masuk
-                        <br><label class="form-label"><?=$row->tanggal_masuk?></label>
+                        <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Nama Orderan
-                        <br><label class="form-label"><?=$row->nama_orderan?></label>
+                        <br><label class="form-label"><?= $row->nama_orderan; ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Oplag
-                        <br><label class="form-label"><?=$row->oplag?></label>
+                        <br><label class="form-label"><?= $row->oplag; ?></label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <br>Deadline
-                        <br><label class="form-label"><?=$row->deadline?></label>
+                        <br><label class="form-label"><?= $row->deadline; ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Ukuran
-                        <br><label class="form-label"><?=$row->ukuran?></label>
+                        <br><label class="form-label"><?= $row->ukuran; ?></label>
                     </div>
                     <div class="col-md-4">
-                        <br>Finsihing Akhir<br>
-                        <label class="form-label">
-                            <?php 
-                                $finishing = "";
-                                if($row->bending != null){
-                                    $finishing .= "bending, ";
-                                }
-                                if($row->hard_cover != null){
-                                    $finishing .= 'hard cover, ';
-                                }   
-                                if($row->jahit_benang != null){
-                                    $finishing .= 'jahit benang, ';
-                                } 
-                                if($row->jahit_kawat != null){
-                                    $finishing .= 'jahit kawat, ';
-                                }    
-                                if($row->pond != null){
-                                    $finishing .= 'pond, ';
-                                }   
-                                if($row->spiral != null){
-                                    $finishing .= 'Spiral, ';
-                                }
-                                $finishing = rtrim($finishing, ", ");
-                                echo $finishing;
-                            ?>
+                        <br>Finsihing Akhir
+                        <br><label class="form-label">
+                        <?php 
+                          $finishing = "";
+                          if($row->bending != null){
+                            $finishing .= "bending, ";
+                          }
+                          if($row->hard_cover != null){
+                            $finishing .= 'hard cover, ';
+                          }   
+                          if($row->jahit_benang != null){
+                            $finishing .= 'jahit benang, ';
+                          } 
+                          if($row->jahit_kawat != null){
+                            $finishing .= 'jahit kawat, ';
+                          }    
+                          if($row->pond != null){
+                            $finishing .= 'pond, ';
+                          }   
+                          if($row->spiral != null){
+                            $finishing .= 'Spiral, ';
+                          }
+                          $finishing = rtrim($finishing, ", ");
+                          echo $finishing;
+                      ?>
                         </label>
                     </div>
-                </div>
-                <br><hr><br>
+                </div><br>
+                <hr><br>
+
+                <div class="row" align="center">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="Imposisi Cover" disabled>
+                        <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label>
+                    </div>
+                    <div class="col"> 
+                        <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled>
+                        <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label>
+                    </div>
+                    <div class="col">    
+                        <input class="form-check-input" type="checkbox" value="CTCP Cover" disabled>
+                        <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label>
+                    </div>
+                    <div class="col"> 
+                        <input class="form-check-input" type="checkbox" value="CTCP Isi" disabled>
+                        <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label>
+                    </div>
+                    <div class="col"> 
+                        <input  type="text" name="status_laporan_pracetak" value="ctcp" hidden >
+                        <input class="form-check-input" type="checkbox" name="status_laporan_pracetak" value="pracetak" <?php echo $row->so_status == "pracetak" ?  "checked" : "" ?> disabled>
+                        <label class="form-check-label" for="flexCheckDefault">Pracetak</label>
+                    </div>
+                </div><br>
+                <hr><br>
+
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="row card-body">
-                                <div class="col-md-12">
-                                    Tanggal Imposisi Cover
-                                    <br><label><?=$row->tanggal_imposisi_cover?></label>
-                                    <br>Tanggal Imposisi Isi
-                                    <br><label><?=$row->tanggal_imposisi_isi?></label>
-                                </div>
-                            </div>
-                        </div>
-                        <form action="<?=site_url('pracetak/ctcp/tambah_ctcp')?>" method="post">
-                        <div class="card">
-                            <div class="row card-body">
-                                <div class="col-md-12">
-                                    <div class="row card-body">
-                                        <div class="col-md-6">
-                                            <input class="form-check-input" type="checkbox" value="Imposisi Cover" disabled>
-                                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
-                                            <input class="form-check-input" type="checkbox" value="CTCP Cover" disabled>
-                                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled>
-                                            <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label><br>
-                                            <input class="form-check-input" type="checkbox" value="CTCP Cover" disabled>
-                                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-                                            <input  type="text" name="status_laporan_pracetak" value="ctcp" hidden>
-                                            <input class="form-check-input" type="checkbox" name="status_laporan_pracetak" value="pracetak" <?php echo $row->so_status == "pracetak" ?  "checked" : "" ?>  disabled>
-                                            <label class="form-check-label" for="flexCheckDefault">Pracetak</label>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="col-md-6">
+                        <div class="card border bg-info">
+                            <div class="card-header text-center">
+                                COVER
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <!-- PLAT KELUAR -->
-                        <div class="row">
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-header text-center">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="card border bg-info">
-                                                    <div class="card-header text-center">
-<<<<<<< HEAD
-                                                        Plate Keluar Isi
-=======
-                                                        Plate Keluar
->>>>>>> e05497e92c6374372829d9b1da12dd44ca24fd58
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="card border bg-info">
-                                                    <div class="card-header text-center">
-                                                        Cover
-                                                    </div>
-                                                </div>
-                                            </div><br>
-                                            <div class="col-md-6">
-                                                <div class="card border bg-info">
-                                                    <div class="card-header text-center">
-                                                        Isi
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>   
-                                    </div>
-                                    <div class="row">
-                                        <!-- PLAT GAGAL COVER -->
-                                        <div class="col-md-6">
-                                            <div class="row">
-                                                <div class="col-md-6 text-center"><br>Plate</div>
-                                                <div class="col-md-6 text-center"><br>Mesin</div>
-                                            </div><hr>
-                                            <div class="row" align="center">
-                                                <div class="col-md-6"><label><?=$row->jumlahplatecover1?></label></div>
-                                                <div class="col-md-6"><label><?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?></label></div>
-                                            </div><br>
-                                            <div class="row" align="center">
-                                                <div class="col-md-6"><label><?=$row->jumlahplatecover2?></label></div>
-                                                <div class="col-md-6"><label><?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?></label></div>
-                                            </div>
-                                        </div>
-                                        <!-- PLAT GAGAL COVER -->
-                                        <div class="col-md-6">
-                                            <div class="row">
-                                                <div class="col-md-6 text-center"><br>Plate</div>
-                                                <div class="col-md-6 text-center"><br>Mesin</div>
-                                            </div><hr>
-                                            <div class="row" align="center">
-                                                <div class="col-md-6"><label><?=$row->jumlahplateisi1?></label></div>
-                                                <div class="col-md-6"><label><?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?></label></div>
-                                            </div><br>
-                                            <div class="row" align="center">
-                                                <div class="col-md-6"><label><?=$row->jumlahplateisi2?></label></div>
-                                                <div class="col-md-6"><label><?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?></label></div>
-                                            </div><br>
-                                            <div class="row" align="center">
-                                                <div class="col-md-6"><label><?=$row->jumlahplateisi3?></label></div>
-                                                <div class="col-md-6"><label><?php  echo $row->isi3mesin1 != "-" ?   $row->isi3mesin1  : '-' ?></label></div>
-                                            </div>
-                                        </div>
-                                    </div><br>                                           
-                                </div>
-                            </div>
-                        </div>
-                        <!-- PLAT GAGAL -->
-                        <div class="row">
-                            <div class="col">
-                                <div class="card">
-                                    <div class="card-header text-center">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="card border bg-info">
-                                                    <div class="card-header text-center">
-                                                        Plate Gagal 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="card border bg-info">
-                                                    <div class="card-header text-center">
-                                                        Cover
-                                                    </div>
-                                                </div>
-                                            </div><br>
-                                            <div class="col-md-6">
-                                                <div class="card border bg-info">
-                                                    <div class="card-header text-center">
-                                                        Isi
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>   
-                                    </div>
-                                    <div class="row">
-                                        <!-- PLAT GAGAL COVER -->
-                                        <div class="col-md-6">
-                                            <div class="row">
-                                                <div class="col-md-6 text-center"><br>Plate</div>
-                                                <div class="col-md-6 text-center"><br>Mesin</div>
-                                            </div><hr>
-                                            <div class="row" align="center">
-                                                <div class="col-md-6"><label><?=$row->jumlahplategagalcover1?></label></div>
-                                                <div class="col-md-6"><label><?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?></label></div>
-                                            </div><br>
-                                            <div class="row" align="center">
-                                                <div class="col-md-6"><label><?=$row->jumlahplategagalcover2?></label></div>
-                                                <div class="col-md-6"><label><?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?></label></div>
-                                            </div>
-                                        </div>
-                                        <!-- PLAT GAGAL COVER -->
-                                        <div class="col-md-6">
-                                            <div class="row">
-                                                <div class="col-md-6 text-center"><br>Plate</div>
-                                                <div class="col-md-6 text-center"><br>Mesin</div>
-                                            </div><hr>
-                                            <div class="row" align="center">
-                                                <div class="col-md-6"><label><?=$row->jumlahplategagalisi1?></label></div>
-                                                <div class="col-md-6"><label><?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?></label></div>
-                                            </div><br>
-                                            <div class="row" align="center">
-                                                <div class="col-md-6"><label><?=$row->jumlahplategagalisi2?></label></div>
-                                                <div class="col-md-6"><label><?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?></label></div>
-                                            </div><br>
-                                            <div class="row" align="center">
-                                                <div class="col-md-6"><label><?=$row->jumlahplategagalisi3?></label></div>
-                                                <div class="col-md-6"><label><?php  echo $row->isi3mesin1 != "-" ?   $row->isi3mesin1  : '-' ?></label></div>
-                                            </div>
-                                        </div>
-                                    </div><br>                                           
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        Tanggal Out CTCP Cover
-                                        <br><label><?=$row->tanggal_out_ctcp_cover?></label><br>
-                                        <br>Tanggal Out CTCP Isi<br>
-                                    </div>
-                                </div>
-                                <div class="row" align="center">
-                                    <div class="col-md-3">Ke 1</div>
-                                    <div class="col"><label><?=$row->tanggal_out_ctcp_isi1?></label></div>
-                                </div>
-                                <div class="row" align="center">
-                                    <div class="col-md-3">Ke 2</div>
-                                    <div class="col"><label><?=$row->tanggal_out_ctcp_isi2?></label></div>
-                                </div>
+                        <div class="card border bg-info">
+                            <div class="card-header text-center">
+                                ISI
                             </div>
                         </div>
                     </div>
                 </div>
-                <?php } ?> 
-
-                <br><hr><br>
-                <div class="row" align="center">
-                    <div class="col-md-3">
-                        <label>Stok Plate 102</label>
-                        <!-- <label>2000</label> -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card-body p-3 mb-2 bg-light text-dark"><br>
+                            <div class="row" align="center">
+                                <div class="col-md-6">
+                                    <label>MESIN</label>
+                                </div>
+                                <div class="col-md-6">
+                                    dari db
+                                </div>
+                            </div><hr>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <label>Plat Keluar</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. Imposisi</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. CTCP</label>
+                                </div>
+                            </div>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                            </div><hr>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5">
+                                    <br><b>TOTAL PLAT KELUAR</b>
+                                    <br><b>TOTAL PLAT GAGAL</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <br>dari db
+                                    <br>dari db
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5" align="center">
+                                    <hr><b>TOTAL PLAT</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <hr>dari TPK + TPG
+                                </div>
+                            </div><br>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate 74</label>
-                        <!-- <label>4500</label> -->
+                    <div class="col-md-6">
+                        <div class="card-body p-3 mb-2 bg-light text-dark"><br>
+                            <div class="row" align="center">
+                                <div class="col-md-6">
+                                    <label>MESIN</label>
+                                </div>
+                                <div class="col-md-6">
+                                    dari db
+                                </div>
+                            </div><hr>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <label>Plat Keluar</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. Imposisi</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. CTCP</label>
+                                </div>
+                            </div>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                            </div><hr>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5">
+                                    <br><b>TOTAL PLAT KELUAR</b>
+                                    <br><b>TOTAL PLAT GAGAL</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <br>dari db
+                                    <br>dari db
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5" align="center">
+                                    <hr><b>TOTAL PLAT</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <hr>dari TPK + TPG
+                                </div>
+                            </div><br>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate 72</label>
-                        <!-- <label>1000</label> -->
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card-body p-3 mb-2 bg-light text-dark"><br>
+                            <div class="row" align="center">
+                                <div class="col-md-6">
+                                    <label>MESIN</label>
+                                </div>
+                                <div class="col-md-6">
+                                    dari db
+                                </div>
+                            </div><hr>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <label>Plat Keluar</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. Imposisi</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. CTCP</label>
+                                </div>
+                            </div>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                            </div><hr>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5">
+                                    <br><b>TOTAL PLAT KELUAR</b>
+                                    <br><b>TOTAL PLAT GAGAL</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <br>dari db
+                                    <br>dari db
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5" align="center">
+                                    <hr><b>TOTAL PLAT</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <hr>dari TPK + TPG
+                                </div>
+                            </div><br>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate Paper Plate</label>
-                        <!-- <label>500</label> -->
+                    <div class="col-md-6">
+                        <div class="card-body p-3 mb-2 bg-light text-dark"><br>
+                            <div class="row" align="center">
+                                <div class="col-md-6">
+                                    <label>MESIN</label>
+                                </div>
+                                <div class="col-md-6">
+                                    dari db
+                                </div>
+                            </div><hr>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <label>Plat Keluar</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. Imposisi</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. CTCP</label>
+                                </div>
+                            </div>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                            </div><hr>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5">
+                                    <br><b>TOTAL PLAT KELUAR</b>
+                                    <br><b>TOTAL PLAT GAGAL</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <br>dari db
+                                    <br>dari db
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5" align="center">
+                                    <hr><b>TOTAL PLAT</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <hr>dari TPK + TPG
+                                </div>
+                            </div><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row" align="center">
+                            <div class="col">
+                                <div class="card border bg-info">
+                                    <div class="card-header text-center">
+                                        RINCIAN PENGGUNAAN PLAT
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-3 mb-2 bg-light text-dark"><br>
+                            <div class="row" align="center">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-md-3"><label>102</label></div>
+                                        <div class="col-md-3"><label>74</label></div>
+                                        <div class="col-md-3"><label>72</label></div>
+                                        <div class="col-md-3"><label>TOKKO</label></div>
+                                    </div>
+                                </div>
+                            </div><hr>
+                            <div class="row" align="center">
+                                <div class="col-md-2"><label>COVER</label></div>
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-md-3">dari db</div>
+                                        <div class="col-md-3">dari db</div>
+                                        <div class="col-md-3">dari db</div>
+                                        <div class="col-md-3">dari db</div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="row" align="center">
+                                <div class="col-md-2"><label>ISI<label></div>
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-md-3">dari db</div>
+                                        <div class="col-md-3">dari db</div>
+                                        <div class="col-md-3">dari db</div>
+                                        <div class="col-md-3">dari db</div>
+                                    </div>
+                                </div>
+                            </div><hr><br>
+                            <div class="row" align="center">
+                                <div class="col-md-2"><label>TOTAL</label></div>
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-md-3">dari db</div>
+                                        <div class="col-md-3">dari db</div>
+                                        <div class="col-md-3">dari db</div>
+                                        <div class="col-md-3">dari db</div>
+                                    </div>
+                                </div>
+                            </div><br>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body p-3 mb-2 bg-light text-dark"><br>
+                            <div class="row" align="center">
+                                <div class="col-md-6">
+                                    <label>MESIN</label>
+                                </div>
+                                <div class="col-md-6">
+                                    dari db
+                                </div>
+                            </div><hr>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <label>Plat Keluar</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. Imposisi</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. CTCP</label>
+                                </div>
+                            </div>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                                <div class="col-md-4">
+                                    <br>dari db<br>
+                                    <br>dari db<br>
+                                    <br>dari db
+                                </div>
+                            </div><hr>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5">
+                                    <br><b>TOTAL PLAT KELUAR</b>
+                                    <br><b>TOTAL PLAT GAGAL</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <br>dari db
+                                    <br>dari db
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5" align="center">
+                                    <hr><b>TOTAL PLAT</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <hr>dari TPK + TPG
+                                </div>
+                            </div><br>
+                        </div>
                     </div>
                 </div>
                 <br><hr><br>
@@ -378,13 +546,18 @@
                             <div class="col-md-2"><label>)</label></div>
                         </div>
                     </div>
-                </div>
+                </div><br>
+
+                <?php } ?> 
+
                 <br>
-                <div class="col-sm-6" align="left">
-                <a href="<?=site_url('pracetak/Laporan/print_laporan/'.$row->id_order)?>" class="btn btn-success btn-lg">
-                    PRINT
-                </a>
-            </div>  
+                <div class="row" align="right">
+                    <div class="col-md-12">
+                        <a href="<?=site_url('pracetak/Laporan/print_laporan/'.$row->id_order)?>" class="btn btn-success btn-lg">
+                            PRINT
+                        </a>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
@@ -397,4 +570,4 @@
     <!-- /.card -->
 
 </section>
-<!-- /.content
+<!-- /.content -->

@@ -14,14 +14,14 @@
 
     <!-- Default box -->
 <div class="card">
-    <div class="card-header">
+    <div class="card-header" align="center">
         <!-- <label>SO</label> -->
-        <h3 class="card-title">SO dari db</h3>
+        <b class="card-title" style="font-size: 50px;width: 100%;">WORK ORDER</b>
         
 
-        <div class="card-tools">
+        <div class="card-tools"><!-- 
         <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-            <i class="fa fa-minus"></i></button>
+            <i class="fa fa-minus"></i></button> -->
         <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
             <i class="fa fa-times"></i></button> -->
         </div>
@@ -511,12 +511,12 @@
                         </div>
                     </div><br>
                     <div class="row">
-                        <div class="col-md-6" align="left">
+                       <!--  <div class="col-md-6" align="left">
                             <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Kembali</a>
                         </div>
                         <div class="col-md-6" align="right">
                             <a href="<?=site_url('pracetak/Imposisi/print_imposisi/'.$row->id_order)?>" class="btn btn-default">Print</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="col-md-6">

@@ -16,7 +16,7 @@
     <div class="card">
     <div class="card-header">
         <!-- <label>SO</label> -->
-        <h3 class="card-title">SO dari db</h3>
+        <h3 class="card-title">Data CTCP</h3>
         
 
         <div class="card-tools">
