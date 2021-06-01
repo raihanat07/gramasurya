@@ -75,10 +75,12 @@ class Ctcp extends CI_Controller {
 					$inputan['status_order'] = "ctcp";
 					$inputan['ctcp_status'] = "ctcp";
 			}
-			else if($inputan['status_ctcp_cover'] !=null ){				
+			else if($inputan['status_ctcp_cover'] !=null ){	
+				$inputan['status_order'] = "ctcp";	
 				$inputan['ctcp_status'] = "ctcp cover";
 			}
-			else if($inputan['status_ctcp_isi'] !=null ){				
+			else if($inputan['status_ctcp_isi'] !=null ){	
+				$inputan['status_order'] = "ctcp";			
 				$inputan['ctcp_status'] = "ctcp isi";
 			}
 			else
@@ -115,10 +117,12 @@ class Ctcp extends CI_Controller {
 					$inputan['status_order'] = "ctcp";
 					$inputan['ctcp_status'] = "ctcp";
 			}
-			else if($inputan['status_ctcp_cover'] !=null ){				
+			else if($inputan['status_ctcp_cover'] !=null ){		
+				$inputan['status_order'] = "ctcp";		
 				$inputan['ctcp_status'] = "ctcp cover";
 			}
-			else if($inputan['status_ctcp_isi'] !=null ){				
+			else if($inputan['status_ctcp_isi'] !=null ){	
+				$inputan['status_order'] = "ctcp";			
 				$inputan['ctcp_status'] = "ctcp isi";
 			}
 			else
