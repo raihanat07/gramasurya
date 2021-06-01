@@ -113,13 +113,14 @@
                         <label class="form-label">Nama Operator</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="namaoperator1" value="<?=$row->namaoperator1?>" required>
+                        <input type="text" name="id_order"  value="<?= $row->id_order; ?>" hidden>
+                        <input type="text" class="form-control" name="namaoperatorctcp1" value="<?=$row->namaoperatorctcp1?>" required>
                     </div>
                     <div class="col-md-3" align="center">
                         <label class="form-label">Nama Operator</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="namaoperator2" value="<?=$row->namaoperator2?>">
+                        <input type="text" class="form-control" name="namaoperatorctcp2" value="<?=$row->namaoperatorctcp2?>">
                     </div>
                 </div><br>
                 <div class="row">
@@ -264,15 +265,15 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label><br>
-                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                            <?= $row->cover1tglimposisi1; ?><br><br>
+                                            <?= $row->cover1tglimposisi2; ?><br><br>
+                                            <?= $row->cover1tglimposisi3; ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. CTCP</label><br><br>
-                                            <input type="date" class="form-control" name="cover1tglctcp1"><br>
-                                            <input type="date" class="form-control" name="cover1tglctcp2"><br>
-                                            <input type="date" class="form-control" name="cover1tglctcp3">
+                                            <input type="date" class="form-control" name="cover1tglctcp1" value="<?= $row->cover1tglctcp1; ?>"><br>
+                                            <input type="date" class="form-control" name="cover1tglctcp2" value="<?= $row->cover1tglctcp2; ?>"><br>
+                                            <input type="date" class="form-control" name="cover1tglctcp3" value="<?= $row->cover1tglctcp3; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -353,15 +354,15 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label><br>
-                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                            <?= $row->isi1tglimposisi1; ?><br><br>
+                                            <?= $row->isi1tglimposisi2; ?><br><br>
+                                            <?= $row->isi1tglimposisi3; ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. CTCP</label><br><br>
-                                            <input type="date" class="form-control" name="isi1tglctcp1"><br>
-                                            <input type="date" class="form-control" name="isi1tglctcp2"><br>
-                                            <input type="date" class="form-control" name="isi1tglctcp3">
+                                            <input type="date" class="form-control" name="isi1tglctcp1" value="<?= $row->isi1tglctcp1; ?>"><br>
+                                            <input type="date" class="form-control" name="isi1tglctcp2" value="<?= $row->isi1tglctcp2; ?>"><br>
+                                            <input type="date" class="form-control" name="isi1tglctcp3" value="<?= $row->isi1tglctcp3; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -460,15 +461,15 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label><br>
-                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                            <?= $row->cover2tglimposisi1; ?><br><br>
+                                            <?= $row->cover2tglimposisi2; ?><br><br>
+                                            <?= $row->cover2tglimposisi3; ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. CTCP</label><br><br>
-                                            <input type="date" class="form-control" name="cover2tglctcp1"><br>
-                                            <input type="date" class="form-control" name="cover2tglctcp2"><br>
-                                            <input type="date" class="form-control" name="cover2tglctcp3">
+                                            <input type="date" class="form-control" name="cover2tglctcp1" value="<?= $row->cover2tglctcp1; ?>"><br>
+                                            <input type="date" class="form-control" name="cover2tglctcp2" value="<?= $row->cover2tglctcp2; ?>"><br>
+                                            <input type="date" class="form-control" name="cover2tglctcp3" value="<?= $row->cover2tglctcp3; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -549,15 +550,15 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label><br>
-                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                            <?= $row->isi2tglimposisi1; ?><br><br>
+                                            <?= $row->isi2tglimposisi2; ?><br><br>
+                                            <?= $row->isi2tglimposisi3; ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. CTCP</label><br><br>
-                                            <input type="date" class="form-control" name="isi2tglctcp1"><br>
-                                            <input type="date" class="form-control" name="isi2tglctcp2"><br>
-                                            <input type="date" class="form-control" name="isi2tglctcp3">
+                                            <input type="date" class="form-control" name="isi2tglctcp1" value="<?= $row->isi2tglctcp1; ?>"><br>
+                                            <input type="date" class="form-control" name="isi2tglctcp2" value="<?= $row->isi2tglctcp2; ?>"><br>
+                                            <input type="date" class="form-control" name="isi2tglctcp3" value="<?= $row->isi2tglctcp3; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -589,7 +590,7 @@
                                             </div>
                                         </div> -->
                                         <div class="col-md-12" >
-                                            <textarea name="catatan_imposisi" class="form-control" placeholder="catatan" style="height: 240px;" disabled><?= $row->catatan_imposisi; ?></textarea>
+                                            <textarea name="catatan_ctcp" class="form-control" placeholder="catatan" style="height: 240px;" ><?= $row->catatan_ctcp; ?></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -688,15 +689,15 @@
                                                 </div>
                                                 <div class="col">
                                                     <label class="form-label">Tgl. Imposisi</label><br>
-                                                    <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                                    <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                                    <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                                    <?= $row->isi3tglimposisi1; ?><br><br>
+                                                    <?= $row->isi3tglimposisi2; ?><br><br>
+                                                    <?= $row->isi3tglimposisi3; ?>
                                                 </div>
                                                 <div class="col">
                                                     <label class="form-label">Tgl. CTCP</label><br><br>
-                                                    <input type="date" class="form-control" name="isi3tglctcp1"><br>
-                                                    <input type="date" class="form-control" name="isi3tglctcp2"><br>
-                                                    <input type="date" class="form-control" name="isi3tglctcp3">
+                                                    <input type="date" class="form-control" name="isi3tglctcp1" value="<?= $row->isi3tglctcp1; ?>"><br>
+                                                    <input type="date" class="form-control" name="isi3tglctcp2" value="<?= $row->isi3tglctcp1; ?>"><br>
+                                                    <input type="date" class="form-control" name="isi3tglctcp3" value="<?= $row->isi3tglctcp1; ?>">
                                                 </div>
                                             </div>
                                         </div>

@@ -102,13 +102,13 @@
                         <label class="form-label">Nama Operator</label>
                     </div>
                     <div class="col-md-3">
-                        <?=$row->namaoperator1;?>
+                        <?=$row->namaoperatorctcp1;?>
                     </div>
                     <div class="col-md-3" align="center">
                         <label class="form-label">Nama Operator</label>
                     </div>
                     <div class="col-md-3">
-                        <?=$row->namaoperator2;?>
+                        <?=$row->namaoperatorctcp2;?>
                     </div>
                 </div><br>
                 <div class="row">
@@ -254,15 +254,15 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label><br>
-                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                            <?= $row->cover1tglimposisi1; ?><br><br>
+                                            <?= $row->cover1tglimposisi2; ?><br><br>
+                                            <?= $row->cover1tglimposisi3; ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. CTCP</label><br><br>
-                                            dari db<br><br>
-                                            dari db<br><br>
-                                            dari db
+                                            <?= $row->cover1tglctcp1; ?><br>
+                                            <?= $row->cover1tglctcp2; ?><br>
+                                            <?= $row->cover1tglctcp3; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -343,15 +343,15 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label><br>
-                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                            <?= $row->isi1tglimposisi1; ?><br><br>
+                                            <?= $row->isi1tglimposisi2; ?><br><br>
+                                            <?= $row->isi1tglimposisi3; ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. CTCP</label><br><br>
-                                            dari db<br><br>
-                                            dari db<br><br>
-                                            dari db
+                                            <?= $row->isi1tglctcp1; ?><br>
+                                            <?= $row->isi1tglctcp2; ?><br>
+                                            <?= $row->isi1tglctcp3; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -450,15 +450,15 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label><br>
-                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                            <?= $row->cover2tglimposisi1; ?><br><br>
+                                            <?= $row->cover2tglimposisi2; ?><br><br>
+                                            <?= $row->cover2tglimposisi3; ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. CTCP</label><br><br>
-                                            dari db<br><br>
-                                            dari db<br><br>
-                                            dari db
+                                            <?= $row->cover2tglctcp1; ?><br>
+                                            <?= $row->cover2tglctcp2; ?><br>
+                                            <?= $row->cover2tglctcp3; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -539,15 +539,15 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label><br>
-                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                            <?= $row->isi2tglimposisi1; ?><br><br>
+                                            <?= $row->isi2tglimposisi2; ?><br><br>
+                                            <?= $row->isi2tglimposisi3; ?>
                                         </div>
                                         <div class="col">
-                                            <label class="form-label">Tgl. CTCP</label><br><br>
-                                            dari db<br><br>
-                                            dari db<br><br>
-                                            dari db
+                                        <label class="form-label">Tgl. CTCP</label><br><br>
+                                            <?= $row->isi2tglctcp1; ?><br>
+                                            <?= $row->isi2tglctcp2; ?><br>
+                                            <?= $row->isi2tglctcp3; ?>
                                         </div>
                                     </div>
                                 </div>
@@ -579,7 +579,7 @@
                                             </div>
                                         </div> -->
                                         <div class="col-md-12">
-                                            <textarea name="catatan_imposisi"  class="form-control" placeholder="catatan" style="height: 240px;" disabled><?=$row->catatan_imposisi?></textarea>
+                                            <textarea name="catatan_ctcp"  class="form-control" placeholder="catatan" style="height: 240px;" disabled><?=$row->catatan_ctcp?></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -678,15 +678,15 @@
                                                 </div>
                                                 <div class="col">
                                                     <label class="form-label">Tgl. Imposisi</label><br>
-                                                    <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                                    <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                                    <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                                    <?= $row->isi3tglimposisi1; ?><br><br>
+                                                    <?= $row->isi3tglimposisi2; ?><br><br>
+                                                    <?= $row->isi3tglimposisi3; ?>
                                                 </div>
                                                 <div class="col">
                                                     <label class="form-label">Tgl. CTCP</label><br><br>
-                                                    dari db<br><br>
-                                                    dari db<br><br>
-                                                    dari db
+                                                    <?= $row->isi3tglctcp1; ?><br>
+                                                    <?= $row->isi3tglctcp1; ?><br>
+                                                    <?= $row->isi3tglctcp1; ?>
                                                 </div>
                                             </div>
                                         </div>
