@@ -58,15 +58,15 @@
                         <td>Halaman</td>
                         <td>Total Lembar</td>
                         <td>Total / Hari</td>
-                        <!-- TOMBOL UNTUK MESIN MBO DAN MESIN SHOE DI FINISHING PROSES -->
+                        <!-- TOMBOL UNTUK MESIN SHOE DI FINISHING PROSES -->
                         <td align="center">
-                          <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_ms">
+                          <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_shoe">
                             <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_ms">
+                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_shoe">
                             <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_ms">
+                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_shoe">
                             <i class="fa fa-eye" style="font-size:18px;"></i>
                           </a>
                         </td>
@@ -95,4 +95,4 @@
   </div>
   <!-- /.row -->
 </section>
-<!-- /.content
+<!-- /.content -->

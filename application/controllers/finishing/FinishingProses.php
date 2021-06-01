@@ -29,8 +29,8 @@ class FinishingProses extends CI_Controller {
 		$this->template->load('finishing/template','finishing/finishing_proses/jadwal_fp',$data);
 	}
 	
-	// MESIN MBO DAN MESIN SHOE
-    public function tambah_jadwal_fp_ms()
+	// MESIN SHOE
+    public function tambah_jadwal_fp_shoe()
 	{
 		// check_already_login_finishing();
 		$query = $this->so->get();
@@ -38,9 +38,9 @@ class FinishingProses extends CI_Controller {
 			'judul' => 'Finishing Proses',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp-ms',$data);
+		$this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp-shoe',$data);
 	}
-    public function edit_jadwal_fp_ms()
+    public function edit_jadwal_fp_shoe()
 	{
 		// check_already_login_finishing();
 		$query = $this->so->get();
@@ -48,9 +48,9 @@ class FinishingProses extends CI_Controller {
 			'judul' => 'Finishing Proses',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/edit-jadwal-fp-ms',$data);
+		$this->template->load('finishing/template','finishing/finishing_proses/edit-jadwal-fp-shoe',$data);
 	}
-    public function lihat_jadwal_fp_ms()
+    public function lihat_jadwal_fp_shoe()
 	{
 		// check_already_login_finishing();
 		$query = $this->so->get();
@@ -58,11 +58,11 @@ class FinishingProses extends CI_Controller {
 			'judul' => 'Finishing Proses',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/lihat-jadwal-fp-ms',$data);
+		$this->template->load('finishing/template','finishing/finishing_proses/lihat-jadwal-fp-shoe',$data);
 	}
 
-	// SELAIN MESIN MBO DAN MESIN SHOE
-    public function tambah_jadwal_fP()
+	// LAMINASI
+    public function tambah_jadwal_fp_laminasi()
 	{
 		// check_already_login_finishing();
 		$query = $this->so->get();
@@ -70,9 +70,9 @@ class FinishingProses extends CI_Controller {
 			'judul' => 'Finishing Proses',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp',$data);
+		$this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp-laminasi',$data);
 	}
-    public function edit_jadwal_fp()
+    public function edit_jadwal_fp_laminasi()
 	{
 		// check_already_login_finishing();
 		$query = $this->so->get();
@@ -80,9 +80,9 @@ class FinishingProses extends CI_Controller {
 			'judul' => 'Finishing Proses',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/edit-jadwal-fp',$data);
+		$this->template->load('finishing/template','finishing/finishing_proses/edit-jadwal-fp-laminasi',$data);
 	}
-    public function lihat_jadwal_fp()
+    public function lihat_jadwal_fp_laminasi()
 	{
 		// check_already_login_finishing();
 		$query = $this->so->get();
@@ -90,7 +90,71 @@ class FinishingProses extends CI_Controller {
 			'judul' => 'Finishing Proses',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/lihat-jadwal-fp',$data);
+		$this->template->load('finishing/template','finishing/finishing_proses/lihat-jadwal-fp-laminasi',$data);
+	}
+
+	// SUSUN
+    public function tambah_jadwal_fp_susun()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Proses',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp-susun',$data);
+	}
+    public function edit_jadwal_fp_susun()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Proses',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_proses/edit-jadwal-fp-susun',$data);
+	}
+    public function lihat_jadwal_fp_susun()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Proses',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_proses/lihat-jadwal-fp-susun',$data);
+	}
+
+	// SUB
+    public function tambah_jadwal_fp_sub()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Proses',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp-sub',$data);
+	}
+    public function edit_jadwal_fp_sub()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Proses',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_proses/edit-jadwal-fp-sub',$data);
+	}
+    public function lihat_jadwal_fp_sub()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Proses',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_proses/lihat-jadwal-fp-sub',$data);
 	}
 	
 }

@@ -101,8 +101,11 @@
                       <div class="card">
                         <div class="card-header" align="center">
                           <ul class="nav nav-pills row">
-                            <li class="nav-item col"><a class="nav-link btn-outline-success active" href="#cover" data-toggle="tab" style="min-width: 200px;">MESIN KATEGORI 1</a></li>
-                            <li class="nav-item col"><a class="nav-link btn-outline-success" href="#isi" data-toggle="tab" style="min-width: 200px;">MESIN KATEGORI 2</a></li>
+                            <li class="nav-item col"><a class="nav-link btn-outline-success active" href="#shoe" data-toggle="tab">MESIN SHOE</a></li>
+                            <li class="nav-item col"><a class="nav-link btn-outline-success" href="#mbo" data-toggle="tab">MESIN MBO</a></li>
+                            <li class="nav-item col"><a class="nav-link btn-outline-success" href="#sub" data-toggle="tab">SUB</a></li>
+                            <li class="nav-item col"><a class="nav-link btn-outline-success" href="#laminasi" data-toggle="tab">LAMINASI</a></li>
+                            <li class="nav-item col"><a class="nav-link btn-outline-success" href="#susun" data-toggle="tab">MESIN SUSUN</a></li>
                           </ul>
                           <!-- <h3>SO dari db</h3> -->
                         </div>
@@ -110,25 +113,25 @@
                         <div class="card-body">
                           <div class="card-body">
                             <div class="tab-content">
-                              <div class="tab-pane active" id="cover">
+                              <div class="tab-pane active" id="shoe">
                                 <h4>DETAIL ORDERAN</h4><hr>
                                 <div class="row">
                                   <div class="col-md-4">
-                                    <br>Nama Pemesan
+                                    Nomor SO
                                     <br><label class="form-label">dari db</label>
                                   </div>
                                   <div class="col-md-4">
-                                    <br>Nama Orderan
+                                    Nama Orderan
                                     <br><label class="form-label">dari db</label>
                                   </div>
                                   <div class="col-md-4">
-                                    <br>Finishing
+                                    Finishing
                                     <br><label class="form-label">dari db</label>
                                   </div>
                                 </div>
                                 <div class="row">
                                   <div class="col-md-4">
-                                    <br>Ukuran
+                                    <br>Nama Pemesan
                                     <br><label class="form-label">dari db</label>
                                   </div>
                                   <div class="col-md-4">
@@ -140,97 +143,286 @@
                                     <br><label class="form-label">dari db</label>
                                   </div>
                                 </div>
-                                <hr><br>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <br>Ukuran
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Halaman
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                </div><hr>
 
                                 <div class="row">
                                   <div class="col-md-6">
                                     Tanggal Pelaksanaan<br>
                                     <input type="date" class="form-control" name="tanggal_pelaksanaan_mesin_shoe" placeholder="Tanggal Pelaksanaan" required>
                                   </div>  
-                                </div><br>
-                                <hr><br>
+                                </div><hr>
+
                                 <div class="row">
                                   <div class="col-md-6">
-                                    Jenis Mesin<br>
-                                    <select id="inputState" class="form-select form-control" name="jenis_mesin" >
-                                      <option value="-">-</option>
-                                    </select>
+                                    Jenis Mesin : <b>Mesin SHOE</b>
                                   </div>
-                                </div><br>
-                                <hr><br>
+                                </div><hr>
 
                                 <div class="row">
-                                  <div class="col-md-3">
-                                    <b>Lipat</b>
+                                  <div class="col-md-12">
+                                    Jadwal Pengerjaan
                                   </div>
-                                  <div class="col-md-5">
-                                    <b>Lembar</b>
-                                  </div>
-                                </div><br>
+                                </div><hr>
 
                                 <div class="row">
-                                  <div class="col-md-3">
-                                    <div class="form-check">
-                                      <input type="text" name="lipat1" value="" hidden>
-                                      <input class="form-check-input" type="checkbox" name="lipat1" value="lipat 1">
-                                      <label class="form-check-label" for="flexCheckDefault">Lipat 1</label>
-                                    </div> 
+                                  <!-- LEMBAR 1 - 10 -->
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 1</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_1" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 2</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_2" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 3</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_3" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 4</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_4" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 5</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_5" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 6</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_6" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 7</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_7" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 8</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_8" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 9</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_9" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 10</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_10" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div>
                                   </div>
-                                  <div class="col-md-1">
-                                    Lipat 1
-                                  </div>
-                                  <div class="col-md-4">
-                                    <input type="number" class="form-control" name="lipat1_mesin_shoe" placeholder="Masukan Jumlah Lembar">
-                                  </div>
-                                </div><br>
 
-                                <div class="row">
-                                  <div class="col-md-3">
-                                    <div class="form-check">
-                                      <input type="text" name="lipat2" value="" hidden>
-                                      <input class="form-check-input" type="checkbox" name="lipat2" value="lipat 2">
-                                      <label class="form-check-label" for="flexCheckDefault">Lipat 2</label>
-                                    </div> 
+                                  <div class="col-md-1"></div>
+                                  <!-- LEMBAR 11 - 20 -->
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 11</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_11" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 12</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_12" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 13</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_13" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 14</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_14" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 15</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_15" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 16</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_16" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 17</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_17" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 18</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_18" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 19</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_19" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 20</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_20" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div>
                                   </div>
-                                  <div class="col-md-1">
-                                    Lipat 2
-                                  </div>
-                                  <div class="col-md-4">
-                                    <input type="number" class="form-control" name="lipat2_mesin_shoe" placeholder="Masukan Jumlah Lembar">
-                                  </div>
-                                </div><br>
-
-                                <div class="row">
-                                  <div class="col-md-3">
-                                    <div class="form-check">
-                                      <input type="text" name="lipat3" value="" hidden>
-                                      <input class="form-check-input" type="checkbox" name="lipat3" value="lipat 3">
-                                      <label class="form-check-label" for="flexCheckDefault">Lipat 3</label>
-                                    </div> 
-                                  </div>
-                                  <div class="col-md-1">
-                                    Lipat 3
-                                  </div>
-                                  <div class="col-md-4">
-                                    <input type="number" class="form-control" name="lipat3_mesin_shoe" placeholder="Masukan Jumlah Lembar">
-                                  </div>
-                                </div><br>
-
-                                <div class="row">
-                                  <div class="col-md-3">
-                                    <div class="form-check">
-                                      <input type="text" name="lipat4" value="" hidden>
-                                      <input class="form-check-input" type="checkbox" name="lipat4" value="lipat 4">
-                                      <label class="form-check-label" for="flexCheckDefault">Lipat 4</label>
-                                    </div> 
-                                  </div>
-                                  <div class="col-md-1">
-                                    Lipat 4
-                                  </div>
-                                  <div class="col-md-4">
-                                    <input type="number" class="form-control" name="lipat4_mesin_shoe" placeholder="Masukan Jumlah Lembar">
-                                  </div>
-                                </div><br>
+                                </div><hr>
 
                                 <h4>Keterangan</h4>
                                 <textarea name="keterangan_finishing_proses" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
@@ -242,25 +434,26 @@
                                   </div>
                                 </div>
                               </div>
-                              <div class="tab-pane" id="isi">
+
+                              <div class="tab-pane" id="sub">
                                 <h4>DETAIL ORDERAN</h4><hr>
                                 <div class="row">
                                   <div class="col-md-4">
-                                    <br>Nama Pemesan
+                                    Nomor SO
                                     <br><label class="form-label">dari db</label>
                                   </div>
                                   <div class="col-md-4">
-                                    <br>Nama Orderan
+                                    Nama Orderan
                                     <br><label class="form-label">dari db</label>
                                   </div>
                                   <div class="col-md-4">
-                                    <br>Finishing
+                                    Finishing
                                     <br><label class="form-label">dari db</label>
                                   </div>
                                 </div>
                                 <div class="row">
                                   <div class="col-md-4">
-                                    <br>Ukuran
+                                    <br>Nama Pemesan
                                     <br><label class="form-label">dari db</label>
                                   </div>
                                   <div class="col-md-4">
@@ -272,24 +465,164 @@
                                     <br><label class="form-label">dari db</label>
                                   </div>
                                 </div>
-                                <hr><br>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <br>Ukuran
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Halaman
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                </div><hr>
 
                                 <div class="row">
                                   <div class="col-md-6">
                                     Tanggal Pelaksanaan<br>
-                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_mesin_shoe" placeholder="Tanggal Pelaksanaan" required>
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_sub" placeholder="Tanggal Pelaksanaan" required>
                                   </div>  
-                                </div><br>
-                                <hr><br>
+                                </div><hr>
+
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    Jenis SUB<br>
+                                    <div class="card-body">
+                                      <div class="row">
+                                        <div class="col-md-4">
+                                          <input class="form-check-input" type="checkbox" name="jenis_sub_lipat" value="Lipat" id="flexCheckDefault">
+                                          <label class="form-check-label" for="flexCheckDefault">Lipat</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <input class="form-check-input" type="checkbox" name="jenis_sub_susun_gabung" value="Susun Gabung" id="flexCheckDefault">
+                                          <label class="form-check-label" for="flexCheckDefault">Susun / Gabung</label>
+                                        </div>
+                                        <div class="col-md-4">
+                                          <input class="form-check-input" type="checkbox" name="jenis_sub_laminasi" value="Laminasi" id="flexCheckDefault">
+                                          <label class="form-check-label" for="flexCheckDefault">Laminasi</label>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div><hr>
+
+                                <h4>Keterangan</h4>
+                                <textarea name="keterangan_finishing_proses" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+
+                                <div class="row">
+                                  <div class="col" align="right">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
+                                    <button type="button" class="btn btn-success" data-dismiss="modal">Jadwal</button>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="tab-pane" id="laminasi">
+                                <h4>DETAIL ORDERAN</h4><hr>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    Nomor SO
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    Nama Orderan
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    Finishing
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <br>Nama Pemesan
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Ukuran
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Oplag
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                </div><hr>
+
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    Tanggal Pelaksanaan<br>
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_laminasi" placeholder="Tanggal Pelaksanaan" required>
+                                  </div>  
+                                </div><hr>
+
                                 <div class="row">
                                   <div class="col-md-6">
                                     Jenis Mesin<br>
-                                    <select id="inputState" class="form-select form-control" name="jenis_mesin" >
-                                      <option value="-">-</option>
-                                    </select>
+                                    <b>Mesin LAMINASI</b>
                                   </div>
-                                </div><br>
-                                <hr><br>
+                                  <div class="col-md-6">
+                                    Jenis Laminasi<br>
+                                    <b>dari db</b>
+                                  </div>
+                                </div><hr>
+
+                                <h4>Keterangan</h4>
+                                <textarea name="keterangan_finishing_proses" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+
+                                <div class="row">
+                                  <div class="col" align="right">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
+                                    <button type="button" class="btn btn-success" data-dismiss="modal">Jadwal</button>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="tab-pane" id="susun">
+                                <h4>DETAIL ORDERAN</h4><hr>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    Nomor SO
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    Nama Orderan
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    Finishing
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <br>Nama Pemesan
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Laminasi
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Oplag
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <br>Ukuran
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Halaman
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                </div><hr>
+
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    Tanggal Pelaksanaan<br>
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_susun" placeholder="Tanggal Pelaksanaan" required>
+                                  </div>  
+                                </div><hr>
 
                                 <h4>Keterangan</h4>
                                 <textarea name="keterangan_finishing_proses" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
