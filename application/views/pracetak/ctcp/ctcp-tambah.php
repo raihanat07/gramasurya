@@ -110,13 +110,14 @@
                         <label class="form-label">Nama Operator</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="namaoperator1" value="<?=$row->namaoperator1?>" required>
+                        <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
+                        <input type="text" class="form-control" name="namaoperatorctcp1" value="<?=$row->namaoperatorctcp1?>" required>
                     </div>
                     <div class="col-md-3" align="center">
                         <label class="form-label">Nama Operator</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="namaoperator2" value="<?=$row->namaoperator2?>">
+                        <input type="text" class="form-control" name="namaoperatorctcp2" value="<?=$row->namaoperatorctcp2?>">
                     </div>
                 </div><br>
                 <div class="row">
@@ -586,7 +587,7 @@
                                             </div>
                                         </div> -->
                                         <div class="col-md-12">
-                                            <textarea name="catatan_imposisi"  class="form-control" placeholder="catatan" style="height: 240px;" disabled><?=$row->catatan_imposisi?></textarea>
+                                            <textarea name="catatan_ctcp"  class="form-control" placeholder="catatan" style="height: 240px;" ><?=$row->catatan_ctcp?></textarea>
                                         </div>
                                     </div>
                                 </div>
