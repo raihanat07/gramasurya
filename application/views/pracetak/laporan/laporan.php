@@ -56,17 +56,26 @@
               <td></td>
               <td></td>
               <td></td>
-              <td><?= $row->so_status; ?></td>
+              <td>
+                  <?php 
+                        if($row->so_status == "pracetak") 
+                          echo $row->so_status;
+                        else 
+                          echo $row->ctcp_status;
+                        
+                  ?>
+              </td>
               <td align="center">
-                  <!-- lihat detail imposisi -->
-                    <a href="<?=site_url('pracetak/Laporan/lihat_laporan/'.$row->id_order)?>">
-                      <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
-                    </a>
-
-                    <a href="<?=site_url('pracetak/Laporan/edit_laporan/'.$row->id_order)?>">
-                    <i class="fa fa-pencil" style="font-size:18px"></i>
+                  
+              <!-- lihat detail laporan -->                
+                  <a href="<?=site_url('pracetak/laporan/lihat_laporan/'.$row->id_order)?>">
+                    <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
 
+              <!-- edit laporan -->
+                  <a href="<?=site_url('pracetak/laporan/edit_laporan/'.$row->id_order)?>">
+                    <i class="fa fa-pencil" style="font-size:18px"></i>
+                  </a>              
 
 
               </td>

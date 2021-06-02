@@ -34,7 +34,7 @@ class Laporan extends CI_Controller {
 	public function tambah_laporan($id)
 	{
 		check_not_login();
-		$query = $this->laporan->get_lihat($id);
+		$query = $this->laporan->get_lihatlaporan($id);
 		$data = array(
 			'judul' => 'Tambah Laporan Pracetak',
 			'laporan' => $query->result(),
@@ -45,7 +45,7 @@ class Laporan extends CI_Controller {
 	public function lihat_laporan($id)
 	{
 		check_not_login();
-		$query = $this->laporan->get_lihat($id);
+		$query = $this->laporan->get_lihatlaporan($id);
 		$data = array(
 			'judul' => 'Lihat Laporan',
 			'laporan' => $query->result(),
@@ -66,35 +66,22 @@ class Laporan extends CI_Controller {
 
 	public function proses()
 	{		
-		if(isset($_POST['add'])){							
+		if(isset($_POST['edit'])){							
 			$inputan = $this->input->post(null, TRUE);
 
 			$inputan['status_order'] = "ctcp";
-			if($inputan['status_pracetak_cover'] !=null && $inputan['status_pracetak_isi'] !=null){
-					$inputan['status_order'] = "pracetak";
-					$inputan['pracetak_status'] = "pracetak";
+			if($inputan['status_laporan_pracetak'] == "pracetak"){
+					$inputan['status_order'] = "pracetak";					
 			}
-			else if($inputan['status_pracetak_cover'] !=null ){				
-				$inputan['pracetak_status'] = "pracetak cover";
-			}
-			else if($inputan['status_ctcp_isi'] !=null ){				
-				$inputan['ctcp_status'] = "ctcp isi";
-			}
-			else
-				$inputan['ctcp_status'] = "";
 
-			$this->laporan->tambah_laporan($inputan);
-				if($this->db->affected_rows() > 0){
-					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
-				}
-				echo "<script>window.location='".site_url('pracetak/laporan')."'; </script>"; 
-		} else if(isset($_POST['edit'])){ 
-			$inputan = $this->input->post(null, TRUE);			
 			$this->laporan->edit_laporan($inputan);
 				if($this->db->affected_rows() > 0){					
 					echo "<script> alert('Data Berhasil Diubah'); </script>";
 				}
-				echo "<script>window.location='".site_url('pracetak/laporan')."'; </script>"; 
-		}	
+				echo "<script>window.location='".site_url('pracetak/laporan')."'; </script>"; 					
+
+		} 								
 	}
-}
+
+}	
+			
