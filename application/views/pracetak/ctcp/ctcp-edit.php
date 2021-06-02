@@ -696,8 +696,8 @@
                                                 <div class="col">
                                                     <label class="form-label">Tgl. CTCP</label><br><br>
                                                     <input type="date" class="form-control" name="isi3tglctcp1" value="<?= $row->isi3tglctcp1; ?>"><br>
-                                                    <input type="date" class="form-control" name="isi3tglctcp2" value="<?= $row->isi3tglctcp1; ?>"><br>
-                                                    <input type="date" class="form-control" name="isi3tglctcp3" value="<?= $row->isi3tglctcp1; ?>">
+                                                    <input type="date" class="form-control" name="isi3tglctcp2" value="<?= $row->isi3tglctcp2; ?>"><br>
+                                                    <input type="date" class="form-control" name="isi3tglctcp3" value="<?= $row->isi3tglctcp3; ?>">
                                                 </div>
                                             </div>
                                         </div>

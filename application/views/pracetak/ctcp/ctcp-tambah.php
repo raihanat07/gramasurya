@@ -262,9 +262,9 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label><br>
-                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                            <?= $row->cover1tglimposisi1; ?><br><br>
+                                            <?= $row->cover1tglimposisi2; ?><br><br>
+                                            <?= $row->cover1tglimposisi3; ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. CTCP</label><br><br>
@@ -351,9 +351,9 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label><br>
-                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                            <?= $row->isi1tglimposisi1; ?><br><br>
+                                            <?= $row->isi1tglimposisi2; ?><br><br>
+                                            <?= $row->isi1tglimposisi3; ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. CTCP</label><br><br>
@@ -458,9 +458,9 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label><br>
-                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                            <?= $row->cover2tglimposisi1; ?><br><br>
+                                            <?= $row->cover2tglimposisi2; ?><br><br>
+                                            <?= $row->cover2tglimposisi3; ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. CTCP</label><br><br>
@@ -547,9 +547,9 @@
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. Imposisi</label><br>
-                                            <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                            <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                            <?= $row->isi2tglimposisi1; ?><br><br>
+                                            <?= $row->isi2tglimposisi2; ?><br><br>
+                                            <?= $row->isi2tglimposisi3; ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Tgl. CTCP</label><br><br>
@@ -686,9 +686,9 @@
                                                 </div>
                                                 <div class="col">
                                                     <label class="form-label">Tgl. Imposisi</label><br>
-                                                    <!-- <?= $row->cover1tglimposisi1; ?> -->dari db<br><br>
-                                                    <!-- <?= $row->cover1tglimposisi2; ?> -->dari db<br><br>
-                                                    <!-- <?= $row->cover1tglimposisi3; ?> -->dari db
+                                                    <?= $row->isi3tglimposisi1; ?><br><br>
+                                                    <?= $row->isi3tglimposisi2; ?><br><br>
+                                                    <?= $row->isi3tglimposisi3; ?>
                                                 </div>
                                                 <div class="col">
                                                     <label class="form-label">Tgl. CTCP</label><br><br>
