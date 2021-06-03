@@ -52,21 +52,97 @@
               <td><?= $row->nama_pemesan; ?></td>
               <td><?= $row->nama_orderan; ?></td>
               <!--UNTUK TOTAL PLAT YANG DIGUNAKAN -->
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td><?= $row->so_status; ?></td>
-              <td align="center">
-                  <!-- lihat detail imposisi -->
-                    <a href="<?=site_url('pracetak/Laporan/lihat_laporan/'.$row->id_order)?>">
-                      <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
-                    </a>
+              
+                                            <?php 
+                                            // menentukan apakah plat yang digunakan jenis 72/74/102/Tokko
+                                            // bagian COVER
+                                                $cover1 = 0;
+                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
+                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
+                                                    $row->cover1mesin1 == "102" ? $cover1=$cover1+$p1 :  $cover1;
+                                                    $row->cover2mesin1 == "102" ? $cover1=$cover1+$p2 :  $cover1;
+                                            
+                                                $cover2 = 0;
+                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
+                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
+                                                    $row->cover1mesin1 == "74" ? $cover2=$cover2+$p1 :  $cover2;
+                                                    $row->cover2mesin1 == "74" ? $cover2=$cover2+$p2 :  $cover2;
+                                            
+                                     
+                                                $cover3 = 0;
+                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
+                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
+                                                    $row->cover1mesin1 == "72" ? $cover3=$cover3+$p1 :  $cover3;
+                                                    $row->cover2mesin1 == "72" ? $cover3=$cover3+$p2 :  $cover3;                                          
+                                        
+                                                $cover4 = 0;
+                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
+                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
+                                                    $row->cover1mesin1 == "Tokko" ? $cover4=$cover4+$p1 :  $cover4;
+                                                    $row->cover2mesin1 == "Tokko" ? $cover4=$cover4+$p2 :  $cover4;
 
-                    <a href="<?=site_url('pracetak/Laporan/edit_laporan/'.$row->id_order)?>">
-                    <i class="fa fa-pencil" style="font-size:18px"></i>
+                                                // bagian ISI
+                                                        $isi1 = 0;
+                                                        $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
+                                                        $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
+                                                        $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
+                                                            $row->isi1mesin1 == "102" ? $isi1=$isi1+$p1 :  $isi1;
+                                                            $row->isi2mesin1 == "102" ? $isi1=$isi1+$p2 :  $isi1;
+                                                            $row->isi3mesin1 == "102" ? $isi1=$isi1+$p3 :  $isi1;
+                                                   
+                                                        $isi2 = 0;
+                                                        $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
+                                                        $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
+                                                        $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
+                                                            $row->isi1mesin1 == "74" ? $isi2=$isi2+$p1 :  $isi2;
+                                                            $row->isi2mesin1 == "74" ? $isi2=$isi2+$p2 :  $isi2;
+                                                            $row->isi3mesin1 == "74" ? $isi2=$isi2+$p3 :  $isi2;
+                                                   
+                                                        $isi3 = 0;
+                                                        $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
+                                                        $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
+                                                        $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
+                                                            $row->isi1mesin1 == "72" ? $isi3=$isi3+$p1 :  $isi3;
+                                                            $row->isi2mesin1 == "72" ? $isi3=$isi3+$p2 :  $isi3;
+                                                            $row->isi3mesin1 == "72" ? $isi3=$isi3+$p3 :  $isi3;
+                                                   
+                                                        $isi4 = 0;
+                                                        $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
+                                                        $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
+                                                        $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
+                                                            $row->isi1mesin1 == "Tokko" ? $isi4=$isi4+$p1 :  $isi4;
+                                                            $row->isi2mesin1 == "Tokko" ? $isi4=$isi4+$p2 :  $isi4;
+                                                            $row->isi3mesin1 == "Tokko" ? $isi4=$isi4+$p3 :  $isi4;
+                                                    ?>
+                                                                                                                             
+              <td><?= $cover1+$isi1; ?></td>
+              <td><?= $cover2+$isi2; ?></td>
+              <td><?= $cover3+$isi3; ?></td>
+              <td><?= $cover4+$isi4; ?></td>
+
+
+              <td>
+
+
+                  <?php 
+                        if($row->so_status == "pracetak") 
+                          echo $row->so_status;
+                        else 
+                          echo $row->ctcp_status;
+                        
+                  ?>
+              </td>
+              <td align="center">
+                  
+              <!-- lihat detail laporan -->                
+                  <a href="<?=site_url('pracetak/laporan/lihat_laporan/'.$row->id_order)?>">
+                    <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
 
+              <!-- edit laporan -->
+                  <a href="<?=site_url('pracetak/laporan/edit_laporan/'.$row->id_order)?>">
+                    <i class="fa fa-pencil" style="font-size:18px"></i>
+                  </a>              
 
 
               </td>

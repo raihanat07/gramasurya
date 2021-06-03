@@ -685,8 +685,8 @@
                                                 <div class="col">
                                                     <label class="form-label">Tgl. CTCP</label><br><br>
                                                     <?= $row->isi3tglctcp1; ?><br>
-                                                    <?= $row->isi3tglctcp1; ?><br>
-                                                    <?= $row->isi3tglctcp1; ?>
+                                                    <?= $row->isi3tglctcp2; ?><br>
+                                                    <?= $row->isi3tglctcp3; ?>
                                                 </div>
                                             </div>
                                         </div>

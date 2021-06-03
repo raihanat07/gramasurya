@@ -7,16 +7,6 @@
                     <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
                 </a>
             </div>
-            <!-- <div class="col-sm-6" align="right">
-                <a href="<?=site_url()?>pracetak/Laporan" class="btn btn-success btn-lg">
-                    PRINT
-                </a>
-            </div>
-            <div class="col-sm-6" align="right">
-                <a href="<?=site_url()?>pracetak/Laporan" class="btn btn-success btn-lg">
-                    PRINT
-                </a>
-            </div> -->
         </div>
     </div><!-- /.container-fluid -->
 </section>
@@ -28,7 +18,7 @@
     <div class="card">
     <div class="card-header">
         <!-- <label>SO</label> -->
-        <h3 class="card-title">Data Imposisi</h3>
+        <h3 class="card-title">Data Laporan</h3>
         
 
         <div class="card-tools">
@@ -39,401 +29,556 @@
         </div>
     </div>
     <div class="card-body">
-     <form action="<?=site_url('pracetak/laporan/proses')?>" method="post">
-        <div class="card-body">
-        <?php foreach($laporan as $s => $row) {?>
-           
+    <?php foreach($laporan as $s => $row) {?>  
+            <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
                 <div class="row">
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Nomor SO</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nomor_so" value="<?=$row->nomor_so?>" placeholder="Masukan Nomor SO" required disabled>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Nama Pemesan</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nama_pemesan" value="<?=$row->nama_pemesan?>" placeholder="Masukan Nama Pemesan" required disabled>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Halaman</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="halaman" value="<?=$row->halaman?>" placeholder="Masukan Hal" required disabled>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Tanggal Masuk</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="date" class="form-control" name="tanggal_masuk" value="<?=$row->tanggal_masuk?>" placeholder="Tanggal Masuk" required disabled>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Nama Orderan</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="nama_orderan" value="<?=$row->nama_orderan?>" placeholder="Masukan Orderan" required disabled>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Oplag</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="number" class="form-control" name="oplag" value="<?=$row->oplag?>" placeholder="Masukan Oplag" required disabled>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Deadline</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="date" class="form-control" name="deadline" value="<?=$row->deadline?>" placeholder="Deadline" required disabled>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Ukuran</label>
-                    </div>
-                    <div class="col-md-2">
-                        <br><input type="text" class="form-control" name="ukuran" value="<?=$row->ukuran?>" placeholder="Masukan Ukuran" required disabled>
-                    </div>
-                    <div class="col-md-2" align="right">
-                        <br><label class="form-label">Finishing Akhir</label>
+                    <div class="col-md-4">
+                        <br>Nomor SO
+                        <br><label class="form-label"><?= $row->nomor_so; ?></label>
                     </div>
                     <div class="col-md-4">
-                    <br>Finsihing Akhir
-                    <br><label class="form-label">
-                    <?php 
-                  $finishing = "";
-                  if($row->bending != null){
-                    $finishing .= "bending, ";
-                  }
-                  if($row->hard_cover != null){
-                    $finishing .= 'hard cover, ';
-                  }   
-                  if($row->jahit_benang != null){
-                    $finishing .= 'jahit benang, ';
-                  } 
-                  if($row->jahit_kawat != null){
-                    $finishing .= 'jahit kawat, ';
-                  }    
-                  if($row->pond != null){
-                    $finishing .= 'pond, ';
-                  }   
-                  if($row->spiral != null){
-                    $finishing .= 'Spiral, ';
-                  }
-                  $finishing = rtrim($finishing, ", ");
-                  echo $finishing;
-                  ?>
-                    </label>
+                        <br>Nama Pemesan
+                        <br><label class="form-label"><?= $row->nama_pemesan; ?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Halaman
+                        <br><label class="form-label"><?= $row->halaman; ?></label>
+                    </div>
                 </div>
-                </div>
-                <br><hr><br>
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="row card-body">
-                                <div class="col-md-12">
-                                    <label class="form-label">Tanggal Imposisi Cover</label>
-                                    <br><input type="date" class="form-control" name="tanggal_imposisi_cover" value="<?=$row->tanggal_imposisi_cover?>" required disabled>
-                                    <br><label class="form-label">Tanggal Imposisi Isi</label>
-                                    <br><input type="date" class="form-control" name="tanggal_imposisi_isi" value="<?=$row->tanggal_imposisi_isi?>" required disabled>
-                                </div>
-                            </div>
-                        </div>
-                        <form action="<?=site_url('pracetak/ctcp/tambah_ctcp')?>" method="post">
-                        <div class="card">
-                            <div class="row card-body">
-                                <div class="col-md-12">
-                                    <div class="row card-body">
-                                        <div class="col-md-6">
-                                            <input class="form-check-input" type="checkbox" value="Imposisi Cover">
-                                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>
-                                            <input class="form-check-input" type="checkbox" value="CTCP Cover">
-                                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-                                            <input class="form-check-input" type="checkbox" value="Khusus">
-                                            <label class="form-check-label" for="flexCheckDefault">Khusus</label>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input class="form-check-input" type="checkbox" value="Imposisi Isi"  >
-                                            <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label><br>
-                                            <input class="form-check-input" type="checkbox" value="CTCP Cover">
-                                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-                                            <input  type="text" name="status_laporan_pracetak" value="ctcp" hidden>
-                                            <input class="form-check-input" type="checkbox" name="status_laporan_pracetak" value="pracetak" <?php echo $row->so_status == "pracetak" ?  "checked" : "" ?> >
-                                            <label class="form-check-label" for="flexCheckDefault">Pracetak</label>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="col-md-4">
+                        <br>Tanggal Masuk
+                        <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Nama Orderan
+                        <br><label class="form-label"><?= $row->nama_orderan; ?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Oplag
+                        <br><label class="form-label"><?= $row->oplag; ?></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <br>Deadline
+                        <br><label class="form-label"><?= $row->deadline; ?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Ukuran
+                        <br><label class="form-label"><?= $row->ukuran; ?></label>
+                    </div>
+                    <div class="col-md-4">
+                        <br>Finsihing Akhir
+                        <br><label class="form-label">
+                        <?php 
+                          $finishing = "";
+                          if($row->bending != null){
+                            $finishing .= "bending, ";
+                          }
+                          if($row->hard_cover != null){
+                            $finishing .= 'hard cover, ';
+                          }   
+                          if($row->jahit_benang != null){
+                            $finishing .= 'jahit benang, ';
+                          } 
+                          if($row->jahit_kawat != null){
+                            $finishing .= 'jahit kawat, ';
+                          }    
+                          if($row->pond != null){
+                            $finishing .= 'pond, ';
+                          }   
+                          if($row->spiral != null){
+                            $finishing .= 'Spiral, ';
+                          }
+                          $finishing = rtrim($finishing, ", ");
+                          echo $finishing;
+                      ?>
+                        </label>
+                    </div>
+                </div><br>
+                <hr><br>
+
+                <form action="<?=site_url('pracetak/laporan/proses')?>" method="post"> 
+                <div class="row" align="center">
+                    <div class="col">
+                        <input class="form-check-input" type="checkbox" value="Imposisi Cover" disabled <?php echo $row->imposisi_status == "imposisi cover" || $row->imposisi_status == "imposisi" ?  "checked" : "" ?>>
+                        <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label>
+                    </div>
+                    <div class="col"> 
+                        <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled <?php echo $row->imposisi_status == "imposisi isi" || $row->imposisi_status == "imposisi" ?  "checked" : "" ?>>
+                        <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label>
+                    </div>
+                    <div class="col">    
+                        <input class="form-check-input" type="checkbox" value="CTCP Cover" disabled <?php echo $row->ctcp_status == "ctcp cover" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
+                        <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label>
+                    </div>
+                    <div class="col"> 
+                        <input class="form-check-input" type="checkbox" value="CTCP Isi" disabled  <?php echo $row->ctcp_status == "ctcp isi" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
+                        <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label>
+                    </div>                    
+                    <div class="col">                    
+                        <input  type="text" name="status_laporan_pracetak" value="" hidden>
+                        <input class="form-check-input" type="checkbox" name="status_laporan_pracetak" value="pracetak" <?php echo $row->so_status == "pracetak" ?  "checked" : "" ?> disabled>
+                        <label class="form-check-label" for="flexCheckDefault">Pracetak</label>
+                    </div>
+                </div><br>
+                <hr><br>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card border bg-info">
+                            <div class="card-header text-center">
+                                COVER
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="card">
-                            <div class="row card-body">
-                                <div class="col-md-4">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card border bg-info">
-                                                <div class="card-header text-center">
-                                                    Plate Keluar Cover
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card-body p-3 mb-2 bg-light text-dark">
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <label class="form-label">Plate</label>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <label class="form-label">Mesin</label>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                    <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
-                                                        <input type="number" class="form-control" name="plate_1_keluar_cover" value="<?=$row->plate_1_keluar_cover?>" disabled>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_1_keluar_cover" value="<?=$row->mesin_1_keluar_cover?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_1_keluar_cover != "-" ?   $row->mesin_1_keluar_cover  : '-' ?>"><?php  echo $row->mesin_1_keluar_cover != "-" ?   $row->mesin_1_keluar_cover  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_2_keluar_cover" value="<?=$row->plate_2_keluar_cover?>" disabled>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_2_keluar_cover" value="<?=$row->mesin_2_keluar_cover?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_2_keluar_cover != "-" ?   $row->mesin_2_keluar_cover  : '-' ?>"><?php  echo $row->mesin_2_keluar_cover != "-" ?   $row->mesin_2_keluar_cover  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_3_keluar_cover" value="<?=$row->plate_3_keluar_cover?>" disabled>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_3_keluar_cover" value="<?=$row->mesin_3_keluar_cover?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_3_keluar_cover != "-" ?   $row->mesin_3_keluar_cover  : '-' ?>"><?php  echo $row->mesin_3_keluar_cover != "-" ?   $row->mesin_3_keluar_cover  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><div class="col-md-4">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card border bg-info">
-                                                <div class="card-header text-center">
-                                                    Plate Keluar Isi
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card-body p-3 mb-2 bg-light text-dark">
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <label class="form-label">Plate</label>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <label class="form-label">Mesin</label>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_1_keluar_isi" value="<?=$row->plate_1_keluar_isi?>" disabled>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_1_keluar_isi" value="<?=$row->mesin_1_keluar_isi?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_1_keluar_isi != "-" ?   $row->mesin_1_keluar_isi  : '-' ?>"><?php  echo $row->mesin_1_keluar_isi != "-" ?   $row->mesin_1_keluar_isi  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_2_keluar_isi" value="<?=$row->plate_2_keluar_isi?>" disabled>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_2_keluar_isi" value="<?=$row->mesin_2_keluar_isi?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_2_keluar_isi != "-" ?   $row->mesin_2_keluar_isi  : '-' ?>"><?php  echo $row->mesin_2_keluar_isi != "-" ?   $row->mesin_2_keluar_isi  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_3_keluar_isi" value="<?=$row->plate_3_keluar_isi?>" disabled>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_3_keluar_isi" value="<?=$row->mesin_3_keluar_isi?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_3_keluar_isi != "-" ?   $row->mesin_3_keluar_isi  : '-' ?>"><?php  echo $row->mesin_3_keluar_isi != "-" ?   $row->mesin_3_keluar_isi  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card border bg-info">
-                                                <div class="card-header text-center">
-                                                    Plate Keluar Gagal
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="card-body p-3 mb-2 bg-light text-dark">
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <label class="form-label">Plate</label>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <label class="form-label">Mesin</label>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_gagal1" value="<?=$row->plate_gagal1?>" disabled>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_gagal1" value="<?=$row->mesin_gagal1?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_gagal1 != "-" ?   $row->mesin_gagal1  : '-' ?>"><?php  echo $row->mesin_gagal1 != "-" ?   $row->mesin_gagal1  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_gagal2" value="<?=$row->plate_gagal2?>" disabled>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_gagal2" value="<?=$row->mesin_gagal2?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_gagal2 != "-" ?   $row->mesin_gagal2  : '-' ?>"><?php  echo $row->mesin_gagal2 != "-" ?   $row->mesin_gagal2  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div><br>
-                                                <div class="row">
-                                                    <div class="col-md-6" align="center">
-                                                        <input type="number" class="form-control" name="plate_gagal3" value="<?=$row->plate_gagal3?>" disabled>
-                                                    </div>
-                                                    <div class="col-md-6" align="center">
-                                                        <select name="mesin_gagal3" value="<?=$row->mesin_gagal3?>" class="form-select form-control" disabled>
-                                                        <option value="<?php  echo $row->mesin_gagal3 != "-" ?   $row->mesin_gagal3  : '-' ?>"><?php  echo $row->mesin_gagal3 != "-" ?   $row->mesin_gagal3  : '-' ?>   </option>
-                                                            <option value="102">102</option>
-                                                            <option value="74">74</option>
-                                                            <option value="72">72</option>
-                                                            <option value="Tokko">Tokko</option>
-                                                            <option value="-">-</option>
-
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                        <div class="card border bg-info">
+                            <div class="card-header text-center">
+                                ISI
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card">
-                            <div class="row card-body">
-                                <div class="col-md-12">
-                                    <label class="form-label">Tanggal Out CTCP Cover</label>
-                                    <br><input type="date" class="form-control" name="tanggal_out_ctcp_cover" value="<?=$row->tanggal_out_ctcp_cover?>" required disabled> 
-                                    <br><label class="form-label">Tanggal Out CTCP Isi</label>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card-body p-3 mb-2 bg-light text-dark"><br>
+                            <div class="row" align="center">
+                                <div class="col-md-6">
+                                    <label>MESIN COVER 1</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <?=$row->cover1mesin1;?>
+                                </div>
+                            </div><hr>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <label>Plat Keluar</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. Imposisi</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. CTCP</label>
                                 </div>
                             </div>
-                            <div class="row card-body">
-                                <div class="col-md-3">Ke 1 </div>
-                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" value="<?=$row->tanggal_out_ctcp_isi1?>" required disabled></div>
+                            <div class="row" align="center">
+                                <div class="col-md-4"><br>
+                                            <?= $row->cover1plat1; ?><br><br>
+                                            <?= $row->cover1plat2; ?><br><br>
+                                            <?= $row->cover1plat3; ?>
+                                </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->cover1tglimposisi1; ?><br><br>
+                                            <?= $row->cover1tglimposisi2; ?><br><br>
+                                            <?= $row->cover1tglimposisi3; ?>
+                                </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->cover1tglctcp1; ?><br><br>
+                                            <?= $row->cover1tglctcp2; ?><br><br>
+                                            <?= $row->cover1tglctcp3; ?>
+                                </div>
+                            </div><hr>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5">
+                                    <br><b>TOTAL PLAT KELUAR</b>
+                                    <br><b>TOTAL PLAT GAGAL</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <br> <?= $row->cover1plat1+$row->cover1plat2+$row->cover1plat3; ?>
+                                    <br> <?= $row->jumlahplategagalcover1; ?>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5" align="center">
+                                    <hr><b>TOTAL PLAT</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <hr><?= $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1; ?>
+                                </div>
                             </div><br>
-                            <div class="row card-body">
-                                <div class="col-md-3">Ke 2 </div>
-                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2" value="<?=$row->tanggal_out_ctcp_isi2?>" required disabled></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body p-3 mb-2 bg-light text-dark"><br>
+                            <div class="row" align="center">
+                                <div class="col-md-6">
+                                    <label>MESIN ISI 1</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <?=$row->isi1mesin1;?>
+                                </div>
+                            </div><hr>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <label>Plat Keluar</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. Imposisi</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. CTCP</label>
+                                </div>
                             </div>
+                            <div class="row" align="center">
+                                     <div class="col-md-4"><br>
+                                                <?= $row->isi1plat1; ?><br><br>
+                                                <?= $row->isi1plat2; ?><br><br>
+                                                <?= $row->isi1plat3; ?>
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi1tglimposisi1; ?><br><br>
+                                                <?= $row->isi1tglimposisi2; ?><br><br>
+                                                <?= $row->isi1tglimposisi3; ?>
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi1tglctcp1; ?><br><br>
+                                                <?= $row->isi1tglctcp2; ?><br><br>
+                                                <?= $row->isi1tglctcp3; ?>
+                                    </div>
+                            </div><hr>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5">
+                                    <br><b>TOTAL PLAT KELUAR</b>
+                                    <br><b>TOTAL PLAT GAGAL</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <br> <?= $row->isi1plat1+$row->isi1plat2+$row->isi1plat3; ?>
+                                    <br> <?= $row->jumlahplategagalisi1; ?>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5" align="center">
+                                    <hr><b>TOTAL PLAT</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <hr><?= $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1; ?>
+                                </div>
+                            </div><br>
                         </div>
                     </div>
                 </div>
-                <?php } ?> 
-
-                <br><hr><br>
-                <div class="row" align="center">
-                    <div class="col-md-3">
-                        <label>Stok Plate 102</label>
-                        <!-- <label>2000</label> -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card-body p-3 mb-2 bg-light text-dark"><br>
+                            <div class="row" align="center">
+                                <div class="col-md-6">
+                                    <label>MESIN COVER 2</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <?=$row->cover2mesin1;?>
+                                </div>
+                            </div><hr>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <label>Plat Keluar</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. Imposisi</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. CTCP</label>
+                                </div>
+                            </div>
+                            <div class="row" align="center">
+                                        <div class="col-md-4"><br>
+                                                    <?= $row->cover2plat1; ?><br><br>
+                                                    <?= $row->cover2plat2; ?><br><br>
+                                                    <?= $row->cover2plat3; ?>
+                                        </div>
+                                        <div class="col-md-4"><br>
+                                                    <?= $row->cover2tglimposisi1; ?><br><br>
+                                                    <?= $row->cover2tglimposisi2; ?><br><br>
+                                                    <?= $row->cover2tglimposisi3; ?>
+                                        </div>
+                                        <div class="col-md-4"><br>
+                                                    <?= $row->cover2tglctcp1; ?><br><br>
+                                                    <?= $row->cover2tglctcp2; ?><br><br>
+                                                    <?= $row->cover2tglctcp3; ?>
+                                        </div>
+                            </div><hr>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5">
+                                    <br><b>TOTAL PLAT KELUAR</b>
+                                    <br><b>TOTAL PLAT GAGAL</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <br> <?= $row->cover2plat1+$row->cover2plat2+$row->cover2plat3; ?>
+                                    <br> <?= $row->jumlahplategagalcover2; ?>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5" align="center">
+                                    <hr><b>TOTAL PLAT</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <hr><?= $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2; ?>
+                                </div>
+                            </div><br>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate 74</label>
-                        <!-- <label>4500</label> -->
-                    </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate 72</label>
-                        <!-- <label>1000</label> -->
-                    </div>
-                    <div class="col-md-3">
-                        <label>Stok Plate Paper Plate</label>
-                        <!-- <label>500</label> -->
+                    <div class="col-md-6">
+                        <div class="card-body p-3 mb-2 bg-light text-dark"><br>
+                            <div class="row" align="center">
+                                <div class="col-md-6">
+                                    <label>MESIN ISI 2</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <?=$row->isi2mesin1;?>
+                                </div>
+                            </div><hr>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <label>Plat Keluar</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. Imposisi</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. CTCP</label>
+                                </div>
+                            </div>
+                            <div class="row" align="center">
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi2plat1; ?><br><br>
+                                                <?= $row->isi2plat2; ?><br><br>
+                                                <?= $row->isi2plat3; ?>
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi2tglimposisi1; ?><br><br>
+                                                <?= $row->isi2tglimposisi2; ?><br><br>
+                                                <?= $row->isi2tglimposisi3; ?>
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi2tglctcp1; ?><br><br>
+                                                <?= $row->isi2tglctcp2; ?><br><br>
+                                                <?= $row->isi2tglctcp3; ?>
+                                    </div>
+                            </div><hr>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5">
+                                    <br><b>TOTAL PLAT KELUAR</b>
+                                    <br><b>TOTAL PLAT GAGAL</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <br> <?= $row->isi2plat1+$row->isi2plat2+$row->isi2plat3; ?>
+                                    <br> <?= $row->jumlahplategagalisi2; ?>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5" align="center">
+                                    <hr><b>TOTAL PLAT</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <hr><?= $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2; ?>
+                                </div>
+                            </div><br>
+                        </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row" align="center">
+                            <div class="col">
+                                <div class="card border bg-info">
+                                    <div class="card-header text-center">
+                                        RINCIAN PENGGUNAAN PLAT
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body p-3 mb-2 bg-light text-dark"><br>
+                            <div class="row" align="center">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-md-3"><label>102</label></div>
+                                        <div class="col-md-3"><label>74</label></div>
+                                        <div class="col-md-3"><label>72</label></div>
+                                        <div class="col-md-3"><label>TOKKO</label></div>
+                                    </div>
+                                </div>
+                            </div><hr>
+                            <div class="row" align="center">
+                                <div class="col-md-2"><label>COVER</label></div>
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $cover1 = 0;
+                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
+                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
+                                                    $row->cover1mesin1 == "102" ? $cover1=$cover1+$p1 :  $cover1;
+                                                    echo $row->cover2mesin1 == "102" ? $cover1=$cover1+$p2 :  $cover1;
+                                            ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $cover2 = 0;
+                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
+                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
+                                                    $row->cover1mesin1 == "74" ? $cover2=$cover2+$p1 :  $cover2;
+                                                    echo $row->cover2mesin1 == "74" ? $cover2=$cover2+$p2 :  $cover2;
+                                            ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $cover3 = 0;
+                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
+                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
+                                                    $row->cover1mesin1 == "72" ? $cover3=$cover3+$p1 :  $cover3;
+                                                    echo $row->cover2mesin1 == "72" ? $cover3=$cover3+$p2 :  $cover3;
+                                            ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $cover4 = 0;
+                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
+                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
+                                                    $row->cover1mesin1 == "Tokko" ? $cover4=$cover4+$p1 :  $cover4;
+                                                    echo $row->cover2mesin1 == "Tokko" ? $cover4=$cover4+$p2 :  $cover4;
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="row" align="center">
+                                <div class="col-md-2"><label>ISI<label></div>
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $isi1 = 0;
+                                                $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
+                                                $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
+                                                $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
+                                                    $row->isi1mesin1 == "102" ? $isi1=$isi1+$p1 :  $isi1;
+                                                    $row->isi2mesin1 == "102" ? $isi1=$isi1+$p2 :  $isi1;
+                                                    echo $row->isi3mesin1 == "102" ? $isi1=$isi1+$p3 :  $isi1;
+                                            ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $isi2 = 0;
+                                                $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
+                                                $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
+                                                $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
+                                                    $row->isi1mesin1 == "74" ? $isi2=$isi2+$p1 :  $isi2;
+                                                    $row->isi2mesin1 == "74" ? $isi2=$isi2+$p2 :  $isi2;
+                                                    echo $row->isi3mesin1 == "74" ? $isi2=$isi2+$p3 :  $isi2;
+                                            ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $isi3 = 0;
+                                                $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
+                                                $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
+                                                $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
+                                                    $row->isi1mesin1 == "72" ? $isi3=$isi3+$p1 :  $isi3;
+                                                    $row->isi2mesin1 == "72" ? $isi3=$isi3+$p2 :  $isi3;
+                                                    echo $row->isi3mesin1 == "72" ? $isi3=$isi3+$p3 :  $isi3;
+                                            ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $isi4 = 0;
+                                                $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
+                                                $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
+                                                $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
+                                                    $row->isi1mesin1 == "Tokko" ? $isi4=$isi4+$p1 :  $isi4;
+                                                    $row->isi2mesin1 == "Tokko" ? $isi4=$isi4+$p2 :  $isi4;
+                                                    echo $row->isi3mesin1 == "Tokko" ? $isi4=$isi4+$p3 :  $isi4;
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><hr><br>
+                            <div class="row" align="center">
+                                <div class="col-md-2"><label>TOTAL</label></div>
+                                <div class="col-md-10">
+                                    <div class="row">
+                                        <div class="col-md-3"><?= $cover1+$isi1; ?></div>
+                                        <div class="col-md-3"><?= $cover2+$isi2; ?></div>
+                                        <div class="col-md-3"><?= $cover3+$isi3; ?></div>
+                                        <div class="col-md-3"><?= $cover4+$isi4; ?></div>
+                                    </div>
+                                </div>
+                            </div><br>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body p-3 mb-2 bg-light text-dark"><br>
+                            <div class="row" align="center">
+                                <div class="col-md-6">
+                                    <label>MESIN ISI 3</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <?=$row->isi3mesin1;?>
+                                </div>
+                            </div><hr>
+                            <div class="row" align="center">
+                                <div class="col-md-4">
+                                    <label>Plat Keluar</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. Imposisi</label>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>Tgl. CTCP</label>
+                                </div>
+                            </div>
+                            <div class="row" align="center">
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi3plat1; ?><br><br>
+                                                <?= $row->isi3plat2; ?><br><br>
+                                                <?= $row->isi3plat3; ?>
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi3tglimposisi1; ?><br><br>
+                                                <?= $row->isi3tglimposisi2; ?><br><br>
+                                                <?= $row->isi3tglimposisi3; ?>
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi3tglctcp1; ?><br><br>
+                                                <?= $row->isi3tglctcp2; ?><br><br>
+                                                <?= $row->isi3tglctcp3; ?>
+                                    </div>
+                            </div><hr>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5">
+                                    <br><b>TOTAL PLAT KELUAR</b>
+                                    <br><b>TOTAL PLAT GAGAL</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                    <br> <?= $row->isi3plat1+$row->isi3plat2+$row->isi3plat3; ?>
+                                    <br> <?= $row->jumlahplategagalisi3; ?>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-5" align="center">
+                                    <hr><b>TOTAL PLAT</b>
+                                </div>
+                                <div class="col-md-4" align="center">
+                                     <hr><?= $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3; ?>
+                                </div>
+                            </div><br>
+                        </div>
+                    </div>
+                </div>
+                </form>
+                <?php } ?> 
+                
                 <br><hr><br>
                 <div class="row" align="center">
                     <div class="col-md-3">
@@ -476,11 +621,13 @@
                             <div class="col-md-2"><label>)</label></div>
                         </div>
                     </div>
-                </div>
-                <br>
-                <script>
-		window.print();
-	</script> 
+                </div><br>
+
+                
+
+        <script>
+		            window.print();
+	    </script> 
             </div>
         </form>
     </div>
@@ -488,8 +635,7 @@
     <!-- <div class="card-footer">
         Footer
     </div> -->
-    <!-- /.card-footer-->
-    </div>
+    <!-- /.card-footer-->    
     <!-- /.card -->
 
 </section>

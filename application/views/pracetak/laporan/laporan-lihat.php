@@ -29,9 +29,8 @@
         </div>
     </div>
     <div class="card-body">
-     <form action="<?=site_url('pracetak/laporan/proses')?>" method="post">
-        <div class="card-body">
-        <?php foreach($laporan as $s => $row) {?>  
+    <?php foreach($laporan as $s => $row) {?>  
+            <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
                 <div class="row">
                     <div class="col-md-4">
                         <br>Nomor SO
@@ -100,25 +99,26 @@
                 </div><br>
                 <hr><br>
 
+                <form action="<?=site_url('pracetak/laporan/proses')?>" method="post"> 
                 <div class="row" align="center">
                     <div class="col">
-                        <input class="form-check-input" type="checkbox" value="Imposisi Cover" disabled>
+                        <input class="form-check-input" type="checkbox" value="Imposisi Cover" disabled <?php echo $row->imposisi_status == "imposisi cover" || $row->imposisi_status == "imposisi" ?  "checked" : "" ?>>
                         <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label>
                     </div>
                     <div class="col"> 
-                        <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled>
+                        <input class="form-check-input" type="checkbox" value="Imposisi Isi" disabled <?php echo $row->imposisi_status == "imposisi isi" || $row->imposisi_status == "imposisi" ?  "checked" : "" ?>>
                         <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label>
                     </div>
                     <div class="col">    
-                        <input class="form-check-input" type="checkbox" value="CTCP Cover" disabled>
+                        <input class="form-check-input" type="checkbox" value="CTCP Cover" disabled <?php echo $row->ctcp_status == "ctcp cover" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
                         <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label>
                     </div>
                     <div class="col"> 
-                        <input class="form-check-input" type="checkbox" value="CTCP Isi" disabled>
+                        <input class="form-check-input" type="checkbox" value="CTCP Isi" disabled  <?php echo $row->ctcp_status == "ctcp isi" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
                         <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label>
-                    </div>
-                    <div class="col"> 
-                        <input  type="text" name="status_laporan_pracetak" value="ctcp" hidden >
+                    </div>                    
+                    <div class="col">                    
+                        <input  type="text" name="status_laporan_pracetak" value="" hidden>
                         <input class="form-check-input" type="checkbox" name="status_laporan_pracetak" value="pracetak" <?php echo $row->so_status == "pracetak" ?  "checked" : "" ?> disabled>
                         <label class="form-check-label" for="flexCheckDefault">Pracetak</label>
                     </div>
@@ -146,10 +146,10 @@
                         <div class="card-body p-3 mb-2 bg-light text-dark"><br>
                             <div class="row" align="center">
                                 <div class="col-md-6">
-                                    <label>MESIN</label>
+                                    <label>MESIN COVER 1</label>
                                 </div>
                                 <div class="col-md-6">
-                                    dari db
+                                    <?=$row->cover1mesin1;?>
                                 </div>
                             </div><hr>
                             <div class="row" align="center">
@@ -164,20 +164,20 @@
                                 </div>
                             </div>
                             <div class="row" align="center">
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
+                                <div class="col-md-4"><br>
+                                            <?= $row->cover1plat1; ?><br><br>
+                                            <?= $row->cover1plat2; ?><br><br>
+                                            <?= $row->cover1plat3; ?>
                                 </div>
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
+                                <div class="col-md-4"><br>
+                                            <?= $row->cover1tglimposisi1; ?><br><br>
+                                            <?= $row->cover1tglimposisi2; ?><br><br>
+                                            <?= $row->cover1tglimposisi3; ?>
                                 </div>
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
+                                <div class="col-md-4"><br>
+                                            <?= $row->cover1tglctcp1; ?><br><br>
+                                            <?= $row->cover1tglctcp2; ?><br><br>
+                                            <?= $row->cover1tglctcp3; ?>
                                 </div>
                             </div><hr>
                             <div class="row">
@@ -187,8 +187,8 @@
                                     <br><b>TOTAL PLAT GAGAL</b>
                                 </div>
                                 <div class="col-md-4" align="center">
-                                    <br>dari db
-                                    <br>dari db
+                                    <br> <?= $row->cover1plat1+$row->cover1plat2+$row->cover1plat3; ?>
+                                    <br> <?= $row->jumlahplategagalcover1; ?>
                                 </div>
                             </div>
                             <div class="row">
@@ -197,7 +197,7 @@
                                     <hr><b>TOTAL PLAT</b>
                                 </div>
                                 <div class="col-md-4" align="center">
-                                    <hr>dari TPK + TPG
+                                    <hr><?= $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1; ?>
                                 </div>
                             </div><br>
                         </div>
@@ -206,10 +206,10 @@
                         <div class="card-body p-3 mb-2 bg-light text-dark"><br>
                             <div class="row" align="center">
                                 <div class="col-md-6">
-                                    <label>MESIN</label>
+                                    <label>MESIN ISI 1</label>
                                 </div>
                                 <div class="col-md-6">
-                                    dari db
+                                    <?=$row->isi1mesin1;?>
                                 </div>
                             </div><hr>
                             <div class="row" align="center">
@@ -224,21 +224,21 @@
                                 </div>
                             </div>
                             <div class="row" align="center">
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
-                                </div>
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
-                                </div>
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
-                                </div>
+                                     <div class="col-md-4"><br>
+                                                <?= $row->isi1plat1; ?><br><br>
+                                                <?= $row->isi1plat2; ?><br><br>
+                                                <?= $row->isi1plat3; ?>
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi1tglimposisi1; ?><br><br>
+                                                <?= $row->isi1tglimposisi2; ?><br><br>
+                                                <?= $row->isi1tglimposisi3; ?>
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi1tglctcp1; ?><br><br>
+                                                <?= $row->isi1tglctcp2; ?><br><br>
+                                                <?= $row->isi1tglctcp3; ?>
+                                    </div>
                             </div><hr>
                             <div class="row">
                                 <div class="col-md-2"></div>
@@ -247,8 +247,8 @@
                                     <br><b>TOTAL PLAT GAGAL</b>
                                 </div>
                                 <div class="col-md-4" align="center">
-                                    <br>dari db
-                                    <br>dari db
+                                    <br> <?= $row->isi1plat1+$row->isi1plat2+$row->isi1plat3; ?>
+                                    <br> <?= $row->jumlahplategagalisi1; ?>
                                 </div>
                             </div>
                             <div class="row">
@@ -257,7 +257,7 @@
                                     <hr><b>TOTAL PLAT</b>
                                 </div>
                                 <div class="col-md-4" align="center">
-                                    <hr>dari TPK + TPG
+                                    <hr><?= $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1; ?>
                                 </div>
                             </div><br>
                         </div>
@@ -268,10 +268,10 @@
                         <div class="card-body p-3 mb-2 bg-light text-dark"><br>
                             <div class="row" align="center">
                                 <div class="col-md-6">
-                                    <label>MESIN</label>
+                                    <label>MESIN COVER 2</label>
                                 </div>
                                 <div class="col-md-6">
-                                    dari db
+                                    <?=$row->cover2mesin1;?>
                                 </div>
                             </div><hr>
                             <div class="row" align="center">
@@ -286,21 +286,21 @@
                                 </div>
                             </div>
                             <div class="row" align="center">
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
-                                </div>
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
-                                </div>
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
-                                </div>
+                                        <div class="col-md-4"><br>
+                                                    <?= $row->cover2plat1; ?><br><br>
+                                                    <?= $row->cover2plat2; ?><br><br>
+                                                    <?= $row->cover2plat3; ?>
+                                        </div>
+                                        <div class="col-md-4"><br>
+                                                    <?= $row->cover2tglimposisi1; ?><br><br>
+                                                    <?= $row->cover2tglimposisi2; ?><br><br>
+                                                    <?= $row->cover2tglimposisi3; ?>
+                                        </div>
+                                        <div class="col-md-4"><br>
+                                                    <?= $row->cover2tglctcp1; ?><br><br>
+                                                    <?= $row->cover2tglctcp2; ?><br><br>
+                                                    <?= $row->cover2tglctcp3; ?>
+                                        </div>
                             </div><hr>
                             <div class="row">
                                 <div class="col-md-2"></div>
@@ -309,8 +309,8 @@
                                     <br><b>TOTAL PLAT GAGAL</b>
                                 </div>
                                 <div class="col-md-4" align="center">
-                                    <br>dari db
-                                    <br>dari db
+                                    <br> <?= $row->cover2plat1+$row->cover2plat2+$row->cover2plat3; ?>
+                                    <br> <?= $row->jumlahplategagalcover2; ?>
                                 </div>
                             </div>
                             <div class="row">
@@ -319,7 +319,7 @@
                                     <hr><b>TOTAL PLAT</b>
                                 </div>
                                 <div class="col-md-4" align="center">
-                                    <hr>dari TPK + TPG
+                                    <hr><?= $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2; ?>
                                 </div>
                             </div><br>
                         </div>
@@ -328,10 +328,10 @@
                         <div class="card-body p-3 mb-2 bg-light text-dark"><br>
                             <div class="row" align="center">
                                 <div class="col-md-6">
-                                    <label>MESIN</label>
+                                    <label>MESIN ISI 2</label>
                                 </div>
                                 <div class="col-md-6">
-                                    dari db
+                                    <?=$row->isi2mesin1;?>
                                 </div>
                             </div><hr>
                             <div class="row" align="center">
@@ -346,21 +346,21 @@
                                 </div>
                             </div>
                             <div class="row" align="center">
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
-                                </div>
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
-                                </div>
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
-                                </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi2plat1; ?><br><br>
+                                                <?= $row->isi2plat2; ?><br><br>
+                                                <?= $row->isi2plat3; ?>
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi2tglimposisi1; ?><br><br>
+                                                <?= $row->isi2tglimposisi2; ?><br><br>
+                                                <?= $row->isi2tglimposisi3; ?>
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi2tglctcp1; ?><br><br>
+                                                <?= $row->isi2tglctcp2; ?><br><br>
+                                                <?= $row->isi2tglctcp3; ?>
+                                    </div>
                             </div><hr>
                             <div class="row">
                                 <div class="col-md-2"></div>
@@ -369,8 +369,8 @@
                                     <br><b>TOTAL PLAT GAGAL</b>
                                 </div>
                                 <div class="col-md-4" align="center">
-                                    <br>dari db
-                                    <br>dari db
+                                    <br> <?= $row->isi2plat1+$row->isi2plat2+$row->isi2plat3; ?>
+                                    <br> <?= $row->jumlahplategagalisi2; ?>
                                 </div>
                             </div>
                             <div class="row">
@@ -379,7 +379,7 @@
                                     <hr><b>TOTAL PLAT</b>
                                 </div>
                                 <div class="col-md-4" align="center">
-                                    <hr>dari TPK + TPG
+                                    <hr><?= $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2; ?>
                                 </div>
                             </div><br>
                         </div>
@@ -412,10 +412,42 @@
                                 <div class="col-md-2"><label>COVER</label></div>
                                 <div class="col-md-10">
                                     <div class="row">
-                                        <div class="col-md-3">dari db</div>
-                                        <div class="col-md-3">dari db</div>
-                                        <div class="col-md-3">dari db</div>
-                                        <div class="col-md-3">dari db</div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $cover1 = 0;
+                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
+                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
+                                                    $row->cover1mesin1 == "102" ? $cover1=$cover1+$p1 :  $cover1;
+                                                    echo $row->cover2mesin1 == "102" ? $cover1=$cover1+$p2 :  $cover1;
+                                            ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $cover2 = 0;
+                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
+                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
+                                                    $row->cover1mesin1 == "74" ? $cover2=$cover2+$p1 :  $cover2;
+                                                    echo $row->cover2mesin1 == "74" ? $cover2=$cover2+$p2 :  $cover2;
+                                            ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $cover3 = 0;
+                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
+                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
+                                                    $row->cover1mesin1 == "72" ? $cover3=$cover3+$p1 :  $cover3;
+                                                    echo $row->cover2mesin1 == "72" ? $cover3=$cover3+$p2 :  $cover3;
+                                            ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $cover4 = 0;
+                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
+                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
+                                                    $row->cover1mesin1 == "Tokko" ? $cover4=$cover4+$p1 :  $cover4;
+                                                    echo $row->cover2mesin1 == "Tokko" ? $cover4=$cover4+$p2 :  $cover4;
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div><br>
@@ -423,10 +455,50 @@
                                 <div class="col-md-2"><label>ISI<label></div>
                                 <div class="col-md-10">
                                     <div class="row">
-                                        <div class="col-md-3">dari db</div>
-                                        <div class="col-md-3">dari db</div>
-                                        <div class="col-md-3">dari db</div>
-                                        <div class="col-md-3">dari db</div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $isi1 = 0;
+                                                $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
+                                                $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
+                                                $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
+                                                    $row->isi1mesin1 == "102" ? $isi1=$isi1+$p1 :  $isi1;
+                                                    $row->isi2mesin1 == "102" ? $isi1=$isi1+$p2 :  $isi1;
+                                                    echo $row->isi3mesin1 == "102" ? $isi1=$isi1+$p3 :  $isi1;
+                                            ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $isi2 = 0;
+                                                $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
+                                                $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
+                                                $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
+                                                    $row->isi1mesin1 == "74" ? $isi2=$isi2+$p1 :  $isi2;
+                                                    $row->isi2mesin1 == "74" ? $isi2=$isi2+$p2 :  $isi2;
+                                                    echo $row->isi3mesin1 == "74" ? $isi2=$isi2+$p3 :  $isi2;
+                                            ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $isi3 = 0;
+                                                $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
+                                                $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
+                                                $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
+                                                    $row->isi1mesin1 == "72" ? $isi3=$isi3+$p1 :  $isi3;
+                                                    $row->isi2mesin1 == "72" ? $isi3=$isi3+$p2 :  $isi3;
+                                                    echo $row->isi3mesin1 == "72" ? $isi3=$isi3+$p3 :  $isi3;
+                                            ?>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <?php 
+                                                $isi4 = 0;
+                                                $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
+                                                $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
+                                                $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
+                                                    $row->isi1mesin1 == "Tokko" ? $isi4=$isi4+$p1 :  $isi4;
+                                                    $row->isi2mesin1 == "Tokko" ? $isi4=$isi4+$p2 :  $isi4;
+                                                    echo $row->isi3mesin1 == "Tokko" ? $isi4=$isi4+$p3 :  $isi4;
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
                             </div><hr><br>
@@ -434,10 +506,10 @@
                                 <div class="col-md-2"><label>TOTAL</label></div>
                                 <div class="col-md-10">
                                     <div class="row">
-                                        <div class="col-md-3">dari db</div>
-                                        <div class="col-md-3">dari db</div>
-                                        <div class="col-md-3">dari db</div>
-                                        <div class="col-md-3">dari db</div>
+                                        <div class="col-md-3"><?= $cover1+$isi1; ?></div>
+                                        <div class="col-md-3"><?= $cover2+$isi2; ?></div>
+                                        <div class="col-md-3"><?= $cover3+$isi3; ?></div>
+                                        <div class="col-md-3"><?= $cover4+$isi4; ?></div>
                                     </div>
                                 </div>
                             </div><br>
@@ -447,10 +519,10 @@
                         <div class="card-body p-3 mb-2 bg-light text-dark"><br>
                             <div class="row" align="center">
                                 <div class="col-md-6">
-                                    <label>MESIN</label>
+                                    <label>MESIN ISI 3</label>
                                 </div>
                                 <div class="col-md-6">
-                                    dari db
+                                    <?=$row->isi3mesin1;?>
                                 </div>
                             </div><hr>
                             <div class="row" align="center">
@@ -465,21 +537,21 @@
                                 </div>
                             </div>
                             <div class="row" align="center">
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
-                                </div>
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
-                                </div>
-                                <div class="col-md-4">
-                                    <br>dari db<br>
-                                    <br>dari db<br>
-                                    <br>dari db
-                                </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi3plat1; ?><br><br>
+                                                <?= $row->isi3plat2; ?><br><br>
+                                                <?= $row->isi3plat3; ?>
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi3tglimposisi1; ?><br><br>
+                                                <?= $row->isi3tglimposisi2; ?><br><br>
+                                                <?= $row->isi3tglimposisi3; ?>
+                                    </div>
+                                    <div class="col-md-4"><br>
+                                                <?= $row->isi3tglctcp1; ?><br><br>
+                                                <?= $row->isi3tglctcp2; ?><br><br>
+                                                <?= $row->isi3tglctcp3; ?>
+                                    </div>
                             </div><hr>
                             <div class="row">
                                 <div class="col-md-2"></div>
@@ -488,8 +560,8 @@
                                     <br><b>TOTAL PLAT GAGAL</b>
                                 </div>
                                 <div class="col-md-4" align="center">
-                                    <br>dari db
-                                    <br>dari db
+                                    <br> <?= $row->isi3plat1+$row->isi3plat2+$row->isi3plat3; ?>
+                                    <br> <?= $row->jumlahplategagalisi3; ?>
                                 </div>
                             </div>
                             <div class="row">
@@ -498,12 +570,15 @@
                                     <hr><b>TOTAL PLAT</b>
                                 </div>
                                 <div class="col-md-4" align="center">
-                                    <hr>dari TPK + TPG
+                                     <hr><?= $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3; ?>
                                 </div>
                             </div><br>
                         </div>
                     </div>
                 </div>
+                </form>
+                <?php } ?> 
+                
                 <br><hr><br>
                 <div class="row" align="center">
                     <div class="col-md-3">
@@ -548,7 +623,7 @@
                     </div>
                 </div><br>
 
-                <?php } ?> 
+                
 
                 <br>
                 <div class="row" align="right">
