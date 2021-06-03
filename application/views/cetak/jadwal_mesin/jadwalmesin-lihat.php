@@ -217,7 +217,7 @@
             
             <div class="row" align="right">
               <div class="col">
-                <a href="<?=site_url('finishing/JadwalMesin/print_jm'" class="btn btn-default">Print</a>
+                <a href="<?=site_url('cetak/JadwalMesin/print_jm')?>" class="btn btn-default">Print</a>
               </div>
             </div>
           </div>

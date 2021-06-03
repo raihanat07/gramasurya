@@ -105,7 +105,7 @@
                             <li class="nav-item col"><a class="nav-link btn-outline-success" href="#mbo" data-toggle="tab">MESIN MBO</a></li>
                             <li class="nav-item col"><a class="nav-link btn-outline-success" href="#sub" data-toggle="tab">SUB</a></li>
                             <li class="nav-item col"><a class="nav-link btn-outline-success" href="#laminasi" data-toggle="tab">LAMINASI</a></li>
-                            <li class="nav-item col"><a class="nav-link btn-outline-success" href="#susun" data-toggle="tab">MESIN SUSUN</a></li>
+                            <li class="nav-item col"><a class="nav-link btn-outline-success" href="#susun" data-toggle="tab">SUSUN</a></li>
                           </ul>
                           <!-- <h3>SO dari db</h3> -->
                         </div>
