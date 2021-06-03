@@ -31,27 +31,27 @@
                         <td>Oplag</td>
                         <td>Halaman</td>
                         <td>
-                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp" class="btn btn-success">
+                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp_laminasi" class="btn btn-success">
                             Laminasi
                           </a>
                         </td>
                         <td>
-                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp" class="btn btn-success">
+                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp_mbo" class="btn btn-success">
                             MBO
                           </a>
                         </td>
                         <td>
-                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp" class="btn btn-success">
+                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp_shoe" class="btn btn-success">
                             Shoe
                           </a>
                         </td>
                         <td>
-                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp" class="btn btn-success">
+                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp_susun" class="btn btn-success">
                             Susun
                           </a>
                         </td>
                         <td>
-                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp"   class="btn btn-success">
+                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp_sub"   class="btn btn-success">
                             SUB
                           </a>
                         </td>
@@ -101,11 +101,11 @@
                       <div class="card">
                         <div class="card-header" align="center">
                           <ul class="nav nav-pills row">
-                            <li class="nav-item col"><a class="nav-link btn-outline-success active" href="#shoe" data-toggle="tab">MESIN SHOE</a></li>
+                            <li class="nav-item col"><a class="nav-link btn-outline-success active" href="#laminasi" data-toggle="tab">LAMINASI</a></li>
                             <li class="nav-item col"><a class="nav-link btn-outline-success" href="#mbo" data-toggle="tab">MESIN MBO</a></li>
-                            <li class="nav-item col"><a class="nav-link btn-outline-success" href="#sub" data-toggle="tab">SUB</a></li>
-                            <li class="nav-item col"><a class="nav-link btn-outline-success" href="#laminasi" data-toggle="tab">LAMINASI</a></li>
+                            <li class="nav-item col"><a class="nav-link btn-outline-success" href="#shoe" data-toggle="tab">MESIN SHOE</a></li>
                             <li class="nav-item col"><a class="nav-link btn-outline-success" href="#susun" data-toggle="tab">SUSUN</a></li>
+                            <li class="nav-item col"><a class="nav-link btn-outline-success" href="#sub" data-toggle="tab">SUB</a></li>
                           </ul>
                           <!-- <h3>SO dari db</h3> -->
                         </div>

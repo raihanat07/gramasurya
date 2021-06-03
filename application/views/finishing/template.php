@@ -120,18 +120,18 @@
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
                     <a href="<?=site_url()?>finishing/FinishingAkhir/mesin_kategori1"
-                      <?php  if($judul == "Finishing Akhir Mesin Kategori 1"){?>
+                      <?php  if($judul == "Finishing Akhir Mesin Finishing"){?>
                         class= "nav-link active"
                       <?php }else {?>
                         class= "nav-link"
                       <?php } ?>
                     >
-                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Mesin Kategori 1</p>
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Mesin Finishing</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="<?=site_url()?>finishing/FinishingAkhir/mesin_kalender"
-                      <?php  if($judul == "Finishing Akhir Mesin Kategori Kalender"){?>
+                      <?php  if($judul == "Finishing Akhir Mesin Kalender"){?>
                         class= "nav-link active"
                       <?php }else {?>
                         class= "nav-link"

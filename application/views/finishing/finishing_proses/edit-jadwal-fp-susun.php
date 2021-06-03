@@ -13,7 +13,7 @@
   <div class="card">
     <div class="card-header">
       <div class="card-title">
-        <h3>Penjadwalan Sub Finishing Proses</h3>
+        <h3>Penjadwalan Susun</h3>
       </div>
     </div>
     <!-- /.card-header -->
@@ -58,32 +58,21 @@
         </div>
         <div class="row">
           <div class="col-md-3">
-            <br>Status<br>
+            <br><label>Status</label><br>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="finishingprosesisi" value="Finishing Proses Isi" disabled>
+              <input class="form-check-input" type="checkbox" name="finishingprosesisi" value="Finishing Proses Isi">
               <label class="form-check-label" for="flexCheckDefault">Finishing Proses Isi</label>
             </div>
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-4">
-            Tanggal Pelaksanaan<br>
-            <label>dari DB</label>
+          <div class="col-md-6">
+            <label>Tanggal Pelaksanaan</label><br>
+            <input type="date" class="form-control" name="tanggal_pelaksanaan_mesin_susun" placeholder="Tanggal Pelaksanaan" required>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-6">
             <label>Keterangan</label><br>
-            <textarea name="keterangan_jadwal_fp_shoe" class="form-control" placeholder="catatan" style="height: 100px;" disabled></textarea>
-          </div>
-          <div class="col-md-2">
-            <label>Jenis Sub</label><br>
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="jenis_sub_lipat" value="Lipat" id="flexCheckDefault" disabled>
-              <label class="form-check-label" for="flexCheckDefault">Lipat</label><br>
-              <input class="form-check-input" type="checkbox" name="jenis_sub_susun_gabung" value="Susun Gabung" id="flexCheckDefault" disabled>
-              <label class="form-check-label" for="flexCheckDefault">Susun / Gabung</label><br>
-              <input class="form-check-input" type="checkbox" name="jenis_sub_laminasi" value="Laminasi" id="flexCheckDefault" disabled>
-              <label class="form-check-label" for="flexCheckDefault">Laminasi</label>
-            </div>
+            <textarea name="keterangan_jadwal_fp_shoe" class="form-control" placeholder="catatan" style="height: 100px;"></textarea>
           </div>
         </div><hr>
 
@@ -92,47 +81,48 @@
             <label>Laporan Pengerjaan</label>
           </div>
         </div><br>
-        <div class="row">
+        <div class="row" align="center">
           <div class="col-md-1"></div>
-          <div class="col-md-3">Tanggal Kembali Sub</div>
-          <div class="col-md-2">Hasil</div>
-          <div class="col-md-2">Rejek</div>
-          <div class="col-md-4">Keterangan</label></div>
+          <div class="col-md-3"><label>Tanggal Pengerjaan</label></div>
+          <div class="col-md-2"><label>Hasil</label></div>
+          <div class="col-md-3"><label>Nama Operator</label></div>
+          <div class="col-md-3"><label>Keterangan</label></div>
         </div><br>
         <div class="row">
-          <div class="col-md-1" align="center">1</div>
+          <div class="col-md-1" align="center"><label>1</label></div>
           <div class="col-md-3">
-            <label>dari DB</label>
+            <input type="date" class="form-control" name="tanggal_pengerjaan_1" placeholder="Tanggal Pengerjaan">
           </div>
           <div class="col-md-2">
-            <label>dari DB</label>
+            <input type="number" class="form-control" name="hasil_1" placeholder="Hasil">
           </div>
-          <div class="col-md-2">
-            <label>dari DB</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="operator_1" placeholder="Nama Operator">
           </div>
-          <div class="col-md-4">
-            <label>dari DB</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="keterangan_1" placeholder="Keterangan">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-1" align="center">2</div>
+          <div class="col-md-1" align="center"><label>2</label></div>
           <div class="col-md-3">
-            <label>dari DB</label>
+            <input type="date" class="form-control" name="tanggal_pengerjaan_2" placeholder="Tanggal Pengerjaan">
           </div>
           <div class="col-md-2">
-            <label>dari DB</label>
+            <input type="number" class="form-control" name="hasil_2" placeholder="Hasil">
           </div>
-          <div class="col-md-2">
-            <label>dari DB</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="operator_2" placeholder="Nama Operator">
           </div>
-          <div class="col-md-4">
-            <label>dari DB</label>
+          <div class="col-md-3">
+            <input type="text" class="form-control" name="keterangan_2" placeholder="Keterangan">
           </div>
         </div><hr><br>
 
         <div class="row">
           <div class="col" align="right">
             <button type="reset" class="btn btn-default">Kembali</button>
+            <button type="submit" name="simpan" class="btn btn-success">Jadwal</button>
           </div>
         </div>
 

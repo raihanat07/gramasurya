@@ -13,7 +13,7 @@
   <div class="card">
     <div class="card-header">
       <div class="card-title">
-        <h3>Penjadwalan Mesin Shoe</h3>
+        <h3>Penjadwalan Mesin MBO</h3>
       </div>
     </div>
     <!-- /.card-header -->
@@ -61,7 +61,7 @@
         <div class="row">
           <div class="col-md-4">
             Keterangan<br>
-            <textarea name="keterangan_jadwal_fp_shoe" class="form-control" placeholder="catatan" style="height: 100px;" disabled></textarea>
+            <textarea name="keterangan_jadwal_fp_mbo" class="form-control" placeholder="catatan" style="height: 100px;" disabled></textarea>
           </div>
           <div class="col-md-4">
             Tanggal Pelaksanaan<br>

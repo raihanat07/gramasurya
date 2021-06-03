@@ -74,7 +74,28 @@
 
         <div class="row">
           <div class="col-md-12">
-            <label>Laporan Pengerjaan</label>
+            <h4><b>Laporan Pengerjaan</b></h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12"><b>Pilih Jenis Laminasi</b></div>
+          <div class="col-md-1">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="jenis_laminasi" value="Doff" disabled>
+              <label class="form-check-label">Doff</label>
+            </div>
+          </div>
+          <div class="col-md-1">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="jenis_laminasi" value="Emboss" disabled>
+              <label class="form-check-label">Emboss</label>
+            </div>
+          </div>
+          <div class="col-md-1">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="jenis_laminasi" value="Glossy" disabled>
+              <label class="form-check-label">Glossy</label>
+            </div>
           </div>
         </div><br>
         <div class="row">

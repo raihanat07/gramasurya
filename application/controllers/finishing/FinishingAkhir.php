@@ -23,7 +23,7 @@ class FinishingAkhir extends CI_Controller {
 		// check_already_login_finishing();
 		$query = $this->so->get();
 		$data = array(
-			'judul' => 'Finishing Akhir Mesin Kategori 1',
+			'judul' => 'Finishing Akhir Mesin Finishing',
 			'so' => $query->result(),
 		);		
 		$this->template->load('finishing/template','finishing/finishing_akhir/mesin_kategori1',$data);
@@ -247,6 +247,48 @@ class FinishingAkhir extends CI_Controller {
 		$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-potong',$data);
 	}
 
+	// SUB
+    public function jadwal_fa_sub()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Akhir',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_sub',$data);
+	}
+    public function tambah_jadwal_fa_sub()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Akhir',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-sub',$data);
+	}
+    public function edit_jadwal_fa_sub()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Akhir',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-sub',$data);
+	}
+    public function lihat_jadwal_fa_sub()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Akhir',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-sub',$data);
+	}
+
 	// SPIRAL
     public function jadwal_fa_spiral()
 	{
@@ -287,5 +329,47 @@ class FinishingAkhir extends CI_Controller {
 			'so' => $query->result(),
 		);		
 		$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-spiral',$data);
+	}
+
+	// KLEMSENG
+    public function jadwal_fa_klemseng()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Akhir',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_klemseng',$data);
+	}
+    public function tambah_jadwal_fa_klemseng()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Akhir',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-klemseng',$data);
+	}
+    public function edit_jadwal_fa_klemseng()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Akhir',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-klemseng',$data);
+	}
+    public function lihat_jadwal_fa_klemseng()
+	{
+		// check_already_login_finishing();
+		$query = $this->so->get();
+		$data = array(
+			'judul' => 'Finishing Akhir',
+			'so' => $query->result(),
+		);		
+		$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-klemseng',$data);
 	}
 }
