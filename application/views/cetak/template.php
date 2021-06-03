@@ -137,7 +137,7 @@
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>SPK</p>
+                  <p>Laporan</p>
                 </a>
               </li>
             </ul>

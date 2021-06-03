@@ -116,8 +116,11 @@
                         </div>
                         <div class="col-md-6">
                           Status<br>
-                          <input type="text" class="form-control" name="status" required>
-                          </div>
+                          <select id="inputState" class="form-select form-control" name="status" >
+                            <option value="-">-</option>
+                            <option value="Diterima">Diterima</option>
+                            <option value="Ditolak">Ditolak</option>
+                          </select>
                         </div>  
                       </div><br>
                       <hr><br>

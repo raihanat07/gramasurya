@@ -197,7 +197,7 @@
                   Ukuran Potong
                 </div>
                 <div class="col-md-4">
-                  <input type="text" class="form-control" name="ukuran_potong" placeholder="Tanggal Buat SPK" required>
+                  <input type="text" class="form-control" name="ukuran_potong" placeholder="Ukuran Potong" required>
                 </div>
                 <div class="col-sm-2" align="right">
                   Model Potongan

@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>FINISHING Akhir</h1>
+        <h1>FINISHING AKHIR</h1>
       </div>
     </div>
   </div><!-- /.container-fluid -->
@@ -14,142 +14,82 @@
   <div class="row">
     <div class="col-12">
       <!-- Default box -->
-      <ul class="nav nav-pills row">
-        <div style="width: 25px;"></div>
-        <li class="nav-item col-md-2 text-center"><a class="nav-link active" href="#kt1" data-toggle="tab">MESIN KATEGORI 1</a></li>
-        <li class="nav-item col-md-2 text-center"><a class="nav-link" href="#kt2" data-toggle="tab">MESIN KATEGORI 2</a></li>
-      </ul><br>
       <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Jadwal Finishing Proses</h3>
+            <h3 class="card-title">Jadwal Finishing Akhir</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
           <div class="tab-content">
-            <div class="tab-pane active" id="kt1">
-              <table id="example2" class="table table-bordered table-striped" style="font-size: 12px">
-                <thead>
-                  <tr align="center">
-                    <td>Nomor SO</td>
-                    <td>Tanggal Masuk</td>
-                    <td>Deadline</td>
-                    <td>Nama Pemesan</td>
-                    <td>Nama Order</td>
-                    <td>Ukuran Plano</td>
-                    <td>Oplag</td>
-                    <td>Halaman</td>
-                    <td>Finishing Akhir</td>
-                    <td>
-                      <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_binding" class="btn btn-success">
-                        Binding
-                      </a>
-                    </td>
-                    <td>
-                      <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_potong" class="btn btn-success">
-                        Potong
-                      </a>
-                    </td>
-                    <td>
-                      <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_jahit" class="btn btn-success">
-                        Jahit
-                      </a>
-                    </td>
-                    <td>
-                      <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_hardcover" class="btn btn-success">
-                        Hardcover
-                      </a>
-                    </td>
-                    <td>
-                      <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_sub"   class="btn btn-success">
-                        SUB
-                      </a>
-                    </td>
-                    <td>Status</td>
-                    <td>Actions</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Nomor SO</td>
-                    <td>Tanggal Masuk</td>
-                    <td>Deadline</td>
-                    <td>Nama Pemesan</td>
-                    <td>Nama Order</td>
-                    <td>Ukuran Plano</td>
-                    <td>Oplag</td>
-                    <td>Halaman</td>
-                    <td>Finishing Akhir</td>
-                    <td>Binding</td>
-                    <td>Potong</td>
-                    <td>Jahit</td>
-                    <td>Hardcover</td>
-                    <td>sub</td>
-                    <td>Status</td>
-                    <td align="center">
-                      <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
-                        <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
-                      </button>
-                      <!-- <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa" class="btn btn-success">
-                        <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
-                      </a> -->
-                    </td>
-                  </tr>
-                </tbody>  
-              </table>
-            </div>
-            <div class="tab-pane" id="kt2">
-              <table id="example2" class="table table-bordered table-striped" style="font-size: 12px">
-                <thead>
-                  <tr align="center">
-                    <td>Nomor SO</td>
-                    <td>Tanggal Masuk</td>
-                    <td>Deadline</td>
-                    <td>Nama Pemesan</td>
-                    <td>Nama Order</td>
-                    <td>Ukuran Plano</td>
-                    <td>Oplag</td>
-                    <td>Halaman</td>
-                    <td>Finishing Akhir</td>
-                    <td>
-                      <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_klemseng"   class="btn btn-success">
-                        Klemseng
-                      </a>
-                    </td>
-                    <td>
-                      <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_spiral"   class="btn btn-success">
-                        Spiral
-                      </a>
-                    </td>
-                    <td>Status</td>
-                    <td>Actions</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Nomor SO</td>
-                    <td>Tanggal Masuk</td>
-                    <td>Deadline</td>
-                    <td>Nama Pemesan</td>
-                    <td>Nama Order</td>
-                    <td>Ukuran Plano</td>
-                    <td>Oplag</td>
-                    <td>Halaman</td>
-                    <td>Finishing Akhir</td>
-                    <td>Spiral</td>
-                    <td>Klem</td>
-                    <td>Status</td>
-                    <td align="center">
-                      <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
-                        <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
-                      </button>
-                      <!-- <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa" class="btn btn-success">
-                        <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
-                      </a> -->
-                    </td>
-                  </tr>
-                </tbody>  
-              </table>
-            </div>
+            <table id="example2" class="table table-bordered table-striped" style="font-size: 12px">
+              <thead>
+                <tr align="center">
+                  <td>Nomor SO</td>
+                  <td>Tanggal Masuk</td>
+                  <td>Deadline</td>
+                  <td>Nama Pemesan</td>
+                  <td>Nama Order</td>
+                  <td>Ukuran Plano</td>
+                  <td>Oplag</td>
+                  <td>Halaman</td>
+                  <td>Finishing Akhir</td>
+                  <td>
+                    <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_binding" class="btn btn-success">
+                      Binding
+                    </a>
+                  </td>
+                  <td>
+                    <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_potong" class="btn btn-success">
+                      Potong
+                    </a>
+                  </td>
+                  <td>
+                    <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_jahit" class="btn btn-success">
+                      Jahit
+                    </a>
+                  </td>
+                  <td>
+                    <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_hardcover" class="btn btn-success">
+                      Hardcover
+                    </a>
+                  </td>
+                  <td>
+                    <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_sub"   class="btn btn-success">
+                      SUB
+                    </a>
+                  </td>
+                  <td>Status</td>
+                  <td>Actions</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Nomor SO</td>
+                  <td>Tanggal Masuk</td>
+                  <td>Deadline</td>
+                  <td>Nama Pemesan</td>
+                  <td>Nama Order</td>
+                  <td>Ukuran Plano</td>
+                  <td>Oplag</td>
+                  <td>Halaman</td>
+                  <td>Finishing Akhir</td>
+                  <td>Binding</td>
+                  <td>Potong</td>
+                  <td>Jahit</td>
+                  <td>Hardcover</td>
+                  <td>sub</td>
+                  <td>Status</td>
+                  <td align="center">
+                    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+                      <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
+                    </button>
+                    <!-- <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa" class="btn btn-success">
+                      <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
+                    </a> -->
+                  </td>
+                </tr>
+              </tbody>  
+            </table>
           </div>
 
           <div id="myModal" class="modal fade" role="dialog">

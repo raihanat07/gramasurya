@@ -106,8 +106,8 @@
                   <p>Finishing Proses</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="<?=site_url()?>finishing/FinishingAkhir" 
+              <li class="nav-item has-treeview menu-open">
+                <a href="#" 
                  <?php  if($judul == "Finishing Akhir"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -115,8 +115,33 @@
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Finishing Akhir</p>
+                  <p>Finishing Akhir <i class="fa fa-angle-left right"></i></p>
                 </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?=site_url()?>finishing/FinishingAkhir/mesin_kategori1"
+                      <?php  if($judul == "Finishing Akhir Mesin Kategori 1"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Mesin Kategori 1</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?=site_url()?>finishing/FinishingAkhir/mesin_kalender"
+                      <?php  if($judul == "Finishing Akhir Mesin Kategori Kalender"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Mesin Kalender</p>
+                    </a>
+                  </li>
+                </ul>
+
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>finishing/QualityControl" 

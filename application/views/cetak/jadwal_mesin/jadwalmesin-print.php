@@ -214,12 +214,16 @@
               <div class="col-md-2"></div>
               <div class="col-md-1">)</div>
             </div><br>
-            
+
             <div class="row" align="right">
               <div class="col">
-                <a href="<?=site_url('finishing/JadwalMesin/print_jm'" class="btn btn-default">Print</a>
+                <button type="submit" class="btn btn-default">Print</button>
               </div>
             </div>
+
+            <script>
+              window.print();
+            </script>
           </div>
         </div>
         <!-- /.card-body -->
