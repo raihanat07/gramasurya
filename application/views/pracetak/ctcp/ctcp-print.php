@@ -310,6 +310,7 @@
                         </div>
                     </div>
                 </div><br>
+                <?php if($row->cover2plat1 != 0 || $row->isi2plat1 != 0) :?>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card border bg-success">
@@ -482,6 +483,7 @@
                         </div>
                     </div>
                 </div>
+                <?php endif ?>
                 <br>
                 <div class="row">
                     <div class="col-md-6">
@@ -521,6 +523,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php if($row->isi3plat1 != 0) :?>
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col">
@@ -609,6 +612,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php endif ?>
                     </div>
                 <?php } ?>
                 </div>
