@@ -68,6 +68,9 @@
                   if($row->spiral != null){
                     $finishing .= 'Spiral, ';
                   }
+                  if($row->klem != null){
+                    $finishing .= 'Klem, ';
+                  }
                   $finishing = rtrim($finishing, ", ");
                   echo $finishing;
                   ?>
