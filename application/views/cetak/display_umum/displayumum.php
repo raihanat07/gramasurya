@@ -41,23 +41,53 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td align="center">Nomor SO</td>
-                <td>Tanggal Masuk</td>
-                <td style="color: red">Deadline</td>
-                <td>Nama Pemesan</td>
-                <td>Nama Order</td>
-                <td>Ukuran</td>
-                <td>Halaman</td>
-                <td>Oplag</td>
-                <td>Finishing Akhir</td>
-                <td>Status</td>
+            <?php foreach($so as $s => $row) {?>  
+                        <tr>
+                
+                            <td align="center"><?= $row->nomor_so; ?></td>
+                            <td><?= $row->tanggal_masuk; ?></td>
+                            <td style="color: red"><?= $row->deadline; ?></td>
+                            <td><?= $row->nama_pemesan; ?></td>
+                            <td><?= $row->nama_orderan; ?></td>
+                            <td><?= $row->ukuran; ?></td>
+                            <td><?= $row->halaman; ?></td>
+                            <td><?= $row->oplag; ?></td>
+                            <td>
+                                <?php 
+                                $finishing = "";
+                                if($row->bending != null){
+                                    $finishing .= "bending, ";
+                                }
+                                if($row->hard_cover != null){
+                                    $finishing .= 'hard cover, ';
+                                }   
+                                if($row->jahit_benang != null){
+                                    $finishing .= 'jahit benang, ';
+                                } 
+                                if($row->jahit_kawat != null){
+                                    $finishing .= 'jahit kawat, ';
+                                }    
+                                if($row->pond != null){
+                                    $finishing .= 'pond, ';
+                                }   
+                                if($row->klem != null){
+                                    $finishing .= 'klem, ';
+                                } 
+                                if($row->spiral != null){
+                                    $finishing .= 'Spiral, ';
+                                }
+                                $finishing = rtrim($finishing, ", ");
+                                echo $finishing;
+                                ?>
+                            </td>
+                            <td><?= $row->so_status; ?></td>
                 <td align="center">
                   <a href="<?=site_url('cetak/DisplayUmum/lihat_du')?>">
                     <i class="fa fa-eye" style="font-size:18px;"></i>
                   </a>
                 </td>
               </tr>
+              <?php } ?>
             </tbody>
           </table>
         </div>
