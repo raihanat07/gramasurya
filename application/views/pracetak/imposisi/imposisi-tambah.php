@@ -225,7 +225,7 @@
                                         </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <div class="col" hidden>
+                                        <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="cover1lbrcetak1" ><br>
                                             <input class="form-control" name="cover1lbrcetak2" ><br>
@@ -331,7 +331,7 @@
 
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <div class="col" hidden>
+                                        <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="isi1lbrcetak1" ><br>
                                             <input class="form-control" name="isi1lbrcetak2" ><br>
@@ -455,7 +455,7 @@
                                         </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <div class="col" hidden>
+                                        <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="cover2lbrcetak1" ><br>
                                             <input class="form-control" name="cover2lbrcetak2" ><br>
@@ -560,7 +560,7 @@
                                         </div>
 
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                        <div class="col" hidden>
+                                        <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
                                             <input class="form-control" name="isi2lbrcetak1" ><br>
                                             <input class="form-control" name="isi2lbrcetak2" ><br>
@@ -700,7 +700,7 @@
                                                 
 
                                                 <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
-                                                <div class="col" hidden>
+                                                <div class="col">
                                                     <label class="form-label">Lbr.Cetak</label>
                                                     <input class="form-control" name="isi3lbrcetak1" ><br>
                                                     <input class="form-control" name="isi3lbrcetak2" ><br>
