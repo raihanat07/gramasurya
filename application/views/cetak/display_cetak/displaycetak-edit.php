@@ -85,6 +85,22 @@
                     </div>
                 </div><br>
                 <div class="row">
+                    <div class="col-md-2" align="right"><label>Status</label></div>
+                    
+                    <div class="col-md-2" style="margin-left:20px ">
+                        <input class="form-check-input" type="checkbox" name="status_cetak_cover" value="Cetak Cover">
+                        <label class="form-check-label" for="flexCheckDefault">Cetak Cover</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input class="form-check-input" type="checkbox" name="status_cetak_isi" value="Cetak Isi">
+                        <label class="form-check-label" for="flexCheckDefault">Cetak Isi</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input class="form-check-input" type="checkbox" name="status_cetak" value="Cetak">
+                        <label class="form-check-label" for="flexCheckDefault">Cetak</label>
+                    </div>
+                </div><br>
+                <div class="row">
                     <div class="col">
                         <div class="card">
                             <div class="card-header p-2 bg-info">
