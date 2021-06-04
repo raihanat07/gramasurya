@@ -4,9 +4,10 @@ error_reporting(0);
 class Ctcp extends CI_Controller {
 
 	public function __construct()
-    {
+    {	
         parent::__construct();
-        $this->load->model('Ctcp_m', 'ctcp');
+        check_pracetak_ctcp();
+		$this->load->model('Ctcp_m', 'ctcp');
     }
 
 	public function index()
