@@ -15,7 +15,7 @@ class DisplayUmum extends CI_Controller {
 		$query = $this->so->get();
 		// $data['judul'] = 'Display Umum Cetak';
 		$data = array(
-			'judul' => 'Display Umum Cetak',
+			'judul' => 'Display Umum',
 			'so' => $query->result(),
 		);
 		$this->template->load('cetak/template','cetak/display_umum/displayumum',$data);

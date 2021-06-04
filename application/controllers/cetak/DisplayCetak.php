@@ -14,7 +14,7 @@ class DisplayCetak extends CI_Controller {
 		// check_already_login_cetak();
 		$query = $this->so->get();
 		$data = array(
-			'judul' => 'Display  Cetak',
+			'judul' => 'Display Cetak',
 			'so' => $query->result(),
 		);
 		// $data['judul'] = 'Display Cetak';

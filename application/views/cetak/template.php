@@ -82,7 +82,7 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="<?=site_url()?>cetak/DisplayUmum" 
-                <?php  if($judul == "Display Umum Cetak" || $judul == "Lihat Display Umum"){?>
+                <?php  if($judul == "Display Umum"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
@@ -130,7 +130,7 @@
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>cetak/Spk"
-                    <?php  if($judul == "SPK Cetak"){?>
+                    <?php  if($judul == "Laporan Cetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
