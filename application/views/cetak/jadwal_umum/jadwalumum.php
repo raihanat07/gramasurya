@@ -129,12 +129,16 @@
                         </div><br>
                         <h4><label>Jadwal Cover</label></h4>
                         <div class="row">
-                          <div class="col-sm-6">
+                          <div class="col-md-6">
                             Tanggal Pelaksanaan<br>
                             <input type="date" class="form-control" name="tanggal_pelaksanaan_cover" placeholder="Tanggal Pelaksanaan Cover" required>
                           </div>
-                          <div class="col-sm-6">
-                            Target<br>
+                          <div class="col-md-6">
+                            Operator<br>
+                            <input type="text" class="form-control" name="operator_cover" placeholder="Operator Cover" required>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Target<br>
                             <input type="number" class="form-control" name="target_cover" placeholder="Jumlah Target" required>
                           </div>
                           <div class="col-md-6">
@@ -153,7 +157,7 @@
                               <option value="Print digital">Print digital</option>
                             </select>
                           </div>
-                          <div class="col-sm-6">
+                          <div class="col-md-6">
                             <br>Druk<br>
                             <label>otomatis = target * oplag</label>
                           </div>
@@ -207,12 +211,16 @@
                         </div><br>
                         <h4><label>Jadwal Isi</label></h4>
                         <div class="row">
-                          <div class="col-sm-6">
+                          <div class="col-md-6">
                             Tanggal Pelaksanaan<br>
                             <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" placeholder="Tanggal Pelaksanaan Isi" required>
                           </div>
-                          <div class="col-sm-6">
-                            Target<br>
+                          <div class="col-md-6">
+                            Operator<br>
+                            <input type="text" class="form-control" name="operator_cover" placeholder="Operator Cover" required>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Target<br>
                             <input type="number" class="form-control" name="target_isi" placeholder="Jumlah Target" required>
                           </div>
                           <div class="col-md-6">
@@ -231,7 +239,7 @@
                               <option value="Print digital">Print digital</option>
                             </select>
                           </div>
-                          <div class="col-sm-6">
+                          <div class="col-md-6">
                             <br>Druk<br>
                             <label>otomatis = target * oplag</label>
                           </div>

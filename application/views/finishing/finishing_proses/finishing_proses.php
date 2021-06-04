@@ -113,7 +113,7 @@
                         <div class="card-body">
                           <div class="card-body">
                             <div class="tab-content">
-                              <div class="tab-pane active" id="shoe">
+                              <div class="tab-pane" id="shoe">
                                 <h4>DETAIL ORDERAN</h4><hr>
                                 <div class="row">
                                   <div class="col-md-4">
@@ -179,7 +179,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 1</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_1" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_1" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -191,7 +191,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 2</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_2" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_2" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -203,7 +203,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 3</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_3" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_3" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -215,7 +215,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 4</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_4" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_4" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -227,7 +227,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 5</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_5" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_5" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -239,7 +239,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 6</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_6" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_6" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -251,7 +251,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 7</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_7" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_7" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -263,7 +263,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 8</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_8" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_8" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -275,7 +275,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 9</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_9" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_9" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -287,7 +287,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 10</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_10" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_10" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -304,7 +304,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 11</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_11" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_11" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -316,7 +316,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 12</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_12" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_12" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -328,7 +328,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 13</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_13" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_13" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -340,7 +340,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 14</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_14" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_14" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -352,7 +352,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 15</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_15" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_15" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -364,7 +364,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 16</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_16" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_16" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -376,7 +376,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 17</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_17" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_17" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -388,7 +388,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 18</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_18" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_18" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -400,7 +400,7 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 19</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_19" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_19" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -412,7 +412,329 @@
                                     <div class="row">
                                       <div class="col-md-6">Lembar 20</div>
                                       <div class="col-md-6">
-                                        <select id="inputState" class="form-select form-control" name="lipat_lembar_20" >
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_20" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div><hr>
+
+                                <h4>Keterangan</h4>
+                                <textarea name="keterangan_finishing_proses" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+
+                                <div class="row">
+                                  <div class="col" align="right">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
+                                    <button type="button" class="btn btn-success" data-dismiss="modal">Jadwal</button>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="tab-pane" id="mbo">
+                                <h4>DETAIL ORDERAN</h4><hr>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    Nomor SO
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    Nama Orderan
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    Finishing
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <br>Nama Pemesan
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Laminasi
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Oplag
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <br>Ukuran
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Halaman
+                                    <br><label class="form-label">dari db</label>
+                                  </div>
+                                </div><hr>
+
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    Tanggal Pelaksanaan<br>
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_mesin_mbo" placeholder="Tanggal Pelaksanaan" required>
+                                  </div>  
+                                </div><hr>
+
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    Jenis Mesin : <b>Mesin MBO</b>
+                                  </div>
+                                </div><hr>
+
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    Jadwal Pengerjaan
+                                  </div>
+                                </div><hr>
+
+                                <div class="row">
+                                  <!-- LEMBAR 1 - 10 -->
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 1</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_1" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 2</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_2" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 3</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_3" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 4</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_4" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 5</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_5" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 6</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_6" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 7</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_7" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 8</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_8" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 9</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_9" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 10</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_10" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div class="col-md-1"></div>
+                                  <!-- LEMBAR 11 - 20 -->
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 11</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_11" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 12</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_12" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 13</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_13" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 14</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_14" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 15</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_15" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 16</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_16" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 17</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_17" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 18</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_18" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 19</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_19" >
+                                          <option value="-">-</option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 20</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_20" >
                                           <option value="-">-</option>
                                           <option value="Lipat 1">Lipat 1</option>
                                           <option value="Lipat 2">Lipat 2</option>
@@ -516,7 +838,7 @@
                                 </div>
                               </div>
 
-                              <div class="tab-pane" id="laminasi">
+                              <div class="tab-pane active" id="laminasi">
                                 <h4>DETAIL ORDERAN</h4><hr>
                                 <div class="row">
                                   <div class="col-md-4">
