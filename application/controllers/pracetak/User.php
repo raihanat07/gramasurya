@@ -5,6 +5,7 @@ class User extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
+		check_pracetak_admin();
 		$this->load->model('user_m');	
 		$this->load->library('form_validation');	
 	 }

@@ -4,9 +4,10 @@ error_reporting(0);
 class Imposisi extends CI_Controller {
 
 	public function __construct()
-    {
+    {	
         parent::__construct();
-        $this->load->model('Imposisi_m', 'imposisi');
+        check_pracetak_imposisi();
+		$this->load->model('Imposisi_m', 'imposisi');
     }
 
 	public function index()

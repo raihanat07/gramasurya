@@ -50,6 +50,10 @@
                         <option value="1">Pracetak</option>
                         <option value="2">Cetak</option>
                         <option value="3">Finishing</option>
+                        <option value="4">Admin Imposisi</option>
+                        <option value="5">Admin CTCP</option>
+                        <option value="6">Super Admin</option>
+                        <option value="7">Operator</option>
                     </select>
                     <?=form_error('level')?>
                 </div>

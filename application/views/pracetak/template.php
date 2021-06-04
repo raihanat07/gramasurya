@@ -106,7 +106,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak"
+                <a href="<?=site_url()?>pracetak/SuratOrder"
                     <?php  if($judul == "Surat Order Pracetak" || $judul == "Tambah SO Pracetak" || $judul == "Edit SO Pracetak" || $judul == "Lihat SO Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -117,6 +117,7 @@
                   <p>Surat Order</p>
                 </a>
               </li>
+              <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 4 || $this->fungsi->user_login()->level == 6) { ?>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Imposisi" 
                 <?php  if($judul == "Imposisi" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak" || $judul == "Edit Imposisi Pracetak"){?>
@@ -129,6 +130,8 @@
                   <p>Imposisi</p>
                 </a>
               </li>
+              <?php } ?>
+              <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 5 || $this->fungsi->user_login()->level == 6) { ?>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Ctcp" 
                  <?php  if($judul == "CTCP" || $judul == "Tambah Ctcp Pracetak" || $judul == "Edit Ctcp Pracetak" || $judul == "Lihat Ctcp Pracetak" || $judul == "Edit Ctcp Pracetak"){?>
@@ -153,6 +156,8 @@
                   <p>Laporan</p>
                 </a>
               </li>
+              <?php } ?>
+              <?php if ($this->fungsi->user_login()->level == 6) { ?>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/User" 
                  <?php  if($judul == "User"){?>
@@ -163,6 +168,7 @@
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>User</p>
+              <?php } ?>
                 </a>
               </li>
             </ul>
