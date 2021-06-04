@@ -111,7 +111,7 @@
                     </div>
                     <div class="col-md-3">
                         <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
-                        <input type="text" class="form-control" name="namaoperatorctcp1" value="<?=$row->namaoperatorctcp1?>" required>
+                        <input type="text" class="form-control" name="namaoperatorctcp1" value="<?=$row->namaoperatorctcp1?>">
                     </div>
                     <div class="col-md-3" align="center">
                         <label class="form-label">Nama Operator</label>
@@ -575,15 +575,15 @@
                                             <label class="form-label">Tanggal Out CTCP Cover</label>
                                             <br>
                                             <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
-                                            <input type="date" class="form-control" name="tanggal_out_ctcp_cover" required>
+                                            <input type="date" class="form-control" name="tanggal_out_ctcp_cover"  >
                                             <br><label class="form-label">Tanggal Out CTCP Isi</label>
                                             <div class="row">
                                                 <div class="col-md-3">Ke 1 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" required></div>
+                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1"  ></div>
                                             </div><br>
                                             <div class="row">
                                                 <div class="col-md-3">Ke 2 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2" required></div>
+                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2"  ></div>
                                             </div>
                                         </div> -->
                                         <div class="col-md-12">

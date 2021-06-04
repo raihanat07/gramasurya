@@ -8,5 +8,5 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route["gramasurya"] = 'gramasurya/Auth';
 $route["pracetak"] = 'pracetak/SuratOrder';
-$route["cetak"] = 'cetak/cetak';
-$route["finishing"] = 'finishing/finishing';
+$route["cetak"] = 'cetak/DisplayUmum';
+$route["finishing"] = 'finishing/display';

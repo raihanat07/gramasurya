@@ -9,7 +9,7 @@
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">
                 <a href="<?=site_url('pracetak/SuratOrder/tambah_so')?>"  class="btn btn-success btn-lg">
-                  <i class="fa fa-plus"></i> TAMBAH
+                  <i class="fa fa-pencil"></i> TAMBAH
                 </a>
               </li>
             </ol>

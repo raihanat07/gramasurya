@@ -97,7 +97,7 @@
               <!-- tambah imposisi -->
               <?php } if($row->id_imposisi == null) {?>
                   <a href="<?=site_url('pracetak/Imposisi/tambah_imposisi/'.$row->id_order)?>">
-                    <i class="fa fa-plus" style="font-size:18px"></i>
+                    <i class="fa fa-pencil" style="font-size:18px"></i>
                   </a>
               <?php }else {?>
 

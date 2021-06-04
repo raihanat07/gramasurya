@@ -119,7 +119,7 @@
                     </div>
                     <div class="col-md-3">
                       <input type="hidden" name="nomor_so" value="<?=$row->id_order?>">
-                        <input type="text" class="form-control" name="namaoperator1" required>
+                        <input type="text" class="form-control" name="namaoperator1"  >
                     </div>
                     <div class="col-md-3" align="center">
                         <label class="form-label">Nama Operator</label>

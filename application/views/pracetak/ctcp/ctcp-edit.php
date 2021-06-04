@@ -114,7 +114,7 @@
                     </div>
                     <div class="col-md-3">
                         <input type="text" name="id_order"  value="<?= $row->id_order; ?>" hidden>
-                        <input type="text" class="form-control" name="namaoperatorctcp1" value="<?=$row->namaoperatorctcp1?>" required>
+                        <input type="text" class="form-control" name="namaoperatorctcp1" value="<?=$row->namaoperatorctcp1?>">
                     </div>
                     <div class="col-md-3" align="center">
                         <label class="form-label">Nama Operator</label>

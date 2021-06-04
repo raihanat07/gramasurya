@@ -120,13 +120,13 @@
                         <label class="form-label">Nama Operator</label>
                     </div>
                     <div class="col-md-3">                      
-                        <input type="text" class="form-control" name="namaoperator1" value="<?= $row->namaoperator1; ?>" required>
+                        <input type="text" class="form-control" name="namaoperator1" value="<?= $row->namaoperator1; ?>"  >
                     </div>
                     <div class="col-md-3" align="center">
                         <label class="form-label">Nama Operator</label>
                     </div>
                     <div class="col-md-3">
-                        <input type="text" class="form-control" name="namaoperator2" value="<?= $row->namaoperator2; ?>" required>
+                        <input type="text" class="form-control" name="namaoperator2" value="<?= $row->namaoperator2; ?>"  >
                     </div>
                 </div><br>
                 <div class="row">
@@ -137,7 +137,7 @@
                         <?=$row->total_plat_cover;?>
 
                         <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN-->
-                        <!-- <input type="number" class="form-control" name="total_plat_cover" value="<?= $row->total_plat_cover; ?>" required> -->
+                        <!-- <input type="number" class="form-control" name="total_plat_cover" value="<?= $row->total_plat_cover; ?>"  > -->
 
                     </div>
                     <div class="col-md-3" align="left">
@@ -154,7 +154,7 @@
                         <?= $row->total_plat_isi; ?>
 
                         <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN-->
-                        <!-- <input type="number" class="form-control" name="total_plat_isi" value="<?= $row->total_plat_isi; ?>" required> -->
+                        <!-- <input type="number" class="form-control" name="total_plat_isi" value="<?= $row->total_plat_isi; ?>"  > -->
 
                     </div>
                     <div class="col-md-3" align="left">
