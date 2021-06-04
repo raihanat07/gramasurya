@@ -15,7 +15,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title coba">Display Umum</h3>
+          <h3 class="card-title coba">Display Cetak</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -39,7 +39,7 @@
               <td>Actions</td>
             </tr>
             </thead>
-            <?php foreach($so as $s => $row) {?>  
+            <?php foreach($dc as $s => $row) {?>  
                         <tr>
                 
                             <td align="center"><?= $row->nomor_so; ?></td>
@@ -80,12 +80,16 @@
                             </td>
                             <td><?= $row->so_status; ?></td>
               <td align="center">
-                <a href="<?=site_url('cetak/DisplayCetak/lihat_dc')?>">
-                  <i class="fa fa-eye" style="font-size:18px;margin-right: 20px"></i>
-                </a>
-                <a href="<?=site_url('cetak/DisplayCetak/edit_dc')?>">
-                  <i class="fa fa-pencil" style="font-size:18px"></i>
-                </a>
+                <!-- edit diplay cetak -->
+                
+                  <a href="<?=site_url('cetak/DisplayCetak/lihat_dc/'.$row->id_order)?>">
+                    <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
+                  </a>
+
+              <!-- tambah imposisi -->
+                
+                  
+               
               </td>
             </tr>
             <?php } ?>

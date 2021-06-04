@@ -27,62 +27,80 @@
         </div>
     </div>
     <div class="card-body">
+    <?php foreach($dc as $s => $row) {?> 
         <div class="card-body">
             <form>        
-                <div class="row">
-                    <div class="col-md-2" align="right">
+                    <div class="row">
+                    <div class="col-md-4">
                         <br>Nomor SO
+                        <br><label class="form-label"><?= $row->nomor_so; ?></label>
                     </div>
-                    <div class="col-md-2">
-                        <br><label class="form-label">dari db</label>
-                    </div>
-                    <div class="col-md-2" align="right">
+                    <div class="col-md-4">
                         <br>Nama Pemesan
+                        <br><label class="form-label"><?= $row->nama_pemesan; ?></label>
                     </div>
-                    <div class="col-md-2">
-                        <br><label class="form-label">dari db</label>
-                    </div>
-                    <div class="col-md-2" align="right">
+                    <div class="col-md-4">
                         <br>Halaman
-                    </div>
-                    <div class="col-md-2">
-                        <br><label class="form-label">dari db</label>
+                        <br><label class="form-label"><?= $row->halaman; ?></label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2" align="right">
-                        <br>Tanggal Masuk
+                    <div class="col-md-4">
+                        <br>anggal Masuk
+                        <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
                     </div>
-                    <div class="col-md-2">
-                        <br><label class="form-label">dari db</label>
-                    </div>
-                    <div class="col-md-2" align="right">
+                    <div class="col-md-4">
                         <br>Nama Orderan
+                        <br><label class="form-label"><?= $row->nama_orderan; ?></label>
                     </div>
-                    <div class="col-md-2">
-                        <br><label class="form-label">dari db</label>
-                    </div>
-                    <div class="col-md-2" align="right">
+                    <div class="col-md-4">
                         <br>Oplag
-                    </div>
-                    <div class="col-md-2">
-                        <br><label class="form-label">dari db</label>
+                        <br><label class="form-label"><?= $row->oplag; ?></label>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2" align="right">
+                    <div class="col-md-4">
                         <br>Deadline
+                        <br><label class="form-label"><?= $row->deadline; ?></label>
                     </div>
-                    <div class="col-md-2">
-                        <br><label class="form-label">dari db</label>
-                    </div>
-                    <div class="col-md-4"></div>
-                    <div class="col-md-2" align="right">
+                    <div class="col-md-4">
                         <br>Ukuran
+                        <br><label class="form-label"><?= $row->ukuran; ?></label>
                     </div>
-                    <div class="col-md-2">
-                        <br><label class="form-label">dari db</label>
+                    <div class="col-md-4">
+                        <br>Finsihing Akhir
+                        <br><label class="form-label">
+                        <?php 
+                            $finishing = "";
+                            if($row->bending != null){
+                                $finishing .= "bending, ";
+                            }
+                            if($row->hard_cover != null){
+                                $finishing .= 'hard cover, ';
+                            }   
+                            if($row->jahit_benang != null){
+                                $finishing .= 'jahit benang, ';
+                            } 
+                            if($row->jahit_kawat != null){
+                                $finishing .= 'jahit kawat, ';
+                            }    
+                            if($row->pond != null){
+                                $finishing .= 'pond, ';
+                            }   
+                            if($row->klem != null){
+                                $finishing .= 'klem, ';
+                            } 
+                            if($row->spiral != null){
+                                $finishing .= 'Spiral, ';
+                            }
+                            $finishing = rtrim($finishing, ", ");
+                            echo $finishing;
+                        ?>
+                        </label>
                     </div>
+                </div>
+                <?php } ?>
+
                 </div><br>
                 <div class="row">
                     <div class="col-md-2" align="right"><label>Status</label></div>

@@ -15,5 +15,14 @@ class Cetak extends CI_Controller {
 		$data['judul'] = 'Lihat Display Umum';
 		$this->template->load('cetak/template','cetak/display_umum/displayumum-lihat',$data);
 	}
-
+	public function edit_dc($id)
+	{
+		$query = $this->so->get_edit($id);
+		$data = array(
+			'judul' => 'Edit Display Cetak',
+			'dc' => $query->result(),
+		);			
+		$this->template->load('cetak/template','cetak/display_cetak/displaycetak-edit',$data);
+	}
+	
 }
