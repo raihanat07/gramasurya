@@ -29,7 +29,7 @@
     <div class="card-body">
     <?php foreach($dc as $s => $row) {?> 
         <div class="card-body">
-        <form action="<?=site_url('cetak/displaycetak/proses')?>" method="post">
+        <form action="<?=site_url('cetak/DisplayCetak/proses')?>" method="post">
         <input type="text" name="id_order"  value="<?= $row->id_order; ?>" hidden>            
                 <div class="row">
                     <div class="col-md-2" align="right">
@@ -122,8 +122,8 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Mesin Cover 1</label>
-                                                <select id="inputState" class="form-select form-control" name="mesin_cover_1" value="<?= $row->mesin_cover_1; ?>" >
-                                                <option value="<?php  echo $row->mesin_cover_1 != "-" ?   $row->mesin_cover_1  : '-' ?>"><?php  echo $row->mesin_cover_1 != "-" ?   $row->mesin_cover_1  : '-' ?>   </option>
+                                                <select id="inputState" class="form-select form-control" name="mesin_cover_1" >
+                                                    <option value="-">-</option>
                                                     <option value="Oliver 58 2w">Oliver 58 2w</option>
                                                     <option value="Oliver 72 1w">Oliver 72 1w</option>
                                                     <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -134,12 +134,11 @@
                                                     <option value="Tokko">Tokko</option>
                                                     <option value="Print banner">Print banner</option>
                                                     <option value="Print digital">Print digital</option>
-                                                    <option value="-">-</option>
                                                 </select>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Cover 1</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_cover1" value="<?= $row->tanggal_cetak_cover1; ?>" required>
+                                                <input type="date" class="form-control" name="tanggal_cetak_cover1"  required>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -149,17 +148,17 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 1</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover1" value="<?= $row->tanggal_out_cetak_cover1; ?>" required>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover1" required>
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Cover 1</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_cover1" value="<?= $row->jumlah_kertas_cover1; ?>" placeholder="Masukan Jumlah Kertas Cover 1" required>
+                                                <input type="text" class="form-control" name="jumlah_kertas_cover1"  placeholder="Masukan Jumlah Kertas Cover 1" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Cover 1</label><br>
-                                                <input type="text" class="form-control" name="hasil_kertas_cover1" value="<?= $row->hasil_kertas_cover1; ?>" placeholder="Masukan Hasil Kertas Cover 1" required>
+                                                <input type="text" class="form-control" name="hasil_kertas_cover1"  placeholder="Masukan Hasil Kertas Cover 1" required>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -175,18 +174,18 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Cover 1</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_cover1" value="<?= $row->ukuran_potong_cover1; ?>" placeholder="Masukan Ukuran Potong Cover 1" required>
+                                                <input type="number" class="form-control" name="ukuran_potong_cover1"  placeholder="Masukan Ukuran Potong Cover 1" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Cover 1</label>
-                                                <input type="date" class="form-control" name="suborder_in_cetak_cover1" value="<?= $row->suborder_in_cetak_cover1; ?>" required>
+                                                <input type="date" class="form-control" name="suborder_in_cetak_cover1"  required>
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 1</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover1" value="<?= $row->tanggal_out_cetak_cover1; ?>" required>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover1"  required>
                                             </div>
                                         </div>
                                     </div>
@@ -194,8 +193,8 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Mesin Cover 2</label>
-                                                <select id="inputState" class="form-select form-control" name="mesin_cover_2" value="<?= $row->mesin_cover_2; ?>" >
-                                                <option value="<?php  echo $row->mesin_cover_2 != "-" ?   $row->mesin_cover_2  : '-' ?>"><?php  echo $row->mesin_cover_2 != "-" ?   $row->mesin_cover_2  : '-' ?>   </option>
+                                                <select id="inputState" class="form-select form-control" name="mesin_cover_2"  >
+                                                    <option value="-">-</option>
                                                     <option value="Oliver 58 2w">Oliver 58 2w</option>
                                                     <option value="Oliver 72 1w">Oliver 72 1w</option>
                                                     <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -206,13 +205,12 @@
                                                     <option value="Tokko">Tokko</option>
                                                     <option value="Print banner">Print banner</option>
                                                     <option value="Print digital">Print digital</option>
-                                                    <option value="-">-</option>
 
                                                 </select>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Cover 2</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_cover2" value="<?= $row->tanggal_cetak_cover2; ?>" required>
+                                                <input type="date" class="form-control" name="tanggal_cetak_cover2"  required>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -222,17 +220,17 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 2</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover2" value="<?= $row->tanggal_out_cetak_cover2; ?>" required>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover2"  required>
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Cover 2</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_cover2" value="<?= $row->jumlah_kertas_cover2; ?>" placeholder="Masukan Jumlah Kertas Cover 2" required>
+                                                <input type="text" class="form-control" name="jumlah_kertas_cover2"  placeholder="Masukan Jumlah Kertas Cover 2" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Cover 2</label><br>
-                                                <input type="text" class="form-control" name="hasil_kertas_cover2" value="<?= $row->hasil_kertas_cover2; ?>" placeholder="Masukan Hasil Kertas Cover 2" required>
+                                                <input type="text" class="form-control" name="hasil_kertas_cover2"  placeholder="Masukan Hasil Kertas Cover 2" required>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -248,18 +246,18 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Cover 2</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_cover2" value="<?= $row->ukuran_potong_cover2; ?>" placeholder="Masukan Ukuran Potong Cover 2" required>
+                                                <input type="number" class="form-control" name="ukuran_potong_cover2"  placeholder="Masukan Ukuran Potong Cover 2" required>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Cover 2</label>
-                                                <input type="date" class="form-control" name="suborder_in_cetak_cover2" value="<?= $row->suborder_in_cetak_cover2; ?>" required>
+                                                <input type="date" class="form-control" name="suborder_in_cetak_cover2"  required>
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 2</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover2" value="<?= $row->tanggal_out_cetak_cover2; ?>" required>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover2"  required>
                                             </div>
                                         </div>
                                     </div>
@@ -554,7 +552,7 @@
                 </div>
                 <div class="row">
                     <div class="col" align="right">
-                        <button type="submit" name="edit" class="btn btn-success">Simpan</button>
+                        <button type="submit" name="add" class="btn btn-success">Simpan</button>
                         <button type="reset" class="btn btn-default">Cancel</button>
                     </div>
                 </div>                 
