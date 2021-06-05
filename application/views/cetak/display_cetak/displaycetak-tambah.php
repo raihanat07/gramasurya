@@ -184,8 +184,8 @@
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
-                                                <label class="form-label">Tanggal Out Cetak Cover 1</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover1"  required>
+                                                <label class="form-label">Suborder Out Cetak Cover 1</label>
+                                                <input type="date" class="form-control" name="suborder_out_cetak_cover1"  required>
                                             </div>
                                         </div>
                                     </div>
@@ -256,8 +256,8 @@
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
-                                                <label class="form-label">Tanggal Out Cetak Cover 2</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover2"  required>
+                                                <label class="form-label">Suborder Out Cetak Cover 2</label>
+                                                <input type="date" class="form-control" name="suborder_out_cetak_cover2"  required>
                                             </div>
                                         </div>
                                     </div>
@@ -327,8 +327,8 @@
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
-                                                <label class="form-label">Tanggal Out Cetak Cover 3</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover3" required>
+                                                <label class="form-label">Suborder Out Cetak Cover 3</label>
+                                                <input type="date" class="form-control" name="suborder_out_cetak_cover3" required>
                                             </div>
                                         </div>
                                     </div>
@@ -398,8 +398,8 @@
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
-                                                <label class="form-label">Tanggal Out Cetak Isi 1</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi1" required>
+                                                <label class="form-label">Suborder Out Cetak Isi 1</label>
+                                                <input type="date" class="form-control" name="suborder_out_cetak_isi1" required>
                                             </div>
                                         </div>
                                     </div>
@@ -469,8 +469,8 @@
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
-                                                <label class="form-label">Tanggal Out Cetak Isi 2</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi2" required>
+                                                <label class="form-label">Suborder Out Cetak Isi 2</label>
+                                                <input type="date" class="form-control" name="suborder_out_cetak_isi2" required>
                                             </div>
                                         </div>
                                     </div>
@@ -540,8 +540,8 @@
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
-                                                <label class="form-label">Tanggal Out Cetak Isi 3</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi3" required>
+                                                <label class="form-label">Suborder Out Cetak Isi 3</label>
+                                                <input type="date" class="form-control" name="suborder_out_cetak_isi3" required>
                                             </div>
                                         </div>
                                     </div>
