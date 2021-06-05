@@ -33,7 +33,7 @@ class DisplayCetak extends CI_Controller {
 	
 	public function edit_dc($id)
 	{
-		$query = $this->dc->get_lihatdc($id);
+		$query = $this->dc->get_dc($id);
 		$data = array(
 			'judul' => 'Display Cetak Edit',
 			'dc' => $query->result(),
