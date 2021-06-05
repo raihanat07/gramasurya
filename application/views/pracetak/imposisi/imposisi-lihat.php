@@ -195,51 +195,75 @@
                                 <div class="row" align="center">
                                     <div class="col">
                                         <label class="form-label">Plate</label><br><br>
-                                        <?= $row->cover1plat1; ?><br><br>
-                                        <?= $row->cover1plat2; ?><br><br>
-                                        <?= $row->cover1plat3; ?>
+                                            <?= $row->cover1plat1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                            <?= $row->cover1plat2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                            <?= $row->cover1plat3; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Set</label><br><br>
-                                        <?= $row->cover1set1; ?><br><br>
-                                        <?= $row->cover1set2; ?><br><br>
-                                        <?= $row->cover1set3; ?>
+                                            <?= $row->cover1set1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                            <?= $row->cover1set2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                            <?= $row->cover1set3; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Lbr.Cetak</label><br><br>
-                                        <?= $row->cover1lbrcetak1; ?><br><br>
-                                        <?= $row->cover1lbrcetak2; ?><br><br>
-                                        <?= $row->cover1lbrcetak3; ?>
+                                            <?= $row->cover1lbrcetak1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                            <?= $row->cover1lbrcetak2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                            <?= $row->cover1lbrcetak3; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Up</label><br><br>
-                                        <?= $row->cover1up1; ?><br><br>
-                                        <?= $row->cover1up2; ?><br><br>
-                                        <?= $row->cover1up3; ?>
+                                            <?= $row->cover1up1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                            <?= $row->cover1up2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                            <?= $row->cover1up3; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Warna</label><br><br>
-                                        <?= $row->cover1warna1; ?><br><br>
-                                        <?= $row->cover1warna2; ?><br><br>
-                                        <?= $row->cover1warna3; ?>
+                                            <?= $row->cover1warna1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                            <?= $row->cover1warna2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                            <?= $row->cover1warna3; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Proses</label><br><br>
-                                        <?php  echo $row->cover1status1 != "-" ?   $row->cover1status1  : '-' ?><br><br>
-                                        <?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?><br><br>
-                                        <?php  echo $row->cover1status3 != "-" ?   $row->cover1status3  : '-' ?>
+                                            <?php  echo $row->cover1status1 != "-" ?   $row->cover1status1  : '-' ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                            <?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                            <?php  echo $row->cover1status3 != "-" ?   $row->cover1status3  : '-' ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Keterangan</label><br><br>
-                                        <?= $row->cover1keterangan1; ?> 
-                                        <?= $row->cover1keterangan2; ?><br><br>
-                                        <?= $row->cover1keterangan3; ?>
+                                            <?= $row->cover1keterangan1; ?> 
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                            <?= $row->cover1keterangan2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                            <?= $row->cover1keterangan3; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Tgl. Imposisi</label>
-                                        <?= $row->cover1tglimposisi1; ?><br><br>
-                                        <?= $row->cover1tglimposisi2; ?><br><br>
-                                        <?= $row->cover1tglimposisi3; ?>
+                                            <?= $row->cover1tglimposisi1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                            <?= $row->cover1tglimposisi2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                            <?= $row->cover1tglimposisi3; ?>
+                                        <?php endif ?>
                                     </div>
                                 </div>
                             </div>
@@ -272,51 +296,75 @@
                                 <div class="row" align="center">
                                     <div class="col">
                                             <label class="form-label">Plate</label><br><br>
-                                            <?= $row->isi1plat1; ?><br><br>
-                                            <?= $row->isi1plat2; ?><br><br>
-                                            <?= $row->isi1plat3; ?>
+                                                <?= $row->isi1plat1; ?><br><br>
+                                            <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                                <?= $row->isi1plat2; ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                                <?= $row->isi1plat3; ?>
+                                            <?php endif ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Set</label><br><br>
-                                            <?= $row->isi1set1; ?><br><br>
-                                            <?= $row->isi1set2; ?><br><br>
-                                            <?= $row->isi1set3; ?>
+                                                <?= $row->isi1set1; ?><br><br>
+                                             <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                                <?= $row->isi1set2; ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                                <?= $row->isi1set3; ?>
+                                            <?php endif ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Lbr.Cetak</label><br><br>
-                                            <?= $row->isi1lbrcetak1; ?><br><br>
-                                            <?= $row->isi1lbrcetak2; ?><br><br>
-                                            <?= $row->isi1lbrcetak3; ?>
+                                                <?= $row->isi1lbrcetak1; ?><br><br>
+                                            <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                                <?= $row->isi1lbrcetak2; ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                                <?= $row->isi1lbrcetak3; ?>
+                                            <?php endif ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Up</label><br><br>
-                                            <?= $row->isi1up1; ?><br><br>
-                                            <?= $row->isi1up2; ?><br><br>
-                                            <?= $row->isi1up3; ?>
+                                                <?= $row->isi1up1; ?><br><br>
+                                            <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                                <?= $row->isi1up2; ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                                <?= $row->isi1up3; ?>
+                                            <?php endif ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Warna</label><br><br>
-                                            <?= $row->isi1warna1; ?><br><br>
-                                            <?= $row->isi1warna2; ?><br><br>
-                                            <?= $row->isi1warna3; ?>
+                                                <?= $row->isi1warna1; ?><br><br>
+                                            <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                                <?= $row->isi1warna2; ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                                <?= $row->isi1warna3; ?>
+                                            <?php endif ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Proses</label><br><br>
-                                            <?php  echo $row->isi1status1 != "-" ?   $row->isi1status1  : '-' ?><br><br>
-                                            <?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?><br><br>
-                                            <?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?>
+                                                <?php  echo $row->isi1status1 != "-" ?   $row->isi1status1  : '-' ?><br><br>
+                                            <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                                <?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                                <?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?>
+                                            <?php endif ?>
                                         </div>
                                         <div class="col">
                                             <label class="form-label">Keterangan</label><br><br>
-                                            <?= $row->isi1keterangan1; ?><br><br>
-                                            <?= $row->isi1keterangan2; ?><br><br>
-                                            <?= $row->isi1keterangan3; ?>
+                                                <?= $row->isi1keterangan1; ?><br><br>
+                                            <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                                <?= $row->isi1keterangan2; ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                                <?= $row->isi1keterangan3; ?>
+                                            <?php endif ?>
                                         </div>
                                     <div class="col">
                                         <label class="form-label">Tgl. Imposisi</label>
-                                        <?= $row->isi1tglimposisi1; ?><br><br>
-                                        <?= $row->isi1tglimposisi2; ?><br><br>
-                                        <?= $row->isi1tglimposisi3; ?>
+                                            <?= $row->isi1tglimposisi1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                            <?= $row->isi1tglimposisi2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                            <?= $row->isi1tglimposisi3; ?>
+                                        <?php endif ?>
                                     </div>
                                 </div>
                             </div>
@@ -367,54 +415,78 @@
                                     </div>
                                 </div>
                                 <div class="row" align="center">
-                                    <div class="col">
+                                <div class="col">
                                         <label class="form-label">Plate</label><br><br>
-                                        <?= $row->cover2plat1; ?><br><br>
-                                        <?= $row->cover2plat2; ?><br><br>
-                                        <?= $row->cover2plat3; ?>
+                                            <?= $row->cover2plat1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->cover2plat2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->cover2plat3; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Set</label><br><br>
-                                        <?= $row->cover2set1; ?><br><br>
-                                        <?= $row->cover2set2; ?><br><br>
-                                        <?= $row->cover2set3; ?>
+                                            <?= $row->cover2set1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->cover2set2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->cover2set3; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Lbr.Cetak</label><br><br>
-                                        <?= $row->cover2lbrcetak1; ?><br><br>
-                                        <?= $row->cover2lbrcetak2; ?><br><br>
-                                        <?= $row->cover2lbrcetak3; ?>
+                                            <?= $row->cover2lbrcetak1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->cover2lbrcetak2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->cover2lbrcetak3; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Up</label><br><br>
-                                        <?= $row->cover2up1; ?><br><br>
-                                        <?= $row->cover2up2; ?><br><br>
-                                        <?= $row->cover2up3; ?>
+                                            <?= $row->cover2up1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->cover2up2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->cover2up3; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Warna</label><br><br>
-                                        <?= $row->cover2warna1; ?><br><br>
-                                        <?= $row->cover2warna2; ?><br><br>
-                                        <?= $row->cover2warna3; ?>
+                                            <?= $row->cover2warna1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->cover2warna2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->cover2warna3; ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Proses</label><br><br>
-                                        <?php  echo $row->cover2status1 != "-" ?   $row->cover2status1  : '-' ?><br><br>
-                                        <?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?><br><br>
-                                        <?php  echo $row->cover2status3 != "-" ?   $row->cover2status3  : '-' ?>
+                                            <?php  echo $row->cover2status1 != "-" ?   $row->cover2status1  : '-' ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?php  echo $row->cover2status3 != "-" ?   $row->cover2status3  : '-' ?>
+                                        <?php endif ?>
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Keterangan</label><br><br>
-                                        <?= $row->cover2keterangan1; ?><br><br>
-                                        <?= $row->cover2keterangan2; ?><br><br>
-                                        <?= $row->cover2keterangan3; ?>
-                                    </div>   
+                                            <?= $row->cover2keterangan1; ?> 
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->cover2keterangan2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->cover2keterangan3; ?>
+                                        <?php endif ?>
+                                    </div>
                                     <div class="col">
                                         <label class="form-label">Tgl. Imposisi</label>
-                                        <?= $row->cover2tglimposisi1; ?><br><br>
-                                        <?= $row->cover2tglimposisi2; ?><br><br>
-                                        <?= $row->cover2tglimposisi3; ?>
-                                    </div>     
+                                            <?= $row->cover2tglimposisi1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->cover2tglimposisi2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->cover2tglimposisi3; ?>
+                                        <?php endif ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -444,53 +516,77 @@
                                     </div>
                                 </div>
                                 <div class="row" align="center">
-                                    <div class="col">
-                                        <label class="form-label">Plate</label><br><br>
-                                        <?= $row->isi2plat1; ?><br><br>
-                                        <?= $row->isi2plat2; ?><br><br>
-                                        <?= $row->isi2plat3; ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Set</label><br><br>
-                                        <?= $row->isi2set1; ?><br><br>
-                                        <?= $row->isi2set2; ?><br><br>
-                                        <?= $row->isi2set3; ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Lbr.Cetak</label><br><br>
-                                        <?= $row->isi2lbrcetak1; ?><br><br>
-                                        <?= $row->isi2lbrcetak2; ?><br><br>
-                                        <?= $row->isi2lbrcetak3; ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Up</label><br><br>
-                                        <?= $row->isi2up1; ?><br><br>
-                                        <?= $row->isi2up2; ?><br><br>
-                                        <?= $row->isi2up3; ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Warna</label><br><br>
-                                        <?= $row->isi2warna1; ?><br><br>
-                                        <?= $row->isi2warna2; ?><br><br>
-                                        <?= $row->isi2warna3; ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Proses</label><br><br>
-                                        <?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?><br><br>
-                                        <?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?><br><br>
-                                        <?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Keterangan</label><br><br>
-                                        <?= $row->isi2keterangan1; ?><br><br>
-                                        <?= $row->isi2keterangan2; ?><br><br>
-                                        <?= $row->isi2keterangan3; ?>
-                                    </div>
+                                <div class="col">
+                                            <label class="form-label">Plate</label><br><br>
+                                                <?= $row->isi2plat1; ?><br><br>
+                                            <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                <?= $row->isi2plat2; ?><br><br>
+                                            <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                <?= $row->isi2plat3; ?>
+                                            <?php endif ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Set</label><br><br>
+                                                <?= $row->isi2set1; ?><br><br>
+                                             <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                <?= $row->isi2set2; ?><br><br>
+                                            <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                <?= $row->isi2set3; ?>
+                                            <?php endif ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Lbr.Cetak</label><br><br>
+                                                <?= $row->isi2lbrcetak1; ?><br><br>
+                                            <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                <?= $row->isi2lbrcetak2; ?><br><br>
+                                            <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                <?= $row->isi2lbrcetak3; ?>
+                                            <?php endif ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Up</label><br><br>
+                                                <?= $row->isi2up1; ?><br><br>
+                                            <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                <?= $row->isi2up2; ?><br><br>
+                                            <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                <?= $row->isi2up3; ?>
+                                            <?php endif ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Warna</label><br><br>
+                                                <?= $row->isi2warna1; ?><br><br>
+                                            <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                <?= $row->isi2warna2; ?><br><br>
+                                            <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                <?= $row->isi2warna3; ?>
+                                            <?php endif ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Proses</label><br><br>
+                                                <?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?><br><br>
+                                            <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                <?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?><br><br>
+                                            <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                <?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>
+                                            <?php endif ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Keterangan</label><br><br>
+                                                <?= $row->isi2keterangan1; ?><br><br>
+                                            <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                <?= $row->isi2keterangan2; ?><br><br>
+                                            <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                <?= $row->isi2keterangan3; ?>
+                                            <?php endif ?>
+                                        </div>
                                     <div class="col">
                                         <label class="form-label">Tgl. Imposisi</label>
-                                        <?= $row->isi2tglimposisi1; ?><br><br>
-                                        <?= $row->isi2tglimposisi2; ?><br><br>
-                                        <?= $row->isi2tglimposisi3; ?>
+                                            <?= $row->isi2tglimposisi1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->isi2tglimposisi2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->isi2tglimposisi3; ?>
+                                        <?php endif ?>
                                     </div>
                                 </div>
                             </div>
@@ -557,54 +653,78 @@
                                             </div>
                                         </div>
                                         <div class="row" align="center">
-                                            <div class="col">
-                                                <label class="form-label">Plate</label><br><br>
+                                        <div class="col">
+                                            <label class="form-label">Plate</label><br><br>
                                                 <?= $row->isi3plat1; ?><br><br>
+                                            <?php if($row->isi3plat2 != 0) {?>
                                                 <?= $row->isi3plat2; ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi3plat3 != 0) :?>
                                                 <?= $row->isi3plat3; ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Set</label><br><br>
+                                            <?php endif ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Set</label><br><br>
                                                 <?= $row->isi3set1; ?><br><br>
+                                             <?php if($row->isi3plat2 != 0) {?>
                                                 <?= $row->isi3set2; ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi3plat3 != 0) :?>
                                                 <?= $row->isi3set3; ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Lbr.Cetak</label><br><br>
+                                            <?php endif ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Lbr.Cetak</label><br><br>
                                                 <?= $row->isi3lbrcetak1; ?><br><br>
+                                            <?php if($row->isi3plat2 != 0) {?>
                                                 <?= $row->isi3lbrcetak2; ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi3plat3 != 0) :?>
                                                 <?= $row->isi3lbrcetak3; ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Up</label><br><br>
+                                            <?php endif ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Up</label><br><br>
                                                 <?= $row->isi3up1; ?><br><br>
+                                            <?php if($row->isi3plat2 != 0) {?>
                                                 <?= $row->isi3up2; ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi3plat3 != 0) :?>
                                                 <?= $row->isi3up3; ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Warna</label><br><br>
+                                            <?php endif ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Warna</label><br><br>
                                                 <?= $row->isi3warna1; ?><br><br>
+                                            <?php if($row->isi3plat2 != 0) {?>
                                                 <?= $row->isi3warna2; ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi3plat3 != 0) :?>
                                                 <?= $row->isi3warna3; ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Proses</label><br><br>
+                                            <?php endif ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Proses</label><br><br>
                                                 <?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?><br><br>
+                                            <?php if($row->isi3plat2 != 0) {?>
                                                 <?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi3plat3 != 0) :?>
                                                 <?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Keterangan</label>
+                                            <?php endif ?>
+                                        </div>
+                                        <div class="col">
+                                            <label class="form-label">Keterangan</label><br><br>
                                                 <?= $row->isi3keterangan1; ?><br><br>
+                                            <?php if($row->isi3plat2 != 0) {?>
                                                 <?= $row->isi3keterangan2; ?><br><br>
+                                            <?php } if($row->cover1plat3 != 0 || $row->isi3plat3 != 0) :?>
                                                 <?= $row->isi3keterangan3; ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Tgl. Imposisi</label>
-                                                <?= $row->isi3tglimposisi1; ?><br><br>
-                                                <?= $row->isi3tglimposisi2; ?><br><br>
-                                                <?= $row->isi3tglimposisi3; ?>
-                                            </div>
+                                            <?php endif ?>
+                                        </div>
+                                    <div class="col">
+                                        <label class="form-label">Tgl. Imposisi</label>
+                                            <?= $row->isi3tglimposisi1; ?><br><br>
+                                        <?php if($row->isi3plat2 != 0) {?>
+                                            <?= $row->isi3tglimposisi2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi3plat3 != 0) :?>
+                                            <?= $row->isi3tglimposisi3; ?>
+                                        <?php endif ?>
+                                    </div>
                                         </div>
                                     </div>
                                 </div>

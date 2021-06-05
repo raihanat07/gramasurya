@@ -86,13 +86,13 @@ class Ctcp extends CI_Controller {
 			}
 			else
 				$inputan['ctcp_status'] = "";
-
+				
 			if($inputan["jumlahplategagalcover1"] !=null ){
 				$inputan["total_plat_gagal_cover"] = $inputan["total_plat_gagal_cover"] + $inputan["jumlahplategagalcover1"] ;
 			}
 			if($inputan["jumlahplategagalcover2"] !=null ){
 				$inputan["total_plat_gagal_cover"] = $inputan["total_plat_gagal_cover"] + $inputan["jumlahplategagalcover2"] ;
-			}	
+			}
 
 
 			if($inputan["jumlahplategagalisi1"] !=null ){

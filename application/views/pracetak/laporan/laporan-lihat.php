@@ -166,18 +166,27 @@
                             <div class="row" align="center">
                                 <div class="col-md-4"><br>
                                             <?= $row->cover1plat1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
                                             <?= $row->cover1plat2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
                                             <?= $row->cover1plat3; ?>
+                                        <?php endif ?>
                                 </div>
                                 <div class="col-md-4"><br>
                                             <?= $row->cover1tglimposisi1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
                                             <?= $row->cover1tglimposisi2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
                                             <?= $row->cover1tglimposisi3; ?>
+                                        <?php endif ?>
                                 </div>
                                 <div class="col-md-4"><br>
                                             <?= $row->cover1tglctcp1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
                                             <?= $row->cover1tglctcp2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
                                             <?= $row->cover1tglctcp3; ?>
+                                        <?php endif ?>
                                 </div>
                             </div><hr>
                             <div class="row">
@@ -224,21 +233,30 @@
                                 </div>
                             </div>
                             <div class="row" align="center">
-                                     <div class="col-md-4"><br>
-                                                <?= $row->isi1plat1; ?><br><br>
-                                                <?= $row->isi1plat2; ?><br><br>
-                                                <?= $row->isi1plat3; ?>
-                                    </div>
-                                    <div class="col-md-4"><br>
-                                                <?= $row->isi1tglimposisi1; ?><br><br>
-                                                <?= $row->isi1tglimposisi2; ?><br><br>
-                                                <?= $row->isi1tglimposisi3; ?>
-                                    </div>
-                                    <div class="col-md-4"><br>
-                                                <?= $row->isi1tglctcp1; ?><br><br>
-                                                <?= $row->isi1tglctcp2; ?><br><br>
-                                                <?= $row->isi1tglctcp3; ?>
-                                    </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->isi1plat1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                            <?= $row->isi1plat2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                            <?= $row->isi1plat3; ?>
+                                        <?php endif ?>
+                                </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->isi1tglimposisi1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                            <?= $row->isi1tglimposisi2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                            <?= $row->isi1tglimposisi3; ?>
+                                        <?php endif ?>
+                                </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->isi1tglctcp1; ?><br><br>
+                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                            <?= $row->isi1tglctcp2; ?><br><br>
+                                        <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                            <?= $row->isi1tglctcp3; ?>
+                                        <?php endif ?>
+                                </div>
                             </div><hr>
                             <div class="row">
                                 <div class="col-md-2"></div>
@@ -287,21 +305,30 @@
                                 </div>
                             </div>
                             <div class="row" align="center">
-                                        <div class="col-md-4"><br>
-                                                    <?= $row->cover2plat1; ?><br><br>
-                                                    <?= $row->cover2plat2; ?><br><br>
-                                                    <?= $row->cover2plat3; ?>
-                                        </div>
-                                        <div class="col-md-4"><br>
-                                                    <?= $row->cover2tglimposisi1; ?><br><br>
-                                                    <?= $row->cover2tglimposisi2; ?><br><br>
-                                                    <?= $row->cover2tglimposisi3; ?>
-                                        </div>
-                                        <div class="col-md-4"><br>
-                                                    <?= $row->cover2tglctcp1; ?><br><br>
-                                                    <?= $row->cover2tglctcp2; ?><br><br>
-                                                    <?= $row->cover2tglctcp3; ?>
-                                        </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->cover2plat1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->cover2plat2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->cover2plat3; ?>
+                                        <?php endif ?>
+                                </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->cover2tglimposisi1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->cover2tglimposisi2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->cover2tglimposisi3; ?>
+                                        <?php endif ?>
+                                </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->cover2tglctcp1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->cover2tglctcp2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->cover2tglctcp3; ?>
+                                        <?php endif ?>
+                                </div>
                             </div><hr>
                             <div class="row">
                                 <div class="col-md-2"></div>
@@ -347,21 +374,30 @@
                                 </div>
                             </div>
                             <div class="row" align="center">
-                                    <div class="col-md-4"><br>
-                                                <?= $row->isi2plat1; ?><br><br>
-                                                <?= $row->isi2plat2; ?><br><br>
-                                                <?= $row->isi2plat3; ?>
-                                    </div>
-                                    <div class="col-md-4"><br>
-                                                <?= $row->isi2tglimposisi1; ?><br><br>
-                                                <?= $row->isi2tglimposisi2; ?><br><br>
-                                                <?= $row->isi2tglimposisi3; ?>
-                                    </div>
-                                    <div class="col-md-4"><br>
-                                                <?= $row->isi2tglctcp1; ?><br><br>
-                                                <?= $row->isi2tglctcp2; ?><br><br>
-                                                <?= $row->isi2tglctcp3; ?>
-                                    </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->isi2plat1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->isi2plat2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->isi2plat3; ?>
+                                        <?php endif ?>
+                                </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->isi2tglimposisi1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->isi2tglimposisi2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->isi2tglimposisi3; ?>
+                                        <?php endif ?>
+                                </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->isi2tglctcp1; ?><br><br>
+                                        <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                            <?= $row->isi2tglctcp2; ?><br><br>
+                                        <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                            <?= $row->isi2tglctcp3; ?>
+                                        <?php endif ?>
+                                </div>
                             </div><hr>
                             <div class="row">
                                 <div class="col-md-2"></div>
@@ -541,21 +577,30 @@
                                 </div>
                             </div>
                             <div class="row" align="center">
-                                    <div class="col-md-4"><br>
-                                                <?= $row->isi3plat1; ?><br><br>
-                                                <?= $row->isi3plat2; ?><br><br>
-                                                <?= $row->isi3plat3; ?>
-                                    </div>
-                                    <div class="col-md-4"><br>
-                                                <?= $row->isi3tglimposisi1; ?><br><br>
-                                                <?= $row->isi3tglimposisi2; ?><br><br>
-                                                <?= $row->isi3tglimposisi3; ?>
-                                    </div>
-                                    <div class="col-md-4"><br>
-                                                <?= $row->isi3tglctcp1; ?><br><br>
-                                                <?= $row->isi3tglctcp2; ?><br><br>
-                                                <?= $row->isi3tglctcp3; ?>
-                                    </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->isi3plat1; ?><br><br>
+                                        <?php if($row->isi3plat2 != 0) {?>
+                                            <?= $row->isi3plat2; ?><br><br>
+                                        <?php } if($row->isi3plat3 != 0) :?>
+                                            <?= $row->isi3plat3; ?>
+                                        <?php endif ?>
+                                </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->isi3tglimposisi1; ?><br><br>
+                                        <?php if($row->isi3plat2 != 0) {?>
+                                            <?= $row->isi3tglimposisi3; ?><br><br>
+                                        <?php } if($row->isi3plat3 != 0) :?>
+                                            <?= $row->isi3tglimposisi3; ?>
+                                        <?php endif ?>
+                                </div>
+                                <div class="col-md-4"><br>
+                                            <?= $row->isi3tglctcp1; ?><br><br>
+                                        <?php if($row->isi3plat2 != 0) {?>
+                                            <?= $row->isi3tglctcp2; ?><br><br>
+                                        <?php } if($row->isi3plat3 != 0) :?>
+                                            <?= $row->isi3tglctcp3; ?>
+                                        <?php endif ?>
+                                </div>
                             </div><hr>
                             <div class="row">
                                 <div class="col-md-2"></div>
