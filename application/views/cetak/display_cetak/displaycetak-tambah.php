@@ -138,7 +138,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Cover 1</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_cover1"  required>
+                                                <input type="date" class="form-control" name="tanggal_cetak_cover1"  >
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -148,17 +148,17 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 1</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover1" required>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover1" >
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Cover 1</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_cover1"  placeholder="Masukan Jumlah Kertas Cover 1" required>
+                                                <input type="text" class="form-control" name="jumlah_kertas_cover1"  placeholder="Masukan Jumlah Kertas Cover 1" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Cover 1</label><br>
-                                                <input type="text" class="form-control" name="hasil_kertas_cover1"  placeholder="Masukan Hasil Kertas Cover 1" required>
+                                                <input type="text" class="form-control" name="hasil_kertas_cover1"  placeholder="Masukan Hasil Kertas Cover 1" >
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -174,18 +174,18 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Cover 1</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_cover1"  placeholder="Masukan Ukuran Potong Cover 1" required>
+                                                <input type="number" class="form-control" name="ukuran_potong_cover1"  placeholder="Masukan Ukuran Potong Cover 1" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Cover 1</label>
-                                                <input type="date" class="form-control" name="suborder_in_cetak_cover1"  required>
+                                                <input type="date" class="form-control" name="suborder_in_cetak_cover1"  >
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Out Cetak Cover 1</label>
-                                                <input type="date" class="form-control" name="suborder_in_cetak_cover1"  required>
+                                                <input type="date" class="form-control" name="suborder_out_cetak_cover1"  >
                                             </div>
                                         </div>
                                     </div>
@@ -210,7 +210,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Cover 2</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_cover2"  required>
+                                                <input type="date" class="form-control" name="tanggal_cetak_cover2"  >
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -220,17 +220,17 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 2</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover2"  required>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover2"  >
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Cover 2</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_cover2"  placeholder="Masukan Jumlah Kertas Cover 2" required>
+                                                <input type="text" class="form-control" name="jumlah_kertas_cover2"  placeholder="Masukan Jumlah Kertas Cover 2" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Cover 2</label><br>
-                                                <input type="text" class="form-control" name="hasil_kertas_cover2"  placeholder="Masukan Hasil Kertas Cover 2" required>
+                                                <input type="text" class="form-control" name="hasil_kertas_cover2"  placeholder="Masukan Hasil Kertas Cover 2" >
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -246,18 +246,18 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Cover 2</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_cover2"  placeholder="Masukan Ukuran Potong Cover 2" required>
+                                                <input type="number" class="form-control" name="ukuran_potong_cover2"  placeholder="Masukan Ukuran Potong Cover 2" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Cover 2</label>
-                                                <input type="date" class="form-control" name="suborder_in_cetak_cover2"  required>
+                                                <input type="date" class="form-control" name="suborder_in_cetak_cover2"  >
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Out Cetak Cover 2</label>
-                                                <input type="date" class="form-control" name="suborder_Out_cetak_cover2"  required>
+                                                <input type="date" class="form-control" name="suborder_out_cetak_cover2"  >
                                             </div>
                                         </div>
                                     </div>
@@ -281,7 +281,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Cover 3</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_cover3" required>
+                                                <input type="date" class="form-control" name="tanggal_cetak_cover3" >
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -291,17 +291,17 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 3</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover3" required>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover3" >
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Cover 3</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_cover3" placeholder="Masukan Jumlah Kertas Cover 3" required>
+                                                <input type="text" class="form-control" name="jumlah_kertas_cover3" placeholder="Masukan Jumlah Kertas Cover 3" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Cover 3</label><br>
-                                                <input type="text" class="form-control" name="hasil_kertas_cover3" placeholder="Masukan Hasil Kertas Cover 3" required>
+                                                <input type="text" class="form-control" name="hasil_kertas_cover3" placeholder="Masukan Hasil Kertas Cover 3" >
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -317,18 +317,18 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Cover 3</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_cover3" placeholder="Masukan Ukuran Potong Cover 3" required>
+                                                <input type="number" class="form-control" name="ukuran_potong_cover3" placeholder="Masukan Ukuran Potong Cover 3" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Cover 3</label>
-                                                <input type="date" class="form-control" name="suborder_in_cetak_cover3" required>
+                                                <input type="date" class="form-control" name="suborder_in_cetak_cover3" >
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Out Cetak Cover 3</label>
-                                                <input type="date" class="form-control" name="suborder_out_cetak_cover3" required>
+                                                <input type="date" class="form-control" name="suborder_out_cetak_cover3" >
                                             </div>
                                         </div>
                                     </div>
@@ -352,7 +352,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Isi 1</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_isi1" required>
+                                                <input type="date" class="form-control" name="tanggal_cetak_isi1" >
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -362,17 +362,17 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Isi 1</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi1" required>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi1" >
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Isi 1</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_isi1" placeholder="Masukan Jumlah Kertas Isi 1" required>
+                                                <input type="text" class="form-control" name="jumlah_kertas_isi1" placeholder="Masukan Jumlah Kertas Isi 1" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Isi 1</label><br>
-                                                <input type="text" class="form-control" name="hasil_kertas_isi1" placeholder="Masukan Hasil Kertas Isi 1" required>
+                                                <input type="text" class="form-control" name="hasil_kertas_isi1" placeholder="Masukan Hasil Kertas Isi 1" >
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -388,18 +388,18 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Isi 1</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_isi1" placeholder="Masukan Ukuran Potong Isi 1" required>
+                                                <input type="number" class="form-control" name="ukuran_potong_isi1" placeholder="Masukan Ukuran Potong Isi 1" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Isi 1</label>
-                                                <input type="date" class="form-control" name="suborder_in_cetak_isi1" required>
+                                                <input type="date" class="form-control" name="suborder_in_cetak_isi1" >
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Out Cetak Isi 1</label>
-                                                <input type="date" class="form-control" name="suborder_out_cetak_isi1" required>
+                                                <input type="date" class="form-control" name="suborder_out_cetak_isi1" >
                                             </div>
                                         </div>
                                     </div>
@@ -423,7 +423,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Isi 2</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_isi2" required>
+                                                <input type="date" class="form-control" name="tanggal_cetak_isi2" >
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -433,17 +433,17 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Isi 2</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi2" required>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi2" >
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Isi 2</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_isi2" placeholder="Masukan Jumlah Kertas Isi 2" required>
+                                                <input type="text" class="form-control" name="jumlah_kertas_isi2" placeholder="Masukan Jumlah Kertas Isi 2" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Isi 2</label><br>
-                                                <input type="text" class="form-control" name="hasil_kertas_isi2" placeholder="Masukan Hasil Kertas Isi 2" required>
+                                                <input type="text" class="form-control" name="hasil_kertas_isi2" placeholder="Masukan Hasil Kertas Isi 2" >
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -459,18 +459,18 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Isi 2</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_isi2" placeholder="Masukan Ukuran Potong Isi 2" required>
+                                                <input type="number" class="form-control" name="ukuran_potong_isi2" placeholder="Masukan Ukuran Potong Isi 2" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Isi 2</label>
-                                                <input type="date" class="form-control" name="suborder_in_cetak_isi2" required>
+                                                <input type="date" class="form-control" name="suborder_in_cetak_isi2" >
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Out Cetak Isi 2</label>
-                                                <input type="date" class="form-control" name="suborder_out_cetak_isi2" required>
+                                                <input type="date" class="form-control" name="suborder_out_cetak_isi2" >
                                             </div>
                                         </div>
                                     </div>
@@ -494,7 +494,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Isi 3</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_isi3" required>
+                                                <input type="date" class="form-control" name="tanggal_cetak_isi3" >
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -504,17 +504,17 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Isi 3</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi3" required>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi3" >
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Isi 3</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_isi3" placeholder="Masukan Jumlah Kertas Isi 3" required>
+                                                <input type="text" class="form-control" name="jumlah_kertas_isi3" placeholder="Masukan Jumlah Kertas Isi 3" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Isi 3</label><br>
-                                                <input type="text" class="form-control" name="hasil_kertas_isi3" placeholder="Masukan Hasil Kertas Isi 3" required>
+                                                <input type="text" class="form-control" name="hasil_kertas_isi3" placeholder="Masukan Hasil Kertas Isi 3" >
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -530,18 +530,18 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Isi 3</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_isi3" placeholder="Masukan Ukuran Potong Isi 3" required>
+                                                <input type="number" class="form-control" name="ukuran_potong_isi3" placeholder="Masukan Ukuran Potong Isi 3" >
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Isi 3</label>
-                                                <input type="date" class="form-control" name="suborder_in_cetak_isi3" required>
+                                                <input type="date" class="form-control" name="suborder_in_cetak_isi3" >
                                             </div>
                                         </div><br>
                                         <div class="row">
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Out Cetak Isi 3</label>
-                                                <input type="date" class="form-control" name="suborder_out_cetak_isi3" required>
+                                                <input type="date" class="form-control" name="suborder_out_cetak_isi3" >
                                             </div>
                                         </div>
                                     </div>
