@@ -35,7 +35,7 @@ class DisplayCetak extends CI_Controller {
 	{
 		$query = $this->dc->get_lihatdc($id);
 		$data = array(
-			'judul' => 'Display Cetak',
+			'judul' => 'Display Cetak Edit',
 			'dc' => $query->result(),
 		);			
 		$this->template->load('cetak/template','cetak/display_cetak/displaycetak-edit',$data);
@@ -45,7 +45,7 @@ class DisplayCetak extends CI_Controller {
 	{
 		$query = $this->dc->get_lihatdc($id);
 		$data = array(
-			'judul' => 'Display Cetak',
+			'judul' => 'Display Cetak Tambah',
 			'dc' => $query->result(),
 		);			
 		$this->template->load('cetak/template','cetak/display_cetak/displaycetak-tambah',$data);

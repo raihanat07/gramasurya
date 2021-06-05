@@ -101,7 +101,7 @@
                       <a href="<?=site_url('cetak/DisplayCetak/tambah_dc/'.$row->id_order)?>">
                         <i class="fa fa-pencil" style="font-size:18px"></i>
                       </a>
-                  <?php }else {?>
+                  <?php }else if($row->id_display_cetak != null) {?>
 
                   <!-- edit imposisi -->
                   <a href="<?=site_url('cetak/DisplayCetak/edit_dc/'.$row->id_order)?>">

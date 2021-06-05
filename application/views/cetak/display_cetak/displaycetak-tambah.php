@@ -185,7 +185,7 @@
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Out Cetak Cover 1</label>
-                                                <input type="date" class="form-control" name="suborder_out_cetak_cover1"  required>
+                                                <input type="date" class="form-control" name="suborder_in_cetak_cover1"  required>
                                             </div>
                                         </div>
                                     </div>
@@ -257,7 +257,7 @@
                                             <div class="col-md-6"></div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Out Cetak Cover 2</label>
-                                                <input type="date" class="form-control" name="suborder_out_cetak_cover2"  required>
+                                                <input type="date" class="form-control" name="suborder_Out_cetak_cover2"  required>
                                             </div>
                                         </div>
                                     </div>
@@ -266,7 +266,7 @@
                                             <div class="col-md-6">
                                                 <label class="form-label">Mesin Cover 3</label>
                                                 <select id="inputState" class="form-select form-control" name="mesin_cover_3" >
-                                                    <option selected disabled>Mesin Cover</option>
+                                                    <option value="-">-</option>
                                                     <option value="Oliver 58 2w">Oliver 58 2w</option>
                                                     <option value="Oliver 72 1w">Oliver 72 1w</option>
                                                     <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -337,7 +337,7 @@
                                             <div class="col-md-6">
                                                 <label class="form-label">Mesin Isi 1</label>
                                                 <select id="inputState" class="form-select form-control" name="mesin_isi_1" >
-                                                    <option selected disabled>Mesin isi</option>
+                                                    <option value="-">-</option>
                                                     <option value="Oliver 58 2w">Oliver 58 2w</option>
                                                     <option value="Oliver 72 1w">Oliver 72 1w</option>
                                                     <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -407,8 +407,8 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Mesin Isi 2</label>
-                                                <select id="inputState" class="form-select form-control" name="mesin_isi_1" >
-                                                    <option selected disabled>Mesin isi</option>
+                                                <select id="inputState" class="form-select form-control" name="mesin_isi_2" >
+                                                    <option value="-">-</option>
                                                     <option value="Oliver 58 2w">Oliver 58 2w</option>
                                                     <option value="Oliver 72 1w">Oliver 72 1w</option>
                                                     <option value="SM 74 4W - A">SM 74 4W - A</option>
@@ -478,8 +478,8 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Mesin Isi 3</label>
-                                                <select id="inputState" class="form-select form-control" name="mesin_isi_1" >
-                                                    <option selected disabled>Mesin isi</option>
+                                                <select id="inputState" class="form-select form-control" name="mesin_isi_3" >
+                                                    <option value="-">-</option>
                                                     <option value="Oliver 58 2w">Oliver 58 2w</option>
                                                     <option value="Oliver 72 1w">Oliver 72 1w</option>
                                                     <option value="SM 74 4W - A">SM 74 4W - A</option>
