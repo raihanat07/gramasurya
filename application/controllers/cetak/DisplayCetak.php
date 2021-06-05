@@ -25,7 +25,7 @@ class DisplayCetak extends CI_Controller {
 		// check_already_login_cetak();
 		$query = $this->dc->get_lihatdc($id);
 		$data = array(
-			'judul' => 'Lihat Display Cetak',
+			'judul' => 'Display Cetak',
 			'dc' => $query->result(),
 		);
 		$this->template->load('cetak/template','cetak/display_cetak/displaycetak-lihat',$data);
@@ -35,7 +35,7 @@ class DisplayCetak extends CI_Controller {
 	{
 		$query = $this->dc->get_lihatdc($id);
 		$data = array(
-			'judul' => 'Edit Display Cetak',
+			'judul' => 'Display Cetak',
 			'dc' => $query->result(),
 		);			
 		$this->template->load('cetak/template','cetak/display_cetak/displaycetak-edit',$data);
@@ -45,7 +45,7 @@ class DisplayCetak extends CI_Controller {
 	{
 		$query = $this->dc->get_lihatdc($id);
 		$data = array(
-			'judul' => 'Edit Display Cetak',
+			'judul' => 'Display Cetak',
 			'dc' => $query->result(),
 		);			
 		$this->template->load('cetak/template','cetak/display_cetak/displaycetak-tambah',$data);
