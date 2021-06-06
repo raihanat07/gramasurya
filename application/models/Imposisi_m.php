@@ -370,6 +370,7 @@ class Imposisi_m extends CI_Model {
         $this->db->where('id_order',$data['id_order']);
         $this->db->update('order');
     }
+    
     public function edit_imposisi($data)
 	{
             $ubah_imposisi = array(                                                

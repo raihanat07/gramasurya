@@ -118,12 +118,21 @@ class DisplayCetak_m extends CI_Model {
 
             ',
         );
+        // $this->db->from('order');
+        // $this->db->join('finishing','finishing.id_order = order.id_order','left');
+        // $this->db->join('display_cetak','display_cetak.id_order = order.id_order','left');
+        // $this->db->order_by('id_order', 'desc');    
+        // $query = $this->db->get($id);
+        // return $query;
+        
         $this->db->from('order');
-        $this->db->join('finishing','finishing.id_order = order.id_order','left');
-        $this->db->join('display_cetak','display_cetak.id_order = order.id_order','left');
-        $this->db->order_by('id_order', 'desc');    
+        $this->db->join('finishing','finishing.id_order = order.id_order');
+        $this->db->join('display_cetak','display_cetak.id_order = order.id_order');
+        if($id != null){
+            $this->db->where('order.id_order', $id);
+        }
         $query = $this->db->get();
-        return $query;   
+        return $query;
     }
 
     public function edit_dc($data)
@@ -177,7 +186,7 @@ class DisplayCetak_m extends CI_Model {
                 'ukuran_potong_isi3' =>$data['ukuran_potong_isi3'],
                 'suborder_in_cetak_isi3' =>$data['suborder_in_cetak_isi3'],
                 'suborder_out_cetak_isi3' =>$data['suborder_out_cetak_isi3'],
-                'total_kertas' =>$data['total_kertas']
+                // 'total_kertas' =>$data['total_kertas']
 
 
                 
@@ -240,7 +249,7 @@ class DisplayCetak_m extends CI_Model {
                 'ukuran_potong_isi3' =>$data['ukuran_potong_isi3'],
                 'suborder_in_cetak_isi3' =>$data['suborder_in_cetak_isi3'],
                 'suborder_out_cetak_isi3' =>$data['suborder_out_cetak_isi3'],
-                // 'total_kertas' =>$data['total_kertas']
+                'total_kertas' =>$data['total_kertas']
 
                 
             );

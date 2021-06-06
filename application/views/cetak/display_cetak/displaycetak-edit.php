@@ -27,9 +27,9 @@
         </div>
     </div>
     <div class="card-body">
-    <?php foreach($dc as $s => $row) {?> 
         <div class="card-body">
         <form action="<?=site_url('cetak/displaycetak/proses')?>" method="post">
+        <?php foreach($dc as $s => $row) {?> 
         <input type="text" name="id_order"  value="<?= $row->id_order; ?>" hidden>            
                 <div class="row">
                     <div class="col-md-2" align="right">

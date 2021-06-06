@@ -23,9 +23,9 @@ class DisplayCetak extends CI_Controller {
 	public function lihat_dc($id)
 	{
 		// check_already_login_cetak();
-		$query = $this->dc->get_lihatdc($id);
+		$query = $this->dc->get_dc($id);
 		$data = array(
-			'judul' => 'Display Cetak',
+			'judul' => 'Display Cetak Lihat',
 			'dc' => $query->result(),
 		);
 		$this->template->load('cetak/template','cetak/display_cetak/displaycetak-lihat',$data);
@@ -56,23 +56,24 @@ class DisplayCetak extends CI_Controller {
 	{		
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
+			
+			
+			if($inputan["jumlah_kertas_cover1"] !=null){
+				$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover1"];
+			}
+			if($inputan["jumlah_kertas_cover2"] !=null){
+				$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover2"];
+			}
 
-			// if($inputan["jumlah_kertas_cover1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover1"];
-			// }
-			// if($inputan["jumlah_kertas_cover2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover2"];
-			// }
-
-			// if($inputan["jumlah_kertas_isi1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi1"];
-			// }
-			// if($inputan["jumlah_kertas_isi2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi2"];
-			// }
-			// if($inputan["jumlah_kertas_isi3"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
-			// }
+			if($inputan["jumlah_kertas_isi1"] !=null){
+				$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi1"];
+			}
+			if($inputan["jumlah_kertas_isi2"] !=null){
+				$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi2"];
+			}
+			if($inputan["jumlah_kertas_isi3"] !=null){
+				$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
+			}
 
 			$this->dc->tambah_dc($inputan);							
 			// $this->ctcp->status_umum($inputan);						
@@ -81,6 +82,23 @@ class DisplayCetak extends CI_Controller {
 
 		} else if(isset($_POST['edit'])){ 
 			$inputan = $this->input->post(null, TRUE);
+
+			if($inputan["jumlah_kertas_cover1"] !=null){
+				$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover1"];
+			}
+			if($inputan["jumlah_kertas_cover2"] !=null){
+				$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover2"];
+			}
+
+			if($inputan["jumlah_kertas_isi1"] !=null){
+				$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi1"];
+			}
+			if($inputan["jumlah_kertas_isi2"] !=null){
+				$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi2"];
+			}
+			if($inputan["jumlah_kertas_isi3"] !=null){
+				$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
+			}
 
 			$this->dc->tambah_dc($inputan);							
 			// $this->dc->status_umum($inputan);						
