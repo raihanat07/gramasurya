@@ -2,8 +2,125 @@
 <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>LAPORAN</h1>
+          <div class="col-sm-12">
+            <h1>LAPORAN</h1><br>
+            <form>
+              <div class="row">
+                <div class="col-md-4">
+                  <section class="content">
+                    <div class="card">
+                      <div class="card-header border bg-primary">
+                        <h3 class="card-title">Filter Data Perhari</h3>
+
+                        <div class="card-tools">
+                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i></button>
+                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fa fa-times"></i></button> -->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-12">    
+                            <select name="tgl" class="form-control">
+                              <option selected="selected">Tanggal</option>
+                              <?php
+                                for($a=1; $a<=31; $a+=1){
+                                  echo"<option value=$a> $a </option>";
+                                }
+                              ?>
+                            </select>
+                          </div>
+                        </div><br>
+                        <div class="row">
+                          <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div class="col-md-4">
+                  <section class="content">
+                    <div class="card">
+                      <div class="card-header border bg-primary">
+                        <h3 class="card-title">Filter Data Perbulan</h3>
+
+                        <div class="card-tools">
+                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i></button>
+                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fa fa-times"></i></button> -->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-md-6">    
+                            <select name="bln" class="form-control">
+                              <option selected="selected">Bulan</option>
+                              <?php
+                                $bulan=array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+                                $jlh_bln=count($bulan);
+                                for($c=0; $c<$jlh_bln; $c+=1){
+                                    echo"<option value=$bulan[$c]> $bulan[$c] </option>";
+                              }
+                              ?>
+                            </select>
+                          </div>
+                          <div class="col-md-6">    
+                            <?php
+                              $now=date('Y');
+                              echo "<select name=’tahun’ class='form-control'>";
+                              for ($a=$now;$a>=2000;$a--)
+                              {
+                                   echo "<option value='$a'>$a</option>";
+                              }
+                              echo "</select>";
+                            ?>
+                          </div>
+                        </div><br>
+                        <div class="row">
+                          <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div class="col-md-4">
+                  <section class="content">
+                    <div class="card">
+                      <div class="card-header border bg-primary">
+                        <h3 class="card-title">Filter Data Pertahun</h3>
+
+                        <div class="card-tools">
+                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i></button>
+                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fa fa-times"></i></button> -->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-sm-12">     
+                            <?php
+                              $now=date('Y');
+                              echo "<select name=’tahun’ class='form-control'>";
+                              for ($a=$now;$a>=2000;$a--)
+                              {
+                                   echo "<option value='$a'>$a</option>";
+                              }
+                              echo "</select>";
+                            ?>
+                          </div>
+                        </div><br>
+                        <div class="row">
+                          <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div><!-- /.container-fluid -->

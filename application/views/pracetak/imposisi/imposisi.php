@@ -3,7 +3,38 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>IMPOSISI</h1>
+            <h1>IMPOSISI</h1><br>
+            <label>TAMPILKAN DATA PERBULAN</label><br>
+            <form>
+              <div class="row">
+                <div class="col-md-3">
+                  <select name="bln" class="form-control">
+                    <option selected="selected">Bulan</option>
+                    <?php
+                      $bulan=array("Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+                      $jlh_bln=count($bulan);
+                      for($c=0; $c<$jlh_bln; $c+=1){
+                          echo"<option value=$bulan[$c]> $bulan[$c] </option>";
+                    }
+                    ?>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <?php
+                    $now=date('Y');
+                    echo "<select name=’tahun’ class='form-control'>";
+                    for ($a=$now;$a>=2000;$a--)
+                    {
+                         echo "<option value='$a'>$a</option>";
+                    }
+                    echo "</select>";
+                  ?>
+                </div>
+                <div class="col-md-2">
+                  <button type="submit" name="filter_data" class="btn btn-primary">Filter Data</button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div><!-- /.container-fluid -->
