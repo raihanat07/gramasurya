@@ -24,8 +24,10 @@ class SuratOrder_m extends CI_Model {
         $query = $this->db->get();
         return $query;   
     }
-
-
+    public function del($id){
+        $this->db->where('id_order', $id);
+        $this->db->delete('order');
+    }
 	public function add($data)
 	{
         // tambah bagian surat order  

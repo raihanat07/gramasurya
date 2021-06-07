@@ -12,8 +12,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+   <!-- DataTables -->
+   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/datatables/dataTables.bootstrap4.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?=site_url()?>assets/dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="<?=base_url()?>assets/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
@@ -146,7 +148,7 @@
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Laporan" 
-                 <?php  if($judul == "Laporan" || $judul == "Tambah Laporan Pracetak" || $judul == "Edit Laporan Pracetak" || $judul == "Lihat Laporan Pracetak" || $judul == "Edit Laporan Pracetak"){?>
+                 <?php  if($judul == "Laporan" || $judul == "Tambah Laporan Pracetak" || $judul == "Edit Laporan Pracetak" || $judul == "Lihat Laporan" || $judul == "Edit Laporan Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
@@ -213,14 +215,20 @@
   <script src="<?=base_url()?>assets/dist/js/adminlte.min.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="<?=base_url()?>assets/dist/js/demo.js"></script>
+   
   <!-- DataTables -->
-  <script src="../../plugins/datatables/jquery.dataTables.js"></script>
-  <script src="../../plugins/datatables/dataTables.bootstrap4.js"></script>
+  <script src="<?=base_url()?>assets/plugins/datatables/jquery.dataTables.js"></script>
+  <script src="<?=base_url()?>assets/plugins/datatables/dataTables.bootstrap4.js"></script>
   <!-- SlimScroll -->
-  <script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+  <script src="<?=base_url()?>assets/plugins/slimScroll/jquery.slimscroll.min.js"></script>
   <!-- iCheck 1.0.1 -->
-  <script src="../../plugins/iCheck/icheck.min.js"></script>
-
+  <script src="<?=base_url()?>assets/plugins/iCheck/icheck.min.js"></script>
+  <!-- Page script -->
+  <script>
+      $(function () {
+    $("#table1").DataTable();
+  });
+  </script>
   <!-- Page script -->
   <script>
     $(function () {
@@ -243,5 +251,6 @@
 
     })
   </script>
+
 </body>
 </html>

@@ -49,7 +49,14 @@ class SuratOrder extends CI_Controller {
 		);			
 		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder-lihat', $data);
 	}
-
+	public function del($id)
+	{
+		$this->so->del($id);
+		if($this->db->affected_rows() >0 ){
+			echo "<script>alert('Data Berhasil Dihapus');</script>";
+		}
+		echo "<script>window.location='".site_url('pracetak/suratorder')."';</script>";
+	}
 	public function proses()
 	{
 		if(isset($_POST['add'])){							

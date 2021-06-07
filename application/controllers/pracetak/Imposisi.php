@@ -22,7 +22,7 @@ class Imposisi extends CI_Controller {
 		//  die;
 		$this->template->load('pracetak/template','pracetak/imposisi/imposisi',$data);
 	}
-
+	
 	public function tambah_imposisi($id)
 	{
 		check_not_login();

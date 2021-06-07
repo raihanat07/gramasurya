@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="card-body">
-          <table id="example2" class="table table-bordered table-hover" style="font-size: 12px;">
+          <table id="table1" class="table table-bordered table-hover" style="font-size: 12px;">
             <thead>
             <tr align="center">
               <td>Nomor SO</td>

@@ -31,6 +31,7 @@ class Imposisi_m extends CI_Model {
         $query = $this->db->get();
         return $query; 
     }
+    
     public function tampil_tambah_imposisi($id = null)
     {
         $this->db->select(
