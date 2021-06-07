@@ -26,6 +26,12 @@ class FinishingProses extends CI_Controller {
 				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
 				echo "<script>window.location='".site_url('finishing/FinishingProses/')."'; </script>"; 
 		}
+		if(isset($_POST['edit'])){							
+			$inputan = $this->input->post(null, TRUE);
+			$this->fp->edit_fp($inputan);				
+				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
+				echo "<script>window.location='".site_url('finishing/FinishingProses/')."'; </script>"; 
+		}
 	}
 
 

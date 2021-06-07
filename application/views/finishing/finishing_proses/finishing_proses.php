@@ -104,7 +104,7 @@
             
                 </table>
 
-                <?php foreach($fp as $s => $row) {?>  
+                <?php foreach($fp as $s => $row) {?> 
                   <form action="<?=site_url('finishing/FinishingProses/proses_fp')?>" method="post">
                   <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
 
@@ -219,8 +219,19 @@
 
                                 <div class="row">
                                   <div class="col-md-6">
-                                    Tanggal Pelaksanaan<br>
-                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_mesin_shoe" placeholder="Tanggal Pelaksanaan">
+                                    Tanggal Pelaksanaan<br>         
+                                    <?php if($row->id_laminasi == null) {?>                           
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_shoe"  id="tgll_shoe<?= $row->id_order; ?>" > 
+                                    <?php }else{ ?>                                                                       
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_shoe"  id="tgll_shoe<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_mesin_shoe; ?>">
+                                      <?php } ?>
+                                  </div>  
+                                  <div class="col-md-6"><br>       
+                                    <?php if($row->id_laminasi == null) {?>                                                           
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_shoe<?= $row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php }else{ ?>   
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_shoe<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php } ?>
                                   </div>  
                                 </div><hr>
 
@@ -236,8 +247,9 @@
                                   </div>
                                 </div><hr>
 
+                                <?php if($row->id_laminasi == null) {?>  
                                 <div class="row">
-                                  <!-- LEMBAR 1 - 10 -->
+                                  <!-- LEMBAR 1 - 10 -->                                  
                                   <div class="col">
                                     <div class="row">
                                       <div class="col-md-6">Lembar 1</div>
@@ -487,13 +499,293 @@
                                   </div>
                                 </div><hr>
 
-                                <h4>Keterangan</h4>
-                                <textarea name="keterangan_jadwal_fp_shoe" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+                                <?php }else{ ?>
+                                  <div class="row">
+                                  <!-- LEMBAR 1 - 10 -->                                  
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 1</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_1" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_1; ?>"><?php echo $row->shoe_lipat_lembar_1; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 2</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_2" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_2; ?>"><?php echo $row->shoe_lipat_lembar_2; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 3</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_3" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_3; ?>"><?php echo $row->shoe_lipat_lembar_3; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 4</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_4" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_4; ?>"><?php echo $row->shoe_lipat_lembar_4; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 5</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_5" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_5; ?>"><?php echo $row->shoe_lipat_lembar_5; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 6</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_6" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_6; ?>"><?php echo $row->shoe_lipat_lembar_6; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 7</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_7" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_7; ?>"><?php echo $row->shoe_lipat_lembar_7; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 8</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_8" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_8; ?>"><?php echo $row->shoe_lipat_lembar_8; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 9</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_9" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_9; ?>"><?php echo $row->shoe_lipat_lembar_9; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 10</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_10" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_10; ?>"><?php echo $row->shoe_lipat_lembar_10; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
 
+                                  <div class="col-md-1"></div>
+                                  <!-- LEMBAR 11 - 20 -->
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 11</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_11" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_11; ?>"><?php echo $row->shoe_lipat_lembar_11; ?></option>                                          
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 12</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_12" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_12; ?>"><?php echo $row->shoe_lipat_lembar_12; ?></option> 
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 13</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_13" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_13; ?>"><?php echo $row->shoe_lipat_lembar_13; ?></option>                                           
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 14</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_14" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_14; ?>"><?php echo $row->shoe_lipat_lembar_14; ?></option>                                           
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 15</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_15" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_15; ?>"><?php echo $row->shoe_lipat_lembar_15; ?></option>                                             
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 16</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_16" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_16; ?>"><?php echo $row->shoe_lipat_lembar_16; ?></option>                                           
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 17</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_17" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_17; ?>"><?php echo $row->shoe_lipat_lembar_17; ?></option>                                             
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 18</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_18" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_18; ?>"><?php echo $row->shoe_lipat_lembar_18; ?></option>                                             
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 19</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_19" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_19; ?>"><?php echo $row->shoe_lipat_lembar_19; ?></option>                                            
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 20</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="shoe_lipat_lembar_20" >
+                                          <option value="<?php echo $row->shoe_lipat_lembar_20; ?>"><?php echo $row->shoe_lipat_lembar_20; ?></option>                                             
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div><hr>
+                                <?php } ?>
+
+                                    <h4>Keterangan</h4>
+                                <?php if($row->id_laminasi == null) {?>                                     
+                                    <textarea name="keterangan_jadwal_fp_shoe" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+                                <?php }else{ ?>                                  
+                                    <textarea name="keterangan_jadwal_fp_shoe" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_fp_shoe; ?></textarea><br>
+                                <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                                    <button type="submit" class="btn btn-success" name="add">Jadwal</button>
+                                    <?php if($row->id_laminasi == null) {?>  
+                                      <button type="submit" class="btn btn-success" name="add">Jadwal</button>
+                                    <?php }else{ ?>
+                                      <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
+                                    <?php } ?>
                                   </div>
                                 </div>
                               </div>
@@ -584,9 +876,20 @@
 
                                 <div class="row">
                                   <div class="col-md-6">
-                                    Tanggal Pelaksanaan<br>
-                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_mesin_mbo" placeholder="Tanggal Pelaksanaan">
-                                  </div>  
+                                    Tanggal Pelaksanaan<br>         
+                                    <?php if($row->id_laminasi == null) {?>                           
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_mbo"  id="tgll_mbo<?= $row->id_order; ?>" > 
+                                    <?php }else{ ?>                                                                       
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_mbo"  id="tgll_mbo<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_mesin_mbo; ?>">
+                                      <?php } ?>
+                                  </div>
+                                  <div class="col-md-6"><br>                                                                 
+                                    <?php if($row->id_laminasi == null) {?>                                                           
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_mbo<?= $row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php }else{ ?>   
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_mbo<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php } ?>
+                                  </div>
                                 </div><hr>
 
                                 <div class="row">
@@ -601,8 +904,9 @@
                                   </div>
                                 </div><hr>
 
+                                <?php if($row->id_laminasi == null) {?>  
                                 <div class="row">
-                                  <!-- LEMBAR 1 - 10 -->
+                                  <!-- LEMBAR 1 - 10 -->                                  
                                   <div class="col">
                                     <div class="row">
                                       <div class="col-md-6">Lembar 1</div>
@@ -852,13 +1156,293 @@
                                   </div>
                                 </div><hr>
 
-                                <h4>Keterangan</h4>
-                                <textarea name="keterangan_jadwal_fp_mbo" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+                                <?php }else{ ?>
+                                  <div class="row">
+                                  <!-- LEMBAR 1 - 10 -->                                  
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 1</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_1" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_1; ?>"><?php echo $row->mbo_lipat_lembar_1; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 2</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_2" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_2; ?>"><?php echo $row->mbo_lipat_lembar_2; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 3</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_3" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_3; ?>"><?php echo $row->mbo_lipat_lembar_3; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 4</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_4" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_4; ?>"><?php echo $row->mbo_lipat_lembar_4; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 5</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_5" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_5; ?>"><?php echo $row->mbo_lipat_lembar_5; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 6</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_6" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_6; ?>"><?php echo $row->mbo_lipat_lembar_6; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 7</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_7" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_7; ?>"><?php echo $row->mbo_lipat_lembar_7; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 8</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_8" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_8; ?>"><?php echo $row->mbo_lipat_lembar_8; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 9</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_9" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_9; ?>"><?php echo $row->mbo_lipat_lembar_9; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 10</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_10" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_10; ?>"><?php echo $row->mbo_lipat_lembar_10; ?></option>
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
 
+                                  <div class="col-md-1"></div>
+                                  <!-- LEMBAR 11 - 20 -->
+                                  <div class="col">
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 11</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_11" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_11; ?>"><?php echo $row->mbo_lipat_lembar_11; ?></option>                                          
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 12</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_12" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_12; ?>"><?php echo $row->mbo_lipat_lembar_12; ?></option> 
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 13</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_13" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_13; ?>"><?php echo $row->mbo_lipat_lembar_13; ?></option>                                           
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 14</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_14" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_14; ?>"><?php echo $row->mbo_lipat_lembar_14; ?></option>                                           
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 15</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_15" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_15; ?>"><?php echo $row->mbo_lipat_lembar_15; ?></option>                                             
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 16</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_16" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_16; ?>"><?php echo $row->mbo_lipat_lembar_16; ?></option>                                           
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 17</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_17" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_17; ?>"><?php echo $row->mbo_lipat_lembar_17; ?></option>                                             
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 18</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_18" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_18; ?>"><?php echo $row->mbo_lipat_lembar_18; ?></option>                                             
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 19</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_19" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_19; ?>"><?php echo $row->mbo_lipat_lembar_19; ?></option>                                            
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div><br>
+                                    <div class="row">
+                                      <div class="col-md-6">Lembar 20</div>
+                                      <div class="col-md-6">
+                                        <select id="inputState" class="form-select form-control" name="mbo_lipat_lembar_20" >
+                                          <option value="<?php echo $row->mbo_lipat_lembar_20; ?>"><?php echo $row->mbo_lipat_lembar_20; ?></option>                                             
+                                          <option value="Lipat 1">Lipat 1</option>
+                                          <option value="Lipat 2">Lipat 2</option>
+                                          <option value="Lipat 3">Lipat 3</option>
+                                          <option value="Lipat 4">Lipat 4</option>
+                                          <option value="-">-</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div><hr>
+                                <?php } ?>
+
+                                <h4>Keterangan</h4>
+                                <?php if($row->id_laminasi == null) {?>                                     
+                                    <textarea name="keterangan_jadwal_fp_mbo" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+                                <?php }else{ ?>                                  
+                                    <textarea name="keterangan_jadwal_fp_mbo" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_fp_mbo; ?></textarea><br>
+                                <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                                    <button type="submit" class="btn btn-success" name="add">Jadwal</button>
+                                    <?php if($row->id_laminasi == null) {?>  
+                                      <button type="submit" class="btn btn-success" name="add">Jadwal</button>
+                                    <?php }else{ ?>
+                                      <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
+                                    <?php } ?>
                                   </div>
                                 </div>
                               </div>
@@ -949,8 +1533,19 @@
 
                                 <div class="row">
                                   <div class="col-md-6">
-                                    Tanggal Pelaksanaan<br>
-                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_sub_proses" placeholder="Tanggal Pelaksanaan">
+                                    Tanggal Pelaksanaan<br>         
+                                    <?php if($row->id_laminasi == null) {?>                           
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_sub_proses"  id="tgll_sub_proses<?= $row->id_order; ?>" > 
+                                    <?php }else{ ?>                                                                       
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_sub_proses"  id="tgll_sub_proses<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_sub_proses; ?>">
+                                      <?php } ?>
+                                  </div>  
+                                  <div class="col-md-6"><br>       
+                                    <?php if($row->id_laminasi == null) {?>                                                           
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_sub_proses<?= $row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php }else{ ?>   
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_sub_proses<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php } ?>
                                   </div>  
                                 </div><hr>
 
@@ -958,14 +1553,14 @@
                                   <div class="col-md-12">
                                     Jenis SUB<br>
                                     <div class="card-body">
-                                      <div class="row">
-                                        <div class="col-md-4">
 
+                                    <?php if($row->id_laminasi == null) {?>     
+                                      <div class="row">
+                                        <div class="col-md-4">                                      
                                         <input type="text" name="jenis_sub_lipat" value="" hidden>
                                           <input class="form-check-input" type="checkbox" name="jenis_sub_lipat" value="lipat" id="flexCheckDefault">
                                           <label class="form-check-label" for="flexCheckDefault">Lipat</label>
                                         </div>
-
                                         <div class="col-md-4">
                                         <input type="text" name="jenis_sub_susun_gabung" value="" hidden>
                                           <input class="form-check-input" type="checkbox" name="jenis_sub_susun_gabung" value="susun gabung" id="flexCheckDefault">
@@ -977,17 +1572,45 @@
                                           <label class="form-check-label" for="flexCheckDefault">Laminasi</label>
                                         </div>
                                       </div>
+                                    <?php }else{?>     
+                                        <div class="row">
+                                          <div class="col-md-4">                                      
+                                          <input type="text" name="jenis_sub_lipat" value="" hidden>
+                                            <input class="form-check-input" type="checkbox" name="jenis_sub_lipat" value="lipat" id="flexCheckDefault" <?php echo $row->jenis_sub_lipat == "lipat" ?  "checked" : "" ?>>
+                                            <label class="form-check-label" for="flexCheckDefault">Lipat</label>
+                                          </div>
+                                          <div class="col-md-4">
+                                          <input type="text" name="jenis_sub_susun_gabung" value="" hidden>
+                                            <input class="form-check-input" type="checkbox" name="jenis_sub_susun_gabung" value="susun gabung" id="flexCheckDefault" <?php echo $row->jenis_sub_susun_gabung == "susun gabung" ?  "checked" : "" ?>>
+                                            <label class="form-check-label" for="flexCheckDefault">Susun / Gabung</label>
+                                          </div>
+                                          <div class="col-md-4">
+                                          <input type="text" name="jenis_sub_laminasi" value="" hidden>
+                                            <input class="form-check-input" type="checkbox" name="jenis_sub_laminasi" value="laminasi" id="flexCheckDefault" <?php echo $row->jenis_sub_laminasi == "laminasi" ?  "checked" : "" ?>>
+                                            <label class="form-check-label" for="flexCheckDefault">Laminasi</label>
+                                          </div>
+                                        </div>
+                                    <?php }?>     
+                                      
+                                      
                                     </div>
                                   </div>
                                 </div><hr>
 
                                 <h4>Keterangan</h4>
-                                <textarea name="keterangan_jadwal_sub_proses" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
-
+                                <?php if($row->id_laminasi == null) {?>                                     
+                                    <textarea name="keterangan_jadwal_sub_proses" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+                                <?php }else{ ?>                                  
+                                    <textarea name="keterangan_jadwal_sub_proses" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_sub_proses; ?></textarea><br>
+                                <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                                    <button type="submit" class="btn btn-success" name="add">Jadwal</button>
+                                    <?php if($row->id_laminasi == null) {?>  
+                                      <button type="submit" class="btn btn-success" name="add">Jadwal</button>
+                                    <?php }else{ ?>
+                                      <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
+                                    <?php } ?>
                                   </div>
                                 </div>
                               </div>
@@ -1052,8 +1675,19 @@
 
                                 <div class="row">
                                   <div class="col-md-6">
-                                    Tanggal Pelaksanaan<br>
-                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_laminasi" placeholder="Tanggal Pelaksanaan">
+                                    Tanggal Pelaksanaan<br>         
+                                    <?php if($row->id_laminasi == null) {?>                           
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_laminasi"  id="tgll_laminasi<?= $row->id_order; ?>" > 
+                                    <?php }else{ ?>                                                                       
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_laminasi"  id="tgll_laminasi<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_laminasi; ?>">
+                                      <?php } ?>
+                                  </div>  
+                                  <div class="col-md-6"><br>       
+                                    <?php if($row->id_laminasi == null) {?>                                                           
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_laminasi<?= $row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php }else{ ?>   
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_laminasi<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php } ?>
                                   </div>  
                                 </div><hr>
 
@@ -1085,12 +1719,19 @@
                                 </div><hr>
 
                                 <h4>Keterangan</h4>
-                                <textarea name="keterangan_jadwal_fp_laminasi" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
-
+                                <?php if($row->id_laminasi == null) {?>                                     
+                                    <textarea name="keterangan_jadwal_fp_laminasi" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+                                <?php }else{ ?>                                  
+                                    <textarea name="keterangan_jadwal_fp_laminasi" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_fp_laminasi; ?></textarea><br>
+                                <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                                    <button type="submit" class="btn btn-success" name="add">Jadwal</button>
+                                    <?php if($row->id_laminasi == null) {?>  
+                                      <button type="submit" class="btn btn-success" name="add">Jadwal</button>
+                                    <?php }else{ ?>
+                                      <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
+                                    <?php } ?>
                                   </div>
                                 </div>
                               </div>
@@ -1181,8 +1822,19 @@
 
                                 <div class="row">
                                   <div class="col-md-6">
-                                    Tanggal Pelaksanaan<br>
-                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_mesin_susun" placeholder="Tanggal Pelaksanaan">
+                                    Tanggal Pelaksanaan<br>         
+                                    <?php if($row->id_laminasi == null) {?>                           
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_susun"  id="tgll_susun<?= $row->id_order; ?>" > 
+                                    <?php }else{ ?>                                                                       
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_susun"  id="tgll_susun<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_mesin_susun; ?>">
+                                      <?php } ?>
+                                  </div>  
+                                  <div class="col-md-6"><br>       
+                                    <?php if($row->id_laminasi == null) {?>                                                           
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_susun<?= $row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php }else{ ?>   
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_susun<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php } ?>
                                   </div>  
                                 </div><hr>
 
@@ -1192,13 +1844,20 @@
                                   </div>
                                 </div><hr>
 
-                                <h4>Keterangan</h4>
-                                <textarea name="keterangan_jadwal_fp_susun" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
-
+                               <h4>Keterangan</h4>
+                                <?php if($row->id_laminasi == null) {?>                                     
+                                    <textarea name="keterangan_jadwal_fp_susun" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+                                <?php }else{ ?>                                  
+                                    <textarea name="keterangan_jadwal_fp_susun" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_fp_susun; ?></textarea><br>
+                                <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                                    <button type="submit" class="btn btn-success" name="add">Jadwal</button>
+                                    <?php if($row->id_laminasi == null) {?>  
+                                      <button type="submit" class="btn btn-success" name="add">Jadwal</button>
+                                    <?php }else{ ?>
+                                      <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
+                                    <?php } ?>
                                   </div>
                                 </div>
                               </div>
@@ -1224,6 +1883,7 @@
     </div>
     <!-- /.col -->
   </div>
+  
   <!-- /.row -->
 </section>
 <!-- /.content -->
