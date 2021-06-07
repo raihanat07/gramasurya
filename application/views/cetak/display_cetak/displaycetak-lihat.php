@@ -161,7 +161,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Kertas Cover 1</label><br>
-                                                AP 120 gr
+                                                <?= $row->jenis_kertas_cover_1; ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 1</label>
@@ -171,7 +171,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Cover 1</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_cover1" value="<?= $row->jumlah_kertas_cover1; ?>" placeholder="Masukan Jumlah Kertas Cover 1" disabled>
+                                                <input type="text" class="form-control" name="jumlah_kertas_cover_1" value="<?= $row->jumlah_kertas_cover_1; ?>" placeholder="Masukan Jumlah Kertas Cover 1" disabled>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Cover 1</label><br>
@@ -181,7 +181,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Warna Cover 1</label><br>
-                                                4/4
+                                                <?= $row->warna_cover_1; ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Cetak Cover 1</label><br>
@@ -191,7 +191,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Cover 1</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_cover1" value="<?= $row->ukuran_potong_cover1; ?>" placeholder="Masukan Ukuran Potong Cover 1" disabled>
+                                                <input type="number" class="form-control" name="potong_cover_1" value="<?= $row->potong_cover_1; ?>" placeholder="Masukan Ukuran Potong Cover 1" disabled>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Cover 1</label>
@@ -234,7 +234,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Kertas Cover 2</label><br>
-                                                AP 120 gr
+                                                <?= $row->jenis_kertas_cover_2; ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 2</label>
@@ -244,7 +244,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Cover 2</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_cover2" value="<?= $row->jumlah_kertas_cover2; ?>" placeholder="Masukan Jumlah Kertas Cover 2"  disabled>
+                                                <input type="text" class="form-control" name="jumlah_kertas_cover_2" value="<?= $row->jumlah_kertas_cover_2; ?>" placeholder="Masukan Jumlah Kertas Cover 2"  disabled>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Cover 2</label><br>
@@ -254,7 +254,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Warna Cover 2</label><br>
-                                                4/4
+                                                <?= $row->warna_cover_2; ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Cetak Cover 2</label><br>
@@ -264,7 +264,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Cover 2</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_cover2" value="<?= $row->ukuran_potong_cover2; ?>" placeholder="Masukan Ukuran Potong Cover 2"  disabled>
+                                                <input type="number" class="form-control" name="potong_cover_2" value="<?= $row->potong_cover_2; ?>" placeholder="Masukan Ukuran Potong Cover 2"  disabled>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Cover 2</label>
@@ -307,7 +307,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Kertas Cover 3</label><br>
-                                                AP 120 gr
+                                                <?= $row->jenis_kertas_cover_3; ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 3</label>
@@ -317,7 +317,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Cover 3</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_cover3" value="<?= $row->jumlah_kertas_cover3; ?>" placeholder="Masukan Jumlah Kertas Cover 3"  disabled>
+                                                <input type="text" class="form-control" name="jumlah_kertas_cover_3" value="<?= $row->jumlah_kertas_cover_3; ?>" placeholder="Masukan Jumlah Kertas Cover 3"  disabled>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Cover 3</label><br>
@@ -327,7 +327,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Warna Cover 3</label><br>
-                                                4/4
+                                                <?= $row->warna_cover_3; ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Cetak Cover 3</label><br>
@@ -337,7 +337,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Cover 3</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_cover3" value="<?= $row->ukuran_potong_cover3; ?>" placeholder="Masukan Ukuran Potong Cover 3"  disabled>
+                                                <input type="number" class="form-control" name="potong_cover_3" value="<?= $row->potong_cover_3; ?>" placeholder="Masukan Ukuran Potong Cover 3"  disabled>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Cover 3</label>
@@ -380,7 +380,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Kertas Isi 1</label><br>
-                                                AP 120 gr
+                                                <?= $row->jenis_kertas_isi_1; ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Isi 1</label>
@@ -390,7 +390,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Isi 1</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_isi1" value="<?= $row->jumlah_kertas_isi1; ?>" placeholder="Masukan Jumlah Kertas Isi 1"  disabled>
+                                                <input type="text" class="form-control" name="jumlah_kertas_isi_1" value="<?= $row->jumlah_kertas_isi_1; ?>" placeholder="Masukan Jumlah Kertas Isi 1"  disabled>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Isi 1</label><br>
@@ -400,7 +400,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Warna Isi 1</label><br>
-                                                4/4
+                                                <?= $row->warna_isi_1; ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Cetak Isi 1</label><br>
@@ -410,7 +410,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Isi 1</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_isi1" value="<?= $row->ukuran_potong_isi1; ?>" placeholder="Masukan Ukuran Potong Isi 1"  disabled>
+                                                <input type="number" class="form-control" name="potong_isi_1" value="<?= $row->potong_isi_1; ?>" placeholder="Masukan Ukuran Potong Isi 1"  disabled>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Isi 1</label>
@@ -453,7 +453,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Kertas Isi 2</label><br>
-                                                AP 120 gr
+                                                <?= $row->jenis_kertas_isi_2; ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Isi 2</label>
@@ -463,7 +463,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Isi 2</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_isi2" value="<?= $row->jumlah_kertas_isi2; ?>" placeholder="Masukan Jumlah Kertas Isi 2"  disabled>
+                                                <input type="text" class="form-control" name="jumlah_kertas_isi_2" value="<?= $row->jumlah_kertas_isi_2; ?>" placeholder="Masukan Jumlah Kertas Isi 2"  disabled>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Isi 2</label><br>
@@ -473,7 +473,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Warna Isi 2</label><br>
-                                                4/4
+                                                <?= $row->warna_isi_2; ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Cetak Isi 2</label><br>
@@ -483,7 +483,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Isi 2</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_isi2" value="<?= $row->ukuran_potong_isi2; ?>" placeholder="Masukan Ukuran Potong Isi 2"  disabled>
+                                                <input type="number" class="form-control" name="potong_isi_2" value="<?= $row->potong_isi_2; ?>" placeholder="Masukan Ukuran Potong Isi 2"  disabled>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Isi 2</label>
@@ -526,7 +526,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Kertas Isi 3</label><br>
-                                                AP 120 gr
+                                                <?= $row->jenis_kertas_isi_3; ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Isi 3</label>
@@ -536,7 +536,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Jumlah Kertas Isi 3</label><br>
-                                                <input type="text" class="form-control" name="jumlah_kertas_isi3" value="<?= $row->jumlah_kertas_isi3; ?>" placeholder="Masukan Jumlah Kertas Isi 3"  disabled>
+                                                <input type="text" class="form-control" name="jumlah_kertas_isi_3" value="<?= $row->jumlah_kertas_isi_3; ?>" placeholder="Masukan Jumlah Kertas Isi 3"  disabled>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Hasil Kertas Isi 3</label><br>
@@ -546,7 +546,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Warna Isi 3</label><br>
-                                                4/4
+                                                <?= $row->warna_isi_3; ?>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder Cetak Isi 3</label><br>
@@ -556,7 +556,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Ukuran Potong Isi 3</label><br>
-                                                <input type="number" class="form-control" name="ukuran_potong_isi3" value="<?= $row->ukuran_potong_isi3; ?>" placeholder="Masukan Ukuran Potong Isi 3"  disabled>
+                                                <input type="number" class="form-control" name="potong_isi_3" value="<?= $row->potong_isi_3; ?>" placeholder="Masukan Ukuran Potong Isi 3"  disabled>
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Suborder In Cetak Isi 3</label>
