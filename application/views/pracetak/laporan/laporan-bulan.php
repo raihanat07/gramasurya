@@ -155,7 +155,15 @@
 
               </td>
             </tr> 
-            <?php } ?> 
+            <?php } ?>
+            <tr>
+              <td colspan="5" align="right">Total Plat</td>
+              <td>102</td>
+              <td>74</td>
+              <td>72</td>
+              <td>Paper Plate</td>
+              <td colspan="2"></td>
+            </tr> 
           </table> 
         </div>
         <!-- /.card-body -->
