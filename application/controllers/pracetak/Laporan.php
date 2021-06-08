@@ -63,7 +63,30 @@ class Laporan extends CI_Controller {
 		);	
 		$this->template->load('pracetak/template','pracetak/laporan/laporan-print',$data);
 	}
-
+	public function filter_bulan()
+	{
+		check_not_login();
+		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
+		$query = $this->laporan->filter_bulan($bulan, $tahun);
+		$data = array(
+			'judul' => 'Laporan',
+			'bulan' => $bulan,
+			'tahun' => $tahun,
+			'laporan' => $query->result(),
+		);	
+		$this->template->load('pracetak/template','pracetak/laporan/laporan-bulan',$data);
+	}
+	public function lihat_laporan_bulan($id)
+	{
+		check_not_login();
+		$query = $this->laporan->get_lihatlaporan($id);
+		$data = array(
+			'judul' => 'Lihat Laporan',
+			'laporan' => $query->result(),
+		);	
+		$this->template->load('pracetak/template','pracetak/laporan/laporan-lihat-bulan',$data);
+	}
 	public function proses()
 	{		
 		if(isset($_POST['edit'])){							

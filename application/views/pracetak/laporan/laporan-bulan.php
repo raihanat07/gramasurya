@@ -1,132 +1,21 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
-      <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-12">
-            <h1>LAPORAN</h1><br>
-            <form>
-              <div class="row">
-                <div class="col-md-4">
-                  <section class="content">
-                    <div class="card">
-                      <div class="card-header border bg-primary">
-                        <h3 class="card-title">Filter Data Perhari</h3>
-
-                        <div class="card-tools">
-                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fa fa-minus"></i></button>
-                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                            <i class="fa fa-times"></i></button> -->
-                        </div>
-                      </div>
-                      <div class="card-body">
-                        <form  action="<?=site_url('pracetak/laporan/laporan_bulan')?>" method="post">
-                          <div class="row">
-                              <div class="col-md-12">    
-                                <div class="form-group">
-                                    <label>Masukkan tanggal</label>
-                                    <input type="date" name="tanggal"  class="form-control  " placeholder="Enter ...">                                        
-                                </div>
-                              </div>
-                          </div><br>
-                          <div class="row">
-                            <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-                <div class="col-md-4">
-                  <section class="content">
-                    <div class="card">
-                      <div class="card-header border bg-primary">
-                        <h3 class="card-title">Filter Data Perbulan</h3>
-
-                        <div class="card-tools">
-                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fa fa-minus"></i></button>
-                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                            <i class="fa fa-times"></i></button> -->
-                        </div>
-                      </div>
-                      <div class="card-body">
-                         <form  action="<?=site_url('pracetak/laporan/filter_bulan')?>" method="post">
-                            <div class="row">
-                                <div class="col-md-6">
-                                  <label>Bulan</label> 
-                                    <select name="bulan" class="form-control">
-                                      <?php 
-                                      $mulai = 1;
-                                      $bulan=array("bulan","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
-                                      for($i = $mulai; $i < $mulai + 12; $i++){
-                                        echo '<option value="'.$i.'">'.$bulan[$i].'</option>';
-                                      }
-                                      ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">    
-                                <label>Tahun</label> 
-                                  <select name="tahun" class="form-control">
-                                      <?php 
-                                      $mulai = date('Y');
-                                      for($i = $mulai; $i < $mulai + 6; $i++){
-                                        echo '<option value="'.$i.'">'.$i.'</option>';
-                                      }
-                                      ?>
-                                    </select>
-                              </div>
-                            </div><br>
-                            <div class="row">
-                              <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
-                            </div>
-                          </form>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-                <div class="col-md-4">
-                  <section class="content">
-                    <div class="card">
-                      <div class="card-header border bg-primary">
-                        <h3 class="card-title">Filter Data Pertahun</h3>
-
-                        <div class="card-tools">
-                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fa fa-minus"></i></button>
-                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                            <i class="fa fa-times"></i></button> -->
-                        </div>
-                      </div>
-                      <div class="card-body">
-                      <form  action="<?=site_url('filter/filter_trankamar')?>" method="post">
-                            <div class="row">
-                                <div class="col-md-12">    
-                                <label>Tahun</label> 
-                                  <?php
-                                    $now=date('Y');
-                                    echo "<select name=’tahun’ class='form-control'>";
-                                    for ($a=$now;$a>=2000;$a--)
-                                    {
-                                        echo "<option value='$a'>$a</option>";
-                                    }
-                                    echo "</select>";
-                                  ?>
-                              </div>
-                            </div><br>
-                            <div class="row">
-                              <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
-                            </div>
-                          </form>
-                    </div>
-                  </section>
-                </div>
-              </div>
-            </form>
+          <div class="col-sm-6">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="<?=site_url()?>pracetak/laporan" class="btn btn-warning btn-lg">
+                <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
+                </a>
+              </li>
+              <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Blank Page</li> -->
+            </ol>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
+    </div><!-- /.container-fluid -->
+</section>
 
     <!-- Main content -->
     <section class="content">
@@ -134,8 +23,8 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Data Laporan</h3>
-
+          <h3 class="card-title">Data Laporan Bulan <?= $bulan ?> Tahun <?= $tahun ?> </h3>
+          
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
               <i class="fa fa-minus"></i></button>
@@ -254,7 +143,7 @@
               <td align="center">
                   
               <!-- lihat detail laporan -->                
-                  <a href="<?=site_url('pracetak/laporan/lihat_laporan/'.$row->id_order)?>">
+                  <a href="<?=site_url('pracetak/laporan/lihat_laporan'.$row->id_order)?>">
                     <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
 
