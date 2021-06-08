@@ -77,6 +77,30 @@ class Laporan extends CI_Controller {
 		);	
 		$this->template->load('pracetak/template','pracetak/laporan/laporan-bulan',$data);
 	}
+	public function filter_hari()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->laporan->filter_hari($hari);
+		$data = array(
+			'judul' => 'Laporan',
+			'hari' => $hari,
+			'laporan' => $query->result(),
+		);	
+		$this->template->load('pracetak/template','pracetak/laporan/laporan-hari',$data);
+	}
+	public function filter_tahun()
+	{
+		check_not_login();
+		$tahun = $this->input->post('tahun');
+		$query = $this->laporan->filter_tahun($tahun);
+		$data = array(
+			'judul' => 'Laporan',
+			'tahun' => $tahun,
+			'laporan' => $query->result(),
+		);	
+		$this->template->load('pracetak/template','pracetak/laporan/laporan-tahun',$data);
+	}
 	public function lihat_laporan_bulan($id)
 	{
 		check_not_login();

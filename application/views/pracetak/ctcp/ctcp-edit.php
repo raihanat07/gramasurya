@@ -706,7 +706,7 @@
                                 </div>
                             </div>
                         </div><br>
-                        <?php if($row->isi3plat1 != 0) :?>
+                        
                         <div class="row">
                             <div class="col-md-6" align="left">
                                 <button type="submit" name="edit" class="btn btn-success">Simpan</button>
@@ -717,6 +717,7 @@
                         </div>
                     </div>
                     <div class="col-md-6">
+                    <?php if($row->isi3plat1 != 0) :?>
                         <div class="row">
                             <div class="col">
                                 <div class="card border bg-info">

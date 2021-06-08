@@ -52,7 +52,12 @@
                 <td>Paper Plate</td>
               </tr>
             </thead>
-            <?php foreach($laporan as $s => $row) {?>  
+            <?php 
+            $total1=0;
+            $total2=0;
+            $total3=0;
+            $total4=0;
+            foreach($laporan as $s => $row) {?>  
             <tr>
               <td align="center"><?= $row->nomor_so; ?></td>
               <td><?= $row->tanggal_masuk; ?></td>
@@ -121,13 +126,19 @@
                                                             $row->isi1mesin1 == "Tokko" ? $isi4=$isi4+$p1 :  $isi4;
                                                             $row->isi2mesin1 == "Tokko" ? $isi4=$isi4+$p2 :  $isi4;
                                                             $row->isi3mesin1 == "Tokko" ? $isi4=$isi4+$p3 :  $isi4;
-                                                    ?>
+                                                   
+                                                   ?>
                                                                                                                              
               <td><?= $cover1+$isi1; ?></td>
               <td><?= $cover2+$isi2; ?></td>
               <td><?= $cover3+$isi3; ?></td>
               <td><?= $cover4+$isi4; ?></td>
-
+              <?php
+                $total1=$total1+$cover1+$isi1;
+                $total2=$total2+$cover2+$isi2;
+                $total3=$total3+$cover3+$isi3;
+                $total4=$total4+$cover4+$isi4;
+              ?>
 
               <td>
 
@@ -143,7 +154,7 @@
               <td align="center">
                   
               <!-- lihat detail laporan -->                
-                  <a href="<?=site_url('pracetak/laporan/lihat_laporan'.$row->id_order)?>">
+                  <a href="<?=site_url('pracetak/laporan/lihat_laporan/'.$row->id_order)?>">
                     <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
 
@@ -158,10 +169,10 @@
             <?php } ?>
             <tr>
               <td colspan="5" align="right">Total Plat</td>
-              <td>102</td>
-              <td>74</td>
-              <td>72</td>
-              <td>Paper Plate</td>
+              <td><?= $total1; ?></td>
+              <td><?= $total2; ?></td>
+              <td><?= $total3; ?></td>
+              <td><?= $total4; ?></td>
               <td colspan="2"></td>
             </tr> 
           </table> 

@@ -1,128 +1,21 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
-      <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-12">
-            <h1>LAPORAN</h1><br>
-            
-              <div class="row">
-                <div class="col-md-4">
-                  <section class="content">
-                    <div class="card">
-                      <div class="card-header border bg-primary">
-                        <h3 class="card-title">Filter Data Perhari</h3>
-
-                        <div class="card-tools">
-                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fa fa-minus"></i></button>
-                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                            <i class="fa fa-times"></i></button> -->
-                        </div>
-                      </div>
-                      <div class="card-body">
-                      <form  action="<?=site_url('pracetak/laporan/filter_hari')?>" method="post">
-                            <div class="row">
-                                <div class="col-md-12">
-                                  <label>masukkan tanggal</label> 
-                                  <input type="date" class="form-control" name="hari" placeholder="Deadline" required>
-                                </div>
-                            </div><br>
-                            <div class="row">
-                              <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
-                            </div>
-                          </form>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-                <div class="col-md-4">
-                  <section class="content">
-                    <div class="card">
-                      <div class="card-header border bg-primary">
-                        <h3 class="card-title">Filter Data Perbulan</h3>
-
-                        <div class="card-tools">
-                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fa fa-minus"></i></button>
-                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                            <i class="fa fa-times"></i></button> -->
-                        </div>
-                      </div>
-                      <div class="card-body">
-                         <form  action="<?=site_url('pracetak/laporan/filter_bulan')?>" method="post">
-                            <div class="row">
-                                <div class="col-md-6">
-                                  <label>Bulan</label> 
-                                    <select name="bulan" class="form-control">
-                                      <?php 
-                                      $mulai = 1;
-                                      $bulan=array("bulan","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
-                                      for($i = $mulai; $i < $mulai + 12; $i++){
-                                        echo '<option value="'.$i.'">'.$bulan[$i].'</option>';
-                                      }
-                                      ?>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">    
-                                <label>Tahun</label> 
-                                  <select name="tahun" class="form-control">
-                                      <?php 
-                                      $mulai = date('Y');
-                                      for($i = $mulai; $i < $mulai + 6; $i++){
-                                        echo '<option value="'.$i.'">'.$i.'</option>';
-                                      }
-                                      ?>
-                                    </select>
-                              </div>
-                            </div><br>
-                            <div class="row">
-                              <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
-                            </div>
-                          </form>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-                <div class="col-md-4">
-                  <section class="content">
-                    <div class="card">
-                      <div class="card-header border bg-primary">
-                        <h3 class="card-title">Filter Data Pertahun</h3>
-
-                        <div class="card-tools">
-                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fa fa-minus"></i></button>
-                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                            <i class="fa fa-times"></i></button> -->
-                        </div>
-                      </div>
-                      <div class="card-body">
-                      <form  action="<?=site_url('pracetak/laporan/filter_tahun')?>" method="post">
-                            <div class="row">
-                                <div class="col-md-12">    
-                                <label>Tahun</label> 
-                                   <select name="tahun" class="form-control">
-                                      <?php 
-                                      $mulai = date('Y');
-                                      for($i = $mulai; $i < $mulai + 6; $i++){
-                                        echo '<option value="'.$i.'">'.$i.'</option>';
-                                      }
-                                      ?>
-                                    </select>
-                              </div>
-                            </div><br>
-                            <div class="row">
-                              <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
-                            </div>
-                          </form>
-                    </div>
-                  </section>
-                </div>
-              </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="<?=site_url()?>pracetak/laporan" class="btn btn-warning btn-lg">
+                <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
+                </a>
+              </li>
+              <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Blank Page</li> -->
+            </ol>
           </div>
         </div>
-      </div><!-- /.container-fluid -->
-    </section>
+    </div><!-- /.container-fluid -->
+</section>
 
     <!-- Main content -->
     <section class="content">
@@ -130,8 +23,8 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title">Data Laporan</h3>
-
+          <h3 class="card-title">Data Laporan Tanggal <?= $hari ?>  </h3>
+          
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
               <i class="fa fa-minus"></i></button>
@@ -159,7 +52,12 @@
                 <td>Paper Plate</td>
               </tr>
             </thead>
-            <?php foreach($laporan as $s => $row) {?>  
+            <?php 
+            $total1=0;
+            $total2=0;
+            $total3=0;
+            $total4=0;
+            foreach($laporan as $s => $row) {?>  
             <tr>
               <td align="center"><?= $row->nomor_so; ?></td>
               <td><?= $row->tanggal_masuk; ?></td>
@@ -228,13 +126,19 @@
                                                             $row->isi1mesin1 == "Tokko" ? $isi4=$isi4+$p1 :  $isi4;
                                                             $row->isi2mesin1 == "Tokko" ? $isi4=$isi4+$p2 :  $isi4;
                                                             $row->isi3mesin1 == "Tokko" ? $isi4=$isi4+$p3 :  $isi4;
-                                                    ?>
+                                                   
+                                                   ?>
                                                                                                                              
               <td><?= $cover1+$isi1; ?></td>
               <td><?= $cover2+$isi2; ?></td>
               <td><?= $cover3+$isi3; ?></td>
               <td><?= $cover4+$isi4; ?></td>
-
+              <?php
+                $total1=$total1+$cover1+$isi1;
+                $total2=$total2+$cover2+$isi2;
+                $total3=$total3+$cover3+$isi3;
+                $total4=$total4+$cover4+$isi4;
+              ?>
 
               <td>
 
@@ -262,7 +166,15 @@
 
               </td>
             </tr> 
-            <?php } ?> 
+            <?php } ?>
+            <tr>
+              <td colspan="5" align="right">Total Plat</td>
+              <td><?= $total1; ?></td>
+              <td><?= $total2; ?></td>
+              <td><?= $total3; ?></td>
+              <td><?= $total4; ?></td>
+              <td colspan="2"></td>
+            </tr> 
           </table> 
         </div>
         <!-- /.card-body -->
