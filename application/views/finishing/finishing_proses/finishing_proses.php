@@ -59,7 +59,8 @@
                         <td>Actions</td>
                       </tr>
                     </thead>
-                    <?php foreach($fp as $s => $row) {?>  
+                    <?php foreach($fp as $s => $row) {?> 
+                    <?php if(($row->id_jadwal_laminasi == 0  or $row->id_jadwal_laminasi == null ) and ($row->id_jadwal_mbo == 0  or $row->id_jadwal_mbo == null ) and ($row->id_jadwal_shoe == 0  or $row->id_jadwal_shoe == null ) and ($row->id_jadwal_susun == 0  or $row->id_jadwal_susun == null ) and ($row->id_jadwal_sub == 0  or $row->id_jadwal_sub == null )) { ?>
                       <tr>
                       <td align="center"><?= $row->nomor_so; ?></td>
                         <td><?= $row->tanggal_masuk; ?></td>
@@ -99,6 +100,8 @@
                           </a> -->
                         </td>
                       </tr>
+
+                      <?php } ?>
                       <?php } ?>
                     </tbody>
             

@@ -338,47 +338,171 @@ class FinishingProses extends CI_Controller {
 	}
 
 ///// MESIN SHOE
-    public function jadwal_fp_shoe()
-	{
-		// check_already_login_finishing();
-		$query = $this->fp->get();
-		$data = array(
-			'judul' => 'Finishing Proses',
-			'fp' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/jadwal-fp-shoe',$data);
-	}
-    public function tambah_jadwal_fp_shoe()
-	{
-		// check_already_login_finishing();
-		$query = $this->fp->get();
-		$data = array(
-			'judul' => 'Finishing Proses',
-			'fp' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp-shoe',$data);
-	}
-    public function edit_jadwal_fp_shoe()
-	{
-		// check_already_login_finishing();
-		$query = $this->fp->get();
-		$data = array(
-			'judul' => 'Finishing Proses',
-			'fp' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/edit-jadwal-fp-shoe',$data);
-	}
-    public function lihat_jadwal_fp_shoe()
-	{
-		// check_already_login_finishing();
-		$query = $this->fp->get();
-		$data = array(
-			'judul' => 'Finishing Proses',
-			'fp' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/lihat-jadwal-fp-shoe',$data);
-	}
+public function jadwal_fp_shoe()
+{
+	// check_already_login_finishing();
+	$query = $this->fp->get_jadwal_shoe();
+	$data = array(
+		'judul' => 'Finishing Proses',
+		'fp' => $query->result(),
+	);		
+	$this->template->load('finishing/template','finishing/finishing_proses/jadwal-fp-shoe',$data);
+}
+public function edit_jadwal_fp_shoe($id)
+{
+	 // check_already_login_finishing();
+	 $query = $this->fp->edit_shoe($id);
+	 $data = array(
+		 'judul' => 'Finishing Proses',
+		 'fp' => $query->result(),
+	 );
+	 $id_order = $data['fp'][0]->id_order;
+	 $ambil = $this->fp->ambilIDOrder_shoe($id_order)->result();
 
+	 $jadwal_max = 0;
+	 $total_keseluruhan = 0;
+	 $tampung_jadwal = [];		 		 
+	 foreach($ambil as $sq) {
+		  if($sq->id_jadwal_shoe > $jadwal_max) {
+			  $jadwal_max = $sq->id_jadwal_shoe;
+		  }
+		  $tampung_jadwal[] = $sq->id_jadwal_shoe;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_1;		  			  
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_2;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_3;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_4;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_5;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_6;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_7;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_8;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_9;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_10;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_11;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_12;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_13;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_14;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_15;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_16;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_17;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_18;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_19;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_20;		
+	 }
+
+	 $data['jadwal_max'] = $jadwal_max;
+	 $data['tampung_jadwal'] = $tampung_jadwal;		 		 
+	 $data['total_keseluruhan'] = $total_keseluruhan;		
+
+	 $this->template->load('finishing/template','finishing/finishing_proses/edit-jadwal-fp-shoe',$data);
+}
+public function tambah_jadwal_fp_shoe($id)
+{
+	 // check_already_login_finishing();
+	 $query = $this->fp->edit_shoe($id);
+	 $data = array(
+		 'judul' => 'Finishing Proses',
+		 'fp' => $query->result(),
+	 );
+	 $id_order = $data['fp'][0]->id_order;
+	 $ambil = $this->fp->ambilIDOrder_shoe($id_order)->result();
+
+	 $jadwal_max = 0;
+	 $total_keseluruhan = 0;
+	 $tampung_jadwal = [];		 		 
+	 foreach($ambil as $sq) {
+		  if($sq->id_jadwal_shoe > $jadwal_max) {
+			  $jadwal_max = $sq->id_jadwal_shoe;
+		  }
+		  $tampung_jadwal[] = $sq->id_jadwal_shoe;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_1;		  			  
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_2;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_3;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_4;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_5;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_6;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_7;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_8;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_9;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_10;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_11;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_12;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_13;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_14;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_15;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_16;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_17;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_18;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_19;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_20;		
+	 }
+
+	 $data['jadwal_max'] = $jadwal_max;
+	 $data['tampung_jadwal'] = $tampung_jadwal;		 		 
+	 $data['total_keseluruhan'] = $total_keseluruhan;		 	
+
+	$this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp-shoe',$data);
+}    
+public function lihat_jadwal_fp_shoe($id)
+{
+	 // check_already_login_finishing();
+	 $query = $this->fp->edit_shoe($id);
+	 $data = array(
+		 'judul' => 'Finishing Proses',
+		 'fp' => $query->result(),
+	 );
+	 $id_order = $data['fp'][0]->id_order;
+	 $ambil = $this->fp->ambilIDOrder_shoe($id_order)->result();
+
+	 $jadwal_max = 0;
+	 $total_keseluruhan = 0;
+	 $tampung_jadwal = [];		 		 
+	 foreach($ambil as $sq) {
+		  if($sq->id_jadwal_shoe > $jadwal_max) {
+			  $jadwal_max = $sq->id_jadwal_shoe;
+		  }
+		  $tampung_jadwal[] = $sq->id_jadwal_shoe;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_1;		  			  
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_2;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_3;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_4;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_5;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_6;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_7;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_8;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_9;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_10;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_11;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_12;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_13;
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_14;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_15;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_16;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_17;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_18;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_19;	
+		  $total_keseluruhan += $sq->hasil_lipatan_lembar_20;		
+	 }
+
+	 $data['jadwal_max'] = $jadwal_max;
+	 $data['tampung_jadwal'] = $tampung_jadwal;		 		 
+	 $data['total_keseluruhan'] = $total_keseluruhan;	
+	$this->template->load('finishing/template','finishing/finishing_proses/lihat-jadwal-fp-shoe',$data);
+}
+public function proses_shoe()
+{		
+	if(isset($_POST['edit'])){							
+		$inputan = $this->input->post(null, TRUE);
+		$this->fp->proses_edit_shoe($inputan);				
+			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_shoe')."'; </script>"; 
+	}
+	if(isset($_POST['add'])){							
+		$inputan = $this->input->post(null, TRUE);
+		$this->fp->proses_tambah_shoe($inputan);				
+			echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_shoe')."'; </script>"; 
+	}
+}
 	
 ///// MESIN SUSUN
     public function jadwal_fp_susun()
