@@ -22,7 +22,20 @@ class Imposisi extends CI_Controller {
 		//  die;
 		$this->template->load('pracetak/template','pracetak/imposisi/imposisi',$data);
 	}
-	
+	public function filter_bulan()
+	{
+		check_not_login();
+		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
+		$query = $this->imposisi->filter_bulan($bulan, $tahun);
+		$data = array(
+			'judul' => 'Imposisi',
+			'bulan' => $bulan,
+			'tahun' => $tahun,
+			'imposisi' => $query->result(),
+		);	
+		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-bulan',$data);
+	}
 	public function tambah_imposisi($id)
 	{
 		check_not_login();

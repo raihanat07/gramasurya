@@ -175,7 +175,12 @@
               <td><?= $total4; ?></td>
               <td colspan="2"></td>
             </tr> 
-          </table> 
+          </table>
+          <div class="row no-print">
+              <div class="col-12">
+              <button class="btn btn-info" onclick="window.print()"><i class="fa fa-print"> Cetak</i></button>
+              </div>
+          </div> 
         </div>
         <!-- /.card-body -->
         <!-- <div class="card-footer">

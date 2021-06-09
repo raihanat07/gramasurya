@@ -67,7 +67,7 @@
                                 <label>Tahun</label> 
                                   <select name="tahun" class="form-control">
                                       <?php 
-                                      $mulai = date('Y');
+                                      $mulai = 2021;
                                       for($i = $mulai; $i < $mulai + 6; $i++){
                                         echo '<option value="'.$i.'">'.$i.'</option>';
                                       }
@@ -103,7 +103,7 @@
                                 <label>Tahun</label> 
                                    <select name="tahun" class="form-control">
                                       <?php 
-                                      $mulai = date('Y');
+                                      $mulai = 2021;
                                       for($i = $mulai; $i < $mulai + 6; $i++){
                                         echo '<option value="'.$i.'">'.$i.'</option>';
                                       }

@@ -20,7 +20,20 @@ class Ctcp extends CI_Controller {
 		);	
 		$this->template->load('pracetak/template','pracetak/ctcp/ctcp',$data);
 	}
-
+	public function filter_bulan()
+	{
+		check_not_login();
+		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
+		$query = $this->ctcp->filter_bulan($bulan, $tahun);
+		$data = array(
+			'judul' => 'CTCP',
+			'bulan' => $bulan,
+			'tahun' => $tahun,
+			'ctcp' => $query->result(),
+		);	
+		$this->template->load('pracetak/template','pracetak/ctcp/ctcp-bulan',$data);
+	}
 	public function tambah_ctcp($id)
 	{
 		check_not_login();
