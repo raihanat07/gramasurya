@@ -1396,8 +1396,158 @@ public function proses_tambah_shoe($data)
 
 }
 
+//// MESIN SUSUN
+        public function get_jadwal_susun()
+        {
+            $this->db->select('
+                order.id_order as id_order,
+                order.nomor_so as nomor_so,
+                order.tanggal_masuk as tanggal_masuk,
+                order.deadline as deadline,
+                order.nama_pemesan as nama_pemesan,
+                order.nama_orderan as nama_orderan, 
+                order.ukuran as ukuran, 
+                order.halaman as halaman, 
+                order.oplag as oplag, 
+                order.so_status as so_status,
+                
+                susun.id_jadwal_susun as id_jadwal_susun,
+                susun.status_susun as status_susun,
+                susun.id_susun as id_susun,
+                susun.hasil_1 as hasil_1,
+                susun.hasil_2 as hasil_2,            
+                susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun',                
+            );           
 
+            $this->db->from('order');                           
+            $this->db->join('susun','order.id_order = susun.id_order' ); 
+            $this->db->where('susun.tanggal_pelaksanaan_mesin_susun !=', '0000-00-00');    
+            $this->db->order_by('susun.tanggal_pelaksanaan_mesin_susun', 'asc');        
+            
+            $query = $this->db->get();
+            return $query;  
+}
 
+        public function ambilIDOrder_SUSUN($id_order)
+        {
+            $this->db->select('
+                order.id_order as id_order,
+                order.nomor_so as nomor_so,
+                order.tanggal_masuk as tanggal_masuk,
+                order.deadline as deadline,
+                order.nama_pemesan as nama_pemesan,
+                order.nama_orderan as nama_orderan, 
+                order.ukuran as ukuran, 
+                order.halaman as halaman, 
+                order.oplag as oplag, 
+                order.so_status as so_status,
+                
+                susun.id_jadwal_susun as id_jadwal_susun,
+                susun.id_susun as id_susun,
+                susun.hasil_1 as hasil_1,
+                susun.hasil_2 as hasil_2,            
+                susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun',
+                
+            );           
+
+            $this->db->from('order');                           
+            $this->db->join('susun','order.id_order = susun.id_order' ); 
+            $this->db->where('susun.tanggal_pelaksanaan_mesin_susun !=', '0000-00-00');    
+            $this->db->where('susun.id_order', $id_order);
+            $this->db->order_by('susun.tanggal_pelaksanaan_mesin_susun', 'asc');        
+            
+            $query = $this->db->get();
+            return $query;  
+}
+        public function edit_susun($id)
+        {
+            $this->db->select('
+                order.id_order as id_order,
+                order.nomor_so as nomor_so,
+                order.tanggal_masuk as tanggal_masuk,
+                order.deadline as deadline,
+                order.nama_pemesan as nama_pemesan,
+                order.nama_orderan as nama_orderan, 
+                order.ukuran as ukuran, 
+                order.halaman as halaman, 
+                order.oplag as oplag, 
+                order.so_status as so_status,
+                finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,            
+                finishing.finishing_cover_uvi as uvi,finishing.finishing_cover_glossy as glossy,finishing.finishing_cover_doff as doff,
+
+                susun.id_susun as id_susun,
+                susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun,
+                
+                susun.status_susun as status_susun,
+                susun.keterangan_jadwal_fp_susun as keterangan_jadwal_fp_susun,                
+                susun.tanggal_pengerjaan_1 as tanggal_pengerjaan_1,
+                susun.hasil_1 as hasil_1,                
+                susun.operator_1 as operator_1,                
+                susun.keterangan_1 as keterangan_1,
+                susun.tanggal_pengerjaan_2 as tanggal_pengerjaan_2,
+                susun.hasil_2 as hasil_2,                
+                susun.operator_2 as operator_2,                
+                susun.keterangan_2 as keterangan_2,                           
+                ',
+            );           
+            // $this->db->select_max('susun.id_jadwal_susun');
+            $this->db->from('order');                           
+            $this->db->join('susun','order.id_order = susun.id_order' ); 
+            $this->db->join('finishing','order.id_order = finishing.id_order' ); 
+            $this->db->where('susun.id_susun', $id);       
+            
+            $query = $this->db->get();
+            return $query;  
+}
+
+    public function proses_edit_susun($data)
+    {
+            $ubah_susun = array(                                                                         
+                'tanggal_pelaksanaan_mesin_susun' =>$data['tanggal_pelaksanaan_susun'],                                     
+                'keterangan_jadwal_fp_susun' =>$data['keterangan_jadwal_fp_susun'],                   
+                'tanggal_pengerjaan_1' =>$data['tanggal_pengerjaan_1'],   
+                'hasil_1' =>$data['hasil_1'],                   
+                'operator_1' =>$data['operator_1'],                   
+                'keterangan_1' =>$data['keterangan_1'],   
+                'tanggal_pengerjaan_2' =>$data['tanggal_pengerjaan_2'],   
+                'hasil_2' =>$data['hasil_2'],                   
+                'operator_2' =>$data['operator_2'],                   
+                'keterangan_2' =>$data['keterangan_2'],                   
+
+            );                        
+            $this->db->set($ubah_susun);
+            $this->db->where('id_susun',$data['id_susun']);
+            $this->db->update('susun');  
+
+            $ubah_susun_khusus = array(                                                                                           
+                'status_susun' =>$data['status_susun'],                                                               
+            );                        
+            $this->db->set($ubah_susun_khusus);
+            $this->db->where('id_order',$data['id_order']);
+            $this->db->update('susun');  
+
+}
+    public function proses_tambah_susun($data)
+	{
+            $tambah_jadwal_susun = array(                                                                         
+                'id_order' =>$data['id_order'],                                   
+                'tanggal_pelaksanaan_mesin_susun' =>$data['tanggal_pelaksanaan_susun'],   
+                'id_jadwal_susun' =>$data['id_jadwal_susun'],   
+                'status_susun' =>$data['status_susun'],   
+                'keterangan_jadwal_fp_susun' =>$data['keterangan_jadwal_fp_susun'],                    
+                'tanggal_pengerjaan_1' =>$data['tanggal_pengerjaan_1'],   
+                'hasil_1' =>$data['hasil_1'],                   
+                'operator_1' =>$data['operator_1'],                   
+                'keterangan_1' =>$data['keterangan_1'],   
+                'tanggal_pengerjaan_2' =>$data['tanggal_pengerjaan_2'],   
+                'hasil_2' =>$data['hasil_2'],                   
+                'operator_2' =>$data['operator_2'],                   
+                'keterangan_2' =>$data['keterangan_2'],                   
+
+            );                                                          
+            $this->db->insert('susun',$tambah_jadwal_susun);
+
+}
 
 
 }

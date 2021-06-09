@@ -508,43 +508,124 @@ public function proses_shoe()
     public function jadwal_fp_susun()
 	{
 		// check_already_login_finishing();
-		$query = $this->fp->get();
+		$query = $this->fp->get_jadwal_susun();
 		$data = array(
 			'judul' => 'Finishing Proses',
 			'fp' => $query->result(),
 		);		
 		$this->template->load('finishing/template','finishing/finishing_proses/jadwal-fp-susun',$data);
-	}
-    public function tambah_jadwal_fp_susun()
+}
+	public function edit_jadwal_fp_susun($id)
 	{
 		// check_already_login_finishing();
-		$query = $this->fp->get();
+		$query = $this->fp->edit_susun($id);
 		$data = array(
 			'judul' => 'Finishing Proses',
 			'fp' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp-susun',$data);
-	}
-    public function edit_jadwal_fp_susun()
-	{
-		// check_already_login_finishing();
-		$query = $this->fp->get();
-		$data = array(
-			'judul' => 'Finishing Proses',
-			'fp' => $query->result(),
-		);		
+		);
+		$id_order = $data['fp'][0]->id_order;
+		$ambil = $this->fp->ambilIDOrder_susun($id_order)->result();
+ 
+		$jadwal_max = 0;
+		$tampung_jadwal = [];
+		$total_1=0;
+		$total_2=0;
+		foreach($ambil as $sq) {
+			 if($sq->id_jadwal_susun > $jadwal_max) {
+				 $jadwal_max = $sq->id_jadwal_susun;
+			 }
+			 $tampung_jadwal[] = $sq->id_jadwal_susun;
+			 $total_1 += $sq->hasil_1;
+			 $total_2 += $sq->hasil_2;
+		}
+ 
+		$data['jadwal_max'] = $jadwal_max;
+		$data['tampung_jadwal'] = $tampung_jadwal;
+		$data['total_1'] = $total_1;
+		$data['total_2'] = $total_2;	
+			
 		$this->template->load('finishing/template','finishing/finishing_proses/edit-jadwal-fp-susun',$data);
-	}
-    public function lihat_jadwal_fp_susun()
+}
+
+    public function tambah_jadwal_fp_susun($id)
 	{
 		// check_already_login_finishing();
-		$query = $this->fp->get();
+		$query = $this->fp->edit_susun($id);
 		$data = array(
 			'judul' => 'Finishing Proses',
 			'fp' => $query->result(),
-		);		
+		);
+		$id_order = $data['fp'][0]->id_order;
+		$ambil = $this->fp->ambilIDOrder_susun($id_order)->result();
+ 
+		$jadwal_max = 0;
+		$tampung_jadwal = [];
+		$total_1=0;
+		$total_2=0;
+		foreach($ambil as $sq) {
+			 if($sq->id_jadwal_susun > $jadwal_max) {
+				 $jadwal_max = $sq->id_jadwal_susun;
+			 }
+			 $tampung_jadwal[] = $sq->id_jadwal_susun;
+			 $total_1 += $sq->hasil_1;
+			 $total_2 += $sq->hasil_2;
+		}
+ 
+		$data['jadwal_max'] = $jadwal_max;
+		$data['tampung_jadwal'] = $tampung_jadwal;
+		$data['total_1'] = $total_1;
+		$data['total_2'] = $total_2;
+		
+		$this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp-susun',$data);
+}
+   
+    public function lihat_jadwal_fp_susun($id)
+	{
+		// check_already_login_finishing();
+		$query = $this->fp->edit_susun($id);
+		$data = array(
+			'judul' => 'Finishing Proses',
+			'fp' => $query->result(),
+		);
+		$id_order = $data['fp'][0]->id_order;
+		$ambil = $this->fp->ambilIDOrder_susun($id_order)->result();
+ 
+		$jadwal_max = 0;
+		$tampung_jadwal = [];
+		$total_1=0;
+		$total_2=0;
+		foreach($ambil as $sq) {
+			 if($sq->id_jadwal_susun > $jadwal_max) {
+				 $jadwal_max = $sq->id_jadwal_susun;
+			 }
+			 $tampung_jadwal[] = $sq->id_jadwal_susun;
+			 $total_1 += $sq->hasil_1;
+			 $total_2 += $sq->hasil_2;
+		}
+ 
+		$data['jadwal_max'] = $jadwal_max;
+		$data['tampung_jadwal'] = $tampung_jadwal;
+		$data['total_1'] = $total_1;
+		$data['total_2'] = $total_2;		
 		$this->template->load('finishing/template','finishing/finishing_proses/lihat-jadwal-fp-susun',$data);
-	}
+}
+
+	public function proses_susun()
+	{		
+		if(isset($_POST['edit'])){							
+			$inputan = $this->input->post(null, TRUE);
+			$this->fp->proses_edit_susun($inputan);				
+				echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
+				echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_susun')."'; </script>"; 
+		}
+		if(isset($_POST['add'])){							
+			$inputan = $this->input->post(null, TRUE);
+			$this->fp->proses_tambah_susun($inputan);				
+				echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
+				echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_susun')."'; </script>"; 
+		}
+}
+
 
 
 //// SUB
