@@ -59,7 +59,8 @@
                         <td>Actions</td>
                       </tr>
                     </thead>
-                    <?php foreach($fp as $s => $row) {?>  
+                    <?php foreach($fp as $s => $row) {?> 
+                    <?php if(($row->id_jadwal_laminasi == 0  or $row->id_jadwal_laminasi == null ) and ($row->id_jadwal_mbo == 0  or $row->id_jadwal_mbo == null ) and ($row->id_jadwal_shoe == 0  or $row->id_jadwal_shoe == null ) and ($row->id_jadwal_susun == 0  or $row->id_jadwal_susun == null ) and ($row->id_jadwal_sub == 0  or $row->id_jadwal_sub == null )) { ?>
                       <tr>
                       <td align="center"><?= $row->nomor_so; ?></td>
                         <td><?= $row->tanggal_masuk; ?></td>
@@ -99,6 +100,8 @@
                           </a> -->
                         </td>
                       </tr>
+
+                      <?php } ?>
                       <?php } ?>
                     </tbody>
             
@@ -107,6 +110,12 @@
                 <?php foreach($fp as $s => $row) {?> 
                   <form action="<?=site_url('finishing/FinishingProses/proses_fp')?>" method="post">
                   <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
+
+                  <input type="text" name="id_laminasi"  value="<?php echo $row->id_laminasi; ?>" hidden>
+                  <input type="text" name="id_mbo"  value="<?php echo $row->id_mbo; ?>" hidden>
+                  <input type="text" name="id_shoe"  value="<?php echo $row->id_shoe; ?>" hidden>
+                  <input type="text" name="id_susun"  value="<?php echo $row->id_susun; ?>" hidden>
+                  <input type="text" name="id_sub_proses"  value="<?php echo $row->id_sub_proses; ?>" hidden>
 
                 <div id="myModal<?= $row->id_order; ?>" class="modal fade" role="dialog">
                   <div class="modal-dialog modal-lg">
@@ -230,7 +239,7 @@
                                     <?php if($row->id_laminasi == null) {?>                                                           
                                       <a  class="btn btn-default" onclick="document.getElementById('tgll_shoe<?= $row->id_order; ?>').value='';">Hapus tanggal</a>
                                     <?php }else{ ?>   
-                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_shoe<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a>
+                                      <!-- <a  class="btn btn-default" onclick="document.getElementById('tgll_shoe<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a> -->
                                     <?php } ?>
                                   </div>  
                                 </div><hr>
@@ -887,7 +896,7 @@
                                     <?php if($row->id_laminasi == null) {?>                                                           
                                       <a  class="btn btn-default" onclick="document.getElementById('tgll_mbo<?= $row->id_order; ?>').value='';">Hapus tanggal</a>
                                     <?php }else{ ?>   
-                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_mbo<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a>
+                                      <!-- <a  class="btn btn-default" onclick="document.getElementById('tgll_mbo<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a> -->
                                     <?php } ?>
                                   </div>
                                 </div><hr>
@@ -1544,7 +1553,7 @@
                                     <?php if($row->id_laminasi == null) {?>                                                           
                                       <a  class="btn btn-default" onclick="document.getElementById('tgll_sub_proses<?= $row->id_order; ?>').value='';">Hapus tanggal</a>
                                     <?php }else{ ?>   
-                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_sub_proses<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a>
+                                      <!-- <a  class="btn btn-default" onclick="document.getElementById('tgll_sub_proses<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a> -->
                                     <?php } ?>
                                   </div>  
                                 </div><hr>
@@ -1686,7 +1695,7 @@
                                     <?php if($row->id_laminasi == null) {?>                                                           
                                       <a  class="btn btn-default" onclick="document.getElementById('tgll_laminasi<?= $row->id_order; ?>').value='';">Hapus tanggal</a>
                                     <?php }else{ ?>   
-                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_laminasi<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a>
+                                      <!-- <a  class="btn btn-default" onclick="document.getElementById('tgll_laminasi<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a> -->
                                     <?php } ?>
                                   </div>  
                                 </div><hr>
@@ -1833,7 +1842,7 @@
                                     <?php if($row->id_laminasi == null) {?>                                                           
                                       <a  class="btn btn-default" onclick="document.getElementById('tgll_susun<?= $row->id_order; ?>').value='';">Hapus tanggal</a>
                                     <?php }else{ ?>   
-                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_susun<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a>
+                                      <!-- <a  class="btn btn-default" onclick="document.getElementById('tgll_susun<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a> -->
                                     <?php } ?>
                                   </div>  
                                 </div><hr>

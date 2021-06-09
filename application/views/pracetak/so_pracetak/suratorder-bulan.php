@@ -1,55 +1,21 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
-      <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>SURAT ORDER</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
+            <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="<?=site_url('pracetak/SuratOrder/tambah_so')?>"  class="btn btn-success btn-lg">
-                  <i class="fa fa-pencil"></i> TAMBAH
+                <a href="<?=site_url()?>pracetak/suratorder" class="btn btn-warning btn-lg">
+                <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
                 </a>
               </li>
+              <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Blank Page</li> -->
             </ol>
           </div>
         </div>
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <label>TAMPILKAN DATA PERBULAN</label><br>
-            <form action="<?=site_url('pracetak/suratorder/filter_bulan')?>" method="post">
-              <div class="row">
-                <div class="col-md-3">
-                                    <select name="bulan" class="form-control">
-                                      <?php 
-                                      $mulai = 1;
-                                      $bulan=array("bulan","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
-                                      for($i = $mulai; $i < $mulai + 12; $i++){
-                                        echo '<option value="'.$i.'">'.$bulan[$i].'</option>';
-                                      }
-                                      ?>
-                                    </select>
-                </div>
-                <div class="col-md-3">
-                          <select name="tahun" class="form-control">
-                                      <?php 
-                                      $mulai = 2021;
-                                      for($i = $mulai; $i < $mulai + 6; $i++){
-                                        echo '<option value="'.$i.'">'.$i.'</option>';
-                                      }
-                                      ?>
-                          </select>
-                </div>
-                <div class="col-md-2">
-                  <button type="submit" name="filter_data" class="btn btn-primary">Filter Data</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
+    </div><!-- /.container-fluid -->
+</section>
 
     <!-- Main content -->
     <section class="content">
@@ -57,7 +23,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title coba">Data Surat Order</h3>
+          <h3 class="card-title coba">Data Surat Order <?= $bulan ?> Tahun <?= $tahun ?></h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">

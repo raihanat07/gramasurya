@@ -31,7 +31,34 @@ class Imposisi_m extends CI_Model {
         $query = $this->db->get();
         return $query; 
     }
-    
+    public function filter_bulan($bulan,$tahun)
+    {
+        $this->db->select(
+            'imposisi.imposisi_status as imposisi_status,
+            order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
+            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, finishing.finishing_akhir_spiral as spiral, imposisi.id_imposisi as id_imposisi',
+        );
+        // $status_impo = array('imposisi', 'imposisi cover', 'imposisi isi','imposisi khusus');
+        // $status_ctcp = array('ctcp', 'ctcp cover', 'ctcp isi','ctcp khusus');
+        // $status_umum = array('marketing','imposisi');
+
+        $this->db->from('order');
+        $this->db->join('imposisi','imposisi.id_order = order.id_order','left');
+        $this->db->join('data_ctcp','imposisi.id_order = data_ctcp.id_order','left' );
+        $this->db->join('finishing','finishing.id_order = order.id_order');
+        $this->db->where('MONTH(order.tanggal_masuk)',$bulan);
+        $this->db->where('YEAR(order.tanggal_masuk)',$tahun);
+        // $this->db->where_in('order.so_status',$status_umum);
+        // $this->db->where('data_ctcp.ctcp_status', "");
+        // $this->db->OR_where('data_ctcp.ctcp_status', null);
+        $this->db->order_by('order.id_order', 'desc');
+        // $this->db->where_in('imposisi.imposisi_status', $status_impo);
+              
+
+               
+        $query = $this->db->get();
+        return $query; 
+    }
     public function tampil_tambah_imposisi($id = null)
     {
         $this->db->select(

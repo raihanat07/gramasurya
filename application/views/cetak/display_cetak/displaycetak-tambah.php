@@ -31,7 +31,7 @@
         <div class="card-body">
         <form action="<?=site_url('cetak/DisplayCetak/proses')?>" method="post">
         <input type="text" name="id_order"  value="<?= $row->id_order; ?>" hidden>
-        <input type="text" name="total_kertas" hidden>            
+        <!-- <input type="text" name="total_kertas" hidden>             -->
             
                 <div class="row">
                     <div class="col-md-2" align="right">

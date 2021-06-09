@@ -18,7 +18,7 @@
                     <div class="card-title">
                       <div class=" row">
                         <div class="col-sm-6">
-                          <h3>Jadwal Mesin Susun</h3>
+                          <h3>Jadwal Mesin susun</h3>
                         </div>
                         <div class="col-sm-6" align="right">
                           Kapasitas : 4000 / Hari
@@ -40,37 +40,65 @@
                             <td>Nama Order</td>
                             <td>Ukuran</td> 
                             <td>Oplag</td>
-                            <td>Halaman</td>
-                            <td>Total Lembar</td>
-                            <td>Total / Hari</td>
+                            <td>Halaman</td>                                                      
+                            <td>Status</td> 
                             <td>Actions</td>
                         </tr>
                     </thead>
                     <tbody>
-                        <td>Tanggal Pelaksanaan</td>
-                        <td>Nomor SO</td>
-                        <td>Tanggal Masuk</td>
-                        <td>Deadline</td>
-                        <td>Nama Pemesan</td>
-                        <td>Nama Order</td>
-                        <td>Ukuran</td>
-                        <td>Oplag</td>
-                        <td>Halaman</td>
-                        <td>Total Lembar</td>
-                        <td>Total / Hari</td>
+                    <?php foreach($fp as $s => $row) {?>  
+                    <?php if($row->status_susun ==""){ ?>                    
+                    <tr>
+                        <td><?= $row->tanggal_pelaksanaan_susun; ?></td>
+                        <td><?= $row->nomor_so; ?></td>
+                        <td><?= $row->tanggal_masuk; ?></td>
+                        <td><?= $row->deadline; ?></td>
+                        <td><?= $row->nama_pemesan; ?></td>
+                        <td><?= $row->nama_orderan; ?></td>
+                        <td><?= $row->ukuran; ?></td>
+                        <td><?= $row->oplag; ?></td>
+                        <td><?= $row->halaman; ?></td>                                                                 
+                        <td><?php echo $row->status_susun == "susun" ?  "finishing proses cover" : $row->so_status?></td>   
+
                         <td align="center">
-                          <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_susun">
+                          <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_susun/<?= $row->id_susun; ?>">                          
                             <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_susun">
+                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_susun/<?= $row->id_susun; ?>">
                             <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_susun">
+                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_susun/<?= $row->id_susun; ?>">
                             <i class="fa fa-eye" style="font-size:18px;"></i>
                           </a>
                         </td>
+                      </tr>
+                    <?php } else if($row->status_susun =="susun" and $row->id_jadwal_susun == 0){?>
+                      <tr>
+                        <td><?= $row->tanggal_pelaksanaan_susun; ?></td>
+                        <td><?= $row->nomor_so; ?></td>
+                        <td><?= $row->tanggal_masuk; ?></td>
+                        <td><?= $row->deadline; ?></td>
+                        <td><?= $row->nama_pemesan; ?></td>
+                        <td><?= $row->nama_orderan; ?></td>
+                        <td><?= $row->ukuran; ?></td>
+                        <td><?= $row->oplag; ?></td>
+                        <td><?= $row->halaman; ?></td>    
+                        <td><?php echo $row->status_susun == "susun" ?  "finishing proses cover" : $row->so_status?></td>   
+
+                        <td align="center">
+                          <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_susun/<?= $row->id_susun; ?>">                          
+                            <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
+                          </a>
+                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_susun/<?= $row->id_susun; ?>">
+                            <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
+                          </a>
+                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_susun/<?= $row->id_susun; ?>">
+                            <i class="fa fa-eye" style="font-size:18px;"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    <?php }} ?>
                     </tbody>
-            
                 </table>
                 </div>
                 <!-- /.card-body -->

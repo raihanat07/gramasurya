@@ -13,121 +13,193 @@
   <div class="card">
     <div class="card-header">
       <div class="card-title">
-        <h3>Penjadwalan Susun</h3>
+        <h3>Lihat Jadwal Mesin susun</h3>
       </div>
     </div>
     <!-- /.card-header -->
+    
+    <?php foreach($fp as $s => $row) {?>  
+    <form action="<?=site_url('finishing/FinishingProses/proses_susun')?>" method="post">      
+    <input type="text"  name="id_order"  value="<?= $row->id_order; ?>" hidden>
+    <input type="text"  name="id_susun"  value="<?= $row->id_susun; ?>" hidden>
+
     <div class="card-body">
       <div class="card-body">
         <h4>DETAIL ORDERAN</h4><hr>
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-4">
             Nomor SO
-            <br><label class="form-label">dari db</label>
+            <br><label class="form-label"><?= $row->nomor_so; ?></label>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             Nama Orderan
-            <br><label class="form-label">dari db</label>
+            <br><label class="form-label"><?= $row->nama_orderan; ?></label>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             Finishing
-            <br><label class="form-label">dari db</label>
-          </div>
-          <div class="col-md-3">
-            Laminasi
-            <br><label class="form-label">dari db</label>
+            <br><label class="form-label">
+            <?php 
+                        $finishing = "";
+                        if($row->bending != null){
+                            $finishing .= "bending, ";
+                        }
+                        if($row->hard_cover != null){
+                            $finishing .= 'hard cover, ';
+                        }   
+                        if($row->jahit_benang != null){
+                            $finishing .= 'jahit benang, ';
+                        } 
+                        if($row->jahit_kawat != null){
+                            $finishing .= 'jahit kawat, ';
+                        }    
+                        if($row->pond != null){
+                            $finishing .= 'pond, ';
+                        }   
+                        if($row->klem != null){
+                            $finishing .= 'klem, ';
+                        } 
+                        if($row->spiral != null){
+                            $finishing .= 'Spiral, ';
+                        }
+                        $finishing = rtrim($finishing, ", ");
+                        echo $finishing;
+                    ?>
+            </label>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-4">
             <br>Nama Pemesan
-            <br><label class="form-label">dari db</label>
+            <br><label class="form-label"><?= $row->nama_pemesan; ?></label>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <br>Ukuran
-            <br><label class="form-label">dari db</label>
+            <br><label class="form-label"><?= $row->ukuran; ?></label>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-4">
             <br>Oplag
-            <br><label class="form-label">dari db</label>
-          </div>
-          <div class="col-md-3">
-            <br>Halaman
-            <br><label class="form-label">dari db</label>
+            <br><label class="form-label"><?= $row->oplag; ?></label>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3">
-            <br>Status<br>
+          <div class="col-md-4">
+            <br><label>Status</label><br>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" name="finishingprosesisi" value="Finishing Proses Isi" disabled>
-              <label class="form-check-label" for="flexCheckDefault">Finishing Proses Isi</label>
+
+                <input type="text" name="status_susun" value="" hidden>
+                <input disabled class="form-check-input" type="checkbox" name="status_susun" value="susun" id="flexCheckDefault" <?php echo $row->status_susun == "susun" ?  "checked" : "" ?>>
+              <label class="form-check-label" for="flexCheckDefault">Finishing Proses Cover</label>
+
             </div>
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-6">
-            Tanggal Pelaksanaan<br>
-            <label>dari DB</label>
+          <div class="col-md-4">
+            <label>Tanggal Pelaksanaan</label><br>
+            <input hidden type="date" class="form-control" name="tanggal_pelaksanaan_susun" placeholder="Tanggal Pelaksanaan" value="<?= $row->tanggal_pelaksanaan_susun; ?>" required>
+            <input disabled <?php echo $row->status_susun == "susun" ?  "disabled" : ""?> type="date" class="form-control" name="tanggal_pelaksanaan_susun" placeholder="Tanggal Pelaksanaan" value="<?= $row->tanggal_pelaksanaan_susun; ?>" required>
           </div>
-          <div class="col-md-6">
-            Keterangan<br>
-            <textarea name="keterangan_jadwal_fp_shoe" class="form-control" placeholder="catatan" style="height: 100px;" disabled></textarea>
+          <div class="col-md-4">
+            Jenis Laminasi<br>
+            <label>
+            <?php 
+              $lam = "";
+              if($row->doff != null){
+                $lam .= "doff, ";
+              }
+              if($row->glossy != null){
+                $lam .= 'glossy, ';
+              }   
+              if($row->uvi != null){
+                $lam .= 'uvi, ';
+              } 
+              
+              $lam = rtrim($lam, ", ");
+              echo $lam;
+            ?>
+            </label>
           </div>
+          <div class="col-md-4">
+            <label>Keterangan</label><br>        
+            
+            <input disabled hidden type="text"  name="keterangan_jadwal_fp_susun"  value="<?= $row->keterangan_jadwal_fp_susun; ?>" >        
+            <textarea  disabled <?php echo $row->status_susun == "susun" ?  "disabled" : ""?> name="keterangan_jadwal_fp_susun" class="form-control" placeholder="catatan" style="height: 100px;"><?= $row->keterangan_jadwal_fp_susun; ?></textarea>
+          </div>  
         </div><hr>
 
         <div class="row">
           <div class="col-md-12">
-            <label>Laporan Pengerjaan</label>
+            <h4><b>Laporan Pengerjaan</b></h4>
           </div>
-        </div><br>
-        <div class="row">
+        </div>
+        
+        
+        <?php if($row->status_susun !="susun"){?> 
+        <br>
+        <div class="row" align="center">
           <div class="col-md-1"></div>
-          <div class="col-md-3">Tanggal Pengerjaan</div>
-          <div class="col-md-2">Hasil</div>
-          <div class="col-md-3">Nama Operator</div>
-          <div class="col-md-3">Keterangan</div>
-        </div><br>
-        <div class="row">
-          <div class="col-md-1" align="center">1</div>
-          <div class="col-md-3">
-            <label>dari DB</label>
-          </div>
-          <div class="col-md-2">
-            <label>dari DB</label>
-          </div>
-          <div class="col-md-3">
-            <label>dari DB</label>
-          </div>
-          <div class="col-md-3">
-            <label>dari DB</label>
-          </div>
-        </div><br>
-        <div class="row">
-          <div class="col-md-1" align="center">2</div>
-          <div class="col-md-3">
-            <label>dari DB</label>
-          </div>
-          <div class="col-md-2">
-            <label>dari DB</label>
-          </div>
-          <div class="col-md-3">
-            <label>dari DB</label>
-          </div>
-          <div class="col-md-3">
-            <label>dari DB</label>
-          </div>
-        </div><hr><br>
+          <div class="col-md-2"><label>Tanggal Pengerjaan</label></div>
+          <div class="col-md-1"><label>Hasil</label></div>          
+          <div class="col-md-2"><label>Nama Operator</label></div>          
+          <div class="col-md-3"><label>Keterangan</label></div>
+        </div>
+        <br>
+          <?php } ?>
 
         <div class="row">
+          <div class="col-md-1" align="center"><label <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>>1</label></div>
+          <div class="col-md-2">
+            <input disabled <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="date" class="form-control" name="tanggal_pengerjaan_1" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_1; ?>">
+          </div>
+          <div class="col-md-1">
+            <input disabled <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="number" class="form-control" name="hasil_1" placeholder="Hasil" value="<?= $row->hasil_1; ?>">
+          </div>          
+          <div class="col-md-2">
+            <input disabled <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="text" class="form-control" name="operator_1" placeholder="Nama Operator" value="<?= $row->operator_1; ?>">
+          </div>          
+          <div class="col-md-3">
+            <input disabled <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="text" class="form-control" name="keterangan_1" placeholder="Keterangan" value="<?= $row->keterangan_1; ?>">
+          </div>
+        </div><br>
+        <div class="row">
+          <div class="col-md-1" align="center"><label <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>>2</label></div>
+          <div class="col-md-2">
+            <input disabled <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="date" class="form-control" name="tanggal_pengerjaan_2" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_2; ?>">
+          </div>
+          <div class="col-md-1">
+            <input disabled <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="number" class="form-control" name="hasil_2" placeholder="Hasil" value="<?= $row->hasil_2; ?>">
+          </div>          
+          <div class="col-md-2">
+            <input disabled <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="text" class="form-control" name="operator_2" placeholder="Nama Operator" value="<?= $row->operator_2; ?>">
+          </div>          
+          <div class="col-md-3">
+            <input disabled <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="text" class="form-control" name="keterangan_2" placeholder="Keterangan" value="<?= $row->keterangan_2; ?>">
+          </div>
+                            
+        </div><hr>
+        <div class="row">
+        <div class="col" align="left">            
+            <div class="col-md-6">
+            
+            <?php if($row->status_susun !="susun") {?>  
+                                  <label>Total Hasil : <?= $row->hasil_1+$row->hasil_2; ?></label><br>
+            <?php } ?>
+
+                                  <label>Total Hasil Keseluruhan: <?= $total_1+$total_2; ?></label>
+            </div></div>  
+        </div>
+        
+
+        <div class="row">         
           <div class="col" align="right">
-            <button type="reset" class="btn btn-default">Kembali</button>
-            <button type="submit" name="simpan" class="btn btn-success">Jadwal</button>
+            <button type="reset" class="btn btn-default">Kembali</button>            
           </div>
         </div>
 
       </div>
     </div>
+    </form>
+    <?php } ?>
   </div>  
   <!-- /.card -->
 </section>

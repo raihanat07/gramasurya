@@ -49,6 +49,20 @@ class SuratOrder extends CI_Controller {
 		);			
 		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder-lihat', $data);
 	}
+	public function filter_bulan()
+	{
+		check_not_login();
+		$bulan = $this->input->post('bulan');
+		$tahun = $this->input->post('tahun');
+		$query = $this->so->filter_bulan($bulan, $tahun);
+		$data = array(
+			'judul' => 'Surat Order Pracetak',
+			'bulan' => $bulan,
+			'tahun' => $tahun,
+			'so' => $query->result(),
+		);	
+		$this->template->load('pracetak/template','pracetak/so_pracetak/suratorder-bulan',$data);
+	}
 	public function del($id)
 	{
 		$this->so->del($id);
