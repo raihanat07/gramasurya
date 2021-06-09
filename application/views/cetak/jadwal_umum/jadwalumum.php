@@ -134,10 +134,6 @@
                         </div>
                         <div class="row">
                           <div class="col-sm-4">
-                            <br>Finishing Proses
-                            <br><label>dari db</label>
-                          </div>
-                          <div class="col-sm-4">
                             <br>Finishing
                             <br><label class="form-label">
                                         <?php 
@@ -249,10 +245,6 @@
                           </div>
                         </div>
                         <div class="row">
-                          <div class="col-sm-4">
-                            <br>Finishing Proses
-                            <br><label>dari db</label>
-                          </div>
                           <div class="col-sm-4">
                             <br>Finishing
                             <br><label class="form-label">

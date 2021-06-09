@@ -36,7 +36,7 @@ class Laporan extends CI_Controller {
 		check_not_login();
 		$query = $this->laporan->get_lihatlaporan($id);
 		$data = array(
-			'judul' => 'Lihat Laporan',
+			'judul' => 'Lihat Laporan Pracetak',
 			'laporan' => $query->result(),
 		);	
 		$this->template->load('pracetak/template','pracetak/laporan/laporan-tambah',$data);
@@ -47,7 +47,7 @@ class Laporan extends CI_Controller {
 		check_not_login();
 		$query = $this->laporan->get_lihatlaporan($id);
 		$data = array(
-			'judul' => 'Lihat Laporan',
+			'judul' => 'Lihat Laporan Pracetak',
 			'laporan' => $query->result(),
 		);	
 		$this->template->load('pracetak/template','pracetak/laporan/laporan-lihat',$data);
@@ -58,7 +58,7 @@ class Laporan extends CI_Controller {
 		check_not_login();
 		$query = $this->laporan->get_lihatlaporan($id);
 		$data = array(
-			'judul' => 'Print Laporan',
+			'judul' => 'Print Laporan Pracetak',
 			'laporan' => $query->result(),
 		);	
 		$this->template->load('pracetak/template','pracetak/laporan/laporan-print',$data);
