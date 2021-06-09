@@ -46,28 +46,46 @@
               <td>Tanggal</td>
             </tr>
             </thead>
+            <?php foreach($ju as $s => $row) {?>  
             <tr>
-              <td>Nomor SO</td>
-              <td>Tanggal Masuk</td>
-              <td>Deadline</td>
-              <td>Nama Pemesan</td>
-              <td>Nama Orderan</td>
-              <td>Ukuran</td>
-              <td>Oplag</td>
-              <td>Jumlah Kertas</td>
-              <td>Mesin</td>
-              <td>Tanggal</td>
-              <td>Mesin</td>
-              <td>Tanggal</td>
-              <td>Status</td>
+            <td align="center"><?= $row->nomor_so; ?></td>
+              <td><?= $row->tanggal_masuk; ?></td>
+              <td style="color: red"><?= $row->deadline; ?></td>
+              <td><?= $row->nama_pemesan; ?></td>
+              <td><?= $row->nama_orderan; ?></td>
+              <td><?= $row->ukuran; ?></td>
+              <td><?= $row->oplag; ?></td>
+              <td><?= $row->total_kertas; ?></td>
+
+              <?php if($row->mesin_cover !=null) {?>
+                <td><?= $row->mesin_cover ?></td>
+              <?php } else {?> <td></td> <?php } ?>
+
+              <?php if($row->tanggal_pelaksanaan_cover !=null) {?>
+                <td><?= $row->tanggal_pelaksanaan_cover ?></td>
+              <?php } else {?> <td></td> <?php } ?>
+
+              <?php if($row->mesin_isi !=null) {?>
+                <td><?= $row->mesin_isi ?></td>
+              <?php } else {?> <td></td> <?php } ?>
+
+              <?php if($row->tanggal_pelaksanaan_isi !=null) {?>
+                <td><?= $row->tanggal_pelaksanaan_isi ?></td>
+              <?php } else {?> <td></td> <?php } ?>
+
+              <td><?= $row->so_status; ?></td>
               <td align="center">
                 <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
                   <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
                 </button>
               </td>
+              <?php } ?>
             </tr>
           </table>
-
+          
+          <?php foreach($ju as $s => $row) {?>  
+          <form action="<?=site_url('cetak/JadwalUmum/proses')?>" method="post">
+          <input type="text" name="id_order"  value="<?= $row->id_order; ?>" hidden>
           <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
               <!-- konten modal-->
@@ -85,6 +103,7 @@
                       <li class="nav-item col"><a class="nav-link btn-outline-success" href="#isi" data-toggle="tab" style="min-width: 200px;">ISI</a></li>
                     </ul>
                   </div><!-- /.card-header -->
+                  
                   <div class="card-body">
                     <div class="tab-content">
                       <div class="tab-pane active" id="cover">
@@ -92,25 +111,25 @@
                         <div class="row">
                           <div class="col-sm-6">
                             <br>Tanggal Masuk
-                            <br><label>dari db</label>
+                            <br><label><?= $row->nomor_so; ?></label>
                           </div>
                           <div class="col-sm-6" style="color: red;">
                             <br>Deadline
-                            <br><label>dari db</label>
+                            <br><label><?= $row->deadline; ?></label>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-sm-4">
                             <br>Nama Pemesan
-                            <br><label>dari db</label>
+                            <br><label><?= $row->nama_pemesan; ?></label>
                           </div>
                           <div class="col-sm-4">
                             <br>Nama Order
-                            <br><label>dari db</label>
+                            <br><label><?= $row->nama_orderan; ?></label>
                           </div>
                           <div class="col-sm-4">
                             <br>Ukuran
-                            <br><label>dari db</label>
+                            <br><label><?= $row->ukuran; ?></label>
                           </div>
                         </div>
                         <div class="row">
@@ -120,11 +139,38 @@
                           </div>
                           <div class="col-sm-4">
                             <br>Finishing
-                            <br><label>dari db</label>
+                            <br><label class="form-label">
+                                        <?php 
+                                        $finishing = "";
+                                        if($row->bending != null){
+                                          $finishing .= "bending, ";
+                                        }
+                                        if($row->hard_cover != null){
+                                          $finishing .= 'hard cover, ';
+                                        }   
+                                        if($row->jahit_benang != null){
+                                          $finishing .= 'jahit benang, ';
+                                        } 
+                                        if($row->jahit_kawat != null){
+                                          $finishing .= 'jahit kawat, ';
+                                        }    
+                                        if($row->pond != null){
+                                          $finishing .= 'pond, ';
+                                        }   
+                                        if($row->spiral != null){
+                                          $finishing .= 'Spiral, ';
+                                        }
+                                        if($row->klem != null){
+                                          $finishing .= 'Klem, ';
+                                        }
+                                        $finishing = rtrim($finishing, ", ");
+                                        echo $finishing;
+                                        ?>
+                                    </label>
                           </div>
                           <div class="col-sm-4">
                             <br>Oplag
-                            <br><label>dari db</label>
+                            <br><label><?= $row->oplag; ?></label>
                           </div>
                         </div><br>
                         <h4><label>Jadwal Cover</label></h4>
@@ -159,40 +205,47 @@
                           </div>
                           <div class="col-md-6">
                             <br>Druk<br>
-                            <label>otomatis = target * oplag</label>
+                            <!-- <input type="number" class="form-control" name="druk_cover" hidden>
+                            <label>otomatis = target * oplag</label> -->
+                            <?php if($row->druk_cover !=null) {?>
+                              <td><?= $row->druk_cover ?></td>
+                            <?php } else {?> 
+                              <input type="number" class="form-control" name="druk_cover" hidden>
+                              <label>otomatis = target * oplag</label>
+                             <?php } ?>
                           </div>
                         </div><br>
                         <div class="row" align="right">
                           <div class="col">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                            <button type="button" class="btn btn-success">Publish</button>
+                            <button type="submit" name="add" class="btn btn-success">Publish</button>
                           </div>
                         </div>
                       </div>
                       <div class="tab-pane" id="isi">
-                        <h4><label>SO dari db</label></h4>
+                      <h4><label>SO dari db</label></h4>
                         <div class="row">
                           <div class="col-sm-6">
                             <br>Tanggal Masuk
-                            <br><label>dari db</label>
+                            <br><label><?= $row->nomor_so; ?></label>
                           </div>
                           <div class="col-sm-6" style="color: red;">
                             <br>Deadline
-                            <br><label>dari db</label>
+                            <br><label><?= $row->deadline; ?></label>
                           </div>
                         </div>
                         <div class="row">
                           <div class="col-sm-4">
                             <br>Nama Pemesan
-                            <br><label>dari db</label>
+                            <br><label><?= $row->nama_pemesan; ?></label>
                           </div>
                           <div class="col-sm-4">
                             <br>Nama Order
-                            <br><label>dari db</label>
+                            <br><label><?= $row->nama_orderan; ?></label>
                           </div>
                           <div class="col-sm-4">
                             <br>Ukuran
-                            <br><label>dari db</label>
+                            <br><label><?= $row->ukuran; ?></label>
                           </div>
                         </div>
                         <div class="row">
@@ -202,11 +255,38 @@
                           </div>
                           <div class="col-sm-4">
                             <br>Finishing
-                            <br><label>dari db</label>
+                            <br><label class="form-label">
+                                        <?php 
+                                        $finishing = "";
+                                        if($row->bending != null){
+                                          $finishing .= "bending, ";
+                                        }
+                                        if($row->hard_cover != null){
+                                          $finishing .= 'hard cover, ';
+                                        }   
+                                        if($row->jahit_benang != null){
+                                          $finishing .= 'jahit benang, ';
+                                        } 
+                                        if($row->jahit_kawat != null){
+                                          $finishing .= 'jahit kawat, ';
+                                        }    
+                                        if($row->pond != null){
+                                          $finishing .= 'pond, ';
+                                        }   
+                                        if($row->spiral != null){
+                                          $finishing .= 'Spiral, ';
+                                        }
+                                        if($row->klem != null){
+                                          $finishing .= 'Klem, ';
+                                        }
+                                        $finishing = rtrim($finishing, ", ");
+                                        echo $finishing;
+                                        ?>
+                                    </label>
                           </div>
                           <div class="col-sm-4">
                             <br>Oplag
-                            <br><label>dari db</label>
+                            <br><label><?= $row->oplag; ?></label>
                           </div>
                         </div><br>
                         <h4><label>Jadwal Isi</label></h4>
@@ -217,7 +297,7 @@
                           </div>
                           <div class="col-md-6">
                             Operator<br>
-                            <input type="text" class="form-control" name="operator_cover" placeholder="Operator Cover" required>
+                            <input type="text" class="form-control" name="operator_isi" placeholder="Operator Isi" required>
                           </div>
                           <div class="col-md-6">
                             <br>Target<br>
@@ -247,7 +327,7 @@
                         <div class="row" align="right">
                           <div class="col">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                            <button type="button" class="btn btn-success">Publish</button>
+                            <button type="submit" name="add" class="btn btn-success">Publish</button>
                           </div>
                         </div>
                       </div>
@@ -257,6 +337,8 @@
                 <!-- footer modal -->
                 <!-- <div class="modal-footer">
                 </div> -->
+                </form>
+              <?php } ?>  
               </div>
             </div>
           </div>
