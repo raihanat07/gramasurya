@@ -307,6 +307,7 @@ class FinishingProses_m extends CI_Model {
             order.so_status as so_status,
             
             laminasi.id_jadwal_laminasi as id_jadwal_laminasi,
+            laminasi.status_laminasi as status_laminasi,
             laminasi.id_laminasi as id_laminasi,
             laminasi.hasil_1 as hasil_1,
             laminasi.hasil_2 as hasil_2,            
@@ -403,8 +404,7 @@ public function ambilIDOrder($id_order)
     public function proses_edit_laminasi($data)
 	{
             $ubah_laminasi = array(                                                                         
-                'tanggal_pelaksanaan_laminasi' =>$data['tanggal_pelaksanaan_laminasi'],   
-                'id_jadwal_laminasi' =>$data['id_jadwal_laminasi'],                    
+                'tanggal_pelaksanaan_laminasi' =>$data['tanggal_pelaksanaan_laminasi'],                                     
                 'keterangan_jadwal_fp_laminasi' =>$data['keterangan_jadwal_fp_laminasi'],                   
                 'tanggal_pengerjaan_1' =>$data['tanggal_pengerjaan_1'],   
                 'hasil_1' =>$data['hasil_1'],   

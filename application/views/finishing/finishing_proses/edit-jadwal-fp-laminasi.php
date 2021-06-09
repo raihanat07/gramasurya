@@ -96,7 +96,8 @@
         <div class="row">
           <div class="col-md-4">
             <label>Tanggal Pelaksanaan</label><br>
-            <input type="date" class="form-control" name="tanggal_pelaksanaan_laminasi" placeholder="Tanggal Pelaksanaan" value="<?= $row->tanggal_pelaksanaan_laminasi; ?>" required>
+            <input hidden type="date" class="form-control" name="tanggal_pelaksanaan_laminasi" placeholder="Tanggal Pelaksanaan" value="<?= $row->tanggal_pelaksanaan_laminasi; ?>" required>
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?> type="date" class="form-control" name="tanggal_pelaksanaan_laminasi" placeholder="Tanggal Pelaksanaan" value="<?= $row->tanggal_pelaksanaan_laminasi; ?>" required>
           </div>
           <div class="col-md-4">
             Jenis Laminasi<br>
@@ -119,8 +120,8 @@
             </label>
           </div>
           <div class="col-md-4">
-            <label>Keterangan</label><br>            
-            <textarea  name="keterangan_jadwal_fp_laminasi" class="form-control" placeholder="catatan" style="height: 100px;"><?= $row->keterangan_jadwal_fp_laminasi; ?></textarea>
+            <label>Keterangan</label><br>                        
+            <textarea  <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?> name="keterangan_jadwal_fp_laminasi" class="form-control" placeholder="catatan" style="height: 100px;"><?= $row->keterangan_jadwal_fp_laminasi; ?></textarea>
           </div>  
         </div><hr>
 
@@ -150,7 +151,10 @@
               <label class="form-check-label">Glossy</label>
             </div>
           </div>
-        </div><br>
+        </div>
+        
+        <?php if($row->status_laminasi !="laminasi"){?> 
+        <br>
         <div class="row" align="center">
           <div class="col-md-1"></div>
           <div class="col-md-2"><label>Tanggal Pengerjaan</label></div>
@@ -159,51 +163,60 @@
           <div class="col-md-2"><label>Nama Operator</label></div>
           <div class="col-md-2"><label>Kru</label></div>
           <div class="col-md-3"><label>Keterangan</label></div>
-        </div><br>
+        </div>
+        <br>
+          <?php } ?>
+
         <div class="row">
-          <div class="col-md-1" align="center"><label>1</label></div>
+          <div class="col-md-1" align="center"><label <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>>1</label></div>
           <div class="col-md-2">
-            <input type="date" class="form-control" name="tanggal_pengerjaan_1" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_1; ?>">
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>  type="date" class="form-control" name="tanggal_pengerjaan_1" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_1; ?>">
           </div>
           <div class="col-md-1">
-            <input type="number" class="form-control" name="hasil_1" placeholder="Hasil" value="<?= $row->hasil_1; ?>">
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>  type="number" class="form-control" name="hasil_1" placeholder="Hasil" value="<?= $row->hasil_1; ?>">
           </div>
           <div class="col-md-1">
-            <input type="number" class="form-control" name="rejek_1" placeholder="Rejek" value="<?= $row->rejek_1; ?>">
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>  type="number" class="form-control" name="rejek_1" placeholder="Rejek" value="<?= $row->rejek_1; ?>">
           </div>
           <div class="col-md-2">
-            <input type="text" class="form-control" name="operator_1" placeholder="Nama Operator" value="<?= $row->operator_1; ?>">
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>  type="text" class="form-control" name="operator_1" placeholder="Nama Operator" value="<?= $row->operator_1; ?>">
           </div>
           <div class="col-md-2">
-            <input type="text" class="form-control" name="kru_1" placeholder="Kru" value="<?= $row->kru_1; ?>">
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>  type="text" class="form-control" name="kru_1" placeholder="Kru" value="<?= $row->kru_1; ?>">
           </div>
           <div class="col-md-3">
-            <input type="text" class="form-control" name="keterangan_1" placeholder="Keterangan" value="<?= $row->keterangan_1; ?>">
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>  type="text" class="form-control" name="keterangan_1" placeholder="Keterangan" value="<?= $row->keterangan_1; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-1" align="center"><label>2</label></div>
+          <div class="col-md-1" align="center"><label <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>>2</label></div>
           <div class="col-md-2">
-            <input type="date" class="form-control" name="tanggal_pengerjaan_2" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_2; ?>">
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>  type="date" class="form-control" name="tanggal_pengerjaan_2" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_2; ?>">
           </div>
           <div class="col-md-1">
-            <input type="number" class="form-control" name="hasil_2" placeholder="Hasil" value="<?= $row->hasil_2; ?>">
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>  type="number" class="form-control" name="hasil_2" placeholder="Hasil" value="<?= $row->hasil_2; ?>">
           </div>
           <div class="col-md-1">
-            <input type="number" class="form-control" name="rejek_2" placeholder="Rejek" value="<?= $row->rejek_2; ?>">
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>  type="number" class="form-control" name="rejek_2" placeholder="Rejek" value="<?= $row->rejek_2; ?>">
           </div>
           <div class="col-md-2">
-            <input type="text" class="form-control" name="operator_2" placeholder="Nama Operator" value="<?= $row->operator_2; ?>">
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>  type="text" class="form-control" name="operator_2" placeholder="Nama Operator" value="<?= $row->operator_2; ?>">
           </div>
           <div class="col-md-2">
-            <input type="text" class="form-control" name="kru_2" placeholder="Kru" value="<?= $row->kru_2; ?>">
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>  type="text" class="form-control" name="kru_2" placeholder="Kru" value="<?= $row->kru_2; ?>">
           </div>
           <div class="col-md-3">
-            <input type="text" class="form-control" name="keterangan_2" placeholder="Keterangan" value="<?= $row->keterangan_2; ?>">
+            <input <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>  type="text" class="form-control" name="keterangan_2" placeholder="Keterangan" value="<?= $row->keterangan_2; ?>">
           </div>
 
+          
           <br><br><br><br><div class="col" align="left">            
-            <div class="col-md-2"><label>Total Hasil : <?= $row->hasil_1+$row->hasil_2; ?></label><br>
+            <div class="col-md-2">
+            
+            <?php if($row->status_laminasi !="laminasi") {?>  
+                                  <label>Total Hasil : <?= $row->hasil_1+$row->hasil_2; ?></label><br>
+            <?php } ?>
+
                                   <label>Total Hasil Keseluruhan: <?= $total_1+$total_2; ?></label>
             </div></div>          
         </div><hr>

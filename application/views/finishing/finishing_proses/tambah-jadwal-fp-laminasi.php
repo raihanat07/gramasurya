@@ -98,7 +98,7 @@
         <div class="row">
           <div class="col-md-4">
             <label>Tanggal Pelaksanaan</label><br>
-            <input type="date" class="form-control" name="tanggal_pelaksanaan_laminasi" placeholder="Tanggal Pelaksanaan"  required>
+            <input type="date" class="form-control" name="tanggal_pelaksanaan_laminasi" placeholder="Tanggal Pelaksanaan"  <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?> required>
           </div>
           <div class="col-md-4">
             Jenis Laminasi<br>
@@ -122,7 +122,7 @@
           </div>
           <div class="col-md-4">
             <label>Keterangan</label><br>
-            <textarea name="keterangan_jadwal_fp_laminasi" class="form-control" placeholder="catatan" style="height: 100px;"><?= $row->keterangan_jadwal_fp_laminasi; ?></textarea>
+            <textarea <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?> name="keterangan_jadwal_fp_laminasi" class="form-control" placeholder="catatan" style="height: 100px;"><?= $row->keterangan_jadwal_fp_laminasi; ?></textarea>
           </div>  
         </div><hr>
 
@@ -152,7 +152,9 @@
               <label class="form-check-label">Glossy</label>
             </div>
           </div>
-        </div><br>
+        </div>
+        <?php if($row->status_laminasi !="laminasi") {?>
+          <br>
         <div class="row" align="center">
           <div class="col-md-1"></div>
           <div class="col-md-2"><label>Tanggal Pengerjaan</label></div>
@@ -165,54 +167,59 @@
         <div class="row">
           <div class="col-md-1" align="center"><label>1</label></div>
           <div class="col-md-2">
-            <input type="date" class="form-control" name="tanggal_pengerjaan_1" placeholder="Tanggal Pengerjaan" >
+            <input type="date" class="form-control" name="tanggal_pengerjaan_1" placeholder="Tanggal Pengerjaan" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
           <div class="col-md-1">
-            <input type="number" class="form-control" name="hasil_1" placeholder="Hasil" >
+            <input type="number" class="form-control" name="hasil_1" placeholder="Hasil" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
           <div class="col-md-1">
-            <input type="number" class="form-control" name="rejek_1" placeholder="Rejek" >
+            <input type="number" class="form-control" name="rejek_1" placeholder="Rejek" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
           <div class="col-md-2">
-            <input type="text" class="form-control" name="operator_1" placeholder="Nama Operator" >
+            <input type="text" class="form-control" name="operator_1" placeholder="Nama Operator" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
           <div class="col-md-2">
-            <input type="text" class="form-control" name="kru_1" placeholder="Kru" >
+            <input type="text" class="form-control" name="kru_1" placeholder="Kru" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
           <div class="col-md-3">
-            <input type="text" class="form-control" name="keterangan_1" placeholder="Keterangan" >
+            <input type="text" class="form-control" name="keterangan_1" placeholder="Keterangan" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
         </div><br>
         <div class="row">
           <div class="col-md-1" align="center"><label>2</label></div>
           <div class="col-md-2">
-            <input type="date" class="form-control" name="tanggal_pengerjaan_2" placeholder="Tanggal Pengerjaan" >
+            <input type="date" class="form-control" name="tanggal_pengerjaan_2" placeholder="Tanggal Pengerjaan" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
           <div class="col-md-1">
-            <input type="number" class="form-control" name="hasil_2" placeholder="Hasil" >
+            <input type="number" class="form-control" name="hasil_2" placeholder="Hasil" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
           <div class="col-md-1">
-            <input type="number" class="form-control" name="rejek_2" placeholder="Rejek" >
+            <input type="number" class="form-control" name="rejek_2" placeholder="Rejek" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
           <div class="col-md-2">
-            <input type="text" class="form-control" name="operator_2" placeholder="Nama Operator" >
+            <input type="text" class="form-control" name="operator_2" placeholder="Nama Operator" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
           <div class="col-md-2">
-            <input type="text" class="form-control" name="kru_2" placeholder="Kru" >
+            <input type="text" class="form-control" name="kru_2" placeholder="Kru" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
           <div class="col-md-3">
-            <input type="text" class="form-control" name="keterangan_2" placeholder="Keterangan" >
+            <input type="text" class="form-control" name="keterangan_2" placeholder="Keterangan" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
+
+          <?php } ?>
 
           <br><br><br><br><div class="col" align="left">            
             <div class="col-md-2"><label>Total Hasil Keseluruhan : <?= $total_1+$total_2; ?><br></label>
             </div></div>                  
-        </div><hr>
+        </div><hr>        
 
         <div class="row">
           <div class="col" align="right">
             <button type="reset" class="btn btn-default">Kembali</button>
-            <button type="submit" name="add" class="btn btn-success">Tambah Jadwal</button>
+
+            <?php if($row->status_laminasi != "laminasi"):?>
+                <button type="submit" name="add" class="btn btn-success">Tambah Jadwal</button>
+            <?php endif ?>
           </div>
         </div>
 

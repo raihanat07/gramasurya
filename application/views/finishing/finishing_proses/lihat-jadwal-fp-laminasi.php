@@ -150,7 +150,10 @@
               <label class="form-check-label">Glossy</label>
             </div>
           </div>
-        </div><br>
+        </div>
+        
+        <?php if($row->status_laminasi !="laminasi") {?>
+        <br>
         <div class="row" align="center">
           <div class="col-md-1"></div>
           <div class="col-md-2"><label>Tanggal Pengerjaan</label></div>
@@ -201,9 +204,10 @@
           <div class="col-md-3">
             <input disabled type="text" class="form-control" name="keterangan_2" placeholder="Keterangan" value="<?= $row->keterangan_2; ?>">
           </div>
+          <?php } ?>
 
           <br><br><br><br><div class="col" align="left">            
-            <div class="col-md-2"><label>Total Hasil : <?= $row->hasil_1+$row->hasil_2; ?></label><br>
+            <div class="col-md-2"><label <?php echo $row->status_laminasi == "laminasi" ?  "hidden" : ""?>>Total Hasil : <?= $row->hasil_1+$row->hasil_2; ?></label><br>
                                   <label>Total Hasil Keseluruhan: <?= $total_1+$total_2; ?></label>
             </div></div>          
         </div><hr>
