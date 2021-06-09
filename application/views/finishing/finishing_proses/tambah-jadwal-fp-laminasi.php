@@ -153,7 +153,7 @@
             </div>
           </div>
         </div>
-        <?php if($row->status_laminasi !="laminasi") {?>
+        
           <br>
         <div class="row" align="center">
           <div class="col-md-1"></div>
@@ -206,7 +206,7 @@
             <input type="text" class="form-control" name="keterangan_2" placeholder="Keterangan" <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?>>
           </div>
 
-          <?php } ?>
+          
 
           <br><br><br><br><div class="col" align="left">            
             <div class="col-md-2"><label>Total Hasil Keseluruhan : <?= $total_1+$total_2; ?><br></label>

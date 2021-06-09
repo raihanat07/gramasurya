@@ -120,7 +120,9 @@
             </label>
           </div>
           <div class="col-md-4">
-            <label>Keterangan</label><br>                        
+            <label>Keterangan</label><br>        
+            
+            <input hidden type="text"  name="keterangan_jadwal_fp_laminasi"  value="<?= $row->keterangan_jadwal_fp_laminasi; ?>" >        
             <textarea  <?php echo $row->status_laminasi == "laminasi" ?  "disabled" : ""?> name="keterangan_jadwal_fp_laminasi" class="form-control" placeholder="catatan" style="height: 100px;"><?= $row->keterangan_jadwal_fp_laminasi; ?></textarea>
           </div>  
         </div><hr>
