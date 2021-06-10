@@ -63,10 +63,10 @@
                         <td><?php echo $row->status_sub == "sub" ?  "finishing proses" : $row->so_status?></td>   
 
                         <td align="center">                          
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_sub/<?= $row->id_sub; ?>">
+                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_sub/<?= $row->id_order; ?>">
                             <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_sub/<?= $row->id_sub; ?>">
+                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_sub/<?= $row->id_order; ?>">
                             <i class="fa fa-eye" style="font-size:18px;"></i>
                           </a>
                         </td>
@@ -86,10 +86,10 @@
                         <td><?php echo $row->status_sub == "sub" ?  "finishing proses" : $row->so_status?></td>   
 
                         <td align="center">                          
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_sub/<?= $row->id_sub; ?>">
+                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_sub/<?= $row->id_order; ?>">
                             <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_sub/<?= $row->id_sub; ?>">
+                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_sub/<?= $row->id_order; ?>">
                             <i class="fa fa-eye" style="font-size:18px;"></i>
                           </a>
                         </td>

@@ -23,6 +23,18 @@
     <input type="text"  name="id_order"  value="<?= $row->id_order; ?>" hidden>
     <input type="text"  name="id_laminasi"  value="<?= $row->id_laminasi; ?>" hidden>
 
+    <input type="text"  name="status_laminasi"  value="<?= $row->status_laminasi; ?>" hidden>
+    <input type="text"  name="status_mbo"  value="<?= $row->status_mbo; ?>" hidden>
+    <input type="text"  name="status_shoe"  value="<?= $row->status_shoe; ?>" hidden>
+    <input type="text"  name="status_susun"  value="<?= $row->status_susun; ?>" hidden>
+    <input type="text"  name="status_sub"  value="<?= $row->status_sub; ?>" hidden>
+
+    <input type="text"  name="tanggal_pelaksanaan_laminasi"  value="<?= $row->status_laminasi; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_mbo"  value="<?= $row->status_mbo; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_shoe"  value="<?= $row->status_shoe; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_susun"  value="<?= $row->status_susun; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_sub"  value="<?= $row->status_sub; ?>" hidden>
+
     <div class="card-body">
       <div class="card-body">
         <h4>DETAIL ORDERAN</h4><hr>

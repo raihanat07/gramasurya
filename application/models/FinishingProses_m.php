@@ -18,7 +18,13 @@ class FinishingProses_m extends CI_Model {
             mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_mbo,            
             shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_shoe,            
             susun.tanggal_pelaksanaan_mesin_susun as tanggal_susun,            
-            sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_sub_proses,            
+            sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_sub_proses,    
+            
+            laminasi.status_laminasi as status_laminasi,            
+            mbo.status_mbo as status_mbo,
+            shoe.status_shoe as status_shoe,
+            susun.status_susun as status_susun,
+            sub_proses.status_sub as status_sub,
 
             laminasi.id_laminasi as id_laminasi,
             laminasi.id_jadwal_laminasi as id_jadwal_laminasi,
@@ -697,10 +703,20 @@ public function ambilIDOrder($id_order)
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,            
             finishing.finishing_cover_uvi as uvi,finishing.finishing_cover_glossy as glossy,finishing.finishing_cover_doff as doff,
 
+            laminasi.status_laminasi as status_laminasi,            
+            mbo.status_mbo as status_mbo,
+            shoe.status_shoe as status_shoe,
+            susun.status_susun as status_susun,
+            sub_proses.status_sub as status_sub,
+
+            laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi,    
+            mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_pelaksanaan_mbo,
+            shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_pelaksanaan_shoe,
+            susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun,
+            sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub,
+
             laminasi.id_laminasi as id_laminasi,
-            laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi,
-            
-            laminasi.status_laminasi as status_laminasi,
+            laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi,                        
             laminasi.keterangan_jadwal_fp_laminasi as keterangan_jadwal_fp_laminasi,
             laminasi.jenis_laminasi as jenis_laminasi,
             laminasi.tanggal_pengerjaan_1 as tanggal_pengerjaan_1,
@@ -719,9 +735,15 @@ public function ambilIDOrder($id_order)
         );           
         // $this->db->select_max('laminasi.id_jadwal_laminasi');
         $this->db->from('order');                           
-        $this->db->join('laminasi','order.id_order = laminasi.id_order' ); 
+
+        $this->db->join('laminasi','order.id_order = laminasi.id_order' );         
+        $this->db->join('shoe','order.id_order = shoe.id_order' );
+        $this->db->join('mbo','order.id_order = mbo.id_order' );
+        $this->db->join('susun','order.id_order = susun.id_order' );
+        $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
+
         $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-        $this->db->where('laminasi.id_laminasi', $id);       
+        $this->db->where('order.id_order', $id);       
         
         $query = $this->db->get();
         return $query;  
@@ -904,6 +926,18 @@ public function edit_mbo($id)
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,            
             finishing.finishing_cover_uvi as uvi,finishing.finishing_cover_glossy as glossy,finishing.finishing_cover_doff as doff,
 
+            laminasi.status_laminasi as status_laminasi,            
+            mbo.status_mbo as status_mbo,
+            shoe.status_shoe as status_shoe,
+            susun.status_susun as status_susun,
+            sub_proses.status_sub as status_sub,
+
+            laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi,    
+            mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_pelaksanaan_mbo,
+            shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_pelaksanaan_shoe,
+            susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun,
+            sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub,
+
             mbo.id_mbo as id_mbo,
             mbo.id_jadwal_mbo as id_jadwal_mbo,
             mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_pelaksanaan_mbo,
@@ -1018,10 +1052,16 @@ public function edit_mbo($id)
             ',
         );           
         // $this->db->select_max('mbo.id_jadwal_mbo');
-        $this->db->from('order');                           
-        $this->db->join('mbo','order.id_order = mbo.id_order' ); 
+        $this->db->from('order');               
+
+        $this->db->join('laminasi','order.id_order = laminasi.id_order' );         
+        $this->db->join('shoe','order.id_order = shoe.id_order' );
+        $this->db->join('mbo','order.id_order = mbo.id_order' );
+        $this->db->join('susun','order.id_order = susun.id_order' );
+        $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
+
         $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-        $this->db->where('mbo.id_mbo', $id);       
+        $this->db->where('mbo.id_order', $id);       
         
         $query = $this->db->get();
         return $query;  
@@ -1386,6 +1426,18 @@ public function edit_shoe($id)
             order.so_status as so_status,
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,            
             finishing.finishing_cover_uvi as uvi,finishing.finishing_cover_glossy as glossy,finishing.finishing_cover_doff as doff,
+            
+            laminasi.status_laminasi as status_laminasi,            
+            mbo.status_mbo as status_mbo,
+            shoe.status_shoe as status_shoe,
+            susun.status_susun as status_susun,
+            sub_proses.status_sub as status_sub,
+
+            laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi,    
+            mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_pelaksanaan_mbo,
+            shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_pelaksanaan_shoe,
+            susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun,
+            sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub,
 
             shoe.id_shoe as id_shoe,
             shoe.id_jadwal_shoe as id_jadwal_shoe,
@@ -1502,9 +1554,15 @@ public function edit_shoe($id)
         );           
         // $this->db->select_max('shoe.id_jadwal_shoe');
         $this->db->from('order');                           
-        $this->db->join('shoe','order.id_order = shoe.id_order' ); 
+        
+        $this->db->join('laminasi','order.id_order = laminasi.id_order' );         
+        $this->db->join('shoe','order.id_order = shoe.id_order' );
+        $this->db->join('mbo','order.id_order = mbo.id_order' );
+        $this->db->join('susun','order.id_order = susun.id_order' );
+        $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
+
         $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-        $this->db->where('shoe.id_shoe', $id);       
+        $this->db->where('shoe.id_order', $id);       
         
         $query = $this->db->get();
         return $query;  
@@ -1832,6 +1890,18 @@ public function proses_tambah_shoe($data)
                 finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,            
                 finishing.finishing_cover_uvi as uvi,finishing.finishing_cover_glossy as glossy,finishing.finishing_cover_doff as doff,
 
+                laminasi.status_laminasi as status_laminasi,            
+                mbo.status_mbo as status_mbo,
+                shoe.status_shoe as status_shoe,
+                susun.status_susun as status_susun,
+                sub_proses.status_sub as status_sub,
+
+                laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi,    
+                mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_pelaksanaan_mbo,
+                shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_pelaksanaan_shoe,
+                susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun,
+                sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub,
+
                 susun.id_susun as id_susun,
                 susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun,
                 
@@ -1849,9 +1919,15 @@ public function proses_tambah_shoe($data)
             );           
             // $this->db->select_max('susun.id_jadwal_susun');
             $this->db->from('order');                           
-            $this->db->join('susun','order.id_order = susun.id_order' ); 
+            
+            $this->db->join('laminasi','order.id_order = laminasi.id_order' );         
+            $this->db->join('shoe','order.id_order = shoe.id_order' );
+            $this->db->join('mbo','order.id_order = mbo.id_order' );
+            $this->db->join('susun','order.id_order = susun.id_order' );
+            $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
+
             $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-            $this->db->where('susun.id_susun', $id);       
+            $this->db->where('susun.id_order', $id);       
             
             $query = $this->db->get();
             return $query;  
@@ -1986,6 +2062,18 @@ public function edit_sub($id)
         finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,            
         finishing.finishing_cover_uvi as uvi,finishing.finishing_cover_glossy as glossy,finishing.finishing_cover_doff as doff,
 
+        laminasi.status_laminasi as status_laminasi,            
+        mbo.status_mbo as status_mbo,
+        shoe.status_shoe as status_shoe,
+        susun.status_susun as status_susun,
+        sub_proses.status_sub as status_sub,
+
+        laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi,    
+        mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_pelaksanaan_mbo,
+        shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_pelaksanaan_shoe,
+        susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun,
+        sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub,
+
         sub_proses.id_sub as id_sub,
         sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub,
         
@@ -2006,9 +2094,15 @@ public function edit_sub($id)
     );           
     // $this->db->select_max('sub_proses.id_jadwal_sub');
     $this->db->from('order');                           
-    $this->db->join('sub_proses','order.id_order = sub_proses.id_order' ); 
+
+    $this->db->join('laminasi','order.id_order = laminasi.id_order' );         
+    $this->db->join('shoe','order.id_order = shoe.id_order' );
+    $this->db->join('mbo','order.id_order = mbo.id_order' );
+    $this->db->join('susun','order.id_order = susun.id_order' );
+    $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
+
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-    $this->db->where('sub_proses.id_sub', $id);       
+    $this->db->where('sub_proses.id_order', $id);       
     
     $query = $this->db->get();
     return $query;  
@@ -2043,7 +2137,16 @@ public function proses_edit_sub($data)
             $this->db->where('id_order',$data['id_order']);
             $this->db->update('sub_proses');  
 
-            
+}
+
+public function status_umum($data)
+{            
+            $status = array(                                                                                           
+                'so_status' =>$data['status_umum'],                                                                            
+            );                        
+            $this->db->set($status);
+            $this->db->where('id_order',$data['id_order']);
+            $this->db->update('order');  
 
 }
 
