@@ -488,6 +488,27 @@ public function ambilIDOrder($id_order)
             order.oplag as oplag, 
             order.so_status as so_status,
             
+            mbo.hasil_lipatan_lembar_1 as hasil_lipatan_lembar_1,                   
+            mbo.hasil_lipatan_lembar_2 as hasil_lipatan_lembar_2,
+            mbo.hasil_lipatan_lembar_3 as hasil_lipatan_lembar_3,
+            mbo.hasil_lipatan_lembar_4 as hasil_lipatan_lembar_4,
+            mbo.hasil_lipatan_lembar_5 as hasil_lipatan_lembar_5,
+            mbo.hasil_lipatan_lembar_6 as hasil_lipatan_lembar_6,
+            mbo.hasil_lipatan_lembar_7 as hasil_lipatan_lembar_7,
+            mbo.hasil_lipatan_lembar_8 as hasil_lipatan_lembar_8,
+            mbo.hasil_lipatan_lembar_9 as hasil_lipatan_lembar_9,
+            mbo.hasil_lipatan_lembar_10 as hasil_lipatan_lembar_10,
+            mbo.hasil_lipatan_lembar_11 as hasil_lipatan_lembar_11,
+            mbo.hasil_lipatan_lembar_12 as hasil_lipatan_lembar_12,
+            mbo.hasil_lipatan_lembar_13 as hasil_lipatan_lembar_13,
+            mbo.hasil_lipatan_lembar_14 as hasil_lipatan_lembar_14,
+            mbo.hasil_lipatan_lembar_15 as hasil_lipatan_lembar_15,
+            mbo.hasil_lipatan_lembar_16 as hasil_lipatan_lembar_16,
+            mbo.hasil_lipatan_lembar_17 as hasil_lipatan_lembar_17,
+            mbo.hasil_lipatan_lembar_18 as hasil_lipatan_lembar_18,
+            mbo.hasil_lipatan_lembar_19 as hasil_lipatan_lembar_19,
+            mbo.hasil_lipatan_lembar_20 as hasil_lipatan_lembar_20,
+
             mbo.id_jadwal_mbo as id_jadwal_mbo,
             mbo.status_mbo as status_mbo,
             mbo.id_mbo as id_mbo,               
@@ -948,6 +969,27 @@ public function proses_tambah_mbo($data)
                 order.halaman as halaman, 
                 order.oplag as oplag, 
                 order.so_status as so_status,
+
+                shoe.hasil_lipatan_lembar_1 as hasil_lipatan_lembar_1,                   
+                shoe.hasil_lipatan_lembar_2 as hasil_lipatan_lembar_2,
+                shoe.hasil_lipatan_lembar_3 as hasil_lipatan_lembar_3,
+                shoe.hasil_lipatan_lembar_4 as hasil_lipatan_lembar_4,
+                shoe.hasil_lipatan_lembar_5 as hasil_lipatan_lembar_5,
+                shoe.hasil_lipatan_lembar_6 as hasil_lipatan_lembar_6,
+                shoe.hasil_lipatan_lembar_7 as hasil_lipatan_lembar_7,
+                shoe.hasil_lipatan_lembar_8 as hasil_lipatan_lembar_8,
+                shoe.hasil_lipatan_lembar_9 as hasil_lipatan_lembar_9,
+                shoe.hasil_lipatan_lembar_10 as hasil_lipatan_lembar_10,
+                shoe.hasil_lipatan_lembar_11 as hasil_lipatan_lembar_11,
+                shoe.hasil_lipatan_lembar_12 as hasil_lipatan_lembar_12,
+                shoe.hasil_lipatan_lembar_13 as hasil_lipatan_lembar_13,
+                shoe.hasil_lipatan_lembar_14 as hasil_lipatan_lembar_14,
+                shoe.hasil_lipatan_lembar_15 as hasil_lipatan_lembar_15,
+                shoe.hasil_lipatan_lembar_16 as hasil_lipatan_lembar_16,
+                shoe.hasil_lipatan_lembar_17 as hasil_lipatan_lembar_17,
+                shoe.hasil_lipatan_lembar_18 as hasil_lipatan_lembar_18,
+                shoe.hasil_lipatan_lembar_19 as hasil_lipatan_lembar_19,
+                shoe.hasil_lipatan_lembar_20 as hasil_lipatan_lembar_20,
                 
                 shoe.id_jadwal_shoe as id_jadwal_shoe,
                 shoe.status_shoe as status_shoe,
@@ -1546,6 +1588,147 @@ public function proses_tambah_shoe($data)
 
             );                                                          
             $this->db->insert('susun',$tambah_jadwal_susun);
+
+}
+
+// MESIN SUB
+public function get_jadwal_sub()
+{
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        
+        sub_proses.id_jadwal_sub as id_jadwal_sub,
+        sub_proses.status_sub as status_sub,
+        sub_proses.hasil_1 as hasil_1,
+        sub_proses.hasil_2 as hasil_2,   
+        sub_proses.id_sub as id_sub,                  
+        sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub',                
+    );           
+
+    $this->db->from('order');                           
+    $this->db->join('sub_proses','order.id_order = sub_proses.id_order' ); 
+    $this->db->where('sub_proses.tanggal_pelaksanaan_sub_proses !=', '0000-00-00');    
+    $this->db->order_by('sub_proses.tanggal_pelaksanaan_sub_proses', 'asc');        
+    
+    $query = $this->db->get();
+    return $query;  
+}
+
+public function ambilIDOrder_sub($id_order)
+{
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        
+        sub_proses.id_jadwal_sub as id_jadwal_sub,
+        sub_proses.id_sub as id_sub,
+        sub_proses.hasil_1 as hasil_1,
+        sub_proses.hasil_2 as hasil_2,            
+        sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub',
+        
+    );           
+
+    $this->db->from('order');                           
+    $this->db->join('sub_proses','order.id_order = sub_proses.id_order' ); 
+    $this->db->where('sub_proses.tanggal_pelaksanaan_sub_proses !=', '0000-00-00');    
+    $this->db->where('sub_proses.id_order', $id_order);
+    $this->db->order_by('sub_proses.tanggal_pelaksanaan_sub_proses', 'asc');        
+    
+    $query = $this->db->get();
+    return $query;  
+}
+
+public function edit_sub($id)
+{
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,            
+        finishing.finishing_cover_uvi as uvi,finishing.finishing_cover_glossy as glossy,finishing.finishing_cover_doff as doff,
+
+        sub_proses.id_sub as id_sub,
+        sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub,
+        
+        sub_proses.jenis_sub_lipat as jenis_sub_lipat,
+        sub_proses.jenis_sub_susun_gabung as jenis_sub_susun_gabung,
+        sub_proses.jenis_sub_laminasi as jenis_sub_laminasi,
+        sub_proses.status_sub as status_sub,
+        sub_proses.keterangan_jadwal_sub_proses as keterangan_jadwal_sub,                
+        sub_proses.tanggal_kembali_1 as tanggal_kembali_1,
+        sub_proses.hasil_1 as hasil_1,                
+        sub_proses.rejek_1 as rejek_1,                
+        sub_proses.keterangan_1 as keterangan_1,
+        sub_proses.tanggal_kembali_2 as tanggal_kembali_2,
+        sub_proses.hasil_2 as hasil_2,                
+        sub_proses.rejek_2 as rejek_2,                
+        sub_proses.keterangan_2 as keterangan_2,                           
+        ',
+    );           
+    // $this->db->select_max('sub_proses.id_jadwal_sub');
+    $this->db->from('order');                           
+    $this->db->join('sub_proses','order.id_order = sub_proses.id_order' ); 
+    $this->db->join('finishing','order.id_order = finishing.id_order' ); 
+    $this->db->where('sub_proses.id_sub', $id);       
+    
+    $query = $this->db->get();
+    return $query;  
+}
+
+public function proses_edit_sub($data)
+    {
+            $ubah_sub = array(                                                                         
+                'tanggal_pelaksanaan_sub_proses' =>$data['tanggal_pelaksanaan_sub'],                                     
+                'keterangan_jadwal_sub_proses' =>$data['keterangan_jadwal_sub'],                   
+                'tanggal_kembali_1' =>$data['tanggal_kembali_1'],   
+                'hasil_1' =>$data['hasil_1'],                   
+                'rejek_1' =>$data['rejek_1'],                   
+                'keterangan_1' =>$data['keterangan_1'],   
+                'tanggal_kembali_2' =>$data['tanggal_kembali_2'],   
+                'hasil_2' =>$data['hasil_2'],                   
+                'rejek_2' =>$data['rejek_2'],                   
+                'keterangan_2' =>$data['keterangan_2'],                                   
+
+            );                        
+            $this->db->set($ubah_sub);
+            $this->db->where('id_sub',$data['id_sub']);
+            $this->db->update('sub_proses');  
+
+            $ubah_sub_khusus = array(                                                                                           
+                'status_sub' =>$data['status_sub'],     
+                'jenis_sub_lipat' =>$data['jenis_sub_lipat'],
+                'jenis_sub_susun_gabung' =>$data['jenis_sub_susun_gabung'],
+                'jenis_sub_laminasi' =>$data['jenis_sub_laminasi'],                                                          
+            );                        
+            $this->db->set($ubah_sub_khusus);
+            $this->db->where('id_order',$data['id_order']);
+            $this->db->update('sub_proses');  
+
+            
 
 }
 

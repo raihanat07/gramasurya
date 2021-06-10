@@ -40,7 +40,8 @@
                             <td>Nama Order</td>
                             <td>Ukuran</td> 
                             <td>Oplag</td>
-                            <td>Halaman</td>                                                      
+                            <td>Halaman</td>   
+                            <td>Total Hasil</td>                                                   
                             <td>Status</td> 
                             <td>Actions</td>
                         </tr>
@@ -57,13 +58,13 @@
                         <td><?= $row->nama_orderan; ?></td>
                         <td><?= $row->ukuran; ?></td>
                         <td><?= $row->oplag; ?></td>
-                        <td><?= $row->halaman; ?></td>                                                                 
-                        <td><?php echo $row->status_mbo == "mbo" ?  "finishing proses cover" : $row->so_status?></td>   
+                        <td><?= $row->halaman; ?></td> 
 
-                        <td align="center">
-                          <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_mbo/<?= $row->id_mbo; ?>">                          
-                            <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
-                          </a>
+                        <td> <?= $row->hasil_lipatan_lembar_1+$row->hasil_lipatan_lembar_2+$row->hasil_lipatan_lembar_3+$row->hasil_lipatan_lembar_4+$row->hasil_lipatan_lembar_5+$row->hasil_lipatan_lembar_6+$row->hasil_lipatan_lembar_7+$row->hasil_lipatan_lembar_8+$row->hasil_lipatan_lembar_9+$row->hasil_lipatan_lembar_10+$row->hasil_lipatan_lembar_11+$row->hasil_lipatan_lembar_12+$row->hasil_lipatan_lembar_13+$row->hasil_lipatan_lembar_14+$row->hasil_lipatan_lembar_15+$row->hasil_lipatan_lembar_16+$row->hasil_lipatan_lembar_17+$row->hasil_lipatan_lembar_18+$row->hasil_lipatan_lembar_19+$row->hasil_lipatan_lembar_20; ?></td>     
+
+                        <td><?php echo $row->status_mbo == "mbo" ?  "finishing proses isi" : $row->so_status?></td>   
+
+                        <td align="center">                          
                           <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_mbo/<?= $row->id_mbo; ?>">
                             <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
@@ -82,13 +83,15 @@
                         <td><?= $row->nama_orderan; ?></td>
                         <td><?= $row->ukuran; ?></td>
                         <td><?= $row->oplag; ?></td>
-                        <td><?= $row->halaman; ?></td>    
-                        <td><?php echo $row->status_mbo == "mbo" ?  "finishing proses cover" : $row->so_status?></td>   
+                        <td><?= $row->halaman; ?></td> 
 
-                        <td align="center">
-                          <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_mbo/<?= $row->id_mbo; ?>">                          
-                            <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
-                          </a>
+                        <td>
+                        <?= $row->hasil_lipatan_lembar_1+$row->hasil_lipatan_lembar_2+$row->hasil_lipatan_lembar_3+$row->hasil_lipatan_lembar_4+$row->hasil_lipatan_lembar_5+$row->hasil_lipatan_lembar_6+$row->hasil_lipatan_lembar_7+$row->hasil_lipatan_lembar_8+$row->hasil_lipatan_lembar_9+$row->hasil_lipatan_lembar_10+$row->hasil_lipatan_lembar_11+$row->hasil_lipatan_lembar_12+$row->hasil_lipatan_lembar_13+$row->hasil_lipatan_lembar_14+$row->hasil_lipatan_lembar_15+$row->hasil_lipatan_lembar_16+$row->hasil_lipatan_lembar_17+$row->hasil_lipatan_lembar_18+$row->hasil_lipatan_lembar_19+$row->hasil_lipatan_lembar_20; ?>
+                        </td>
+
+                        <td><?php echo $row->status_mbo == "mbo" ?  "finishing proses isi" : $row->so_status?></td>   
+
+                        <td align="center">                          
                           <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_mbo/<?= $row->id_mbo; ?>">
                             <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                           </a>

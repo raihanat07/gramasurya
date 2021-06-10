@@ -135,21 +135,17 @@
           </div>
         </div><br>
         <div class="col" align="left">            
-            <div class="col-md-2">
-            
-            <?php if($row->status_shoe !="shoe") {?>  
+            <div class="col-md-2">                        
                                   <label>Total Hasil : <?= $row->hasil_lipatan_lembar_1+$row->hasil_lipatan_lembar_2+$row->hasil_lipatan_lembar_3+$row->hasil_lipatan_lembar_4+$row->hasil_lipatan_lembar_5+$row->hasil_lipatan_lembar_6+$row->hasil_lipatan_lembar_7+$row->hasil_lipatan_lembar_8+$row->hasil_lipatan_lembar_9+$row->hasil_lipatan_lembar_10+$row->hasil_lipatan_lembar_11+$row->hasil_lipatan_lembar_12+$row->hasil_lipatan_lembar_13+$row->hasil_lipatan_lembar_14+$row->hasil_lipatan_lembar_15+$row->hasil_lipatan_lembar_16+$row->hasil_lipatan_lembar_17+$row->hasil_lipatan_lembar_18+$row->hasil_lipatan_lembar_19+$row->hasil_lipatan_lembar_20; ?></label><br>
-            <?php } ?>
-
-                                  <label>Total Hasil Keseluruhan: <?= $total_keseluruhan; ?></label>
+                                              
             </div></div>     
         <div class="row" align="center">
           <div class="col-md-2"></div>
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Jenis Lipatan</label></div>
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Hasil Lipatan</label></div>
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Nama Operator</label></div>
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Tanggal Pengerjaan</label></div>
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Keterangan</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Jenis Lipatan</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Hasil Lipatan</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Nama Operator</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Tanggal Pengerjaan</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Keterangan</label></div>
         </div><br>
 
         <input type="text" name="lipat_lembar_1" value="<?= $row->lipat_lembar_1; ?>" hidden>
@@ -173,11 +169,95 @@
         <input type="text" name="lipat_lembar_19" value="<?= $row->lipat_lembar_19; ?>" hidden>        
         <input type="text" name="lipat_lembar_20" value="<?= $row->lipat_lembar_20; ?>" hidden>
 
+        <input type="text" name="hasil_lipatan_lembar_1" value="<?= $row->hasil_lipatan_lembar_1; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_2" value="<?= $row->hasil_lipatan_lembar_2; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_3" value="<?= $row->hasil_lipatan_lembar_3; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_4" value="<?= $row->hasil_lipatan_lembar_4; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_5" value="<?= $row->hasil_lipatan_lembar_5; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_6" value="<?= $row->hasil_lipatan_lembar_6; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_7" value="<?= $row->hasil_lipatan_lembar_7; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_8" value="<?= $row->hasil_lipatan_lembar_8; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_9" value="<?= $row->hasil_lipatan_lembar_9; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_10" value="<?= $row->hasil_lipatan_lembar_10; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_11" value="<?= $row->hasil_lipatan_lembar_11; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_12" value="<?= $row->hasil_lipatan_lembar_12; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_13" value="<?= $row->hasil_lipatan_lembar_13; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_14" value="<?= $row->hasil_lipatan_lembar_14; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_15" value="<?= $row->hasil_lipatan_lembar_15; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_16" value="<?= $row->hasil_lipatan_lembar_16; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_17" value="<?= $row->hasil_lipatan_lembar_17; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_18" value="<?= $row->hasil_lipatan_lembar_18; ?>" hidden>
+        <input type="text" name="hasil_lipatan_lembar_19" value="<?= $row->hasil_lipatan_lembar_19; ?>" hidden>        
+        <input type="text" name="hasil_lipatan_lembar_20" value="<?= $row->hasil_lipatan_lembar_20; ?>" hidden>
+
+        <input type="text" name="operator_lembar_1" value="<?= $row->operator_lembar_1; ?>" hidden>
+        <input type="text" name="operator_lembar_2" value="<?= $row->operator_lembar_2; ?>" hidden>
+        <input type="text" name="operator_lembar_3" value="<?= $row->operator_lembar_3; ?>" hidden>
+        <input type="text" name="operator_lembar_4" value="<?= $row->operator_lembar_4; ?>" hidden>
+        <input type="text" name="operator_lembar_5" value="<?= $row->operator_lembar_5; ?>" hidden>
+        <input type="text" name="operator_lembar_6" value="<?= $row->operator_lembar_6; ?>" hidden>
+        <input type="text" name="operator_lembar_7" value="<?= $row->operator_lembar_7; ?>" hidden>
+        <input type="text" name="operator_lembar_8" value="<?= $row->operator_lembar_8; ?>" hidden>
+        <input type="text" name="operator_lembar_9" value="<?= $row->operator_lembar_9; ?>" hidden>
+        <input type="text" name="operator_lembar_10" value="<?= $row->operator_lembar_10; ?>" hidden>
+        <input type="text" name="operator_lembar_11" value="<?= $row->operator_lembar_11; ?>" hidden>
+        <input type="text" name="operator_lembar_12" value="<?= $row->operator_lembar_12; ?>" hidden>
+        <input type="text" name="operator_lembar_13" value="<?= $row->operator_lembar_13; ?>" hidden>
+        <input type="text" name="operator_lembar_14" value="<?= $row->operator_lembar_14; ?>" hidden>
+        <input type="text" name="operator_lembar_15" value="<?= $row->operator_lembar_15; ?>" hidden>
+        <input type="text" name="operator_lembar_16" value="<?= $row->operator_lembar_16; ?>" hidden>
+        <input type="text" name="operator_lembar_17" value="<?= $row->operator_lembar_17; ?>" hidden>
+        <input type="text" name="operator_lembar_18" value="<?= $row->operator_lembar_18; ?>" hidden>
+        <input type="text" name="operator_lembar_19" value="<?= $row->operator_lembar_19; ?>" hidden>        
+        <input type="text" name="operator_lembar_20" value="<?= $row->operator_lembar_20; ?>" hidden>
+
+        <input type="text" name="tanggal_pengerjaan_lembar_1" value="<?= $row->tanggal_pengerjaan_lembar_1; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_2" value="<?= $row->tanggal_pengerjaan_lembar_2; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_3" value="<?= $row->tanggal_pengerjaan_lembar_3; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_4" value="<?= $row->tanggal_pengerjaan_lembar_4; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_5" value="<?= $row->tanggal_pengerjaan_lembar_5; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_6" value="<?= $row->tanggal_pengerjaan_lembar_6; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_7" value="<?= $row->tanggal_pengerjaan_lembar_7; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_8" value="<?= $row->tanggal_pengerjaan_lembar_8; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_9" value="<?= $row->tanggal_pengerjaan_lembar_9; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_10" value="<?= $row->tanggal_pengerjaan_lembar_10; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_11" value="<?= $row->tanggal_pengerjaan_lembar_11; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_12" value="<?= $row->tanggal_pengerjaan_lembar_12; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_13" value="<?= $row->tanggal_pengerjaan_lembar_13; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_14" value="<?= $row->tanggal_pengerjaan_lembar_14; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_15" value="<?= $row->tanggal_pengerjaan_lembar_15; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_16" value="<?= $row->tanggal_pengerjaan_lembar_16; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_17" value="<?= $row->tanggal_pengerjaan_lembar_17; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_18" value="<?= $row->tanggal_pengerjaan_lembar_18; ?>" hidden>
+        <input type="text" name="tanggal_pengerjaan_lembar_19" value="<?= $row->tanggal_pengerjaan_lembar_19; ?>" hidden>        
+        <input type="text" name="tanggal_pengerjaan_lembar_20" value="<?= $row->tanggal_pengerjaan_lembar_20; ?>" hidden>
+
+        <input type="text" name="keterangan_lembar_1" value="<?= $row->keterangan_lembar_1; ?>" hidden>
+        <input type="text" name="keterangan_lembar_2" value="<?= $row->keterangan_lembar_2; ?>" hidden>
+        <input type="text" name="keterangan_lembar_3" value="<?= $row->keterangan_lembar_3; ?>" hidden>
+        <input type="text" name="keterangan_lembar_4" value="<?= $row->keterangan_lembar_4; ?>" hidden>
+        <input type="text" name="keterangan_lembar_5" value="<?= $row->keterangan_lembar_5; ?>" hidden>
+        <input type="text" name="keterangan_lembar_6" value="<?= $row->keterangan_lembar_6; ?>" hidden>
+        <input type="text" name="keterangan_lembar_7" value="<?= $row->keterangan_lembar_7; ?>" hidden>
+        <input type="text" name="keterangan_lembar_8" value="<?= $row->keterangan_lembar_8; ?>" hidden>
+        <input type="text" name="keterangan_lembar_9" value="<?= $row->keterangan_lembar_9; ?>" hidden>
+        <input type="text" name="keterangan_lembar_10" value="<?= $row->keterangan_lembar_10; ?>" hidden>
+        <input type="text" name="keterangan_lembar_11" value="<?= $row->keterangan_lembar_11; ?>" hidden>
+        <input type="text" name="keterangan_lembar_12" value="<?= $row->keterangan_lembar_12; ?>" hidden>
+        <input type="text" name="keterangan_lembar_13" value="<?= $row->keterangan_lembar_13; ?>" hidden>
+        <input type="text" name="keterangan_lembar_14" value="<?= $row->keterangan_lembar_14; ?>" hidden>
+        <input type="text" name="keterangan_lembar_15" value="<?= $row->keterangan_lembar_15; ?>" hidden>
+        <input type="text" name="keterangan_lembar_16" value="<?= $row->keterangan_lembar_16; ?>" hidden>
+        <input type="text" name="keterangan_lembar_17" value="<?= $row->keterangan_lembar_17; ?>" hidden>
+        <input type="text" name="keterangan_lembar_18" value="<?= $row->keterangan_lembar_18; ?>" hidden>
+        <input type="text" name="keterangan_lembar_19" value="<?= $row->keterangan_lembar_19; ?>" hidden>        
+        <input type="text" name="keterangan_lembar_20" value="<?= $row->keterangan_lembar_20; ?>" hidden>
+
 
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 1</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 1</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_1" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_1" >
               <option value="<?= $row->lipat_lembar_1; ?>"><?= $row->lipat_lembar_1; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -187,22 +267,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_1" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_1; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_1" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_1; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_1" placeholder="Nama Operator" value="<?= $row->operator_lembar_1; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_1" placeholder="Nama Operator" value="<?= $row->operator_lembar_1; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_1" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_1; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_1" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_1; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_1" placeholder="Keterangan" value="<?= $row->keterangan_lembar_1; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_1" placeholder="Keterangan" value="<?= $row->keterangan_lembar_1; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 2</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 2</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_2" >              
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_2" >              
               <option value="<?= $row->lipat_lembar_2; ?>"><?= $row->lipat_lembar_2; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -212,22 +292,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_2" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_2; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_2" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_2; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_2" placeholder="Nama Operator" value="<?= $row->operator_lembar_2; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_2" placeholder="Nama Operator" value="<?= $row->operator_lembar_2; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_2" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_2; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_2" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_2; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_2" placeholder="Keterangan" value="<?= $row->keterangan_lembar_2; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_2" placeholder="Keterangan" value="<?= $row->keterangan_lembar_2; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 3</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 3</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_3" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_3" >
               <option value="<?= $row->lipat_lembar_3; ?>"><?= $row->lipat_lembar_3; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -237,22 +317,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_3" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_3; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_3" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_3; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_3" placeholder="Nama Operator" value="<?= $row->operator_lembar_3; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_3" placeholder="Nama Operator" value="<?= $row->operator_lembar_3; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_3" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_3; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_3" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_3; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_3" placeholder="Keterangan" value="<?= $row->keterangan_lembar_3; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_3" placeholder="Keterangan" value="<?= $row->keterangan_lembar_3; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 4</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 4</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_4" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_4" >
               <option value="<?= $row->lipat_lembar_4; ?>"><?= $row->lipat_lembar_4; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -262,22 +342,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_4" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_4; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_4" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_4; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_4" placeholder="Nama Operator" value="<?= $row->operator_lembar_4; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_4" placeholder="Nama Operator" value="<?= $row->operator_lembar_4; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_4" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_4; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_4" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_4; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_4" placeholder="Keterangan" value="<?= $row->keterangan_lembar_4; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_4" placeholder="Keterangan" value="<?= $row->keterangan_lembar_4; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 5</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 5</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_5" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_5" >
               <option value="<?= $row->lipat_lembar_5; ?>"><?= $row->lipat_lembar_5; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -287,22 +367,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_5" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_5; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_5" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_5; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_5" placeholder="Nama Operator" value="<?= $row->operator_lembar_5; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_5" placeholder="Nama Operator" value="<?= $row->operator_lembar_5; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_5" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_5; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_5" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_5; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_5" placeholder="Keterangan" value="<?= $row->keterangan_lembar_5; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_5" placeholder="Keterangan" value="<?= $row->keterangan_lembar_5; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 6</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 6</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_6" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_6" >
               <option value="<?= $row->lipat_lembar_6; ?>"><?= $row->lipat_lembar_6; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -312,22 +392,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_6" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_6; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_6" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_6; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_6" placeholder="Nama Operator" value="<?= $row->operator_lembar_6; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_6" placeholder="Nama Operator" value="<?= $row->operator_lembar_6; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_6" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_6; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_6" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_6; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_6" placeholder="Keterangan" value="<?= $row->keterangan_lembar_6; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_6" placeholder="Keterangan" value="<?= $row->keterangan_lembar_6; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 7</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 7</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_7" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_7" >
               <option value="<?= $row->lipat_lembar_7; ?>"><?= $row->lipat_lembar_7; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -337,22 +417,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_7" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_7; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_7" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_7; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_7" placeholder="Nama Operator" value="<?= $row->operator_lembar_7; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_7" placeholder="Nama Operator" value="<?= $row->operator_lembar_7; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_7" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_7; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_7" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_7; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_7" placeholder="Keterangan" value="<?= $row->keterangan_lembar_7; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_7" placeholder="Keterangan" value="<?= $row->keterangan_lembar_7; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 8</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 8</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_8" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_8" >
               <option value="<?= $row->lipat_lembar_8; ?>"><?= $row->lipat_lembar_8; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -362,22 +442,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_8" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_8; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_8" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_8; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_8" placeholder="Nama Operator" value="<?= $row->operator_lembar_8; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_8" placeholder="Nama Operator" value="<?= $row->operator_lembar_8; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_8" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_8; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_8" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_8; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_8" placeholder="Keterangan" value="<?= $row->keterangan_lembar_8; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_8" placeholder="Keterangan" value="<?= $row->keterangan_lembar_8; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 9</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 9</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_9" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_9" >
               <option value="<?= $row->lipat_lembar_9; ?>"><?= $row->lipat_lembar_9; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -387,22 +467,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_9" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_9; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_9" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_9; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_9" placeholder="Nama Operator" value="<?= $row->operator_lembar_9; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_9" placeholder="Nama Operator" value="<?= $row->operator_lembar_9; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_9" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_9; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_9" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_9; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_9" placeholder="Keterangan" value="<?= $row->keterangan_lembar_9; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_9" placeholder="Keterangan" value="<?= $row->keterangan_lembar_9; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 10</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 10</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_10" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_10" >
               <option value="<?= $row->lipat_lembar_10; ?>"><?= $row->lipat_lembar_10; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -412,22 +492,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_10" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_10; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_10" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_10; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_10" placeholder="Nama Operator" value="<?= $row->operator_lembar_10; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_10" placeholder="Nama Operator" value="<?= $row->operator_lembar_10; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_10" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_10; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_10" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_10; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_10" placeholder="Keterangan" value="<?= $row->keterangan_lembar_10; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_10" placeholder="Keterangan" value="<?= $row->keterangan_lembar_10; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 11</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 11</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_11" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_11" >
               <option value="<?= $row->lipat_lembar_11; ?>"><?= $row->lipat_lembar_11; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -437,22 +517,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_11" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_11; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_11" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_11; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_11" placeholder="Nama Operator" value="<?= $row->operator_lembar_11; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_11" placeholder="Nama Operator" value="<?= $row->operator_lembar_11; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_11" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_11; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_11" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_11; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_11" placeholder="Keterangan" value="<?= $row->keterangan_lembar_11; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_11" placeholder="Keterangan" value="<?= $row->keterangan_lembar_11; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 12</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 12</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_12" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_12" >
               <option value="<?= $row->lipat_lembar_12; ?>"><?= $row->lipat_lembar_12; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -462,22 +542,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_12" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_12; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_12" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_12; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_12" placeholder="Nama Operator" value="<?= $row->operator_lembar_12; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_12" placeholder="Nama Operator" value="<?= $row->operator_lembar_12; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_12" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_12; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_12" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_12; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_12" placeholder="Keterangan" value="<?= $row->keterangan_lembar_12; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_12" placeholder="Keterangan" value="<?= $row->keterangan_lembar_12; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 13</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 13</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_13" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_13" >
               <option value="<?= $row->lipat_lembar_13; ?>"><?= $row->lipat_lembar_13; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -487,22 +567,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_13" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_13; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_13" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_13; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_13" placeholder="Nama Operator" value="<?= $row->operator_lembar_13; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_13" placeholder="Nama Operator" value="<?= $row->operator_lembar_13; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_13" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_13; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_13" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_13; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_13" placeholder="Keterangan" value="<?= $row->keterangan_lembar_13; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_13" placeholder="Keterangan" value="<?= $row->keterangan_lembar_13; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 14</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 14</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_14" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_14" >
               <option value="<?= $row->lipat_lembar_14; ?>"><?= $row->lipat_lembar_14; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -512,22 +592,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_14" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_14; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_14" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_14; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_14" placeholder="Nama Operator"value="<?= $row->operator_lembar_14; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_14" placeholder="Nama Operator"value="<?= $row->operator_lembar_14; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_14" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_14; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_14" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_14; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_14" placeholder="Keterangan" value="<?= $row->keterangan_lembar_14; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_14" placeholder="Keterangan" value="<?= $row->keterangan_lembar_14; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 15</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 15</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_15" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_15" >
               <option value="<?= $row->lipat_lembar_15; ?>"><?= $row->lipat_lembar_15; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -537,22 +617,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_15" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_15; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_15" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_15; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_15" placeholder="Nama Operator" value="<?= $row->operator_lembar_15; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_15" placeholder="Nama Operator" value="<?= $row->operator_lembar_15; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_15" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_15; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_15" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_15; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_15" placeholder="Keterangan" value="<?= $row->keterangan_lembar_15; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_15" placeholder="Keterangan" value="<?= $row->keterangan_lembar_15; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 16</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 16</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_16" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_16" >
               <option value="<?= $row->lipat_lembar_16; ?>"><?= $row->lipat_lembar_16; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -562,22 +642,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_16" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_16; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_16" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_16; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_16" placeholder="Nama Operator" value="<?= $row->operator_lembar_16; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_16" placeholder="Nama Operator" value="<?= $row->operator_lembar_16; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_16" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_16; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_16" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_16; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_16" placeholder="Keterangan" value="<?= $row->keterangan_lembar_16; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_16" placeholder="Keterangan" value="<?= $row->keterangan_lembar_16; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 17</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 17</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_17" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_17" >
               <option value="<?= $row->lipat_lembar_17; ?>"><?= $row->lipat_lembar_17; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -587,22 +667,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_17" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_17; ?>"> 
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_17" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_17; ?>"> 
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_17" placeholder="Nama Operator" value="<?= $row->operator_lembar_17; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_17" placeholder="Nama Operator" value="<?= $row->operator_lembar_17; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_17" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_17; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_17" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_17; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_17" placeholder="Keterangan" value="<?= $row->keterangan_lembar_17; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_17" placeholder="Keterangan" value="<?= $row->keterangan_lembar_17; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 18</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 18</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_18" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_18" >
               <option value="<?= $row->lipat_lembar_18; ?>"><?= $row->lipat_lembar_18; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -612,22 +692,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_18" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_18; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_18" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_18; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_18" placeholder="Nama Operator" value="<?= $row->operator_lembar_18; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_18" placeholder="Nama Operator" value="<?= $row->operator_lembar_18; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_18" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_18; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_18" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_18; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_18" placeholder="Keterangan" value="<?= $row->keterangan_lembar_18; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_18" placeholder="Keterangan" value="<?= $row->keterangan_lembar_18; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 19</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 19</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_19" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_19" >
               <option value="<?= $row->lipat_lembar_19; ?>"><?= $row->lipat_lembar_19; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -637,22 +717,22 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_19" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_19; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_19" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_19; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_19" placeholder="Nama Operator" value="<?= $row->operator_lembar_19; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_19" placeholder="Nama Operator" value="<?= $row->operator_lembar_19; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_19" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_19; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_19" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_19; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_19" placeholder="Keterangan" value="<?= $row->keterangan_lembar_19; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_19" placeholder="Keterangan" value="<?= $row->keterangan_lembar_19; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?>>Lembar 20</label></div>
+          <div class="col-md-2"><label <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?>>Lembar 20</label></div>
           <div class="col-md-2">
-            <select disabled <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_20" >
+            <select disabled <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> id="inputState" class="form-select form-control" name="lipat_lembar_20" >
               <option value="<?= $row->lipat_lembar_20; ?>"><?= $row->lipat_lembar_20; ?></option>
               <option value="Lipat 1">Lipat 1</option>
               <option value="Lipat 2">Lipat 2</option>
@@ -662,16 +742,16 @@
             </select>
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_20" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_20; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="number" class="form-control" name="hasil_lipatan_lembar_20" placeholder="Hasil Lipatan" value="<?= $row->hasil_lipatan_lembar_20; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="operator_lembar_20" placeholder="Nama Operator" value="<?= $row->operator_lembar_20; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="operator_lembar_20" placeholder="Nama Operator" value="<?= $row->operator_lembar_20; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_20" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_20; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="date" class="form-control" name="tanggal_pengerjaan_lembar_20" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_lembar_20; ?>">
           </div>
           <div class="col-md-2">
-            <input <?php echo $row->status_shoe == "shoe" ?  "hidden" : " "?> type="text" class="form-control" name="keterangan_lembar_20" placeholder="Keterangan" value="<?= $row->keterangan_lembar_20; ?>">
+            <input <?php echo $row->status_shoe == "shoe" ?  "disabled" : " "?> type="text" class="form-control" name="keterangan_lembar_20" placeholder="Keterangan" value="<?= $row->keterangan_lembar_20; ?>">
           </div>
         </div><hr><br>
 

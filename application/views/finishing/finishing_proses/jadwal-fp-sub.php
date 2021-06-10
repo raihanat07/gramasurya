@@ -18,7 +18,7 @@
                     <div class="card-title">
                       <div class=" row">
                         <div class="col-sm-6">
-                          <h3>Jadwal Mesin Sub Finishing Proses</h3>
+                          <h3>Jadwal Mesin sub</h3>
                         </div>
                         <div class="col-sm-6" align="right">
                           Kapasitas : 4000 / Hari
@@ -40,37 +40,62 @@
                             <td>Nama Order</td>
                             <td>Ukuran</td> 
                             <td>Oplag</td>
-                            <td>Halaman</td>
-                            <td>Total Lembar</td>
-                            <td>Total / Hari</td>
+                            <td>Halaman</td>      
+                            <td>Total Hasil</td>                                                
+                            <td>Status</td> 
                             <td>Actions</td>
                         </tr>
                     </thead>
                     <tbody>
-                        <td>Tanggal Pelaksanaan</td>
-                        <td>Nomor SO</td>
-                        <td>Tanggal Masuk</td>
-                        <td>Deadline</td>
-                        <td>Nama Pemesan</td>
-                        <td>Nama Order</td>
-                        <td>Ukuran</td>
-                        <td>Oplag</td>
-                        <td>Halaman</td>
-                        <td>Total Lembar</td>
-                        <td>Total / Hari</td>
-                        <td align="center">
-                          <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_sub">
-                            <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
-                          </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_sub">
+                    <?php foreach($fp as $s => $row) {?>  
+                    <?php if($row->status_sub ==""){ ?>                    
+                    <tr>
+                        <td><?= $row->tanggal_pelaksanaan_sub; ?></td>
+                        <td><?= $row->nomor_so; ?></td>
+                        <td><?= $row->tanggal_masuk; ?></td>
+                        <td><?= $row->deadline; ?></td>
+                        <td><?= $row->nama_pemesan; ?></td>
+                        <td><?= $row->nama_orderan; ?></td>
+                        <td><?= $row->ukuran; ?></td>
+                        <td><?= $row->oplag; ?></td>
+                        <td><?= $row->halaman; ?></td>  
+                        <td><?= $row->hasil_1+$row->hasil_2; ?></td>                                                                 
+                        <td><?php echo $row->status_sub == "sub" ?  "finishing proses" : $row->so_status?></td>   
+
+                        <td align="center">                          
+                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_sub/<?= $row->id_sub; ?>">
                             <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_sub">
+                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_sub/<?= $row->id_sub; ?>">
                             <i class="fa fa-eye" style="font-size:18px;"></i>
                           </a>
                         </td>
+                      </tr>
+                    <?php } else if($row->status_sub =="sub" and $row->id_jadwal_sub == 0){?>
+                      <tr>
+                        <td><?= $row->tanggal_pelaksanaan_sub; ?></td>
+                        <td><?= $row->nomor_so; ?></td>
+                        <td><?= $row->tanggal_masuk; ?></td>
+                        <td><?= $row->deadline; ?></td>
+                        <td><?= $row->nama_pemesan; ?></td>
+                        <td><?= $row->nama_orderan; ?></td>
+                        <td><?= $row->ukuran; ?></td>
+                        <td><?= $row->oplag; ?></td>
+                        <td><?= $row->halaman; ?></td> 
+                        <td><?= $row->hasil_1+$row->hasil_2; ?></td>     
+                        <td><?php echo $row->status_sub == "sub" ?  "finishing proses" : $row->so_status?></td>   
+
+                        <td align="center">                          
+                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_sub/<?= $row->id_sub; ?>">
+                            <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
+                          </a>
+                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_sub/<?= $row->id_sub; ?>">
+                            <i class="fa fa-eye" style="font-size:18px;"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    <?php }} ?>
                     </tbody>
-            
                 </table>
                 </div>
                 <!-- /.card-body -->

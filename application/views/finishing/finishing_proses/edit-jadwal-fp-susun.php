@@ -133,8 +133,16 @@
           </div>
         </div>
         
+        <input hidden type="text"  name="tanggal_pengerjaan_1"  value="<?= $row->tanggal_pengerjaan_1; ?>" >    
+        <input hidden type="text"  name="tanggal_pengerjaan_2"  value="<?= $row->tanggal_pengerjaan_2; ?>" >    
+        <input hidden type="text"  name="hasil_1"  value="<?= $row->hasil_1; ?>" >    
+        <input hidden type="text"  name="hasil_2"  value="<?= $row->hasil_2; ?>" >    
+        <input hidden type="text"  name="operator_1"  value="<?= $row->operator_1; ?>" >    
+        <input hidden type="text"  name="operator_2"  value="<?= $row->operator_2; ?>" >    
+        <input hidden type="text"  name="keterangan_1"  value="<?= $row->keterangan_1; ?>" >    
+        <input hidden type="text"  name="keterangan_2"  value="<?= $row->keterangan_2; ?>" >    
         
-        <?php if($row->status_susun !="susun"){?> 
+        
         <br>
         <div class="row" align="center">
           <div class="col-md-1"></div>
@@ -144,48 +152,43 @@
           <div class="col-md-3"><label>Keterangan</label></div>
         </div>
         <br>
-          <?php } ?>
+          
 
         <div class="row">
-          <div class="col-md-1" align="center"><label <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>>1</label></div>
+          <div class="col-md-1" align="center"><label <?php echo $row->status_susun == "susun" ?  "disabled" : ""?>>1</label></div>
           <div class="col-md-2">
-            <input <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="date" class="form-control" name="tanggal_pengerjaan_1" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_1; ?>">
+            <input <?php echo $row->status_susun == "susun" ?  "disabled" : ""?>  type="date" class="form-control" name="tanggal_pengerjaan_1" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_1; ?>">
           </div>
           <div class="col-md-1">
-            <input <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="number" class="form-control" name="hasil_1" placeholder="Hasil" value="<?= $row->hasil_1; ?>">
+            <input <?php echo $row->status_susun == "susun" ?  "disabled" : ""?>  type="number" class="form-control" name="hasil_1" placeholder="Hasil" value="<?= $row->hasil_1; ?>">
           </div>          
           <div class="col-md-2">
-            <input <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="text" class="form-control" name="operator_1" placeholder="Nama Operator" value="<?= $row->operator_1; ?>">
+            <input <?php echo $row->status_susun == "susun" ?  "disabled" : ""?>  type="text" class="form-control" name="operator_1" placeholder="Nama Operator" value="<?= $row->operator_1; ?>">
           </div>          
           <div class="col-md-3">
-            <input <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="text" class="form-control" name="keterangan_1" placeholder="Keterangan" value="<?= $row->keterangan_1; ?>">
+            <input <?php echo $row->status_susun == "susun" ?  "disabled" : ""?>  type="text" class="form-control" name="keterangan_1" placeholder="Keterangan" value="<?= $row->keterangan_1; ?>">
           </div>
         </div><br>
         <div class="row">
-          <div class="col-md-1" align="center"><label <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>>2</label></div>
+          <div class="col-md-1" align="center"><label <?php echo $row->status_susun == "susun" ?  "disabled" : ""?>>2</label></div>
           <div class="col-md-2">
-            <input <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="date" class="form-control" name="tanggal_pengerjaan_2" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_2; ?>">
+            <input <?php echo $row->status_susun == "susun" ?  "disabled" : ""?>  type="date" class="form-control" name="tanggal_pengerjaan_2" placeholder="Tanggal Pengerjaan" value="<?= $row->tanggal_pengerjaan_2; ?>">
           </div>
           <div class="col-md-1">
-            <input <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="number" class="form-control" name="hasil_2" placeholder="Hasil" value="<?= $row->hasil_2; ?>">
+            <input <?php echo $row->status_susun == "susun" ?  "disabled" : ""?>  type="number" class="form-control" name="hasil_2" placeholder="Hasil" value="<?= $row->hasil_2; ?>">
           </div>          
           <div class="col-md-2">
-            <input <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="text" class="form-control" name="operator_2" placeholder="Nama Operator" value="<?= $row->operator_2; ?>">
+            <input <?php echo $row->status_susun == "susun" ?  "disabled" : ""?>  type="text" class="form-control" name="operator_2" placeholder="Nama Operator" value="<?= $row->operator_2; ?>">
           </div>          
           <div class="col-md-3">
-            <input <?php echo $row->status_susun == "susun" ?  "hidden" : ""?>  type="text" class="form-control" name="keterangan_2" placeholder="Keterangan" value="<?= $row->keterangan_2; ?>">
+            <input <?php echo $row->status_susun == "susun" ?  "disabled" : ""?>  type="text" class="form-control" name="keterangan_2" placeholder="Keterangan" value="<?= $row->keterangan_2; ?>">
           </div>
                             
         </div><hr>
         <div class="row">
         <div class="col" align="left">            
-            <div class="col-md-6">
-            
-            <?php if($row->status_susun !="susun") {?>  
-                                  <label>Total Hasil : <?= $row->hasil_1+$row->hasil_2; ?></label><br>
-            <?php } ?>
-
-                                  <label>Total Hasil Keseluruhan: <?= $total_1+$total_2; ?></label>
+            <div class="col-md-6">                        
+                                  <label>Total Hasil : <?= $row->hasil_1+$row->hasil_2; ?></label><br>                                            
             </div></div>  
         </div>
         
