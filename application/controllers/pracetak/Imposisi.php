@@ -52,7 +52,7 @@ class Imposisi extends CI_Controller {
 		check_not_login();
 		$query = $this->imposisi->get_lihat($id);
 		$data = array(
-			'judul' => 'Print Imposisi',
+			'judul' => 'Print Imposisi Pracetak',
 			'imposisi' => $query->result(),
 		);		
 		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-print',$data);		

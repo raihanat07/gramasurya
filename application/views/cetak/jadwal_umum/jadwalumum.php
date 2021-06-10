@@ -46,7 +46,7 @@
               <td>Tanggal</td>
             </tr>
             </thead>
-            <?php foreach($ju as $s => $row) {?>  
+            <?php foreach($ju as $s => $row) {?>
             <tr>
             <td align="center"><?= $row->nomor_so; ?></td>
               <td><?= $row->tanggal_masuk; ?></td>
@@ -85,7 +85,6 @@
           
           <?php foreach($ju as $s => $row) {?>  
           <form action="<?=site_url('cetak/JadwalUmum/proses')?>" method="post">
-          <input type="text" name="id_order"  value="<?= $row->id_order; ?>" hidden>
           <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
               <!-- konten modal-->
@@ -134,47 +133,46 @@
                         </div>
                         <div class="row">
                           <div class="col-sm-4">
-                            <br>Finishing Proses
-                            <br><label>dari db</label>
-                          </div>
-                          <div class="col-sm-4">
-                            <br>Finishing
-                            <br><label class="form-label">
-                                        <?php 
-                                        $finishing = "";
-                                        if($row->bending != null){
-                                          $finishing .= "bending, ";
-                                        }
-                                        if($row->hard_cover != null){
-                                          $finishing .= 'hard cover, ';
-                                        }   
-                                        if($row->jahit_benang != null){
-                                          $finishing .= 'jahit benang, ';
-                                        } 
-                                        if($row->jahit_kawat != null){
-                                          $finishing .= 'jahit kawat, ';
-                                        }    
-                                        if($row->pond != null){
-                                          $finishing .= 'pond, ';
-                                        }   
-                                        if($row->spiral != null){
-                                          $finishing .= 'Spiral, ';
-                                        }
-                                        if($row->klem != null){
-                                          $finishing .= 'Klem, ';
-                                        }
-                                        $finishing = rtrim($finishing, ", ");
-                                        echo $finishing;
-                                        ?>
-                                    </label>
+                            <br>Finishing<br>
+                            <label class="form-label">
+                              <?php 
+                                $finishing = "";
+                                if($row->bending != null){
+                                  $finishing .= "bending, ";
+                                }
+                                if($row->hard_cover != null){
+                                  $finishing .= 'hard cover, ';
+                                }   
+                                if($row->jahit_benang != null){
+                                  $finishing .= 'jahit benang, ';
+                                } 
+                                if($row->jahit_kawat != null){
+                                  $finishing .= 'jahit kawat, ';
+                                }    
+                                if($row->pond != null){
+                                  $finishing .= 'pond, ';
+                                }   
+                                if($row->spiral != null){
+                                  $finishing .= 'Spiral, ';
+                                }
+                                if($row->klem != null){
+                                  $finishing .= 'Klem, ';
+                                }
+                                $finishing = rtrim($finishing, ", ");
+                                echo $finishing;
+                              ?>
+                            </label>
                           </div>
                           <div class="col-sm-4">
                             <br>Oplag
                             <br><label><?= $row->oplag; ?></label>
                           </div>
-                        </div><br>
+                        </div>
+                        <hr><br>
                         <h4><label>Jadwal Cover</label></h4>
                         <div class="row">
+                        <?php if($row->id_jadwal_cetak == null) {?>  
+                        
                           <div class="col-md-6">
                             Tanggal Pelaksanaan<br>
                             <input type="date" class="form-control" name="tanggal_pelaksanaan_cover" placeholder="Tanggal Pelaksanaan Cover" required>
@@ -214,16 +212,22 @@
                               <label>otomatis = target * oplag</label>
                              <?php } ?>
                           </div>
-                        </div><br>
+                        </div>
+                        <br><hr><br>
+                        <?php } ?>
                         <div class="row" align="right">
                           <div class="col">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                            <button type="submit" name="add" class="btn btn-success">Publish</button>
+                              <?php if($row->id_jadwal_cetak == null) {?>  
+                            <button type="submit" class="btn btn-success" name="add">Publish</button>
+                              <?php }else{ ?>
+                            <button type="submit" class="btn btn-success" name="edit">Publish</button>
+                              <?php } ?>
                           </div>
                         </div>
                       </div>
                       <div class="tab-pane" id="isi">
-                      <h4><label>SO dari db</label></h4>
+                        <h4><label>SO dari db</label></h4>
                         <div class="row">
                           <div class="col-sm-6">
                             <br>Tanggal Masuk
@@ -250,47 +254,46 @@
                         </div>
                         <div class="row">
                           <div class="col-sm-4">
-                            <br>Finishing Proses
-                            <br><label>dari db</label>
-                          </div>
-                          <div class="col-sm-4">
-                            <br>Finishing
-                            <br><label class="form-label">
-                                        <?php 
-                                        $finishing = "";
-                                        if($row->bending != null){
-                                          $finishing .= "bending, ";
-                                        }
-                                        if($row->hard_cover != null){
-                                          $finishing .= 'hard cover, ';
-                                        }   
-                                        if($row->jahit_benang != null){
-                                          $finishing .= 'jahit benang, ';
-                                        } 
-                                        if($row->jahit_kawat != null){
-                                          $finishing .= 'jahit kawat, ';
-                                        }    
-                                        if($row->pond != null){
-                                          $finishing .= 'pond, ';
-                                        }   
-                                        if($row->spiral != null){
-                                          $finishing .= 'Spiral, ';
-                                        }
-                                        if($row->klem != null){
-                                          $finishing .= 'Klem, ';
-                                        }
-                                        $finishing = rtrim($finishing, ", ");
-                                        echo $finishing;
-                                        ?>
-                                    </label>
+                            <br>Finishing<br>
+                            <label class="form-label">
+                              <?php 
+                                $finishing = "";
+                                if($row->bending != null){
+                                  $finishing .= "bending, ";
+                                }
+                                if($row->hard_cover != null){
+                                  $finishing .= 'hard cover, ';
+                                }   
+                                if($row->jahit_benang != null){
+                                  $finishing .= 'jahit benang, ';
+                                } 
+                                if($row->jahit_kawat != null){
+                                  $finishing .= 'jahit kawat, ';
+                                }    
+                                if($row->pond != null){
+                                  $finishing .= 'pond, ';
+                                }   
+                                if($row->spiral != null){
+                                  $finishing .= 'Spiral, ';
+                                }
+                                if($row->klem != null){
+                                  $finishing .= 'Klem, ';
+                                }
+                                $finishing = rtrim($finishing, ", ");
+                                echo $finishing;
+                              ?>
+                            </label>
                           </div>
                           <div class="col-sm-4">
                             <br>Oplag
                             <br><label><?= $row->oplag; ?></label>
                           </div>
-                        </div><br>
+                        </div>
+                        <hr><br>
                         <h4><label>Jadwal Isi</label></h4>
                         <div class="row">
+                        <?php if($row->id_jadwal_cetak == null) {?>  
+                        
                           <div class="col-md-6">
                             Tanggal Pelaksanaan<br>
                             <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" placeholder="Tanggal Pelaksanaan Isi" required>
@@ -321,13 +324,26 @@
                           </div>
                           <div class="col-md-6">
                             <br>Druk<br>
-                            <label>otomatis = target * oplag</label>
+                            <!-- <input type="number" class="form-control" name="druk_isi" hidden>
+                            <label>otomatis = target * oplag</label> -->
+                            <?php if($row->druk_isi !=null) {?>
+                              <td><?= $row->druk_isi ?></td>
+                            <?php } else {?> 
+                              <input type="number" class="form-control" name="druk_isi" hidden>
+                              <label>otomatis = target * oplag</label>
+                             <?php } ?>
                           </div>
-                        </div><br>
+                        </div>
+                        <br><hr><br>
+                        <?php } ?>
                         <div class="row" align="right">
                           <div class="col">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                            <button type="submit" name="add" class="btn btn-success">Publish</button>
+                              <?php if($row->id_jadwal_cetak == null) {?>  
+                            <button type="submit" class="btn btn-success" name="add">Publish</button>
+                              <?php }else{ ?>
+                            <button type="submit" class="btn btn-success" name="edit">Publish</button>
+                              <?php } ?>
                           </div>
                         </div>
                       </div>

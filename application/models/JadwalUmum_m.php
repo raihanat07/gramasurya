@@ -67,6 +67,27 @@ class JadwalUmum_m extends CI_Model {
          
     }
 
+    public function edit_ju($data)
+	{
+            $edit_ju = array(         
+                'id_order' =>$data['id_order'],                                                                       
+                'mesin_cover' =>$data['mesin_cover'],
+                'tanggal_pelaksanaan_cover' =>$data['tanggal_pelaksanaan_cover'],
+                'operator_cover' =>$data['operator_cover'],
+                'target_cover' =>$data['target_cover'],
+                'druk_cover' =>$data['druk_cover'],
+                'mesin_isi' =>$data['mesin_isi'],
+                'tanggal_pelaksanaan_isi' =>$data['tanggal_pelaksanaan_isi'],
+                'operator_isi' =>$data['operator_isi'],
+                'target_isi' =>$data['target_isi']
+                // 'druk_isi' =>$data['druk_isi']
+                               
+            );
+            $this->db->set($edit_ju);
+            $this->db->where('id_order',$data['id_order']);
+            $this->db->update('jadwal_cetak');         
+    }
+
     // public function get()
     // {
     //     $this->db->select(

@@ -277,7 +277,7 @@
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Keterangan</label><br><br>
-                                            <?= $row->cover1keterangan1; ?> 
+                                            <?= $row->cover1keterangan1; ?><br><br>
                                         <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
                                             <?= $row->cover1keterangan2; ?><br><br>
                                         <?php } if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
@@ -285,7 +285,7 @@
                                         <?php endif ?>
                                     </div>
                                     <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label>
+                                        <label class="form-label">Tgl. Imposisi</label><br><br>
                                             <?= $row->cover1tglimposisi1; ?><br><br>
                                         <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
                                             <?= $row->cover1tglimposisi2; ?><br><br>
@@ -401,7 +401,7 @@
                                             <?php endif ?>
                                         </div>
                                     <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label>
+                                        <label class="form-label">Tgl. Imposisi</label><br><br>
                                             <?= $row->isi1tglimposisi1; ?><br><br>
                                         <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
                                             <?= $row->isi1tglimposisi2; ?><br><br>
@@ -528,7 +528,7 @@
                                     </div>
                                     <div class="col">
                                         <label class="form-label">Keterangan</label><br><br>
-                                            <?= $row->cover2keterangan1; ?> 
+                                            <?= $row->cover2keterangan1; ?><br><br> 
                                         <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
                                             <?= $row->cover2keterangan2; ?><br><br>
                                         <?php } if($row->cover2plat3 != 0 || $row->isi2plat3 != 0) :?>
@@ -536,7 +536,7 @@
                                         <?php endif ?>
                                     </div>
                                     <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label>
+                                        <label class="form-label">Tgl. Imposisi</label><br><br>
                                             <?= $row->cover2tglimposisi1; ?><br><br>
                                         <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
                                             <?= $row->cover2tglimposisi2; ?><br><br>
@@ -652,7 +652,7 @@
                                             <?php endif ?>
                                         </div>
                                     <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label>
+                                        <label class="form-label">Tgl. Imposisi</label><br><br>
                                             <?= $row->isi2tglimposisi1; ?><br><br>
                                         <?php if($row->cover2plat2 != 0 || $row->isi2plat2 != 0) {?>
                                             <?= $row->isi2tglimposisi2; ?><br><br>
@@ -821,7 +821,7 @@
                                             <?php endif ?>
                                         </div>
                                     <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label>
+                                        <label class="form-label">Tgl. Imposisi</label><br><br>
                                             <?= $row->isi3tglimposisi1; ?><br><br>
                                         <?php if($row->isi3plat2 != 0) {?>
                                             <?= $row->isi3tglimposisi2; ?><br><br>

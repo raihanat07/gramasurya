@@ -122,7 +122,7 @@
               <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 4 || $this->fungsi->user_login()->level == 6) { ?>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Imposisi" 
-                <?php  if($judul == "Imposisi" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak" || $judul == "Edit Imposisi Pracetak"){?>
+                <?php  if($judul == "Imposisi" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak" || $judul == "Edit Imposisi Pracetak" || $judul == "Print Imposisi Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
@@ -148,7 +148,7 @@
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>pracetak/Laporan" 
-                 <?php  if($judul == "Laporan" || $judul == "Tambah Laporan Pracetak" || $judul == "Edit Laporan Pracetak" || $judul == "Lihat Laporan" || $judul == "Edit Laporan Pracetak"){?>
+                 <?php  if($judul == "Laporan" || $judul == "Tambah Laporan Pracetak" || $judul == "Edit Laporan Pracetak" || $judul == "Lihat Laporan Pracetak" || $judul == "Print Laporan Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
