@@ -170,9 +170,34 @@ class FinishingProses extends CI_Controller {
 	   $this->template->load('finishing/template','finishing/finishing_proses/lihat-jadwal-fp-laminasi',$data);
 }
    public function proses_laminasi()
-	{		
+	{				
 		if(isset($_POST['edit'])){							
 			$inputan = $this->input->post(null, TRUE);
+
+
+		// $jumlah_mesin = 0;
+        // $jumlah_selesai = 0;
+        // $inputan["status_umum"] = "cetak";
+
+        // if($inputan["tanggal_pelaksanaan_laminasi"] !=0){
+        //   $jumlah_mesin +=1;
+        //   if($inputan["status_laminasi"] == "laminasi"){            
+        //     $jumlah_selesai +=1;
+        //   }                      
+        // }
+
+        // // if($inputan["tanggal_pelaksanaan_mbo"] !=0){
+		// // 	$jumlah_mesin +=1;
+		// // 	if($inputan["status_mbo"] == mbo){            
+		// // 	  $jumlah_selesai +=1;
+		// // 	}                      
+		// // }
+        
+        //   if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+        //     $inputan["status_umum"] = "finishing proses";
+        //   }     
+		//   $this->fp->status_umum($inputan);	     
+
 			$this->fp->proses_edit_laminasi($inputan);				
 				echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
 				echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_laminasi')."'; </script>"; 

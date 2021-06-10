@@ -71,26 +71,31 @@
                         <td><?= $row->oplag; ?></td>
                         <td><?= $row->halaman; ?></td>
                             <?php if($row->tanggal_laminasi != "0000-00-00") {?>
-                        <td><?= $row->tanggal_laminasi ?></td>
+                        <td <?php echo $row->status_laminasi == "laminasi" ?  "style='color: red'" : "" ?>><?= $row->tanggal_laminasi ?></td>
                             <?php } else {?> <td></td> <?php } ?>
                             
                             <?php if($row->tanggal_mbo != "0000-00-00") {?>
-                        <td><?= $row->tanggal_mbo ?></td>
+                        <td <?php echo $row->status_mbo == "mbo" ?  "style='color: red'" : "" ?>><?= $row->tanggal_mbo ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
                             <?php if($row->tanggal_shoe != "0000-00-00") {?>
-                        <td><?= $row->tanggal_shoe ?></td>
+                        <td <?php echo $row->status_shoe == "shoe" ?  "style='color: red'" : "" ?>><?= $row->tanggal_shoe ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
                             <?php if($row->tanggal_susun != "0000-00-00") {?>
-                        <td><?= $row->tanggal_susun ?></td>
+                        <td <?php echo $row->status_susun == "susun" ?  "style='color: red'" : "" ?>><?= $row->tanggal_susun ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
                             <?php if($row->tanggal_sub_proses != "0000-00-00") {?>
-                        <td><?= $row->tanggal_sub_proses ?></td>
+                        <td <?php echo $row->status_sub == "sub" ?  "style='color: red'" : "" ?>><?= $row->tanggal_sub_proses ?></td>
                             <?php } else {?> <td></td> <?php } ?>
                       
-                        <td><?= $row->so_status ?></td>                        
+                        <td>
+                              <?php if($row->status_laminasi == "laminasi" or $row->status_mbo == "mbo" or $row->status_shoe == "shoe" or $row->status_susun == "susun" or $row->status_sub == "sub"){
+                                      echo "Finishing Proses";}
+                                    else echo $row->so_status;
+                              ?>                                                
+                        </td>                        
                         <td align="center">
                           <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order; ?>">
                             <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
