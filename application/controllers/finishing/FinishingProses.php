@@ -22,17 +22,34 @@ class FinishingProses extends CI_Controller {
 	{
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
-			$this->fp->tambah_fp($inputan);				
-				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
-				echo "<script>window.location='".site_url('finishing/FinishingProses/')."'; </script>"; 
+			$this->fp->tambah_fp($inputan);								
 		}
 		if(isset($_POST['edit'])){							
 			$inputan = $this->input->post(null, TRUE);
-			$this->fp->edit_fp($inputan);				
-				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
-				echo "<script>window.location='".site_url('finishing/FinishingProses/')."'; </script>"; 
+			$this->fp->edit_fp($inputan);								
 		}
-	}
+		
+		if($inputan["tanggal_pelaksanaan_laminasi"] == ""){
+			$this->fp->hapus_jadwal_laminasi($inputan);	
+		}
+		if($inputan["tanggal_pelaksanaan_mesin_shoe"] == ""){
+			$this->fp->hapus_jadwal_shoe($inputan);	
+		}
+		if($inputan["tanggal_pelaksanaan_mesin_mbo"] == ""){
+			$this->fp->hapus_jadwal_mbo($inputan);	
+		}
+		if($inputan["tanggal_pelaksanaan_mesin_susun"] == ""){
+			$this->fp->hapus_jadwal_susun($inputan);	
+		}
+		if($inputan["tanggal_pelaksanaan_sub_proses"] == ""){
+			$this->fp->hapus_jadwal_sub($inputan);	
+		}
+
+		echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
+		echo "<script>window.location='".site_url('finishing/FinishingProses/')."'; </script>"; 
+
+
+}
 
 
 
