@@ -805,4 +805,4 @@
     <!-- /.card -->
 
 </section>
-<!-- /.content
+<!-- /.content -->
