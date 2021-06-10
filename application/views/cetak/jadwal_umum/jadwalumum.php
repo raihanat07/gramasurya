@@ -75,7 +75,7 @@
 
               <td><?= $row->so_status; ?></td>
               <td align="center">
-                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order; ?>">
+                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
                   <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
                 </button>
               </td>
@@ -85,8 +85,7 @@
           
           <?php foreach($ju as $s => $row) {?>  
           <form action="<?=site_url('cetak/JadwalUmum/proses')?>" method="post">
-          <input type="text" name="id_order"  value="<?= $row->id_order; ?>" hidden>
-          <div id="myModal<?= $row->id_order; ?>" class="modal fade" role="dialog">
+          <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
               <!-- konten modal-->
               <div class="modal-content">
@@ -99,14 +98,14 @@
                 <div class="card">
                   <div class="card-header" align="center">
                     <ul class="nav nav-pills row">
-                      <li class="nav-item col"><a class="nav-link btn-outline-success active" href="#cover<?= $row->id_order; ?>" data-toggle="tab" style="min-width: 200px;">COVER</a></li>
-                      <li class="nav-item col"><a class="nav-link btn-outline-success" href="#isi<?= $row->id_order; ?>" data-toggle="tab" style="min-width: 200px;">ISI</a></li>
+                      <li class="nav-item col"><a class="nav-link btn-outline-success active" href="#cover" data-toggle="tab" style="min-width: 200px;">COVER</a></li>
+                      <li class="nav-item col"><a class="nav-link btn-outline-success" href="#isi" data-toggle="tab" style="min-width: 200px;">ISI</a></li>
                     </ul>
                   </div><!-- /.card-header -->
                   
                   <div class="card-body">
                     <div class="tab-content">
-                      <div class="tab-pane active" id="cover<?= $row->id_order; ?>">
+                      <div class="tab-pane active" id="cover">
                         <h4><label>SO dari db</label></h4>
                         <div class="row">
                           <div class="col-sm-6">
@@ -134,41 +133,42 @@
                         </div>
                         <div class="row">
                           <div class="col-sm-4">
-                            <br>Finishing
-                            <br><label class="form-label">
-                                        <?php 
-                                        $finishing = "";
-                                        if($row->bending != null){
-                                          $finishing .= "bending, ";
-                                        }
-                                        if($row->hard_cover != null){
-                                          $finishing .= 'hard cover, ';
-                                        }   
-                                        if($row->jahit_benang != null){
-                                          $finishing .= 'jahit benang, ';
-                                        } 
-                                        if($row->jahit_kawat != null){
-                                          $finishing .= 'jahit kawat, ';
-                                        }    
-                                        if($row->pond != null){
-                                          $finishing .= 'pond, ';
-                                        }   
-                                        if($row->spiral != null){
-                                          $finishing .= 'Spiral, ';
-                                        }
-                                        if($row->klem != null){
-                                          $finishing .= 'Klem, ';
-                                        }
-                                        $finishing = rtrim($finishing, ", ");
-                                        echo $finishing;
-                                        ?>
-                                    </label>
+                            <br>Finishing<br>
+                            <label class="form-label">
+                              <?php 
+                                $finishing = "";
+                                if($row->bending != null){
+                                  $finishing .= "bending, ";
+                                }
+                                if($row->hard_cover != null){
+                                  $finishing .= 'hard cover, ';
+                                }   
+                                if($row->jahit_benang != null){
+                                  $finishing .= 'jahit benang, ';
+                                } 
+                                if($row->jahit_kawat != null){
+                                  $finishing .= 'jahit kawat, ';
+                                }    
+                                if($row->pond != null){
+                                  $finishing .= 'pond, ';
+                                }   
+                                if($row->spiral != null){
+                                  $finishing .= 'Spiral, ';
+                                }
+                                if($row->klem != null){
+                                  $finishing .= 'Klem, ';
+                                }
+                                $finishing = rtrim($finishing, ", ");
+                                echo $finishing;
+                              ?>
+                            </label>
                           </div>
                           <div class="col-sm-4">
                             <br>Oplag
                             <br><label><?= $row->oplag; ?></label>
                           </div>
-                        </div><br>
+                        </div>
+                        <hr><br>
                         <h4><label>Jadwal Cover</label></h4>
                         <div class="row">
                         <?php if($row->id_jadwal_cetak == null) {?>  
@@ -212,61 +212,22 @@
                               <label>otomatis = target * oplag</label>
                              <?php } ?>
                           </div>
-                        </div><br>
-
-                        <?php }else{ ?>
-
-                          <div class="col-md-6">
-                            Tanggal Pelaksanaan<br>
-                            <input type="date" class="form-control" name="tanggal_pelaksanaan_cover" value="<?= $row->tanggal_pelaksanaan_cover; ?>" placeholder="Tanggal Pelaksanaan Cover" required>
-                          </div>
-                          <div class="col-md-6">
-                            Operator<br>
-                            <input type="text" class="form-control" name="operator_cover" value="<?= $row->operator_cover; ?>" placeholder="Operator Cover" required>
-                          </div>
-                          <div class="col-md-6">
-                            <br>Target<br>
-                            <input type="number" class="form-control" name="target_cover" value="<?= $row->target_cover; ?>" placeholder="Jumlah Target" required>
-                          </div>
-                          <div class="col-md-6">
-                            <br>Mesin<br>
-                            <select id="inputState" class="form-select form-control" name="mesin_cover" value="<?= $row->mesin_cover; ?>">
-                              <option value="<?php  echo $row->mesin_cover != "-" ?   $row->mesin_cover  : '-' ?>"><?php  echo $row->mesin_cover != "-" ?   $row->mesin_cover  : '-' ?>   </option>
-                              <option value="Oliver 58 2w">Oliver 58 2w</option>
-                              <option value="Oliver 72 1w">Oliver 72 1w</option>
-                              <option value="SM 74 4W - A">SM 74 4W - A</option>
-                              <option value="SM 74 4W - B">SM 74 4W - B</option>
-                              <option value="SM 102 2wP - A">SM 102 2wP - A</option>
-                              <option value="SM 102 2wP - B">SM 102 2wP - B</option>
-                              <option value="Fotocopy">Fotocopy</option>
-                              <option value="Tokko">Tokko</option>
-                              <option value="Print banner">Print banner</option>
-                              <option value="Print digital">Print digital</option>
-                              <option value="-">-</option>
-                            </select>
-                          </div>
-                          <div class="col-md-6">
-                            <br>Druk<br>
-                            <input type="number" class="form-control" name="druk_cover" hidden>
-                            <label>otomatis = target * oplag</label>
-                          </div>
-                        </div><br>
-
+                        </div>
+                        <br><hr><br>
                         <?php } ?>
-
-                          
                         <div class="row" align="right">
                           <div class="col">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
                               <?php if($row->id_jadwal_cetak == null) {?>  
-                                  <button type="submit" class="btn btn-success" name="add">Publish</button>
+                            <button type="submit" class="btn btn-success" name="add">Publish</button>
                               <?php }else{ ?>
-                                  <button type="submit" class="btn btn-success" name="edit">Publish</button>
+                            <button type="submit" class="btn btn-success" name="edit">Publish</button>
                               <?php } ?>
+                          </div>
                         </div>
                       </div>
-                      <div class="tab-pane" id="isi<?= $row->id_order; ?>">
-                      <h4><label>SO dari db</label></h4>
+                      <div class="tab-pane" id="isi">
+                        <h4><label>SO dari db</label></h4>
                         <div class="row">
                           <div class="col-sm-6">
                             <br>Tanggal Masuk
@@ -293,46 +254,46 @@
                         </div>
                         <div class="row">
                           <div class="col-sm-4">
-                            <br>Finishing
-                            <br><label class="form-label">
-                                        <?php 
-                                        $finishing = "";
-                                        if($row->bending != null){
-                                          $finishing .= "bending, ";
-                                        }
-                                        if($row->hard_cover != null){
-                                          $finishing .= 'hard cover, ';
-                                        }   
-                                        if($row->jahit_benang != null){
-                                          $finishing .= 'jahit benang, ';
-                                        } 
-                                        if($row->jahit_kawat != null){
-                                          $finishing .= 'jahit kawat, ';
-                                        }    
-                                        if($row->pond != null){
-                                          $finishing .= 'pond, ';
-                                        }   
-                                        if($row->spiral != null){
-                                          $finishing .= 'Spiral, ';
-                                        }
-                                        if($row->klem != null){
-                                          $finishing .= 'Klem, ';
-                                        }
-                                        $finishing = rtrim($finishing, ", ");
-                                        echo $finishing;
-                                        ?>
-                                    </label>
+                            <br>Finishing<br>
+                            <label class="form-label">
+                              <?php 
+                                $finishing = "";
+                                if($row->bending != null){
+                                  $finishing .= "bending, ";
+                                }
+                                if($row->hard_cover != null){
+                                  $finishing .= 'hard cover, ';
+                                }   
+                                if($row->jahit_benang != null){
+                                  $finishing .= 'jahit benang, ';
+                                } 
+                                if($row->jahit_kawat != null){
+                                  $finishing .= 'jahit kawat, ';
+                                }    
+                                if($row->pond != null){
+                                  $finishing .= 'pond, ';
+                                }   
+                                if($row->spiral != null){
+                                  $finishing .= 'Spiral, ';
+                                }
+                                if($row->klem != null){
+                                  $finishing .= 'Klem, ';
+                                }
+                                $finishing = rtrim($finishing, ", ");
+                                echo $finishing;
+                              ?>
+                            </label>
                           </div>
                           <div class="col-sm-4">
                             <br>Oplag
                             <br><label><?= $row->oplag; ?></label>
                           </div>
-                        </div><br>
+                        </div>
+                        <hr><br>
                         <h4><label>Jadwal Isi</label></h4>
                         <div class="row">
-
                         <?php if($row->id_jadwal_cetak == null) {?>  
-
+                        
                           <div class="col-md-6">
                             Tanggal Pelaksanaan<br>
                             <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" placeholder="Tanggal Pelaksanaan Isi" required>
@@ -363,57 +324,27 @@
                           </div>
                           <div class="col-md-6">
                             <br>Druk<br>
-                            <label>otomatis = target * oplag</label>
+                            <!-- <input type="number" class="form-control" name="druk_isi" hidden>
+                            <label>otomatis = target * oplag</label> -->
+                            <?php if($row->druk_isi !=null) {?>
+                              <td><?= $row->druk_isi ?></td>
+                            <?php } else {?> 
+                              <input type="number" class="form-control" name="druk_isi" hidden>
+                              <label>otomatis = target * oplag</label>
+                             <?php } ?>
                           </div>
-                        </div><br>
-
-                        <?php }else{ ?>
-
-                          <div class="col-md-6">
-                            Tanggal Pelaksanaan<br>
-                            <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" value="<?= $row->tanggal_pelaksanaan_isi; ?>" placeholder="Tanggal Pelaksanaan Isi" required>
-                          </div>
-                          <div class="col-md-6">
-                            Operator<br>
-                            <input type="text" class="form-control" name="operator_isi" value="<?= $row->operator_isi; ?>" placeholder="Operator Isi" required>
-                          </div>
-                          <div class="col-md-6">
-                            <br>Target<br>
-                            <input type="number" class="form-control" name="target_isi" value="<?= $row->target_isi; ?>" placeholder="Jumlah Target" required>
-                          </div>
-                          <div class="col-md-6">
-                            <br>Mesin<br>
-                            <select id="inputState" class="form-select form-control" name="mesin_isi" value="<?= $row->mesin_isi; ?>" >
-                              <option value="<?php  echo $row->mesin_isi != "-" ?   $row->mesin_isi  : '-' ?>"><?php  echo $row->mesin_isi != "-" ?   $row->mesin_isi  : '-' ?>   </option>
-                              <option value="Oliver 58 2w">Oliver 58 2w</option>
-                              <option value="Oliver 72 1w">Oliver 72 1w</option>
-                              <option value="SM 74 4W - A">SM 74 4W - A</option>
-                              <option value="SM 74 4W - B">SM 74 4W - B</option>
-                              <option value="SM 102 2wP - A">SM 102 2wP - A</option>
-                              <option value="SM 102 2wP - B">SM 102 2wP - B</option>
-                              <option value="Fotocopy">Fotocopy</option>
-                              <option value="Tokko">Tokko</option>
-                              <option value="Print banner">Print banner</option>
-                              <option value="Print digital">Print digital</option>
-                              <option value="-">-</option>
-                            </select>
-                          </div>
-                          <div class="col-md-6">
-                            <br>Druk<br>
-                            <label>otomatis = target * oplag</label>
-                          </div>
-                        </div><br>
-
+                        </div>
+                        <br><hr><br>
                         <?php } ?>
-
                         <div class="row" align="right">
                           <div class="col">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
                               <?php if($row->id_jadwal_cetak == null) {?>  
-                                  <button type="submit" class="btn btn-success" name="add">Publish</button>
+                            <button type="submit" class="btn btn-success" name="add">Publish</button>
                               <?php }else{ ?>
-                                  <button type="submit" class="btn btn-success" name="edit">Publish</button>
-                              <?php } ?>                          </div>
+                            <button type="submit" class="btn btn-success" name="edit">Publish</button>
+                              <?php } ?>
+                          </div>
                         </div>
                       </div>
                     </div><br>
