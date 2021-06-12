@@ -16,7 +16,7 @@ class OperatorFP extends CI_Controller {
 			'judul' => 'Operator FP',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/operator_fp/finishing_proses_op',$data);
+		$this->template->load('finishing/template','finishing/operator_fp/finishing_proses_op',$data);
 	}
 	public function jadwal_op_laminasi()
 	{
@@ -26,7 +26,7 @@ class OperatorFP extends CI_Controller {
 			'judul' => 'Operator FP',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/operator_fp/laminasi/data_laminasi_op',$data);
+		$this->template->load('finishing/template','finishing/operator_fp/laminasi/data_laminasi_op',$data);
 	}
 	public function edit_op_laminasi()
 	{
@@ -36,6 +36,6 @@ class OperatorFP extends CI_Controller {
 			'judul' => 'Operator FP',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_proses/operator_fp/laminasi/edit_laminasi_op',$data);
+		$this->template->load('finishing/template','finishing/operator_fp/laminasi/edit_laminasi_op',$data);
 	}
 }

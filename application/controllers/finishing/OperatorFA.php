@@ -16,7 +16,7 @@ class OperatorFA extends CI_Controller {
 			'judul' => 'Operator FP',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/operator_fa/finishing_akhir',$data);
+		$this->template->load('finishing/template','finishing/operator_fa/finishing_akhir_op',$data);
 	}
 	public function jadwal_op_jahit()
 	{
@@ -26,7 +26,7 @@ class OperatorFA extends CI_Controller {
 			'judul' => 'Operator FP',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/operator_fa/jahit/data_jahit_op',$data);
+		$this->template->load('finishing/template','finishing/operator_fa/jahit/data_jahit_op',$data);
 	}
 	public function edit_op_jahit()
 	{
@@ -36,6 +36,6 @@ class OperatorFA extends CI_Controller {
 			'judul' => 'Operator FP',
 			'so' => $query->result(),
 		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/operator_fa/jahit/edit_jahit_op',$data);
+		$this->template->load('finishing/template','finishing/operator_fa/jahit/edit_jahit_op',$data);
 	}
 }
