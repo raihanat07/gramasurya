@@ -121,7 +121,7 @@
                         </div>                    
                         <div class="col">                    
                             <input  type="text" name="status_laporan_pracetak" value="" hidden>
-                            <input class="form-check-input" type="checkbox" name="status_laporan_pracetak" value="pracetak" <?php echo $row->so_status == "pracetak" ?  "checked" : "" ?> disabled>
+                            <input class="form-check-input" type="checkbox" name="status_laporan_pracetak" value="pracetak" <?php echo $row->so_status == "pracetak" ?  "checked" : "" ?>>
                             <label class="form-check-label" for="flexCheckDefault">Pracetak</label>
                         </div>
                     </div>

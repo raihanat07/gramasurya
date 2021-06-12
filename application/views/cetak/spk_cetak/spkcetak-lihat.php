@@ -2,16 +2,9 @@
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
-          <div class="col-sm-6">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="<?=site_url()?>cetak/Spk/display_spk" class="btn btn-warning btn-lg">
-                <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
-                </a>
-              </li>
-              <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Blank Page</li> -->
-            </ol>
+          <div class="col-md-12">
+            <h2><b>REKAPITULASI & LAPORAN PRODUKTIFITAS MESIN</b></h2>
+            <b>UNIT : CETAK</b>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -23,7 +16,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title coba">Detail SPK</h3>
+          <h3 class="card-title coba">LAPORAN MESIN (disesuaikan)</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -32,172 +25,36 @@
         </div>
         <div class="card-body">
           <div class="card-body">
-            <div class="row">
-              <div class="col-md-4">
-                <br>Tanggal Buat SPK
-                <br><label class="form-label">dari db</label>
-              </div>
-              <div class="col-md-4">
-                <br>Tanggal Masuk
-                <br><label class="form-label">dari db</label>
-              </div>
-              <div class="col-md-4">
-                <br>Deadline
-                <br><label class="form-label">dari db</label>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4">
-                <br>Nama Pemesan
-                <br><label class="form-label">dari db</label>
-              </div>
-              <div class="col-md-4">
-                <br>Nama Cetak
-                <br><label class="form-label">dari db</label>
-              </div>
-              <div class="col-md-4">
-                <br>Jenis Cetakan
-                <br><label class="form-label">dari db</label>
-              </div>
-            </div><br>
-              
-            <div class="card" style="background: #A9A9A9">
-              <div class="row" align="center">
-                <div class="col-md-4">
-                  <div class="card-header text-center">
-                    <b>SPK CETAK</b>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card-header text-center">
-                    <b>SPK KERTAS DAN POTONG</b>
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <div class="card-header text-center">
-                    <b>WARNA DAN PROSES CETAK</b>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-md-4">
-                <div class="row">
-                  <div class="col-md-1"></div>
-                  <div class="col-sm-5">
-                    Cetak Mesin
-                  </div>
-                  <div class="col-md-6">
-                    <label>dari db</label>
-                  </div>
-
-                  <div class="col-md-1"></div>
-                  <div class="col-sm-5">
-                    Ukuran Kertas
-                  </div>
-                  <div class="col-md-6">
-                    <label>dari db</label>
-                  </div>
-
-                  <div class="col-md-1"></div>
-                  <div class="col-sm-5">
-                    Jumlah Plate
-                  </div>
-                  <div class="col-md-6">
-                    <label>dari db</label>
-                  </div>
-
-                  <div class="col-md-1"></div>
-                  <div class="col-sm-5">
-                    Jumlah Cetak
-                  </div>
-                  <div class="col-md-6">
-                    <label>dari db</label>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="row">
-                  <div class="col-md-1"></div>
-                  <div class="col-sm-5">
-                    Jenis Kertas
-                  </div>
-                  <div class="col-md-6">
-                    <label>dari db</label>
-                  </div>
-
-                  <div class="col-md-1"></div>
-                  <div class="col-sm-5">
-                    Ukuran Plano
-                  </div>
-                  <div class="col-md-6">
-                    <label>dari db</label>
-                  </div>
-
-                  <div class="col-md-1"></div>
-                  <div class="col-sm-5">
-                    Model Potongan
-                  </div>
-                  <div class="col-md-6">
-                    <label>dari db</label>
-                  </div>
-
-                  <div class="col-md-1"></div>
-                  <div class="col-sm-5">
-                    Jumlah Kertas
-                  </div>
-                  <div class="col-md-6">
-                    <label>dari db</label>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                
-              </div>
-            </div><br>
-
-            <div class="card" style="background: #A9A9A9">
-              <div class="row" align="center">
-                <div class="col">
-                  <div class="card-header text-center">
-                    <b>KETERANGAN</b>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
-              </div>
-            </div><br>
-
-            <div class="row" align="center">
-              <div class="col-md-6">
-                <div class="card" style="background: #A9A9A9">
-                  <div class="card-header text-center">
-                    <b>CATATAN SPK CETAK</b>
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="card" style="background: #A9A9A9">
-                  <div class="card-header text-center">
-                    <b>CATATAN SPK KERTAS DAN POTONG</b>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row" style="min-height: 250px;">
-              <div class="col-md-6">
-                <textarea class="form-control" name="catatan_spk_cetak" placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
-              </div>
-              <div class="col-sm-6">
-                <textarea class="form-control" name="catatan_spk_kertas_dan_potong" placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
-              </div>
-            </div>
+            <table id="example2" class="table table-bordered table-hover" style="font-size: 12px;">
+              <thead align="center">
+                <tr bgcolor="#F7F8FB">
+                  <td rowspan="2">Tanggal Pelaksanaan</td>
+                  <td colspan="4">(Nama Operator Shift 1)</td>
+                  <td colspan="4">(Nama Operator Shift 2)</td>
+                </tr>
+                <tr bgcolor="#F7F8FB">
+                  <td>Jam Kerja</td>
+                  <td>Jam Realisasi</td>
+                  <td>Set</td>
+                  <td>Druk</td>
+                  <td>Jam Kerja</td>
+                  <td>Jam Realisasi</td>
+                  <td>Set</td>
+                  <td>Druk</td>
+                </tr>
+              </thead>
+              <tbody>
+                <td>tanggal</td>
+                <td>Jam Kerja</td>
+                <td>Jam Realisasi</td>
+                <td>Set</td>
+                <td>Druk</td>
+                <td>Jam Kerja</td>
+                <td>Jam Realisasi</td>
+                <td>Set</td>
+                <td>Druk</td>
+              </tbody>
+            </table>
           </div>
         </div>
         <!-- /.card-body -->
@@ -208,5 +65,104 @@
       </div>
       <!-- /.card -->
 
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title coba">PRODUKTIFITAS MESIN</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fa fa-minus"></i></button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-body">
+            <table id="example2" class="table table-bordered table-hover" style="font-size: 12px;">
+              <thead align="center">
+                <tr bgcolor="#F7F8FB">
+                  <td rowspan="3"><br><br><br>Mesin Cetak</td>
+                  <td rowspan="3"><br><br>Terpasang<br>Perjam</td>
+                  <td colspan="4">IDEALITA</td>
+                  <td colspan="2">22 Hari</td>
+                  <td rowspan="2"><br>Over<br>Lembur</td>
+                  <td rowspan="3"></td>
+                  <td colspan="5">22 Hari</td>
+                  <td colspan="2">22 Hari</td>
+                </tr>
+                <tr bgcolor="#F7F8FB">
+                  <td>Jam</td>
+                  <td>Perhari</td>
+                  <td colspan="4">Perbulan</td>
+                  <td colspan="2">Perhari</td>
+                  <td colspan="3">Perbulan</td>
+                  <td colspan="2">%</td>
+                </tr>
+                <tr bgcolor="#F7F8FB">
+                  <td>65%</td>
+                  <td>13</td>
+                  <td colspan="2">Jam</td>
+                  <td>Set</td>
+                  <td>Drug</td>
+                  <td>Jam</td>
+                  <td>Jam</td>
+                  <td>Drug</td>
+                  <td>Jam</td>
+                  <td>Set</td>
+                  <td>Drug</td>
+                  <td>Set</td>
+                  <td>Drug</td>
+                </tr>
+              </thead>
+              <tr>
+                <td>dari db</td>
+                <td>dari db</td>
+                <td>dari db</td>
+                <td>dari db</td>
+                <td>dari db</td>
+                <td>dari db</td>
+                <td>dari db</td>
+                <td>dari db</td>
+                <td>dari db</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- /.card-body -->
+        <!-- <div class="card-footer">
+          Footer
+        </div> -->
+        <!-- /.card-footer-->
+      </div>
+      <!-- /.card -->
+
+      <div class="card-body">
+        <div class="row">
+          <div class="col"><b>Dibuat Tanggal : (dari db)</b></div>
+        </div><br>
+        <div class="row" align="center">
+          <div class="col-md-4"><b>PELAKSANA<br>KASI. CETAK</b></div>
+          <div class="col-md-4"><b>ATASAN<br>MANAJER PRODUKSI</b></div>
+          <div class="col-md-4"><b>PIMPINAN<br>DIREKTUR OPERASIONAL</b></div>
+        </div>
+        <div class="row" align="center" style="margin-top: 100px;">
+          <div class="col-md-4"><b>(IHSANUDIN)</b></div>
+          <div class="col-md-4"><b>(GUNAWAN)</b></div>
+          <div class="col-md-4"><b>(A. LATIEF BAEDHOWI)</b></div>
+        </div>
+      </div><br>
+      <div class="row" align="right">
+        <div class="col">
+          <button type="reset" class="btn btn-default">Kembali</button>
+          <button type="submit" name="add" class="btn btn-success">Print</button>
+        </div>
+      </div><br>
     </section>
     <!-- /.content -->
