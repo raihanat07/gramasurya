@@ -154,8 +154,8 @@
                   <p>Quality Control</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="<?=site_url()?>finishing/Operator" 
+              <li class="nav-item has-treeview menu-open">
+                <a href="#" 
                  <?php  if($judul == "Operator"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -163,8 +163,32 @@
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Operator</p>
+                  <p>Operator <i class="fa fa-angle-left right"></i></p>
                 </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?=site_url()?>finishing/OperatorFP"
+                      <?php  if($judul == "Operator Finishing Proses"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Finishing Proses</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?=site_url()?>finishing/OperatorFA"
+                      <?php  if($judul == "Operator Finishing Akhir"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Finishing Akhir</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </li>
@@ -181,7 +205,9 @@
       </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <?php  if($judul != "Operator"){?>
+    <?php  if($judul == "Operator Finishing Proses" || $judul == "Operator Finishing Akhir") {?>
+
+    <?php  } else {?>
       <strong>Copyright &copy; Fantastic-kod | 2021 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
       All rights reserved.
       <div class="float-right d-none d-sm-inline-block">
