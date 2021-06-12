@@ -15,7 +15,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title coba">SPK</h3>
+          <h3 class="card-title coba">Laporan</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -85,6 +85,5 @@
         <!-- /.card-footer-->
       </div>
       <!-- /.card -->
-
     </section>
     <!-- /.content -->
