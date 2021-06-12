@@ -216,42 +216,42 @@
                                 <!-- RINCIAN BARIS KE 2 -->
                                 <div class="row" align="center">
                                     <div class="col-md-1">
-                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->cover1plat2 != 0) {?>
                                             <?= $row->cover1plat2; ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-1">
-                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->cover1plat2 != 0) {?>
                                             <?= $row->cover1set2; ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->cover1plat2 != 0) {?>
                                             <?= $row->cover1lbrcetak2; ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-1">
-                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->cover1plat2 != 0) {?>
                                             <?= $row->cover1up2; ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-1">
-                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->cover1plat2 != 0) {?>
                                             <?= $row->cover1warna2; ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->cover1plat2 != 0) {?>
                                             <?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->cover1plat2 != 0) {?>
                                             <?= $row->cover1keterangan2; ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->cover1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->cover1plat2 != 0) {?>
                                             <?= $row->cover1tglimposisi2; ?>
                                         <?php } ?>
                                     </div>
@@ -259,42 +259,42 @@
                                 <!-- RINCIAN BARIS KE 3 -->
                                 <div class="row" align="center">
                                     <div class="col-md-1">
-                                        <?php if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->cover1plat3 != 0) :?>
                                             <?= $row->cover1plat3; ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-1">
-                                        <?php if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->cover1plat3 != 0) :?>
                                             <?= $row->cover1set3; ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->cover1plat3 != 0) :?>
                                             <?= $row->cover1lbrcetak3; ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-1">
-                                        <?php if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->cover1plat3 != 0) :?>
                                             <?= $row->cover1up3; ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-1">
-                                        <?php if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->cover1plat3 != 0) :?>
                                             <?= $row->cover1warna3; ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->cover1plat3 != 0) :?>
                                             <?php  echo $row->cover1status3 != "-" ?   $row->cover1status3  : '-' ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->cover1plat3 != 0) :?>
                                             <?= $row->cover1keterangan3; ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->cover1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->cover1plat3 != 0) :?>
                                             <?= $row->cover1tglimposisi3; ?>
                                         <?php endif ?>
                                     </div>
@@ -303,6 +303,7 @@
                         </div>
                     </div>
                 </div>
+                <?php if($row->isi1plat1 != 0) {?>
                 <div class="col-md-6">
                     <div class="card-body p-3 mb-2 bg-light text-dark">
                         <div class="row">
@@ -350,42 +351,42 @@
                                 <!-- RINCIAN BARIS KE 2 -->
                                 <div class="row" align="center">
                                     <div class="col-md-1">
-                                        <?php if($row->isi1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->isi1plat2 != 0) {?>
                                             <?= $row->isi1plat2; ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-1">
-                                        <?php if($row->isi1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->isi1plat2 != 0) {?>
                                             <?= $row->isi1set2; ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->isi1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->isi1plat2 != 0) {?>
                                             <?= $row->isi1lbrcetak2; ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-1">
-                                        <?php if($row->isi1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->isi1plat2 != 0) {?>
                                             <?= $row->isi1up2; ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-1">
-                                        <?php if($row->isi1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->isi1plat2 != 0) {?>
                                             <?= $row->isi1warna2; ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->isi1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->isi1plat2 != 0) {?>
                                             <?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->isi1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->isi1plat2 != 0) {?>
                                             <?= $row->isi1keterangan2; ?>
                                         <?php } ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->isi1plat2 != 0 || $row->isi1plat2 != 0) {?>
+                                        <?php if($row->isi1plat2 != 0) {?>
                                             <?= $row->isi1tglimposisi2; ?>
                                         <?php } ?>
                                     </div>
@@ -393,42 +394,42 @@
                                 <!-- RINCIAN BARIS KE 3 -->
                                 <div class="row" align="center">
                                     <div class="col-md-1">
-                                        <?php if($row->isi1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->isi1plat2 != 0) :?>
                                             <?= $row->isi1plat3; ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-1">
-                                        <?php if($row->isi1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->isi1plat2 != 0) :?>
                                             <?= $row->isi1set3; ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->isi1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->isi1plat2 != 0) :?>
                                             <?= $row->isi1lbrcetak3; ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-1">
-                                        <?php if($row->isi1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->isi1plat2 != 0) :?>
                                             <?= $row->isi1up3; ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-1">
-                                        <?php if($row->isi1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->isi1plat2 != 0) :?>
                                             <?= $row->isi1warna3; ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->isi1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->isi1plat2 != 0) :?>
                                             <?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->isi1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->isi1plat2 != 0) :?>
                                             <?= $row->isi1keterangan3; ?>
                                         <?php endif ?>
                                     </div>
                                     <div class="col-md-2">
-                                        <?php if($row->isi1plat3 != 0 || $row->isi1plat3 != 0) :?>
+                                        <?php if($row->isi1plat2 != 0) :?>
                                             <?= $row->isi1tglimposisi3; ?>
                                         <?php endif ?>
                                     </div>
@@ -437,319 +438,267 @@
                         </div>
                     </div>
                 </div>
+            <?php } ?>
             </div><br>
 
             <?php if($row->cover2plat1 != 0 || $row->isi2plat1 != 0) :?>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card border bg-success">
-                        <div class="card-header text-center">
-                            IMPOSISI COVER 2
+                <div class="row">
+                    <?php if($row->cover2plat1 != 0) { ?>
+                        <div class="col-md-6">
+                            <div class="card border bg-success">
+                                <div class="card-header text-center">
+                                    IMPOSISI COVER 2
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    <?php } elseif($row->cover2plat1 == 0) { ?>
+                        <div class="col-md-6"></div>
+                    <?php } if($row->isi2plat1 != 0) { ?>
+                        <div class="col-md-6">
+                            <div class="card border bg-info">
+                            <div class="card-header text-center">
+                                IMPOSISI ISI 2
+                            </div>
+                            </div>
+                        </div>
+                    <?php } ?>
                 </div>
-                <div class="col-md-6">
-                    <div class="card border bg-info">
-                    <div class="card-header text-center">
-                        IMPOSISI ISI 2
-                    </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="card-body p-3 mb-2 bg-light text-dark">
-                        <div class="row">
-                            <div class="col-md-3" align="center">
-                                <label class="form-label">Mesin</label>
-                            </div>
-                            <div class="col-md-3">
-                                <?=$row->cover2mesin1;?>
-                            </div>
-                            <div class="col-md-3" align="center">
-                                <label class="form-label">Plate</label>
-                            </div>
-                            <div class="col-md-3">
-                                <?=$row->jumlahplatecover2;?>
-                            </div>
-                        </div><br>
-                        <div class="row">
-                            <div class="col-md-12">
+                <div class="row">
+                    <?php if($row->cover2plat1 != 0) { ?>
+                        <div class="col-md-6">
+                            <div class="card-body p-3 mb-2 bg-light text-dark">
+                                <div class="row">
+                                    <div class="col-md-3" align="center">
+                                        <label class="form-label">Mesin</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <?=$row->cover2mesin1;?>
+                                    </div>
+                                    <div class="col-md-3" align="center">
+                                        <label class="form-label">Plate</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <?=$row->jumlahplatecover2;?>
+                                    </div>
+                                </div><br>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label class="form-label">Rincian Imposisi</label>
-                                    </div>
-                                </div>
-                                <div class="row" align="center">
-                                    <div class="col-md-1"><label class="form-label">Plate</label></div>
-                                    <div class="col-md-1"><label class="form-label">Set</label></div>
-                                    <div class="col-md-2"><label class="form-label">Lbr.Cetak</label></div>
-                                    <div class="col-md-1"><label class="form-label">Up</label></div>
-                                    <div class="col-md-1"><label class="form-label">Warna</label></div>
-                                    <div class="col-md-2"><label class="form-label">Proses</label></div>
-                                    <div class="col-md-2"><label class="form-label">Keterangan</label></div>
-                                    <div class="col-md-2"><label class="form-label">Tgl. Imposisi</label></div>
-                                </div><br>
-                                <!-- RINCIAN BARIS KE 1 -->
-                                <div class="row" align="center">
-                                    <div class="col-md-1"><?= $row->cover2plat1; ?></div>
-                                    <div class="col-md-1"><?= $row->cover2set1; ?></div>
-                                    <div class="col-md-2"><?= $row->cover2lbrcetak1; ?></div>
-                                    <div class="col-md-1"><?= $row->cover2up1; ?></div>
-                                    <div class="col-md-1"><?= $row->cover2warna1; ?></div>
-                                    <div class="col-md-2"><?php  echo $row->cover2status1 != "-" ?   $row->cover2status1  : '-' ?></div>
-                                    <div class="col-md-2"><?= $row->cover2keterangan1; ?></div>
-                                    <div class="col-md-2"><?= $row->cover2tglimposisi1; ?></div>
-                                </div><br>
-                                <!-- RINCIAN BARIS KE 2 -->
-                                <div class="row" align="center">
-                                    <div class="col-md-1">
-                                        <?php if($row->cover2plat2 != 0 || $row->cover2plat2 != 0) {?>
-                                            <?= $row->cover2plat2; ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <?php if($row->cover2plat2 != 0 || $row->cover2plat2 != 0) {?>
-                                            <?= $row->cover2set2; ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->cover2plat2 != 0 || $row->cover2plat2 != 0) {?>
-                                            <?= $row->cover2lbrcetak2; ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <?php if($row->cover2plat2 != 0 || $row->cover2plat2 != 0) {?>
-                                            <?= $row->cover2up2; ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <?php if($row->cover2plat2 != 0 || $row->cover2plat2 != 0) {?>
-                                            <?= $row->cover2warna2; ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->cover2plat2 != 0 || $row->cover2plat2 != 0) {?>
-                                            <?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->cover2plat2 != 0 || $row->cover2plat2 != 0) {?>
-                                            <?= $row->cover2keterangan2; ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->cover2plat2 != 0 || $row->cover2plat2 != 0) {?>
-                                            <?= $row->cover2tglimposisi2; ?>
-                                        <?php } ?>
-                                    </div>
-                                </div><br>
-                                <!-- RINCIAN BARIS KE 3 -->
-                                <div class="row" align="center">
-                                    <div class="col-md-1">
-                                        <?php if($row->cover2plat3 != 0 || $row->cover2plat3 != 0) :?>
-                                            <?= $row->cover2plat3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <?php if($row->cover2plat3 != 0 || $row->cover2plat3 != 0) :?>
-                                            <?= $row->cover2set3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->cover2plat3 != 0 || $row->cover2plat3 != 0) :?>
-                                            <?= $row->cover2lbrcetak3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <?php if($row->cover2plat3 != 0 || $row->cover2plat3 != 0) :?>
-                                            <?= $row->cover2up3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <?php if($row->cover2plat3 != 0 || $row->cover2plat3 != 0) :?>
-                                            <?= $row->cover2warna3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->cover2plat3 != 0 || $row->cover2plat3 != 0) :?>
-                                            <?php  echo $row->cover2status3 != "-" ?   $row->cover2status3  : '-' ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->cover2plat3 != 0 || $row->cover2plat3 != 0) :?>
-                                            <?= $row->cover2keterangan3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->cover2plat3 != 0 || $row->cover2plat3 != 0) :?>
-                                            <?= $row->cover2tglimposisi3; ?>
-                                        <?php endif ?>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label class="form-label">Rincian Imposisi</label>
+                                            </div>
+                                        </div>
+                                        <div class="row" align="center">
+                                            <div class="col-md-1"><label class="form-label">Plate</label></div>
+                                            <div class="col-md-1"><label class="form-label">Set</label></div>
+                                            <div class="col-md-2"><label class="form-label">Lbr.Cetak</label></div>
+                                            <div class="col-md-1"><label class="form-label">Up</label></div>
+                                            <div class="col-md-1"><label class="form-label">Warna</label></div>
+                                            <div class="col-md-2"><label class="form-label">Proses</label></div>
+                                            <div class="col-md-2"><label class="form-label">Keterangan</label></div>
+                                            <div class="col-md-2"><label class="form-label">Tgl. Imposisi</label></div>
+                                        </div><br>
+                                        <!-- RINCIAN BARIS KE 1 -->
+                                        <div class="row" align="center">
+                                            <div class="col-md-1"><?= $row->cover2plat1; ?></div>
+                                            <div class="col-md-1"><?= $row->cover2set1; ?></div>
+                                            <div class="col-md-2"><?= $row->cover2lbrcetak1; ?></div>
+                                            <div class="col-md-1"><?= $row->cover2up1; ?></div>
+                                            <div class="col-md-1"><?= $row->cover2warna1; ?></div>
+                                            <div class="col-md-2"><?php  echo $row->cover2status1 != "-" ?   $row->cover2status1  : '-' ?></div>
+                                            <div class="col-md-2"><?= $row->cover2keterangan1; ?></div>
+                                            <div class="col-md-2"><?= $row->cover2tglimposisi1; ?></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card-body p-3 mb-2 bg-light text-dark">
-                        <div class="row">
-                            <div class="col-md-3" align="center">
-                                <label class="form-label">Mesin</label>
+                    <?php } if($row->cover2plat1 == 0 && $row->isi3plat1 == 0) { ?>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-body p-3 mb-2 bg-light text-dark">
+                                        <br><br><div class="row">
+                                            <div class="col-md-12">
+                                                <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?=$row->catatan_imposisi;?>" style="height: 150px;" disabled><?=$row->catatan_imposisi;?></textarea>
+                                            </div>
+                                        </div><br><br>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-6" align="left">
+                                    <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Kembali</a>
+                                </div>
+                                <div class="col-md-6" align="right">
+                                    <a href="<?=site_url('pracetak/Imposisi/print_imposisi/'.$row->id_order)?>" class="btn btn-default">Print</a>
+                                </div>
                             </div>
-                            <div class="col-md-3">
-                                <?=$row->isi2mesin1;?>
-                            </div>
-                            <div class="col-md-3" align="center">
-                                <label class="form-label">Plate</label>
-                            </div>
-                            <div class="col-md-3">
-                                <?=$row->jumlahplateisi2;?>
-                            </div>
-                        </div><br>
-                        <div class="row">
-                            <div class="col-md-12">
+                        </div>
+                    <?php } if($row->cover2plat1 == 0 && $row->isi3plat1 != 0) { ?>
+                        <div class="col-md-6"></div>
+                    <?php } if($row->isi2plat1 != 0) { ?>
+                        <div class="col-md-6">
+                            <div class="card-body p-3 mb-2 bg-light text-dark">
+                                <div class="row">
+                                    <div class="col-md-3" align="center">
+                                        <label class="form-label">Mesin</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <?=$row->isi2mesin1;?>
+                                    </div>
+                                    <div class="col-md-3" align="center">
+                                        <label class="form-label">Plate</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <?=$row->jumlahplateisi2;?>
+                                    </div>
+                                </div><br>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label class="form-label">Rincian Imposisi</label>
-                                    </div>
-                                </div>
-                                <div class="row" align="center">
-                                    <div class="col-md-1"><label class="form-label">Plate</label></div>
-                                    <div class="col-md-1"><label class="form-label">Set</label></div>
-                                    <div class="col-md-2"><label class="form-label">Lbr.Cetak</label></div>
-                                    <div class="col-md-1"><label class="form-label">Up</label></div>
-                                    <div class="col-md-1"><label class="form-label">Warna</label></div>
-                                    <div class="col-md-2"><label class="form-label">Proses</label></div>
-                                    <div class="col-md-2"><label class="form-label">Keterangan</label></div>
-                                    <div class="col-md-2"><label class="form-label">Tgl. Imposisi</label></div>
-                                </div><br>
-                                <!-- RINCIAN BARIS KE 1 -->
-                                <div class="row" align="center">
-                                    <div class="col-md-1"><?= $row->isi2plat1; ?></div>
-                                    <div class="col-md-1"><?= $row->isi2set1; ?></div>
-                                    <div class="col-md-2"><?= $row->isi2lbrcetak1; ?></div>
-                                    <div class="col-md-1"><?= $row->isi2up1; ?></div>
-                                    <div class="col-md-1"><?= $row->isi2warna1; ?></div>
-                                    <div class="col-md-2"><?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?></div>
-                                    <div class="col-md-2"><?= $row->isi2keterangan1; ?></div>
-                                    <div class="col-md-2"><?= $row->isi2tglimposisi1; ?></div>
-                                </div><br>
-                                <!-- RINCIAN BARIS KE 2 -->
-                                <div class="row" align="center">
-                                    <div class="col-md-1">
-                                        <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
-                                            <?= $row->isi2plat2; ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
-                                            <?= $row->isi2set2; ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
-                                            <?= $row->isi2lbrcetak2; ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
-                                            <?= $row->isi2up2; ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
-                                            <?= $row->isi2warna2; ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
-                                            <?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
-                                            <?= $row->isi2keterangan2; ?>
-                                        <?php } ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
-                                            <?= $row->isi2tglimposisi2; ?>
-                                        <?php } ?>
-                                    </div>
-                                </div><br>
-                                <!-- RINCIAN BARIS KE 3 -->
-                                <div class="row" align="center">
-                                    <div class="col-md-1">
-                                        <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
-                                            <?= $row->isi2plat3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
-                                            <?= $row->isi2set3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
-                                            <?= $row->isi2lbrcetak3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
-                                            <?= $row->isi2up3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
-                                            <?= $row->isi2warna3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
-                                            <?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
-                                            <?= $row->isi2keterangan3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
-                                            <?= $row->isi2tglimposisi3; ?>
-                                        <?php endif ?>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <label class="form-label">Rincian Imposisi</label>
+                                            </div>
+                                        </div>
+                                        <div class="row" align="center">
+                                            <div class="col-md-1"><label class="form-label">Plate</label></div>
+                                            <div class="col-md-1"><label class="form-label">Set</label></div>
+                                            <div class="col-md-2"><label class="form-label">Lbr.Cetak</label></div>
+                                            <div class="col-md-1"><label class="form-label">Up</label></div>
+                                            <div class="col-md-1"><label class="form-label">Warna</label></div>
+                                            <div class="col-md-2"><label class="form-label">Proses</label></div>
+                                            <div class="col-md-2"><label class="form-label">Keterangan</label></div>
+                                            <div class="col-md-2"><label class="form-label">Tgl. Imposisi</label></div>
+                                        </div><br>
+                                        <!-- RINCIAN BARIS KE 1 -->
+                                        <div class="row" align="center">
+                                            <div class="col-md-1"><?= $row->isi2plat1; ?></div>
+                                            <div class="col-md-1"><?= $row->isi2set1; ?></div>
+                                            <div class="col-md-2"><?= $row->isi2lbrcetak1; ?></div>
+                                            <div class="col-md-1"><?= $row->isi2up1; ?></div>
+                                            <div class="col-md-1"><?= $row->isi2warna1; ?></div>
+                                            <div class="col-md-2"><?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?></div>
+                                            <div class="col-md-2"><?= $row->isi2keterangan1; ?></div>
+                                            <div class="col-md-2"><?= $row->isi2tglimposisi1; ?></div>
+                                        </div><br>
+                                        <!-- RINCIAN BARIS KE 2 -->
+                                        <div class="row" align="center">
+                                            <div class="col-md-1">
+                                                <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                    <?= $row->isi2plat2; ?>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                    <?= $row->isi2set2; ?>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                    <?= $row->isi2lbrcetak2; ?>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                    <?= $row->isi2up2; ?>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                    <?= $row->isi2warna2; ?>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                    <?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                    <?= $row->isi2keterangan2; ?>
+                                                <?php } ?>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <?php if($row->isi2plat2 != 0 || $row->isi2plat2 != 0) {?>
+                                                    <?= $row->isi2tglimposisi2; ?>
+                                                <?php } ?>
+                                            </div>
+                                        </div><br>
+                                        <!-- RINCIAN BARIS KE 3 -->
+                                        <div class="row" align="center">
+                                            <div class="col-md-1">
+                                                <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                    <?= $row->isi2plat3; ?>
+                                                <?php endif ?>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                    <?= $row->isi2set3; ?>
+                                                <?php endif ?>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                    <?= $row->isi2lbrcetak3; ?>
+                                                <?php endif ?>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                    <?= $row->isi2up3; ?>
+                                                <?php endif ?>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                    <?= $row->isi2warna3; ?>
+                                                <?php endif ?>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                    <?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>
+                                                <?php endif ?>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                    <?= $row->isi2keterangan3; ?>
+                                                <?php endif ?>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <?php if($row->isi2plat3 != 0 || $row->isi2plat3 != 0) :?>
+                                                    <?= $row->isi2tglimposisi3; ?>
+                                                <?php endif ?>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div><br>
+                    <?php } ?>
+                </div><br>
             <?php endif ?>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col">
-                            <div class="card-body p-3 mb-2 bg-light text-dark">
-                                <br><br><div class="row">
-                                    <div class="col-md-12">
-                                        <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?=$row->catatan_imposisi;?>" style="height: 150px;" disabled><?=$row->catatan_imposisi;?></textarea>
-                                    </div>
-                                </div><br><br>
+                <?php if($row->cover2plat1 != 0 || $row->isi3plat1 != 0) { ?>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card-body p-3 mb-2 bg-light text-dark">
+                                    <br><br><div class="row">
+                                        <div class="col-md-12">
+                                            <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?=$row->catatan_imposisi;?>" style="height: 150px;" disabled><?=$row->catatan_imposisi;?></textarea>
+                                        </div>
+                                    </div><br><br>
+                                </div>
+                            </div>
+                        </div><br>
+                        <div class="row">
+                            <div class="col-md-6" align="left">
+                                <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Kembali</a>
+                            </div>
+                            <div class="col-md-6" align="right">
+                                <a href="<?=site_url('pracetak/Imposisi/print_imposisi/'.$row->id_order)?>" class="btn btn-default">Print</a>
                             </div>
                         </div>
-                    </div><br>
-                    <div class="row">
-                        <div class="col-md-6" align="left">
-                            <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Kembali</a>
-                        </div>
-                        <div class="col-md-6" align="right">
-                            <a href="<?=site_url('pracetak/Imposisi/print_imposisi/'.$row->id_order)?>" class="btn btn-default">Print</a>
-                        </div>
                     </div>
-                </div>
-                <?php  if($row->isi3plat1 != 0) :?>
+                <?php }  if($row->isi3plat1 != 0) :?>
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col">
@@ -804,7 +753,7 @@
                                             <div class="col-md-2"><?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?></div>
                                             <div class="col-md-2"><?= $row->isi3keterangan1; ?></div>
                                             <div class="col-md-2"><?= $row->isi3tglimposisi1; ?></div>
-                                        </div><br>
+                                        </div>
                                         <!-- RINCIAN BARIS KE 2 -->
                                         <div class="row" align="center">
                                             <div class="col-md-1">

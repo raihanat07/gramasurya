@@ -141,7 +141,6 @@
                     </a>
                   </li>
                 </ul>
-
               </li>
               <li class="nav-item">
                 <a href="<?=site_url()?>finishing/QualityControl" 
@@ -153,6 +152,18 @@
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Quality Control</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>finishing/Operator" 
+                 <?php  if($judul == "Operator"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Operator</p>
                 </a>
               </li>
             </ul>
@@ -170,11 +181,13 @@
       </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <!-- <strong>Copyright &copy; 2014-2018 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 3.0.0-alpha
-    </div> -->
+    <?php  if($judul != "Operator"){?>
+      <strong>Copyright &copy; Fantastic-kod | 2021 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+      All rights reserved.
+      <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 3.0.0-alpha
+      </div>
+    <?php } ?>
   </footer>
 
   <!-- Control Sidebar -->

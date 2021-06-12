@@ -244,4 +244,3 @@
   <!-- /.card -->
 </section>
 <!-- /.content -->
-   
