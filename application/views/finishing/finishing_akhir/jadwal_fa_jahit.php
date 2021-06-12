@@ -18,7 +18,7 @@
           <div class="card-title">
             <div class=" row">
               <div class="col-sm-6">
-                <h3>Jadwal Mesin Jahit</h3>
+                <h3>Jadwal Mesin jahit</h3>
               </div>
               <div class="col-sm-6" align="right">
                 Kapasitas : 4000 / Hari
@@ -32,8 +32,7 @@
           <table id="example2" class="table table-bordered table-striped" style="font-size: 12px">
             <thead>
               <tr align="center">
-                <td>Tanggal Pelaksanaan</td>
-                <td>Urutan</td>
+                <td>Tanggal Pelaksanaan</td>                
                 <td>Nomor SO</td>
                 <td>Tanggal Masuk</td>
                 <td>Deadline</td>
@@ -43,63 +42,36 @@
                 <td>Halaman</td>
                 <td>Oplag</td>
                 <td>Hasil</td>
-                <td>Keterangan</td>
-                <td>Total</td>
+                <td>Keterangan</td>                
+                <td>Status</td>   
                 <td>Actions</td>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td rowspan="2">Tanggal Pelaksanaan</td>
-                <td>Urutan</td>
-                <td>Nomor SO</td>
-                <td>Tanggal Masuk</td>
-                <td>Deadline</td>
-                <td>Nama Pemesan</td>
-                <td>Nama Order</td>
-                <td>Ukuran</td>
-                <td>Halaman</td>
-                <td>Oplag</td>
-                <td>Hasil</td>
-                <td>Keterangan</td>
-                <td>Total</td>
-                <td align="center">
-                  <a href="<?=site_url()?>finishing/FinishingAkhir/tambah_jadwal_fa_jahit">
-                    <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
-                  </a>
-                  <a href="<?=site_url()?>finishing/FinishingAkhir/edit_jadwal_fa_jahit">
+            <?php foreach($fa as $s => $row) {?>  
+              <tr align="center">
+                <td><?= $row->tanggal_pelaksanaan_jahit; ?></td>                
+                <td><?= $row->nomor_so; ?></td>
+                <td><?= $row->tanggal_masuk; ?></td>
+                <td><?= $row->deadline; ?></td>
+                <td><?= $row->nama_pemesan; ?></td>
+                <td><?= $row->nama_orderan; ?></td>
+                <td><?= $row->ukuran; ?></td>
+                <td><?= $row->halaman; ?></td>
+                <td><?= $row->oplag; ?></td>
+                <td><?= $row->hasil_1+$row->hasil_2+$row->hasil_3+$row->hasil_4; ?></td>
+                <td><?= $row->keterangan_jadwal_jahit; ?></td>  
+                <td><?php echo $row->status_jahit == "jahit" ?  "finishing akhir" : $row->so_status?></td>                
+                <td align="center">                  
+                  <a href="<?=site_url()?>finishing/FinishingAkhir/edit_jadwal_fa_jahit/<?= $row->id_order; ?>">
                     <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
-                  <a href="<?=site_url()?>finishing/FinishingAkhir/lihat_jadwal_fa_jahit">
+                  <a href="<?=site_url()?>finishing/FinishingAkhir/lihat_jadwal_fa_jahit/<?= $row->id_order; ?>">
                     <i class="fa fa-eye" style="font-size:18px;"></i>
                   </a>
                 </td>
-              </tr>
-              <tr>
-                <td>Urutan</td>
-                <td>Nomor SO</td>
-                <td>Tanggal Masuk</td>
-                <td>Deadline</td>
-                <td>Nama Pemesan</td>
-                <td>Nama Order</td>
-                <td>Ukuran</td>
-                <td>Halaman</td>
-                <td>Oplag</td>
-                <td>Hasil</td>
-                <td>Keterangan</td>
-                <td>Total</td>
-                <td align="center">
-                  <a href="<?=site_url()?>finishing/FinishingAkhir/tambah_jadwal_fa_jahit">
-                    <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
-                  </a>
-                  <a href="<?=site_url()?>finishing/FinishingAkhir/edit_jadwal_fa_jahit">
-                    <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
-                  </a>
-                  <a href="<?=site_url()?>finishing/FinishingAkhir/lihat_jadwal_fa_jahit">
-                    <i class="fa fa-eye" style="font-size:18px;"></i>
-                  </a>
-                </td>
-              </tr>
+              </tr>    
+              <?php } ?>          
             </tbody>
           </table>
         </div>

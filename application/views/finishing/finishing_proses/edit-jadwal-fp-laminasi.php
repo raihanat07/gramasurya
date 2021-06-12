@@ -237,7 +237,7 @@
           </div>
 
           
-          <br><br><br><br><div class="col" align="left">            
+          <br><br><br><div class="col" align="left">            
             <div class="col-md-2">
             
             
