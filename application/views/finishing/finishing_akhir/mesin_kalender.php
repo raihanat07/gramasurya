@@ -1,4 +1,4 @@
-  <!-- Content Header (Page header) -->
+<!-- Content Header (Page header) -->
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
@@ -8,246 +8,401 @@
     </div>
   </div><!-- /.container-fluid -->
 </section>
-
 <!-- Main content -->
 <section class="content">
   <div class="row">
     <div class="col-12">
       <!-- Default box -->
-      <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">Jadwal Finishing Akhir</h3>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-          <div class="tab-content">
-            <table id="example2" class="table table-bordered table-striped" style="font-size: 12px">
-              <thead>
-                <tr align="center">
-                  <td>Nomor SO</td>
-                  <td>Tanggal Masuk</td>
-                  <td>Deadline</td>
-                  <td>Nama Pemesan</td>
-                  <td>Nama Order</td>
-                  <td>Ukuran Plano</td>
-                  <td>Oplag</td>
-                  <td>Halaman</td>
-                  <td>Finishing Akhir</td>
-                  <td>
-                    <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_klemseng"   class="btn btn-success">
-                      Klemseng
-                    </a>
-                  </td>
-                  <td>
-                    <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_spiral"   class="btn btn-success">
-                      Spiral
-                    </a>
-                  </td>
-                  <td>Status</td>
-                  <td>Actions</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Nomor SO</td>
-                  <td>Tanggal Masuk</td>
-                  <td>Deadline</td>
-                  <td>Nama Pemesan</td>
-                  <td>Nama Order</td>
-                  <td>Ukuran Plano</td>
-                  <td>Oplag</td>
-                  <td>Halaman</td>
-                  <td>Finishing Akhir</td>
-                  <td>Klemseng</td>
-                  <td>Spiral</td>
-                  <td>Status</td>
-                  <td align="center">
-                    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
-                      <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
-                    </button>
-                    <!-- <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa" class="btn btn-success">
-                      <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
-                    </a> -->
-                  </td>
-                </tr>
-              </tbody>  
-            </table>
-          </div>
-
-          <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog modal-lg">
-              <!-- konten modal-->
-              <div class="modal-content">
-                <!-- heading modal -->
-                <div class="modal-header">
-                  
-                  <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Jadwal Finishing Akhir</h3>
                 </div>
-                <!-- body modal -->
-                <div class="card">
-                  <div class="card-header" align="center">
-                    <ul class="nav nav-pills row">
-                      <li class="nav-item col"><a class="nav-link btn-outline-success active" href="#klemseng" data-toggle="tab">KLEMSENG</a></li>
-                      <li class="nav-item col"><a class="nav-link btn-outline-success" href="#spiral" data-toggle="tab">SPIRAL</a></li>
-                    </ul>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <div class="card-body">
-                      <div class="tab-content">
-                        <div class="tab-pane active" id="klemseng">
-                          <h4>DETAIL ORDERAN</h4><hr>
-                          <div class="row">
-                            <div class="col-md-4">
-                              <br>Nomor SO
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                            <div class="col-md-4">
-                              <br>Nama Orderan
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                            <div class="col-md-4">
-                              <br>Finishing
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-4">
-                              <br>Nama Pemesan
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                            <div class="col-md-4">
-                              <br>Laminasi
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                            <div class="col-md-4">
-                              <br>Oplag
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-4">
-                              <br>Ukuran
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                            <div class="col-md-4">
-                              <br>Halaman
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                          </div><hr>
+                <!-- /.card-header -->
+                <div class="card-body">
+                <table id="example2" class="table table-bordered table-striped" style="font-size: 12px">
+                    <thead>
+                      <tr align="center">
+                        <td>Nomor SO</td>
+                        <td>Tanggal Masuk</td>
+                        <td>Deadline</td>
+                        <td>Nama Pemesan</td>
+                        <td>Nama Order</td>
+                        <td>Ukuran Plano</td>
+                        <td>Oplag</td>
+                        <td>Halaman</td>
+                        <td>
+                          <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_klemseng" class="btn btn-success">
+                            klemseng
+                          </a>
+                        </td>
+                        <td>
+                          <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_spiral" class="btn btn-success">
+                            spiral
+                          </a>                          
+                          </a>
+                        </td>                        
+                        <td>Status</td>
+                        <td>Actions</td>
+                      </tr>
+                    </thead>
+                    <?php foreach($fa as $s => $row) {?> 
+                    <?php if(($row->id_jadwal_klemseng == 0  or $row->id_jadwal_klemseng == null ) and ($row->id_jadwal_spiral == 0  or $row->id_jadwal_spiral == null ) ) 
+                    { if($row->status_laminasi == "laminasi" or $row->status_shoe == "shoe" or $row->status_mbo == "mbo" or $row->status_susun == "susun" or $row->status_sub_proses == "sub"){ ?>
+                      <tr>
+                      <td align="center"><?= $row->nomor_so; ?></td>
+                        <td><?= $row->tanggal_masuk; ?></td>
+                        <td style="color: red"><?= $row->deadline; ?></td>
+                        <td><?= $row->nama_pemesan; ?></td>
+                        <td><?= $row->nama_orderan; ?></td>
+                        <td><?= $row->ukuran; ?></td>
+                        <td><?= $row->oplag; ?></td>
+                        <td><?= $row->halaman; ?></td>
+                            <?php if($row->tanggal_pelaksanaan_klemseng != "0000-00-00") {?>
+                        <td <?php echo $row->status_klemseng == "klemseng" ?  "style='color: red'" : "" ?>><?= $row->tanggal_pelaksanaan_klemseng ?></td>
+                            <?php } else {?> <td></td> <?php } ?>
+                            
+                            <?php if($row->tanggal_pelaksanaan_spiral != "0000-00-00") {?>
+                        <td <?php echo $row->status_spiral == "spiral" ?  "style='color: red'" : "" ?>><?= $row->tanggal_pelaksanaan_spiral ?></td>
+                            <?php } else {?> <td></td> <?php } ?>
+                      
+                        <td>
+                             <?php if($row->status_binding == "binding" or $row->status_hardcover == "hardcover" or $row->status_jahit == "jahit" or $row->status_fa_potong == "fa_potong" or $row->status_sub == "sub" or $row->status_klemseng == "klemseng" or $row->status_spiral == "spiral"){
+                                      echo "Finishing Akhir";}
+                                    else echo $row->so_status;
+                              ?>                                                 
+                        </td>                        
+                        <td align="center">
+                          <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order; ?>">
+                            <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
+                          </button>
+                          <!-- <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa" class="btn btn-success">
+                            <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
+                          </a> -->
+                        </td>
+                      </tr>
 
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Tanggal Pelaksanaan</label><br>
-                              <input type="date" class="form-control" name="tanggal_pelaksanaan_klemseng" placeholder="Tanggal Pelaksanaan">
-                            </div>
-                          </div><hr>
+                      <?php } ?>
+                      <?php } ?>
+                      <?php } ?>
+                    </tbody>
+            
+                </table>
 
-                          <div class="row">
-                            <div class="col-md-4">
-                              Jenis Mesin<br>
-                              <label>Mesin Klemseng</label>
-                            </div>
-                            <div class="col-md-4">
-                              Hasil Gabungan<br>
-                              <label>dari db</label>
-                            </div>
-                            <div class="col-md-4">
-                              Tanggal Pengerjaan<br>
-                              <label>dari db</label>
-                            </div>
-                          </div><hr>
+                <?php foreach($fa as $s => $row) {?> 
+                  <form action="<?=site_url('finishing/FinishingAkhir/proses_fa_kalender')?>" method="post">
+                  <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
 
-                          <h4>Keterangan</h4>
-                          <textarea name="keterangan_finishing_akhir_klemseng" class="form-control" placeholder="catatan" style="height: 240px;"></textarea>
-                        </div>
-                        <div class="tab-pane" id="spiral">
-                          <h4>DETAIL ORDERAN</h4><hr>
-                          <div class="row">
-                            <div class="col-md-4">
-                              <br>Nomor SO
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                            <div class="col-md-4">
-                              <br>Nama Orderan
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                            <div class="col-md-4">
-                              <br>Finishing
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-4">
-                              <br>Nama Pemesan
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                            <div class="col-md-4">
-                              <br>Laminasi
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                            <div class="col-md-4">
-                              <br>Oplag
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-4">
-                              <br>Ukuran
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                            <div class="col-md-4">
-                              <br>Halaman
-                              <br><label class="form-label">dari db</label>
-                            </div>
-                          </div><hr>
+                  <input type="text" name="id_klemseng"  value="<?php echo $row->id_klemseng; ?>" hidden>
+                  <input type="text" name="id_spiral"  value="<?php echo $row->id_spiral; ?>" hidden>
+                  <input type="text" name="id_jahit"  value="<?php echo $row->id_jahit; ?>" hidden>
+                  <input type="text" name="id_fa_potong"  value="<?php echo $row->id_fa_potong; ?>" hidden>
+                  <input type="text" name="id_sub"  value="<?php echo $row->id_sub; ?>" hidden>
 
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label>Tanggal Pelaksanaan</label><br>
-                              <input type="date" class="form-control" name="tanggal_pelaksanaan_spiral" placeholder="Tanggal Pelaksanaan">
-                            </div>
-                          </div><hr>
-
-                          <div class="row">
-                            <div class="col-md-4">
-                              Jenis Mesin<br>
-                              <label>Mesin Spiral</label>
-                            </div>
-                            <div class="col-md-4">
-                              Hasil Gabungan<br>
-                              <label>dari db</label>
-                            </div>
-                            <div class="col-md-4">
-                              Tanggal Pengerjaan<br>
-                              <label>dari db</label>
-                            </div>
-                          </div><hr>
-
-                          <h4>Keterangan</h4>
-                          <textarea name="keterangan_finishing_akhir_spiral" class="form-control" placeholder="catatan" style="height: 240px;"></textarea>
-                        </div>
+                <div id="myModal<?= $row->id_order; ?>" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-lg">
+                    <!-- konten modal-->
+                    <div class="modal-content">
+                      <!-- heading modal -->
+                      <div class="modal-header">
+                        
+                        <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
                       </div>
-                    </div><br>
-                  </div>
-                  <!-- /.card-body -->
-                </div>
-                <!-- footer modal -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                  <button type="button" class="btn btn-success" data-dismiss="modal">Jadwal</button>
-                </div>
-              </div>
-            </div>
-          </div>
+                      <!-- body modal -->
+                      <div class="card">
+                        <div class="card-header" align="center">
+                          <ul class="nav nav-pills row">
+                            <li class="nav-item col"><a class="nav-link btn-outline-success active" href="#klemseng<?= $row->id_order; ?>" data-toggle="tab">klemseng</a></li>
+                            <li class="nav-item col"><a class="nav-link btn-outline-success" href="#spiral<?= $row->id_order; ?>" data-toggle="tab">spiral</a></li>                           
+                          </ul>
+                          <!-- <h3>SO dari db</h3> -->
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                          <div class="card-body">
+                            <div class="tab-content">                           
 
-        </div>
-        <!-- /.card-body -->
-      </div>
-      <!-- /.card -->
+                              <div class="tab-pane" id="spiral<?= $row->id_order; ?>">
+                                <h4>DETAIL ORDERAN</h4><hr>
+                                
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    Nomor SO
+                                    <br><label class="form-label"><?= $row->nomor_so; ?></label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    Nama Orderan
+                                    <br><label class="form-label"><?= $row->nama_orderan; ?></label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    Finishing
+                                    <br><label class="form-label">
+                                        <?php 
+                                        $finishing = "";
+                                        if($row->bending != null){
+                                          $finishing .= "bending, ";
+                                        }
+                                        if($row->hard_cover != null){
+                                          $finishing .= 'hard cover, ';
+                                        }   
+                                        if($row->jahit_benang != null){
+                                          $finishing .= 'jahit benang, ';
+                                        } 
+                                        if($row->jahit_kawat != null){
+                                          $finishing .= 'jahit kawat, ';
+                                        }    
+                                        if($row->pond != null){
+                                          $finishing .= 'pond, ';
+                                        }   
+                                        if($row->spiral != null){
+                                          $finishing .= 'Spiral, ';
+                                        }
+                                        if($row->klem != null){
+                                          $finishing .= 'Klem, ';
+                                        }
+                                        $finishing = rtrim($finishing, ", ");
+                                        echo $finishing;
+                                        ?>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <br>Nama Pemesan
+                                    <br><label class="form-label"><?= $row->nama_pemesan; ?></label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Ukuran
+                                    <br><label class="form-label"><?= $row->ukuran; ?></label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Oplag
+                                    <br><label class="form-label"><?= $row->oplag; ?></label>
+                                  </div>
+                                </div><br>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    Laminasi<br>
+                                    <b>
+                                      <?php 
+                                          $lam = "";
+                                          if($row->doff != null){
+                                            $lam .= "doff, ";
+                                          }
+                                          if($row->glossy != null){
+                                            $lam .= 'glossy, ';
+                                          }   
+                                          if($row->uvi != null){
+                                            $lam .= 'uvi, ';
+                                          } 
+                                          
+                                          $lam = rtrim($lam, ", ");
+                                          echo $lam;
+                                        ?>
+                                    </b>
+                                  </div>
+                                </div>
+                                <hr>
+
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <b>Tanggal Pelaksanaan</b><br>         
+                                    <?php if($row->id_spiral == null) {?>                           
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_spiral"  id="tgll_spiral<?= $row->id_order; ?>" > 
+                                    <?php }else{ ?>                                                                       
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_spiral"  id="tgll_spiral<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_spiral; ?>">
+                                      <?php } ?>
+                                  </div>  
+                                  <div class="col-md-6"><br>       
+                                    <?php if($row->id_spiral == null) {?>                                                           
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_spiral<?= $row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php }else{ ?>   
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_spiral<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php } ?>
+                                  </div>  
+                                </div><br><hr>
+
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    Jenis Mesin<br>
+                                    <b>Mesin spiral</b>
+                                  </div>                                                                   
+                                  <div class="col-md-6">
+                                    Hasil Gabungan<br>
+                                    <b><?= $row->susun_hasil_1+$row->susun_hasil_2; ?></b>
+                                  </div>
+                                </div><hr><br>
+
+                                <h4>Keterangan</h4>
+                                <?php if($row->id_spiral == null) {?>                                     
+                                    <textarea name="keterangan_jadwal_spiral" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+                                <?php }else{ ?>                                  
+                                    <textarea name="keterangan_jadwal_spiral" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_spiral; ?></textarea><br>
+                                <?php } ?>
+                                <div class="row">
+                                  <div class="col" align="right">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
+                                    <?php if($row->id_spiral == null) {?>  
+                                      <button type="submit" class="btn btn-success" name="add">Jadwal</button>
+                                    <?php }else{ ?>
+                                      <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
+                                    <?php } ?>
+                                  </div>
+                                </div>
+                              </div>
+                              
+
+                              <div class="tab-pane active" id="klemseng<?= $row->id_order; ?>">
+                                <h4>DETAIL ORDERAN</h4><hr>
+                                
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    Nomor SO
+                                    <br><label class="form-label"><?= $row->nomor_so; ?></label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    Nama Orderan
+                                    <br><label class="form-label"><?= $row->nama_orderan; ?></label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    Finishing
+                                    <br><label class="form-label">
+                                        <?php 
+                                        $finishing = "";
+                                        if($row->bending != null){
+                                          $finishing .= "bending, ";
+                                        }
+                                        if($row->hard_cover != null){
+                                          $finishing .= 'hard cover, ';
+                                        }   
+                                        if($row->jahit_benang != null){
+                                          $finishing .= 'jahit benang, ';
+                                        } 
+                                        if($row->jahit_kawat != null){
+                                          $finishing .= 'jahit kawat, ';
+                                        }    
+                                        if($row->pond != null){
+                                          $finishing .= 'pond, ';
+                                        }   
+                                        if($row->spiral != null){
+                                          $finishing .= 'Spiral, ';
+                                        }
+                                        if($row->klem != null){
+                                          $finishing .= 'Klem, ';
+                                        }
+                                        $finishing = rtrim($finishing, ", ");
+                                        echo $finishing;
+                                        ?>
+                                    </label>
+                                  </div>
+                                </div>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    <br>Nama Pemesan
+                                    <br><label class="form-label"><?= $row->nama_pemesan; ?></label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Ukuran
+                                    <br><label class="form-label"><?= $row->ukuran; ?></label>
+                                  </div>
+                                  <div class="col-md-4">
+                                    <br>Oplag
+                                    <br><label class="form-label"><?= $row->oplag; ?></label>
+                                  </div>
+                                </div><br>
+                                <div class="row">
+                                  <div class="col-md-4">
+                                    Laminasi<br>
+                                    <b>
+                                      <?php 
+                                          $lam = "";
+                                          if($row->doff != null){
+                                            $lam .= "doff, ";
+                                          }
+                                          if($row->glossy != null){
+                                            $lam .= 'glossy, ';
+                                          }   
+                                          if($row->uvi != null){
+                                            $lam .= 'uvi, ';
+                                          } 
+                                          
+                                          $lam = rtrim($lam, ", ");
+                                          echo $lam;
+                                        ?>
+                                    </b>
+                                  </div>
+                                </div>
+                                <hr>
+
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <b>Tanggal Pelaksanaan</b><br>         
+                                    <?php if($row->id_klemseng == null) {?>                           
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_klemseng"  id="tgll_klemseng<?= $row->id_order; ?>" > 
+                                    <?php }else{ ?>                                                                       
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_klemseng"  id="tgll_klemseng<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_klemseng; ?>">
+                                      <?php } ?>
+                                  </div>  
+                                  <div class="col-md-6"><br>       
+                                    <?php if($row->id_klemseng == null) {?>                                                           
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_klemseng<?= $row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php }else{ ?>   
+                                      <a  class="btn btn-default" onclick="document.getElementById('tgll_klemseng<?= $row->id_order.$row->id_order; ?>').value='';">Hapus tanggal</a>
+                                    <?php } ?>
+                                  </div>  
+                                </div><br><hr>
+
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    Jenis Mesin<br>
+                                    <b>Mesin klemseng</b>
+                                  </div>                                                                   
+                                  <div class="col-md-6">
+                                    Hasil Gabungan<br>
+                                    <b><?= $row->susun_hasil_1+$row->susun_hasil_2; ?></b>
+                                  </div>
+                                </div><hr><br>
+
+                                <h4>Keterangan</h4>
+                                <?php if($row->id_klemseng == null) {?>                                     
+                                    <textarea name="keterangan_jadwal_klemseng" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
+                                <?php }else{ ?>                                  
+                                    <textarea name="keterangan_jadwal_klemseng" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_klemseng; ?></textarea><br>
+                                <?php } ?>
+                                <div class="row">
+                                  <div class="col" align="right">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
+                                    <?php if($row->id_klemseng == null) {?>  
+                                      <button type="submit" class="btn btn-success" name="add">Jadwal</button>
+                                    <?php }else{ ?>
+                                      <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
+                                    <?php } ?>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div><br>
+                        </div>
+                        <!-- /.card-body -->
+                      </div>
+                      <!-- footer modal -->
+                      <div class="modal-footer">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                  </form>
+                <?php } ?>
+
+                </div>
+                <!-- /.card-body -->
+            </div>
+          <!-- /.card -->
     </div>
     <!-- /.col -->
   </div>
+  
   <!-- /.row -->
 </section>
 <!-- /.content -->

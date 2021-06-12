@@ -34,20 +34,20 @@ class FinishingAkhir extends CI_Controller {
 		$query = $this->fa->get();
 		$data = array(
 			'judul' => 'Finishing Akhir Mesin Kalender',
-			// 'fa' => $query->result(),
+			'fa' => $query->result(),
 		);		
 		$this->template->load('finishing/template','finishing/finishing_akhir/mesin_kalender',$data);
 	}
-    public function jadwal_fa()
-	{
-		// check_already_login_finishing();
-		$query = $this->fa->get();
-		$data = array(
-			'judul' => 'Finishing Akhir',
-			'fa' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa',$data);
-	}
+    // public function jadwal_fa()
+	// {
+	// 	// check_already_login_finishing();
+	// 	$query = $this->fa->get();
+	// 	$data = array(
+	// 		'judul' => 'Finishing Akhir',
+	// 		'fa' => $query->result(),
+	// 	);		
+	// 	$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa',$data);
+	// }
     public function tambah_jadwal_fa()
 	{
 		// check_already_login_finishing();
@@ -112,6 +112,31 @@ class FinishingAkhir extends CI_Controller {
 
 }
 
+public function proses_fa_kalender()
+	{
+		if(isset($_POST['add'])){							
+			$inputan = $this->input->post(null, TRUE);
+			$this->fa->tambah_fa_kalender($inputan);								
+		}
+		if(isset($_POST['edit'])){							
+			$inputan = $this->input->post(null, TRUE);
+			$this->fa->edit_fa_kalender($inputan);								
+		}
+		// jika jadwal kosong
+		if($inputan["tanggal_pelaksanaan_klemseng"] == ""){
+			$this->fa->hapus_jadwal_klemseng($inputan);	
+		}
+		if($inputan["tanggal_pelaksanaan_spiral"] == ""){
+			$this->fa->hapus_jadwal_spiral($inputan);	
+		}		
+		
+
+		echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
+		echo "<script>window.location='".site_url('finishing/FinishingAkhir/mesin_kalender')."'; </script>"; 
+
+
+}
+
 
 
 	// MESIN BINDING
@@ -128,11 +153,11 @@ class FinishingAkhir extends CI_Controller {
 	public function edit_jadwal_fa_binding($id)
 	{
 		// check_already_login_finishing();
-		$query = $this->fa->edit_binding($id);
+		$query = $this->fa->edit_binding($id);		
 		$data = array(
 			'judul' => 'Finishing Akhir',
 			'fa' => $query->result(),
-		);		
+		);				
 		$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-binding',$data);
 	}
     public function tambah_jadwal_fa_binding()
@@ -398,88 +423,113 @@ public function proses_sub()
 	}		
 }
 
+	
+//// MESIN spiral
+public function jadwal_fa_spiral()
+{
+	// check_already_login_finishing();
+	$query = $this->fa->get_jadwal_spiral();
+	$data = array(
+		'judul' => 'Finishing Akhir',
+		'fa' => $query->result(),
+	);		
+	$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_spiral',$data);
+}
+public function edit_jadwal_fa_spiral($id)
+{
+	// check_already_login_finishing();
+	$query = $this->fa->edit_spiral($id);
+	$data = array(
+		'judul' => 'Finishing Akhir',
+		'fa' => $query->result(),
+	);		
+	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-spiral',$data);
+}
+public function tambah_jadwal_fa_spiral()
+{
+	// check_already_login_finishing();
+	$query = $this->fa->get();
+	$data = array(
+		'judul' => 'Finishing Akhir',
+		'fa' => $query->result(),
+	);		
+	$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-spiral',$data);
+}    
+public function lihat_jadwal_fa_spiral($id)
+{
+	// check_already_login_finishing();
+	$query = $this->fa->edit_spiral($id);
+	$data = array(
+		'judul' => 'Finishing Akhir',
+		'fa' => $query->result(),
+	);		
+	$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-spiral',$data);
+}
+public function proses_spiral()
+{				
+	if(isset($_POST['edit'])){							
+		$inputan = $this->input->post(null, TRUE);
 
-	// MESIN SPIRAL
-    public function jadwal_fa_spiral()
-	{
-		// check_already_login_finishing();
-		$query = $this->fa->get();
-		$data = array(
-			'judul' => 'Finishing Akhir',
-			'fa' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_spiral',$data);
-	}
-    public function tambah_jadwal_fa_spiral()
-	{
-		// check_already_login_finishing();
-		$query = $this->fa->get();
-		$data = array(
-			'judul' => 'Finishing Akhir',
-			'fa' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-spiral',$data);
-	}
-    public function edit_jadwal_fa_spiral()
-	{
-		// check_already_login_finishing();
-		$query = $this->fa->get();
-		$data = array(
-			'judul' => 'Finishing Akhir',
-			'fa' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-spiral',$data);
-	}
-    public function lihat_jadwal_fa_spiral()
-	{
-		// check_already_login_finishing();
-		$query = $this->fa->get();
-		$data = array(
-			'judul' => 'Finishing Akhir',
-			'fa' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-spiral',$data);
-	}
+		$this->fa->proses_edit_spiral($inputan);				
+			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_spiral')."'; </script>"; 
+	}		
+}
 
-	// MESIN KLEMSENG
-    public function jadwal_fa_klemseng()
-	{
-		// check_already_login_finishing();
-		$query = $this->fa->get();
-		$data = array(
-			'judul' => 'Finishing Akhir',
-			'fa' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_klemseng',$data);
-	}
-    public function tambah_jadwal_fa_klemseng()
-	{
-		// check_already_login_finishing();
-		$query = $this->fa->get();
-		$data = array(
-			'judul' => 'Finishing Akhir',
-			'fa' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-klemseng',$data);
-	}
-    public function edit_jadwal_fa_klemseng()
-	{
-		// check_already_login_finishing();
-		$query = $this->fa->get();
-		$data = array(
-			'judul' => 'Finishing Akhir',
-			'fa' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-klemseng',$data);
-	}
-    public function lihat_jadwal_fa_klemseng()
-	{
-		// check_already_login_finishing();
-		$query = $this->fa->get();
-		$data = array(
-			'judul' => 'Finishing Akhir',
-			'fa' => $query->result(),
-		);		
-		$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-klemseng',$data);
-	}
+	
+//// MESIN klemseng
+public function jadwal_fa_klemseng()
+{
+	// check_already_login_finishing();
+	$query = $this->fa->get_jadwal_klemseng();
+	$data = array(
+		'judul' => 'Finishing Akhir',
+		'fa' => $query->result(),
+	);		
+	$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_klemseng',$data);
+}
+public function edit_jadwal_fa_klemseng($id)
+{
+	// check_already_login_finishing();
+	$query = $this->fa->edit_klemseng($id);
+	$data = array(
+		'judul' => 'Finishing Akhir',
+		'fa' => $query->result(),
+	);		
+	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-klemseng',$data);
+}
+public function tambah_jadwal_fa_klemseng()
+{
+	// check_already_login_finishing();
+	$query = $this->fa->get();
+	$data = array(
+		'judul' => 'Finishing Akhir',
+		'fa' => $query->result(),
+	);		
+	$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-klemseng',$data);
+}    
+public function lihat_jadwal_fa_klemseng($id)
+{
+	// check_already_login_finishing();
+	$query = $this->fa->edit_klemseng($id);
+	$data = array(
+		'judul' => 'Finishing Akhir',
+		'fa' => $query->result(),
+	);		
+	$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-klemseng',$data);
+}
+public function proses_klemseng()
+{				
+	if(isset($_POST['edit'])){							
+		$inputan = $this->input->post(null, TRUE);
+
+		$this->fa->proses_edit_klemseng($inputan);				
+			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_klemseng')."'; </script>"; 
+	}		
+}
+
+
+
+
 }

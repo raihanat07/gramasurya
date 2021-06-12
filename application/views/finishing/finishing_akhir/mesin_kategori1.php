@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>FINISHING PROSES</h1>
+        <h1>FINISHING AKHIR</h1>
       </div>
     </div>
   </div><!-- /.container-fluid -->
@@ -15,7 +15,7 @@
       <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Jadwal Finishing Proses</h3>
+                    <h3 class="card-title">Jadwal Finishing Akhir</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -60,7 +60,8 @@
                       </tr>
                     </thead>
                     <?php foreach($fa as $s => $row) {?> 
-                    <?php if(($row->id_jadwal_binding == 0  or $row->id_jadwal_binding == null ) and ($row->id_jadwal_hardcover == 0  or $row->id_jadwal_hardcover == null ) and ($row->id_jadwal_jahit == 0  or $row->id_jadwal_jahit == null ) and ($row->id_jadwal_fa_potong == 0  or $row->id_jadwal_fa_potong == null ) and ($row->id_jadwal_sub == 0  or $row->id_jadwal_sub == null )) { ?>
+                    <?php if(($row->id_jadwal_binding == 0  or $row->id_jadwal_binding == null ) and ($row->id_jadwal_hardcover == 0  or $row->id_jadwal_hardcover == null ) and ($row->id_jadwal_jahit == 0  or $row->id_jadwal_jahit == null ) and ($row->id_jadwal_fa_potong == 0  or $row->id_jadwal_fa_potong == null ) and ($row->id_jadwal_sub == 0  or $row->id_jadwal_sub == null )) 
+                    { if($row->status_laminasi == "laminasi" or $row->status_shoe == "shoe" or $row->status_mbo == "mbo" or $row->status_susun == "susun" or $row->status_sub_proses == "sub"){?>
                       <tr>
                       <td align="center"><?= $row->nomor_so; ?></td>
                         <td><?= $row->tanggal_masuk; ?></td>
@@ -91,8 +92,8 @@
                             <?php } else {?> <td></td> <?php } ?>
                       
                         <td>
-                              <?php if($row->status_binding == "binding" or $row->status_hardcover == "hardcover" or $row->status_jahit == "jahit" or $row->status_fa_potong == "fa_potong" or $row->status_sub == "sub"){
-                                      echo "Finishing Proses";}
+                              <?php if($row->status_binding == "binding" or $row->status_hardcover == "hardcover" or $row->status_jahit == "jahit" or $row->status_fa_potong == "fa_potong" or $row->status_sub == "sub" or $row->status_klemseng == "klemseng" or $row->status_spiral == "spiral"){
+                                      echo "Finishing Akhir";}
                                     else echo $row->so_status;
                               ?>                                                
                         </td>                        
@@ -106,6 +107,7 @@
                         </td>
                       </tr>
 
+                      <?php } ?>
                       <?php } ?>
                       <?php } ?>
                     </tbody>

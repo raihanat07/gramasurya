@@ -31,6 +31,14 @@ class FinishingAkhir_m extends CI_Model {
             jahit.status_jahit as status_jahit,
             fa_potong.status_fa_potong as status_fa_potong,
             sub_finishing.status_sub as status_sub,
+            klemseng.status_klemseng as status_klemseng,
+            spiral.status_spiral as status_spiral,
+
+            laminasi.status_laminasi as status_laminasi,
+            shoe.status_shoe as status_shoe,
+            mbo.status_mbo as status_mbo,
+            susun.status_susun as status_susun,
+            sub_proses.status_sub as status_sub_proses,
 
             binding.id_binding as id_binding,
             binding.id_jadwal_binding as id_jadwal_binding,
@@ -56,14 +64,22 @@ class FinishingAkhir_m extends CI_Model {
             sub_finishing.id_jadwal_sub as id_jadwal_sub,
             sub_finishing.tanggal_pelaksanaan_sub as tanggal_pelaksanaan_sub,
             sub_finishing.keterangan_jadwal_sub as keterangan_jadwal_sub,
-
             sub_finishing.jenis_sub_binding as jenis_sub_binding,
             sub_finishing.jenis_sub_hardcover as jenis_sub_hardcover,
             sub_finishing.jenis_sub_jahit as jenis_sub_jahit,
             sub_finishing.jenis_sub_fa_potong as jenis_sub_fa_potong,
             sub_finishing.jenis_sub_klemseng as jenis_sub_klemseng,
-            sub_finishing.jenis_sub_spiral as jenis_sub_spiral
+            sub_finishing.jenis_sub_spiral as jenis_sub_spiral,
                        
+            klemseng.id_klemseng as id_klemseng,
+            klemseng.id_jadwal_klemseng as id_jadwal_klemseng,
+            klemseng.tanggal_pelaksanaan_klemseng as tanggal_pelaksanaan_klemseng,
+            klemseng.keterangan_jadwal_klemseng as keterangan_jadwal_klemseng,
+
+            spiral.id_spiral as id_spiral,
+            spiral.id_jadwal_spiral as id_jadwal_spiral,
+            spiral.tanggal_pelaksanaan_spiral as tanggal_pelaksanaan_spiral,
+            spiral.keterangan_jadwal_spiral as keterangan_jadwal_spiral,
             
             ',      
         );           
@@ -76,8 +92,16 @@ class FinishingAkhir_m extends CI_Model {
         $this->db->join('jahit','jahit.id_order = order.id_order','left');
         $this->db->join('hardcover','hardcover.id_order = order.id_order','left');
         $this->db->join('sub_finishing','sub_finishing.id_order = order.id_order','left');  
+        $this->db->join('klemseng','klemseng.id_order = order.id_order','left');
+        $this->db->join('spiral','spiral.id_order = order.id_order','left');
                                                 
         $this->db->join('susun','susun.id_order = order.id_order','left');
+
+        $this->db->join('laminasi','laminasi.id_order = order.id_order','left');
+        $this->db->join('shoe','shoe.id_order = order.id_order','left');
+        $this->db->join('mbo','mbo.id_order = order.id_order','left');
+        $this->db->join('sub_proses','sub_proses.id_order = order.id_order','left');
+        
 
         $this->db->order_by('order.id_order', 'desc');
         // $this->db->where_in('imposisi.imposisi_status', $status_impo);
@@ -194,6 +218,74 @@ public function edit_fa($data)
         $this->db->set($ubah_sub);
         $this->db->where('id_order',$data['id_order']);
         $this->db->update('sub_finishing');  
+    
+}
+
+//// mesin kalender
+public function tambah_fa_kalender($data)
+    {
+            $tambah_klemseng = array(
+                'id_order' =>$data['id_order'],               
+                'tanggal_pelaksanaan_klemseng' =>$data['tanggal_pelaksanaan_klemseng'],   
+                'keterangan_jadwal_klemseng' =>$data['keterangan_jadwal_klemseng'],                
+            );            
+            $this->db->insert('klemseng',$tambah_klemseng);
+
+            $tambah_spiral = array(
+                'id_order' =>$data['id_order'],               
+                'tanggal_pelaksanaan_spiral' =>$data['tanggal_pelaksanaan_spiral'],   
+                'keterangan_jadwal_spiral' =>$data['keterangan_jadwal_spiral'],                
+            );            
+            $this->db->insert('spiral',$tambah_spiral);
+
+
+
+            $tambah_binding = array(
+                'id_order' =>$data['id_order'],                                            
+            );            
+            $this->db->insert('binding',$tambah_binding);
+
+            $tambah_hardcover = array(
+                'id_order' =>$data['id_order'],                                            
+            );            
+            $this->db->insert('hardcover',$tambah_hardcover);
+
+            $tambah_jahit = array(
+                'id_order' =>$data['id_order'],                                              
+            );            
+            $this->db->insert('jahit',$tambah_jahit);
+
+            $tambah_fa_potong = array(
+                'id_order' =>$data['id_order'],                                         
+            );            
+            $this->db->insert('fa_potong',$tambah_fa_potong);
+
+            $tambah_sub = array(
+                'id_order' =>$data['id_order'],                               
+            );            
+            $this->db->insert('sub_finishing',$tambah_sub);
+           
+
+}
+
+
+public function edit_fa_kalender($data)
+{
+        $ubah_klemseng = array(                           
+            'tanggal_pelaksanaan_klemseng' =>$data['tanggal_pelaksanaan_klemseng'],   
+            'keterangan_jadwal_klemseng' =>$data['keterangan_jadwal_klemseng'],                
+        );                        
+        $this->db->set($ubah_klemseng);
+        $this->db->where('id_order',$data['id_order']);
+        $this->db->update('klemseng');  
+
+        $ubah_spiral = array(                           
+            'tanggal_pelaksanaan_spiral' =>$data['tanggal_pelaksanaan_spiral'],   
+            'keterangan_jadwal_spiral' =>$data['keterangan_jadwal_spiral'],                
+        );                        
+        $this->db->set($ubah_spiral);
+        $this->db->where('id_order',$data['id_order']);
+        $this->db->update('spiral');  
     
 }
 
@@ -398,6 +490,93 @@ public function hapus_jadwal_sub($data)
         $this->db->where('id_order',$data['id_order']);
         $this->db->update('sub_finishing'); 
 }
+
+// hapus klemseng
+public function hapus_jadwal_klemseng($data)
+{
+    $hapus_klemseng = array(         
+        'status_klemseng' =>null,
+        'tanggal_pelaksanaan_klemseng' =>null,
+        'keterangan_jadwal_klemseng' =>null,
+
+        'tanggal_pengerjaan_1' =>null,
+        'hasil_1' =>null,
+        'rejek_1' =>null,
+        'operator_1' =>null,
+        'kru_1' =>null,
+        'keterangan_1' =>null,
+        
+        'tanggal_pengerjaan_2' =>null,
+        'hasil_2' =>null,
+        'rejek_2' =>null,
+        'operator_2' =>null,
+        'kru_2' =>null,
+        'keterangan_2' =>null,
+
+        'tanggal_pengerjaan_3' =>null,
+        'hasil_3' =>null,
+        'rejek_3' =>null,
+        'operator_3' =>null,
+        'kru_3' =>null,
+        'keterangan_3' =>null,
+
+        'tanggal_pengerjaan_4' =>null,
+        'hasil_4' =>null,
+        'rejek_4' =>null,
+        'operator_4' =>null,
+        'kru_4' =>null,
+        'keterangan_4' =>null,
+
+
+    );                        
+    $this->db->set($hapus_klemseng);
+    $this->db->where('id_order',$data['id_order']);
+    $this->db->update('klemseng'); 
+}
+
+// hapus spiral
+public function hapus_jadwal_spiral($data)
+{
+    $hapus_spiral = array(         
+        'status_spiral' =>null,
+        'tanggal_pelaksanaan_spiral' =>null,
+        'keterangan_jadwal_spiral' =>null,
+
+        'tanggal_pengerjaan_1' =>null,
+        'hasil_1' =>null,
+        'rejek_1' =>null,
+        'operator_1' =>null,
+        'kru_1' =>null,
+        'keterangan_1' =>null,
+        
+        'tanggal_pengerjaan_2' =>null,
+        'hasil_2' =>null,
+        'rejek_2' =>null,
+        'operator_2' =>null,
+        'kru_2' =>null,
+        'keterangan_2' =>null,
+
+        'tanggal_pengerjaan_3' =>null,
+        'hasil_3' =>null,
+        'rejek_3' =>null,
+        'operator_3' =>null,
+        'kru_3' =>null,
+        'keterangan_3' =>null,
+
+        'tanggal_pengerjaan_4' =>null,
+        'hasil_4' =>null,
+        'rejek_4' =>null,
+        'operator_4' =>null,
+        'kru_4' =>null,
+        'keterangan_4' =>null,
+
+
+    );                        
+    $this->db->set($hapus_spiral);
+    $this->db->where('id_order',$data['id_order']);
+    $this->db->update('spiral'); 
+}
+
 
 
 //// MESIN binding
@@ -1204,6 +1383,339 @@ public function proses_edit_sub($data)
 }
 
 
+//// MESIN klemseng
+public function get_jadwal_klemseng()
+{
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        
+        klemseng.id_jadwal_klemseng as id_jadwal_klemseng,
+        klemseng.status_klemseng as status_klemseng,
+        klemseng.id_klemseng as id_klemseng,
+        klemseng.hasil_1 as hasil_1,
+        klemseng.hasil_2 as hasil_2,
+        klemseng.hasil_3 as hasil_3,
+        klemseng.hasil_4 as hasil_4,
+        klemseng.tanggal_pelaksanaan_klemseng as tanggal_pelaksanaan_klemseng,
+        klemseng.keterangan_jadwal_klemseng as keterangan_jadwal_klemseng
+        
+        ',
+        
+    );           
+
+    $this->db->from('order');                           
+    $this->db->join('klemseng','order.id_order = klemseng.id_order' ); 
+    $this->db->where('klemseng.tanggal_pelaksanaan_klemseng !=', '0000-00-00');    
+    $this->db->order_by('klemseng.tanggal_pelaksanaan_klemseng', 'asc');        
+    
+    $query = $this->db->get();
+    return $query;  
+}
+
+public function edit_klemseng($id)
+{
+    
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,            
+        finishing.finishing_cover_uvi as uvi,finishing.finishing_cover_glossy as glossy,finishing.finishing_cover_doff as doff,
+
+        binding.status_binding as status_binding,            
+        hardcover.status_hardcover as status_hardcover,
+        jahit.status_jahit as status_jahit,
+        fa_potong.status_fa_potong as status_fa_potong,
+        sub_finishing.status_sub as status_sub,
+        klemseng.status_klemseng as status_klemseng,
+        spiral.status_spiral as status_spiral,
+
+        binding.tanggal_pelaksanaan_binding as tanggal_pelaksanaan_binding,
+        hardcover.tanggal_pelaksanaan_hardcover as tanggal_pelaksanaan_hardcover,
+        jahit.tanggal_pelaksanaan_jahit as tanggal_pelaksanaan_jahit,
+        fa_potong.tanggal_pelaksanaan_fa_potong as tanggal_pelaksanaan_fa_potong,
+        sub_finishing.tanggal_pelaksanaan_sub as tanggal_pelaksanaan_sub,
+        klemseng.tanggal_pelaksanaan_klemseng as tanggal_pelaksanaan_klemseng,
+        spiral.tanggal_pelaksanaan_spiral as tanggal_pelaksanaan_spiral,
+
+        susun.hasil_1 as susun_hasil_1,
+        susun.hasil_2 as susun_hasil_2,            
+
+        klemseng.id_klemseng as id_klemseng,
+        klemseng.tanggal_pelaksanaan_klemseng as tanggal_pelaksanaan_klemseng,                        
+        klemseng.keterangan_jadwal_klemseng as keterangan_jadwal_klemseng,
+        
+        klemseng.tanggal_pengerjaan_1 as tanggal_pengerjaan_1,
+        klemseng.hasil_1 as hasil_1,
+        klemseng.rejek_1 as rejek_1,
+        klemseng.operator_1 as operator_1,
+        klemseng.kru_1 as kru_1,
+        klemseng.keterangan_1 as keterangan_1,
+        klemseng.tanggal_pengerjaan_2 as tanggal_pengerjaan_2,
+        klemseng.hasil_2 as hasil_2,
+        klemseng.rejek_2 as rejek_2,
+        klemseng.operator_2 as operator_2,
+        klemseng.kru_2 as kru_2,
+        klemseng.keterangan_2 as keterangan_2,     
+        klemseng.tanggal_pengerjaan_3 as tanggal_pengerjaan_3,
+        klemseng.hasil_3 as hasil_3,
+        klemseng.rejek_3 as rejek_3,
+        klemseng.operator_3 as operator_3,
+        klemseng.kru_3 as kru_3,
+        klemseng.keterangan_3 as keterangan_3,  
+        klemseng.tanggal_pengerjaan_4 as tanggal_pengerjaan_4,
+        klemseng.hasil_4 as hasil_4,
+        klemseng.rejek_4 as rejek_4,
+        klemseng.operator_4 as operator_4,
+        klemseng.kru_4 as kru_4,
+        klemseng.keterangan_4 as keterangan_4,                    
+        ',
+    );           
+    // $this->db->select_max('laminasi.id_jadwal_laminasi');
+    $this->db->from('order');                           
+
+    $this->db->join('binding','order.id_order = binding.id_order' );         
+    $this->db->join('hardcover','order.id_order = hardcover.id_order' );
+    $this->db->join('jahit','order.id_order = jahit.id_order' );
+    $this->db->join('fa_potong','order.id_order = fa_potong.id_order' );
+    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' );
+    $this->db->join('klemseng','order.id_order = klemseng.id_order' );
+    $this->db->join('spiral','order.id_order = spiral.id_order' );
+
+    $this->db->join('susun','order.id_order = susun.id_order' );
+    $this->db->join('finishing','order.id_order = finishing.id_order' ); 
+    $this->db->where('order.id_order', $id);       
+    
+    $query = $this->db->get();
+    return $query;  
+
+}
+
+public function proses_edit_klemseng($data)
+{
+    $ubah_klemseng = array(         
+        'status_klemseng' =>$data['status_klemseng'],
+        'tanggal_pelaksanaan_klemseng' =>$data['tanggal_pelaksanaan_klemseng'],
+        'keterangan_jadwal_klemseng' =>$data['keterangan_jadwal_klemseng'],
+
+        'tanggal_pengerjaan_1' =>$data['tanggal_pengerjaan_1'],
+        'hasil_1' =>$data['hasil_1'],
+        'rejek_1' =>$data['rejek_1'],
+        'operator_1' =>$data['operator_1'],
+        'kru_1' =>$data['kru_1'],
+        'keterangan_1' =>$data['keterangan_1'],
+        
+        'tanggal_pengerjaan_2' =>$data['tanggal_pengerjaan_2'],
+        'hasil_2' =>$data['hasil_2'],
+        'rejek_2' =>$data['rejek_2'],
+        'operator_2' =>$data['operator_2'],
+        'kru_2' =>$data['kru_2'],
+        'keterangan_2' =>$data['keterangan_2'],
+
+        'tanggal_pengerjaan_3' =>$data['tanggal_pengerjaan_3'],
+        'hasil_3' =>$data['hasil_3'],
+        'rejek_3' =>$data['rejek_3'],
+        'operator_3' =>$data['operator_3'],
+        'kru_3' =>$data['kru_3'],
+        'keterangan_3' =>$data['keterangan_3'],
+
+        'tanggal_pengerjaan_4' =>$data['tanggal_pengerjaan_4'],
+        'hasil_4' =>$data['hasil_4'],
+        'rejek_4' =>$data['rejek_4'],
+        'operator_4' =>$data['operator_4'],
+        'kru_4' =>$data['kru_4'],
+        'keterangan_4' =>$data['keterangan_4'],
+
+
+    );                        
+    $this->db->set($ubah_klemseng);
+    $this->db->where('id_order',$data['id_order']);
+    $this->db->update('klemseng'); 
+}
+
+
+
+//// MESIN spiral
+public function get_jadwal_spiral()
+{
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        
+        spiral.id_jadwal_spiral as id_jadwal_spiral,
+        spiral.status_spiral as status_spiral,
+        spiral.id_spiral as id_spiral,
+        spiral.hasil_1 as hasil_1,
+        spiral.hasil_2 as hasil_2,
+        spiral.hasil_3 as hasil_3,
+        spiral.hasil_4 as hasil_4,
+        spiral.tanggal_pelaksanaan_spiral as tanggal_pelaksanaan_spiral,
+        spiral.keterangan_jadwal_spiral as keterangan_jadwal_spiral
+        
+        ',
+        
+    );           
+
+    $this->db->from('order');                           
+    $this->db->join('spiral','order.id_order = spiral.id_order' ); 
+    $this->db->where('spiral.tanggal_pelaksanaan_spiral !=', '0000-00-00');    
+    $this->db->order_by('spiral.tanggal_pelaksanaan_spiral', 'asc');        
+    
+    $query = $this->db->get();
+    return $query;  
+}
+
+public function edit_spiral($id)
+{
+    
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,            
+        finishing.finishing_cover_uvi as uvi,finishing.finishing_cover_glossy as glossy,finishing.finishing_cover_doff as doff,
+
+        binding.status_binding as status_binding,            
+        hardcover.status_hardcover as status_hardcover,
+        jahit.status_jahit as status_jahit,
+        fa_potong.status_fa_potong as status_fa_potong,
+        sub_finishing.status_sub as status_sub,
+        klemseng.status_klemseng as status_klemseng,
+        spiral.status_spiral as status_spiral,
+
+        binding.tanggal_pelaksanaan_binding as tanggal_pelaksanaan_binding,
+        hardcover.tanggal_pelaksanaan_hardcover as tanggal_pelaksanaan_hardcover,
+        jahit.tanggal_pelaksanaan_jahit as tanggal_pelaksanaan_jahit,
+        fa_potong.tanggal_pelaksanaan_fa_potong as tanggal_pelaksanaan_fa_potong,
+        sub_finishing.tanggal_pelaksanaan_sub as tanggal_pelaksanaan_sub,
+        klemseng.tanggal_pelaksanaan_klemseng as tanggal_pelaksanaan_klemseng,
+        spiral.tanggal_pelaksanaan_spiral as tanggal_pelaksanaan_spiral,
+
+        susun.hasil_1 as susun_hasil_1,
+        susun.hasil_2 as susun_hasil_2,            
+
+        spiral.id_spiral as id_spiral,
+        spiral.tanggal_pelaksanaan_spiral as tanggal_pelaksanaan_spiral,                        
+        spiral.keterangan_jadwal_spiral as keterangan_jadwal_spiral,
+        
+        spiral.tanggal_pengerjaan_1 as tanggal_pengerjaan_1,
+        spiral.hasil_1 as hasil_1,
+        spiral.rejek_1 as rejek_1,
+        spiral.operator_1 as operator_1,
+        spiral.kru_1 as kru_1,
+        spiral.keterangan_1 as keterangan_1,
+        spiral.tanggal_pengerjaan_2 as tanggal_pengerjaan_2,
+        spiral.hasil_2 as hasil_2,
+        spiral.rejek_2 as rejek_2,
+        spiral.operator_2 as operator_2,
+        spiral.kru_2 as kru_2,
+        spiral.keterangan_2 as keterangan_2,     
+        spiral.tanggal_pengerjaan_3 as tanggal_pengerjaan_3,
+        spiral.hasil_3 as hasil_3,
+        spiral.rejek_3 as rejek_3,
+        spiral.operator_3 as operator_3,
+        spiral.kru_3 as kru_3,
+        spiral.keterangan_3 as keterangan_3,  
+        spiral.tanggal_pengerjaan_4 as tanggal_pengerjaan_4,
+        spiral.hasil_4 as hasil_4,
+        spiral.rejek_4 as rejek_4,
+        spiral.operator_4 as operator_4,
+        spiral.kru_4 as kru_4,
+        spiral.keterangan_4 as keterangan_4,                    
+        ',
+    );           
+    // $this->db->select_max('laminasi.id_jadwal_laminasi');
+    $this->db->from('order');                           
+
+    $this->db->join('binding','order.id_order = binding.id_order' );         
+    $this->db->join('hardcover','order.id_order = hardcover.id_order' );
+    $this->db->join('jahit','order.id_order = jahit.id_order' );
+    $this->db->join('fa_potong','order.id_order = fa_potong.id_order' );
+    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' );
+    $this->db->join('klemseng','order.id_order = klemseng.id_order' );
+    $this->db->join('spiral','order.id_order = spiral.id_order' );
+
+    $this->db->join('susun','order.id_order = susun.id_order' );
+    $this->db->join('finishing','order.id_order = finishing.id_order' ); 
+    $this->db->where('order.id_order', $id);       
+    
+    $query = $this->db->get();
+    return $query;  
+
+}
+
+public function proses_edit_spiral($data)
+{
+    $ubah_spiral = array(         
+        'status_spiral' =>$data['status_spiral'],
+        'tanggal_pelaksanaan_spiral' =>$data['tanggal_pelaksanaan_spiral'],
+        'keterangan_jadwal_spiral' =>$data['keterangan_jadwal_spiral'],
+
+        'tanggal_pengerjaan_1' =>$data['tanggal_pengerjaan_1'],
+        'hasil_1' =>$data['hasil_1'],
+        'rejek_1' =>$data['rejek_1'],
+        'operator_1' =>$data['operator_1'],
+        'kru_1' =>$data['kru_1'],
+        'keterangan_1' =>$data['keterangan_1'],
+        
+        'tanggal_pengerjaan_2' =>$data['tanggal_pengerjaan_2'],
+        'hasil_2' =>$data['hasil_2'],
+        'rejek_2' =>$data['rejek_2'],
+        'operator_2' =>$data['operator_2'],
+        'kru_2' =>$data['kru_2'],
+        'keterangan_2' =>$data['keterangan_2'],
+
+        'tanggal_pengerjaan_3' =>$data['tanggal_pengerjaan_3'],
+        'hasil_3' =>$data['hasil_3'],
+        'rejek_3' =>$data['rejek_3'],
+        'operator_3' =>$data['operator_3'],
+        'kru_3' =>$data['kru_3'],
+        'keterangan_3' =>$data['keterangan_3'],
+
+        'tanggal_pengerjaan_4' =>$data['tanggal_pengerjaan_4'],
+        'hasil_4' =>$data['hasil_4'],
+        'rejek_4' =>$data['rejek_4'],
+        'operator_4' =>$data['operator_4'],
+        'kru_4' =>$data['kru_4'],
+        'keterangan_4' =>$data['keterangan_4'],
+
+
+    );                        
+    $this->db->set($ubah_spiral);
+    $this->db->where('id_order',$data['id_order']);
+    $this->db->update('spiral'); 
+}
 
 
 
