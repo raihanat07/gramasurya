@@ -560,8 +560,26 @@
                                 </div>
                             </div>
                         </div>
-                    <?php } if($row->cover2plat1 == 0) {?>
-                        <div class="col=col-md-6"></div>
+                    <?php } if($row->cover2plat1 == 0 && $row->isi3plat1 == 0) { ?>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-body p-3 mb-2 bg-light text-dark">
+                                        <textarea name="catatan_ctcp"  class="form-control" placeholder="catatan" style="height: 240px;" ><?=$row->catatan_ctcp?></textarea>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-6" align="left">
+                                    <button type="submit" name="add" class="btn btn-success">Simpan</button>
+                                </div>
+                                <div class="col-md-6" align="right">
+                                    <button type="reset" class="btn btn-default">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } if($row->cover2plat1 == 0 && $row->isi3plat1 != 0) { ?>
+                        <div class="col-md-6"></div>
                     <?php } if($row->isi2plat1 != 0) {?>
                         <div class="col-md-6">
                             <div class="card-body p-3 mb-2 bg-light text-dark">
@@ -683,43 +701,44 @@
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col">
-                                <div class="card-body p-3 mb-2 bg-light text-dark">
-                                    <br><br>                                    
-                                    <div class="row">
-                                        <!-- <div class="col-md-6">
-                                            <label class="form-label">Tanggal Out CTCP Cover</label>
-                                            <br>
-                                            <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
-                                            <input type="date" class="form-control" name="tanggal_out_ctcp_cover"  >
-                                            <br><label class="form-label">Tanggal Out CTCP Isi</label>
-                                            <div class="row">
-                                                <div class="col-md-3">Ke 1 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1"  ></div>
-                                            </div><br>
-                                            <div class="row">
-                                                <div class="col-md-3">Ke 2 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2"  ></div>
+                    <?php } if($row->cover2plat1 != 0 || $row->isi3plat1 != 0) {?>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-body p-3 mb-2 bg-light text-dark">
+                                        <br><br>                                    
+                                        <div class="row">
+                                            <!-- <div class="col-md-6">
+                                                <label class="form-label">Tanggal Out CTCP Cover</label>
+                                                <br>
+                                                <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
+                                                <input type="date" class="form-control" name="tanggal_out_ctcp_cover"  >
+                                                <br><label class="form-label">Tanggal Out CTCP Isi</label>
+                                                <div class="row">
+                                                    <div class="col-md-3">Ke 1 </div>
+                                                    <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1"  ></div>
+                                                </div><br>
+                                                <div class="row">
+                                                    <div class="col-md-3">Ke 2 </div>
+                                                    <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2"  ></div>
+                                                </div>
+                                            </div> -->
+                                            <div class="col-md-12">
+                                                <textarea name="catatan_ctcp"  class="form-control" placeholder="catatan" style="height: 240px;" ><?=$row->catatan_ctcp?></textarea>
                                             </div>
-                                        </div> -->
-                                        <div class="col-md-12">
-                                            <textarea name="catatan_ctcp"  class="form-control" placeholder="catatan" style="height: 240px;" ><?=$row->catatan_ctcp?></textarea>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div><br>
-                        <div class="row">
-                            <div class="col-md-6" align="left">
-                                <button type="submit" name="add" class="btn btn-success">Simpan</button>
-                            </div>
-                            <div class="col-md-6" align="right">
-                                <button type="reset" class="btn btn-default">Reset</button>
+                            </div><br>
+                            <div class="row">
+                                <div class="col-md-6" align="left">
+                                    <button type="submit" name="add" class="btn btn-success">Simpan</button>
+                                </div>
+                                <div class="col-md-6" align="right">
+                                    <button type="reset" class="btn btn-default">Reset</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     <?php } if($row->isi3plat1 != 0) {?>
                         <div class="col-md-6">
                             <div class="row">
@@ -864,4 +883,4 @@
     <!-- /.card -->
 
 </section>
-<!-- /.content
+<!-- /.content -->
