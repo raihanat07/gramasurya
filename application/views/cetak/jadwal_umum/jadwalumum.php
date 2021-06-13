@@ -201,19 +201,36 @@
                           </div>
                           <div class="col-md-6">
                             <br>Mesin<br>
-                            <select id="inputState" class="form-select form-control" name="mesin_cover" >
-                              <option value="-">-</option>
-                              <option value="Oliver 58 2w">Oliver 58 2w</option>
-                              <option value="Oliver 72 1w">Oliver 72 1w</option>
-                              <option value="SM 74 4W - A">SM 74 4W - A</option>
-                              <option value="SM 74 4W - B">SM 74 4W - B</option>
-                              <option value="SM 102 2wP - A">SM 102 2wP - A</option>
-                              <option value="SM 102 2wP - B">SM 102 2wP - B</option>
-                              <option value="Fotocopy">Fotocopy</option>
-                              <option value="Tokko">Tokko</option>
-                              <option value="Print banner">Print banner</option>
-                              <option value="Print digital">Print digital</option>
-                            </select>
+                            <?php if($row->id_jadwal_cetak == null) {?>                                     
+                                  <select id="inputState" class="form-select form-control" name="mesin_cover" >
+                                    <option value="-">-</option>
+                                    <option value="Oliver 58 2w">Oliver 58 2w</option>
+                                    <option value="Oliver 72 1w">Oliver 72 1w</option>
+                                    <option value="SM 74 4W - A">SM 74 4W - A</option>
+                                    <option value="SM 74 4W - B">SM 74 4W - B</option>
+                                    <option value="SM 102 2wP - A">SM 102 2wP - A</option>
+                                    <option value="SM 102 2wP - B">SM 102 2wP - B</option>
+                                    <option value="Fotocopy">Fotocopy</option>
+                                    <option value="Tokko">Tokko</option>
+                                    <option value="Print banner">Print banner</option>
+                                    <option value="Print digital">Print digital</option>
+                                  </select>
+                                <?php }else{ ?>                                  
+                                  <select id="inputState" class="form-select form-control" name="mesin_cover" >
+                                  <option value="<?php  echo $row->mesin_cover != "-" ?   $row->mesin_cover  : '-' ?>"><?php  echo $row->mesin_cover != "-" ?   $row->mesin_cover  : '-' ?>   </option>
+                                    <option value="Oliver 58 2w">Oliver 58 2w</option>
+                                    <option value="Oliver 72 1w">Oliver 72 1w</option>
+                                    <option value="SM 74 4W - A">SM 74 4W - A</option>
+                                    <option value="SM 74 4W - B">SM 74 4W - B</option>
+                                    <option value="SM 102 2wP - A">SM 102 2wP - A</option>
+                                    <option value="SM 102 2wP - B">SM 102 2wP - B</option>
+                                    <option value="Fotocopy">Fotocopy</option>
+                                    <option value="Tokko">Tokko</option>
+                                    <option value="Print banner">Print banner</option>
+                                    <option value="Print digital">Print digital</option>
+                                    <option value="-">-</option>
+                                  </select>
+                                <?php } ?>
                           </div>
                           <div class="col-md-6">
                             <br>Druk<br>
@@ -307,31 +324,61 @@
                         <div class="row">                        
                           <div class="col-md-6">
                             Tanggal Pelaksanaan<br>
-                            <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" placeholder="Tanggal Pelaksanaan Isi" required>
+                                <?php if($row->id_jadwal_cetak == null) {?>                                     
+                                  <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" placeholder="Tanggal Pelaksanaan Isi" required>
+                                <?php }else{ ?>                                  
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" value="<?= $row->tanggal_pelaksanaan_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" required>
+                                <?php } ?>
                           </div>
                           <div class="col-md-6">
                             Operator<br>
-                            <input type="text" class="form-control" name="operator_isi" placeholder="Operator Isi" required>
+                                <?php if($row->id_jadwal_cetak == null) {?>                                     
+                                  <input type="text" class="form-control" name="operator_isi" placeholder="Operator Isi" required>
+                                <?php }else{ ?>                                  
+                                    <input type="text" class="form-control" name="operator_isi" value="<?= $row->operator_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" required>
+                                <?php } ?>
                           </div>
                           <div class="col-md-6">
                             <br>Target<br>
-                            <input type="number" class="form-control" name="target_isi" placeholder="Jumlah Target" required>
+                                <?php if($row->id_jadwal_cetak == null) {?>                                     
+                                  <input type="number" class="form-control" name="target_isi" placeholder="Jumlah Target" required>
+                                <?php }else{ ?>                                  
+                                    <input type="number" class="form-control" name="target_isi" value="<?= $row->target_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" required>
+                                <?php } ?>
                           </div>
                           <div class="col-md-6">
                             <br>Mesin<br>
-                            <select id="inputState" class="form-select form-control" name="mesin_isi" >
-                              <option value="-">-</option>
-                              <option value="Oliver 58 2w">Oliver 58 2w</option>
-                              <option value="Oliver 72 1w">Oliver 72 1w</option>
-                              <option value="SM 74 4W - A">SM 74 4W - A</option>
-                              <option value="SM 74 4W - B">SM 74 4W - B</option>
-                              <option value="SM 102 2wP - A">SM 102 2wP - A</option>
-                              <option value="SM 102 2wP - B">SM 102 2wP - B</option>
-                              <option value="Fotocopy">Fotocopy</option>
-                              <option value="Tokko">Tokko</option>
-                              <option value="Print banner">Print banner</option>
-                              <option value="Print digital">Print digital</option>
-                            </select>
+                                <?php if($row->id_jadwal_cetak == null) {?>                                     
+                                  <select id="inputState" class="form-select form-control" name="mesin_isi" >
+                                    <option value="-">-</option>
+                                    <option value="Oliver 58 2w">Oliver 58 2w</option>
+                                    <option value="Oliver 72 1w">Oliver 72 1w</option>
+                                    <option value="SM 74 4W - A">SM 74 4W - A</option>
+                                    <option value="SM 74 4W - B">SM 74 4W - B</option>
+                                    <option value="SM 102 2wP - A">SM 102 2wP - A</option>
+                                    <option value="SM 102 2wP - B">SM 102 2wP - B</option>
+                                    <option value="Fotocopy">Fotocopy</option>
+                                    <option value="Tokko">Tokko</option>
+                                    <option value="Print banner">Print banner</option>
+                                    <option value="Print digital">Print digital</option>
+                                  </select>
+                                <?php }else{ ?>                                  
+                                  <select id="inputState" class="form-select form-control" name="mesin_isi" >
+                                  <option value="<?php  echo $row->mesin_isi != "-" ?   $row->mesin_isi  : '-' ?>"><?php  echo $row->mesin_isi != "-" ?   $row->mesin_isi  : '-' ?>   </option>
+                                    <option value="Oliver 58 2w">Oliver 58 2w</option>
+                                    <option value="Oliver 72 1w">Oliver 72 1w</option>
+                                    <option value="SM 74 4W - A">SM 74 4W - A</option>
+                                    <option value="SM 74 4W - B">SM 74 4W - B</option>
+                                    <option value="SM 102 2wP - A">SM 102 2wP - A</option>
+                                    <option value="SM 102 2wP - B">SM 102 2wP - B</option>
+                                    <option value="Fotocopy">Fotocopy</option>
+                                    <option value="Tokko">Tokko</option>
+                                    <option value="Print banner">Print banner</option>
+                                    <option value="Print digital">Print digital</option>
+                                    <option value="-">-</option>
+                                  </select>
+                                <?php } ?>
+                            
                           </div>
                           <div class="col-md-6">
                             <br>Druk<br>

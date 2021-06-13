@@ -83,7 +83,7 @@ class JadwalUmum extends CI_Controller {
 			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
 			// }
 
-			$this->dc->edit_ju($inputan);							
+			$this->ju->edit_ju($inputan);							
 			// $this->dc->status_umum($inputan);						
 				echo "<script> alert('Data Berhasil Diubah'); </script>";		
 				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
