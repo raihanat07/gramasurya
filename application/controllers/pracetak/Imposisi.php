@@ -127,33 +127,33 @@ class Imposisi extends CI_Controller {
 
 
 			if($inputan['isi1plat1'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi1plat1'];
+				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi1plat1'];
 			}
 			if($inputan['isi1plat2'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi1plat2'];
+				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi1plat2'];
 			}	
 			if($inputan['isi1plat3'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi1plat3'];
+				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi1plat3'];
 			}
 			
 			if($inputan['isi2plat1'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi2plat1'];
+				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi2plat1'];
 			}
 			if($inputan['isi2plat2'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi2plat2'];
+				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi2plat2'];
 			}	
 			if($inputan['isi2plat3'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi2plat3'];
+				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi2plat3'];
 			}
 
 			if($inputan['isi3plat1'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi3plat1'];
+				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi3plat1'];
 			}
 			if($inputan['isi3plat2'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi3plat2'];
+				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi3plat2'];
 			}	
 			if($inputan['isi3plat3'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi3plat3'];
+				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi3plat3'];
 			}
 
 
@@ -319,33 +319,33 @@ class Imposisi extends CI_Controller {
 	
 	
 				if($inputan['isi1plat1'] !=null){
-					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi1plat1'];
+					$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi1plat1'];
 				}
 				if($inputan['isi1plat2'] !=null){
-					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi1plat2'];
+					$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi1plat2'];
 				}	
 				if($inputan['isi1plat3'] !=null){
-					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi1plat3'];
+					$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi1plat3'];
 				}
 				
 				if($inputan['isi2plat1'] !=null){
-					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi2plat1'];
+					$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi2plat1'];
 				}
 				if($inputan['isi2plat2'] !=null){
-					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi2plat2'];
+					$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi2plat2'];
 				}	
 				if($inputan['isi2plat3'] !=null){
-					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi2plat3'];
+					$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi2plat3'];
 				}
 	
 				if($inputan['isi3plat1'] !=null){
-					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi3plat1'];
+					$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi3plat1'];
 				}
 				if($inputan['isi3plat2'] !=null){
-					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi3plat2'];
+					$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi3plat2'];
 				}	
 				if($inputan['isi3plat3'] !=null){
-					$inputan["total_plat_isi"] = $inputan["total_plat_cover"] + $inputan['isi3plat3'];
+					$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi3plat3'];
 				}
 	
 	
