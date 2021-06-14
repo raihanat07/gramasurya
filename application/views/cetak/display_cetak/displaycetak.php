@@ -91,10 +91,11 @@
                   </a> -->
 
 
-                   
+                  <?php if($row->id_display_cetak != null) {?> 
                   <a href="<?=site_url('cetak/DisplayCetak/lihat_dc/'.$row->id_order)?>">
                     <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
+                  <?php } ?>
 
                   <!-- tambah imposisi -->
                   <?php if($row->id_display_cetak == null) {?>
