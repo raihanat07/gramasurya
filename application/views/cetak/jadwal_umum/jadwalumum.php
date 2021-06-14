@@ -75,7 +75,7 @@
 
               <td><?= $row->so_status; ?></td>
               <td align="center">
-                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order ?>">
                   <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
                 </button>
               </td>
@@ -89,7 +89,7 @@
           <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
   
     
-          <div id="myModal" class="modal fade" role="dialog">
+          <div id="myModal<?= $row->id_order ?>" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
               <!-- konten modal-->
               <div class="modal-content">
@@ -110,11 +110,11 @@
                   <div class="card-body">
                     <div class="tab-content">
                       <div class="tab-pane active" id="cover<?= $row->id_order; ?>">
-                        <h4><label>SO dari db</label></h4>
+                        <h4><label><?= $row->nomor_so; ?></label></h4>
                         <div class="row">
                           <div class="col-sm-6">
                             <br>Tanggal Masuk
-                            <br><label><?= $row->nomor_so; ?></label>
+                            <br><label><?= $row->tanggal_masuk; ?></label>
                           </div>
                           <div class="col-sm-6" style="color: red;">
                             <br>Deadline
@@ -200,7 +200,9 @@
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
+                          
                             <br>Mesin<br>
+                            <?php if($row->id_jadwal_cetak == null) {?>  
                             <select id="inputState" class="form-select form-control" name="mesin_cover" >
                               <option value="-">-</option>
                               <option value="Oliver 58 2w">Oliver 58 2w</option>
@@ -214,6 +216,22 @@
                               <option value="Print banner">Print banner</option>
                               <option value="Print digital">Print digital</option>
                             </select>
+                            <?php }else{ ?>
+                              <select id="inputState" class="form-select form-control" name="mesin_cover" >
+                              <option value="<?= $row->mesin_cover;?>"><?= $row->mesin_cover;?></option>
+                              <option value="Oliver 58 2w">Oliver 58 2w</option>
+                              <option value="Oliver 72 1w">Oliver 72 1w</option>
+                              <option value="SM 74 4W - A">SM 74 4W - A</option>
+                              <option value="SM 74 4W - B">SM 74 4W - B</option>
+                              <option value="SM 102 2wP - A">SM 102 2wP - A</option>
+                              <option value="SM 102 2wP - B">SM 102 2wP - B</option>
+                              <option value="Fotocopy">Fotocopy</option>
+                              <option value="Tokko">Tokko</option>
+                              <option value="Print banner">Print banner</option>
+                              <option value="Print digital">Print digital</option>
+                              <option value="-">-</option>
+                            </select>
+                            <?php } ?>
                           </div>
                           <div class="col-md-6">
                             <br>Druk<br>
@@ -240,11 +258,11 @@
                         </div>
                       </div>
                       <div class="tab-pane" id="isi<?= $row->id_order; ?>">
-                        <h4><label>SO dari db</label></h4>
+                        <h4><label><?= $row->nomor_so; ?></label></h4>
                         <div class="row">
                           <div class="col-sm-6">
                             <br>Tanggal Masuk
-                            <br><label><?= $row->nomor_so; ?></label>
+                            <br><label><?= $row->tanggal_masuk; ?></label>
                           </div>
                           <div class="col-sm-6" style="color: red;">
                             <br>Deadline
@@ -307,18 +325,31 @@
                         <div class="row">                        
                           <div class="col-md-6">
                             Tanggal Pelaksanaan<br>
-                            <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" placeholder="Tanggal Pelaksanaan Isi" required>
+                            <?php if($row->id_jadwal_cetak == null) {?>  
+                              <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" placeholder="Tanggal Pelaksanaan Isi" required>
+                              <?php }else{ ?>
+                                <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" placeholder="Tanggal Pelaksanaan Isi" required value="<?= $row->tanggal_pelaksanaan_isi;?>">
+                                <?php } ?>
                           </div>
                           <div class="col-md-6">
                             Operator<br>
-                            <input type="text" class="form-control" name="operator_isi" placeholder="Operator Isi" required>
+                           <?php if($row->id_jadwal_cetak == null) {?>  
+                              <input type="text" class="form-control" name="operator_isi" placeholder="Tanggal Pelaksanaan Isi" required>
+                              <?php }else{ ?>
+                                <input type="text" class="form-control" name="operator_isi" placeholder="Tanggal Pelaksanaan Isi" required value="<?= $row->operator_isi;?>">
+                                <?php } ?>
                           </div>
                           <div class="col-md-6">
                             <br>Target<br>
-                            <input type="number" class="form-control" name="target_isi" placeholder="Jumlah Target" required>
+                            <?php if($row->id_jadwal_cetak == null) {?>  
+                              <input type="number" class="form-control" name="target_isi" placeholder="Tanggal Pelaksanaan Isi" required>
+                              <?php }else{ ?>
+                                <input type="number" class="form-control" name="target_isi" placeholder="Tanggal Pelaksanaan Isi" required value="<?= $row->target_isi;?>">
+                                <?php } ?>
                           </div>
                           <div class="col-md-6">
                             <br>Mesin<br>
+                            <?php if($row->id_jadwal_cetak == null) {?>  
                             <select id="inputState" class="form-select form-control" name="mesin_isi" >
                               <option value="-">-</option>
                               <option value="Oliver 58 2w">Oliver 58 2w</option>
@@ -332,6 +363,21 @@
                               <option value="Print banner">Print banner</option>
                               <option value="Print digital">Print digital</option>
                             </select>
+                            <?php }else{ ?>
+                              <select id="inputState" class="form-select form-control" name="mesin_isi" >
+                              <option value="<?= $row->mesin_isi;?>"><?= $row->mesin_isi;?></option>
+                              <option value="Oliver 58 2w">Oliver 58 2w</option>
+                              <option value="Oliver 72 1w">Oliver 72 1w</option>
+                              <option value="SM 74 4W - A">SM 74 4W - A</option>
+                              <option value="SM 74 4W - B">SM 74 4W - B</option>
+                              <option value="SM 102 2wP - A">SM 102 2wP - A</option>
+                              <option value="SM 102 2wP - B">SM 102 2wP - B</option>
+                              <option value="Fotocopy">Fotocopy</option>
+                              <option value="Tokko">Tokko</option>
+                              <option value="Print banner">Print banner</option>
+                              <option value="Print digital">Print digital</option>
+                            </select>
+                            <?php } ?>
                           </div>
                           <div class="col-md-6">
                             <br>Druk<br>
@@ -348,6 +394,7 @@
                         <br><hr><br>
                         <div class="row" align="right">
                           <div class="col">
+                          
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
                               <?php if($row->id_jadwal_cetak == null) {?>  
                             <button type="submit" class="btn btn-success" name="add">Publish</button>
@@ -360,6 +407,9 @@
                     </div><br>
                   </div><!-- /.card-body -->
                 </div>
+                </div>
+                </div>
+                </div>
                 <!-- footer modal -->
                 <!-- <div class="modal-footer">
                 </div> -->
@@ -367,6 +417,7 @@
               <?php } ?>  
               </div>
             </div>
+          </div>
           </div>
 
         </div>
