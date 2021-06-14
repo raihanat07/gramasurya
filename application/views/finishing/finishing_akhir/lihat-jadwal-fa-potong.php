@@ -231,7 +231,7 @@
 
         <div class="row">
           <div class="col" align="right">
-            <button type="reset" class="btn btn-default">Kembali</button>            
+          <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_potong" class="btn btn-default">Kembali</a>        
           </div>
         </div>
 

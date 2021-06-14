@@ -140,7 +140,7 @@
 
         <div class="row">
           <div class="col" align="right">
-            <button type="reset" class="btn btn-default">Kembali</button>
+            <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_binding" class="btn btn-default">Kembali</a>
           </div>
         </div>
 
@@ -150,27 +150,4 @@
   <!-- /.card -->
 </section>
 <!-- /.content -->
-   
-
-<div class="row">
-              <div class="col-md-3">
-                <div class="card-body">
-                  <input class="form-check-input" type="checkbox" name="status" value="Binding" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">Binding</label><br>
-                  <input class="form-check-input" type="checkbox" name="status" value="Hardcover" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">Hardcover</label><br>
-                  <input class="form-check-input" type="checkbox" name="status" value="Jahit" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">Jahit</label>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="card-body">
-                  <input class="form-check-input" type="checkbox" name="status" value="Potong" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">Potong</label><br>
-                  <input class="form-check-input" type="checkbox" name="status" value="Klemseng" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">Klemseng</label><br>
-                  <input class="form-check-input" type="checkbox" name="status" value="Jahit" id="flexCheckDefault">
-                  <label class="form-check-label" for="flexCheckDefault">Jahit</label>
-                </div>
-              </div>
-            </div>
+  
