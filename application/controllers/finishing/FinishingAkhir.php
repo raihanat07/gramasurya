@@ -145,7 +145,7 @@ public function proses_fa_kalender()
 		// check_already_login_finishing();
 		$query = $this->fa->get_jadwal_binding();
 		$data = array(
-			'judul' => 'Finishing Akhir',
+			'judul' => 'Finishing Akhir Mesin Finishing',
 			'fa' => $query->result(),
 		);		
 		$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_binding',$data);
@@ -155,7 +155,7 @@ public function proses_fa_kalender()
 		// check_already_login_finishing();
 		$query = $this->fa->edit_binding($id);		
 		$data = array(
-			'judul' => 'Finishing Akhir',
+			'judul' => 'Finishing Akhir Mesin Finishing',
 			'fa' => $query->result(),
 		);				
 		$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-binding',$data);
@@ -165,7 +165,7 @@ public function proses_fa_kalender()
 		// check_already_login_finishing();
 		$query = $this->fa->get();
 		$data = array(
-			'judul' => 'Finishing Akhir',
+			'judul' => 'Finishing Akhir Mesin Finishing',
 			'fa' => $query->result(),
 		);		
 		$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-binding',$data);
@@ -175,7 +175,7 @@ public function proses_fa_kalender()
 		// check_already_login_finishing();
 		$query = $this->fa->edit_binding($id);
 		$data = array(
-			'judul' => 'Finishing Akhir',
+			'judul' => 'Finishing Akhir Mesin Finishing',
 			'fa' => $query->result(),
 		);		
 		$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-binding',$data);
@@ -221,7 +221,7 @@ public function proses_fa_kalender()
 		// check_already_login_finishing();
 		$query = $this->fa->get_jadwal_hardcover();
 		$data = array(
-			'judul' => 'Finishing Akhir',
+			'judul' => 'Finishing Akhir Mesin Finishing',
 			'fa' => $query->result(),
 		);		
 		$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_hardcover',$data);
@@ -231,7 +231,7 @@ public function proses_fa_kalender()
 		// check_already_login_finishing();
 		$query = $this->fa->edit_hardcover($id);
 		$data = array(
-			'judul' => 'Finishing Akhir',
+			'judul' => 'Finishing Akhir Mesin Finishing',
 			'fa' => $query->result(),
 		);		
 		$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-hardcover',$data);
@@ -241,7 +241,7 @@ public function proses_fa_kalender()
 		// check_already_login_finishing();
 		$query = $this->fa->get();
 		$data = array(
-			'judul' => 'Finishing Akhir',
+			'judul' => 'Finishing Akhir Mesin Finishing',
 			'fa' => $query->result(),
 		);		
 		$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-hardcover',$data);
@@ -251,7 +251,7 @@ public function proses_fa_kalender()
 		// check_already_login_finishing();
 		$query = $this->fa->edit_hardcover($id);
 		$data = array(
-			'judul' => 'Finishing Akhir',
+			'judul' => 'Finishing Akhir Mesin Finishing',
 			'fa' => $query->result(),
 		);		
 		$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-hardcover',$data);
@@ -273,7 +273,7 @@ public function jadwal_fa_jahit()
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_jahit();
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Finishing',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_jahit',$data);
@@ -283,7 +283,7 @@ public function edit_jadwal_fa_jahit($id)
 	// check_already_login_finishing();
 	$query = $this->fa->edit_jahit($id);
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Finishing',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-jahit',$data);
@@ -293,7 +293,7 @@ public function tambah_jadwal_fa_jahit()
 	// check_already_login_finishing();
 	$query = $this->fa->get();
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Finishing',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-jahit',$data);
@@ -303,7 +303,7 @@ public function lihat_jadwal_fa_jahit($id)
 	// check_already_login_finishing();
 	$query = $this->fa->edit_jahit($id);
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Finishing',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-jahit',$data);
@@ -325,7 +325,7 @@ public function jadwal_fa_potong()
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_fa_potong();
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Finishing',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_potong',$data);
@@ -335,7 +335,7 @@ public function edit_jadwal_fa_potong($id)
 	// check_already_login_finishing();
 	$query = $this->fa->edit_fa_potong($id);
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Finishing',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-potong',$data);
@@ -345,7 +345,7 @@ public function tambah_jadwal_fa_potong()
 	// check_already_login_finishing();
 	$query = $this->fa->get();
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Finishing',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-potong',$data);
@@ -355,7 +355,7 @@ public function lihat_jadwal_fa_potong($id)
 	// check_already_login_finishing();
 	$query = $this->fa->edit_fa_potong($id);
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Finishing',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-potong',$data);
@@ -377,7 +377,7 @@ public function jadwal_fa_sub()
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_sub();
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Finishing',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_sub',$data);
@@ -387,7 +387,7 @@ public function edit_jadwal_fa_sub($id)
 	// check_already_login_finishing();
 	$query = $this->fa->edit_sub($id);
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Finishing',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-sub',$data);
@@ -397,7 +397,7 @@ public function tambah_jadwal_fa_sub()
 	// check_already_login_finishing();
 	$query = $this->fa->get();
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Finishing',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-sub',$data);
@@ -407,7 +407,7 @@ public function lihat_jadwal_fa_sub($id)
 	// check_already_login_finishing();
 	$query = $this->fa->edit_sub($id);
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'FFinishing Akhir Mesin Finishing',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-sub',$data);
@@ -430,7 +430,7 @@ public function jadwal_fa_spiral()
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_spiral();
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Kalender',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_spiral',$data);
@@ -440,7 +440,7 @@ public function edit_jadwal_fa_spiral($id)
 	// check_already_login_finishing();
 	$query = $this->fa->edit_spiral($id);
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Kalender',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-spiral',$data);
@@ -450,7 +450,7 @@ public function tambah_jadwal_fa_spiral()
 	// check_already_login_finishing();
 	$query = $this->fa->get();
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Kalender',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-spiral',$data);
@@ -460,7 +460,7 @@ public function lihat_jadwal_fa_spiral($id)
 	// check_already_login_finishing();
 	$query = $this->fa->edit_spiral($id);
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Kalender',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-spiral',$data);
@@ -483,7 +483,7 @@ public function jadwal_fa_klemseng()
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_klemseng();
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Kalender',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_klemseng',$data);
@@ -493,7 +493,7 @@ public function edit_jadwal_fa_klemseng($id)
 	// check_already_login_finishing();
 	$query = $this->fa->edit_klemseng($id);
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Kalender',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-klemseng',$data);
@@ -503,7 +503,7 @@ public function tambah_jadwal_fa_klemseng()
 	// check_already_login_finishing();
 	$query = $this->fa->get();
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Kalender',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-klemseng',$data);
@@ -513,7 +513,7 @@ public function lihat_jadwal_fa_klemseng($id)
 	// check_already_login_finishing();
 	$query = $this->fa->edit_klemseng($id);
 	$data = array(
-		'judul' => 'Finishing Akhir',
+		'judul' => 'Finishing Akhir Mesin Kalender',
 		'fa' => $query->result(),
 	);		
 	$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-klemseng',$data);
