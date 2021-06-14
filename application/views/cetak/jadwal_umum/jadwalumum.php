@@ -178,25 +178,25 @@
                           <div class="col-md-6">
                             Tanggal Pelaksanaan<br>
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_cover" placeholder="Tanggal Pelaksanaan Cover" required>
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_cover" placeholder="Tanggal Pelaksanaan Cover" >
                                 <?php }else{ ?>                                  
-                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_cover" value="<?= $row->tanggal_pelaksanaan_cover; ?>" placeholder="Tanggal Pelaksanaan Cover" required>
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_cover" value="<?= $row->tanggal_pelaksanaan_cover; ?>" placeholder="Tanggal Pelaksanaan Cover" >
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
                             Operator<br>
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                  <input type="text" class="form-control" name="operator_cover" placeholder="Operator Cover" required>
+                                  <input type="text" class="form-control" name="operator_cover" placeholder="Operator Cover" >
                                 <?php }else{ ?>  
-                                  <input type="text" class="form-control" name="operator_cover" value="<?= $row->operator_cover; ?>" placeholder="Operator Cover" required>                                
+                                  <input type="text" class="form-control" name="operator_cover" value="<?= $row->operator_cover; ?>" placeholder="Operator Cover" >                                
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
                             <br>Target<br>
                               <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                <input type="number" class="form-control" name="target_cover" placeholder="Jumlah Target" required>
+                                <input type="number" class="form-control" name="target_cover" placeholder="Jumlah Target" >
                                 <?php }else{ ?>  
-                                  <input type="number" class="form-control" name="target_cover" value="<?= $row->target_cover; ?>" placeholder="Jumlah Target" required>
+                                  <input type="number" class="form-control" name="target_cover" value="<?= $row->target_cover; ?>" placeholder="Jumlah Target" >
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
@@ -326,25 +326,25 @@
                           <div class="col-md-6">
                             Tanggal Pelaksanaan<br>
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                  <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" placeholder="Tanggal Pelaksanaan Isi" required>
+                                  <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" placeholder="Tanggal Pelaksanaan Isi" >
                                 <?php }else{ ?>                                  
-                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" value="<?= $row->tanggal_pelaksanaan_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" required>
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" value="<?= $row->tanggal_pelaksanaan_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" >
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
                             Operator<br>
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                  <input type="text" class="form-control" name="operator_isi" placeholder="Operator Isi" required>
+                                  <input type="text" class="form-control" name="operator_isi" placeholder="Operator Isi" >
                                 <?php }else{ ?>                                  
-                                    <input type="text" class="form-control" name="operator_isi" value="<?= $row->operator_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" required>
+                                    <input type="text" class="form-control" name="operator_isi" value="<?= $row->operator_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" >
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
                             <br>Target<br>
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                  <input type="number" class="form-control" name="target_isi" placeholder="Jumlah Target" required>
+                                  <input type="number" class="form-control" name="target_isi" placeholder="Jumlah Target" >
                                 <?php }else{ ?>                                  
-                                    <input type="number" class="form-control" name="target_isi" value="<?= $row->target_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" required>
+                                    <input type="number" class="form-control" name="target_isi" value="<?= $row->target_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" >
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
