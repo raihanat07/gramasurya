@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class JadwalMesin extends CI_Controller {
 
+	public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('JadwalMesin_m', 'jm');
+    }
+
 	public function index()
 	{
 		// check_already_login_cetak();
@@ -12,7 +18,12 @@ class JadwalMesin extends CI_Controller {
 	public function display_jm()
 	{
 		// check_already_login_cetak();
-		$data['judul'] = 'Jadwal Mesin Cetak';
+		// $query = $this->jm->get();
+		// $data = array(
+		// 	'judul' => 'Display Mesin Cetak',
+		// 	'jm' => $query->result(),
+		// );
+		$data['judul'] = 'Display Jadwal Mesin';
 		$this->template->load('cetak/template','cetak/jadwal_mesin/jadwalmesin-display',$data);
 	}
 	public function lihat_jm()
