@@ -4,6 +4,9 @@
   </div>
 </section>
 <!-- Content Header (Page header) -->
+<?php foreach($fp as $s => $row) {?>  
+    <form action="<?=site_url('finishing/OperatorFP/proses_susun')?>" method="post"> 
+
 <section class="content-header">
   <div class="container-fluid">
     <div class="row">
@@ -16,12 +19,12 @@
           </li>
           <li class="breadcrumb-item">
             <a href="<?=site_url()?>finishing/OperatorFP/jadwal_op_susun" style="color: #FC8639  ;">
-              Susun
+              susun
             </a>
           </li>
           <li class="breadcrumb-item">
             <a href="#">
-              2021.5.422
+              <?= $row->nomor_so; ?>
             </a>
           </li>
           <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -31,7 +34,11 @@
     </div>
   </div><!-- /.container-fluid -->
 </section>
-<!-- Main content -->
+<!-- Main content -->    
+    <input type="text" value="<?= $row->status_susun; ?>" name="status_susun" hidden>
+    <input type="text"  name="id_order"  value="<?= $row->id_order; ?>" hidden>
+    <input type="text"  name="id_susun"  value="<?= $row->id_susun; ?>" hidden>
+
 <section class="content">
   <div class="row" style="padding: 10px;">
     <div class="col" style="background: #FFEEE3;">
@@ -41,31 +48,58 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;">
         <div class="col">
           Nomor SO<br>
-          <label>SO 2021.5.4.22</label>
+          <label><?= $row->nomor_so; ?></label>
         </div>
         <div class="col">
           Nama Orderan<br>
-          <label>Buku Disney Land</label>
+          <label><?= $row->nama_orderan; ?></label>
         </div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;">
         <div class="col">
           Nama Pemesan<br>
-          <label>Annete Black</label>
+          <label><?= $row->nama_pemesan; ?></label>
         </div>
         <div class="col">
           Ukuran<br>
-          <label>16*24</label>
+          <label><?= $row->ukuran; ?></label>
         </div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;padding-bottom: 15px;">
         <div class="col">
           Finishing<br>
-          <label>Bending</label>
+          <label>
+          <?php 
+                        $finishing = "";
+                        if($row->bending != null){
+                            $finishing .= "bending, ";
+                        }
+                        if($row->hard_cover != null){
+                            $finishing .= 'hard cover, ';
+                        }   
+                        if($row->jahit_benang != null){
+                            $finishing .= 'jahit benang, ';
+                        } 
+                        if($row->jahit_kawat != null){
+                            $finishing .= 'jahit kawat, ';
+                        }    
+                        if($row->pond != null){
+                            $finishing .= 'pond, ';
+                        }   
+                        if($row->klem != null){
+                            $finishing .= 'klem, ';
+                        } 
+                        if($row->spiral != null){
+                            $finishing .= 'Spiral, ';
+                        }
+                        $finishing = rtrim($finishing, ", ");
+                        echo $finishing;
+                    ?>
+          </label>
         </div>
         <div class="col">
           Oplag<br>
-          <label>1000</label>
+          <label><?= $row->oplag; ?></label>
         </div>
       </div>
     </div>
@@ -78,17 +112,19 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;">
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" class="form-control" name="tanggal_pengerjaan_susun">
+          <input type="date" value="<?= $row->tanggal_pelaksanaan_susun; ?>" name="tanggal_pelaksanaan_susun" hidden>
+          <input type="date" class="form-control" name="tanggal_pelaksanaan_susun" value="<?= $row->tanggal_pelaksanaan_susun; ?>" disabled>
         </div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;padding-top: 15px;padding-bottom: 15px;">
         <div class="col-md-12">
           <label>Keterangan</label>
-          <textarea class="form-control" name="keterangan_pengerjaan_susun" style="height: 100px;" placeholder="Keterangan"></textarea>
+          <input type="text" value="<?= $row->keterangan_jadwal_fp_susun; ?>" name="keterangan_jadwal_fp_susun" hidden>
+          <textarea disabled class="form-control" name="keterangan_jadwal_fp_susun" style="height: 100px;" placeholder="Keterangan"><?= $row->keterangan_jadwal_fp_susun; ?></textarea>
         </div>
       </div>
     </div>
-  </div><br>
+  </div>
   
   <!-- LAPORAN 1 -->
   <div class="row" style="padding: 10px;">
@@ -99,19 +135,19 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_susun1" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_1" class="form-control" value="<?= $row->tanggal_pengerjaan_1; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil</label><br>
-          <input type="number" name="hasil_susun1" placeholder="Hasil Pengerjaan" class="form-control"><br>
-        </div>
+          <input type="number" name="hasil_1" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_1; ?>"><br>
+        </div> 
         <div class="col-md-12">
-          <label>Nama Pelaksana</label><br>
-          <input type="text" name="nama_pelaksana_susun1" placeholder="Nama Pelaksana" class="form-control"><br>
-        </div>
+          <label>Nama Operator</label><br>
+          <input type="text" name="operator_1" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_1; ?>"><br>
+        </div>        
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_susun1" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_1" placeholder="Keterangan" style="height: 80px;" class="form-control" value="<?= $row->keterangan_1; ?>"><?= $row->keterangan_1; ?></textarea>
         </div>
       </div>
     </div>
@@ -119,26 +155,26 @@
 
   <!-- LAPORAN 2 -->
   <div class="row" style="padding: 10px;">
-    <div class="col" style="background: #FFEEE3;">
+  <div class="col" style="background: #FFEEE3;">
       <div class="row bg-success" style="margin: 10px;padding: 5px;">
         <div class="col-md-12"><b>Laporan 2</b></div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_susun2" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_2" class="form-control" value="<?= $row->tanggal_pengerjaan_2; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil</label><br>
-          <input type="number" name="hasil_susun2" placeholder="Hasil Pengerjaan" class="form-control"><br>
-        </div>
+          <input type="number" name="hasil_2" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_2; ?>"><br>
+        </div> 
         <div class="col-md-12">
-          <label>Nama Pelaksana</label><br>
-          <input type="text" name="nama_pelaksana_susun2" placeholder="Nama Pelaksana" class="form-control"><br>
+          <label>Nama Operator</label><br>
+          <input type="text" name="operator_2" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_2; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_susun2" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_2" placeholder="Keterangan" style="height: 80px;" class="form-control" value="<?= $row->keterangan_2; ?>"><?= $row->keterangan_2; ?></textarea>
         </div>
       </div>
     </div>
@@ -146,7 +182,7 @@
 
   <div class="row" style="padding: 10px;">
     <div class="col">
-      <button type="submit" class="btn btn-success" style="width: 100%;">SIMPAN</button>
+      <button type="submit" class="btn btn-success" name="edit" style="width: 100%;">SIMPAN</button>
     </div>
   </div><br>
 
@@ -185,5 +221,7 @@
       </div>
     </div>
   </div> -->
+  </form>
+  <?php } ?>
 </section>
 <!-- /.content -->  
