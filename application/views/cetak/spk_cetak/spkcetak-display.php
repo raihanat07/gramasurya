@@ -37,61 +37,40 @@
       <table id="example2" class="table table-bordered table-hover" style="font-size: 12px;">
         <thead>
           <tr align="center">
-            <td>Hari, Tanggal Pelaksanaan</td>
-            <td>urutan</td>
-            <td>No SO</td>
-            <td>Tanggal Masuk</td>
-            <td>Deadline</td>
-            <td>Nama Pemesan</td>
-            <td>Nama Order</td>
-            <td>Ukuran</td>
-            <td>Halaman</td>
-            <td>Oplag</td>
-            <td>Jenis Cetakan</td>
-            <td>Jumlah Set</td>
-            <td>Target</td>
-            <td>Druk</td>
-            <td>Actions</td>
+            <td rowspan="2"><br>Tanggal Pelaksanaan</td>
+            <td colspan="4">Shift 1</td>
+            <td colspan="4">Shift 2</td>
+            <td rowspan="2"><br>Actions</td>
+          </tr>
+          <tr>
+            <!-- SHIFT 1 -->
+            <td>Jam Kerja</td>
+            <td>Jam Realisasi</td>
+            <td>Set</td>
+            <td>Drug</td>
+
+            <!-- SHIFT 2 -->
+            <td>Jam Kerja</td>
+            <td>Jam Realisasi</td>
+            <td>Set</td>
+            <td>Drug</td>
           </tr>
         </thead>
         <tr>
-          <td rowspan="2">Hari, Tanggal Pelaksanaan</td>
-          <td>urutan</td>
-          <td>No SO</td>
-          <td>Tanggal Masuk</td>
-          <td>Deadline</td>
-          <td>Nama Pemesan</td>
-          <td>Nama Order</td>
-          <td>Ukuran</td>
-          <td>Halaman</td>
-          <td>Oplag</td>
-          <td>Jenis Cetakan</td>
-          <td>Jumlah Set</td>
-          <td>Target</td>
-          <td>Druk</td>
-          <td align="center">
-            <a href="<?=site_url('cetak/Spk/edit_spk')?>">
-              <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
-            </a>
-            <a href="<?=site_url('cetak/Spk/lihat_spk')?>">
-              <i class="fa fa-eye" style="font-size:18px;"></i>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>urutan</td>
-          <td>No SO</td>
-          <td>Tanggal Masuk</td>
-          <td>Deadline</td>
-          <td>Nama Pemesan</td>
-          <td>Nama Order</td>
-          <td>Ukuran</td>
-          <td>Halaman</td>
-          <td>Oplag</td>
-          <td>Jenis Cetakan</td>
-          <td>Jumlah Set</td>
-          <td>Target</td>
-          <td>Druk</td>
+            <td>Hari, Tanggal Pelaksanaan</td>
+
+            <!-- SHIFT 1 -->
+            <td>Jam Kerja</td>
+            <td>Jam Realisasi</td>
+            <td>Set</td>
+            <td>Drug</td>
+
+
+            <!-- SHIFT 2 -->
+            <td>Jam Kerja</td>
+            <td>Jam Realisasi</td>
+            <td>Set</td>
+            <td>Drug</td>
           <td align="center">
             <a href="<?=site_url('cetak/Spk/edit_spk')?>">
               <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>

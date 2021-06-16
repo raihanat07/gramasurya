@@ -44,16 +44,30 @@
                 </tr>
               </thead>
               <tbody>
-                <td>tanggal</td>
-                <td>Jam Kerja</td>
-                <td>Jam Realisasi</td>
-                <td>Set</td>
-                <td>Druk</td>
-                <td>Jam Kerja</td>
-                <td>Jam Realisasi</td>
-                <td>Set</td>
-                <td>Druk</td>
+                <tr>
+                  <td>tanggal</td>
+                  <td>Jam Kerja</td>
+                  <td>Jam Realisasi</td>
+                  <td>Set</td>
+                  <td>Druk</td>
+                  <td>Jam Kerja</td>
+                  <td>Jam Realisasi</td>
+                  <td>Set</td>
+                  <td>Druk</td>
+                </tr>
               </tbody>
+              <!-- BARIS UNTUK JUMLAH -->
+              <tr>
+                <td align="center">Jumlah</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
             </table>
           </div>
         </div>
@@ -160,7 +174,7 @@
       </div><br>
       <div class="row" align="right">
         <div class="col">
-          <button type="reset" class="btn btn-default">Kembali</button>
+          <a href="<?=site_url()?>cetak/Spk" class="btn btn-default">Kembali</a>
           <button type="submit" name="add" class="btn btn-success">Print</button>
         </div>
       </div><br>
