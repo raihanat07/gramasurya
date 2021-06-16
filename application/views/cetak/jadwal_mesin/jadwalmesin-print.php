@@ -13,42 +13,39 @@
     <section class="content">
 
       <div class="row">
-        <div class="col-md-6">
-          <!-- Default box -->
+        <!-- ATAS -->
+        <div class="col-md-12">
           <div class="card">
             <div class="card-header">
               <h3 class="card-title coba">SPK ORDER [<label>dari db</label>]</h3>
-
-              <div class="card-tools">
-              </div>
             </div>
             <div class="card-body">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-4">
-                    <br>Tanggal Buat SPK
+                    Tanggal Buat SPK
                     <br><label class="form-label">dari db</label>
                   </div>
                   <div class="col-md-4">
-                    <br>Tanggal Masuk
+                    Tanggal Masuk
                     <br><label class="form-label">dari db</label>
                   </div>
                   <div class="col-md-4">
-                    <br>Deadline
+                    Deadline
                     <br><label class="form-label">dari db</label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-4">
-                    <br>Nama Pemesan
+                    Nama Pemesan
                     <br><label class="form-label">dari db</label>
                   </div>
                   <div class="col-md-4">
-                    <br>Nama Orderan
+                    Nama Orderan
                     <br><label class="form-label">dari db</label>
                   </div>
                   <div class="col-md-4">
-                    <br>Jenis Cetakan
+                    Jenis Cetakan
                     <br><label class="form-label">dari db</label>
                   </div>
                 </div>
@@ -65,7 +62,7 @@
                     <br>Jenis Cetakan
                     <br><label class="form-label" style="background: #8683FC;padding: 1px;border-radius: 3px;">dari db</label>
                   </div>
-                </div><br>
+                </div>
 
                 <div class="card" style="background: #A9A9A9">
                   <div class="row" align="center">
@@ -186,11 +183,11 @@
 
                 <div class="row">
                   <div class="col">
-                    <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
+                    <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 100px;" disabled></textarea>
                   </div>
-                </div><br>
+                </div>
 
-                <div class="row" align="center" style="height: 150px;">
+                <div class="row" align="center" style="height: 100px;">
                   <div class="col-md-4">
                     <br>Opertor Cetak
                   </div>
@@ -213,12 +210,6 @@
                   <div class="col-md-1">(</div>
                   <div class="col-md-2"></div>
                   <div class="col-md-1">)</div>
-                </div><br>
-
-                <div class="row" align="right">
-                  <div class="col">
-                    <button type="submit" class="btn btn-default">Print</button>
-                  </div>
                 </div>
 
                 <script>
@@ -234,41 +225,40 @@
           </div>
           <!-- /.card -->
         </div>
-        <div class="col-md-6">
+
+        <!-- BAWAH -->
+        <div class="col-md-12">
           <div class="card">
             <div class="card-header">
               <h3 class="card-title coba">SPK ORDER [<label>dari db</label>]</h3>
-
-              <div class="card-tools">
-              </div>
             </div>
             <div class="card-body">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-4">
-                    <br>Tanggal Buat SPK
+                    Tanggal Buat SPK
                     <br><label class="form-label">dari db</label>
                   </div>
                   <div class="col-md-4">
-                    <br>Tanggal Masuk
+                    Tanggal Masuk
                     <br><label class="form-label">dari db</label>
                   </div>
                   <div class="col-md-4">
-                    <br>Deadline
+                    Deadline
                     <br><label class="form-label">dari db</label>
                   </div>
                 </div>
                 <div class="row">
                   <div class="col-md-4">
-                    <br>Nama Pemesan
+                    Nama Pemesan
                     <br><label class="form-label">dari db</label>
                   </div>
                   <div class="col-md-4">
-                    <br>Nama Orderan
+                    Nama Orderan
                     <br><label class="form-label">dari db</label>
                   </div>
                   <div class="col-md-4">
-                    <br>Jenis Cetakan
+                    Jenis Cetakan
                     <br><label class="form-label">dari db</label>
                   </div>
                 </div>
@@ -285,7 +275,7 @@
                     <br>Jenis Cetakan
                     <br><label class="form-label" style="background: #8683FC;padding: 1px;border-radius: 3px;">dari db</label>
                   </div>
-                </div><br>
+                </div>
 
                 <div class="card" style="background: #A9A9A9">
                   <div class="row" align="center">
@@ -406,11 +396,11 @@
 
                 <div class="row">
                   <div class="col">
-                    <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
+                    <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 100px;" disabled></textarea>
                   </div>
-                </div><br>
+                </div>
 
-                <div class="row" align="center" style="height: 150px;">
+                <div class="row" align="center" style="height: 100px;">
                   <div class="col-md-4">
                     <br>Opertor Cetak
                   </div>
@@ -433,12 +423,6 @@
                   <div class="col-md-1">(</div>
                   <div class="col-md-2"></div>
                   <div class="col-md-1">)</div>
-                </div><br>
-
-                <div class="row" align="right">
-                  <div class="col">
-                    <button type="submit" class="btn btn-default">Print</button>
-                  </div>
                 </div>
 
                 <script>
