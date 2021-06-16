@@ -101,7 +101,7 @@ Content Header (Page header) -->
 
         <div class="row">
           <div class="col" align="right">
-            <button type="reset" class="btn btn-default">Kembali</button>
+          <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_binding" class="btn btn-default">Kembali</a>
             <button type="submit" name="simpan" class="btn btn-success">Publish</button>
           </div>
         </div>

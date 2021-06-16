@@ -75,7 +75,7 @@
 
               <td><?= $row->so_status; ?></td>
               <td align="center">
-                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">
+                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order ?>">
                   <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
                 </button>
               </td>
@@ -89,7 +89,7 @@
           <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
   
     
-          <div id="myModal" class="modal fade" role="dialog">
+          <div id="myModal<?= $row->id_order ?>" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
               <!-- konten modal-->
               <div class="modal-content">
@@ -110,11 +110,11 @@
                   <div class="card-body">
                     <div class="tab-content">
                       <div class="tab-pane active" id="cover<?= $row->id_order; ?>">
-                        <h4><label>SO dari db</label></h4>
+                        <h4><label><?= $row->nomor_so; ?></label></h4>
                         <div class="row">
                           <div class="col-sm-6">
                             <br>Tanggal Masuk
-                            <br><label><?= $row->nomor_so; ?></label>
+                            <br><label><?= $row->tanggal_masuk; ?></label>
                           </div>
                           <div class="col-sm-6" style="color: red;">
                             <br>Deadline
@@ -178,28 +178,29 @@
                           <div class="col-md-6">
                             Tanggal Pelaksanaan<br>
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_cover" placeholder="Tanggal Pelaksanaan Cover" required>
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_cover" placeholder="Tanggal Pelaksanaan Cover" >
                                 <?php }else{ ?>                                  
-                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_cover" value="<?= $row->tanggal_pelaksanaan_cover; ?>" placeholder="Tanggal Pelaksanaan Cover" required>
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_cover" value="<?= $row->tanggal_pelaksanaan_cover; ?>" placeholder="Tanggal Pelaksanaan Cover" >
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
                             Operator<br>
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                  <input type="text" class="form-control" name="operator_cover" placeholder="Operator Cover" required>
+                                  <input type="text" class="form-control" name="operator_cover" placeholder="Operator Cover" >
                                 <?php }else{ ?>  
-                                  <input type="text" class="form-control" name="operator_cover" value="<?= $row->operator_cover; ?>" placeholder="Operator Cover" required>                                
+                                  <input type="text" class="form-control" name="operator_cover" value="<?= $row->operator_cover; ?>" placeholder="Operator Cover" >                                
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
                             <br>Target<br>
                               <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                <input type="number" class="form-control" name="target_cover" placeholder="Jumlah Target" required>
+                                <input type="number" class="form-control" name="target_cover" placeholder="Jumlah Target" >
                                 <?php }else{ ?>  
-                                  <input type="number" class="form-control" name="target_cover" value="<?= $row->target_cover; ?>" placeholder="Jumlah Target" required>
+                                  <input type="number" class="form-control" name="target_cover" value="<?= $row->target_cover; ?>" placeholder="Jumlah Target" >
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
+                          
                             <br>Mesin<br>
                             <?php if($row->id_jadwal_cetak == null) {?>                                     
                                   <select id="inputState" class="form-select form-control" name="mesin_cover" >
@@ -257,11 +258,11 @@
                         </div>
                       </div>
                       <div class="tab-pane" id="isi<?= $row->id_order; ?>">
-                        <h4><label>SO dari db</label></h4>
+                        <h4><label><?= $row->nomor_so; ?></label></h4>
                         <div class="row">
                           <div class="col-sm-6">
                             <br>Tanggal Masuk
-                            <br><label><?= $row->nomor_so; ?></label>
+                            <br><label><?= $row->tanggal_masuk; ?></label>
                           </div>
                           <div class="col-sm-6" style="color: red;">
                             <br>Deadline
@@ -325,25 +326,25 @@
                           <div class="col-md-6">
                             Tanggal Pelaksanaan<br>
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                  <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" placeholder="Tanggal Pelaksanaan Isi" required>
+                                  <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" placeholder="Tanggal Pelaksanaan Isi" >
                                 <?php }else{ ?>                                  
-                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" value="<?= $row->tanggal_pelaksanaan_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" required>
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_isi" value="<?= $row->tanggal_pelaksanaan_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" >
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
                             Operator<br>
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                  <input type="text" class="form-control" name="operator_isi" placeholder="Operator Isi" required>
+                                  <input type="text" class="form-control" name="operator_isi" placeholder="Operator Isi" >
                                 <?php }else{ ?>                                  
-                                    <input type="text" class="form-control" name="operator_isi" value="<?= $row->operator_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" required>
+                                    <input type="text" class="form-control" name="operator_isi" value="<?= $row->operator_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" >
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
                             <br>Target<br>
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                  <input type="number" class="form-control" name="target_isi" placeholder="Jumlah Target" required>
+                                  <input type="number" class="form-control" name="target_isi" placeholder="Jumlah Target" >
                                 <?php }else{ ?>                                  
-                                    <input type="number" class="form-control" name="target_isi" value="<?= $row->target_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" required>
+                                    <input type="number" class="form-control" name="target_isi" value="<?= $row->target_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" >
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
@@ -395,6 +396,7 @@
                         <br><hr><br>
                         <div class="row" align="right">
                           <div class="col">
+                          
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
                               <?php if($row->id_jadwal_cetak == null) {?>  
                             <button type="submit" class="btn btn-success" name="add">Publish</button>
@@ -407,6 +409,9 @@
                     </div><br>
                   </div><!-- /.card-body -->
                 </div>
+                </div>
+                </div>
+                </div>
                 <!-- footer modal -->
                 <!-- <div class="modal-footer">
                 </div> -->
@@ -414,6 +419,7 @@
               <?php } ?>  
               </div>
             </div>
+          </div>
           </div>
 
         </div>

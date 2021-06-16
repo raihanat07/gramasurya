@@ -34,62 +34,32 @@
     </div>
   </div>
 
-  <!-- TEMPAT SO -->
-  <div class="row" style="padding: 10px;">
-    <div class="col" style="background: #FFEEE3;">
-      <div class="row" style="padding: 10px;padding-bottom: 0px;">
-        <div class="col">
-          <b>SO 2021.5.4.22</b>
-        </div>
-        <div class="col" align="right">
-          <b>Oplag : 2000</b>
-        </div>
-      </div>
-      <div class="row" style="padding: 10px;padding-bottom: 0px;">
-        <div class="col">
-          <b>Annete Black</b>
-        </div>
-      </div>
-      <div class="row" style="padding: 10px;padding-bottom: 0px;">
-        <div class="col">
-          <b>Buku Disney Land</b>
-        </div>
-      </div>
-      <div class="row" style="padding: 10px;">
-        <div class="col">
-          <a href="<?=site_url()?>finishing/OperatorFP/edit_op_susun" class="btn btn-success" style="min-height: 50px;width: 100%;padding-top: 12px;">
-            <i class="fa fa-pencil" style="font-size:14px;margin-right:5px"></i>
-            <b>Lapor Pengerjaan</b>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div><br>
 
+  <?php foreach($fp as $s => $row) {?> 
   <!-- TEMPAT SO -->
   <div class="row" style="padding: 10px;">
     <div class="col" style="background: #FFEEE3;">
       <div class="row" style="padding: 10px;padding-bottom: 0px;">
         <div class="col">
-          <b>SO 2021.5.4.22</b>
+          <b><?= $row->nomor_so; ?></b>
         </div>
         <div class="col" align="right">
-          <b>Oplag : 2000</b>
+          <b>Oplag : <?= $row->oplag; ?></b>
         </div>
       </div>
       <div class="row" style="padding: 10px;padding-bottom: 0px;">
         <div class="col">
-          <b>Annete Black</b>
+          <b><?= $row->nama_pemesan; ?></b>
         </div>
       </div>
       <div class="row" style="padding: 10px;padding-bottom: 0px;">
         <div class="col">
-          <b>Buku Disney Land</b>
+          <b><?= $row->nama_orderan; ?></b>
         </div>
       </div>
       <div class="row" style="padding: 10px;">
         <div class="col">
-          <a href="<?=site_url()?>finishing/OperatorFP/edit_op_susun" class="btn btn-success" style="min-height: 50px;width: 100%;padding-top: 12px;">
+          <a href="<?=site_url()?>finishing/OperatorFP/edit_op_susun/<?= $row->id_order; ?>" class="btn btn-success" style="min-height: 50px;width: 100%;padding-top: 12px;">
             <i class="fa fa-pencil" style="font-size:14px;margin-right:5px"></i>
             <b>Lapor Pengerjaan</b>
           </a>
@@ -97,6 +67,7 @@
       </div>
     </div>
   </div><br>
+  <?php } ?>
 
 </section>
 <!-- /.content --> 

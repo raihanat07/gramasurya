@@ -207,7 +207,7 @@
 
         <div class="row">         
           <div class="col" align="right">
-            <button type="reset" class="btn btn-default">Kembali</button>
+          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp_susun" class="btn btn-default">Kembali</a>
             <button type="submit" name="edit" class="btn btn-success">Jadwal</button>
           </div>
         </div>

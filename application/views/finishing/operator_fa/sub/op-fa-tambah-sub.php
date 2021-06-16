@@ -4,6 +4,9 @@
   </div>
 </section>
 <!-- Content Header (Page header) -->
+<?php foreach($fa as $s => $row) {?>  
+    <form action="<?=site_url('finishing/OperatorFA/proses_sub')?>" method="post"> 
+
 <section class="content-header">
   <div class="container-fluid">
     <div class="row">
@@ -16,12 +19,12 @@
           </li>
           <li class="breadcrumb-item">
             <a href="<?=site_url()?>finishing/OperatorFA/jadwal_op_sub" style="color: #FC8639  ;">
-              SUB
+              sub
             </a>
           </li>
           <li class="breadcrumb-item">
             <a href="#">
-              2021.5.422
+              <?= $row->nomor_so; ?>
             </a>
           </li>
           <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -31,7 +34,11 @@
     </div>
   </div><!-- /.container-fluid -->
 </section>
-<!-- Main content -->
+<!-- Main content -->    
+    <input type="text" value="<?= $row->status_sub; ?>" name="status_sub" hidden>
+    <input type="text"  name="id_order"  value="<?= $row->id_order; ?>" hidden>
+    <input type="text"  name="id_sub"  value="<?= $row->id_sub; ?>" hidden>
+
 <section class="content">
   <div class="row" style="padding: 10px;">
     <div class="col" style="background: #FFEEE3;">
@@ -41,31 +48,58 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;">
         <div class="col">
           Nomor SO<br>
-          <label>SO 2021.5.4.22</label>
+          <label><?= $row->nomor_so; ?></label>
         </div>
         <div class="col">
           Nama Orderan<br>
-          <label>Buku Disney Land</label>
+          <label><?= $row->nama_orderan; ?></label>
         </div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;">
         <div class="col">
           Nama Pemesan<br>
-          <label>Annete Black</label>
+          <label><?= $row->nama_pemesan; ?></label>
         </div>
         <div class="col">
           Ukuran<br>
-          <label>16*24</label>
+          <label><?= $row->ukuran; ?></label>
         </div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;padding-bottom: 15px;">
         <div class="col">
           Finishing<br>
-          <label>Bending</label>
+          <label>
+          <?php 
+                        $finishing = "";
+                        if($row->bending != null){
+                            $finishing .= "bending, ";
+                        }
+                        if($row->hard_cover != null){
+                            $finishing .= 'hard cover, ';
+                        }   
+                        if($row->jahit_benang != null){
+                            $finishing .= 'jahit benang, ';
+                        } 
+                        if($row->jahit_kawat != null){
+                            $finishing .= 'jahit kawat, ';
+                        }    
+                        if($row->pond != null){
+                            $finishing .= 'pond, ';
+                        }   
+                        if($row->klem != null){
+                            $finishing .= 'klem, ';
+                        } 
+                        if($row->spiral != null){
+                            $finishing .= 'Spiral, ';
+                        }
+                        $finishing = rtrim($finishing, ", ");
+                        echo $finishing;
+                    ?>
+          </label>
         </div>
         <div class="col">
           Oplag<br>
-          <label>1000</label>
+          <label><?= $row->oplag; ?></label>
         </div>
       </div>
     </div>
@@ -78,159 +112,100 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;">
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" class="form-control" name="tanggal_pengerjaan_sub">
+          <input type="date" value="<?= $row->tanggal_pelaksanaan_sub; ?>" name="tanggal_pelaksanaan_sub" hidden>
+          <input type="date" class="form-control" name="tanggal_pelaksanaan_sub" value="<?= $row->tanggal_pelaksanaan_sub; ?>" disabled>
         </div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;padding-top: 15px;padding-bottom: 15px;">
         <div class="col-md-12">
           <label>Keterangan</label>
-          <textarea class="form-control" name="keterangan_pengerjaan_sub" style="height: 100px;" placeholder="Keterangan"></textarea>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row" style="padding: 10px;">
-    <div class="col" style="background: #FFEEE3;">
-      <div class="row" style="padding: 15px;">
-        <div class="col"><b>Laporan Pengerjaan</b><hr></div>
-      </div>
-      <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;">
-        <div class="col-md-12">
-          <label>Pilih Jenis Sub</label>
-        </div>
-      </div>
-      <div class="row" style="padding-left: 20px;padding-right: 20px;padding-bottom: 15px;">
-        <div class="col" style="padding-left: 25px;">
-          <input class="form-check-input" type="checkbox" name="status" value="Binding" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">Binding</label><br>
-          <input class="form-check-input" type="checkbox" name="status" value="Hardcover" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">Hardcover</label><br>
-          <input class="form-check-input" type="checkbox" name="status" value="Jahit" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">Jahit</label>
-        </div>
-        <div class="col" style="padding-right: 25px;">
-          <input class="form-check-input" type="checkbox" name="status" value="Potong" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">Potong</label><br>
-          <input class="form-check-input" type="checkbox" name="status" value="Klemseng" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">Klemseng</label><br>
-          <input class="form-check-input" type="checkbox" name="status" value="Jahit" id="flexCheckDefault">
-          <label class="form-check-label" for="flexCheckDefault">Jahit</label>
-        </div>
+          <input type="text" value="<?= $row->keterangan_jadwal_sub; ?>" name="keterangan_jadwal_sub" hidden>
+          <textarea disabled class="form-control" name="keterangan_jadwal_sub" style="height: 100px;" placeholder="Keterangan"><?= $row->keterangan_jadwal_sub; ?></textarea>
+        </div>                        
       </div>
     </div>
   </div><br>
+  <div class="row" style="padding: 10px;">
+	  <div class="col" style="background: #FFEEE3;">
+		<div class="row" style="padding: 15px;">
+		  <div class="col"><b>Laporan Pengerjaan</b><hr></div>
+		</div>
+		<div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;">
+		  <div class="col-md-12">
+			<label>Pilih Jenis Sub</label>
+		  </div>
+		</div>
+		<div class="row" style="padding-left: 20px;padding-right: 20px;padding-bottom: 15px;">
+		  <div class="col" style="padding-left: 25px;">
+			          <input type="text" name="jenis_sub_binding" value="<?= $row->jenis_sub_binding; ?>" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_binding" value="binding" id="flexCheckDefault" <?php echo $row->jenis_sub_binding == "binding" ?  "checked" : "" ?> disabled>
+                <label class="form-check-label" for="flexCheckDefault">binding</label><br>
+
+			          <input type="text" name="jenis_sub_hardcover" value="<?= $row->jenis_sub_hardcover; ?>" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_hardcover" value="hardcover" id="flexCheckDefault" <?php echo $row->jenis_sub_hardcover == "hardcover" ?  "checked" : "" ?> disabled>
+                <label class="form-check-label" for="flexCheckDefault">hardcover</label><br>
+
+                <input type="text" name="jenis_sub_jahit" value="<?= $row->jenis_sub_jahit; ?>" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_jahit" value="jahit" id="flexCheckDefault" <?php echo $row->jenis_sub_jahit == "jahit" ?  "checked" : "" ?> disabled>
+                <label class="form-check-label" for="flexCheckDefault">jahit</label><br>
+		  </div>
+		  <div class="col" style="padding-right: 25px;">
+                <input type="text" name="jenis_sub_fa_potong" value="<?= $row->jenis_sub_fa_potong; ?>" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_fa_potong" value="fa potong" id="flexCheckDefault" <?php echo $row->jenis_sub_fa_potong == "fa potong" ?  "checked" : "" ?> disabled>
+                <label class="form-check-label" for="flexCheckDefault">potong</label><br>
+
+			          <input type="text" name="jenis_sub_klemseng" value="<?= $row->jenis_sub_klemseng; ?>" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_klemseng" value="klemseng" id="flexCheckDefault" <?php echo $row->jenis_sub_klemseng == "klemseng" ?  "checked" : "" ?> disabled>
+                <label class="form-check-label" for="flexCheckDefault">klemseng</label><br>
+
+                <input type="text" name="jenis_sub_spiral" value="<?= $row->jenis_sub_spiral; ?>" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_spiral" value="spiral" id="flexCheckDefault" <?php echo $row->jenis_sub_spiral == "spiral" ?  "checked" : "" ?> disabled>
+                <label class="form-check-label" for="flexCheckDefault">spiral</label><br>
+		  </div>
+		</div>
+	  </div>
+	</div><br>
+  
   
   <!-- LAPORAN 1 -->
   <div class="row" style="padding: 10px;">
     <div class="col" style="background: #FFEEE3;">
       <div class="row bg-success" style="margin: 10px;padding: 5px;">
-        <div class="col-md-12"><b>Laporan 1</b></div>
+        <div class="col-md-12"><b>Laporan</b></div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
-          <label>Tanggal Kembali</label><br>
-          <input type="date" name="tanggal_kembali_sub1" class="form-control"><br>
+          <label>Tanggal Pengerjaan</label><br>
+          <input type="date" name="tanggal_kembali_sub" class="form-control" value="<?= $row->tanggal_kembali_sub; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil</label><br>
-          <input type="number" name="hasil_sub1" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Rejek</label><br>
-          <input type="number" name="rejek_sub1" placeholder="Rejek Pengerjaan" class="form-control"><br>
+          <input type="number" name="rejek" placeholder="Rejek Pengerjaan" class="form-control" value="<?= $row->rejek; ?>"><br>
+        </div>
+        <div class="col-md-12">
+          <label>Nama Operator</label><br>
+          <input type="text" name="operator" placeholder="Nama Operator" class="form-control" value="<?= $row->operator; ?>"><br>
+        </div>
+        <div class="col-md-12">
+          <label>Kru</label><br>
+          <input type="text" name="kru" placeholder="Kru" class="form-control" value="<?= $row->kru; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_sub1" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan" placeholder="Keterangan" style="height: 80px;" class="form-control" value="<?= $row->keterangan; ?>"><?= $row->keterangan; ?></textarea>
         </div>
       </div>
     </div>
   </div><br>
 
-  <!-- LAPORAN 2 -->
-  <div class="row" style="padding: 10px;">
-    <div class="col" style="background: #FFEEE3;">
-      <div class="row bg-success" style="margin: 10px;padding: 5px;">
-        <div class="col-md-12"><b>Laporan 2</b></div>
-      </div>
-      <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
-        <div class="col-md-12"><hr>
-          <label>Tanggal Kembali</label><br>
-          <input type="date" name="tanggal_kembali_sub2" class="form-control"><br>
-        </div>
-        <div class="col-md-12">
-          <label>Hasil</label><br>
-          <input type="number" name="hasil_sub2" placeholder="Hasil Pengerjaan" class="form-control"><br>
-        </div>
-        <div class="col-md-12">
-          <label>Rejek</label><br>
-          <input type="number" name="rejek_sub2" placeholder="Rejek Pengerjaan" class="form-control"><br>
-        </div>
-        <div class="col-md-12">
-          <label>Keterangan</label><br>
-          <textarea name="keterangan_sub2" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
-        </div>
-      </div>
-    </div>
-  </div><br>
-
-  <!-- LAPORAN 3 -->
-  <div class="row" style="padding: 10px;">
-    <div class="col" style="background: #FFEEE3;">
-      <div class="row bg-success" style="margin: 10px;padding: 5px;">
-        <div class="col-md-12"><b>Laporan 3</b></div>
-      </div>
-      <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
-        <div class="col-md-12"><hr>
-          <label>Tanggal Kembali</label><br>
-          <input type="date" name="tanggal_kembali_sub3" class="form-control"><br>
-        </div>
-        <div class="col-md-12">
-          <label>Hasil</label><br>
-          <input type="number" name="hasil_sub3" placeholder="Hasil Pengerjaan" class="form-control"><br>
-        </div>
-        <div class="col-md-12">
-          <label>Rejek</label><br>
-          <input type="number" name="rejek_sub3" placeholder="Rejek Pengerjaan" class="form-control"><br>
-        </div>
-        <div class="col-md-12">
-          <label>Keterangan</label><br>
-          <textarea name="keterangan_sub3" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
-        </div>
-      </div>
-    </div>
-  </div><br>
-
-  <!-- LAPORAN 4 -->
-  <div class="row" style="padding: 10px;">
-    <div class="col" style="background: #FFEEE3;">
-      <div class="row bg-success" style="margin: 10px;padding: 5px;">
-        <div class="col-md-12"><b>Laporan 4</b></div>
-      </div>
-      <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
-        <div class="col-md-12"><hr>
-          <label>Tanggal Kembali</label><br>
-          <input type="date" name="tanggal_kembali_sub4" class="form-control"><br>
-        </div>
-        <div class="col-md-12">
-          <label>Hasil</label><br>
-          <input type="number" name="hasil_sub4" placeholder="Hasil Pengerjaan" class="form-control"><br>
-        </div>
-        <div class="col-md-12">
-          <label>Rejek</label><br>
-          <input type="number" name="rejek_sub4" placeholder="Rejek Pengerjaan" class="form-control"><br>
-        </div>
-        <div class="col-md-12">
-          <label>Keterangan</label><br>
-          <textarea name="keterangan_sub4" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
-        </div>
-      </div>
-    </div>
-  </div><br>
 
   <div class="row" style="padding: 10px;">
     <div class="col">
-      <button type="submit" class="btn btn-success" style="width: 100%;">SIMPAN</button>
+      <button type="submit" class="btn btn-success" name="edit" style="width: 100%;">SIMPAN</button>
     </div>
   </div><br>
 
@@ -269,5 +244,7 @@
       </div>
     </div>
   </div> -->
+  </form>
+  <?php } ?>
 </section>
 <!-- /.content -->  

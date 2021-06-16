@@ -122,7 +122,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                             <label class="form-label">Mesin Cover 1</label>
-                                                <select id="inputState" class="form-select form-control" name="mesin_cover_1" value="<?= $row->mesin_cover_1; ?>" disabled>
+                                                <select id="inputState" class="form-select form-control" name="mesin_cover_1" value="<?= $row->mesin_cover_1; ?>" >
                                                     <option value="<?php  echo $row->mesin_cover_1 != "-" ?   $row->mesin_cover_1  : '-' ?>"><?php  echo $row->mesin_cover_1 != "-" ?   $row->mesin_cover_1  : '-' ?>   </option>
                                                     <option value="Oliver 58 2w">Oliver 58 2w</option>
                                                     <option value="Oliver 72 1w">Oliver 72 1w</option>
@@ -194,7 +194,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Mesin Cover 2</label>
-                                                <select id="inputState" class="form-select form-control" name="mesin_cover_2" value="<?= $row->mesin_cover_2; ?>" disabled>
+                                                <select id="inputState" class="form-select form-control" name="mesin_cover_2" value="<?= $row->mesin_cover_2; ?>" >
                                                 <option value="<?php  echo $row->mesin_cover_2 != "-" ?   $row->mesin_cover_2  : '-' ?>"><?php  echo $row->mesin_cover_2 != "-" ?   $row->mesin_cover_2  : '-' ?>   </option>
                                                     <option value="Oliver 58 2w">Oliver 58 2w</option>
                                                     <option value="Oliver 72 1w">Oliver 72 1w</option>
@@ -267,7 +267,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Mesin Cover 3</label>
-                                                <select id="inputState" class="form-select form-control" name="mesin_cover_3" value="<?= $row->mesin_cover_3; ?>" disabled>
+                                                <select id="inputState" class="form-select form-control" name="mesin_cover_3" value="<?= $row->mesin_cover_3; ?>" >
                                                 <option value="<?php  echo $row->mesin_cover_3 != "-" ?   $row->mesin_cover_3  : '-' ?>"><?php  echo $row->mesin_cover_3 != "-" ?   $row->mesin_cover_3  : '-' ?>   </option>
                                                     <option value="Oliver 58 2w">Oliver 58 2w</option>
                                                     <option value="Oliver 72 1w">Oliver 72 1w</option>
@@ -340,7 +340,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Mesin Isi 1</label>
-                                                <select id="inputState" class="form-select form-control" name="mesin_isi_1" value="<?= $row->mesin_isi_1; ?>" disabled>
+                                                <select id="inputState" class="form-select form-control" name="mesin_isi_1" value="<?= $row->mesin_isi_1; ?>" >
                                                 <option value="<?php  echo $row->mesin_isi_1 != "-" ?   $row->mesin_isi_1  : '-' ?>"><?php  echo $row->mesin_isi_1 != "-" ?   $row->mesin_isi_1  : '-' ?>   </option>
                                                     <option value="Oliver 58 2w">Oliver 58 2w</option>
                                                     <option value="Oliver 72 1w">Oliver 72 1w</option>
@@ -413,7 +413,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Mesin Isi 2</label>
-                                                <select id="inputState" class="form-select form-control" name="mesin_isi_2" value="<?= $row->mesin_isi_2; ?>" disabled>
+                                                <select id="inputState" class="form-select form-control" name="mesin_isi_2" value="<?= $row->mesin_isi_2; ?>" >
                                                 <option value="<?php  echo $row->mesin_isi_2 != "-" ?   $row->mesin_isi_2  : '-' ?>"><?php  echo $row->mesin_isi_2 != "-" ?   $row->mesin_isi_2  : '-' ?>   </option>
                                                     <option value="Oliver 58 2w">Oliver 58 2w</option>
                                                     <option value="Oliver 72 1w">Oliver 72 1w</option>
@@ -486,7 +486,7 @@
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label class="form-label">Mesin Isi 3</label>
-                                                <select id="inputState" class="form-select form-control" name="mesin_isi_3" value="<?= $row->mesin_isi_3; ?>" disabled>
+                                                <select id="inputState" class="form-select form-control" name="mesin_isi_3" value="<?= $row->mesin_isi_3; ?>" >
                                                 <option value="<?php  echo $row->mesin_isi_3 != "-" ?   $row->mesin_isi_3  : '-' ?>"><?php  echo $row->mesin_isi_3 != "-" ?   $row->mesin_isi_3  : '-' ?>   </option>
                                                     <option value="Oliver 58 2w">Oliver 58 2w</option>
                                                     <option value="Oliver 72 1w">Oliver 72 1w</option>

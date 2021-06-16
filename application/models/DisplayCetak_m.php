@@ -247,9 +247,21 @@ class DisplayCetak_m extends CI_Model {
                 
             );
             
-        $this->db->set($edit_dc);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('display_cetak');            
+            $this->db->set($edit_dc);
+            $this->db->where('id_order',$data['id_order']);
+            $this->db->update('display_cetak');
+        
+            $ubah_cetak = array(
+                'mesin_cover_1' =>$data['mesin_cover_1'],
+                'mesin_isi_1' =>$data['mesin_isi_1'],
+                'mesin_cover_2' =>$data['mesin_cover_2'],
+                'mesin_isi_2' =>$data['mesin_isi_2'],
+                'mesin_cover_3' =>$data['mesin_cover_3'],
+                'mesin_isi_3' =>$data['mesin_isi_3'],               
+            );
+            $this->db->set($ubah_cetak);
+            $this->db->where('id_order',$data['id_order']);
+            $this->db->update('cetak');
     }
 
     public function tambah_dc($data)

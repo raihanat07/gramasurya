@@ -4,6 +4,9 @@
   </div>
 </section>
 <!-- Content Header (Page header) -->
+<?php foreach($fp as $s => $row) {?>  
+    <form action="<?=site_url('finishing/OperatorFP/proses_shoe')?>" method="post"> 
+
 <section class="content-header">
   <div class="container-fluid">
     <div class="row">
@@ -16,12 +19,12 @@
           </li>
           <li class="breadcrumb-item">
             <a href="<?=site_url()?>finishing/OperatorFP/jadwal_op_shoe" style="color: #FC8639  ;">
-              SHOE
+              shoe
             </a>
           </li>
           <li class="breadcrumb-item">
             <a href="#">
-              2021.5.422
+              <?= $row->nomor_so; ?>
             </a>
           </li>
           <!-- <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -31,7 +34,11 @@
     </div>
   </div><!-- /.container-fluid -->
 </section>
-<!-- Main content -->
+<!-- Main content -->    
+    <input type="text" value="<?= $row->status_shoe; ?>" name="status_shoe" hidden>
+    <input type="text"  name="id_order"  value="<?= $row->id_order; ?>" hidden>
+    <input type="text"  name="id_shoe"  value="<?= $row->id_shoe; ?>" hidden>
+
 <section class="content">
   <div class="row" style="padding: 10px;">
     <div class="col" style="background: #FFEEE3;">
@@ -41,35 +48,84 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;">
         <div class="col">
           Nomor SO<br>
-          <label>SO 2021.5.4.22</label>
+          <label><?= $row->nomor_so; ?></label>
         </div>
         <div class="col">
           Nama Orderan<br>
-          <label>Buku Disney Land</label>
+          <label><?= $row->nama_orderan; ?></label>
         </div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;">
         <div class="col">
           Nama Pemesan<br>
-          <label>Annete Black</label>
+          <label><?= $row->nama_pemesan; ?></label>
         </div>
         <div class="col">
           Ukuran<br>
-          <label>16*24</label>
+          <label><?= $row->ukuran; ?></label>
         </div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;padding-bottom: 15px;">
         <div class="col">
           Finishing<br>
-          <label>Bending</label>
+          <label>
+          <?php 
+                        $finishing = "";
+                        if($row->bending != null){
+                            $finishing .= "bending, ";
+                        }
+                        if($row->hard_cover != null){
+                            $finishing .= 'hard cover, ';
+                        }   
+                        if($row->jahit_benang != null){
+                            $finishing .= 'jahit benang, ';
+                        } 
+                        if($row->jahit_kawat != null){
+                            $finishing .= 'jahit kawat, ';
+                        }    
+                        if($row->pond != null){
+                            $finishing .= 'pond, ';
+                        }   
+                        if($row->klem != null){
+                            $finishing .= 'klem, ';
+                        } 
+                        if($row->spiral != null){
+                            $finishing .= 'Spiral, ';
+                        }
+                        $finishing = rtrim($finishing, ", ");
+                        echo $finishing;
+                    ?>
+          </label>
         </div>
         <div class="col">
           Oplag<br>
-          <label>1000</label>
+          <label><?= $row->oplag; ?></label>
         </div>
       </div>
     </div>
   </div>
+
+        <input type="text" name="lipat_lembar_1" value="<?= $row->lipat_lembar_1; ?>" hidden>
+        <input type="text" name="lipat_lembar_2" value="<?= $row->lipat_lembar_2; ?>" hidden>
+        <input type="text" name="lipat_lembar_3" value="<?= $row->lipat_lembar_3; ?>" hidden>
+        <input type="text" name="lipat_lembar_4" value="<?= $row->lipat_lembar_4; ?>" hidden>
+        <input type="text" name="lipat_lembar_5" value="<?= $row->lipat_lembar_5; ?>" hidden>
+        <input type="text" name="lipat_lembar_6" value="<?= $row->lipat_lembar_6; ?>" hidden>
+        <input type="text" name="lipat_lembar_7" value="<?= $row->lipat_lembar_7; ?>" hidden>
+        <input type="text" name="lipat_lembar_8" value="<?= $row->lipat_lembar_8; ?>" hidden>
+        <input type="text" name="lipat_lembar_9" value="<?= $row->lipat_lembar_9; ?>" hidden>
+        <input type="text" name="lipat_lembar_10" value="<?= $row->lipat_lembar_10; ?>" hidden>
+        <input type="text" name="lipat_lembar_11" value="<?= $row->lipat_lembar_11; ?>" hidden>
+        <input type="text" name="lipat_lembar_12" value="<?= $row->lipat_lembar_12; ?>" hidden>
+        <input type="text" name="lipat_lembar_13" value="<?= $row->lipat_lembar_13; ?>" hidden>
+        <input type="text" name="lipat_lembar_14" value="<?= $row->lipat_lembar_14; ?>" hidden>
+        <input type="text" name="lipat_lembar_15" value="<?= $row->lipat_lembar_15; ?>" hidden>
+        <input type="text" name="lipat_lembar_16" value="<?= $row->lipat_lembar_16; ?>" hidden>
+        <input type="text" name="lipat_lembar_17" value="<?= $row->lipat_lembar_17; ?>" hidden>
+        <input type="text" name="lipat_lembar_18" value="<?= $row->lipat_lembar_18; ?>" hidden>
+        <input type="text" name="lipat_lembar_19" value="<?= $row->lipat_lembar_19; ?>" hidden>        
+        <input type="text" name="lipat_lembar_20" value="<?= $row->lipat_lembar_20; ?>" hidden>
+
   <div class="row" style="padding: 10px;">
     <div class="col" style="background: #FFEEE3;">
       <div class="row" style="padding: 15px;">
@@ -78,18 +134,19 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;">
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" class="form-control" name="tanggal_pengerjaan_shoe">
+          <input type="date" value="<?= $row->tanggal_pelaksanaan_shoe; ?>" name="tanggal_pelaksanaan_shoe" hidden>
+          <input type="date" class="form-control" name="tanggal_pelaksanaan_shoe" value="<?= $row->tanggal_pelaksanaan_shoe; ?>" disabled>
         </div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;padding-top: 15px;padding-bottom: 15px;">
         <div class="col-md-12">
           <label>Keterangan</label>
-          <textarea class="form-control" name="keterangan_pengerjaan_shoe" style="height: 100px;" placeholder="Keterangan"></textarea>
+          <input type="text" value="<?= $row->keterangan_jadwal_fp_shoe; ?>" name="keterangan_jadwal_fp_shoe" hidden>
+          <textarea disabled class="form-control" name="keterangan_jadwal_fp_shoe" style="height: 100px;" placeholder="Keterangan"><?= $row->keterangan_jadwal_fp_shoe; ?></textarea>
         </div>
       </div>
     </div>
   </div><br>
-  
   <!-- LEMBAR 1 -->
   <div class="row" style="padding: 10px;">
     <div class="col" style="background: #FFEEE3;">
@@ -99,23 +156,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar1_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_1" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_1; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar1_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_1" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_1; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar1_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_1" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_1; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar1_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_1" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_1; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar1_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_1" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_1; ?></textarea>
         </div>
       </div>
     </div>
@@ -130,23 +187,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar2_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_2" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_2; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar2_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_2" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_2; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar2_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_2" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_2; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar2_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_2" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_2; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar2_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_2" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_2; ?></textarea>
         </div>
       </div>
     </div>
@@ -161,23 +218,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar3_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_3" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_3; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar3_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_3" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_3; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar3_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_3" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_3; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar3_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_3" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_3; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar3_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_3" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_3; ?></textarea>
         </div>
       </div>
     </div>
@@ -187,28 +244,28 @@
   <div class="row" style="padding: 10px;">
     <div class="col" style="background: #FFEEE3;">
       <div class="row bg-success" style="margin: 10px;padding: 5px;">
-        <div class="col-md-12"><b>Lembar 1</b></div>
+        <div class="col-md-12"><b>Lembar 4</b></div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar4_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_4" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_4; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar4_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_4" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_4; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar4_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_4" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_4; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar4_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_4" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_4; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar4_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_4" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_4; ?></textarea>
         </div>
       </div>
     </div>
@@ -218,28 +275,28 @@
   <div class="row" style="padding: 10px;">
     <div class="col" style="background: #FFEEE3;">
       <div class="row bg-success" style="margin: 10px;padding: 5px;">
-        <div class="col-md-12"><b>Lembar 5</b></div>
+        <div class="col-md-12"><b>Lembar 1</b></div>
       </div>
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar5_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_5" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_5; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar5_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_5" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_5; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar5_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_5" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_5; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar5_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_5" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_5; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar5_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_5" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_5; ?></textarea>
         </div>
       </div>
     </div>
@@ -254,23 +311,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar6_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_6" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_6; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar6_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_6" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_6; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar6_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_6" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_6; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar6_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_6" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_6; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar6_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_6" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_6; ?></textarea>
         </div>
       </div>
     </div>
@@ -285,23 +342,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar7_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_7" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_7; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar7_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_7" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_7; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar7_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_7" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_7; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar7_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_7" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_7; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar7_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_7" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_7; ?></textarea>
         </div>
       </div>
     </div>
@@ -316,23 +373,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar8_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_8" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_8; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar8_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_8" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_8; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar8_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_8" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_8; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar8_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_8" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_8; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar8_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_8" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_8; ?></textarea>
         </div>
       </div>
     </div>
@@ -347,23 +404,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar9_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_9" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_9; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar9_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_9" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_9; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar9_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_9" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_9; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar9_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_9" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_9; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar9_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_9" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_9; ?></textarea>
         </div>
       </div>
     </div>
@@ -378,23 +435,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar10_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_10" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_10; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar10_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_10" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_10; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar10_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_10" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_10; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar10_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_10" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_10; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar10_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_10" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_10; ?></textarea>
         </div>
       </div>
     </div>
@@ -409,23 +466,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar11_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_11" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_11; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar11_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_11" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_11; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar11_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_11" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_11; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar11_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_11" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_11; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar11_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_11" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_11; ?></textarea>
         </div>
       </div>
     </div>
@@ -440,23 +497,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar12_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_12" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_12; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar12_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_12" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_12; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar12_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_12" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_12; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar12_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_12" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_12; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar12_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_12" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_12; ?></textarea>
         </div>
       </div>
     </div>
@@ -471,23 +528,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar13_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_13" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_13; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar13_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_13" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_13; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar13_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_13" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_13; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar13_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_13" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_13; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar13_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_13" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_13; ?></textarea>
         </div>
       </div>
     </div>
@@ -502,23 +559,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar14_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_14" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_14; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar14_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_14" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_14; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar14_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_14" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_14; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar14_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_14" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_14; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar14_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_14" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_14; ?></textarea>
         </div>
       </div>
     </div>
@@ -533,23 +590,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar15_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_15" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_15; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar15_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_15" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_15; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar15_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_15" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_15; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar15_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_15" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_15; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar15_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_15" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_15; ?></textarea>
         </div>
       </div>
     </div>
@@ -564,23 +621,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar16_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_16" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_16; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar16_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_16" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_16; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar16_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_16" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_16; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar16_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_16" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_16; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar16_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_16" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_16; ?></textarea>
         </div>
       </div>
     </div>
@@ -595,23 +652,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar17_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_17" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_17; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar17_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_17" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_17; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar17_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_17" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_17; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar17_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_17" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_17; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar17_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_17" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_17; ?></textarea>
         </div>
       </div>
     </div>
@@ -626,23 +683,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar18_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_18" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_18; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar18_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_18" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_18; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar18_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_18" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_18; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar18_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_18" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_18; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar18_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_18" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_18; ?></textarea>
         </div>
       </div>
     </div>
@@ -657,23 +714,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar19_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_19" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_19; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar19_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_19" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_19; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar19_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_19" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_19; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar19_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_19" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_19; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar19_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_19" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_19; ?></textarea>
         </div>
       </div>
     </div>
@@ -688,23 +745,23 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="jenis_lipatan_lembar20_shoe" class="form-control" placeholder="Lipat 1" disabled><br>
+          <input name="lipat_lembar_20" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_20; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
-          <input type="number" name="hasil_lipatan_lembar20_shoe" placeholder="Hasil Pengerjaan" class="form-control"><br>
+          <input type="number" name="hasil_lipatan_lembar_20" placeholder="Hasil Pengerjaan" class="form-control" value="<?= $row->hasil_lipatan_lembar_20; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Nama Operator</label><br>
-          <input type="text" name="nama_operator_lembar20_shoe" placeholder="Nama Operator" class="form-control"><br>
+          <input type="text" name="operator_lembar_20" placeholder="Nama Operator" class="form-control" value="<?= $row->operator_lembar_20; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Tanggal Pengerjaan</label><br>
-          <input type="date" name="tanggal_pengerjaan_lembar20_shoe" placeholder="Tanggal Pengerjaan" class="form-control"><br>
+          <input type="date" name="tanggal_pengerjaan_lembar_20" placeholder="Tanggal Pengerjaan" class="form-control" value="<?= $row->tanggal_pengerjaan_lembar_20; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Keterangan</label><br>
-          <textarea name="keterangan_lembar20_shoe" placeholder="Keterangan" style="height: 80px;" class="form-control"></textarea>
+          <textarea name="keterangan_lembar_20" placeholder="Keterangan" style="height: 80px;" class="form-control" ><?= $row->keterangan_lembar_20; ?></textarea>
         </div>
       </div>
     </div>
@@ -712,11 +769,11 @@
   
   <div class="row" style="padding: 10px;">
     <div class="col">
-      <button type="submit" class="btn btn-success" style="width: 100%;">SIMPAN</button>
+      <button type="submit" name="edit" class="btn btn-success" style="width: 100%;">SIMPAN</button>
     </div>
   </div><br>
 
-  <!-- TOMBOL MODAL -->
+  <!-- TOshoeL MODAL -->
   <!-- <div class="row" align="center">
     <div class="col">
       <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal" style="width: 100%;min-height: 50px;padding-top: 12px;">
@@ -751,5 +808,7 @@
       </div>
     </div>
   </div> -->
+  </form>
+  <?php } ?>
 </section>
 <!-- /.content -->  
