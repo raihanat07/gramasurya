@@ -137,29 +137,29 @@
 		</div>
 		<div class="row" style="padding-left: 20px;padding-right: 20px;padding-bottom: 15px;">
 		  <div class="col" style="padding-left: 25px;">
-			          <input type="text" name="jenis_sub_binding" value="<?= $row->jenis_sub_binding; ?>" hidden>
-                <input  class="form-check-input" type="checkbox" name="jenis_sub_binding" value="binding" id="flexCheckDefault" <?php echo $row->jenis_sub_binding == "binding" ?  "checked" : "" ?> disabled>
+			          <input type="text" name="jenis_sub_binding" value="" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_binding" value="binding" id="flexCheckDefault" <?php echo $row->jenis_sub_binding == "binding" ?  "checked" : "" ?> >
                 <label class="form-check-label" for="flexCheckDefault">binding</label><br>
 
-			          <input type="text" name="jenis_sub_hardcover" value="<?= $row->jenis_sub_hardcover; ?>" hidden>
-                <input  class="form-check-input" type="checkbox" name="jenis_sub_hardcover" value="hardcover" id="flexCheckDefault" <?php echo $row->jenis_sub_hardcover == "hardcover" ?  "checked" : "" ?> disabled>
+			          <input type="text" name="jenis_sub_hardcover" value="" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_hardcover" value="hardcover" id="flexCheckDefault" <?php echo $row->jenis_sub_hardcover == "hardcover" ?  "checked" : "" ?> >
                 <label class="form-check-label" for="flexCheckDefault">hardcover</label><br>
 
-                <input type="text" name="jenis_sub_jahit" value="<?= $row->jenis_sub_jahit; ?>" hidden>
-                <input  class="form-check-input" type="checkbox" name="jenis_sub_jahit" value="jahit" id="flexCheckDefault" <?php echo $row->jenis_sub_jahit == "jahit" ?  "checked" : "" ?> disabled>
+                <input type="text" name="jenis_sub_jahit" value="" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_jahit" value="jahit" id="flexCheckDefault" <?php echo $row->jenis_sub_jahit == "jahit" ?  "checked" : "" ?> >
                 <label class="form-check-label" for="flexCheckDefault">jahit</label><br>
 		  </div>
 		  <div class="col" style="padding-right: 25px;">
-                <input type="text" name="jenis_sub_fa_potong" value="<?= $row->jenis_sub_fa_potong; ?>" hidden>
-                <input  class="form-check-input" type="checkbox" name="jenis_sub_fa_potong" value="fa potong" id="flexCheckDefault" <?php echo $row->jenis_sub_fa_potong == "fa potong" ?  "checked" : "" ?> disabled>
+                <input type="text" name="jenis_sub_fa_potong" value="" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_fa_potong" value="fa potong" id="flexCheckDefault" <?php echo $row->jenis_sub_fa_potong == "fa potong" ?  "checked" : "" ?> >
                 <label class="form-check-label" for="flexCheckDefault">potong</label><br>
 
-			          <input type="text" name="jenis_sub_klemseng" value="<?= $row->jenis_sub_klemseng; ?>" hidden>
-                <input  class="form-check-input" type="checkbox" name="jenis_sub_klemseng" value="klemseng" id="flexCheckDefault" <?php echo $row->jenis_sub_klemseng == "klemseng" ?  "checked" : "" ?> disabled>
+			          <input type="text" name="jenis_sub_klemseng" value="" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_klemseng" value="klemseng" id="flexCheckDefault" <?php echo $row->jenis_sub_klemseng == "klemseng" ?  "checked" : "" ?> >
                 <label class="form-check-label" for="flexCheckDefault">klemseng</label><br>
 
-                <input type="text" name="jenis_sub_spiral" value="<?= $row->jenis_sub_spiral; ?>" hidden>
-                <input  class="form-check-input" type="checkbox" name="jenis_sub_spiral" value="spiral" id="flexCheckDefault" <?php echo $row->jenis_sub_spiral == "spiral" ?  "checked" : "" ?> disabled>
+                <input type="text" name="jenis_sub_spiral" value="" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_spiral" value="spiral" id="flexCheckDefault" <?php echo $row->jenis_sub_spiral == "spiral" ?  "checked" : "" ?> >
                 <label class="form-check-label" for="flexCheckDefault">spiral</label><br>
 		  </div>
 		</div>

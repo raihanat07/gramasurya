@@ -156,7 +156,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_1" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_1; ?>"><br>
+          <input name="lipat_lembar_1" class="form-control"  disabled value="<?= $row->lipat_lembar_1; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -187,7 +187,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_2" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_2; ?>"><br>
+          <input name="lipat_lembar_2" class="form-control"  disabled value="<?= $row->lipat_lembar_2; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -218,7 +218,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_3" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_3; ?>"><br>
+          <input name="lipat_lembar_3" class="form-control"  disabled value="<?= $row->lipat_lembar_3; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -249,7 +249,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_4" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_4; ?>"><br>
+          <input name="lipat_lembar_4" class="form-control"  disabled value="<?= $row->lipat_lembar_4; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -280,7 +280,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_5" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_5; ?>"><br>
+          <input name="lipat_lembar_5" class="form-control"  disabled value="<?= $row->lipat_lembar_5; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -311,7 +311,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_6" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_6; ?>"><br>
+          <input name="lipat_lembar_6" class="form-control"  disabled value="<?= $row->lipat_lembar_6; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -342,7 +342,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_7" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_7; ?>"><br>
+          <input name="lipat_lembar_7" class="form-control"  disabled value="<?= $row->lipat_lembar_7; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -373,7 +373,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_8" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_8; ?>"><br>
+          <input name="lipat_lembar_8" class="form-control"  disabled value="<?= $row->lipat_lembar_8; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -404,7 +404,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_9" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_9; ?>"><br>
+          <input name="lipat_lembar_9" class="form-control"  disabled value="<?= $row->lipat_lembar_9; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -435,7 +435,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_10" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_10; ?>"><br>
+          <input name="lipat_lembar_10" class="form-control"  disabled value="<?= $row->lipat_lembar_10; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -466,7 +466,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_11" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_11; ?>"><br>
+          <input name="lipat_lembar_11" class="form-control"  disabled value="<?= $row->lipat_lembar_11; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -497,7 +497,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_12" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_12; ?>"><br>
+          <input name="lipat_lembar_12" class="form-control"  disabled value="<?= $row->lipat_lembar_12; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -528,7 +528,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_13" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_13; ?>"><br>
+          <input name="lipat_lembar_13" class="form-control"  disabled value="<?= $row->lipat_lembar_13; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -559,7 +559,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_14" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_14; ?>"><br>
+          <input name="lipat_lembar_14" class="form-control"  disabled value="<?= $row->lipat_lembar_14; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -590,7 +590,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_15" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_15; ?>"><br>
+          <input name="lipat_lembar_15" class="form-control"  disabled value="<?= $row->lipat_lembar_15; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -621,7 +621,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_16" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_16; ?>"><br>
+          <input name="lipat_lembar_16" class="form-control"  disabled value="<?= $row->lipat_lembar_16; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -652,7 +652,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_17" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_17; ?>"><br>
+          <input name="lipat_lembar_17" class="form-control"  disabled value="<?= $row->lipat_lembar_17; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -683,7 +683,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_18" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_18; ?>"><br>
+          <input name="lipat_lembar_18" class="form-control"  disabled value="<?= $row->lipat_lembar_18; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -714,7 +714,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_19" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_19; ?>"><br>
+          <input name="lipat_lembar_19" class="form-control"  disabled value="<?= $row->lipat_lembar_19; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>
@@ -745,7 +745,7 @@
       <div class="row" style="padding-left: 20px;padding-right: 20px;margin-top: -20px;padding-bottom: 15px;">
         <div class="col-md-12"><hr>
           <label>Jenis Lipatan</label><br>
-          <input name="lipat_lembar_20" class="form-control" placeholder="Lipat 1" disabled value="<?= $row->lipat_lembar_20; ?>"><br>
+          <input name="lipat_lembar_20" class="form-control"  disabled value="<?= $row->lipat_lembar_20; ?>"><br>
         </div>
         <div class="col-md-12">
           <label>Hasil Lipatan</label><br>

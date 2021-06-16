@@ -134,22 +134,22 @@
 
           <div class="col-md-2">
             <div class="form-check">
-            <input type="text" name="jenis_sub_lipat" value="<?= $row->jenis_sub_lipat; ?>" hidden>
-                <input  class="form-check-input" type="checkbox" name="jenis_sub_lipat" value="lipat" id="flexCheckDefault" <?php echo $row->jenis_sub_lipat == "lipat" ?  "checked" : "" ?> disabled>
+            <input type="text" name="jenis_sub_lipat" value="" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_lipat" value="lipat" id="flexCheckDefault" <?php echo $row->jenis_sub_lipat == "lipat" ?  "checked" : "" ?> >
                 <label class="form-check-label" for="flexCheckDefault">lipat</label><br>
             </div>
           </div>
           <div class="col-md-2">
             <div class="form-check">
-            <input type="text" name="jenis_sub_susun_gabung" value="<?= $row->jenis_sub_susun_gabung; ?>" hidden>
-                <input  class="form-check-input" type="checkbox" name="jenis_sub_susun_gabung" value="susun gabung" id="flexCheckDefault" <?php echo $row->jenis_sub_susun_gabung == "susun gabung" ?  "checked" : "" ?> disabled>
+            <input type="text" name="jenis_sub_susun_gabung" value="" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_susun_gabung" value="susun gabung" id="flexCheckDefault" <?php echo $row->jenis_sub_susun_gabung == "susun gabung" ?  "checked" : "" ?> >
                 <label class="form-check-label" for="flexCheckDefault">susun / gabung</label><br>
             </div>
           </div>
           <div class="col-md-1">
             <div class="form-check">
-            <input type="text" name="jenis_sub_laminasi" value="<?= $row->jenis_sub_laminasi; ?>" hidden>
-                <input  class="form-check-input" type="checkbox" name="jenis_sub_laminasi" value="laminasi" id="flexCheckDefault" <?php echo $row->jenis_sub_laminasi == "laminasi" ?  "checked" : "" ?> disabled>
+            <input type="text" name="jenis_sub_laminasi" value="" hidden>
+                <input  class="form-check-input" type="checkbox" name="jenis_sub_laminasi" value="laminasi" id="flexCheckDefault" <?php echo $row->jenis_sub_laminasi == "laminasi" ?  "checked" : "" ?> >
                 <label class="form-check-label" for="flexCheckDefault">laminasi</label><br>
             </div>
           </div>
