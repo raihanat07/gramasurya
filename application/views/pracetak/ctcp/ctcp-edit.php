@@ -116,12 +116,14 @@
                         <input type="text" name="id_order"  value="<?= $row->id_order; ?>" hidden>
                         <input type="text" class="form-control" name="namaoperatorctcp1" value="<?=$row->namaoperatorctcp1?>">
                     </div>
+                    <?php if($row->isi1plat1 != 0) {?>
                     <div class="col-md-3" align="center">
                         <label class="form-label">Nama Operator</label>
                     </div>
                     <div class="col-md-3">
                         <input type="text" class="form-control" name="namaoperatorctcp2" value="<?=$row->namaoperatorctcp2?>">
                     </div>
+                    <?php } ?>
                 </div><br>
                 <div class="row">
                     <div class="col-md-2">
@@ -148,6 +150,7 @@
                             <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
                         </div>
                     </div>
+                    <?php if($row->isi1plat1 != 0) {?>
                     <div class="col-md-2">
                         <label class="form-label">Total Plat Isi<br>
                         <label class="form-label">Total Plat Gagal Isi</label>
@@ -173,6 +176,7 @@
                             <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label><br>
                         </div>
                     </div>
+                    <?php } ?>
                 </div><br>
                 <div class="row">
                     <div class="col-md-6">
@@ -182,13 +186,15 @@
                             </div>
                         </div>
                     </div>
+                    <?php if($row->isi1plat1 != 0) {?>
                     <div class="col-md-6">
                         <div class="card border bg-info">
-                        <div class="card-header text-center">
-                            CTCP ISI 1
-                        </div>
+                            <div class="card-header text-center">
+                                CTCP ISI 1
+                            </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
@@ -307,6 +313,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php if($row->isi1plat1 != 0) {?>
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <div class="row">
@@ -423,9 +430,10 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div><br>
-                <?php if(($row->cover2plat1 != 0 || $row->isi2plat1 != 0) and ($row->cover2plat1 != null || $row->isi2plat1 != null)) :?>
                 <div class="row">
+                    <?php if($row->cover2plat1 != 0) {?>
                     <div class="col-md-6">
                         <div class="card border bg-success">
                             <div class="card-header text-center">
@@ -433,15 +441,20 @@
                             </div>
                         </div>
                     </div>
+                    <?php } if($row->cover2plat1 == 0) {?>
+                        <div class="col-md-6"></div>
+                    <?php } if($row->isi2plat1 != 0) {?>
                     <div class="col-md-6">
                         <div class="card border bg-info">
-                        <div class="card-header text-center">
-                            CTCP ISI 2
-                        </div>
+                            <div class="card-header text-center">
+                                CTCP ISI 2
+                            </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
                 <div class="row">
+                    <?php if($row->cover2plat1 != 0) {?>
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <div class="row">
@@ -558,6 +571,31 @@
                             </div>
                         </div>
                     </div>
+                    <?php } if($row->cover2plat1 == 0) {?>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card-body p-3 mb-2 bg-light text-dark">
+                                        <br><br>                                    
+                                        <div class="row">
+                                            <div class="col-md-12" >
+                                                <textarea name="catatan_ctcp" class="form-control" placeholder="catatan" style="height: 240px;" ><?= $row->catatan_ctcp; ?></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            
+                            <div class="row">
+                                <div class="col-md-6" align="left">
+                                    <button type="submit" name="edit" class="btn btn-success">Simpan</button>
+                                </div>
+                                <div class="col-md-6" align="right">
+                                    <button type="reset" class="btn btn-default">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    <?php } if($row->isi2plat1 != 0) {?>
                     <div class="col-md-6">
                         <div class="card-body p-3 mb-2 bg-light text-dark">
                             <div class="row">
@@ -674,31 +712,17 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                 </div>
-                <?php endif ?>
                 <br>
                 <div class="row">
+                    <?php if($row->cover2plat1 != 0) {?>
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col">
                                 <div class="card-body p-3 mb-2 bg-light text-dark">
                                     <br><br>                                    
                                     <div class="row">
-                                        <!-- <div class="col-md-6">
-                                            <label class="form-label">Tanggal Out CTCP Cover</label>
-                                            <br>
-                                            <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
-                                            <input type="date" class="form-control" name="tanggal_out_ctcp_cover" value="<?= $row->tanggal_out_ctcp_cover; ?>">
-                                            <br><label class="form-label">Tanggal Out CTCP Isi</label>
-                                            <div class="row">
-                                                <div class="col-md-3">Ke 1 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" value="<?= $row->tanggal_out_ctcp_isi1; ?>"></div>
-                                            </div><br>
-                                            <div class="row">
-                                                <div class="col-md-3">Ke 2 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2" value="<?= $row->tanggal_out_ctcp_isi2; ?>"></div>
-                                            </div>
-                                        </div> -->
                                         <div class="col-md-12" >
                                             <textarea name="catatan_ctcp" class="form-control" placeholder="catatan" style="height: 240px;" ><?= $row->catatan_ctcp; ?></textarea>
                                         </div>
@@ -716,8 +740,10 @@
                             </div>
                         </div>
                     </div>
+                    <?php } if($row->cover2plat1 == 0) {?>
+                        <div class="col-md-6"></div>
+                    <?php } if($row->isi3plat1 != 0) :?>
                     <div class="col-md-6">
-                    <?php if($row->isi3plat1 != 0 and $row->isi3plat1 != null) :?>
                         <div class="row">
                             <div class="col">
                                 <div class="card border bg-info">
@@ -845,8 +871,8 @@
                             </div>
                         </div>
                     </div>
-                </div>   
-                <?php endif ?>             
+                    <?php endif ?>
+                </div>           
             </form> 
             <?php } ?>
         </div>

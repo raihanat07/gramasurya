@@ -17,23 +17,21 @@
     <div class="card-header">
         <!-- <label>SO</label> -->
         <h3 class="card-title">Data CTCP</h3>
-        
 
         <div class="card-tools">
-        <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-            <i class="fa fa-minus"></i></button>
-        <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-            <i class="fa fa-times"></i></button> -->
+            <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fa fa-minus"></i>
+            </button>
         </div>
     </div>
     <div class="card-body">
         <div class="card-body">
-            <form action="<?=site_url('pracetak/ctcp/lihat_ctcp')?>" method="post">       
+            <form action="<?=site_url('pracetak/ctcp/lihat_ctcp')?>" method="post">        
                 <div class="row">
                 <?php foreach($ctcp as $s => $row) {?>  
                     <div class="col-md-4">
                         <br>Nomor SO
-                        <br><label class="form-label"><?=$row->nomor_so?></label>
+                        <br><label class="form-label" ><?=$row->nomor_so?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Nama Pemesan
@@ -68,774 +66,633 @@
                         <br><label class="form-label"><?=$row->ukuran?></label>
                     </div>
                     <div class="col-md-4">
-                        <br>Finsihing Akhir<br>
-                        <label class="form-label">
-                            <?php 
-                                $finishing = "";
-                                if($row->bending != null){
-                                    $finishing .= "bending, ";
-                                }
-                                if($row->hard_cover != null){
-                                    $finishing .= 'hard cover, ';
-                                }   
-                                if($row->jahit_benang != null){
-                                    $finishing .= 'jahit benang, ';
-                                } 
-                                if($row->jahit_kawat != null){
-                                    $finishing .= 'jahit kawat, ';
-                                }    
-                                if($row->pond != null){
-                                    $finishing .= 'pond, ';
-                                }   
-                                if($row->spiral != null){
-                                    $finishing .= 'Spiral, ';
-                                }
-                                $finishing = rtrim($finishing, ", ");
-                                echo $finishing;
-                            ?>
+                        <br>Finsihing Akhir 
+                        <br><label class="form-label">
+                        <?php 
+                      $finishing = "";
+                      if($row->bending != null){
+                        $finishing .= "bending, ";
+                      }
+                      if($row->hard_cover != null){
+                        $finishing .= 'hard cover, ';
+                      }   
+                      if($row->jahit_benang != null){
+                        $finishing .= 'jahit benang, ';
+                      } 
+                      if($row->jahit_kawat != null){
+                        $finishing .= 'jahit kawat, ';
+                      }    
+                      if($row->pond != null){
+                        $finishing .= 'pond, ';
+                      }   
+                      if($row->spiral != null){
+                        $finishing .= 'Spiral, ';
+                      }
+                      $finishing = rtrim($finishing, ", ");
+                      echo $finishing;
+                      ?>
                         </label>
                     </div>
                 </div>
+                <?php } ?>
                 <br><hr><br>
-                <div class="row">
-                    <div class="col-md-3" align="center">
-                        <label class="form-label">Nama Operator</label>
-                    </div>
-                    <div class="col-md-3">
-                        <?=$row->namaoperatorctcp1;?>
-                    </div>
-                    <div class="col-md-3" align="center">
-                        <label class="form-label">Nama Operator</label>
-                    </div>
-                    <div class="col-md-3">
-                        <?=$row->namaoperatorctcp2;?>
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="col-md-2">
-                        <label class="form-label">Total Plat Cover<br>
-                        <label class="form-label">Total Plat Gagal Cover</label>
-                    </div>
-                    <div class="col-md-1">
-                        <?=$row->total_plat_cover?><br>
-                        <?=$row->total_plat_gagal_cover?>  <!-- TEMPAT UNTUK VARIABEL TOTAL PLAT GAGAL COVER -->
+            </form>
 
-                        <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN MENGGUNAKAN TAG LABEL -->
-                        <!-- <input type="number" class="form-control" name="total_plat_cover" value="<?=$row->total_plat_cover?>" required> -->
-                    </div>
-                    <div class="col-md-3" align="left">
-                        <div class="form-check">
-                            <input type="text" name="status_imposisi_cover" value="" hidden>
-                            <input class="form-check-input" type="checkbox" name="status_imposisi_cover" value="imposisi cover" disabled <?php echo $row->imposisi_status == "imposisi cover" || $row->imposisi_status == "imposisi" ?  "checked" : "" ?>>
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label><br>                            
-                        </div>
-
-                        <div class="form-check">
-                            <input type="text" name="status_ctcp_cover" value="" hidden>
-                            <input class="form-check-input" type="checkbox" name="status_ctcp_cover" value="ctcp cover" disabled <?php echo $row->ctcp_status == "ctcp cover" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
-                            <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label><br>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <label class="form-label">Total Plat Isi<br>
-                        <label class="form-label">Total Plat Gagal Isi</label>
-                    </div>
-                    <div class="col-md-1">
-                        <?=$row->total_plat_isi?><br>
-                        <?=$row->total_plat_gagal_isi?>  <!-- TEMPAT UNTUK VARIABEL TOTAL PLAT GAGAL ISI -->
-                        
-
-                        <!-- VARIBEL INPUTAN TOTAL PLAT COVER DAN ISI BUKAN INPUTAN MANUAL, MELAINKAN HASIL PERJUMLAHAN DARI PLAT COVER DAN PLAT ISI, TETAP DI TAMPILKAN MENGGUNAKAN TAG LABEL -->
-                        <!-- <input type="number" class="form-control" name="total_plat_isi" value="<?=$row->total_plat_isi?>"> -->
-                    </div>
-                    <div class="col-md-3" align="left">
-                        <div class="form-check">
-                            <input type="text" name="status_imposisi_isi" value="" hidden>
-                            <input class="form-check-input" type="checkbox" name="status_imposisi_isi" value="imposisi isi" disabled <?php echo $row->imposisi_status == "imposisi isi" || $row->imposisi_status == "imposisi" ?  "checked" : "" ?>>
-                            <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label><br>                            
-                        </div>
-                        
-                        <div class="form-check">
-                            <input type="text" name="status_ctcp_isi" value="" hidden>
-                            <input class="form-check-input" type="checkbox" name="status_ctcp_isi" value="ctcp isi" disabled <?php echo $row->ctcp_status == "ctcp isi" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
-                            <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label><br>
-                        </div>
-                        </div>
-                    </div>
-                </div><br>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card border bg-success">
-                            <div class="card-header text-center">
-                                CTCP COVER 1
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card border bg-info">
-                        <div class="card-header text-center">
-                            CTCP ISI 1
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card-body p-3 mb-2 bg-light text-dark">
-                            <div class="row">
-                                <div class="col" align="center">
-                                    <label class="form-label">Mesin</label>
-                                </div>
-                                <div class="col">
-                                    <?php  echo $row->cover1mesin1 != "-" ?   $row->cover1mesin1  : '-' ?>
-                                </div>
-                                <div class="col" align="center">
-                                    <label class="form-label">Plate</label>
-                                </div>
-                                <div class="col">
-                                    <?= $row->jumlahplatecover1; ?>
-                                </div>
-                                <div class="col" align="center">
-                                    <label class="form-label">Plate Gagal</label>
-                                </div>
-                                <div class="col">
-                                <?= $row->jumlahplategagalcover1; ?>
-                                </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label class="form-label">Rincian Ctcp</label>
-                                        </div>
-                                    </div>
-                                    <div class="row" align="center">
-                                    <div class="col">
-                                        <label class="form-label">Plate</label><br><br>
-                                            <?= $row->cover1plat1; ?>
-                                        <?php if($row->cover1plat2 != 0) {?>
-                                            <br><br><?= $row->cover1plat2; ?>
-                                        <?php } if($row->cover1plat3 != 0 ) :?>
-                                            <br><br><?= $row->cover1plat3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Set</label>
-                                            <br><br><?= $row->cover1set1; ?>
-                                        <?php if($row->cover1plat2 != 0) {?>
-                                            <br><br><?= $row->cover1set2; ?>
-                                        <?php } if($row->cover1plat3 != 0 ) :?>
-                                            <br><br><?= $row->cover1set3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Lbr.Cetak</label><br><br>
-                                            <?= $row->cover1lbrcetak1; ?>
-                                        <?php if($row->cover1plat2 != 0) {?>
-                                            <br><br><?= $row->cover1lbrcetak2; ?>
-                                        <?php } if($row->cover1plat3 != 0 ) :?>
-                                            <br><br><?= $row->cover1lbrcetak3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Up</label><br><br>
-                                            <?= $row->cover1up1; ?>
-                                        <?php if($row->cover1plat2 != 0) {?>
-                                            <br><br><?= $row->cover1up2; ?>
-                                        <?php } if($row->cover1plat3 != 0 ) :?>
-                                            <br><br><?= $row->cover1up3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Warna</label><br><br>
-                                            <?= $row->cover1warna1; ?>
-                                        <?php if($row->cover1plat2 != 0) {?>
-                                            <br><br><?= $row->cover1warna2; ?>
-                                        <?php } if($row->cover1plat3 != 0 ) :?>
-                                            <br><br><?= $row->cover1warna3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Proses</label><br><br>
-                                            <?php  echo $row->cover1status1 != "-" ?   $row->cover1status1  : '-' ?>
-                                        <?php if($row->cover1plat2 != 0) {?>
-                                            <br><br><?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?>
-                                        <?php } if($row->cover1plat3 != 0 ) :?>
-                                            <br><br><?php  echo $row->cover1status3 != "-" ?   $row->cover1status3  : '-' ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Keterangan</label><br><br>
-                                            <?= $row->cover1keterangan1; ?> 
-                                        <?php if($row->cover1plat2 != 0) {?>
-                                            <br><br><?= $row->cover1keterangan2; ?>
-                                        <?php } if($row->cover1plat3 != 0 ) :?>
-                                            <br><br><?= $row->cover1keterangan3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                    <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label><br><br>
-                                            <?= $row->cover1tglimposisi1; ?>
-                                        <?php if($row->cover1plat2 != 0) {?>
-                                            <br><br><?= $row->cover1tglimposisi2; ?>
-                                        <?php } if($row->cover1plat3 != 0 ) :?>
-                                            <br><br><?= $row->cover1tglimposisi3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                        <div class="col">
-                                            <label class="form-label">Tgl. CTCP</label><br><br>
-                                            <?= $row->cover1tglctcp1; ?>
-                                        <?php if($row->cover1plat2 != 0) {?>
-                                            <br><br><?= $row->cover1tglctcp2; ?>
-                                        <?php } if($row->cover1plat3 != 0 ) :?>
-                                            <br><br><?= $row->cover1tglctcp3; ?>
-                                        <?php endif ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body p-3 mb-2 bg-light text-dark">
-                            <div class="row">
-                                <div class="col-md-2" align="center">
-                                    <label class="form-label">Mesin</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <?php  echo $row->isi1mesin1 != "-" ?   $row->isi1mesin1  : '-' ?>
-                                </div>
-                                <div class="col-md-2" align="center">
-                                    <label class="form-label">Plate</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <?= $row->jumlahplateisi1; ?>
-                                </div>
-                                <div class="col-md-2" align="center">
-                                    <label class="form-label">Plate Gagal</label>
-                                </div>
-                                <div class="col-md-2">
-                                <?= $row->jumlahplategagalisi1; ?>                                
-                                </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label class="form-label">Rincian Ctcp</label>
-                                        </div>
-                                    </div>
-                                    <div class="row" align="center">
-                                        <div class="col">
-                                            <label class="form-label">Plate</label><br><br>
-                                                <?= $row->isi1plat1; ?>
-                                            <?php if($row->isi1plat2 != 0) {?>
-                                                <br><br><?= $row->isi1plat2; ?>
-                                            <?php } if($row->isi1plat3 != 0) :?>
-                                                <br><br><?= $row->isi1plat3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Set</label><br><br>
-                                                <?= $row->isi1set1; ?>
-                                             <?php if($row->isi1plat2 != 0) {?>
-                                                <br><br><?= $row->isi1set2; ?>
-                                            <?php } if($row->isi1plat3 != 0) :?>
-                                                <br><br><?= $row->isi1set3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Lbr.Cetak</label><br><br>
-                                                <?= $row->isi1lbrcetak1; ?>
-                                            <?php if($row->isi1plat2 != 0) {?>
-                                                <br><br><?= $row->isi1lbrcetak2; ?>
-                                            <?php } if($row->isi1plat3 != 0) :?>
-                                                <br><br><?= $row->isi1lbrcetak3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Up</label><br><br>
-                                                <?= $row->isi1up1; ?>
-                                            <?php if($row->isi1plat2 != 0) {?>
-                                                <br><br><?= $row->isi1up2; ?>
-                                            <?php } if($row->isi1plat3 != 0) :?>
-                                                <br><br><?= $row->isi1up3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Warna</label><br><br>
-                                                <?= $row->isi1warna1; ?>
-                                            <?php if($row->isi1plat2 != 0) {?>
-                                                <br><br><?= $row->isi1warna2; ?>
-                                            <?php } if($row->isi1plat3 != 0) :?>
-                                                <br><br><?= $row->isi1warna3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Proses</label><br><br>
-                                                <?php  echo $row->isi1status1 != "-" ?   $row->isi1status1  : '-' ?>
-                                            <?php if($row->isi1plat2 != 0) {?>
-                                                <br><br><?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?>
-                                            <?php } if($row->isi1plat3 != 0) :?>
-                                                <br><br><?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Keterangan</label><br><br>
-                                                <?= $row->isi1keterangan1; ?>
-                                            <?php if($row->isi1plat2 != 0) {?>
-                                                <br><br><?= $row->isi1keterangan2; ?>
-                                            <?php } if($row->isi1plat3 != 0) :?>
-                                                <br><br><?= $row->isi1keterangan3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                    <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label><br><br>
-                                            <?= $row->isi1tglimposisi1; ?>
-                                        <?php if($row->isi1plat2 != 0) {?>
-                                            <br><br><?= $row->isi1tglimposisi2; ?>
-                                        <?php } if($row->isi1plat3 != 0) :?>
-                                            <br><br><?= $row->isi1tglimposisi3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                        <div class="col">
-                                            <label class="form-label">Tgl. CTCP</label><br><br>
-                                            <?= $row->isi1tglctcp1; ?>
-                                        <?php if($row->isi1plat2 != 0) {?>
-                                            <br><br><?= $row->isi1tglctcp2; ?>
-                                        <?php } if($row->isi1plat3 != 0) :?>
-                                            <br><br><?= $row->isi1tglctcp3; ?>
-                                        <?php endif ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><br>
-                <?php if($row->cover2plat1 != 0 || $row->isi2plat1 != 0) :?>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card border bg-success">
-                            <div class="card-header text-center">
-                                CTCP COVER 2
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card border bg-info">
-                        <div class="card-header text-center">
-                            CTCP ISI 2
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card-body p-3 mb-2 bg-light text-dark">
-                            <div class="row">
-                                <div class="col-md-2" align="center">
-                                    <label class="form-label">Mesin</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <?php  echo $row->cover2mesin1 != "-" ?   $row->cover2mesin1  : '-' ?>
-                                </div>
-                                <div class="col-md-2" align="center">
-                                    <label class="form-label">Plate</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <?= $row->jumlahplatecover2; ?>
-                                </div>
-                                <div class="col-md-2" align="center">
-                                    <label class="form-label">Plate Gagal</label>
-                                </div>
-                                <div class="col-md-2">
-                                <?= $row->jumlahplategagalcover2; ?>                               
-                                 </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label class="form-label">Rincian Ctcp</label>
-                                        </div>
-                                    </div>
-                                    <div class="row" align="center">
-                                        <div class="col">
-                                            <label class="form-label">Plate</label><br><br>
-                                                <?= $row->cover2plat1; ?>
-                                            <?php if($row->cover2plat2 != 0) {?>
-                                                <br><br><?= $row->cover2plat2; ?>
-                                            <?php } if($row->cover2plat3 != 0) :?>
-                                                <br><br><?= $row->cover2plat3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Set</label><br><br>
-                                                <?= $row->cover2set1; ?>
-                                             <?php if($row->cover2plat2 != 0) {?>
-                                                <br><br><?= $row->cover2set2; ?>
-                                            <?php } if($row->cover2plat3 != 0) :?>
-                                                <br><br><?= $row->cover2set3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Lbr.Cetak</label><br><br>
-                                                <?= $row->cover2lbrcetak1; ?>
-                                            <?php if($row->cover2plat2 != 0) {?>
-                                                <br><br><?= $row->cover2lbrcetak2; ?>
-                                            <?php } if($row->cover2plat3 != 0) :?>
-                                                <br><br><?= $row->cover2lbrcetak3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Up</label><br><br>
-                                                <?= $row->cover2up1; ?>
-                                            <?php if($row->cover2plat2 != 0) {?>
-                                                <br><br><?= $row->cover2up2; ?>
-                                            <?php } if($row->cover2plat3 != 0) :?>
-                                                <br><br><?= $row->cover2up3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Warna</label><br><br>
-                                                <?= $row->cover2warna1; ?>
-                                            <?php if($row->cover2plat2 != 0) {?>
-                                                <br><br><?= $row->cover2warna2; ?>
-                                            <?php } if($row->cover2plat3 != 0) :?>
-                                                <br><br><?= $row->cover2warna3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Proses</label><br><br>
-                                                <?php  echo $row->cover2status1 != "-" ?   $row->cover2status1  : '-' ?>
-                                            <?php if($row->cover2plat2 != 0) {?>
-                                                <br><br><?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?>
-                                            <?php } if($row->cover2plat3 != 0) :?>
-                                                <br><br><?php  echo $row->cover2status3 != "-" ?   $row->cover2status3  : '-' ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Keterangan</label><br><br>
-                                                <?= $row->cover2keterangan1; ?>
-                                            <?php if($row->cover2plat2 != 0) {?>
-                                                <br><br><?= $row->cover2keterangan2; ?>
-                                            <?php } if($row->cover2plat3 != 0) :?>
-                                                <br><br><?= $row->cover2keterangan3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                    <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label><br><br>
-                                            <?= $row->cover2tglimposisi1; ?>
-                                        <?php if($row->cover2plat2 != 0) {?>
-                                            <br><br><?= $row->cover2tglimposisi2; ?>
-                                        <?php } if($row->cover2plat3 != 0) :?>
-                                            <br><br><?= $row->cover2tglimposisi3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                        <div class="col">
-                                            <label class="form-label">Tgl. CTCP</label><br><br>
-                                            <?= $row->cover2tglctcp1; ?>
-                                        <?php if($row->cover2plat2 != 0) {?>
-                                            <br><br><?= $row->cover2tglctcp2; ?>
-                                        <?php } if($row->cover2plat3 != 0) :?>
-                                            <br><br><?= $row->cover2tglctcp3; ?>
-                                        <?php endif ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body p-3 mb-2 bg-light text-dark">
-                            <div class="row">
-                                <div class="col-md-2" align="center">
-                                    <label class="form-label">Mesin</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <?php  echo $row->isi2mesin1 != "-" ?   $row->isi2mesin1  : '-' ?>
-                                </div>
-                                <div class="col-md-2" align="center">
-                                    <label class="form-label">Plate</label>
-                                </div>
-                                <div class="col-md-2">
-                                    <?= $row->jumlahplateisi2; ?>
-                                </div>
-                                <div class="col-md-2" align="center">
-                                    <label class="form-label">Plate Gagal</label>
-                                </div>
-                                <div class="col-md-2">
-                                <?= $row->jumlahplategagalisi2; ?>                                
-                                </div>
-                            </div><br>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <label class="form-label">Rincian Ctcp</label>
-                                        </div>
-                                    </div>
-                                    <div class="row" align="center">
-                                        <div class="col">
-                                            <label class="form-label">Plate</label><br><br>
-                                                <?= $row->isi2plat1; ?>
-                                            <?php if($row->isi2plat2 != 0) {?>
-                                                <br><br><?= $row->isi2plat2; ?>
-                                            <?php } if($row->isi2plat3 != 0) :?>
-                                                <br><br><?= $row->isi2plat3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Set</label><br><br>
-                                                <?= $row->isi2set1; ?>
-                                             <?php if($row->isi2plat2 != 0) {?>
-                                                <br><br><?= $row->isi2set2; ?>
-                                            <?php } if($row->isi2plat3 != 0) :?>
-                                                <br><br><?= $row->isi2set3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Lbr.Cetak</label><br><br>
-                                                <?= $row->isi2lbrcetak1; ?>
-                                            <?php if($row->isi2plat2 != 0) {?>
-                                                <br><br><?= $row->isi2lbrcetak2; ?>
-                                            <?php } if($row->isi2plat3 != 0) :?>
-                                                <br><br><?= $row->isi2lbrcetak3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Up</label><br><br>
-                                                <?= $row->isi2up1; ?>
-                                            <?php if($row->isi2plat2 != 0) {?>
-                                                <br><br><?= $row->isi2up2; ?>
-                                            <?php } if($row->isi2plat3 != 0) :?>
-                                                <br><br><?= $row->isi2up3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Warna</label><br><br>
-                                                <?= $row->isi2warna1; ?>
-                                            <?php if($row->isi2plat2 != 0) {?>
-                                                <br><br><?= $row->isi2warna2; ?>
-                                            <?php } if($row->isi2plat3 != 0) :?>
-                                                <br><br><?= $row->isi2warna3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Proses</label><br><br>
-                                                <?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?>
-                                            <?php if($row->isi2plat2 != 0) {?>
-                                                <br><br><?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?>
-                                            <?php } if($row->isi2plat3 != 0) :?>
-                                                <br><br><?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?>
-                                            <?php endif ?>
-                                        </div>
-                                        <div class="col">
-                                            <label class="form-label">Keterangan</label><br><br>
-                                                <?= $row->isi2keterangan1; ?>
-                                            <?php if($row->isi2plat2 != 0) {?>
-                                                <br><br><?= $row->isi2keterangan2; ?>
-                                            <?php } if($row->isi2plat3 != 0) :?>
-                                                <br><br><?= $row->isi2keterangan3; ?>
-                                            <?php endif ?>
-                                        </div>
-                                    <div class="col">
-                                        <label class="form-label">Tgl. Imposisi</label><br><br>
-                                            <?= $row->isi2tglimposisi1; ?>
-                                        <?php if($row->isi2plat2 != 0) {?>
-                                            <br><br><?= $row->isi2tglimposisi2; ?>
-                                        <?php } if($row->isi2plat3 != 0) :?>
-                                            <br><br><?= $row->isi2tglimposisi3; ?>
-                                        <?php endif ?>
-                                    </div>
-                                        <div class="col">
-                                            <label class="form-label">Tgl. CTCP</label><br><br>
-                                            <?= $row->isi2tglctcp1; ?>
-                                        <?php if($row->isi2plat2 != 0) {?>
-                                            <br><br><?= $row->isi2tglctcp2; ?>
-                                        <?php } if($row->isi2plat3 != 0) :?>
-                                            <br><br><?= $row->isi2tglctcp3; ?>
-                                        <?php endif ?>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <?php endif ?>
-                <br>
-                <div class="row">
-                    <div class="col-md-6">
+            <form action="<?=site_url('pracetak/ctcp/lihat_ctcp')?>" method="post">
+                <?php foreach($ctcp as $s => $row) {?>
+                    <!-- INFORMASI CTCP -->
                         <div class="row">
-                            <div class="col">
-                                <div class="card-body p-3 mb-2 bg-light text-dark">
-                                    <br><br>                                    
+                            <!-- CTCP COVER -->
+                                <div class="col-md-6">
                                     <div class="row">
-                                        <!-- <div class="col-md-6">
-                                            <label class="form-label">Tanggal Out CTCP Cover</label>
-                                            <br>
-                                            <input type="text" name="id_order" value="<?=$row->id_order?>" hidden>
-                                            <input type="date" class="form-control" name="tanggal_out_ctcp_cover" value="<?=$row->tanggal_out_ctcp_cover?>" disabled>
-                                            <br><label class="form-label">Tanggal Out CTCP Isi</label>
-                                            <div class="row">
-                                                <div class="col-md-3">Ke 1 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi1" value="<?=$row->tanggal_out_ctcp_isi1?>" disabled></div>
-                                            </div><br>
-                                            <div class="row">
-                                                <div class="col-md-3">Ke 2 </div>
-                                                <div class="col-md-9"><input type="date" class="form-control" name="tanggal_out_ctcp_isi2" value="<?=$row->tanggal_out_ctcp_isi2?>" disabled></div>
+                                        <!-- NAMA OPERATOR CTCP COVER -->
+                                        <div class="col-md-6" align="center"><label class="form-label">Nama Operator</label></div>
+                                        <div class="col-md-6"><?=$row->namaoperatorctcp1?></div>
+                                    </div><br>
+                                    <div class="row">
+                                        <!-- TOTAL PLAT CTCP COVER -->
+                                        <div class="col-md-4"><label class="form-label">Total Plat Cover</label></div>
+                                        <div class="col-md-2"><?=$row->total_plat_cover;?></div>
+                                        <div class="col-md-3" align="left">
+                                            <div class="form-check">
+                                                <input type="text" name="status_imposisi_cover" value="" hidden>
+                                                <input class="form-check-input" type="checkbox" name="status_imposisi_cover" value="imposisi cover" <?php echo $row->imposisi_status == "imposisi cover" || $row->imposisi_status == "imposisi" ?  "checked" : "" ?> disabled>
+                                                <label class="form-check-label" for="flexCheckDefault">Imposisi Cover</label>
                                             </div>
-                                        </div> -->
-                                        <div class="col-md-12">
-                                            <textarea name="catatan_ctcp"  class="form-control" placeholder="catatan" style="height: 240px;" disabled><?=$row->catatan_ctcp?></textarea>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div><br>
-                        <div class="row">
-                            <div class="col-md-6" align="left">
-                                <a href="<?=site_url()?>pracetak/Ctcp" class="btn btn-default">Kembali</a>
-                            </div>
-                            <!-- <div class="col-md-6" align="right">
-                                <a href="<?=site_url('pracetak/Ctcp/print_ctcp/'.$row->id_order)?>pracetak/Imposisi" class="btn btn-default">Print</a>
-                            </div> -->
-                        </div>
-                    </div>
-                    <?php if($row->isi3plat1 != 0) :?>
-                    <div class="col-md-6">
-                        <div class="row">
-                            <div class="col">
-                                <div class="card border bg-info">
-                                    <div class="card-header text-center">
-                                        CTCP ISI 3
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="card-body p-3 mb-2 bg-light text-dark">
                                     <div class="row">
-                                        <div class="col-md-2" align="center">
-                                            <label class="form-label">Mesin</label>
+                                        <!-- TOTAL PLAT GAGAL CTCP COVER -->
+                                        <div class="col-md-4"><label class="form-label">Total Plat Gagal Cover</label></div>
+                                        <div class="col-md-2"><?=$row->total_plat_gagal_cover;?></div>
+                                        <div class="col-md-3" align="left">
+                                            <div class="form-check">
+                                                <input type="text" name="status_ctcp_cover" value="" hidden>
+                                                <input class="form-check-input" type="checkbox" name="status_ctcp_cover" value="ctcp cover" <?php echo $row->ctcp_status == "ctcp cover" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
+                                                <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label>
+                                            </div>
                                         </div>
-                                        <div class="col-md-2">
-                                            <?php  echo $row->isi3mesin1 != "-" ?   $row->isi3mesin1  : '-' ?>
+                                    </div>
+                                </div>
+                            <!-- /.CTCP COVER -->
+
+                            <!-- CTCP ISI -->
+                            <?php if($row->isi1plat1 != 0) { ?>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <!-- NAMA OPERATOR CTCP ISI -->
+                                        <div class="col-md-6" align="center"><label class="form-label">Nama Operator</label></div>
+                                        <div class="col-md-6"><?=$row->namaoperatorctcp2?></div>
+                                    </div><br>
+                                    <div class="row">
+                                        <!-- TOTAL PLAT CTCP ISI -->
+                                        <div class="col-md-4"><label class="form-label">Total Plat Isi</label></div>
+                                        <div class="col-md-2"><?=$row->total_plat_isi;?></div>
+                                        <div class="col-md-3" align="left">
+                                            <div class="form-check">
+                                                <input type="text" name="status_imposisi_isi" value="" hidden>
+                                                <input class="form-check-input" type="checkbox" name="status_imposisi_isi" value="imposisi isi" <?php echo $row->imposisi_status == "imposisi isi" || $row->imposisi_status == "imposisi" ?  "checked" : "" ?> disabled>
+                                                <label class="form-check-label" for="flexCheckDefault">Imposisi Isi</label>
+                                            </div>
                                         </div>
-                                        <div class="col-md-2" align="center">
-                                            <label class="form-label">Plate</label>
+                                    </div>
+                                    <div class="row">
+                                        <!-- TOTAL PLAT GAGAL CTCP ISI -->
+                                        <div class="col-md-4"><label class="form-label">Total Plat Gagal Isi</label></div>
+                                        <div class="col-md-2"><?=$row->total_plat_gagal_isi;?></div>
+                                        <div class="col-md-3" align="left">
+                                            <div class="form-check">
+                                                <input type="text" name="status_ctcp_isi" value="" hidden>
+                                                <input class="form-check-input" type="checkbox" name="status_ctcp_isi" value="ctcp isi" <?php echo $row->ctcp_status == "ctcp isi" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
+                                                <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label>
+                                            </div>
                                         </div>
-                                        <div class="col-md-2">
-                                            <?= $row->jumlahplateisi3; ?>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                            <!-- /.CTCP ISI -->
+                        </div><br>
+                    <!-- /.INFORMASI CTCP -->
+                    
+                    <!-- BARIS 1 -->
+                        <div class="row">
+                            <!-- CTCP COVER 1 -->
+                                <div class="col-md-6">
+                                    <!-- CARD HEADER CTCP COVER 1 -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card border bg-success">
+                                                <div class="card-header text-center">
+                                                    CTCP COVER 1
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="col-md-2" align="center">
-                                            <label class="form-label">Plate Gagal</label>
+                                    </div>
+                                    <!-- CARD BODY HEADER CTCP COVER 1 -->
+                                     <div class="card-body p-3 mb-2 bg-light text-dark">
+                                        <div class="row">
+                                            <!-- MESIN CTCP COVER 1 -->
+                                            <div class="col-md-3"><label>Mesin</label></div>
+                                            <div class="col-md-3"><?=$row->cover1mesin1;?></div>
+                                            <!-- JUMLAH PLAT CTCP COVER 1 -->
+                                            <div class="col-md-3"><label>Plate</label></div>
+                                            <div class="col-md-3"><?=$row->jumlahplatecover1;?></div>
+                                        </div><br>
+                                        <div class="row">
+                                            <!-- RINCIAN CTCP COVER 1 -->
+                                            <div class="col-md-12"><label>Rincian CTCP</label></div>
+                                            <div class="col-md-12">
+                                                <!-- LABEL RINCIAN CTCP COVER 1 -->
+                                                <div class="row" align="center">
+                                                    <div class="col-md-1"><label class="form-label">Plate</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Set</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Lbr.Cetak</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Up</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Warna</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Proses</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Keterangan</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Tgl. Imposisi</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Tgl. CTCP</label></div>
+                                                </div><hr>
+
+                                                <!-- PLAT 1 -->
+                                                <div class="row" align="center">
+                                                    <div class="col-md-1"><?= $row->cover1plat1; ?></div>
+                                                    <div class="col-md-1"><?= $row->cover1set1; ?></div>
+                                                    <div class="col-md-1"><?= $row->cover1lbrcetak1; ?></div>
+                                                    <div class="col-md-1"><?= $row->cover1up1; ?></div>
+                                                    <div class="col-md-1"><?= $row->cover1warna1; ?></div>
+                                                    <div class="col-md-1"><?php  echo $row->cover1status1 != "-" ?   $row->cover1status1  : '-' ?></div>
+                                                    <div class="col-md-2"><?= $row->cover1keterangan1; ?></div>
+                                                    <div class="col-md-2"><?= $row->cover1tglimposisi1; ?></div>
+                                                    <div class="col-md-2"><?= $row->cover1tglctcp1; ?></div>
+                                                </div><br>
+                                                <!-- /.PLAT 1 -->
+
+                                                <!-- PLAT 2 -->
+                                                <?php if($row->cover1plat2 != 0) { ?>
+                                                    <div class="row" align="center">
+                                                        <div class="col-md-1"><?= $row->cover1plat2; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover1set2; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover1lbrcetak2; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover1up2; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover1warna2; ?></div>
+                                                        <div class="col-md-1"><?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?></div>
+                                                        <div class="col-md-2"><?= $row->cover1keterangan2; ?></div>
+                                                        <div class="col-md-2"><?= $row->cover1tglimposisi2; ?></div>
+                                                        <div class="col-md-2"><?= $row->cover1tglctcp2; ?></div>
+                                                    </div><br>
+                                                <?php } ?>
+                                                <!-- /.PLAT 2 -->
+
+                                                <!-- PLAT 3 -->
+                                                <?php if($row->cover1plat3 != 0) { ?>
+                                                    <div class="row" align="center">
+                                                        <div class="col-md-1"><?= $row->cover1plat3; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover1set3; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover1lbrcetak3; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover1up3; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover1warna3; ?></div>
+                                                        <div class="col-md-1"><?php  echo $row->cover1status3 != "-" ?   $row->cover1status2  : '-' ?></div>
+                                                        <div class="col-md-2"><?= $row->cover1keterangan3; ?></div>
+                                                        <div class="col-md-2"><?= $row->cover1tglimposisi3; ?></div>
+                                                        <div class="col-md-2"><?= $row->cover1tglctcp3; ?></div>
+                                                    </div>
+                                                <?php } ?>
+                                                <!-- /.PLAT 3 -->
+                                            </div>
                                         </div>
-                                        <div class="col-md-2">
-                                        <?= $row->jumlahplategagalisi3; ?>                                
+                                    </div>
+                                </div>
+                            <!-- /.CTCP COVER 1 -->
+
+                            <!-- CTCP ISI 1 -->
+                            <?php if($row->isi1plat1 != 0) { ?>
+                                <div class="col-md-6">
+                                    <!-- CARD HEADER CTCP ISI 1 -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card border bg-info">
+                                                <div class="card-header text-center">
+                                                    CTCP ISI 1
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- CARD BODY HEADER CTCP ISI 1 -->
+                                     <div class="card-body p-3 mb-2 bg-light text-dark">
+                                        <div class="row">
+                                            <!-- MESIN CTCP ISI 1 -->
+                                            <div class="col-md-3"><label>Mesin</label></div>
+                                            <div class="col-md-3"><?=$row->isi1mesin1;?></div>
+                                            <!-- JUMLAH PLAT CTCP ISI 1 -->
+                                            <div class="col-md-3"><label>Plate</label></div>
+                                            <div class="col-md-3"><?=$row->jumlahplateisi1;?></div>
+                                        </div><br>
+                                        <div class="row">
+                                            <!-- RINCIAN CTCP ISI 1 -->
+                                            <div class="col-md-12"><label>Rincian CTCP</label></div>
+                                            <div class="col-md-12">
+                                                <!-- LABEL RINCIAN CTCP ISI 1 -->
+                                                <div class="row" align="center">
+                                                    <div class="col-md-1"><label class="form-label">Plate</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Set</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Lbr.Cetak</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Up</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Warna</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Proses</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Keterangan</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Tgl. Imposisi</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Tgl. CTCP</label></div>
+                                                </div><hr>
+
+                                                <!-- PLAT 1 -->
+                                                <div class="row" align="center">
+                                                    <div class="col-md-1"><?= $row->isi1plat1; ?></div>
+                                                    <div class="col-md-1"><?= $row->isi1set1; ?></div>
+                                                    <div class="col-md-1"><?= $row->isi1lbrcetak1; ?></div>
+                                                    <div class="col-md-1"><?= $row->isi1up1; ?></div>
+                                                    <div class="col-md-1"><?= $row->isi1warna1; ?></div>
+                                                    <div class="col-md-1"><?php  echo $row->isi1status1 != "-" ?   $row->isi1status1  : '-' ?></div>
+                                                    <div class="col-md-2"><?= $row->isi1keterangan1; ?></div>
+                                                    <div class="col-md-2"><?= $row->isi1tglimposisi1; ?></div>
+                                                    <div class="col-md-2"><?= $row->isi1tglctcp1; ?></div>
+                                                </div><br>
+                                                <!-- /.PLAT 1 -->
+
+                                                <!-- PLAT 2 -->
+                                                <?php if($row->isi1plat2 != 0) { ?>
+                                                    <div class="row" align="center">
+                                                        <div class="col-md-1"><?= $row->isi1plat2; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi1set2; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi1lbrcetak2; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi1up2; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi1warna2; ?></div>
+                                                        <div class="col-md-1"><?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?></div>
+                                                        <div class="col-md-2"><?= $row->isi1keterangan2; ?></div>
+                                                        <div class="col-md-2"><?= $row->isi1tglimposisi2; ?></div>
+                                                        <div class="col-md-2"><?= $row->isi1tglctcp2; ?></div>
+                                                    </div><br>
+                                                <?php } ?>
+                                                <!-- /.PLAT 2 -->
+
+                                                <!-- PLAT 3 -->
+                                                <?php if($row->isi1plat3 != 0) { ?>
+                                                    <div class="row" align="center">
+                                                        <div class="col-md-1"><?= $row->isi1plat3; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi1set3; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi1lbrcetak3; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi1up3; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi1warna3; ?></div>
+                                                        <div class="col-md-1"><?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?></div>
+                                                        <div class="col-md-2"><?= $row->isi1keterangan3; ?></div>
+                                                        <div class="col-md-2"><?= $row->isi1tglimposisi3; ?></div>
+                                                        <div class="col-md-2"><?= $row->isi1tglctcp3; ?></div>
+                                                    </div>
+                                                <?php } ?>
+                                                <!-- /.PLAT 2 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                            <!-- /.CTCP ISI 1 -->
+                        </div><br>
+                    <!-- /.BARIS 1 -->
+
+                    <!-- BARIS 2 -->
+                        <div class="row">
+                            <!-- CTCP COVER 2 -->
+                            <!-- SAAT CTCP COVER 2 ADA ISINYA -->
+                            <?php if($row->cover2plat1 != 0) { ?>
+                                <div class="col-md-6">
+                                    <!-- CARD HEADER CTCP COVER 2 -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card border bg-success">
+                                                <div class="card-header text-center">
+                                                    CTCP COVER 2
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- CARD BODY HEADER CTCP COVER 2 -->
+                                     <div class="card-body p-3 mb-2 bg-light text-dark">
+                                        <div class="row">
+                                            <!-- MESIN CTCP COVER 2 -->
+                                            <div class="col-md-3"><label>Mesin</label></div>
+                                            <div class="col-md-3"><?=$row->cover2mesin1;?></div>
+                                            <!-- JUMLAH PLAT CTCP COVER 2 -->
+                                            <div class="col-md-3"><label>Plate</label></div>
+                                            <div class="col-md-3"><?=$row->jumlahplatecover2;?></div>
+                                        </div><br>
+                                        <div class="row">
+                                            <!-- RINCIAN CTCP COVER 2 -->
+                                            <div class="col-md-12"><label>Rincian CTCP</label></div>
+                                            <div class="col-md-12">
+                                                <!-- LABEL RINCIAN CTCP COVER 2 -->
+                                                <div class="row" align="center">
+                                                    <div class="col-md-1"><label class="form-label">Plate</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Set</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Lbr.Cetak</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Up</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Warna</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Proses</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Keterangan</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Tgl. Imposisi</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Tgl. CTCP</label></div>
+                                                </div><hr>
+
+                                                <!-- PLAT 1 -->
+                                                <div class="row" align="center">
+                                                    <div class="col-md-1"><?= $row->cover2plat1; ?></div>
+                                                    <div class="col-md-1"><?= $row->cover2set1; ?></div>
+                                                    <div class="col-md-1"><?= $row->cover2lbrcetak1; ?></div>
+                                                    <div class="col-md-1"><?= $row->cover2up1; ?></div>
+                                                    <div class="col-md-1"><?= $row->cover2warna1; ?></div>
+                                                    <div class="col-md-1"><?php  echo $row->cover2status1 != "-" ?   $row->cover2status1  : '-' ?></div>
+                                                    <div class="col-md-2"><?= $row->cover2keterangan1; ?></div>
+                                                    <div class="col-md-2"><?= $row->cover2tglimposisi1; ?></div>
+                                                    <div class="col-md-2"><?= $row->cover2tglctcp1; ?></div>
+                                                </div><br>
+                                                <!-- /.PLAT 1 -->
+
+                                                <!-- PLAT 2 -->
+                                                <?php if($row->cover2plat2 != 0) { ?>
+                                                    <div class="row" align="center">
+                                                        <div class="col-md-1"><?= $row->cover2plat2; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover2set2; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover2lbrcetak2; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover2up2; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover2warna2; ?></div>
+                                                        <div class="col-md-1"><?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?></div>
+                                                        <div class="col-md-2"><?= $row->cover2keterangan2; ?></div>
+                                                        <div class="col-md-2"><?= $row->cover2tglimposisi2; ?></div>
+                                                        <div class="col-md-2"><?= $row->cover2tglctcp2; ?></div>
+                                                    </div><br>
+                                                <?php } ?>
+                                                <!-- /.PLAT 2 -->
+
+                                                <!-- PLAT 3 -->
+                                                <?php if($row->cover2plat3 != 0) { ?>
+                                                    <div class="row" align="center">
+                                                        <div class="col-md-1"><?= $row->cover2plat3; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover2set3; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover2lbrcetak3; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover2up3; ?></div>
+                                                        <div class="col-md-1"><?= $row->cover2warna3; ?></div>
+                                                        <div class="col-md-1"><?php  echo $row->cover2status3 != "-" ?   $row->cover2status2  : '-' ?></div>
+                                                        <div class="col-md-2"><?= $row->cover2keterangan3; ?></div>
+                                                        <div class="col-md-2"><?= $row->cover2tglimposisi3; ?></div>
+                                                        <div class="col-md-2"><?= $row->cover2tglctcp3; ?></div>
+                                                    </div>
+                                                <?php } ?>
+                                                <!-- /.PLAT 3 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+
+                            <!-- SAAT CTCP COVER 2 TIDAK ADA ISINYA -->
+                            <?php if($row->cover2plat1 == 0) { ?>
+                                <div class="col-md-6">
+                                    <!-- CATATAN CTCP -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card-body p-3 mb-2 bg-light text-dark">
+                                                <br><textarea class="form-control" placeholder="catatan" name="catatan_ctcp" value="<?=$row->catatan_ctcp;?>" style="height: 150px;" disabled><?=$row->catatan_ctcp;?></textarea>
+                                            </div>
                                         </div>
                                     </div><br>
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <label class="form-label">Rincian Ctcp</label>
-                                            </div>
+                                    <!-- TOMBOL -->
+                                    <div class="row">
+                                        <div class="col-md-6" align="left">
+                                            <a href="<?=site_url()?>pracetak/Ctcp" class="btn btn-default">Kembali</a>
                                         </div>
-                                        <div class="row" align="center">
-                                            <div class="col">
-                                                <label class="form-label">Plate</label><br><br>
-                                                    <?= $row->isi3plat1; ?>
-                                                <?php if($row->isi3plat2 != 0) {?>
-                                                    <br><br><?= $row->isi3plat2; ?>
-                                                <?php } if($row->isi3plat3 != 0) :?>
-                                                    <br><br><?= $row->isi3plat3; ?>
-                                                <?php endif ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Set</label><br><br>
-                                                    <?= $row->isi3set1; ?>
-                                                 <?php if($row->isi3plat2 != 0) {?>
-                                                    <br><br><?= $row->isi3set2; ?>
-                                                <?php } if($row->isi3plat3 != 0) :?>
-                                                    <br><br><?= $row->isi3set3; ?>
-                                                <?php endif ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Lbr.Cetak</label><br><br>
-                                                    <?= $row->isi3lbrcetak1; ?>
-                                                <?php if($row->isi3plat2 != 0) {?>
-                                                    <br><br><?= $row->isi3lbrcetak2; ?>
-                                                <?php } if($row->isi3plat3 != 0) :?>
-                                                    <br><br><?= $row->isi3lbrcetak3; ?>
-                                                <?php endif ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Up</label><br><br>
-                                                    <?= $row->isi3up1; ?>
-                                                <?php if($row->isi3plat2 != 0) {?>
-                                                    <br><br><?= $row->isi3up2; ?>
-                                                <?php } if($row->isi3plat3 != 0) :?>
-                                                    <br><br><?= $row->isi3up3; ?>
-                                                <?php endif ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Warna</label><br><br>
-                                                    <?= $row->isi3warna1; ?>
-                                                <?php if($row->isi3plat2 != 0) {?>
-                                                    <br><br><?= $row->isi3warna2; ?>
-                                                <?php } if($row->isi3plat3 != 0) :?>
-                                                    <br><br><?= $row->isi3warna3; ?>
-                                                <?php endif ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Proses</label><br><br>
-                                                    <?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?>
-                                                <?php if($row->isi3plat2 != 0) {?>
-                                                    <br><br><?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?>
-                                                <?php } if($row->isi3plat3 != 0) :?>
-                                                    <br><br><?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?>
-                                                <?php endif ?>
-                                            </div>
-                                            <div class="col">
-                                                <label class="form-label">Keterangan</label><br><br>
-                                                    <?= $row->isi3keterangan1; ?>
-                                                <?php if($row->isi3plat2 != 0) {?>
-                                                    <br><br><?= $row->isi3keterangan2; ?>
-                                                <?php } if($row->isi3plat3 != 0) :?>
-                                                    <br><br><?= $row->isi3keterangan3; ?>
-                                                <?php endif ?>
-                                            </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                            <!-- /.CTCP COVER 2 -->
+
+                            <!-- CTCP ISI 2 -->
+                            <?php if($row->isi2plat1 != 0) { ?>
+                                <div class="col-md-6">
+                                    <!-- CARD HEADER CTCP ISI 2 -->
+                                    <div class="row">
                                         <div class="col">
-                                            <label class="form-label">Tgl. Imposisi</label><br><br>
-                                                <?= $row->isi3tglimposisi1; ?>
-                                            <?php if($row->isi3plat2 != 0) {?>
-                                                <br><br><?= $row->isi3tglimposisi2; ?>
-                                            <?php } if($row->isi3plat3 != 0) :?>
-                                                <br><br><?= $row->isi3tglimposisi3; ?>
-                                            <?php endif ?>
+                                            <div class="card border bg-info">
+                                                <div class="card-header text-center">
+                                                    CTCP ISI 2
+                                                </div>
+                                            </div>
                                         </div>
-                                            <div class="col">
-                                                <label class="form-label">Tgl. CTCP</label><br><br>
-                                                <?= $row->isi3tglctcp1; ?>
-                                            <?php if($row->isi3plat2 != 0) {?>
-                                                <br><br><?= $row->isi3tglctcp2; ?>
-                                            <?php } if($row->isi3plat3 != 0) :?>
-                                                <br><br><?= $row->isi3tglctcp3; ?>
-                                            <?php endif ?>
+                                    </div>
+                                    <!-- CARD BODY HEADER CTCP ISI 2 -->
+                                     <div class="card-body p-3 mb-2 bg-light text-dark">
+                                        <div class="row">
+                                            <!-- MESIN CTCP ISI 2 -->
+                                            <div class="col-md-3"><label>Mesin</label></div>
+                                            <div class="col-md-3"><?=$row->isi2mesin1;?></div>
+                                            <!-- JUMLAH PLAT CTCP ISI 2 -->
+                                            <div class="col-md-3"><label>Plate</label></div>
+                                            <div class="col-md-3"><?=$row->jumlahplateisi2;?></div>
+                                        </div><br>
+                                        <div class="row">
+                                            <!-- RINCIAN CTCP ISI 2 -->
+                                            <div class="col-md-12"><label>Rincian CTCP</label></div>
+                                            <div class="col-md-12">
+                                                <!-- LABEL RINCIAN CTCP ISI 2 -->
+                                                <div class="row" align="center">
+                                                    <div class="col-md-1"><label class="form-label">Plate</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Set</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Lbr.Cetak</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Up</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Warna</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Proses</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Keterangan</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Tgl. Imposisi</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Tgl. CTCP</label></div>
+                                                </div><hr>
+
+                                                <!-- PLAT 1 -->
+                                                <div class="row" align="center">
+                                                    <div class="col-md-1"><?= $row->isi2plat1; ?></div>
+                                                    <div class="col-md-1"><?= $row->isi2set1; ?></div>
+                                                    <div class="col-md-1"><?= $row->isi2lbrcetak1; ?></div>
+                                                    <div class="col-md-1"><?= $row->isi2up1; ?></div>
+                                                    <div class="col-md-1"><?= $row->isi2warna1; ?></div>
+                                                    <div class="col-md-1"><?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?></div>
+                                                    <div class="col-md-2"><?= $row->isi2keterangan1; ?></div>
+                                                    <div class="col-md-2"><?= $row->isi2tglimposisi1; ?></div>
+                                                    <div class="col-md-2"><?= $row->isi2tglctcp1; ?></div>
+                                                </div><br>
+                                                <!-- /.PLAT 1 -->
+
+                                                <!-- PLAT 2 -->
+                                                <?php if($row->isi2plat2 != 0) { ?>
+                                                    <div class="row" align="center">
+                                                        <div class="col-md-1"><?= $row->isi2plat2; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi2set2; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi2lbrcetak2; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi2up2; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi2warna2; ?></div>
+                                                        <div class="col-md-1"><?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?></div>
+                                                        <div class="col-md-2"><?= $row->isi2keterangan2; ?></div>
+                                                        <div class="col-md-2"><?= $row->isi2tglimposisi2; ?></div>
+                                                        <div class="col-md-2"><?= $row->isi2tglctcp2; ?></div>
+                                                    </div><br>
+                                                <?php } ?>
+                                                <!-- /.PLAT 2 -->
+
+                                                <!-- PLAT 3 -->
+                                                <?php if($row->isi2plat3 != 0) { ?>
+                                                    <div class="row" align="center">
+                                                        <div class="col-md-1"><?= $row->isi2plat3; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi2set3; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi2lbrcetak3; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi2up3; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi2warna3; ?></div>
+                                                        <div class="col-md-1"><?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?></div>
+                                                        <div class="col-md-2"><?= $row->isi2keterangan3; ?></div>
+                                                        <div class="col-md-2"><?= $row->isi2tglimposisi3; ?></div>
+                                                        <div class="col-md-2"><?= $row->isi2tglctcp3; ?></div>
+                                                    </div>
+                                                <?php } ?>
+                                                <!-- /.PLAT 2 -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            <?php } ?>
+                            <!-- /.CTCP ISI 2 -->
+                        </div><br>
+                    <!-- /.BARIS 2 -->
+
+                    <!-- BARIS 3 -->
+                        <div class="row">
+                            <!-- CATATAN CTCP -->
+                            <!-- SAAT CTCP COVER 2 ADA ISINYA -->
+                            <?php if($row->cover2plat1 != 0) { ?>
+                                <div class="col-md-6">
+                                    <!-- CATATAN CTCP -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card-body p-3 mb-2 bg-light text-dark">
+                                                <br><textarea class="form-control" placeholder="catatan" name="catatan_ctcp" value="<?=$row->catatan_ctcp;?>" style="height: 150px;" disabled><?=$row->catatan_ctcp;?></textarea>
+                                            </div>
+                                        </div>
+                                    </div><br>
+                                    <!-- TOMBOL -->
+                                    <div class="row">
+                                        <div class="col-md-6" align="left">
+                                            <a href="<?=site_url()?>pracetak/Ctcp" class="btn btn-default">Kembali</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+
+                            <!-- SAAT CTCP COVER 2 TIDAK ADA ISINYA -->
+                            <?php if($row->cover2plat1 == 0) { ?>
+                                <div class="col-md-6"></div>
+                            <?php } ?>
+                            <!-- /.CATATAN CTCP -->
+
+                            <!-- CTCP ISI 3 -->
+                            <?php if($row->isi3plat1 != 0) { ?>
+                                <div class="col-md-6">
+                                    <!-- CARD HEADER CTCP ISI 3 -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="card border bg-info">
+                                                <div class="card-header text-center">
+                                                    CTCP ISI 3
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- CARD BODY HEADER CTCP ISI 3 -->
+                                     <div class="card-body p-3 mb-2 bg-light text-dark">
+                                        <div class="row">
+                                            <!-- MESIN CTCP ISI 3 -->
+                                            <div class="col-md-3"><label>Mesin</label></div>
+                                            <div class="col-md-3"><?=$row->isi3mesin1;?></div>
+                                            <!-- JUMLAH PLAT CTCP ISI 3 -->
+                                            <div class="col-md-3"><label>Plate</label></div>
+                                            <div class="col-md-3"><?=$row->jumlahplateisi3;?></div>
+                                        </div><br>
+                                        <div class="row">
+                                            <!-- RINCIAN CTCP ISI 3 -->
+                                            <div class="col-md-12"><label>Rincian CTCP</label></div>
+                                            <div class="col-md-12">
+                                                <!-- LABEL RINCIAN CTCP ISI 3 -->
+                                                <div class="row" align="center">
+                                                    <div class="col-md-1"><label class="form-label">Plate</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Set</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Lbr.Cetak</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Up</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Warna</label></div>
+                                                    <div class="col-md-1"><label class="form-label">Proses</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Keterangan</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Tgl. Imposisi</label></div>
+                                                    <div class="col-md-2"><label class="form-label">Tgl. CTCP</label></div>
+                                                </div><hr>
+
+                                                <!-- PLAT 1 -->
+                                                <div class="row" align="center">
+                                                    <div class="col-md-1"><?= $row->isi3plat1; ?></div>
+                                                    <div class="col-md-1"><?= $row->isi3set1; ?></div>
+                                                    <div class="col-md-1"><?= $row->isi3lbrcetak1; ?></div>
+                                                    <div class="col-md-1"><?= $row->isi3up1; ?></div>
+                                                    <div class="col-md-1"><?= $row->isi3warna1; ?></div>
+                                                    <div class="col-md-1"><?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?></div>
+                                                    <div class="col-md-2"><?= $row->isi3keterangan1; ?></div>
+                                                    <div class="col-md-2"><?= $row->isi3tglimposisi1; ?></div>
+                                                    <div class="col-md-2"><?= $row->isi3tglctcp1; ?></div>
+                                                </div><br>
+                                                <!-- /.PLAT 1 -->
+
+                                                <!-- PLAT 2 -->
+                                                <?php if($row->isi3plat2 != 0) { ?>
+                                                    <div class="row" align="center">
+                                                        <div class="col-md-1"><?= $row->isi3plat2; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi3set2; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi3lbrcetak2; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi3up2; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi3warna2; ?></div>
+                                                        <div class="col-md-1"><?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?></div>
+                                                        <div class="col-md-2"><?= $row->isi3keterangan2; ?></div>
+                                                        <div class="col-md-2"><?= $row->isi3tglimposisi2; ?></div>
+                                                        <div class="col-md-2"><?= $row->isi3tglctcp2; ?></div>
+                                                    </div><br>
+                                                <?php } ?>
+                                                <!-- /.PLAT 2 -->
+
+                                                <!-- PLAT 3 -->
+                                                <?php if($row->isi3plat3 != 0) { ?>
+                                                    <div class="row" align="center">
+                                                        <div class="col-md-1"><?= $row->isi3plat3; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi3set3; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi3lbrcetak3; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi3up3; ?></div>
+                                                        <div class="col-md-1"><?= $row->isi3warna3; ?></div>
+                                                        <div class="col-md-1"><?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?></div>
+                                                        <div class="col-md-2"><?= $row->isi3keterangan3; ?></div>
+                                                        <div class="col-md-2"><?= $row->isi3tglimposisi3; ?></div>
+                                                        <div class="col-md-2"><?= $row->isi3tglctcp3; ?></div>
+                                                    </div>
+                                                <?php } ?>
+                                                <!-- /.PLAT 2 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                            <!-- /.CTCP ISI 3 -->
                         </div>
-                        <?php endif ?>
-                    </div>
+                    <!-- /.BARIS 3 -->
                 <?php } ?>
-                </div>
-            </form>    
+            </form>   
         </div>
     </div>
     <!-- /.card-body -->
