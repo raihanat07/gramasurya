@@ -51,11 +51,7 @@
         <hr><br>
 
         <div class="row">
-          <div class="col-md-6">
-            Tanggal Pelaksanaan<br>
-            <label>dari db</label>
-          </div>
-          <div class="col-md-6">
+          <div class="col-md-12">
             Status<br>
             <label>dari db</label>
           </div>  

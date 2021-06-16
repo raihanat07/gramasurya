@@ -185,10 +185,33 @@
                           </div>
                           <div class="col-md-6">
                             Operator<br>
-                                <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                  <input type="text" class="form-control" name="operator_cover" placeholder="Operator Cover" >
+                                <?php if($row->id_jadwal_cetak == null) {?>
+                                  <select id="inputState" class="form-select form-control" name="operator_cover" >
+                                    <option value="-">-</option>
+                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
+                                    <option value="Anam/Rois">Anam/Rois</option>
+                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
+                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
+                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
+                                    <option value="Heru/Toro">Heru/Toro</option>
+                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Heri">Heri</option>
+                                    <option value="Samiran">Samiran</option>
+                                  </select>
                                 <?php }else{ ?>  
-                                  <input type="text" class="form-control" name="operator_cover" value="<?= $row->operator_cover; ?>" placeholder="Operator Cover" >                                
+                                  <select id="inputState" class="form-select form-control" name="operator_cover" >
+                                    <option value="<?php  echo $row->operator_cover != "-" ?   $row->operator_cover  : '-' ?>"><?php  echo $row->operator_cover != "-" ?   $row->operator_cover  : '-' ?></option>
+                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
+                                    <option value="Anam/Rois">Anam/Rois</option>
+                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
+                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
+                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
+                                    <option value="Heru/Toro">Heru/Toro</option>
+                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Heri">Heri</option>
+                                    <option value="Samiran">Samiran</option>
+                                    <option value="-">-</option>
+                                  </select>                                
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
@@ -334,9 +357,32 @@
                           <div class="col-md-6">
                             Operator<br>
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                  <input type="text" class="form-control" name="operator_isi" placeholder="Operator Isi" >
+                                  <select id="inputState" class="form-select form-control" name="operator_cover" >
+                                    <option value="-">-</option>
+                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
+                                    <option value="Anam/Rois">Anam/Rois</option>
+                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
+                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
+                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
+                                    <option value="Heru/Toro">Heru/Toro</option>
+                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Heri">Heri</option>
+                                    <option value="Samiran">Samiran</option>
+                                  </select>
                                 <?php }else{ ?>                                  
-                                    <input type="text" class="form-control" name="operator_isi" value="<?= $row->operator_isi; ?>" placeholder="Tanggal Pelaksanaan Cover" >
+                                  <select id="inputState" class="form-select form-control" name="operator_cover" >
+                                    <option value="<?php  echo $row->operator_cover != "-" ?   $row->operator_cover  : '-' ?>"><?php  echo $row->operator_cover != "-" ?   $row->operator_cover  : '-' ?></option>
+                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
+                                    <option value="Anam/Rois">Anam/Rois</option>
+                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
+                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
+                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
+                                    <option value="Heru/Toro">Heru/Toro</option>
+                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Heri">Heri</option>
+                                    <option value="Samiran">Samiran</option>
+                                    <option value="-">-</option>
+                                  </select>
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">

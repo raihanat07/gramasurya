@@ -110,11 +110,7 @@
                       <hr><br>
 
                       <div class="row">
-                        <div class="col-md-6">
-                          Tanggal Pelaksanaan<br>
-                          <input type="date" class="form-control" name="tanggal_pelaksanaan_mesin_binding" placeholder="Tanggal Pelaksanaan" required>
-                        </div>
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                           Status<br>
                           <select id="inputState" class="form-select form-control" name="status" >
                             <option value="-">-</option>
