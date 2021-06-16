@@ -33,7 +33,6 @@
                   <td rowspan="2">Potong</td>
                   <td rowspan="2">Jahit</td>
                   <td rowspan="2">Hardcover</td>
-                  <td rowspan="2">Actions</td>
                 </tr>
                 <tr>
                   <!-- LAMINASI -->
@@ -89,13 +88,6 @@
                     
                     <!-- Hardcover -->
                     <td>99</td>
-
-                    <!-- TOMBOL ACTIONS-->
-                    <!-- <td align="center"> -->
-                      <!-- <a href="<?=site_url('finishing/Display/lihat_so/'.$row->id_order)?>"> -->
-                        <!-- <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i> -->
-                      <!-- </a> -->
-                    <!-- </td> -->
                   </tr> 
                 <?php } ?>
               </tbody>

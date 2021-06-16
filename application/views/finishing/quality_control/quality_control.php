@@ -107,7 +107,22 @@
                           <br><label class="form-label">dari db</label>
                         </div>
                       </div>
-                      <hr><br>
+                      <hr>
+                      <div class="row" align="center">
+                        <div class="col-md-4">
+                          <label>Hasil Binding</label><br>
+                          950
+                        </div>
+                        <div class="col-md-4">
+                          <label>Hasil Jahit</label><br>
+                          Tidak ada
+                        </div>
+                        <div class="col-md-4">
+                          <label>Hasil Hardcover</label><br>
+                          50
+                        </div>
+                      </div>
+                      <hr>
 
                       <div class="row">
                         <div class="col-md-12">
@@ -118,8 +133,8 @@
                             <option value="Ditolak">Ditolak</option>
                           </select>
                         </div>  
-                      </div><br>
-                      <hr><br>
+                      </div>
+                      <hr>
 
                       <div class="row">
                         <div class="col-md-6">
@@ -130,8 +145,8 @@
                           Rejek QC<br>
                           <input type="number" class="form-control" name="rejek_qc" placeholder="Masukan Jumlah Lembar" required>
                         </div>
-                      </div><br>
-                      <hr><br>
+                      </div>
+                      <hr>
 
                       <h4>Keterangan</h4>
                       <textarea name="keterangan_qc" class="form-control" placeholder="catatan" style="height: 240px;"></textarea>
