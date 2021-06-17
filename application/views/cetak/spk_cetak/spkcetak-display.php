@@ -71,15 +71,33 @@
             <td>Jam Realisasi</td>
             <td>Set</td>
             <td>Drug</td>
-          <td align="center">
-            <a href="<?=site_url('cetak/Spk/edit_spk')?>">
-              <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
-            </a>
-            <a href="<?=site_url('cetak/Spk/lihat_spk')?>">
-              <i class="fa fa-eye" style="font-size:18px;"></i>
-            </a>
-          </td>
+            <td align="center">
+              <a href="<?=site_url('cetak/Spk/edit_spk')?>">
+                <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
+              </a>
+              <a href="<?=site_url('cetak/Spk/lihat_spk')?>">
+                <i class="fa fa-eye" style="font-size:18px;"></i>
+              </a>
+            </td>
         </tr>
+        <tr>
+            <td align="right">TOTAL</td>
+
+            <!-- SHIFT 1 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+
+            <!-- SHIFT 2 -->
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td></td>
+          </tr>
       </table>
     </div>
 
