@@ -49,39 +49,7 @@
                     <tbody>
                     <?php $nilai = 0; ?>
                     
-                    <?php foreach($fp as $s => $row) {?>  
-                    <?php if($row->status_laminasi ==""){ ?>                    
-                    <tr>
-                        <td><?= $row->tanggal_pelaksanaan_laminasi; ?></td>
-                        <td><?= $row->nomor_so; ?></td>
-                        <td><?= $row->tanggal_masuk; ?></td>
-                        <td><?= $row->deadline; ?></td>
-                        <td><?= $row->nama_pemesan; ?></td>
-                        <td><?= $row->nama_orderan; ?></td>
-                        <td><?= $row->ukuran; ?></td>
-                        <td><?= $row->oplag; ?></td>
-                        <td><?= $row->halaman; ?></td>  
-                        <td><?= $row->hasil_1+$row->hasil_2; ?></td>                                                                 
-                        <!-- <td><?= $tot[$nilai]; ?></td> -->
-                        <td><?php echo $row->status_laminasi == "laminasi" ?  "finishing proses cover" : $row->so_status?></td>   
-
-                        <td align="center">  
-
-                        <?php if( $row->id_jadwal_laminasi == $id_jadwal_max[$nilai]) {?>  
-                          <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_laminasi/<?= $row->id_laminasi; ?>">
-                            <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
-                          </a>  
-                          <?php } ?>                        
-
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_laminasi/<?= $row->id_laminasi; ?>">
-                            <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
-                          </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_laminasi/<?= $row->id_laminasi; ?>">
-                            <i class="fa fa-eye" style="font-size:18px;"></i>
-                          </a>
-                        </td>
-                      </tr>
-                    <?php } else if($row->status_laminasi =="laminasi" and $row->id_jadwal_laminasi == 0){?>
+                    <?php foreach($fp as $s => $row) {?>                      
                       <tr>
                         <td><?= $row->tanggal_pelaksanaan_laminasi; ?></td>
                         <td><?= $row->nomor_so; ?></td>
@@ -112,7 +80,7 @@
                           </a>
                         </td>
                       </tr>
-                    <?php } $nilai++;} ?>
+                    <?php  $nilai++;} ?>
                     </tbody>
                 </table>
                 </div>
