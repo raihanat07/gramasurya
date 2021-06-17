@@ -65,6 +65,29 @@ class FinishingProses extends CI_Controller {
 		   'judul' => 'Finishing Proses',
 		   'fp' => $query->result(),
 	   );
+	   // NANGKAP DATA SE ID ORDER
+		// var_dump($data["fp"]);die;
+		$tampung_id_jadwal = 0;		
+		$jadwal_max = 0;		
+
+		foreach($data["fp"] as $s => $row){
+			// var_dump($row->id_order);
+
+			$id_order = $row->id_order;
+			$ambil = $this->fp->ambil_data_laminasi($id_order)->result();
+			// var_dump($id_order);						
+
+			foreach($ambil as $sq) {				
+				if($sq->id_jadwal_laminasi > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_laminasi;
+				}				
+			}	
+			$data["id_jadwal_max"][] = $jadwal_max;	
+			$jadwal_max = 0;			   		
+
+		}
+		// var_dump($data["id_jadwal_max"]);die;
+		
 	   
 	   $this->template->load('finishing/template','finishing/finishing_proses/jadwal-fp-laminasi',$data);
 }

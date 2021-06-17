@@ -47,6 +47,8 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <?php $nilai = 0; ?>
+                    
                     <?php foreach($fp as $s => $row) {?>  
                     <?php if($row->status_laminasi ==""){ ?>                    
                     <tr>
@@ -60,13 +62,21 @@
                         <td><?= $row->oplag; ?></td>
                         <td><?= $row->halaman; ?></td>  
                         <td><?= $row->hasil_1+$row->hasil_2; ?></td>                                                                 
+                        <!-- <td><?= $tot[$nilai]; ?></td> -->
                         <td><?php echo $row->status_laminasi == "laminasi" ?  "finishing proses cover" : $row->so_status?></td>   
 
-                        <td align="center">                          
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_laminasi/<?= $row->id_order; ?>">
+                        <td align="center">  
+
+                        <?php if( $row->id_jadwal_laminasi == $id_jadwal_max[$nilai]) {?>  
+                          <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_laminasi/<?= $row->id_laminasi; ?>">
+                            <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
+                          </a>  
+                          <?php } ?>                        
+
+                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_laminasi/<?= $row->id_laminasi; ?>">
                             <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_laminasi/<?= $row->id_order; ?>">
+                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_laminasi/<?= $row->id_laminasi; ?>">
                             <i class="fa fa-eye" style="font-size:18px;"></i>
                           </a>
                         </td>
@@ -83,18 +93,26 @@
                         <td><?= $row->oplag; ?></td>
                         <td><?= $row->halaman; ?></td>    
                         <td><?= $row->hasil_1+$row->hasil_2; ?></td>  
+                        <!-- <td><?= $tot[$nilai]; ?></td> -->
                         <td><?php echo $row->status_laminasi == "laminasi" ?  "finishing proses cover" : $row->so_status?></td>   
 
-                        <td align="center">                         
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_laminasi/<?= $row->id_order; ?>">
+                        <td align="center">     
+
+                        <?php if( $row->id_jadwal_laminasi == $id_jadwal_max[$nilai]) {?>  
+                          <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_laminasi/<?= $row->id_laminasi; ?>">
+                            <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
+                          </a>  
+                          <?php } ?>       
+
+                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_laminasi/<?= $row->id_laminasi; ?>">
                             <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_laminasi/<?= $row->id_order; ?>">
+                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_laminasi/<?= $row->id_laminasi; ?>">
                             <i class="fa fa-eye" style="font-size:18px;"></i>
                           </a>
                         </td>
                       </tr>
-                    <?php }} ?>
+                    <?php } $nilai++;} ?>
                     </tbody>
                 </table>
                 </div>

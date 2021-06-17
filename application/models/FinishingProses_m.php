@@ -655,6 +655,22 @@ public function hapus_jadwal_sub($data)
         $query = $this->db->get();
         return $query;  
 }
+    public function ambil_data_laminasi($id)
+    {
+        $this->db->select(
+            '   
+                laminasi.id_jadwal_laminasi as id_jadwal_laminasi,
+                laminasi.hasil_1 as hasil_1,
+                laminasi.hasil_2 as hasil_2,
+            '
+        );
+        $this->db->from('order');
+        $this->db->join('laminasi','laminasi.id_order = order.id_order');    
+        $this->db->where('laminasi.id_order', $id);          
+        $query = $this->db->get();
+        return $query;   
+}
+
 public function ambilIDOrder($id_order)
 {
     $this->db->select('
@@ -743,7 +759,7 @@ public function ambilIDOrder($id_order)
         $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
 
         $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-        $this->db->where('order.id_order', $id);       
+        $this->db->where('laminasi.id_laminasi', $id);       
         
         $query = $this->db->get();
         return $query;  
