@@ -421,15 +421,6 @@
                                                 <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?=$row->catatan_imposisi;?>" style="height: 150px;" disabled><?=$row->catatan_imposisi;?></textarea>
                                             </div>
                                         </div>
-                                    </div><br>
-                                    <!-- TOMBOL -->
-                                    <div class="row">
-                                        <div class="col-md-6" align="left">
-                                            <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Kembali</a>
-                                        </div>
-                                        <div class="col-md-6" align="right">
-                                            <a href="<?=site_url('pracetak/Imposisi/print_imposisi/'.$row->id_order)?>" class="btn btn-default">Print</a>
-                                        </div>
                                     </div>
                                 </div>
                             <?php } ?>
@@ -537,15 +528,6 @@
                                             <div class="card-body p-3 mb-2 bg-light text-dark">
                                                 <br><textarea class="form-control" placeholder="catatan" name="catatan_imposisi" value="<?=$row->catatan_imposisi;?>" style="height: 150px;" disabled><?=$row->catatan_imposisi;?></textarea>
                                             </div>
-                                        </div>
-                                    </div><br>
-                                    <!-- TOMBOL -->
-                                    <div class="row">
-                                        <div class="col-md-6" align="left">
-                                            <a href="<?=site_url()?>pracetak/Imposisi" class="btn btn-default">Kembali</a>
-                                        </div>
-                                        <div class="col-md-6" align="right">
-                                            <a href="<?=site_url('pracetak/Imposisi/print_imposisi/'.$row->id_order)?>" class="btn btn-default">Print</a>
                                         </div>
                                     </div>
                                 </div>
