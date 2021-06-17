@@ -235,9 +235,9 @@
                                         <!-- BAGIAN SET DAN LBR.CETAK BUKAN INPUT MANUAL, MELAINKAN INPUT DARI HASIL PERHITUNGAN !! -->
                                         <div class="col">
                                             <label class="form-label">Lbr.Cetak</label>
-                                            <input type="number" class="form-control" name="cover1lbrcetak1" value="<?= $row->cover1lbrcetak1; ?>" ><br>
-                                            <input type="number" class="form-control" name="cover1lbrcetak2" value="<?= $row->cover1lbrcetak2; ?>" ><br>
-                                            <input type="number" class="form-control" name="cover1lbrcetak3" value="<?= $row->cover1lbrcetak3; ?>" >
+                                            <input type="text" class="form-control" name="cover1lbrcetak1" value="<?= $row->cover1lbrcetak1; ?>" ><br>
+                                            <input type="text" class="form-control" name="cover1lbrcetak2" value="<?= $row->cover1lbrcetak2; ?>" ><br>
+                                            <input type="text" class="form-control" name="cover1lbrcetak3" value="<?= $row->cover1lbrcetak3; ?>" >
                                         </div>
 
                                         <div class="col">

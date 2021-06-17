@@ -6,6 +6,7 @@ class OperatorFA extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
+		check_finishing_operator();
 		$this->load->model('FinishingAkhir_m', 'fa');
     }
 	public function index()

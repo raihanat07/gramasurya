@@ -36,6 +36,20 @@ function check_pracetak_ctcp(){
         redirect('pracetak/SuratOrder');
     }
 }
+function check_finishing(){
+    $ci =& get_instance();
+    $ci->load->library('fungsi');
+    if($ci->fungsi->user_login()->level != 3 && $ci->fungsi->user_login()->level != 6){
+        redirect('finishing/Display');
+    }
+}
+function check_finishing_operator(){
+    $ci =& get_instance();
+    $ci->load->library('fungsi');
+    if($ci->fungsi->user_login()->level != 3 && $ci->fungsi->user_login()->level != 7 && $ci->fungsi->user_login()->level != 6){
+        redirect('pracetak/SuratOrder');
+    }
+}
 function check_pracetak_admin(){
     $ci =& get_instance();
     $ci->load->library('fungsi');
