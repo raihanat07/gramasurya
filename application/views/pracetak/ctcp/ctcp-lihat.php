@@ -192,11 +192,14 @@
                                      <div class="card-body p-3 mb-2 bg-light text-dark">
                                         <div class="row">
                                             <!-- MESIN CTCP COVER 1 -->
-                                            <div class="col-md-3"><label>Mesin</label></div>
-                                            <div class="col-md-3"><?=$row->cover1mesin1;?></div>
+                                            <div class="col-md-2"><label>Mesin</label></div>
+                                            <div class="col-md-2"><?=$row->cover1mesin1;?></div>
                                             <!-- JUMLAH PLAT CTCP COVER 1 -->
-                                            <div class="col-md-3"><label>Plate</label></div>
-                                            <div class="col-md-3"><?=$row->jumlahplatecover1;?></div>
+                                            <div class="col-md-2"><label>Plate</label></div>
+                                            <div class="col-md-2"><?=$row->jumlahplatecover1;?></div>
+                                            <!-- JUMLAH PLAT GAGAL CTCP COVER 1 -->
+                                            <div class="col-md-2"><label>Plate Gagal</label></div>
+                                            <div class="col-md-2"><?=$row->jumlahplategagalcover1;?></div>
                                         </div><br>
                                         <div class="row">
                                             <!-- RINCIAN CTCP COVER 1 -->
@@ -283,11 +286,14 @@
                                      <div class="card-body p-3 mb-2 bg-light text-dark">
                                         <div class="row">
                                             <!-- MESIN CTCP ISI 1 -->
-                                            <div class="col-md-3"><label>Mesin</label></div>
-                                            <div class="col-md-3"><?=$row->isi1mesin1;?></div>
+                                            <div class="col-md-2"><label>Mesin</label></div>
+                                            <div class="col-md-2"><?=$row->isi1mesin1;?></div>
                                             <!-- JUMLAH PLAT CTCP ISI 1 -->
-                                            <div class="col-md-3"><label>Plate</label></div>
-                                            <div class="col-md-3"><?=$row->jumlahplateisi1;?></div>
+                                            <div class="col-md-2"><label>Plate</label></div>
+                                            <div class="col-md-2"><?=$row->jumlahplateisi1;?></div>
+                                            <!-- JUMLAH PLAT GAGAL CTCP ISI 1 -->
+                                            <div class="col-md-2"><label>Plate Gagal</label></div>
+                                            <div class="col-md-2"><?=$row->jumlahplategagalisi1;?></div>
                                         </div><br>
                                         <div class="row">
                                             <!-- RINCIAN CTCP ISI 1 -->
@@ -380,11 +386,14 @@
                                      <div class="card-body p-3 mb-2 bg-light text-dark">
                                         <div class="row">
                                             <!-- MESIN CTCP COVER 2 -->
-                                            <div class="col-md-3"><label>Mesin</label></div>
-                                            <div class="col-md-3"><?=$row->cover2mesin1;?></div>
+                                            <div class="col-md-2"><label>Mesin</label></div>
+                                            <div class="col-md-2"><?=$row->cover2mesin1;?></div>
                                             <!-- JUMLAH PLAT CTCP COVER 2 -->
-                                            <div class="col-md-3"><label>Plate</label></div>
-                                            <div class="col-md-3"><?=$row->jumlahplatecover2;?></div>
+                                            <div class="col-md-2"><label>Plate</label></div>
+                                            <div class="col-md-2"><?=$row->jumlahplatecover2;?></div>
+                                            <!-- JUMLAH PLAT GAGAL CTCP COVER 2 -->
+                                            <div class="col-md-2"><label>Plate Gagal</label></div>
+                                            <div class="col-md-2"><?=$row->jumlahplategagalcover2;?></div>
                                         </div><br>
                                         <div class="row">
                                             <!-- RINCIAN CTCP COVER 2 -->
@@ -492,11 +501,14 @@
                                      <div class="card-body p-3 mb-2 bg-light text-dark">
                                         <div class="row">
                                             <!-- MESIN CTCP ISI 2 -->
-                                            <div class="col-md-3"><label>Mesin</label></div>
-                                            <div class="col-md-3"><?=$row->isi2mesin1;?></div>
+                                            <div class="col-md-2"><label>Mesin</label></div>
+                                            <div class="col-md-2"><?=$row->isi2mesin1;?></div>
                                             <!-- JUMLAH PLAT CTCP ISI 2 -->
-                                            <div class="col-md-3"><label>Plate</label></div>
-                                            <div class="col-md-3"><?=$row->jumlahplateisi2;?></div>
+                                            <div class="col-md-2"><label>Plate</label></div>
+                                            <div class="col-md-2"><?=$row->jumlahplateisi2;?></div>
+                                            <!-- JUMLAH PLAT GAGAL CTCP ISI 2 -->
+                                            <div class="col-md-2"><label>Plate Gagal</label></div>
+                                            <div class="col-md-2"><?=$row->jumlahplategagalisi2;?></div>
                                         </div><br>
                                         <div class="row">
                                             <!-- RINCIAN CTCP ISI 2 -->
@@ -615,11 +627,14 @@
                                      <div class="card-body p-3 mb-2 bg-light text-dark">
                                         <div class="row">
                                             <!-- MESIN CTCP ISI 3 -->
-                                            <div class="col-md-3"><label>Mesin</label></div>
-                                            <div class="col-md-3"><?=$row->isi3mesin1;?></div>
+                                            <div class="col-md-2"><label>Mesin</label></div>
+                                            <div class="col-md-2"><?=$row->isi3mesin1;?></div>
                                             <!-- JUMLAH PLAT CTCP ISI 3 -->
-                                            <div class="col-md-3"><label>Plate</label></div>
-                                            <div class="col-md-3"><?=$row->jumlahplateisi3;?></div>
+                                            <div class="col-md-2"><label>Plate</label></div>
+                                            <div class="col-md-2"><?=$row->jumlahplateisi3;?></div>
+                                            <!-- JUMLAH PLAT GAGAL CTCP ISI 3 -->
+                                            <div class="col-md-2"><label>Plate Gagal</label></div>
+                                            <div class="col-md-2"><?=$row->jumlahplategagalisi3;?></div>
                                         </div><br>
                                         <div class="row">
                                             <!-- RINCIAN CTCP ISI 3 -->
