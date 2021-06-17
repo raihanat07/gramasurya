@@ -6,6 +6,7 @@ class FinishingProses extends CI_Controller {
 	public function __construct()
     {
         parent::__construct();
+		check_finishing();
         $this->load->model('FinishingProses_m', 'fp');
     }
 	public function index()

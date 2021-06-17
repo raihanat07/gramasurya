@@ -170,6 +170,7 @@
                           <div class="col-sm-4">
                             <br>Oplag
                             <br><label><?= $row->oplag; ?></label>
+                            <input type="hidden" name="oplag" value="<?=$row->oplag?>">
                           </div>
                         </div>
                         <hr><br>
@@ -228,43 +229,43 @@
                             <?php if($row->id_jadwal_cetak == null) {?>                                     
                                   <select id="inputState" class="form-select form-control" name="mesin_cover" >
                                     <option value="-">-</option>
-                                    <option value="Oliver 58 2w">Oliver 58 2w</option>
-                                    <option value="Oliver 72 1w">Oliver 72 1w</option>
-                                    <option value="SM 74 4W - A">SM 74 4W - A</option>
-                                    <option value="SM 74 4W - B">SM 74 4W - B</option>
-                                    <option value="SM 102 2wP - A">SM 102 2wP - A</option>
-                                    <option value="SM 102 2wP - B">SM 102 2wP - B</option>
-                                    <option value="Fotocopy">Fotocopy</option>
+                                    <option value="Mesin 72">Oliver 72 1w</option>
+                                    <option value="Mesin 74 - A">SM 74 4W - A</option>
+                                    <option value="Mesin 74 - B">SM 74 4W - B</option>
+                                    <option value="Mesin 102 - A">SM 102 2wP - A</option>
+                                    <option value="Mesin 102  - B">SM 102 2wP - B</option>
                                     <option value="Tokko">Tokko</option>
-                                    <option value="Print banner">Print banner</option>
-                                    <option value="Print digital">Print digital</option>
                                   </select>
                                 <?php }else{ ?>                                  
                                   <select id="inputState" class="form-select form-control" name="mesin_cover" >
                                   <option value="<?php  echo $row->mesin_cover != "-" ?   $row->mesin_cover  : '-' ?>"><?php  echo $row->mesin_cover != "-" ?   $row->mesin_cover  : '-' ?>   </option>
-                                    <option value="Oliver 58 2w">Oliver 58 2w</option>
-                                    <option value="Oliver 72 1w">Oliver 72 1w</option>
-                                    <option value="SM 74 4W - A">SM 74 4W - A</option>
-                                    <option value="SM 74 4W - B">SM 74 4W - B</option>
-                                    <option value="SM 102 2wP - A">SM 102 2wP - A</option>
-                                    <option value="SM 102 2wP - B">SM 102 2wP - B</option>
-                                    <option value="Fotocopy">Fotocopy</option>
+                                    <option value="Mesin 72">Oliver 72 1w</option>
+                                    <option value="Mesin 74 - A">SM 74 4W - A</option>
+                                    <option value="Mesin 74 - B">SM 74 4W - B</option>
+                                    <option value="Mesin 102 - A">SM 102 2wP - A</option>
+                                    <option value="Mesin 102  - B">SM 102 2wP - B</option>
                                     <option value="Tokko">Tokko</option>
-                                    <option value="Print banner">Print banner</option>
-                                    <option value="Print digital">Print digital</option>
                                     <option value="-">-</option>
                                   </select>
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Set<br>
+                                <?php if($row->id_jadwal_cetak == null) {?>                                     
+                                  <input type="number" class="form-control" name="set_cover" placeholder="Jumlah Target" >
+                                <?php }else{ ?>                                  
+                                    <input type="number" class="form-control" name="set_cover" value="" placeholder="Jumlah set cover" >
                                 <?php } ?>
                           </div>
                           <div class="col-md-6">
                             <br>Druk<br>
                             <!-- <input type="number" class="form-control" name="druk_cover" hidden>
                             <label>otomatis = target * oplag</label> -->
-                            <?php if($row->druk_cover !=null) {?>
-                              <td><?= $row->druk_cover ?></td>
+                            <?php if($row->id_jadwal_cetak == null) {?>
+                              <input type="number" class="form-control" name="druk_cover" hidden>
                             <?php } else {?> 
                               <input type="number" class="form-control" name="druk_cover" hidden>
-                              <label>otomatis = target * oplag</label>
+                              <label><?= $row->druk_cover?></label>
                              <?php } ?>
                           </div>
                         </div>
@@ -341,6 +342,7 @@
                           <div class="col-sm-4">
                             <br>Oplag
                             <br><label><?= $row->oplag; ?></label>
+                            <input type="hidden" name="oplag" value="<?=$row->oplag?>">
                           </div>
                         </div>
                         <hr><br>
@@ -357,30 +359,24 @@
                           <div class="col-md-6">
                             Operator<br>
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
-                                  <select id="inputState" class="form-select form-control" name="operator_cover" >
+                                  <select id="inputState" class="form-select form-control" name="operator_isi" >
                                     <option value="-">-</option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
-                                    <option value="Heri">Heri</option>
-                                    <option value="Samiran">Samiran</option>
+                                    <option value="Mesin 72">Oliver 72 1w</option>
+                                    <option value="Mesin 74 - A">SM 74 4W - A</option>
+                                    <option value="Mesin 74 - B">SM 74 4W - B</option>
+                                    <option value="Mesin 102 - A">SM 102 2wP - A</option>
+                                    <option value="Mesin 102  - B">SM 102 2wP - B</option>
+                                    <option value="Tokko">Tokko</option>
                                   </select>
                                 <?php }else{ ?>                                  
-                                  <select id="inputState" class="form-select form-control" name="operator_cover" >
+                                  <select id="inputState" class="form-select form-control" name="operator_isi" >
                                     <option value="<?php  echo $row->operator_cover != "-" ?   $row->operator_cover  : '-' ?>"><?php  echo $row->operator_cover != "-" ?   $row->operator_cover  : '-' ?></option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
-                                    <option value="Heri">Heri</option>
-                                    <option value="Samiran">Samiran</option>
+                                    <option value="Mesin 72">Oliver 72 1w</option>
+                                    <option value="Mesin 74 - A">SM 74 4W - A</option>
+                                    <option value="Mesin 74 - B">SM 74 4W - B</option>
+                                    <option value="Mesin 102 - A">SM 102 2wP - A</option>
+                                    <option value="Mesin 102  - B">SM 102 2wP - B</option>
+                                    <option value="Tokko">Tokko</option>
                                     <option value="-">-</option>
                                   </select>
                                 <?php } ?>
@@ -398,44 +394,43 @@
                                 <?php if($row->id_jadwal_cetak == null) {?>                                     
                                   <select id="inputState" class="form-select form-control" name="mesin_isi" >
                                     <option value="-">-</option>
-                                    <option value="Oliver 58 2w">Oliver 58 2w</option>
-                                    <option value="Oliver 72 1w">Oliver 72 1w</option>
-                                    <option value="SM 74 4W - A">SM 74 4W - A</option>
-                                    <option value="SM 74 4W - B">SM 74 4W - B</option>
-                                    <option value="SM 102 2wP - A">SM 102 2wP - A</option>
-                                    <option value="SM 102 2wP - B">SM 102 2wP - B</option>
-                                    <option value="Fotocopy">Fotocopy</option>
+                                    <option value="Mesin 72">Oliver 72 1w</option>
+                                    <option value="Mesin 74 - A">SM 74 4W - A</option>
+                                    <option value="Mesin 74 - B">SM 74 4W - B</option>
+                                    <option value="Mesin 102 - A">SM 102 2wP - A</option>
+                                    <option value="Mesin 102  - B">SM 102 2wP - B</option>
                                     <option value="Tokko">Tokko</option>
-                                    <option value="Print banner">Print banner</option>
-                                    <option value="Print digital">Print digital</option>
                                   </select>
                                 <?php }else{ ?>                                  
                                   <select id="inputState" class="form-select form-control" name="mesin_isi" >
                                   <option value="<?php  echo $row->mesin_isi != "-" ?   $row->mesin_isi  : '-' ?>"><?php  echo $row->mesin_isi != "-" ?   $row->mesin_isi  : '-' ?>   </option>
-                                    <option value="Oliver 58 2w">Oliver 58 2w</option>
-                                    <option value="Oliver 72 1w">Oliver 72 1w</option>
-                                    <option value="SM 74 4W - A">SM 74 4W - A</option>
-                                    <option value="SM 74 4W - B">SM 74 4W - B</option>
-                                    <option value="SM 102 2wP - A">SM 102 2wP - A</option>
-                                    <option value="SM 102 2wP - B">SM 102 2wP - B</option>
-                                    <option value="Fotocopy">Fotocopy</option>
+                                  <option value="Mesin 72">Oliver 72 1w</option>
+                                    <option value="Mesin 74 - A">SM 74 4W - A</option>
+                                    <option value="Mesin 74 - B">SM 74 4W - B</option>
+                                    <option value="Mesin 102 - A">SM 102 2wP - A</option>
+                                    <option value="Mesin 102  - B">SM 102 2wP - B</option>
                                     <option value="Tokko">Tokko</option>
-                                    <option value="Print banner">Print banner</option>
-                                    <option value="Print digital">Print digital</option>
                                     <option value="-">-</option>
                                   </select>
                                 <?php } ?>
                             
                           </div>
                           <div class="col-md-6">
+                            <br>Set<br>
+                                <?php if($row->id_jadwal_cetak == null) {?>                                     
+                                  <input type="number" class="form-control" name="set_isi" placeholder="Jumlah Target" >
+                                <?php }else{ ?>                                  
+                                    <input type="number" class="form-control" name="set_isi" value="" placeholder="Jumlah set isi" >
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
                             <br>Druk<br>
                             <!-- <input type="number" class="form-control" name="druk_isi" hidden>
                             <label>otomatis = target * oplag</label> -->
-                            <?php if($row->druk_isi !=null) {?>
-                              <td><?= $row->druk_isi ?></td>
-                            <?php } else {?> 
+                            <?php if($row->id_jadwal_cetak == null) {?>
                               <input type="number" class="form-control" name="druk_isi" hidden>
-                              <label>otomatis = target * oplag</label>
+                            <?php } else {?> 
+                              <label><?= $row->druk_isi ?></label>
                              <?php } ?>
                           </div>
                         </div>

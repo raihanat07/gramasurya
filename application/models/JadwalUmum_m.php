@@ -59,9 +59,10 @@ class JadwalUmum_m extends CI_Model {
                 'mesin_isi' =>$data['mesin_isi'],
                 'tanggal_pelaksanaan_isi' =>$data['tanggal_pelaksanaan_isi'],
                 'operator_isi' =>$data['operator_isi'],
-                'target_isi' =>$data['target_isi']
-                // 'druk_isi' =>$data['druk_isi']
-                               
+                'target_isi' =>$data['target_isi'],
+                'druk_isi' =>$data['druk_isi'],
+                'set_isi' =>$data['set_isi'],
+                'set_cover' =>$data['set_cover']            
             );
             $this->db->insert('jadwal_cetak',$tambah_ju);
          
@@ -79,8 +80,8 @@ class JadwalUmum_m extends CI_Model {
                 'mesin_isi' =>$data['mesin_isi'],
                 'tanggal_pelaksanaan_isi' =>$data['tanggal_pelaksanaan_isi'],
                 'operator_isi' =>$data['operator_isi'],
-                'target_isi' =>$data['target_isi']
-                // 'druk_isi' =>$data['druk_isi']
+                'target_isi' =>$data['target_isi'],
+                'druk_isi' =>$data['druk_isi']
                                
             );
             $this->db->set($edit_ju);

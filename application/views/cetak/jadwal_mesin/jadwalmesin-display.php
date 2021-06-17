@@ -26,8 +26,7 @@
           <table id="emple2xa" class="table table-bordered table-hover" style="font-size: 12px;">
             <thead>
             <tr align="center">
-              <td>Hari, Tanggal Pelaksanaan</td>
-              <td>urutan</td>
+              <td>Tanggal Pelaksanaan</td>
               <td>No SO</td>
               <td>Tanggal Masuk</td>
               <td>Deadline</td>
@@ -43,17 +42,20 @@
               <td colspan="2">Actions</td>
             </tr>
             </thead>
+            <?php foreach($jm as $s => $row) {
+              if($row->mesin_cover == "Mesin 74 - B" || $row->mesin_isi == "Mesin 74 - B" ){
+              ?>
+              
             <tr>
-              <td>Hari, Tanggal Pelaksanaan</td>
-              <td>urutan</td>
-              <td>No SO</td>
-              <td>Tanggal Masuk</td>
-              <td>Deadline</td>
-              <td>Nama Pemesan</td>
-              <td>Nama Order</td>
-              <td>Ukuran</td>
-              <td>Halaman</td>
-              <td>Oplag</td>
+              <td><?= $row->tanggal_pelaksanaan_cover; ?></td>
+              <td><?= $row->nomor_so; ?></td>
+              <td><?= $row->tanggal_masuk; ?></td>
+              <td style="color: red"><?= $row->deadline; ?></td>
+              <td><?= $row->nama_pemesan; ?></td>
+              <td><?= $row->nama_orderan; ?></td>
+              <td><?= $row->ukuran; ?></td>
+              <td><?= $row->halaman; ?></td>
+              <td><?= $row->oplag; ?></td>
               <td>Jenis Cetakan</td>
               <td>Jumlah Set</td>
               <td>Target</td>
@@ -72,6 +74,7 @@
                 </a>
               </td>
             </tr>
+            <?php }} ?>
           </table>
         </div>
         <!-- /.card-body -->

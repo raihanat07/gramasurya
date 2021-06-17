@@ -93,6 +93,7 @@
                   <p>Display Umum</p>
                 </a>
               </li>
+              <?php if ($this->fungsi->user_login()->level == 3 || $this->fungsi->user_login()->level == 6) { ?>
               <li class="nav-item">
                 <a href="<?=site_url()?>finishing/FinishingProses" 
                 <?php  if($judul == "Finishing Proses"){?>
@@ -153,6 +154,19 @@
                   <p>Quality Control</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>finishing/Laporan"
+                    <?php  if($judul == "Laporan"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Laporan</p>
+                </a>
+              </li>
+              <?php } ?>
               <li class="nav-item has-treeview menu-open">
                 <a href="#" 
                  <?php  if($judul == "Operator"){?>
@@ -188,18 +202,6 @@
                     </a>
                   </li>
                 </ul>
-              </li>
-              <li class="nav-item">
-                <a href="<?=site_url()?>finishing/Laporan"
-                    <?php  if($judul == "Laporan"){?>
-                      class= "nav-link active"
-                    <?php }else {?>
-                      class= "nav-link"
-                    <?php } ?>
-                    >
-                  <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Laporan</p>
-                </a>
               </li>
             </ul>
           </li>
