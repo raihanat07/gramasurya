@@ -25,23 +25,20 @@ class JadwalUmum_m extends CI_Model {
             finishing.finishing_akhir_klem as klem, 
             finishing.finishing_akhir_spiral as spiral,
             
-            jadwal_cetak.id_jadwal_cetak as id_jadwal_cetak,
-            jadwal_cetak.mesin_cover as mesin_cover,
-            jadwal_cetak.tanggal_pelaksanaan_cover as tanggal_pelaksanaan_cover,
-            jadwal_cetak.operator_cover as operator_cover,
-            jadwal_cetak.target_cover as target_cover,
-            jadwal_cetak.druk_cover as druk_cover,
-            jadwal_cetak.mesin_isi as mesin_isi,
-            jadwal_cetak.tanggal_pelaksanaan_isi as tanggal_pelaksanaan_isi,
-            jadwal_cetak.operator_isi as operator_isi,
-            jadwal_cetak.target_isi as target_isi,
-            jadwal_cetak.druk_isi as druk_isi,
-            jadwal_cetak.total_kertas as total_kertas,',
+            mesin_72.id_mesin_72 as id_mesin_72,
+            mesin_72.nama_mesin as nama_mesin,
+            mesin_72.tanggal_pelaksanaan as tanggal_pelaksanaan,
+            mesin_72.operator as operator,
+            mesin_72.target as target,
+            mesin_72.druk as druk,
+            mesin_72.total_kertas as total_kertas,
+            mesin_72.set as set,
+            mesin_72.jenis_cetakan as jenis_cetakan',
         );
 
         $this->db->from('order');
         $this->db->join('finishing','finishing.id_order = order.id_order','left');
-        $this->db->join('jadwal_cetak','jadwal_cetak.id_order = order.id_order','left');
+        $this->db->join('mesin_72','mesin_72.id_order = order.id_order','left');
         $this->db->order_by('id_order', 'desc');    
         $query = $this->db->get();
         return $query; 
@@ -51,42 +48,36 @@ class JadwalUmum_m extends CI_Model {
 	{
             $tambah_ju = array(         
                 'id_order' =>$data['id_order'],                                                                       
-                'mesin_cover' =>$data['mesin_cover'],
-                'tanggal_pelaksanaan_cover' =>$data['tanggal_pelaksanaan_cover'],
-                'operator_cover' =>$data['operator_cover'],
-                'target_cover' =>$data['target_cover'],
-                'druk_cover' =>$data['druk_cover'],
-                'mesin_isi' =>$data['mesin_isi'],
-                'tanggal_pelaksanaan_isi' =>$data['tanggal_pelaksanaan_isi'],
-                'operator_isi' =>$data['operator_isi'],
-                'target_isi' =>$data['target_isi'],
-                'druk_isi' =>$data['druk_isi'],
-                'set_isi' =>$data['set_isi'],
-                'set_cover' =>$data['set_cover']            
+                'tanggal_pelaksanaan' =>$data['tanggal_pelaksanaan_72'],
+                'operator' =>$data['operator_72'],
+                'target' =>$data['target_72'],
+                'nama_mesin' =>$data['nama_mesin_72'],
+                'druk' =>$data['druk_72'],
+                'total_kertas' =>$data['kertas_72'],
+                'set' =>$data['set_72'],
+                'jenis_cetakan' =>$data['jenis_cetakan_72']            
             );
-            $this->db->insert('jadwal_cetak',$tambah_ju);
+            $this->db->insert('mesin_72',$tambah_ju);
          
     }
 
     public function edit_ju($data)
 	{
             $edit_ju = array(         
-                'id_order' =>$data['id_order'],                                                                       
-                'mesin_cover' =>$data['mesin_cover'],
-                'tanggal_pelaksanaan_cover' =>$data['tanggal_pelaksanaan_cover'],
-                'operator_cover' =>$data['operator_cover'],
-                'target_cover' =>$data['target_cover'],
-                'druk_cover' =>$data['druk_cover'],
-                'mesin_isi' =>$data['mesin_isi'],
-                'tanggal_pelaksanaan_isi' =>$data['tanggal_pelaksanaan_isi'],
-                'operator_isi' =>$data['operator_isi'],
-                'target_isi' =>$data['target_isi'],
-                'druk_isi' =>$data['druk_isi']
+                'id_order' =>$data['id_order'],
+                'tanggal_pelaksanaan' =>$data['tanggal_pelaksanaan_72'],
+                'operator' =>$data['operator_72'],
+                'target' =>$data['target_72'],
+                'nama_mesin' =>$data['nama_mesin_72'],
+                'druk' =>$data['druk_72'],
+                'total_kertas' =>$data['kertas_72'],
+                'set' =>$data['set_72'],
+                'jenis_cetakan' =>$data['jenis_cetakan_72']  
                                
             );
             $this->db->set($edit_ju);
             $this->db->where('id_order',$data['id_order']);
-            $this->db->update('jadwal_cetak');         
+            $this->db->update('mesin_72');         
     }
 
     // public function get()
