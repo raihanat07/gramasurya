@@ -137,6 +137,8 @@
         <div class="col" align="left">            
             <div class="col-md-2">                        
                                   <label>Total Hasil : <?= $row->hasil_lipatan_lembar_1+$row->hasil_lipatan_lembar_2+$row->hasil_lipatan_lembar_3+$row->hasil_lipatan_lembar_4+$row->hasil_lipatan_lembar_5+$row->hasil_lipatan_lembar_6+$row->hasil_lipatan_lembar_7+$row->hasil_lipatan_lembar_8+$row->hasil_lipatan_lembar_9+$row->hasil_lipatan_lembar_10+$row->hasil_lipatan_lembar_11+$row->hasil_lipatan_lembar_12+$row->hasil_lipatan_lembar_13+$row->hasil_lipatan_lembar_14+$row->hasil_lipatan_lembar_15+$row->hasil_lipatan_lembar_16+$row->hasil_lipatan_lembar_17+$row->hasil_lipatan_lembar_18+$row->hasil_lipatan_lembar_19+$row->hasil_lipatan_lembar_20; ?></label><br>
+
+                                  <label>Total Keseluruhan : <?= $total_keseluruhan;?></label>
                                               
             </div></div>     
         <div class="row" align="center">

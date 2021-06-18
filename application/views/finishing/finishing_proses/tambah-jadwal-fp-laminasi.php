@@ -208,7 +208,7 @@
 
           
 
-          <br><br><br><br><div class="col" align="left">            
+          <br><br><br><br><div class="col" align="left">                        
             <div class="col-md-2"><label>Total Hasil Keseluruhan : <?= $total_1+$total_2; ?><br></label>
             </div></div>                  
         </div><hr>        

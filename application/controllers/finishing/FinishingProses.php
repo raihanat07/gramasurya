@@ -245,6 +245,26 @@ class FinishingProses extends CI_Controller {
 			'judul' => 'Finishing Proses',
 			'fp' => $query->result(),
 		);		
+
+		$jadwal_max = 0;		
+
+		foreach($data["fp"] as $s => $row){
+			// var_dump($row->id_order);
+
+			$id_order = $row->id_order;
+			$ambil = $this->fp->ambil_data_mbo($id_order)->result();
+			// var_dump($id_order);						
+
+			foreach($ambil as $sq) {				
+				if($sq->id_jadwal_mbo > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_mbo;
+				}				
+			}	
+			$data["id_jadwal_max"][] = $jadwal_max;	
+			$jadwal_max = 0;			   		
+
+		}
+
 		$this->template->load('finishing/template','finishing/finishing_proses/jadwal-fp-mbo',$data);
 	}
 	public function edit_jadwal_fp_mbo($id)
@@ -290,7 +310,8 @@ class FinishingProses extends CI_Controller {
   
 		 $data['jadwal_max'] = $jadwal_max;
 		 $data['tampung_jadwal'] = $tampung_jadwal;		 		 
-		 $data['total_keseluruhan'] = $total_keseluruhan;		
+		 $data['total_keseluruhan'] = $total_keseluruhan;	
+		//  var_dump($data["fp"])	;die;
   
 		 $this->template->load('finishing/template','finishing/finishing_proses/edit-jadwal-fp-mbo',$data);
 	}
@@ -412,6 +433,25 @@ public function jadwal_fp_shoe()
 		'judul' => 'Finishing Proses',
 		'fp' => $query->result(),
 	);		
+	$jadwal_max = 0;		
+
+		foreach($data["fp"] as $s => $row){
+			// var_dump($row->id_order);
+
+			$id_order = $row->id_order;
+			$ambil = $this->fp->ambil_data_shoe($id_order)->result();
+			// var_dump($id_order);						
+
+			foreach($ambil as $sq) {				
+				if($sq->id_jadwal_shoe > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_shoe;
+				}				
+			}	
+			$data["id_jadwal_max"][] = $jadwal_max;	
+			$jadwal_max = 0;			   		
+
+		}
+
 	$this->template->load('finishing/template','finishing/finishing_proses/jadwal-fp-shoe',$data);
 }
 public function edit_jadwal_fp_shoe($id)
@@ -579,6 +619,25 @@ public function proses_shoe()
 			'judul' => 'Finishing Proses',
 			'fp' => $query->result(),
 		);		
+		$jadwal_max = 0;		
+
+		foreach($data["fp"] as $s => $row){
+			// var_dump($row->id_order);
+
+			$id_order = $row->id_order;
+			$ambil = $this->fp->ambil_data_susun($id_order)->result();
+			// var_dump($id_order);						
+
+			foreach($ambil as $sq) {				
+				if($sq->id_jadwal_susun > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_susun;
+				}				
+			}	
+			$data["id_jadwal_max"][] = $jadwal_max;	
+			$jadwal_max = 0;			   		
+
+		}
+
 		$this->template->load('finishing/template','finishing/finishing_proses/jadwal-fp-susun',$data);
 }
 	public function edit_jadwal_fp_susun($id)

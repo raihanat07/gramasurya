@@ -47,33 +47,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach($fp as $s => $row) {?>  
-                    <?php if($row->status_mbo ==""){ ?>                    
-                    <tr>
-                        <td><?= $row->tanggal_pelaksanaan_mbo; ?></td>
-                        <td><?= $row->nomor_so; ?></td>
-                        <td><?= $row->tanggal_masuk; ?></td>
-                        <td><?= $row->deadline; ?></td>
-                        <td><?= $row->nama_pemesan; ?></td>
-                        <td><?= $row->nama_orderan; ?></td>
-                        <td><?= $row->ukuran; ?></td>
-                        <td><?= $row->oplag; ?></td>
-                        <td><?= $row->halaman; ?></td> 
-
-                        <td> <?= $row->hasil_lipatan_lembar_1+$row->hasil_lipatan_lembar_2+$row->hasil_lipatan_lembar_3+$row->hasil_lipatan_lembar_4+$row->hasil_lipatan_lembar_5+$row->hasil_lipatan_lembar_6+$row->hasil_lipatan_lembar_7+$row->hasil_lipatan_lembar_8+$row->hasil_lipatan_lembar_9+$row->hasil_lipatan_lembar_10+$row->hasil_lipatan_lembar_11+$row->hasil_lipatan_lembar_12+$row->hasil_lipatan_lembar_13+$row->hasil_lipatan_lembar_14+$row->hasil_lipatan_lembar_15+$row->hasil_lipatan_lembar_16+$row->hasil_lipatan_lembar_17+$row->hasil_lipatan_lembar_18+$row->hasil_lipatan_lembar_19+$row->hasil_lipatan_lembar_20; ?></td>     
-
-                        <td><?php echo $row->status_mbo == "mbo" ?  "finishing proses isi" : $row->so_status?></td>   
-
-                        <td align="center">                          
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_mbo/<?= $row->id_order; ?>">
-                            <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
-                          </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_mbo/<?= $row->id_order; ?>">
-                            <i class="fa fa-eye" style="font-size:18px;"></i>
-                          </a>
-                        </td>
-                      </tr>
-                    <?php } else if($row->status_mbo =="mbo" and $row->id_jadwal_mbo == 0){?>
+                    <?php $nilai = 0; ?>
+                    <?php foreach($fp as $s => $row) {?>                      
                       <tr>
                         <td><?= $row->tanggal_pelaksanaan_mbo; ?></td>
                         <td><?= $row->nomor_so; ?></td>
@@ -91,16 +66,24 @@
 
                         <td><?php echo $row->status_mbo == "mbo" ?  "finishing proses isi" : $row->so_status?></td>   
 
-                        <td align="center">                          
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_mbo/<?= $row->id_order; ?>">
+                        
+                        <td align="center">  
+
+                        <?php if( $row->id_jadwal_mbo == $id_jadwal_max[$nilai] and $row->status_mbo != "mbo") {?>  
+                        <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_mbo/<?= $row->id_mbo; ?>">
+                            <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
+                          </a>    
+                          <?php } ?>      
+
+                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_mbo/<?= $row->id_mbo; ?>">
                             <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_mbo/<?= $row->id_order; ?>">
+                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_mbo/<?= $row->id_mbo; ?>">
                             <i class="fa fa-eye" style="font-size:18px;"></i>
                           </a>
                         </td>
                       </tr>
-                    <?php }} ?>
+                    <?php $nilai++;} ?>
                     </tbody>
                 </table>
                 </div>

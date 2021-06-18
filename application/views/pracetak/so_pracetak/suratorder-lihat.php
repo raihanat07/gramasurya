@@ -62,7 +62,7 @@
                   if($row->jahit_benang != null){
                       $finishing .= 'jahit benang, ';
                   } 
-                  if($row->hotprint != null){
+                  if($row->jahit_kawat != null){
                       $finishing .= 'jahit kawat, ';
                   }    
                   if($row->pond != null){
