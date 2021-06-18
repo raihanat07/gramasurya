@@ -242,7 +242,8 @@
             
             
                                   <label>Total Hasil : <?= $row->hasil_1+$row->hasil_2; ?></label><br>
-            
+            <div ><label>Total Hasil Keseluruhan : <?= $total_1+$total_2; ?></label>
+            </div>
 
                                   
             </div></div>          

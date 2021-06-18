@@ -47,31 +47,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach($fp as $s => $row) {?>  
-                    <?php if($row->status_susun ==""){ ?>                    
-                    <tr>
-                        <td><?= $row->tanggal_pelaksanaan_susun; ?></td>
-                        <td><?= $row->nomor_so; ?></td>
-                        <td><?= $row->tanggal_masuk; ?></td>
-                        <td><?= $row->deadline; ?></td>
-                        <td><?= $row->nama_pemesan; ?></td>
-                        <td><?= $row->nama_orderan; ?></td>
-                        <td><?= $row->ukuran; ?></td>
-                        <td><?= $row->oplag; ?></td>
-                        <td><?= $row->halaman; ?></td>    
-                        <td><?= $row->hasil_1+$row->hasil_2; ?></td>  
-                        <td><?php echo $row->status_susun == "susun" ?  "finishing proses isi" : $row->so_status?></td>   
-
-                        <td align="center">                          
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_susun/<?= $row->id_order; ?>">
-                            <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
-                          </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_susun/<?= $row->id_order; ?>">
-                            <i class="fa fa-eye" style="font-size:18px;"></i>
-                          </a>
-                        </td>
-                      </tr>
-                    <?php } else if($row->status_susun =="susun" and $row->id_jadwal_susun == 0){?>
+                    <?php $nilai=0; ?>
+                    <?php foreach($fp as $s => $row) {?>                     
                       <tr>
                         <td><?= $row->tanggal_pelaksanaan_susun; ?></td>
                         <td><?= $row->nomor_so; ?></td>
@@ -85,16 +62,23 @@
                         <td><?= $row->hasil_1+$row->hasil_2; ?></td>     
                         <td><?php echo $row->status_susun == "susun" ?  "finishing proses isi" : $row->so_status?></td>   
 
-                        <td align="center">                          
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_susun/<?= $row->id_order; ?>">
+                        <td align="center">       
+
+                        <?php if( $row->id_jadwal_susun == $id_jadwal_max[$nilai] and $row->status_susun != "susun") {?>  
+                        <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_susun/<?= $row->id_susun; ?>">
+                            <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
+                          </a>    
+                          <?php } ?>  
+
+                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_susun/<?= $row->id_susun; ?>">
                             <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_susun/<?= $row->id_order; ?>">
+                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_susun/<?= $row->id_susun; ?>">
                             <i class="fa fa-eye" style="font-size:18px;"></i>
                           </a>
                         </td>
                       </tr>
-                    <?php }} ?>
+                    <?php $nilai++;} ?>
                     </tbody>
                 </table>
                 </div>

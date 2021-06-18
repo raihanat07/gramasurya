@@ -759,7 +759,8 @@ public function ambilIDOrder($id_order)
         $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
 
         $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-        $this->db->where('laminasi.id_laminasi', $id);       
+        $this->db->where('laminasi.id_laminasi', $id);   
+        $this->db->limit(1);         
         
         $query = $this->db->get();
         return $query;  
@@ -878,6 +879,40 @@ public function ambilIDOrder($id_order)
         return $query;  
 }
 
+    public function ambil_data_mbo($id)
+        {
+            $this->db->select(
+                '   
+                    mbo.id_jadwal_mbo as id_jadwal_mbo,
+                    mbo.hasil_lipatan_lembar_1 as hasil_lipatan_lembar_1,                   
+                    mbo.hasil_lipatan_lembar_2 as hasil_lipatan_lembar_2,
+                    mbo.hasil_lipatan_lembar_3 as hasil_lipatan_lembar_3,
+                    mbo.hasil_lipatan_lembar_4 as hasil_lipatan_lembar_4,
+                    mbo.hasil_lipatan_lembar_5 as hasil_lipatan_lembar_5,
+                    mbo.hasil_lipatan_lembar_6 as hasil_lipatan_lembar_6,
+                    mbo.hasil_lipatan_lembar_7 as hasil_lipatan_lembar_7,
+                    mbo.hasil_lipatan_lembar_8 as hasil_lipatan_lembar_8,
+                    mbo.hasil_lipatan_lembar_9 as hasil_lipatan_lembar_9,
+                    mbo.hasil_lipatan_lembar_10 as hasil_lipatan_lembar_10,
+                    mbo.hasil_lipatan_lembar_11 as hasil_lipatan_lembar_11,
+                    mbo.hasil_lipatan_lembar_12 as hasil_lipatan_lembar_12,
+                    mbo.hasil_lipatan_lembar_13 as hasil_lipatan_lembar_13,
+                    mbo.hasil_lipatan_lembar_14 as hasil_lipatan_lembar_14,
+                    mbo.hasil_lipatan_lembar_15 as hasil_lipatan_lembar_15,
+                    mbo.hasil_lipatan_lembar_16 as hasil_lipatan_lembar_16,
+                    mbo.hasil_lipatan_lembar_17 as hasil_lipatan_lembar_17,
+                    mbo.hasil_lipatan_lembar_18 as hasil_lipatan_lembar_18,
+                    mbo.hasil_lipatan_lembar_19 as hasil_lipatan_lembar_19,
+                    mbo.hasil_lipatan_lembar_20 as hasil_lipatan_lembar_20,        
+                    
+                '
+            );
+            $this->db->from('order');
+            $this->db->join('mbo','mbo.id_order = order.id_order');    
+            $this->db->where('mbo.id_order', $id);          
+            $query = $this->db->get();
+            return $query;   
+}
     public function ambilIDOrder_mbo($id_order)
     {
         $this->db->select('
@@ -1077,9 +1112,11 @@ public function edit_mbo($id)
         $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
 
         $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-        $this->db->where('mbo.id_order', $id);       
+        $this->db->where('mbo.id_mbo', $id);  
+        $this->db->limit(1);     
         
         $query = $this->db->get();
+        // var_dump($query->result());die;
         return $query;  
 }
 public function proses_edit_mbo($data)
@@ -1377,6 +1414,40 @@ public function proses_tambah_mbo($data)
             $query = $this->db->get();
             return $query;  
 }
+public function ambil_data_shoe($id)
+{
+    $this->db->select(
+        '   
+            shoe.id_jadwal_shoe as id_jadwal_shoe,
+            shoe.hasil_lipatan_lembar_1 as hasil_lipatan_lembar_1,                   
+            shoe.hasil_lipatan_lembar_2 as hasil_lipatan_lembar_2,
+            shoe.hasil_lipatan_lembar_3 as hasil_lipatan_lembar_3,
+            shoe.hasil_lipatan_lembar_4 as hasil_lipatan_lembar_4,
+            shoe.hasil_lipatan_lembar_5 as hasil_lipatan_lembar_5,
+            shoe.hasil_lipatan_lembar_6 as hasil_lipatan_lembar_6,
+            shoe.hasil_lipatan_lembar_7 as hasil_lipatan_lembar_7,
+            shoe.hasil_lipatan_lembar_8 as hasil_lipatan_lembar_8,
+            shoe.hasil_lipatan_lembar_9 as hasil_lipatan_lembar_9,
+            shoe.hasil_lipatan_lembar_10 as hasil_lipatan_lembar_10,
+            shoe.hasil_lipatan_lembar_11 as hasil_lipatan_lembar_11,
+            shoe.hasil_lipatan_lembar_12 as hasil_lipatan_lembar_12,
+            shoe.hasil_lipatan_lembar_13 as hasil_lipatan_lembar_13,
+            shoe.hasil_lipatan_lembar_14 as hasil_lipatan_lembar_14,
+            shoe.hasil_lipatan_lembar_15 as hasil_lipatan_lembar_15,
+            shoe.hasil_lipatan_lembar_16 as hasil_lipatan_lembar_16,
+            shoe.hasil_lipatan_lembar_17 as hasil_lipatan_lembar_17,
+            shoe.hasil_lipatan_lembar_18 as hasil_lipatan_lembar_18,
+            shoe.hasil_lipatan_lembar_19 as hasil_lipatan_lembar_19,
+            shoe.hasil_lipatan_lembar_20 as hasil_lipatan_lembar_20,        
+            
+        '
+    );
+    $this->db->from('order');
+    $this->db->join('shoe','shoe.id_order = order.id_order');    
+    $this->db->where('shoe.id_order', $id);          
+    $query = $this->db->get();
+    return $query;   
+}
 
 
     public function ambilIDOrder_shoe($id_order)
@@ -1578,8 +1649,9 @@ public function edit_shoe($id)
         $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
 
         $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-        $this->db->where('shoe.id_order', $id);       
-        
+        $this->db->where('shoe.id_shoe', $id);       
+        $this->db->limit(1);         
+
         $query = $this->db->get();
         return $query;  
 }
@@ -1858,6 +1930,21 @@ public function proses_tambah_shoe($data)
             $query = $this->db->get();
             return $query;  
 }
+        public function ambil_data_susun($id)
+        {
+            $this->db->select(
+                '   
+                    susun.id_jadwal_susun as id_jadwal_susun,
+                    susun.hasil_1 as hasil_1,
+                    susun.hasil_2 as hasil_2,
+                '
+            );
+            $this->db->from('order');
+            $this->db->join('susun','susun.id_order = order.id_order');    
+            $this->db->where('susun.id_order', $id);          
+            $query = $this->db->get();
+            return $query;   
+}
 
         public function ambilIDOrder_SUSUN($id_order)
         {
@@ -1943,7 +2030,8 @@ public function proses_tambah_shoe($data)
             $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
 
             $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-            $this->db->where('susun.id_order', $id);       
+            $this->db->where('susun.id_susun', $id);  
+            $this->db->limit(1);
             
             $query = $this->db->get();
             return $query;  
@@ -2118,7 +2206,8 @@ public function edit_sub($id)
     $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
 
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-    $this->db->where('sub_proses.id_order', $id);       
+    $this->db->where('sub_proses.id_order', $id);    
+    $this->db->limit(1);
     
     $query = $this->db->get();
     return $query;  

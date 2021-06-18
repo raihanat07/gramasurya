@@ -66,7 +66,7 @@
 
                         <td align="center">     
 
-                        <?php if( $row->id_jadwal_laminasi == $id_jadwal_max[$nilai]) {?>  
+                        <?php if( $row->id_jadwal_laminasi == $id_jadwal_max[$nilai] and $row->status_laminasi != "laminasi") {?>  
                           <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_laminasi/<?= $row->id_laminasi; ?>">
                             <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
                           </a>  

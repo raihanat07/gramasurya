@@ -33,12 +33,23 @@ class JadwalUmum_m extends CI_Model {
             mesin_72.druk as druk,
             mesin_72.total_kertas as total_kertas,
             mesin_72.set as set,
-            mesin_72.jenis_cetakan as jenis_cetakan',
+            mesin_72.jenis_cetakan as jenis_cetakan,
+            
+            mesin_74_a.id_mesin_74a as id_mesin_74a,
+            mesin_74_a.nama_mesin as nama_mesin_74a,
+            mesin_74_a.tanggal_pelaksanaan as tanggal_pelaksanaan_74a,
+            mesin_74_a.operator as operator_74a,
+            mesin_74_a.target as target_74a,
+            mesin_74_a.druk as druk_74a,
+            mesin_74_a.total_kertas as total_kertas_74a,
+            mesin_74_a.set as set_74a,
+            mesin_74_a.jenis_cetakan as jenis_cetakan_74a',
         );
 
         $this->db->from('order');
         $this->db->join('finishing','finishing.id_order = order.id_order','left');
         $this->db->join('mesin_72','mesin_72.id_order = order.id_order','left');
+        $this->db->join('mesin_74_a','mesin_74_a.id_order = order.id_order','left');
         $this->db->order_by('id_order', 'desc');    
         $query = $this->db->get();
         return $query; 
@@ -58,7 +69,19 @@ class JadwalUmum_m extends CI_Model {
                 'jenis_cetakan' =>$data['jenis_cetakan_72']            
             );
             $this->db->insert('mesin_72',$tambah_ju);
-         
+            
+            $tambah_74a = array(         
+                'id_order' =>$data['id_order'],                                                                       
+                'tanggal_pelaksanaan' =>$data['tanggal_pelaksanaan_74a'],
+                'operator' =>$data['operator_74a'],
+                'target' =>$data['target_74a'],
+                'nama_mesin' =>$data['nama_mesin_74a'],
+                'druk' =>$data['druk_74a'],
+                'total_kertas' =>$data['kertas_74a'],
+                'set' =>$data['set_74a'],
+                'jenis_cetakan' =>$data['jenis_cetakan_74a']            
+            );
+            $this->db->insert('mesin_74_a',$tambah_74a);
     }
 
     public function edit_ju($data)
@@ -77,7 +100,22 @@ class JadwalUmum_m extends CI_Model {
             );
             $this->db->set($edit_ju);
             $this->db->where('id_order',$data['id_order']);
-            $this->db->update('mesin_72');         
+            $this->db->update('mesin_72');
+
+            $edit_74a = array(         
+                'id_order' =>$data['id_order'],                                                                       
+                'tanggal_pelaksanaan' =>$data['tanggal_pelaksanaan_74a'],
+                'operator' =>$data['operator_74a'],
+                'target' =>$data['target_74a'],
+                'nama_mesin' =>$data['nama_mesin_74a'],
+                'druk' =>$data['druk_74a'],
+                'total_kertas' =>$data['kertas_74a'],
+                'set' =>$data['set_74a'],
+                'jenis_cetakan' =>$data['jenis_cetakan_74a']            
+            );
+            $this->db->set($edit_74a);
+            $this->db->where('id_order',$data['id_order']);
+            $this->db->update('mesin_74_a');    
     }
 
     // public function get()

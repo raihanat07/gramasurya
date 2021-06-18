@@ -57,7 +57,9 @@ class JadwalUmum extends CI_Controller {
 			if($inputan["target_72"] !=null){
 				$inputan["druk_72"] = $inputan["target_72"] * $inputan["oplag"];
 			}
-
+			if($inputan["target_74a"] !=null){
+				$inputan["druk_74a"] = $inputan["target_74a"] * $inputan["oplag"];
+			}
 
 			$this->ju->tambah_ju($inputan);							
 			// $this->ctcp->status_umum($inputan);						
@@ -87,7 +89,9 @@ class JadwalUmum extends CI_Controller {
 			if($inputan["target_72"] !=null){
 				$inputan["druk_72"] = $inputan["target_72"] * $inputan["oplag"];
 			}
-
+			if($inputan["target_74a"] !=null){
+				$inputan["druk_74a"] = $inputan["target_74a"] * $inputan["oplag"];
+			}
 			$this->ju->edit_ju($inputan);							
 			// $this->dc->status_umum($inputan);						
 				echo "<script> alert('Data Berhasil Diubah'); </script>";		
