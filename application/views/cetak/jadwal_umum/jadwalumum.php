@@ -90,10 +90,10 @@
               
               <?php } else if($row->id_mesin_74a !=null) {?>
 
-                  <?php if($row->jenis_cetakan == "Cover") {?>
+                  <?php if($row->jenis_cetakan_74a == "Cover") {?>
 
-                    <td><?= $row->nama_mesin ?></td>
-                    <td><?= $row->tanggal_pelaksanaan ?></td>
+                    <td><?= $row->nama_mesin_74a ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_74a ?></td>
 
                   <?php } else {?>
                     <td></td>
@@ -101,10 +101,10 @@
                     
                   <?php } ?>
 
-                  <?php if($row->jenis_cetakan == "Isi") {?>
+                  <?php if($row->jenis_cetakan_74a == "Isi") {?>
 
-                  <td><?= $row->nama_mesin ?></td>
-                  <td><?= $row->tanggal_pelaksanaan ?></td>
+                  <td><?= $row->nama_mesin_74a ?></td>
+                  <td><?= $row->tanggal_pelaksanaan_74a ?></td>
 
                   <?php } else {?>
                   <td></td>
