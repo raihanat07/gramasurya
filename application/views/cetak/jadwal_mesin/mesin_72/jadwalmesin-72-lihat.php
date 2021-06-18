@@ -15,7 +15,8 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title coba">SPK ORDER [<label>dari db</label>]</h3>
+        <?php foreach($jm as $s => $row) {?> 
+          <h3 class="card-title coba">SPK ORDER [<label><?= $row->nomor_so; ?></label>]</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -41,31 +42,18 @@
             <div class="row">
               <div class="col-md-4">
                 <br>Nama Pemesan
-                <br><label class="form-label">dari db</label>
+                <br><label class="form-label"><?= $row->nama_pemesan; ?></label>
               </div>
               <div class="col-md-4">
                 <br>Nama Orderan
-                <br><label class="form-label">dari db</label>
+                <br><label class="form-label"><?= $row->nama_orderan; ?></label>
               </div>
               <div class="col-md-4">
                 <br>Jenis Cetakan
                 <br><label class="form-label">dari db</label>
               </div>
             </div>
-            <div class="row">
-              <div class="col-md-4">
-                <br>Nama Pemesan
-                <br><label class="form-label">dari db</label>
-              </div>
-              <div class="col-md-4">
-                <br>Nama Cetak
-                <br><label class="form-label">dari db</label>
-              </div>
-              <div class="col-md-4">
-                <br>Jenis Cetakan
-                <br><label class="form-label" style="background: #8683FC;padding: 1px;border-radius: 3px;">dari db</label>
-              </div>
-            </div><br>
+          
 
             <div class="card" style="background: #A9A9A9">
               <div class="row" align="center">
@@ -142,7 +130,7 @@
                     Ukuran Plano
                   </div>
                   <div class="col-md-6">
-                    <label>dari db</label>
+                    <label><?= $row->ukuran; ?></label>
                   </div>
                 </div>
                 <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
@@ -192,7 +180,7 @@
 
             <div class="row" align="center" style="height: 150px;">
               <div class="col-md-4">
-                <br>Opertor Cetak
+                <br>Operator Cetak
               </div>
               <div class="col-md-4">
                 <br>Kasi Cetak
@@ -227,8 +215,9 @@
           Footer
         </div> -->
         <!-- /.card-footer-->
+        <?php } ?>
       </div>
       <!-- /.card -->
-
+     
     </section>
     <!-- /.content -->

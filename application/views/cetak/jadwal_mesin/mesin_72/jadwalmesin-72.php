@@ -60,7 +60,7 @@
               <td><?= $row->target; ?></td>
               <td><?= $row->druk; ?></td>
               <td align="center">
-                <a href="<?=site_url('cetak/JadwalMesin/lihat_72')?>">
+                <a href="<?=site_url('cetak/JadwalMesin/lihat_72/'.$row->id_mesin_72)?>">
                   <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
                 <a href="<?=site_url('cetak/JadwalMesin/edit_72')?>">
@@ -68,8 +68,8 @@
                 </a>
               </td>
               <td align="center">
-                <a href="<?=site_url()?>cetak/JadwalMesin/tambah_spk_72" class="btn btn-success">
-                  <i class="fa fa-plus" style="font-size:14px"></i> BUAT SPK
+                <a href="<?=site_url('cetak/JadwalMesin/tambah_spk_72/'.$row->id_mesin_72)?>" class="btn btn-success">
+                  <i class="fa fa-plus" style="font-size:14px"></i> BUAT SPK 
                 </a>
               </td>
             </tr>
