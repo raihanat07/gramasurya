@@ -82,7 +82,7 @@
                             </td>
                             <td><?= $row->so_status; ?></td>
                 <td align="center">
-                  <a href="<?=site_url('cetak/DisplayUmum/lihat_du')?>">
+                  <a href="<?=site_url('cetak/DisplayUmum/lihat_du/'.$row->id_order)?>">
                     <i class="fa fa-eye" style="font-size:18px;"></i>
                   </a>
                 </td>

@@ -54,12 +54,10 @@ class JadwalUmum extends CI_Controller {
 			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
 			// }
 
-			if($inputan["target_cover"] !=null){
-				$inputan["druk_cover"] = $inputan["target_cover"] * $inputan["oplag"];
+			if($inputan["target_72"] !=null){
+				$inputan["druk_72"] = $inputan["target_72"] * $inputan["oplag"];
 			}
-			if($inputan["target_isi"] !=null){
-				$inputan["druk_isi"] = $inputan["target_isi"] * $inputan["oplag"];
-			}
+
 
 			$this->ju->tambah_ju($inputan);							
 			// $this->ctcp->status_umum($inputan);						
@@ -85,11 +83,9 @@ class JadwalUmum extends CI_Controller {
 			// if($inputan["jumlah_kertas_isi3"] !=null){
 			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
 			// }
-			if($inputan["target_cover"] !=null){
-				$inputan["druk_cover"] = $inputan["target_cover"] * $inputan["oplag"];
-			}
-			if($inputan["target_isi"] !=null){
-				$inputan["druk_isi"] = $inputan["target_isi"] * $inputan["oplag"];
+			
+			if($inputan["target_72"] !=null){
+				$inputan["druk_72"] = $inputan["target_72"] * $inputan["oplag"];
 			}
 
 			$this->ju->edit_ju($inputan);							
