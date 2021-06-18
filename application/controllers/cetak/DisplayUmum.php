@@ -20,10 +20,15 @@ class DisplayUmum extends CI_Controller {
 		);
 		$this->template->load('cetak/template','cetak/display_umum/displayumum',$data);
 	}
-	public function lihat_du()
+	public function lihat_du($id)
 	{
+		$query = $this->so->get_edit($id);
+		$data = array(
+			'judul' => 'Display Umum',
+			'so' => $query->result(),
+		);	
 		// check_already_login_cetak();
-		$data['judul'] = 'Display Umum';
+		//$data['judul'] = 'Display Umum';
 		$this->template->load('cetak/template','cetak/display_umum/displayumum-lihat',$data);
 	}
 
