@@ -32,11 +32,11 @@
               </div>
               <div class="col-md-4">
                 <br>Tanggal Masuk
-                <br><label class="form-label">dari db</label>
+                <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
               </div>
               <div class="col-md-4">
                 <br>Deadline
-                <br><label class="form-label">dari db</label>
+                <br><label class="form-label"><?= $row->deadline; ?></label>
               </div>
             </div>
             <div class="row">
