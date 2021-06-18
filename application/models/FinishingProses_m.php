@@ -2206,7 +2206,8 @@ public function edit_sub($id)
     $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
 
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-    $this->db->where('sub_proses.id_order', $id);       
+    $this->db->where('sub_proses.id_order', $id);    
+    $this->db->limit(1);
     
     $query = $this->db->get();
     return $query;  
