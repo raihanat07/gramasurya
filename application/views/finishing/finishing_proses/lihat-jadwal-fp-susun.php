@@ -188,7 +188,8 @@
         <div class="row">
         <div class="col" align="left">            
             <div class="col-md-6">                        
-                                  <label>Total Hasil : <?= $row->hasil_1+$row->hasil_2; ?></label><br>                                            
+                                  <label>Total Hasil : <?= $row->hasil_1+$row->hasil_2; ?></label><br>  
+                                  <label>Total Hasil Keseluruhan : <?= $total_1+$total_2; ?></label><br>                                            
             </div></div>  
         </div>
         
