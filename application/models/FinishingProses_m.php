@@ -119,6 +119,68 @@ class FinishingProses_m extends CI_Model {
         return $query; 
 }
 
+// ambil tanggal tiap mesin hehe
+        public function ambil_data_fp_laminasi($id)
+        {
+            $this->db->select(
+                '   
+                laminasi.tanggal_pelaksanaan_laminasi as tanggal_laminasi,                 
+                '
+            );
+            $this->db->from('order');                            
+            $this->db->join('laminasi','laminasi.id_order = order.id_order','left');
+           
+
+            $this->db->where('order.id_order', $id);                   
+            $query = $this->db->get();
+            return $query;   
+}
+    public function ambil_data_fp_mbo($id)
+    {
+        $this->db->select(
+            '   
+            mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_mbo,                 
+            '
+        );
+        $this->db->from('order');                            
+        $this->db->join('mbo','mbo.id_order = order.id_order','left');
+    
+
+        $this->db->where('order.id_order', $id);                   
+        $query = $this->db->get();
+        return $query;   
+}
+    public function ambil_data_fp_shoe($id)
+    {
+        $this->db->select(
+            '   
+            shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_shoe,                 
+            '
+        );
+        $this->db->from('order');                            
+        $this->db->join('shoe','shoe.id_order = order.id_order','left');
+
+
+        $this->db->where('order.id_order', $id);                   
+        $query = $this->db->get();
+        return $query;   
+}
+    public function ambil_data_fp_susun($id)
+        {
+            $this->db->select(
+                '   
+                susun.tanggal_pelaksanaan_mesin_susun as tanggal_susun,                 
+                '
+            );
+            $this->db->from('order');                            
+            $this->db->join('susun','susun.id_order = order.id_order','left');
+
+
+            $this->db->where('order.id_order', $id);                   
+            $query = $this->db->get();
+            return $query;   
+}
+
     public function tambah_fp($data)
 	{
             $tambah_laminasi = array(

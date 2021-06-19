@@ -59,6 +59,7 @@
                         <td>Actions</td>
                       </tr>
                     </thead>
+                    <?php $nilai=0;?>
                     <?php foreach($fp as $s => $row) {?> 
                     <?php if(($row->id_jadwal_laminasi == 0  or $row->id_jadwal_laminasi == null ) and ($row->id_jadwal_mbo == 0  or $row->id_jadwal_mbo == null ) and ($row->id_jadwal_shoe == 0  or $row->id_jadwal_shoe == null ) and ($row->id_jadwal_susun == 0  or $row->id_jadwal_susun == null ) and ($row->id_jadwal_sub == 0  or $row->id_jadwal_sub == null )) { ?>
                       <tr>
@@ -71,19 +72,19 @@
                         <td><?= $row->oplag; ?></td>
                         <td><?= $row->halaman; ?></td>
                             <?php if($row->tanggal_laminasi != "0000-00-00") {?>
-                        <td <?php echo $row->status_laminasi == "laminasi" ?  "style='color: red'" : "" ?>><?= $row->tanggal_laminasi ?></td>
+                        <td <?php echo $row->status_laminasi == "laminasi" ?  "style='color: red'" : "" ?>><?= $tanggal_laminasi[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
                             
                             <?php if($row->tanggal_mbo != "0000-00-00") {?>
-                        <td <?php echo $row->status_mbo == "mbo" ?  "style='color: red'" : "" ?>><?= $row->tanggal_mbo ?></td>
+                        <td <?php echo $row->status_mbo == "mbo" ?  "style='color: red'" : "" ?>><?= $tanggal_mbo[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
                             <?php if($row->tanggal_shoe != "0000-00-00") {?>
-                        <td <?php echo $row->status_shoe == "shoe" ?  "style='color: red'" : "" ?>><?= $row->tanggal_shoe ?></td>
+                        <td <?php echo $row->status_shoe == "shoe" ?  "style='color: red'" : "" ?>><?= $tanggal_shoe[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
                             <?php if($row->tanggal_susun != "0000-00-00") {?>
-                        <td <?php echo $row->status_susun == "susun" ?  "style='color: red'" : "" ?>><?= $row->tanggal_susun ?></td>
+                        <td <?php echo $row->status_susun == "susun" ?  "style='color: red'" : "" ?>><?= $tanggal_susun[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
                             <?php if($row->tanggal_sub_proses != "0000-00-00") {?>
@@ -106,7 +107,7 @@
                         </td>
                       </tr>
 
-                      <?php } ?>
+                      <?php $nilai++;} ?>
                       <?php } ?>
                     </tbody>
             

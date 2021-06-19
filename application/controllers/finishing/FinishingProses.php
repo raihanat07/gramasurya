@@ -17,8 +17,100 @@ class FinishingProses extends CI_Controller {
 			'judul' => 'Finishing Proses',
 			'fp' => $query->result(),
 		);		
+
+		// ini dia 		
+		$nilai = 0;					
+		$nilai_mesin = 0;
+		$laminasi = 0;
+		$mbo = 0;
+		$shoe = 0;
+		$susun = 0;
+		$sub = 0;
+		
+		$banding_id=null;
+
+		$tanggal_laminasi = "";
+		$tanggal_mbo = "";
+		$tanggal_shoe = "";
+		$tanggal_susun = "";
+		$tanggal_sub = "";
+
+		foreach($data["fp"] as $s => $row){
+					
+
+					$id_order = $row->id_order;
+					$banding_id[$nilai] = $id_order;					
+					// ambil nilai id order								
+					
+					// AMBIL TANGGAL TIAP MESIN, NANTI DISIMPAN DIDALAM SEBUAH ARRAY
+					// data laminasi
+						$ambil_laminasi = $this->fp->ambil_data_fp_laminasi($id_order)->result();
+						foreach($ambil_laminasi as $sq) {		
+							if($sq->tanggal_laminasi != null and $sq->tanggal_laminasi != "0000-00-00" and $sq->tanggal_laminasi != $laminasi[$nilai_mesin-1]){	
+								$tanggal_laminasi .= $sq->tanggal_laminasi.", <br>";
+							}													
+							
+							$laminasi[$nilai_mesin] = $sq->tanggal_laminasi;										
+							$nilai_mesin++;
+						}$nilai_mesin = 0;
+						
+
+					// data mbo
+						$ambil_mbo = $this->fp->ambil_data_fp_mbo($id_order)->result();
+						foreach($ambil_mbo as $sq) {							
+							if($sq->tanggal_mbo != null and $sq->tanggal_mbo != "0000-00-00" and $sq->tanggal_mbo != $mbo[$nilai_mesin-1]){	
+								$tanggal_mbo .= $sq->tanggal_mbo.", <br>";
+							}															
+							$mbo[$nilai_mesin] = $sq->tanggal_mbo;					
+							$nilai_mesin++;
+						}$nilai_mesin=0;
+
+					// data shoe
+					$ambil_shoe = $this->fp->ambil_data_fp_shoe($id_order)->result();
+					foreach($ambil_shoe as $sq) {							
+						if($sq->tanggal_shoe != null and $sq->tanggal_shoe != "0000-00-00" and $sq->tanggal_shoe != $shoe[$nilai_mesin-1]){	
+							$tanggal_shoe .= $sq->tanggal_shoe.", <br>";
+						}															
+						$shoe[$nilai_mesin] = $sq->tanggal_shoe;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+
+					// data susun
+					$ambil_susun = $this->fp->ambil_data_fp_susun($id_order)->result();
+					foreach($ambil_susun as $sq) {							
+						if($sq->tanggal_susun != null and $sq->tanggal_susun != "0000-00-00" and $sq->tanggal_susun != $susun[$nilai_mesin-1]){	
+							$tanggal_susun .= $sq->tanggal_susun.", <br>";
+						}															
+						$susun[$nilai_mesin] = $sq->tanggal_susun;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+											
+
+				if($banding_id[$nilai] != $banding_id[$nilai-1]){
+					$data["tanggal_laminasi"][$nilai] = $tanggal_laminasi;					
+					$data["tanggal_mbo"][$nilai] = $tanggal_mbo;
+					$data["tanggal_shoe"][$nilai] = $tanggal_shoe;
+					$data["tanggal_susun"][$nilai] = $tanggal_susun;
+					$data["tanggal_sub"][$nilai] = $tanggal_sub;	 
+					$nilai++;	
+				}  			 					
+												
+					$tanggal_laminasi = "";
+					$tanggal_mbo = "";
+					$tanggal_shoe = "";
+					$tanggal_susun = "";
+					$tanggal_sub = "";																			
+					
+		}
+			// var_dump($data["tanggal_laminasi"]);
+			// var_dump($data["tanggal_mbo"]);
+			// die;
+
+
 		$this->template->load('finishing/template','finishing/finishing_proses/finishing_proses',$data);
 	}
+
+
 	public function proses_fp()
 	{
 		if(isset($_POST['add'])){							
