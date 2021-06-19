@@ -64,7 +64,7 @@
 
 
               
-              <?php if($row->id_mesin_72 !=null) {?>
+              <?php if($row->id_mesin_72 !=null && $row->id_mesin_74a ==null) {?>
 
                   <?php if($row->jenis_cetakan == "Cover") {?>
 
@@ -88,7 +88,7 @@
 
                   <?php } ?>
               
-              <?php } else if($row->id_mesin_74a !=null) {?>
+              <?php } else if($row->id_mesin_74a !=null && $row->id_mesin_72 ==null) {?>
 
                   <?php if($row->jenis_cetakan_74a == "Cover") {?>
 
@@ -112,14 +112,50 @@
 
                   <?php } ?>
               
-              <?php } else {?>
+              <?php } else if( $row->id_mesin_72 !=null && $row->id_mesin_74a !=null )  {?>
 
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <?php if($row->jenis_cetakan_74a == "Cover") {?>
+
+                  <td><?= $row->nama_mesin_74a ?></td>
+                  <td><?= $row->tanggal_pelaksanaan_74a ?></td>
+
+                <?php } else if($row->jenis_cetakan == "Cover") {?>
+
+                  <td><?= $row->nama_mesin ?></td>
+                  <td><?= $row->tanggal_pelaksanaan ?></td> 
+
+                <?php } else {?>
+                
+                  <td></td>
+                  <td></td> 
+
+                <?php } ?>
+
+                <?php if($row->jenis_cetakan_74a == "Isi") {?>
+
+                  <td><?= $row->nama_mesin_74a ?></td>
+                  <td><?= $row->tanggal_pelaksanaan_74a ?></td>
+
+                <?php } else if($row->jenis_cetakan == "Isi") {?>
+                
+                  <td><?= $row->nama_mesin ?></td>
+                  <td><?= $row->tanggal_pelaksanaan ?></td> 
+
+                <?php } else {?>
+                
+                  <td></td>
+                  <td></td> 
+
+                <?php } ?>
               
-              <?php } ?>
+                <?php } else {?>
+
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+
+                <?php } ?>
                  
 
               <!-- <?php if($row->tanggal_pelaksanaan !=null) {?>
