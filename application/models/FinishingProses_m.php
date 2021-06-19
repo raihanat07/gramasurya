@@ -124,7 +124,8 @@ class FinishingProses_m extends CI_Model {
         {
             $this->db->select(
                 '   
-                laminasi.tanggal_pelaksanaan_laminasi as tanggal_laminasi,                 
+                laminasi.tanggal_pelaksanaan_laminasi as tanggal_laminasi,
+                laminasi.id_jadwal_laminasi as id_jadwal_laminasi,                 
                 '
             );
             $this->db->from('order');                            
@@ -139,7 +140,8 @@ class FinishingProses_m extends CI_Model {
     {
         $this->db->select(
             '   
-            mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_mbo,                 
+            mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_mbo,    
+            mbo.id_jadwal_mbo as id_jadwal_mbo,               
             '
         );
         $this->db->from('order');                            
@@ -154,7 +156,8 @@ class FinishingProses_m extends CI_Model {
     {
         $this->db->select(
             '   
-            shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_shoe,                 
+            shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_shoe,   
+            shoe.id_jadwal_shoe as id_jadwal_shoe,                
             '
         );
         $this->db->from('order');                            
@@ -169,7 +172,8 @@ class FinishingProses_m extends CI_Model {
         {
             $this->db->select(
                 '   
-                susun.tanggal_pelaksanaan_mesin_susun as tanggal_susun,                 
+                susun.tanggal_pelaksanaan_mesin_susun as tanggal_susun, 
+                susun.id_jadwal_susun as id_jadwal_susun,                  
                 '
             );
             $this->db->from('order');                            

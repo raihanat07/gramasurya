@@ -60,8 +60,9 @@
                       </tr>
                     </thead>
                     <?php $nilai=0;?>
+                    <?php $nilai_jadwal=0;?>
                     <?php foreach($fp as $s => $row) {?> 
-                    <?php if(($row->id_jadwal_laminasi == 0  or $row->id_jadwal_laminasi == null ) and ($row->id_jadwal_mbo == 0  or $row->id_jadwal_mbo == null ) and ($row->id_jadwal_shoe == 0  or $row->id_jadwal_shoe == null ) and ($row->id_jadwal_susun == 0  or $row->id_jadwal_susun == null ) and ($row->id_jadwal_sub == 0  or $row->id_jadwal_sub == null )) { ?>
+                    <?php if(($row->id_jadwal_laminasi == $id_jadwal_laminasi_min[$nilai_jadwal]  or $row->id_jadwal_laminasi == null ) and ($row->id_jadwal_mbo == $id_jadwal_mbo_min[$nilai_jadwal]  or $row->id_jadwal_mbo == null ) and ($row->id_jadwal_shoe == $id_jadwal_shoe_min[$nilai_jadwal]  or $row->id_jadwal_shoe == null ) and ($row->id_jadwal_susun == $id_jadwal_susun_min[$nilai_jadwal]  or $row->id_jadwal_susun == null ) and ($row->id_jadwal_sub == 0  or $row->id_jadwal_sub == null )) { ?>
                       <tr>
                       <td align="center"><?= $row->nomor_so; ?></td>
                         <td><?= $row->tanggal_masuk; ?></td>
@@ -108,7 +109,7 @@
                       </tr>
 
                       <?php $nilai++;} ?>
-                      <?php } ?>
+                      <?php $nilai_jadwal++;} ?>
                     </tbody>
             
                 </table>

@@ -21,6 +21,8 @@ class FinishingProses extends CI_Controller {
 		// ini dia 		
 		$nilai = 0;					
 		$nilai_mesin = 0;
+		$nilai_jadwal =0;
+
 		$laminasi = 0;
 		$mbo = 0;
 		$shoe = 0;
@@ -35,6 +37,12 @@ class FinishingProses extends CI_Controller {
 		$tanggal_susun = "";
 		$tanggal_sub = "";
 
+		$id_jadwal_laminasi_min = 1000;
+		$id_jadwal_mbo_min = 1000;
+		$id_jadwal_shoe_min = 1000;
+		$id_jadwal_susun_min = 1000;
+		$id_jadwal_sub_min = 1000;
+
 		foreach($data["fp"] as $s => $row){
 					
 
@@ -48,7 +56,10 @@ class FinishingProses extends CI_Controller {
 						foreach($ambil_laminasi as $sq) {		
 							if($sq->tanggal_laminasi != null and $sq->tanggal_laminasi != "0000-00-00" and $sq->tanggal_laminasi != $laminasi[$nilai_mesin-1]){	
 								$tanggal_laminasi .= $sq->tanggal_laminasi.", <br>";
-							}													
+							}
+							if($sq->id_jadwal_laminasi < $id_jadwal_laminasi_min){
+								$id_jadwal_laminasi_min = $sq->id_jadwal_laminasi;
+							}
 							
 							$laminasi[$nilai_mesin] = $sq->tanggal_laminasi;										
 							$nilai_mesin++;
@@ -60,7 +71,10 @@ class FinishingProses extends CI_Controller {
 						foreach($ambil_mbo as $sq) {							
 							if($sq->tanggal_mbo != null and $sq->tanggal_mbo != "0000-00-00" and $sq->tanggal_mbo != $mbo[$nilai_mesin-1]){	
 								$tanggal_mbo .= $sq->tanggal_mbo.", <br>";
-							}															
+							}	
+							if($sq->id_jadwal_mbo < $id_jadwal_mbo_min){
+								$id_jadwal_mbo_min = $sq->id_jadwal_mbo;
+							}														
 							$mbo[$nilai_mesin] = $sq->tanggal_mbo;					
 							$nilai_mesin++;
 						}$nilai_mesin=0;
@@ -70,7 +84,10 @@ class FinishingProses extends CI_Controller {
 					foreach($ambil_shoe as $sq) {							
 						if($sq->tanggal_shoe != null and $sq->tanggal_shoe != "0000-00-00" and $sq->tanggal_shoe != $shoe[$nilai_mesin-1]){	
 							$tanggal_shoe .= $sq->tanggal_shoe.", <br>";
-						}															
+						}	
+						if($sq->id_jadwal_shoe < $id_jadwal_shoe_min){
+							$id_jadwal_shoe_min = $sq->id_jadwal_shoe;
+						}														
 						$shoe[$nilai_mesin] = $sq->tanggal_shoe;					
 						$nilai_mesin++;
 					}$nilai_mesin=0;
@@ -80,7 +97,10 @@ class FinishingProses extends CI_Controller {
 					foreach($ambil_susun as $sq) {							
 						if($sq->tanggal_susun != null and $sq->tanggal_susun != "0000-00-00" and $sq->tanggal_susun != $susun[$nilai_mesin-1]){	
 							$tanggal_susun .= $sq->tanggal_susun.", <br>";
-						}															
+						}	
+						if($sq->id_jadwal_susun < $id_jadwal_susun_min){
+							$id_jadwal_susun_min = $sq->id_jadwal_susun;
+						}														
 						$susun[$nilai_mesin] = $sq->tanggal_susun;					
 						$nilai_mesin++;
 					}$nilai_mesin=0;
@@ -91,18 +111,35 @@ class FinishingProses extends CI_Controller {
 					$data["tanggal_mbo"][$nilai] = $tanggal_mbo;
 					$data["tanggal_shoe"][$nilai] = $tanggal_shoe;
 					$data["tanggal_susun"][$nilai] = $tanggal_susun;
-					$data["tanggal_sub"][$nilai] = $tanggal_sub;	 
+					$data["tanggal_sub"][$nilai] = $tanggal_sub;	 					
+
 					$nilai++;	
-				}  			 					
-												
-					$tanggal_laminasi = "";
-					$tanggal_mbo = "";
-					$tanggal_shoe = "";
-					$tanggal_susun = "";
-					$tanggal_sub = "";																			
+				}  						 					
+				
+				// menangkap nilai id jadwal terkecil
+				$data["id_jadwal_laminasi_min"][$nilai_jadwal] = $id_jadwal_laminasi_min;
+				$data["id_jadwal_mbo_min"][$nilai_jadwal] = $id_jadwal_mbo_min;
+				$data["id_jadwal_shoe_min"][$nilai_jadwal] = $id_jadwal_shoe_min;
+				$data["id_jadwal_susun_min"][$nilai_jadwal] = $id_jadwal_susun_min;
+				$data["id_jadwal_sub_min"][$nilai_jadwal] = $id_jadwal_sub_min;
+
+				// reset nilai yang akan di foreaach
+				$tanggal_laminasi = "";
+				$tanggal_mbo = "";
+				$tanggal_shoe = "";
+				$tanggal_susun = "";
+				$tanggal_sub = "";		
+
+				$id_jadwal_laminasi_min = 1000;
+				$id_jadwal_mbo_min = 1000;
+				$id_jadwal_shoe_min = 1000;
+				$id_jadwal_susun_min = 1000;
+				$id_jadwal_sub_min = 1000;
+				
+				$nilai_jadwal++;
 					
 		}
-			// var_dump($data["tanggal_laminasi"]);
+			// var_dump($data["id_jadwal_mbo_min"]);die;
 			// var_dump($data["tanggal_mbo"]);
 			// die;
 
