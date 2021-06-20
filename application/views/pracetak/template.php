@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="<?=base_url()?>assets/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel='shortcut icon' href="../assets/dist/img/grama.png">
   <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
   <script type="text/javascript">
     $("#cover1plate1").keyup(function(){

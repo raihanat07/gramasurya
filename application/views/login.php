@@ -17,9 +17,10 @@
   <link rel="stylesheet" href="<?=base_url()?>assets/plugins/iCheck/square/blue.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel='shortcut icon' href="../assets/dist/img/grama.png">
 </head>
 <body class="hold-transition login-page">
-  <center><h2 style="margin-top: 100px; margin-bottom: -100px"><b>Sistem Informasi Produksi <br> Gramasurya</b></h2></center>
+  <center><h2 style="margin-top: 7%; margin-bottom: -5%"><b>Sistem Informasi Produksi <br> Gramasurya</b></h2></center>
 <div class="login-box">
   <div class="login-logo">
     
@@ -28,7 +29,7 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-     <center> <img src="../assets/dist/img/grama.jpg" style="width: 70px"></center>
+     <center> <img src="../assets/dist/img/grama.png" style="width: 70px"></center>
       <h4><p class="login-box-msg" align="text-center"><b>Login</b></p></h4>
 
       <form action="<?=site_url('auth/process')?>" method="post">
