@@ -184,6 +184,22 @@ class FinishingProses_m extends CI_Model {
             $query = $this->db->get();
             return $query;   
 }
+    public function ambil_data_fp_sub($id)
+        {
+            $this->db->select(
+                '   
+                sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_sub, 
+                sub_proses.id_jadwal_sub as id_jadwal_sub,                  
+                '
+            );
+            $this->db->from('order');                            
+            $this->db->join('sub_proses','sub_proses.id_order = order.id_order','left');
+
+
+            $this->db->where('order.id_order', $id);                   
+            $query = $this->db->get();
+            return $query;   
+}
 
     public function tambah_fp($data)
 	{
@@ -2183,6 +2199,21 @@ public function get_jadwal_sub()
     $query = $this->db->get();
     return $query;  
 }
+    public function ambil_data_sub($id)
+            {
+                $this->db->select(
+                    '   
+                        sub_proses.id_jadwal_sub as id_jadwal_sub,
+                        sub_proses.hasil_1 as hasil_1,
+                        sub_proses.hasil_2 as hasil_2,
+                    '
+                );
+                $this->db->from('order');
+                $this->db->join('sub_proses','sub_proses.id_order = order.id_order');    
+                $this->db->where('sub_proses.id_order', $id);          
+                $query = $this->db->get();
+                return $query;   
+}
 
 public function ambilIDOrder_sub($id_order)
 {
@@ -2272,7 +2303,7 @@ public function edit_sub($id)
     $this->db->join('sub_proses','order.id_order = sub_proses.id_order' );
 
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-    $this->db->where('sub_proses.id_order', $id);    
+    $this->db->where('sub_proses.id_sub', $id);    
     $this->db->limit(1);
     
     $query = $this->db->get();
@@ -2307,6 +2338,31 @@ public function proses_edit_sub($data)
             $this->db->set($ubah_sub_khusus);
             $this->db->where('id_order',$data['id_order']);
             $this->db->update('sub_proses');  
+
+}
+public function proses_tambah_sub($data)
+{
+        $tambah_jadwal_sub = array(                                                                         
+            'id_order' =>$data['id_order'],                                   
+            'tanggal_pelaksanaan_sub_proses' =>$data['tanggal_pelaksanaan_sub'],   
+            'id_jadwal_sub' =>$data['id_jadwal_sub'],   
+            'status_sub' =>$data['status_sub'],   
+            'keterangan_jadwal_sub_proses' =>$data['keterangan_jadwal_sub'],                    
+            'tanggal_kembali_1' =>$data['tanggal_kembali_1'],   
+            'hasil_1' =>$data['hasil_1'],                   
+            'rejek_1' =>$data['rejek_1'],                   
+            'keterangan_1' =>$data['keterangan_1'],   
+            'tanggal_kembali_2' =>$data['tanggal_kembali_2'],   
+            'hasil_2' =>$data['hasil_2'],                   
+            'rejek_2' =>$data['rejek_2'],                   
+            'keterangan_2' =>$data['keterangan_2'], 
+            
+            'jenis_sub_lipat' =>$data['jenis_sub_lipat'],
+            'jenis_sub_susun_gabung' =>$data['jenis_sub_susun_gabung'],
+            'jenis_sub_laminasi' =>$data['jenis_sub_laminasi'], 
+
+        );                                                          
+        $this->db->insert('sub_proses',$tambah_jadwal_sub);
 
 }
 

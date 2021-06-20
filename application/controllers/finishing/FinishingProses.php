@@ -104,6 +104,19 @@ class FinishingProses extends CI_Controller {
 						$susun[$nilai_mesin] = $sq->tanggal_susun;					
 						$nilai_mesin++;
 					}$nilai_mesin=0;
+
+					// data sub
+					$ambil_sub = $this->fp->ambil_data_fp_sub($id_order)->result();
+					foreach($ambil_sub as $sq) {							
+						if($sq->tanggal_sub != null and $sq->tanggal_sub != "0000-00-00" and $sq->tanggal_sub != $sub[$nilai_mesin-1]){	
+							$tanggal_sub .= $sq->tanggal_sub.", <br>";
+						}	
+						if($sq->id_jadwal_sub < $id_jadwal_sub_min){
+							$id_jadwal_sub_min = $sq->id_jadwal_sub;
+						}														
+						$sub[$nilai_mesin] = $sq->tanggal_sub;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
 											
 
 				if($banding_id[$nilai] != $banding_id[$nilai-1]){
@@ -891,6 +904,25 @@ public function proses_shoe()
 			'judul' => 'Finishing Proses',
 			'fp' => $query->result(),
 		);		
+		$jadwal_max = 0;		
+
+		foreach($data["fp"] as $s => $row){
+			// var_dump($row->id_order);
+
+			$id_order = $row->id_order;
+			$ambil = $this->fp->ambil_data_sub($id_order)->result();
+			// var_dump($id_order);						
+
+			foreach($ambil as $sq) {				
+				if($sq->id_jadwal_sub > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_sub;
+				}				
+			}	
+			$data["id_jadwal_max"][] = $jadwal_max;	
+			$jadwal_max = 0;			   		
+
+		}
+
 		$this->template->load('finishing/template','finishing/finishing_proses/jadwal-fp-sub',$data);
 }   
     public function edit_jadwal_fp_sub($id)
@@ -923,14 +955,35 @@ public function proses_shoe()
 		$data['total_2'] = $total_2;		
 		$this->template->load('finishing/template','finishing/finishing_proses/edit-jadwal-fp-sub',$data);
 }
-	public function tambah_jadwal_fp_sub()
+	public function tambah_jadwal_fp_sub($id)
 	{
 		// check_already_login_finishing();
-		$query = $this->fp->get();
+		$query = $this->fp->edit_sub($id);
 		$data = array(
 			'judul' => 'Finishing Proses',
 			'fp' => $query->result(),
 		);		
+		$id_order = $data['fp'][0]->id_order;
+		$ambil = $this->fp->ambilIDOrder_sub($id_order)->result();
+ 
+		$jadwal_max = 0;
+		$tampung_jadwal = [];
+		$total_1=0;
+		$total_2=0;
+		foreach($ambil as $sq) {
+			 if($sq->id_jadwal_sub > $jadwal_max) {
+				 $jadwal_max = $sq->id_jadwal_sub;
+			 }
+			 $tampung_jadwal[] = $sq->id_jadwal_sub;
+			 $total_1 += $sq->hasil_1;
+			 $total_2 += $sq->hasil_2;
+		}
+ 
+		$data['jadwal_max'] = $jadwal_max;
+		$data['tampung_jadwal'] = $tampung_jadwal;
+		$data['total_1'] = $total_1;
+		$data['total_2'] = $total_2;	
+
 		$this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp-sub',$data);
 }
     public function lihat_jadwal_fp_sub($id)
