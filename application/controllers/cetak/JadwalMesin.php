@@ -63,5 +63,25 @@ class JadwalMesin extends CI_Controller {
 		
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/mesin72-tambah-spk',$data);
 	}
+	public function proses_tambah_72()
+	{
+		if(isset($_POST['add'])){							
+			$inputan = $this->input->post(null, TRUE);
+			$this->jm->add_spk_72($inputan);
+				if($this->db->affected_rows() > 0){
+					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
+				}
+				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_72')."'; </script>"; 
+		} else if(isset($_POST['edit'])){ 
+			$inputan = $this->input->post(null, TRUE);			
+			$this->jm->edit($inputan);
+				if($this->db->affected_rows() > 0){					
+					// echo "<script> alert('Data Berhasil Diubah'); </script>";
+				}
+				echo "<script>window.location='".site_url('cetak/jadwal_mesin/mesin_72/jadwalmesin-72')."'; </script>"; 
+		}
+		
+		
+	}
 
 }

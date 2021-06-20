@@ -393,6 +393,9 @@
             <br><hr><br>
             <h3 class="text-center">Form Pembuatan SPK</h3>
             <div class="card-body">
+            <form action="<?=site_url('cetak/jadwalmesin/proses_tambah_72')?>" method="POST">
+            <input type="text" name="id_mesin_72"  value="<?php echo $row->id_mesin_72; ?>" hidden>
+            <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
               <div class="row">
                 <div class="col-md-4">
                   <br>Nomor SO
@@ -434,7 +437,17 @@
                   Jenis Kertas
                 </div>
                 <div class="col-md-4">
-                  <label>dari db</label>
+                  <label>
+                  <?php if($row->jenis_cetakan == "Cover"){ ?>
+                  <?php echo $row->jenis_kertas_cover_1!=null && $row->jenis_kertas_cover_1!='-'? "".$row->jenis_kertas_cover_1."<br>": "" ?>
+                  <?php echo $row->jenis_kertas_cover_2!=null && $row->jenis_kertas_cover_2!='-'? "".$row->jenis_kertas_cover_2."<br>": "" ?>
+                  <?php echo $row->jenis_kertas_cover_3!=null && $row->jenis_kertas_cover_3!='-'? "".$row->jenis_kertas_cover_3."<br>": "" ?>
+                  <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                    <?php echo $row->jenis_kertas_isi_1!=null && $row->jenis_kertas_isi_1!='-'? "".$row->jenis_kertas_isi_1."<br>": "" ?>
+                    <?php echo $row->jenis_kertas_isi_2!=null && $row->jenis_kertas_isi_2!='-'? "".$row->jenis_kertas_isi_2."<br>": "" ?>
+                    <?php echo $row->jenis_kertas_isi_3!=null && $row->jenis_kertas_isi_3!='-'? "".$row->jenis_kertas_isi_3."<br>": "" ?>
+                  <?php } ?>
+                  </label>
                 </div>
               </div><br>
               <div class="row">
@@ -448,7 +461,17 @@
                   Model Potongan
                 </div>
                 <div class="col-md-4">
-                  <label>dari db</label>
+                  <label><?php if($row->jenis_cetakan == "Cover"){?> 
+                    <?php echo $row->potong_cover_1!=null? "potong 1 : ".$row->potong_cover_1."<br>": "" ?>
+                    <?php echo $row->potong_cover_2!=null? "potong 2 : ".$row->potong_cover_2."<br>": "" ?>
+                    <?php echo $row->potong_cover_3!=null? "potong 3 : ".$row->potong_cover_3."<br>": "" ?>
+                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                    <?php echo $row->potong_isi_1!=null? "potong 1 : ".$row->potong_isi_1."<br>": "" ?>
+                    <?php echo $row->potong_isi_2!=null? "potong 2 : ".$row->potong_isi_2."<br>": "" ?>
+                    <?php echo $row->potong_isi_3!=null? "potong 3 : ".$row->potong_isi_3."<br>": "" ?>
+                    <?php echo $row->potong_isi_4!=null? "potong 4 : ".$row->potong_isi_4."<br>": "" ?>
+                    <?php } ?>
+                  </label>
                 </div>
               </div><br>
               <div class="row">
@@ -456,13 +479,28 @@
                   Jumlah Plat
                 </div>
                 <div class="col-md-4">
-                  <label>dari db</label>
+                   <label><?php if($row->jenis_cetakan == "Cover"){?> 
+                    <?=$row->total_plat_cover;?>
+                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                    <?= $row->total_plat_isi;?>
+                    <?php } ?>
+                  </label>
                 </div>
                 <div class="col-sm-2" align="right">
                   Jumlah Kertas
                 </div>
                 <div class="col-md-4">
-                  <label>dari db</label>
+                  <label>
+                  <?php if($row->jenis_cetakan == "Cover"){?> 
+                    <?php echo $row->jumlah_kertas_cover_1!=null && $row->jumlah_kertas_cover_1!='-'? " ".$row->jumlah_kertas_cover_1."<br>": "" ?>
+                    <?php echo $row->jumlah_kertas_cover_2!=null && $row->jumlah_kertas_cover_2!='-'? " ".$row->jumlah_kertas_cover_2."<br>": "" ?>
+                    <?php echo $row->jumlah_kertas_cover_3!=null && $row->jumlah_kertas_cover_3!='-'? " ".$row->jumlah_kertas_cover_3."<br>": "" ?>
+                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                      <?php echo $row->jumlah_kertas_isi_1!=null && $row->jumlah_kertas_isi_1!='-'? " ".$row->jumlah_kertas_isi_1."<br>": "" ?>
+                      <?php echo $row->jumlah_kertas_isi_2!=null && $row->jumlah_kertas_isi_2!='-'? " ".$row->jumlah_kertas_isi_2."<br>": "" ?>
+                      <?php echo $row->jumlah_kertas_isi_3!=null && $row->jumlah_kertas_isi_3!='-'? " ".$row->jumlah_kertas_isi_3."<br>": "" ?>
+                    <?php } ?>
+                  </label>
                 </div>
               </div><br>
               <div class="row">
@@ -470,7 +508,7 @@
                   Mesin Cetak
                 </div>
                 <div class="col-md-4">
-                  <label>dari db</label>
+                  <label><?= $row->nama_mesin?></label>
                 </div>
                 <div class="col-sm-2" align="right">
                   Jumlah Cetak
@@ -484,7 +522,7 @@
                   Jenis Cetakan
                 </div>
                 <div class="col-md-4">
-                  <label>dari db</label>
+                  <label><?= $row->jenis_cetakan?></label>
                 </div>
                 <div class="col-sm-2" align="right">
                   Warna Cetak
@@ -492,19 +530,19 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-3">
                   <input type="text" name="1muka_fc_bw_warna" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="1muka_fc_bw_warna" value="imposisi cover">
+                  <input class="form-check-input" type="checkbox" name="1muka_fc_bw_warna" value="1 Muka : FC / BW / WARNA">
                   <label class="form-check-label" for="flexCheckDefault">1 Muka : FC / BW / WARNA</label><br>
 
                   <input type="text" name="2muka_fc_fc-bw_bw-bw" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="2muka_fc_fc-bw_bw-bw" value="imposisi cover">
+                  <input class="form-check-input" type="checkbox" name="2muka_fc_fc-bw_bw-bw" value="2 Muka : FC / FC-BW / BW-BW">
                   <label class="form-check-label" for="flexCheckDefault">2 Muka : FC / FC-BW / BW-BW</label><br>
 
                   <input type="text" name="2muka_blk" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="2muka_blk" value="imposisi cover">
+                  <input class="form-check-input" type="checkbox" name="2muka_blk" value="2 Muka BLK (Balik Kertas)">
                   <label class="form-check-label" for="flexCheckDefault">2 Muka BLK (Balik Kertas)</label><br>
 
                   <input type="text" name="2muka_blg" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="2muka_blg" value="imposisi cover">
+                  <input class="form-check-input" type="checkbox" name="2muka_blg" value="2 Muka BLG (Balik Graper)">
                   <label class="form-check-label" for="flexCheckDefault">2 Muka BLG (Balik Graper)</label>
                 </div>
               </div><br>
@@ -515,9 +553,10 @@
               </div><br>
               <div class="row">
                 <div class="col" align="right">
-                  <button type="submit" class="btn btn-success">Simpan</button>
+                  <button type="submit" name="add" class="btn btn-success">Simpan</button>
                 </div>
               </div>
+            </form>
             </div>
           </div>
         </div>
