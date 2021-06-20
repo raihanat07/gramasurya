@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 3 | Log in</title>
+  <title>Sistem Informasi Produksi| Log in</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,14 +19,17 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition login-page">
+  <center><h2 style="margin-top: 100px; margin-bottom: -100px"><b>Sistem Informasi Produksi <br> Gramasurya</b></h2></center>
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?=base_url()?>assets/index2.html"><b>Admin</b>LTE</a>
+    
   </div>
+  
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+     <center> <img src="../assets/dist/img/grama.jpg" style="width: 70px"></center>
+      <h4><p class="login-box-msg" align="text-center"><b>Login</b></p></h4>
 
       <form action="<?=site_url('auth/process')?>" method="post">
         <div class="form-group has-feedback">
@@ -41,12 +44,12 @@
           <div class="col-8">
             <div class="checkbox icheck">
               <label>
-                <input type="checkbox"> Remember Me
+                <!-- <input type="checkbox"> Remember Me -->
               </label>
             </div>
           </div>
           <!-- /.col -->
-          <div class="col-4">
+          <div class="col-12" style="margin-top: -30px">
             <button type="submit" name="login" class="btn btn-primary btn-block btn-flat">Log In</button>
           </div>
           <!-- /.col -->
@@ -54,10 +57,10 @@
       </form>
 
       <p class="mb-1">
-        <a href="#">I forgot my password</a>
+       <!--  <a href="#">I forgot my password</a> -->
       </p>
       <p class="mb-0">
-        <a href="register.html" class="text-center">Register a new membership</a>
+       <!--  <a href="register.html" class="text-center">Register a new membership</a> -->
       </p>
     </div>
     <!-- /.login-card-body -->
