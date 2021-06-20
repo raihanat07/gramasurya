@@ -37,11 +37,11 @@ class FinishingProses extends CI_Controller {
 		$tanggal_susun = "";
 		$tanggal_sub = "";
 
-		$id_jadwal_laminasi_min = 1000;
-		$id_jadwal_mbo_min = 1000;
-		$id_jadwal_shoe_min = 1000;
-		$id_jadwal_susun_min = 1000;
-		$id_jadwal_sub_min = 1000;
+		$id_jadwal_laminasi_max = 0;
+		$id_jadwal_mbo_max = 0;
+		$id_jadwal_shoe_max = 0;
+		$id_jadwal_susun_max = 0;
+		$id_jadwal_sub_max = 0;
 
 		foreach($data["fp"] as $s => $row){
 					
@@ -57,8 +57,8 @@ class FinishingProses extends CI_Controller {
 							if($sq->tanggal_laminasi != null and $sq->tanggal_laminasi != "0000-00-00" and $sq->tanggal_laminasi != $laminasi[$nilai_mesin-1]){	
 								$tanggal_laminasi .= $sq->tanggal_laminasi.", <br>";
 							}
-							if($sq->id_jadwal_laminasi < $id_jadwal_laminasi_min){
-								$id_jadwal_laminasi_min = $sq->id_jadwal_laminasi;
+							if($sq->id_jadwal_laminasi > $id_jadwal_laminasi_max){
+								$id_jadwal_laminasi_max = $sq->id_jadwal_laminasi;
 							}
 							
 							$laminasi[$nilai_mesin] = $sq->tanggal_laminasi;										
@@ -72,8 +72,8 @@ class FinishingProses extends CI_Controller {
 							if($sq->tanggal_mbo != null and $sq->tanggal_mbo != "0000-00-00" and $sq->tanggal_mbo != $mbo[$nilai_mesin-1]){	
 								$tanggal_mbo .= $sq->tanggal_mbo.", <br>";
 							}	
-							if($sq->id_jadwal_mbo < $id_jadwal_mbo_min){
-								$id_jadwal_mbo_min = $sq->id_jadwal_mbo;
+							if($sq->id_jadwal_mbo > $id_jadwal_mbo_max){
+								$id_jadwal_mbo_max = $sq->id_jadwal_mbo;
 							}														
 							$mbo[$nilai_mesin] = $sq->tanggal_mbo;					
 							$nilai_mesin++;
@@ -85,8 +85,8 @@ class FinishingProses extends CI_Controller {
 						if($sq->tanggal_shoe != null and $sq->tanggal_shoe != "0000-00-00" and $sq->tanggal_shoe != $shoe[$nilai_mesin-1]){	
 							$tanggal_shoe .= $sq->tanggal_shoe.", <br>";
 						}	
-						if($sq->id_jadwal_shoe < $id_jadwal_shoe_min){
-							$id_jadwal_shoe_min = $sq->id_jadwal_shoe;
+						if($sq->id_jadwal_shoe > $id_jadwal_shoe_max){
+							$id_jadwal_shoe_max = $sq->id_jadwal_shoe;
 						}														
 						$shoe[$nilai_mesin] = $sq->tanggal_shoe;					
 						$nilai_mesin++;
@@ -98,8 +98,8 @@ class FinishingProses extends CI_Controller {
 						if($sq->tanggal_susun != null and $sq->tanggal_susun != "0000-00-00" and $sq->tanggal_susun != $susun[$nilai_mesin-1]){	
 							$tanggal_susun .= $sq->tanggal_susun.", <br>";
 						}	
-						if($sq->id_jadwal_susun < $id_jadwal_susun_min){
-							$id_jadwal_susun_min = $sq->id_jadwal_susun;
+						if($sq->id_jadwal_susun > $id_jadwal_susun_max){
+							$id_jadwal_susun_max = $sq->id_jadwal_susun;
 						}														
 						$susun[$nilai_mesin] = $sq->tanggal_susun;					
 						$nilai_mesin++;
@@ -111,8 +111,8 @@ class FinishingProses extends CI_Controller {
 						if($sq->tanggal_sub != null and $sq->tanggal_sub != "0000-00-00" and $sq->tanggal_sub != $sub[$nilai_mesin-1]){	
 							$tanggal_sub .= $sq->tanggal_sub.", <br>";
 						}	
-						if($sq->id_jadwal_sub < $id_jadwal_sub_min){
-							$id_jadwal_sub_min = $sq->id_jadwal_sub;
+						if($sq->id_jadwal_sub > $id_jadwal_sub_max){
+							$id_jadwal_sub_max = $sq->id_jadwal_sub;
 						}														
 						$sub[$nilai_mesin] = $sq->tanggal_sub;					
 						$nilai_mesin++;
@@ -130,11 +130,11 @@ class FinishingProses extends CI_Controller {
 				}  						 					
 				
 				// menangkap nilai id jadwal terkecil
-				$data["id_jadwal_laminasi_min"][$nilai_jadwal] = $id_jadwal_laminasi_min;
-				$data["id_jadwal_mbo_min"][$nilai_jadwal] = $id_jadwal_mbo_min;
-				$data["id_jadwal_shoe_min"][$nilai_jadwal] = $id_jadwal_shoe_min;
-				$data["id_jadwal_susun_min"][$nilai_jadwal] = $id_jadwal_susun_min;
-				$data["id_jadwal_sub_min"][$nilai_jadwal] = $id_jadwal_sub_min;
+				$data["id_jadwal_laminasi_max"][$nilai_jadwal] = $id_jadwal_laminasi_max;
+				$data["id_jadwal_mbo_max"][$nilai_jadwal] = $id_jadwal_mbo_max;
+				$data["id_jadwal_shoe_max"][$nilai_jadwal] = $id_jadwal_shoe_max;
+				$data["id_jadwal_susun_max"][$nilai_jadwal] = $id_jadwal_susun_max;
+				$data["id_jadwal_sub_max"][$nilai_jadwal] = $id_jadwal_sub_max;
 
 				// reset nilai yang akan di foreaach
 				$tanggal_laminasi = "";
@@ -143,16 +143,16 @@ class FinishingProses extends CI_Controller {
 				$tanggal_susun = "";
 				$tanggal_sub = "";		
 
-				$id_jadwal_laminasi_min = 1000;
-				$id_jadwal_mbo_min = 1000;
-				$id_jadwal_shoe_min = 1000;
-				$id_jadwal_susun_min = 1000;
-				$id_jadwal_sub_min = 1000;
+				$id_jadwal_laminasi_max = 0;
+				$id_jadwal_mbo_max = 0;
+				$id_jadwal_shoe_max = 0;
+				$id_jadwal_susun_max = 0;
+				$id_jadwal_sub_max = 0;
 				
 				$nilai_jadwal++;
 					
 		}
-			// var_dump($data["id_jadwal_mbo_min"]);die;
+			// var_dump($data["id_jadwal_mbo_max"]);die;
 			// var_dump($data["tanggal_mbo"]);
 			// die;
 
