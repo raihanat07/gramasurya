@@ -55,9 +55,9 @@ class JadwalUmum_m extends CI_Model {
         return $query; 
     }
 
-    public function tambah_ju($data)
+    public function tambah_ju72($data)
 	{
-            $tambah_ju = array(         
+            $tambah_ju72 = array(         
                 'id_order' =>$data['id_order'],                                                                       
                 'tanggal_pelaksanaan' =>$data['tanggal_pelaksanaan_72'],
                 'operator' =>$data['operator_72'],
@@ -68,8 +68,10 @@ class JadwalUmum_m extends CI_Model {
                 'set' =>$data['set_72'],
                 'jenis_cetakan' =>$data['jenis_cetakan_72']            
             );
-            $this->db->insert('mesin_72',$tambah_ju);
-            
+            $this->db->insert('mesin_72',$tambah_ju72);
+    }
+    public function tambah_ju74a($data)
+	{            
             $tambah_74a = array(         
                 'id_order' =>$data['id_order'],                                                                       
                 'tanggal_pelaksanaan' =>$data['tanggal_pelaksanaan_74a'],

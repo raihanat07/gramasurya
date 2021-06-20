@@ -33,7 +33,7 @@ class JadwalUmum extends CI_Controller {
 
 	public function proses()
 	{		
-		if(isset($_POST['add'])){							
+		if(isset($_POST['add72'])){							
 			$inputan = $this->input->post(null, TRUE);
 			
 			
@@ -57,11 +57,40 @@ class JadwalUmum extends CI_Controller {
 			if($inputan["target_72"] !=null){
 				$inputan["druk_72"] = $inputan["target_72"] * $inputan["oplag"];
 			}
+			
+
+			$this->ju->tambah_ju72($inputan);							
+			// $this->ctcp->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
+				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
+
+		} else if(isset($_POST['add74a'])){							
+			$inputan = $this->input->post(null, TRUE);
+			
+			
+			// if($inputan["jumlah_kertas_cover1"] !=null){
+			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover1"];
+			// }
+			// if($inputan["jumlah_kertas_cover2"] !=null){
+			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover2"];
+			// }
+
+			// if($inputan["jumlah_kertas_isi1"] !=null){
+			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi1"];
+			// }
+			// if($inputan["jumlah_kertas_isi2"] !=null){
+			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi2"];
+			// }
+			// if($inputan["jumlah_kertas_isi3"] !=null){
+			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
+			// }
+
+			
 			if($inputan["target_74a"] !=null){
 				$inputan["druk_74a"] = $inputan["target_74a"] * $inputan["oplag"];
 			}
 
-			$this->ju->tambah_ju($inputan);							
+			$this->ju->tambah_ju74a($inputan);							
 			// $this->ctcp->status_umum($inputan);						
 				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
 				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
