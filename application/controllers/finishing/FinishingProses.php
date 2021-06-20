@@ -170,23 +170,7 @@ class FinishingProses extends CI_Controller {
 		if(isset($_POST['edit'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->fp->edit_fp($inputan);								
-		}
-		
-		if($inputan["tanggal_pelaksanaan_laminasi"] == ""){
-			$this->fp->hapus_jadwal_laminasi($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_mesin_shoe"] == ""){
-			$this->fp->hapus_jadwal_shoe($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_mesin_mbo"] == ""){
-			$this->fp->hapus_jadwal_mbo($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_mesin_susun"] == ""){
-			$this->fp->hapus_jadwal_susun($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_sub_proses"] == ""){
-			$this->fp->hapus_jadwal_sub($inputan);	
-		}
+		}				
 
 		echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
 		echo "<script>window.location='".site_url('finishing/FinishingProses/')."'; </script>"; 
@@ -233,7 +217,7 @@ class FinishingProses extends CI_Controller {
 		
 	   
 	   $this->template->load('finishing/template','finishing/finishing_proses/jadwal-fp-laminasi',$data);
-}
+}	
 
 
    public function edit_jadwal_fp_laminasi($id)
@@ -1032,7 +1016,121 @@ public function proses_shoe()
 				echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_sub')."'; </script>"; 
 		}
 }
+
+
+
+// hapus laminasi
+	public function hapus_laminasi($id)
+	{		
+		$data_id = explode("-" , $id);
+
+		// data 0 = id_mesin, data 1 = id_order
+		$jumlah_id = 0;
+				$ambil = $this->fp->ambilIDOrder($data_id[1])->result();
+				foreach($ambil as $d){
+					$jumlah_id+=1;
+				}				
+		if($jumlah_id >1){
+				$this->fp->hapus_laminasi($data_id[0]);
+				echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+				echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_laminasi')."'; </script>"; 
+		}else{
+				$this->fp->hapus_laminasi_update($data_id[1]);
+				echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+				echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_laminasi')."'; </script>"; 
+		}
+}
+
+// hapus mbo
+public function hapus_mbo($id)
+{		
+	$data_id = explode("-" , $id);
+
+	// data 0 = id_mesin, data 1 = id_order
+	$jumlah_id = 0;
+			$ambil = $this->fp->ambilIDOrder_mbo($data_id[1])->result();
+			foreach($ambil as $d){
+				$jumlah_id+=1;
+			}				
+	if($jumlah_id >1){
+			$this->fp->hapus_mbo($data_id[0]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_mbo')."'; </script>"; 
+	}else{
+			$this->fp->hapus_mbo_update($data_id[1]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_mbo')."'; </script>"; 
+	}
+}
+
+// hapus shoe
+public function hapus_shoe($id)
+{		
+	$data_id = explode("-" , $id);
+
+	// data 0 = id_mesin, data 1 = id_order
+	$jumlah_id = 0;
+			$ambil = $this->fp->ambilIDOrder_shoe($data_id[1])->result();
+			foreach($ambil as $d){
+				$jumlah_id+=1;
+			}				
+	if($jumlah_id >1){
+			$this->fp->hapus_shoe($data_id[0]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_shoe')."'; </script>"; 
+	}else{
+			$this->fp->hapus_shoe_update($data_id[1]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_shoe')."'; </script>"; 
+	}
+}
+
+// hapus susun
+public function hapus_susun($id)
+{		
+	$data_id = explode("-" , $id);
+
+	// data 0 = id_mesin, data 1 = id_order
+	$jumlah_id = 0;
+			$ambil = $this->fp->ambilIDOrder_susun($data_id[1])->result();
+			foreach($ambil as $d){
+				$jumlah_id+=1;
+			}				
+	if($jumlah_id >1){
+			$this->fp->hapus_susun($data_id[0]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_susun')."'; </script>"; 
+	}else{
+			$this->fp->hapus_susun_update($data_id[1]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_susun')."'; </script>"; 
+	}
+}
+
+// hapus sub
+public function hapus_sub($id)
+{		
+	$data_id = explode("-" , $id);
+
+	// data 0 = id_mesin, data 1 = id_order
+	$jumlah_id = 0;
+			$ambil = $this->fp->ambilIDOrder_sub($data_id[1])->result();
+			foreach($ambil as $d){
+				$jumlah_id+=1;
+			}				
+	if($jumlah_id >1){
+			$this->fp->hapus_sub($data_id[0]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_sub')."'; </script>"; 
+	}else{
+			$this->fp->hapus_sub_update($data_id[1]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_sub')."'; </script>"; 
+	}
+}
 	
+
+
 
 
 
