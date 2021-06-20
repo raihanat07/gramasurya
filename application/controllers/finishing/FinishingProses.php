@@ -167,10 +167,65 @@ class FinishingProses extends CI_Controller {
 			$inputan = $this->input->post(null, TRUE);
 			$this->fp->tambah_fp($inputan);								
 		}
-		if(isset($_POST['edit'])){							
+		if(isset($_POST['edit'])){						
 			$inputan = $this->input->post(null, TRUE);
+			// var_dump($inputan["id_order"]);die;
+				// ambil data
+						$ambil_laminasi = $this->fp->ambilIDOrder($inputan["id_order"])->result();
+						$ambil_mbo = $this->fp->ambilIDOrder_mbo($inputan["id_order"])->result();
+						$ambil_shoe = $this->fp->ambilIDOrder_shoe($inputan["id_order"])->result();
+						$ambil_susun = $this->fp->ambilIDOrder_susun($inputan["id_order"])->result();
+						$ambil_sub = $this->fp->ambilIDOrder_sub($inputan["id_order"])->result();
+
+				
+				$jadwal_max_laminasi = 0;
+				$jadwal_max_mbo = 0;
+				$jadwal_max_shoe = 0;
+				$jadwal_max_susun = 0;
+				$jadwal_max_sub = 0;
+
+					// ambil id jadwal dengan nilai tertinggi
+						foreach($ambil_laminasi as $sq) {
+							if($sq->id_jadwal_laminasi > $jadwal_max_laminasi) {
+								$jadwal_max_laminasi = $sq->id_jadwal_laminasi;
+							}							
+					   }$inputan["id_jadwal_laminasi"] = $jadwal_max_laminasi+1; 
+
+					   foreach($ambil_mbo as $sq) {
+							if($sq->id_jadwal_mbo > $jadwal_max_mbo) {
+								$jadwal_max_mbo = $sq->id_jadwal_mbo;
+							}							
+				   		}$inputan["id_jadwal_mbo"] = $jadwal_max_mbo+1; 
+
+						foreach($ambil_shoe as $sq) {
+							if($sq->id_jadwal_shoe > $jadwal_max_shoe) {
+								$jadwal_max_shoe = $sq->id_jadwal_shoe;
+							}							
+				   		}$inputan["id_jadwal_shoe"] = $jadwal_max_shoe+1; 
+
+						foreach($ambil_susun as $sq) {
+							if($sq->id_jadwal_susun > $jadwal_max_susun) {
+								$jadwal_max_susun = $sq->id_jadwal_susun;
+							}							
+				   		}$inputan["id_jadwal_susun"] = $jadwal_max_susun+1; 
+
+						foreach($ambil_sub as $sq) {
+							if($sq->id_jadwal_sub > $jadwal_max_sub) {
+								$jadwal_max_sub = $sq->id_jadwal_sub;
+							}							
+				   		}$inputan["id_jadwal_sub"] = $jadwal_max_sub+1; 
+
+
+						//    echo $inputan["id_order"]."<br><br>";
+						//    echo $inputan["id_jadwal_laminasi"]."<br>";
+						//    echo $inputan["id_jadwal_mbo"]."<br>";
+						//    echo $inputan["id_jadwal_shoe"]."<br>";
+						//    echo $inputan["id_jadwal_susun"]."<br>";
+						//    echo $inputan["id_jadwal_sub"]."<br>";die;
+
+
 			$this->fp->edit_fp($inputan);								
-		}				
+		}	
 
 		echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
 		echo "<script>window.location='".site_url('finishing/FinishingProses/')."'; </script>"; 

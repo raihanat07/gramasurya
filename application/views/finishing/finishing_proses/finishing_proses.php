@@ -239,7 +239,7 @@
                                     <?php if($row->id_laminasi == null) {?>                           
                                       <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_shoe"  id="tgll_shoe<?= $row->id_order; ?>" > 
                                     <?php }else{ ?>                                                                       
-                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_shoe"  id="tgll_shoe<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_mesin_shoe; ?>">
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_shoe"  id="tgll_shoe<?= $row->id_order.$row->id_order; ?>" >
                                       <?php } ?>
                                   </div>  
                                   <div class="col-md-6"><br>       
@@ -792,7 +792,7 @@
                                 <?php if($row->id_laminasi == null) {?>                                     
                                     <textarea name="keterangan_jadwal_fp_shoe" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php }else{ ?>                                  
-                                    <textarea name="keterangan_jadwal_fp_shoe" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_fp_shoe; ?></textarea><br>
+                                    <textarea name="keterangan_jadwal_fp_shoe" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
@@ -896,7 +896,7 @@
                                     <?php if($row->id_laminasi == null) {?>                           
                                       <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_mbo"  id="tgll_mbo<?= $row->id_order; ?>" > 
                                     <?php }else{ ?>                                                                       
-                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_mbo"  id="tgll_mbo<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_mesin_mbo; ?>">
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_mbo"  id="tgll_mbo<?= $row->id_order.$row->id_order; ?>" >
                                       <?php } ?>
                                   </div>
                                   <div class="col-md-6"><br>                                                                 
@@ -1449,7 +1449,7 @@
                                 <?php if($row->id_laminasi == null) {?>                                     
                                     <textarea name="keterangan_jadwal_fp_mbo" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php }else{ ?>                                  
-                                    <textarea name="keterangan_jadwal_fp_mbo" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_fp_mbo; ?></textarea><br>
+                                    <textarea name="keterangan_jadwal_fp_mbo" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
@@ -1553,7 +1553,7 @@
                                     <?php if($row->id_laminasi == null) {?>                           
                                       <input type="date" class="form-control"  name="tanggal_pelaksanaan_sub_proses"  id="tgll_sub_proses<?= $row->id_order; ?>" > 
                                     <?php }else{ ?>                                                                       
-                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_sub_proses"  id="tgll_sub_proses<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_sub_proses; ?>">
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_sub_proses"  id="tgll_sub_proses<?= $row->id_order.$row->id_order; ?>" >
                                       <?php } ?>
                                   </div>  
                                   <div class="col-md-6"><br>       
@@ -1617,7 +1617,7 @@
                                 <?php if($row->id_laminasi == null) {?>                                     
                                     <textarea name="keterangan_jadwal_sub_proses" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php }else{ ?>                                  
-                                    <textarea name="keterangan_jadwal_sub_proses" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_sub_proses; ?></textarea><br>
+                                    <textarea name="keterangan_jadwal_sub_proses" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
@@ -1695,7 +1695,7 @@
                                     <?php if($row->id_laminasi == null) {?>                           
                                       <input type="date" class="form-control"  name="tanggal_pelaksanaan_laminasi"  id="tgll_laminasi<?= $row->id_order; ?>" > 
                                     <?php }else{ ?>                                                                       
-                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_laminasi"  id="tgll_laminasi<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_laminasi; ?>">
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_laminasi"  id="tgll_laminasi<?= $row->id_order.$row->id_order; ?>" >
                                       <?php } ?>
                                   </div>  
                                   <div class="col-md-6"><br>       
@@ -1738,7 +1738,7 @@
                                 <?php if($row->id_laminasi == null) {?>                                     
                                     <textarea name="keterangan_jadwal_fp_laminasi" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php }else{ ?>                                  
-                                    <textarea name="keterangan_jadwal_fp_laminasi" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_fp_laminasi; ?></textarea><br>
+                                    <textarea name="keterangan_jadwal_fp_laminasi" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
@@ -1842,7 +1842,7 @@
                                     <?php if($row->id_laminasi == null) {?>                           
                                       <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_susun"  id="tgll_susun<?= $row->id_order; ?>" > 
                                     <?php }else{ ?>                                                                       
-                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_susun"  id="tgll_susun<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_mesin_susun; ?>">
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_mesin_susun"  id="tgll_susun<?= $row->id_order.$row->id_order; ?>" >
                                       <?php } ?>
                                   </div>  
                                   <div class="col-md-6"><br>       
@@ -1864,7 +1864,7 @@
                                 <?php if($row->id_laminasi == null) {?>                                     
                                     <textarea name="keterangan_jadwal_fp_susun" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php }else{ ?>                                  
-                                    <textarea name="keterangan_jadwal_fp_susun" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_fp_susun; ?></textarea><br>
+                                    <textarea name="keterangan_jadwal_fp_susun" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">

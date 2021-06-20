@@ -284,62 +284,104 @@ class FinishingProses_m extends CI_Model {
 
     public function edit_fp($data)
 	{
-            $ubah_laminasi = array(
-                'id_order' =>$data['id_order'],               
-                'tanggal_pelaksanaan_laminasi' =>$data['tanggal_pelaksanaan_laminasi'],   
-                'keterangan_jadwal_fp_laminasi' =>$data['keterangan_jadwal_fp_laminasi'],                
-            );                        
-            $this->db->set($ubah_laminasi);
-            $this->db->where('id_laminasi',$data['id_laminasi']);
-            $this->db->update('laminasi');  
+            if($data["tanggal_pelaksanaan_laminasi"] != ""){
+                            $ubah_laminasi = array(
+                                'id_order' =>$data['id_order'],               
+                                'id_jadwal_laminasi' =>$data['id_jadwal_laminasi'],     
+                                'tanggal_pelaksanaan_laminasi' =>$data['tanggal_pelaksanaan_laminasi'],   
+                                'keterangan_jadwal_fp_laminasi' =>$data['keterangan_jadwal_fp_laminasi'],                
+                            );                                            
+                            $this->db->insert('laminasi',$ubah_laminasi); 
+            }
 
-            $ubah_mbo = array(
-                'id_order' =>$data['id_order'],               
-                'tanggal_pelaksanaan_mesin_mbo' =>$data['tanggal_pelaksanaan_mesin_mbo'],   
-                'keterangan_jadwal_fp_mbo' =>$data['keterangan_jadwal_fp_mbo'],                                                                           
-            );                        
-            $this->db->set($ubah_mbo);
-            $this->db->where('id_mbo',$data['id_mbo']);
-            $this->db->update('mbo');
+            if($data["tanggal_pelaksanaan_mesin_mbo"] != ""){
+                            $ubah_mbo = array(
+                                'id_order' =>$data['id_order'],     
+                                'id_jadwal_mbo' =>$data['id_jadwal_mbo'],           
+                                'tanggal_pelaksanaan_mesin_mbo' =>$data['tanggal_pelaksanaan_mesin_mbo'],   
+                                'keterangan_jadwal_fp_mbo' =>$data['keterangan_jadwal_fp_mbo'],
+                                'lipat_lembar_1' =>$data['mbo_lipat_lembar_1'],   
+                                'lipat_lembar_2' =>$data['mbo_lipat_lembar_2'],   
+                                'lipat_lembar_3' =>$data['mbo_lipat_lembar_3'],   
+                                'lipat_lembar_4' =>$data['mbo_lipat_lembar_4'],   
+                                'lipat_lembar_5' =>$data['mbo_lipat_lembar_5'],   
+                                'lipat_lembar_6' =>$data['mbo_lipat_lembar_6'],   
+                                'lipat_lembar_7' =>$data['mbo_lipat_lembar_7'],   
+                                'lipat_lembar_8' =>$data['mbo_lipat_lembar_8'],   
+                                'lipat_lembar_9' =>$data['mbo_lipat_lembar_9'],   
+                                'lipat_lembar_10' =>$data['mbo_lipat_lembar_10'],   
+                                'lipat_lembar_11' =>$data['mbo_lipat_lembar_11'],   
+                                'lipat_lembar_12' =>$data['mbo_lipat_lembar_12'],   
+                                'lipat_lembar_13' =>$data['mbo_lipat_lembar_13'],   
+                                'lipat_lembar_14' =>$data['mbo_lipat_lembar_14'],   
+                                'lipat_lembar_15' =>$data['mbo_lipat_lembar_15'],   
+                                'lipat_lembar_16' =>$data['mbo_lipat_lembar_16'],   
+                                'lipat_lembar_17' =>$data['mbo_lipat_lembar_17'],   
+                                'lipat_lembar_18' =>$data['mbo_lipat_lembar_18'],   
+                                'lipat_lembar_19' =>$data['mbo_lipat_lembar_19'],   
+                                'lipat_lembar_20' =>$data['mbo_lipat_lembar_20']
+                                ,                                                                           
+                            );                       
+                            $this->db->insert('mbo',$ubah_mbo); 
+            }
+                            // memasukkan lipat sesuai id_order mbo
+                            $ubah_mbo_lipat = array(                                
+                                'lipat_lembar_1' =>$data['mbo_lipat_lembar_1'],   
+                                'lipat_lembar_2' =>$data['mbo_lipat_lembar_2'],   
+                                'lipat_lembar_3' =>$data['mbo_lipat_lembar_3'],   
+                                'lipat_lembar_4' =>$data['mbo_lipat_lembar_4'],   
+                                'lipat_lembar_5' =>$data['mbo_lipat_lembar_5'],   
+                                'lipat_lembar_6' =>$data['mbo_lipat_lembar_6'],   
+                                'lipat_lembar_7' =>$data['mbo_lipat_lembar_7'],   
+                                'lipat_lembar_8' =>$data['mbo_lipat_lembar_8'],   
+                                'lipat_lembar_9' =>$data['mbo_lipat_lembar_9'],   
+                                'lipat_lembar_10' =>$data['mbo_lipat_lembar_10'],   
+                                'lipat_lembar_11' =>$data['mbo_lipat_lembar_11'],   
+                                'lipat_lembar_12' =>$data['mbo_lipat_lembar_12'],   
+                                'lipat_lembar_13' =>$data['mbo_lipat_lembar_13'],   
+                                'lipat_lembar_14' =>$data['mbo_lipat_lembar_14'],   
+                                'lipat_lembar_15' =>$data['mbo_lipat_lembar_15'],   
+                                'lipat_lembar_16' =>$data['mbo_lipat_lembar_16'],   
+                                'lipat_lembar_17' =>$data['mbo_lipat_lembar_17'],   
+                                'lipat_lembar_18' =>$data['mbo_lipat_lembar_18'],   
+                                'lipat_lembar_19' =>$data['mbo_lipat_lembar_19'],   
+                                'lipat_lembar_20' =>$data['mbo_lipat_lembar_20'],                                                
+                            );                        
+                            $this->db->set($ubah_mbo_lipat);
+                            $this->db->where('id_order',$data['id_order']);
+                            $this->db->update('mbo');
+            
 
-            // memasukkan lipat sesuai id_order mbo
-            $ubah_mbo_lipat = array(                                
-                'lipat_lembar_1' =>$data['mbo_lipat_lembar_1'],   
-                'lipat_lembar_2' =>$data['mbo_lipat_lembar_2'],   
-                'lipat_lembar_3' =>$data['mbo_lipat_lembar_3'],   
-                'lipat_lembar_4' =>$data['mbo_lipat_lembar_4'],   
-                'lipat_lembar_5' =>$data['mbo_lipat_lembar_5'],   
-                'lipat_lembar_6' =>$data['mbo_lipat_lembar_6'],   
-                'lipat_lembar_7' =>$data['mbo_lipat_lembar_7'],   
-                'lipat_lembar_8' =>$data['mbo_lipat_lembar_8'],   
-                'lipat_lembar_9' =>$data['mbo_lipat_lembar_9'],   
-                'lipat_lembar_10' =>$data['mbo_lipat_lembar_10'],   
-                'lipat_lembar_11' =>$data['mbo_lipat_lembar_11'],   
-                'lipat_lembar_12' =>$data['mbo_lipat_lembar_12'],   
-                'lipat_lembar_13' =>$data['mbo_lipat_lembar_13'],   
-                'lipat_lembar_14' =>$data['mbo_lipat_lembar_14'],   
-                'lipat_lembar_15' =>$data['mbo_lipat_lembar_15'],   
-                'lipat_lembar_16' =>$data['mbo_lipat_lembar_16'],   
-                'lipat_lembar_17' =>$data['mbo_lipat_lembar_17'],   
-                'lipat_lembar_18' =>$data['mbo_lipat_lembar_18'],   
-                'lipat_lembar_19' =>$data['mbo_lipat_lembar_19'],   
-                'lipat_lembar_20' =>$data['mbo_lipat_lembar_20'],                                                
-            );                        
-            $this->db->set($ubah_mbo_lipat);
-            $this->db->where('id_order',$data['id_order']);
-            $this->db->update('mbo');
 
-
-
-
-            $ubah_shoe = array(
-                'id_order' =>$data['id_order'],               
-                'tanggal_pelaksanaan_mesin_shoe' =>$data['tanggal_pelaksanaan_mesin_shoe'],   
-                'keterangan_jadwal_fp_shoe' =>$data['keterangan_jadwal_fp_shoe'],                                                                               
-            );            
-            $this->db->set($ubah_shoe);
-            $this->db->where('id_shoe',$data['id_shoe']);
-            $this->db->update('shoe');
+            if($data["tanggal_pelaksanaan_mesin_shoe"] != ""){
+                            $ubah_shoe = array(
+                                'id_order' =>$data['id_order'], 
+                                'id_jadwal_shoe' =>$data['id_jadwal_shoe'],                
+                                'tanggal_pelaksanaan_mesin_shoe' =>$data['tanggal_pelaksanaan_mesin_shoe'],   
+                                'keterangan_jadwal_fp_shoe' =>$data['keterangan_jadwal_fp_shoe'],
+                                'lipat_lembar_1' =>$data['shoe_lipat_lembar_1'],   
+                                'lipat_lembar_2' =>$data['shoe_lipat_lembar_2'],   
+                                'lipat_lembar_3' =>$data['shoe_lipat_lembar_3'],   
+                                'lipat_lembar_4' =>$data['shoe_lipat_lembar_4'],   
+                                'lipat_lembar_5' =>$data['shoe_lipat_lembar_5'],   
+                                'lipat_lembar_6' =>$data['shoe_lipat_lembar_6'],   
+                                'lipat_lembar_7' =>$data['shoe_lipat_lembar_7'],   
+                                'lipat_lembar_8' =>$data['shoe_lipat_lembar_8'],   
+                                'lipat_lembar_9' =>$data['shoe_lipat_lembar_9'],   
+                                'lipat_lembar_10' =>$data['shoe_lipat_lembar_10'],   
+                                'lipat_lembar_11' =>$data['shoe_lipat_lembar_11'],   
+                                'lipat_lembar_12' =>$data['shoe_lipat_lembar_12'],   
+                                'lipat_lembar_13' =>$data['shoe_lipat_lembar_13'],   
+                                'lipat_lembar_14' =>$data['shoe_lipat_lembar_14'],   
+                                'lipat_lembar_15' =>$data['shoe_lipat_lembar_15'],   
+                                'lipat_lembar_16' =>$data['shoe_lipat_lembar_16'],   
+                                'lipat_lembar_17' =>$data['shoe_lipat_lembar_17'],   
+                                'lipat_lembar_18' =>$data['shoe_lipat_lembar_18'],   
+                                'lipat_lembar_19' =>$data['shoe_lipat_lembar_19'],   
+                                'lipat_lembar_20' =>$data['shoe_lipat_lembar_20'],                                                                               
+                            );            
+                            $this->db->insert('shoe',$ubah_shoe);
+            }
 
 // memasukkan lipat sesuai id_order shoe
             $ubah_shoe_lipat = array(                                
@@ -368,26 +410,42 @@ class FinishingProses_m extends CI_Model {
             $this->db->where('id_order',$data['id_order']);
             $this->db->update('shoe');
             
-            $ubah_susun = array(
-                'id_order' =>$data['id_order'],               
-                'tanggal_pelaksanaan_mesin_susun' =>$data['tanggal_pelaksanaan_mesin_susun'],   
-                'keterangan_jadwal_fp_susun' =>$data['keterangan_jadwal_fp_susun'],                
-            );            
-            $this->db->set($ubah_susun);
-            $this->db->where('id_susun',$data['id_susun']);
-            $this->db->update('susun');
 
-            $ubah_sub_fp = array(
-                'id_order' =>$data['id_order'],               
-                'tanggal_pelaksanaan_sub_proses' =>$data['tanggal_pelaksanaan_sub_proses'],   
-                'keterangan_jadwal_sub_proses' =>$data['keterangan_jadwal_sub_proses'],                
-                'jenis_sub_lipat' =>$data['jenis_sub_lipat'],  
-                'jenis_sub_susun_gabung' =>$data['jenis_sub_susun_gabung'],  
-                'jenis_sub_laminasi' =>$data['jenis_sub_laminasi'],                 
+
+
+            if($data["tanggal_pelaksanaan_mesin_susun"] != ""){
+                $ubah_susun = array(
+                    'id_order' =>$data['id_order'], 
+                    'id_jadwal_susun' =>$data['id_jadwal_susun'],                
+                    'tanggal_pelaksanaan_mesin_susun' =>$data['tanggal_pelaksanaan_mesin_susun'],   
+                    'keterangan_jadwal_fp_susun' =>$data['keterangan_jadwal_fp_susun'],                
+                );            
+                $this->db->insert('susun',$ubah_susun);
+            }
+
+            if($data["tanggal_pelaksanaan_sub_proses"] != ""){
+                $ubah_sub_fp = array(
+                    'id_order' =>$data['id_order'],    
+                    'id_jadwal_sub' =>$data['id_jadwal_sub'],             
+                    'tanggal_pelaksanaan_sub_proses' =>$data['tanggal_pelaksanaan_sub_proses'],   
+                    'keterangan_jadwal_sub_proses' =>$data['keterangan_jadwal_sub_proses'],                
+                    'jenis_sub_lipat' =>$data['jenis_sub_lipat'],  
+                    'jenis_sub_susun_gabung' =>$data['jenis_sub_susun_gabung'],  
+                    'jenis_sub_laminasi' =>$data['jenis_sub_laminasi'],                 
+                );            
+                $this->db->insert('sub_proses',$ubah_sub_fp);
+            }
+
+            $ubah_sub_khusus = array(                                
+                    'jenis_sub_lipat' =>$data['jenis_sub_lipat'],  
+                    'jenis_sub_susun_gabung' =>$data['jenis_sub_susun_gabung'],  
+                    'jenis_sub_laminasi' =>$data['jenis_sub_laminasi'],                                   
             );            
-            $this->db->set($ubah_sub_fp);
-            $this->db->where('id_sub',$data['id_sub_proses']);
+            $this->db->set($ubah_sub_khusus);
+            $this->db->where('id_order',$data['id_order']);
             $this->db->update('sub_proses');
+
+
 }
     
 
