@@ -390,314 +390,6 @@ class FinishingProses_m extends CI_Model {
             $this->db->update('sub_proses');
 }
     
-//// Hapus laminasi
-    public function hapus_jadwal_laminasi($data)
-    {
-        $hapus_laminasi = array(
-            'status_laminasi' => null,    
-            'tanggal_pelaksanaan_laminasi' => null,
-            'keterangan_jadwal_fp_laminasi' => null,
-            'tanggal_pengerjaan_1' => null,
-            'hasil_1' => null,
-            'rejek_1' => null,
-            'operator_1' => null,
-            'kru_1' => null,
-            'keterangan_1' => null,
-            'tanggal_pengerjaan_2' => null,
-            'hasil_2' => null,
-            'rejek_2' => null,
-            'operator_2' => null,
-            'kru_2' => null,
-            'keterangan_2' => null,
-            'status_laminasi' => null,
-            'jenis_laminasi' => null,                                                                        
-        );            
-        $this->db->set($hapus_laminasi);    
-        $this->db->where('id_order',$data['id_order']);    
-        $this->db->update('laminasi');
-}
-
-//// Hapus shoe
-    public function hapus_jadwal_shoe($data)
-    {
-        $hapus_shoe = array(
-            'tanggal_pelaksanaan_mesin_shoe' => null,
-            'keterangan_jadwal_fp_shoe' => null,
-            'status_shoe' =>null, 
-            'lipat_lembar_1' => null,
-            'lipat_lembar_2' => null,
-            'lipat_lembar_3' => null,
-            'lipat_lembar_4' => null,
-            'lipat_lembar_5' => null,
-            'lipat_lembar_6' => null,
-            'lipat_lembar_7' => null,
-            'lipat_lembar_8' => null,
-            'lipat_lembar_9' => null,
-            'lipat_lembar_10' => null,
-            'lipat_lembar_11' => null,
-            'lipat_lembar_12' => null,
-            'lipat_lembar_13' => null,
-            'lipat_lembar_14' => null,
-            'lipat_lembar_15' => null,
-            'lipat_lembar_16' => null,
-            'lipat_lembar_17' => null,
-            'lipat_lembar_18' => null,
-            'lipat_lembar_19' => null,
-            'lipat_lembar_20' => null,
-
-            'hasil_lipatan_lembar_1' => null,
-            'hasil_lipatan_lembar_2' => null,
-            'hasil_lipatan_lembar_3' => null,
-            'hasil_lipatan_lembar_4' => null,
-            'hasil_lipatan_lembar_5' => null,
-            'hasil_lipatan_lembar_6' => null,
-            'hasil_lipatan_lembar_7' => null,
-            'hasil_lipatan_lembar_8' => null,
-            'hasil_lipatan_lembar_9' => null,
-            'hasil_lipatan_lembar_10' => null,
-            'hasil_lipatan_lembar_11' => null,
-            'hasil_lipatan_lembar_12' => null,
-            'hasil_lipatan_lembar_13' => null,
-            'hasil_lipatan_lembar_14' => null,
-            'hasil_lipatan_lembar_15' => null,
-            'hasil_lipatan_lembar_16' => null,
-            'hasil_lipatan_lembar_17' => null,
-            'hasil_lipatan_lembar_18' => null,
-            'hasil_lipatan_lembar_19' => null,
-            'hasil_lipatan_lembar_20' => null,
-
-            'operator_lembar_1' => null,
-            'operator_lembar_2' => null,
-            'operator_lembar_3' => null,
-            'operator_lembar_4' => null,
-            'operator_lembar_5' => null,
-            'operator_lembar_6' => null,
-            'operator_lembar_7' => null,
-            'operator_lembar_8' => null,
-            'operator_lembar_9' => null,
-            'operator_lembar_10' => null,
-            'operator_lembar_11' => null,
-            'operator_lembar_12' => null,
-            'operator_lembar_13' => null,
-            'operator_lembar_14' => null,
-            'operator_lembar_15' => null,
-            'operator_lembar_16' => null,
-            'operator_lembar_17' => null,
-            'operator_lembar_18' => null,
-            'operator_lembar_19' => null,
-            'operator_lembar_20' => null,
-
-            'tanggal_pengerjaan_lembar_1' => null,
-            'tanggal_pengerjaan_lembar_2' => null,
-            'tanggal_pengerjaan_lembar_3' => null,
-            'tanggal_pengerjaan_lembar_4' => null,
-            'tanggal_pengerjaan_lembar_5' => null,
-            'tanggal_pengerjaan_lembar_6' => null,
-            'tanggal_pengerjaan_lembar_7' => null,
-            'tanggal_pengerjaan_lembar_8' => null,
-            'tanggal_pengerjaan_lembar_9' => null,
-            'tanggal_pengerjaan_lembar_10' => null,
-            'tanggal_pengerjaan_lembar_11' => null,
-            'tanggal_pengerjaan_lembar_12' => null,
-            'tanggal_pengerjaan_lembar_13' => null,
-            'tanggal_pengerjaan_lembar_14' => null,
-            'tanggal_pengerjaan_lembar_15' => null,
-            'tanggal_pengerjaan_lembar_16' => null,
-            'tanggal_pengerjaan_lembar_17' => null,
-            'tanggal_pengerjaan_lembar_18' => null,
-            'tanggal_pengerjaan_lembar_19' => null,
-            'tanggal_pengerjaan_lembar_20' => null,
-
-            'keterangan_lembar_1' => null,
-            'keterangan_lembar_2' => null,
-            'keterangan_lembar_3' => null,
-            'keterangan_lembar_4' => null,
-            'keterangan_lembar_5' => null,
-            'keterangan_lembar_6' => null,
-            'keterangan_lembar_7' => null,
-            'keterangan_lembar_8' => null,
-            'keterangan_lembar_9' => null,
-            'keterangan_lembar_10' => null,
-            'keterangan_lembar_11' => null,
-            'keterangan_lembar_12' => null,
-            'keterangan_lembar_13' => null,
-            'keterangan_lembar_14' => null,
-            'keterangan_lembar_15' => null,
-            'keterangan_lembar_16' => null,
-            'keterangan_lembar_17' => null,
-            'keterangan_lembar_18' => null,
-            'keterangan_lembar_19' => null,
-            'keterangan_lembar_20' => null,
-            
-        );            
-        $this->db->set($hapus_shoe);    
-        $this->db->where('id_order',$data['id_order']);    
-        $this->db->update('shoe');
-}
-
-//// hapus mbo
-public function hapus_jadwal_mbo($data)
-{
-    $hapus_mbo = array(
-        'tanggal_pelaksanaan_mesin_mbo' => null,
-        'keterangan_jadwal_fp_mbo' => null,
-        'status_mbo' =>null, 
-        'lipat_lembar_1' => null,
-        'lipat_lembar_2' => null,
-        'lipat_lembar_3' => null,
-        'lipat_lembar_4' => null,
-        'lipat_lembar_5' => null,
-        'lipat_lembar_6' => null,
-        'lipat_lembar_7' => null,
-        'lipat_lembar_8' => null,
-        'lipat_lembar_9' => null,
-        'lipat_lembar_10' => null,
-        'lipat_lembar_11' => null,
-        'lipat_lembar_12' => null,
-        'lipat_lembar_13' => null,
-        'lipat_lembar_14' => null,
-        'lipat_lembar_15' => null,
-        'lipat_lembar_16' => null,
-        'lipat_lembar_17' => null,
-        'lipat_lembar_18' => null,
-        'lipat_lembar_19' => null,
-        'lipat_lembar_20' => null,
-
-        'hasil_lipatan_lembar_1' => null,
-        'hasil_lipatan_lembar_2' => null,
-        'hasil_lipatan_lembar_3' => null,
-        'hasil_lipatan_lembar_4' => null,
-        'hasil_lipatan_lembar_5' => null,
-        'hasil_lipatan_lembar_6' => null,
-        'hasil_lipatan_lembar_7' => null,
-        'hasil_lipatan_lembar_8' => null,
-        'hasil_lipatan_lembar_9' => null,
-        'hasil_lipatan_lembar_10' => null,
-        'hasil_lipatan_lembar_11' => null,
-        'hasil_lipatan_lembar_12' => null,
-        'hasil_lipatan_lembar_13' => null,
-        'hasil_lipatan_lembar_14' => null,
-        'hasil_lipatan_lembar_15' => null,
-        'hasil_lipatan_lembar_16' => null,
-        'hasil_lipatan_lembar_17' => null,
-        'hasil_lipatan_lembar_18' => null,
-        'hasil_lipatan_lembar_19' => null,
-        'hasil_lipatan_lembar_20' => null,
-
-        'operator_lembar_1' => null,
-        'operator_lembar_2' => null,
-        'operator_lembar_3' => null,
-        'operator_lembar_4' => null,
-        'operator_lembar_5' => null,
-        'operator_lembar_6' => null,
-        'operator_lembar_7' => null,
-        'operator_lembar_8' => null,
-        'operator_lembar_9' => null,
-        'operator_lembar_10' => null,
-        'operator_lembar_11' => null,
-        'operator_lembar_12' => null,
-        'operator_lembar_13' => null,
-        'operator_lembar_14' => null,
-        'operator_lembar_15' => null,
-        'operator_lembar_16' => null,
-        'operator_lembar_17' => null,
-        'operator_lembar_18' => null,
-        'operator_lembar_19' => null,
-        'operator_lembar_20' => null,
-
-        'tanggal_pengerjaan_lembar_1' => null,
-        'tanggal_pengerjaan_lembar_2' => null,
-        'tanggal_pengerjaan_lembar_3' => null,
-        'tanggal_pengerjaan_lembar_4' => null,
-        'tanggal_pengerjaan_lembar_5' => null,
-        'tanggal_pengerjaan_lembar_6' => null,
-        'tanggal_pengerjaan_lembar_7' => null,
-        'tanggal_pengerjaan_lembar_8' => null,
-        'tanggal_pengerjaan_lembar_9' => null,
-        'tanggal_pengerjaan_lembar_10' => null,
-        'tanggal_pengerjaan_lembar_11' => null,
-        'tanggal_pengerjaan_lembar_12' => null,
-        'tanggal_pengerjaan_lembar_13' => null,
-        'tanggal_pengerjaan_lembar_14' => null,
-        'tanggal_pengerjaan_lembar_15' => null,
-        'tanggal_pengerjaan_lembar_16' => null,
-        'tanggal_pengerjaan_lembar_17' => null,
-        'tanggal_pengerjaan_lembar_18' => null,
-        'tanggal_pengerjaan_lembar_19' => null,
-        'tanggal_pengerjaan_lembar_20' => null,
-
-        'keterangan_lembar_1' => null,
-        'keterangan_lembar_2' => null,
-        'keterangan_lembar_3' => null,
-        'keterangan_lembar_4' => null,
-        'keterangan_lembar_5' => null,
-        'keterangan_lembar_6' => null,
-        'keterangan_lembar_7' => null,
-        'keterangan_lembar_8' => null,
-        'keterangan_lembar_9' => null,
-        'keterangan_lembar_10' => null,
-        'keterangan_lembar_11' => null,
-        'keterangan_lembar_12' => null,
-        'keterangan_lembar_13' => null,
-        'keterangan_lembar_14' => null,
-        'keterangan_lembar_15' => null,
-        'keterangan_lembar_16' => null,
-        'keterangan_lembar_17' => null,
-        'keterangan_lembar_18' => null,
-        'keterangan_lembar_19' => null,
-        'keterangan_lembar_20' => null,
-        
-    );            
-    $this->db->set($hapus_mbo);    
-    $this->db->where('id_order',$data['id_order']);    
-    $this->db->update('mbo');
-}
-//// Hapus susun
-public function hapus_jadwal_susun($data)
-{
-    $hapus_susun = array(
-                'tanggal_pelaksanaan_mesin_susun' =>null,
-                'keterangan_jadwal_fp_susun' =>null,
-                'tanggal_pengerjaan_1' =>null,
-                'hasil_1' =>null,
-                'operator_1' =>null,
-                'keterangan_1' =>null,
-                'tanggal_pengerjaan_2' =>null,
-                'hasil_2' =>null,
-                'operator_2' =>null,
-                'keterangan_2' =>null,
-                'status_susun' =>null,
-    );            
-    $this->db->set($hapus_susun);    
-    $this->db->where('id_order',$data['id_order']);    
-    $this->db->update('susun');
-}
-
-//// Hapus sub
-public function hapus_jadwal_sub($data)
-{
-    $hapus_sub = array(
-        'tanggal_pelaksanaan_sub_proses' =>null,
-        'keterangan_jadwal_sub_proses' =>null,
-        'tanggal_kembali_1' =>null,
-        'hasil_1' =>null,
-        'rejek_1' =>null,
-        'keterangan_1' =>null,
-        'tanggal_kembali_2' =>null,
-        'hasil_2' =>null,
-        'rejek_2' =>null,
-        'keterangan_2' =>null,
-        'status_sub' =>null,
-        'jenis_sub_lipat' =>null,
-        'jenis_sub_susun_gabung' =>null,
-        'jenis_sub_laminasi' =>null,
-    );            
-    $this->db->set($hapus_sub);    
-    $this->db->where('id_order',$data['id_order']);    
-    $this->db->update('sub_proses');
-}
-
-
 
 
 
@@ -2365,6 +2057,355 @@ public function proses_tambah_sub($data)
         $this->db->insert('sub_proses',$tambah_jadwal_sub);
 
 }
+
+//// Hapus laminasi
+public function hapus_laminasi($id)
+{
+    $this->db->where('id_laminasi', $id);
+    $this->db->delete('laminasi');
+}
+
+public function hapus_laminasi_update($data)
+{
+    $hapus_laminasi = array(
+        'id_jadwal_laminasi' => 0,   
+        'status_laminasi' => null,             
+        'tanggal_pelaksanaan_laminasi' => null,
+        'keterangan_jadwal_fp_laminasi' => null,
+        'tanggal_pengerjaan_1' => null,
+        'hasil_1' => null,
+        'rejek_1' => null,
+        'operator_1' => null,
+        'kru_1' => null,
+        'keterangan_1' => null,
+        'tanggal_pengerjaan_2' => null,
+        'hasil_2' => null,
+        'rejek_2' => null,
+        'operator_2' => null,
+        'kru_2' => null,
+        'keterangan_2' => null,
+        'status_laminasi' => null,
+        'jenis_laminasi' => null,                                                                        
+    );            
+    $this->db->set($hapus_laminasi);    
+    $this->db->where('id_order',$data);    
+    $this->db->update('laminasi');
+}
+
+//// Hapus shoe
+public function hapus_shoe($id)
+{
+    $this->db->where('id_shoe', $id);
+    $this->db->delete('shoe');
+}
+
+public function hapus_shoe_update($data)
+{
+    $hapus_shoe = array(
+        'id_jadwal_shoe' => 0, 
+        'tanggal_pelaksanaan_mesin_shoe' => null,
+        'keterangan_jadwal_fp_shoe' => null,
+        'status_shoe' =>null, 
+        'lipat_lembar_1' => null,
+        'lipat_lembar_2' => null,
+        'lipat_lembar_3' => null,
+        'lipat_lembar_4' => null,
+        'lipat_lembar_5' => null,
+        'lipat_lembar_6' => null,
+        'lipat_lembar_7' => null,
+        'lipat_lembar_8' => null,
+        'lipat_lembar_9' => null,
+        'lipat_lembar_10' => null,
+        'lipat_lembar_11' => null,
+        'lipat_lembar_12' => null,
+        'lipat_lembar_13' => null,
+        'lipat_lembar_14' => null,
+        'lipat_lembar_15' => null,
+        'lipat_lembar_16' => null,
+        'lipat_lembar_17' => null,
+        'lipat_lembar_18' => null,
+        'lipat_lembar_19' => null,
+        'lipat_lembar_20' => null,
+
+        'hasil_lipatan_lembar_1' => null,
+        'hasil_lipatan_lembar_2' => null,
+        'hasil_lipatan_lembar_3' => null,
+        'hasil_lipatan_lembar_4' => null,
+        'hasil_lipatan_lembar_5' => null,
+        'hasil_lipatan_lembar_6' => null,
+        'hasil_lipatan_lembar_7' => null,
+        'hasil_lipatan_lembar_8' => null,
+        'hasil_lipatan_lembar_9' => null,
+        'hasil_lipatan_lembar_10' => null,
+        'hasil_lipatan_lembar_11' => null,
+        'hasil_lipatan_lembar_12' => null,
+        'hasil_lipatan_lembar_13' => null,
+        'hasil_lipatan_lembar_14' => null,
+        'hasil_lipatan_lembar_15' => null,
+        'hasil_lipatan_lembar_16' => null,
+        'hasil_lipatan_lembar_17' => null,
+        'hasil_lipatan_lembar_18' => null,
+        'hasil_lipatan_lembar_19' => null,
+        'hasil_lipatan_lembar_20' => null,
+
+        'operator_lembar_1' => null,
+        'operator_lembar_2' => null,
+        'operator_lembar_3' => null,
+        'operator_lembar_4' => null,
+        'operator_lembar_5' => null,
+        'operator_lembar_6' => null,
+        'operator_lembar_7' => null,
+        'operator_lembar_8' => null,
+        'operator_lembar_9' => null,
+        'operator_lembar_10' => null,
+        'operator_lembar_11' => null,
+        'operator_lembar_12' => null,
+        'operator_lembar_13' => null,
+        'operator_lembar_14' => null,
+        'operator_lembar_15' => null,
+        'operator_lembar_16' => null,
+        'operator_lembar_17' => null,
+        'operator_lembar_18' => null,
+        'operator_lembar_19' => null,
+        'operator_lembar_20' => null,
+
+        'tanggal_pengerjaan_lembar_1' => null,
+        'tanggal_pengerjaan_lembar_2' => null,
+        'tanggal_pengerjaan_lembar_3' => null,
+        'tanggal_pengerjaan_lembar_4' => null,
+        'tanggal_pengerjaan_lembar_5' => null,
+        'tanggal_pengerjaan_lembar_6' => null,
+        'tanggal_pengerjaan_lembar_7' => null,
+        'tanggal_pengerjaan_lembar_8' => null,
+        'tanggal_pengerjaan_lembar_9' => null,
+        'tanggal_pengerjaan_lembar_10' => null,
+        'tanggal_pengerjaan_lembar_11' => null,
+        'tanggal_pengerjaan_lembar_12' => null,
+        'tanggal_pengerjaan_lembar_13' => null,
+        'tanggal_pengerjaan_lembar_14' => null,
+        'tanggal_pengerjaan_lembar_15' => null,
+        'tanggal_pengerjaan_lembar_16' => null,
+        'tanggal_pengerjaan_lembar_17' => null,
+        'tanggal_pengerjaan_lembar_18' => null,
+        'tanggal_pengerjaan_lembar_19' => null,
+        'tanggal_pengerjaan_lembar_20' => null,
+
+        'keterangan_lembar_1' => null,
+        'keterangan_lembar_2' => null,
+        'keterangan_lembar_3' => null,
+        'keterangan_lembar_4' => null,
+        'keterangan_lembar_5' => null,
+        'keterangan_lembar_6' => null,
+        'keterangan_lembar_7' => null,
+        'keterangan_lembar_8' => null,
+        'keterangan_lembar_9' => null,
+        'keterangan_lembar_10' => null,
+        'keterangan_lembar_11' => null,
+        'keterangan_lembar_12' => null,
+        'keterangan_lembar_13' => null,
+        'keterangan_lembar_14' => null,
+        'keterangan_lembar_15' => null,
+        'keterangan_lembar_16' => null,
+        'keterangan_lembar_17' => null,
+        'keterangan_lembar_18' => null,
+        'keterangan_lembar_19' => null,
+        'keterangan_lembar_20' => null,
+        
+    );            
+    $this->db->set($hapus_shoe);    
+    $this->db->where('id_order',$data);    
+    $this->db->update('shoe');
+}
+
+//// hapus mbo
+public function hapus_mbo($id)
+{
+    $this->db->where('id_mbo', $id);
+    $this->db->delete('mbo');
+}
+public function hapus_mbo_update($data)
+{
+$hapus_mbo = array(
+    'id_jadwal_mbo' => 0, 
+    'tanggal_pelaksanaan_mesin_mbo' => null,
+    'keterangan_jadwal_fp_mbo' => null,
+    'status_mbo' =>null, 
+    'lipat_lembar_1' => null,
+    'lipat_lembar_2' => null,
+    'lipat_lembar_3' => null,
+    'lipat_lembar_4' => null,
+    'lipat_lembar_5' => null,
+    'lipat_lembar_6' => null,
+    'lipat_lembar_7' => null,
+    'lipat_lembar_8' => null,
+    'lipat_lembar_9' => null,
+    'lipat_lembar_10' => null,
+    'lipat_lembar_11' => null,
+    'lipat_lembar_12' => null,
+    'lipat_lembar_13' => null,
+    'lipat_lembar_14' => null,
+    'lipat_lembar_15' => null,
+    'lipat_lembar_16' => null,
+    'lipat_lembar_17' => null,
+    'lipat_lembar_18' => null,
+    'lipat_lembar_19' => null,
+    'lipat_lembar_20' => null,
+
+    'hasil_lipatan_lembar_1' => null,
+    'hasil_lipatan_lembar_2' => null,
+    'hasil_lipatan_lembar_3' => null,
+    'hasil_lipatan_lembar_4' => null,
+    'hasil_lipatan_lembar_5' => null,
+    'hasil_lipatan_lembar_6' => null,
+    'hasil_lipatan_lembar_7' => null,
+    'hasil_lipatan_lembar_8' => null,
+    'hasil_lipatan_lembar_9' => null,
+    'hasil_lipatan_lembar_10' => null,
+    'hasil_lipatan_lembar_11' => null,
+    'hasil_lipatan_lembar_12' => null,
+    'hasil_lipatan_lembar_13' => null,
+    'hasil_lipatan_lembar_14' => null,
+    'hasil_lipatan_lembar_15' => null,
+    'hasil_lipatan_lembar_16' => null,
+    'hasil_lipatan_lembar_17' => null,
+    'hasil_lipatan_lembar_18' => null,
+    'hasil_lipatan_lembar_19' => null,
+    'hasil_lipatan_lembar_20' => null,
+
+    'operator_lembar_1' => null,
+    'operator_lembar_2' => null,
+    'operator_lembar_3' => null,
+    'operator_lembar_4' => null,
+    'operator_lembar_5' => null,
+    'operator_lembar_6' => null,
+    'operator_lembar_7' => null,
+    'operator_lembar_8' => null,
+    'operator_lembar_9' => null,
+    'operator_lembar_10' => null,
+    'operator_lembar_11' => null,
+    'operator_lembar_12' => null,
+    'operator_lembar_13' => null,
+    'operator_lembar_14' => null,
+    'operator_lembar_15' => null,
+    'operator_lembar_16' => null,
+    'operator_lembar_17' => null,
+    'operator_lembar_18' => null,
+    'operator_lembar_19' => null,
+    'operator_lembar_20' => null,
+
+    'tanggal_pengerjaan_lembar_1' => null,
+    'tanggal_pengerjaan_lembar_2' => null,
+    'tanggal_pengerjaan_lembar_3' => null,
+    'tanggal_pengerjaan_lembar_4' => null,
+    'tanggal_pengerjaan_lembar_5' => null,
+    'tanggal_pengerjaan_lembar_6' => null,
+    'tanggal_pengerjaan_lembar_7' => null,
+    'tanggal_pengerjaan_lembar_8' => null,
+    'tanggal_pengerjaan_lembar_9' => null,
+    'tanggal_pengerjaan_lembar_10' => null,
+    'tanggal_pengerjaan_lembar_11' => null,
+    'tanggal_pengerjaan_lembar_12' => null,
+    'tanggal_pengerjaan_lembar_13' => null,
+    'tanggal_pengerjaan_lembar_14' => null,
+    'tanggal_pengerjaan_lembar_15' => null,
+    'tanggal_pengerjaan_lembar_16' => null,
+    'tanggal_pengerjaan_lembar_17' => null,
+    'tanggal_pengerjaan_lembar_18' => null,
+    'tanggal_pengerjaan_lembar_19' => null,
+    'tanggal_pengerjaan_lembar_20' => null,
+
+    'keterangan_lembar_1' => null,
+    'keterangan_lembar_2' => null,
+    'keterangan_lembar_3' => null,
+    'keterangan_lembar_4' => null,
+    'keterangan_lembar_5' => null,
+    'keterangan_lembar_6' => null,
+    'keterangan_lembar_7' => null,
+    'keterangan_lembar_8' => null,
+    'keterangan_lembar_9' => null,
+    'keterangan_lembar_10' => null,
+    'keterangan_lembar_11' => null,
+    'keterangan_lembar_12' => null,
+    'keterangan_lembar_13' => null,
+    'keterangan_lembar_14' => null,
+    'keterangan_lembar_15' => null,
+    'keterangan_lembar_16' => null,
+    'keterangan_lembar_17' => null,
+    'keterangan_lembar_18' => null,
+    'keterangan_lembar_19' => null,
+    'keterangan_lembar_20' => null,
+    
+);            
+$this->db->set($hapus_mbo);    
+$this->db->where('id_order',$data);    
+$this->db->update('mbo');
+}
+
+//// Hapus susun
+public function hapus_susun($id)
+{
+    $this->db->where('id_susun', $id);
+    $this->db->delete('susun');
+}
+public function hapus_susun_update($data)
+{
+$hapus_susun = array(
+            'id_jadwal_susun' => 0, 
+            'tanggal_pelaksanaan_mesin_susun' =>null,
+            'keterangan_jadwal_fp_susun' =>null,
+            'tanggal_pengerjaan_1' =>null,
+            'hasil_1' =>null,
+            'operator_1' =>null,
+            'keterangan_1' =>null,
+            'tanggal_pengerjaan_2' =>null,
+            'hasil_2' =>null,
+            'operator_2' =>null,
+            'keterangan_2' =>null,
+            'status_susun' =>null,
+);            
+$this->db->set($hapus_susun);    
+$this->db->where('id_order',$data);    
+$this->db->update('susun');
+}
+
+//// Hapus sub
+public function hapus_sub($id)
+{
+    $this->db->where('id_sub', $id);
+    $this->db->delete('sub_proses');
+}
+public function hapus_sub_update($data)
+{
+$hapus_sub = array(
+    'id_jadwal_sub' => 0, 
+    'tanggal_pelaksanaan_sub_proses' =>null,
+    'keterangan_jadwal_sub_proses' =>null,
+    'tanggal_kembali_1' =>null,
+    'hasil_1' =>null,
+    'rejek_1' =>null,
+    'keterangan_1' =>null,
+    'tanggal_kembali_2' =>null,
+    'hasil_2' =>null,
+    'rejek_2' =>null,
+    'keterangan_2' =>null,
+    'status_sub' =>null,
+    'jenis_sub_lipat' =>null,
+    'jenis_sub_susun_gabung' =>null,
+    'jenis_sub_laminasi' =>null,
+);            
+$this->db->set($hapus_sub);    
+$this->db->where('id_order',$data);    
+$this->db->update('sub_proses');
+}
+
+
+
+
+
+
+
+
+
 
 public function status_umum($data)
 {            

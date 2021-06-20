@@ -78,6 +78,12 @@
                           <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_laminasi/<?= $row->id_laminasi; ?>">
                             <i class="fa fa-eye" style="font-size:18px;"></i>
                           </a>
+                          
+                          <!-- hapus -->
+                          <a style="margin-left:20px;" href="<?=site_url('finishing/FinishingProses/hapus_laminasi/'.$row->id_laminasi."-".$row->id_order)?>" onclick="return confirm('Apakah Anda Yakin')" class="btn btn-danger btn-xs">
+                          <i class="fa fa-trash" style="font-size:18px"></i>
+                        </a>
+
                         </td>
                       </tr>
                     <?php  $nilai++;} ?>
