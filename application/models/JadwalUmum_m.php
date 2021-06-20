@@ -43,17 +43,54 @@ class JadwalUmum_m extends CI_Model {
             mesin_74_a.druk as druk_74a,
             mesin_74_a.total_kertas as total_kertas_74a,
             mesin_74_a.set as set_74a,
-            mesin_74_a.jenis_cetakan as jenis_cetakan_74a',
+            mesin_74_a.jenis_cetakan as jenis_cetakan_74a,
+
+            mesin_74_b.id_mesin_74b as id_mesin_74b,
+            mesin_74_b.nama_mesin as nama_mesin_74b,
+            mesin_74_b.tanggal_pelaksanaan as tanggal_pelaksanaan_74b,
+            mesin_74_b.operator as operator_74b,
+            mesin_74_b.target as target_74b,
+            mesin_74_b.druk as druk_74b,
+            mesin_74_b.total_kertas as total_kertas_74b,
+            mesin_74_b.set as set_74b,
+            mesin_74_b.jenis_cetakan as jenis_cetakan_74b
+            
+            ',
         );
 
         $this->db->from('order');
         $this->db->join('finishing','finishing.id_order = order.id_order','left');
         $this->db->join('mesin_72','mesin_72.id_order = order.id_order','left');
         $this->db->join('mesin_74_a','mesin_74_a.id_order = order.id_order','left');
+        $this->db->join('mesin_74_b','mesin_74_b.id_order = order.id_order','left');
         $this->db->order_by('id_order', 'desc');    
         $query = $this->db->get();
         return $query; 
     }
+
+    public function ambil_data_mesin72($id)
+        {
+            $this->db->select(
+                '   
+                mesin_72.id_mesin_72 as id_mesin_72,
+                mesin_72.nama_mesin as nama_mesin,
+                mesin_72.tanggal_pelaksanaan as tanggal_pelaksanaan,
+                mesin_72.operator as operator,
+                mesin_72.target as target,
+                mesin_72.druk as druk,
+                mesin_72.total_kertas as total_kertas,
+                mesin_72.set as set,
+                mesin_72.jenis_cetakan as jenis_cetakan,                 
+                '
+            );
+            $this->db->from('order');                            
+            $this->db->join('mesin_72','mesin_72.id_order = order.id_order','left');
+           
+
+            $this->db->where('order.id_order', $id);                   
+            $query = $this->db->get();
+            return $query;   
+}
 
     public function tambah_ju72($data)
 	{
@@ -85,6 +122,22 @@ class JadwalUmum_m extends CI_Model {
             );
             $this->db->insert('mesin_74_a',$tambah_74a);
     }
+    public function tambah_ju74b($data)
+	{
+            $tambah_ju74b = array(         
+                'id_order' =>$data['id_order'],                                                                       
+                'tanggal_pelaksanaan' =>$data['tanggal_pelaksanaan_74b'],
+                'operator' =>$data['operator_74b'],
+                'target' =>$data['target_74b'],
+                'nama_mesin' =>$data['nama_mesin_74b'],
+                'druk' =>$data['druk_74b'],
+                'total_kertas' =>$data['kertas_74b'],
+                'set' =>$data['set_74b'],
+                'jenis_cetakan' =>$data['jenis_cetakan_74b']            
+            );
+            $this->db->insert('mesin_74_b',$tambah_ju74b);
+    }
+    
 
     public function edit_ju($data)
 	{
