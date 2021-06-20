@@ -37,11 +37,11 @@ class FinishingProses extends CI_Controller {
 		$tanggal_susun = "";
 		$tanggal_sub = "";
 
-		$id_jadwal_laminasi_min = 1000;
-		$id_jadwal_mbo_min = 1000;
-		$id_jadwal_shoe_min = 1000;
-		$id_jadwal_susun_min = 1000;
-		$id_jadwal_sub_min = 1000;
+		$id_jadwal_laminasi_max = 0;
+		$id_jadwal_mbo_max = 0;
+		$id_jadwal_shoe_max = 0;
+		$id_jadwal_susun_max = 0;
+		$id_jadwal_sub_max = 0;
 
 		foreach($data["fp"] as $s => $row){
 					
@@ -57,8 +57,8 @@ class FinishingProses extends CI_Controller {
 							if($sq->tanggal_laminasi != null and $sq->tanggal_laminasi != "0000-00-00" and $sq->tanggal_laminasi != $laminasi[$nilai_mesin-1]){	
 								$tanggal_laminasi .= $sq->tanggal_laminasi.", <br>";
 							}
-							if($sq->id_jadwal_laminasi < $id_jadwal_laminasi_min){
-								$id_jadwal_laminasi_min = $sq->id_jadwal_laminasi;
+							if($sq->id_jadwal_laminasi > $id_jadwal_laminasi_max){
+								$id_jadwal_laminasi_max = $sq->id_jadwal_laminasi;
 							}
 							
 							$laminasi[$nilai_mesin] = $sq->tanggal_laminasi;										
@@ -72,8 +72,8 @@ class FinishingProses extends CI_Controller {
 							if($sq->tanggal_mbo != null and $sq->tanggal_mbo != "0000-00-00" and $sq->tanggal_mbo != $mbo[$nilai_mesin-1]){	
 								$tanggal_mbo .= $sq->tanggal_mbo.", <br>";
 							}	
-							if($sq->id_jadwal_mbo < $id_jadwal_mbo_min){
-								$id_jadwal_mbo_min = $sq->id_jadwal_mbo;
+							if($sq->id_jadwal_mbo > $id_jadwal_mbo_max){
+								$id_jadwal_mbo_max = $sq->id_jadwal_mbo;
 							}														
 							$mbo[$nilai_mesin] = $sq->tanggal_mbo;					
 							$nilai_mesin++;
@@ -85,8 +85,8 @@ class FinishingProses extends CI_Controller {
 						if($sq->tanggal_shoe != null and $sq->tanggal_shoe != "0000-00-00" and $sq->tanggal_shoe != $shoe[$nilai_mesin-1]){	
 							$tanggal_shoe .= $sq->tanggal_shoe.", <br>";
 						}	
-						if($sq->id_jadwal_shoe < $id_jadwal_shoe_min){
-							$id_jadwal_shoe_min = $sq->id_jadwal_shoe;
+						if($sq->id_jadwal_shoe > $id_jadwal_shoe_max){
+							$id_jadwal_shoe_max = $sq->id_jadwal_shoe;
 						}														
 						$shoe[$nilai_mesin] = $sq->tanggal_shoe;					
 						$nilai_mesin++;
@@ -98,10 +98,23 @@ class FinishingProses extends CI_Controller {
 						if($sq->tanggal_susun != null and $sq->tanggal_susun != "0000-00-00" and $sq->tanggal_susun != $susun[$nilai_mesin-1]){	
 							$tanggal_susun .= $sq->tanggal_susun.", <br>";
 						}	
-						if($sq->id_jadwal_susun < $id_jadwal_susun_min){
-							$id_jadwal_susun_min = $sq->id_jadwal_susun;
+						if($sq->id_jadwal_susun > $id_jadwal_susun_max){
+							$id_jadwal_susun_max = $sq->id_jadwal_susun;
 						}														
 						$susun[$nilai_mesin] = $sq->tanggal_susun;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+
+					// data sub
+					$ambil_sub = $this->fp->ambil_data_fp_sub($id_order)->result();
+					foreach($ambil_sub as $sq) {							
+						if($sq->tanggal_sub != null and $sq->tanggal_sub != "0000-00-00" and $sq->tanggal_sub != $sub[$nilai_mesin-1]){	
+							$tanggal_sub .= $sq->tanggal_sub.", <br>";
+						}	
+						if($sq->id_jadwal_sub > $id_jadwal_sub_max){
+							$id_jadwal_sub_max = $sq->id_jadwal_sub;
+						}														
+						$sub[$nilai_mesin] = $sq->tanggal_sub;					
 						$nilai_mesin++;
 					}$nilai_mesin=0;
 											
@@ -117,11 +130,11 @@ class FinishingProses extends CI_Controller {
 				}  						 					
 				
 				// menangkap nilai id jadwal terkecil
-				$data["id_jadwal_laminasi_min"][$nilai_jadwal] = $id_jadwal_laminasi_min;
-				$data["id_jadwal_mbo_min"][$nilai_jadwal] = $id_jadwal_mbo_min;
-				$data["id_jadwal_shoe_min"][$nilai_jadwal] = $id_jadwal_shoe_min;
-				$data["id_jadwal_susun_min"][$nilai_jadwal] = $id_jadwal_susun_min;
-				$data["id_jadwal_sub_min"][$nilai_jadwal] = $id_jadwal_sub_min;
+				$data["id_jadwal_laminasi_max"][$nilai_jadwal] = $id_jadwal_laminasi_max;
+				$data["id_jadwal_mbo_max"][$nilai_jadwal] = $id_jadwal_mbo_max;
+				$data["id_jadwal_shoe_max"][$nilai_jadwal] = $id_jadwal_shoe_max;
+				$data["id_jadwal_susun_max"][$nilai_jadwal] = $id_jadwal_susun_max;
+				$data["id_jadwal_sub_max"][$nilai_jadwal] = $id_jadwal_sub_max;
 
 				// reset nilai yang akan di foreaach
 				$tanggal_laminasi = "";
@@ -130,16 +143,16 @@ class FinishingProses extends CI_Controller {
 				$tanggal_susun = "";
 				$tanggal_sub = "";		
 
-				$id_jadwal_laminasi_min = 1000;
-				$id_jadwal_mbo_min = 1000;
-				$id_jadwal_shoe_min = 1000;
-				$id_jadwal_susun_min = 1000;
-				$id_jadwal_sub_min = 1000;
+				$id_jadwal_laminasi_max = 0;
+				$id_jadwal_mbo_max = 0;
+				$id_jadwal_shoe_max = 0;
+				$id_jadwal_susun_max = 0;
+				$id_jadwal_sub_max = 0;
 				
 				$nilai_jadwal++;
 					
 		}
-			// var_dump($data["id_jadwal_mbo_min"]);die;
+			// var_dump($data["id_jadwal_mbo_max"]);die;
 			// var_dump($data["tanggal_mbo"]);
 			// die;
 
@@ -157,23 +170,7 @@ class FinishingProses extends CI_Controller {
 		if(isset($_POST['edit'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->fp->edit_fp($inputan);								
-		}
-		
-		if($inputan["tanggal_pelaksanaan_laminasi"] == ""){
-			$this->fp->hapus_jadwal_laminasi($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_mesin_shoe"] == ""){
-			$this->fp->hapus_jadwal_shoe($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_mesin_mbo"] == ""){
-			$this->fp->hapus_jadwal_mbo($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_mesin_susun"] == ""){
-			$this->fp->hapus_jadwal_susun($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_sub_proses"] == ""){
-			$this->fp->hapus_jadwal_sub($inputan);	
-		}
+		}				
 
 		echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
 		echo "<script>window.location='".site_url('finishing/FinishingProses/')."'; </script>"; 
@@ -220,7 +217,7 @@ class FinishingProses extends CI_Controller {
 		
 	   
 	   $this->template->load('finishing/template','finishing/finishing_proses/jadwal-fp-laminasi',$data);
-}
+}	
 
 
    public function edit_jadwal_fp_laminasi($id)
@@ -891,6 +888,25 @@ public function proses_shoe()
 			'judul' => 'Finishing Proses',
 			'fp' => $query->result(),
 		);		
+		$jadwal_max = 0;		
+
+		foreach($data["fp"] as $s => $row){
+			// var_dump($row->id_order);
+
+			$id_order = $row->id_order;
+			$ambil = $this->fp->ambil_data_sub($id_order)->result();
+			// var_dump($id_order);						
+
+			foreach($ambil as $sq) {				
+				if($sq->id_jadwal_sub > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_sub;
+				}				
+			}	
+			$data["id_jadwal_max"][] = $jadwal_max;	
+			$jadwal_max = 0;			   		
+
+		}
+
 		$this->template->load('finishing/template','finishing/finishing_proses/jadwal-fp-sub',$data);
 }   
     public function edit_jadwal_fp_sub($id)
@@ -923,14 +939,35 @@ public function proses_shoe()
 		$data['total_2'] = $total_2;		
 		$this->template->load('finishing/template','finishing/finishing_proses/edit-jadwal-fp-sub',$data);
 }
-	public function tambah_jadwal_fp_sub()
+	public function tambah_jadwal_fp_sub($id)
 	{
 		// check_already_login_finishing();
-		$query = $this->fp->get();
+		$query = $this->fp->edit_sub($id);
 		$data = array(
 			'judul' => 'Finishing Proses',
 			'fp' => $query->result(),
 		);		
+		$id_order = $data['fp'][0]->id_order;
+		$ambil = $this->fp->ambilIDOrder_sub($id_order)->result();
+ 
+		$jadwal_max = 0;
+		$tampung_jadwal = [];
+		$total_1=0;
+		$total_2=0;
+		foreach($ambil as $sq) {
+			 if($sq->id_jadwal_sub > $jadwal_max) {
+				 $jadwal_max = $sq->id_jadwal_sub;
+			 }
+			 $tampung_jadwal[] = $sq->id_jadwal_sub;
+			 $total_1 += $sq->hasil_1;
+			 $total_2 += $sq->hasil_2;
+		}
+ 
+		$data['jadwal_max'] = $jadwal_max;
+		$data['tampung_jadwal'] = $tampung_jadwal;
+		$data['total_1'] = $total_1;
+		$data['total_2'] = $total_2;	
+
 		$this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp-sub',$data);
 }
     public function lihat_jadwal_fp_sub($id)
@@ -979,7 +1016,121 @@ public function proses_shoe()
 				echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_sub')."'; </script>"; 
 		}
 }
+
+
+
+// hapus laminasi
+	public function hapus_laminasi($id)
+	{		
+		$data_id = explode("-" , $id);
+
+		// data 0 = id_mesin, data 1 = id_order
+		$jumlah_id = 0;
+				$ambil = $this->fp->ambilIDOrder($data_id[1])->result();
+				foreach($ambil as $d){
+					$jumlah_id+=1;
+				}				
+		if($jumlah_id >1){
+				$this->fp->hapus_laminasi($data_id[0]);
+				echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+				echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_laminasi')."'; </script>"; 
+		}else{
+				$this->fp->hapus_laminasi_update($data_id[1]);
+				echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+				echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_laminasi')."'; </script>"; 
+		}
+}
+
+// hapus mbo
+public function hapus_mbo($id)
+{		
+	$data_id = explode("-" , $id);
+
+	// data 0 = id_mesin, data 1 = id_order
+	$jumlah_id = 0;
+			$ambil = $this->fp->ambilIDOrder_mbo($data_id[1])->result();
+			foreach($ambil as $d){
+				$jumlah_id+=1;
+			}				
+	if($jumlah_id >1){
+			$this->fp->hapus_mbo($data_id[0]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_mbo')."'; </script>"; 
+	}else{
+			$this->fp->hapus_mbo_update($data_id[1]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_mbo')."'; </script>"; 
+	}
+}
+
+// hapus shoe
+public function hapus_shoe($id)
+{		
+	$data_id = explode("-" , $id);
+
+	// data 0 = id_mesin, data 1 = id_order
+	$jumlah_id = 0;
+			$ambil = $this->fp->ambilIDOrder_shoe($data_id[1])->result();
+			foreach($ambil as $d){
+				$jumlah_id+=1;
+			}				
+	if($jumlah_id >1){
+			$this->fp->hapus_shoe($data_id[0]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_shoe')."'; </script>"; 
+	}else{
+			$this->fp->hapus_shoe_update($data_id[1]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_shoe')."'; </script>"; 
+	}
+}
+
+// hapus susun
+public function hapus_susun($id)
+{		
+	$data_id = explode("-" , $id);
+
+	// data 0 = id_mesin, data 1 = id_order
+	$jumlah_id = 0;
+			$ambil = $this->fp->ambilIDOrder_susun($data_id[1])->result();
+			foreach($ambil as $d){
+				$jumlah_id+=1;
+			}				
+	if($jumlah_id >1){
+			$this->fp->hapus_susun($data_id[0]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_susun')."'; </script>"; 
+	}else{
+			$this->fp->hapus_susun_update($data_id[1]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_susun')."'; </script>"; 
+	}
+}
+
+// hapus sub
+public function hapus_sub($id)
+{		
+	$data_id = explode("-" , $id);
+
+	// data 0 = id_mesin, data 1 = id_order
+	$jumlah_id = 0;
+			$ambil = $this->fp->ambilIDOrder_sub($data_id[1])->result();
+			foreach($ambil as $d){
+				$jumlah_id+=1;
+			}				
+	if($jumlah_id >1){
+			$this->fp->hapus_sub($data_id[0]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_sub')."'; </script>"; 
+	}else{
+			$this->fp->hapus_sub_update($data_id[1]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingProses/jadwal_fp_sub')."'; </script>"; 
+	}
+}
 	
+
+
 
 
 

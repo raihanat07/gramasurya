@@ -47,31 +47,8 @@
                         </tr>
                     </thead>
                     <tbody>
-                    <?php foreach($fp as $s => $row) {?>  
-                    <?php if($row->status_sub ==""){ ?>                    
-                    <tr>
-                        <td><?= $row->tanggal_pelaksanaan_sub; ?></td>
-                        <td><?= $row->nomor_so; ?></td>
-                        <td><?= $row->tanggal_masuk; ?></td>
-                        <td><?= $row->deadline; ?></td>
-                        <td><?= $row->nama_pemesan; ?></td>
-                        <td><?= $row->nama_orderan; ?></td>
-                        <td><?= $row->ukuran; ?></td>
-                        <td><?= $row->oplag; ?></td>
-                        <td><?= $row->halaman; ?></td>  
-                        <td><?= $row->hasil_1+$row->hasil_2; ?></td>                                                                 
-                        <td><?php echo $row->status_sub == "sub" ?  "finishing proses" : $row->so_status?></td>   
-
-                        <td align="center">                          
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_sub/<?= $row->id_order; ?>">
-                            <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
-                          </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_sub/<?= $row->id_order; ?>">
-                            <i class="fa fa-eye" style="font-size:18px;"></i>
-                          </a>
-                        </td>
-                      </tr>
-                    <?php } else if($row->status_sub =="sub" and $row->id_jadwal_sub == 0){?>
+                    <?php $nilai = 0; ?>
+                    <?php foreach($fp as $s => $row) {?>                     
                       <tr>
                         <td><?= $row->tanggal_pelaksanaan_sub; ?></td>
                         <td><?= $row->nomor_so; ?></td>
@@ -85,16 +62,29 @@
                         <td><?= $row->hasil_1+$row->hasil_2; ?></td>     
                         <td><?php echo $row->status_sub == "sub" ?  "finishing proses" : $row->so_status?></td>   
 
-                        <td align="center">                          
-                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_sub/<?= $row->id_order; ?>">
+                        <td align="center"> 
+
+                        <?php if( $row->id_jadwal_sub == $id_jadwal_max[$nilai] and $row->status_sub != "sub") {?>  
+                          <a href="<?=site_url()?>finishing/FinishingProses/tambah_jadwal_fp_sub/<?= $row->id_sub; ?>">
+                            <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
+                          </a>  
+                          <?php } ?>
+
+                          <a href="<?=site_url()?>finishing/FinishingProses/edit_jadwal_fp_sub/<?= $row->id_sub; ?>">
                             <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                           </a>
-                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_sub/<?= $row->id_order; ?>">
+                          <a href="<?=site_url()?>finishing/FinishingProses/lihat_jadwal_fp_sub/<?= $row->id_sub; ?>">
                             <i class="fa fa-eye" style="font-size:18px;"></i>
                           </a>
+
+                           <!-- hapus -->
+                           <a style="margin-left:20px;" href="<?=site_url('finishing/FinishingProses/hapus_sub/'.$row->id_sub."-".$row->id_order)?>" onclick="return confirm('Apakah Anda Yakin')" class="btn btn-danger btn-xs">
+                          <i class="fa fa-trash" style="font-size:18px"></i>
+                        </a>
+
                         </td>
                       </tr>
-                    <?php }} ?>
+                    <?php  $nilai++;} ?>
                     </tbody>
                 </table>
                 </div>
