@@ -48,6 +48,7 @@
               </tr>
             </thead>
             <tbody>
+            <?php $nilai = 0; ?>
             <?php foreach($fa as $s => $row) {?>  
               <tr align="center">
                 <td><?= $row->tanggal_pelaksanaan_spiral; ?></td>                
@@ -62,16 +63,29 @@
                 <td><?= $row->hasil_1+$row->hasil_2+$row->hasil_3+$row->hasil_4; ?></td>
                 <td><?= $row->keterangan_jadwal_spiral; ?></td>  
                 <td><?php echo $row->status_spiral == "spiral" ?  "finishing akhir" : $row->so_status?></td>                
-                <td align="center">                  
-                  <a href="<?=site_url()?>finishing/FinishingAkhir/edit_jadwal_fa_spiral/<?= $row->id_order; ?>">
+                <td align="center">  
+
+                <?php if( $row->id_jadwal_spiral == $id_jadwal_max[$nilai] and $row->status_spiral != "spiral") {?>  
+                          <a href="<?=site_url()?>finishing/FinishingAkhir/tambah_jadwal_fa_spiral/<?= $row->id_spiral; ?>">
+                            <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
+                          </a>  
+                          <?php } ?>    
+
+                  <a href="<?=site_url()?>finishing/FinishingAkhir/edit_jadwal_fa_spiral/<?= $row->id_spiral; ?>">
                     <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
-                  <a href="<?=site_url()?>finishing/FinishingAkhir/lihat_jadwal_fa_spiral/<?= $row->id_order; ?>">
+                  <a href="<?=site_url()?>finishing/FinishingAkhir/lihat_jadwal_fa_spiral/<?= $row->id_spiral; ?>">
                     <i class="fa fa-eye" style="font-size:18px;"></i>
                   </a>
+
+                  <!-- hapus -->
+                  <a style="margin-left:20px;" href="<?=site_url('finishing/FinishingAkhir/hapus_spiral/'.$row->id_spiral."-".$row->id_order)?>" onclick="return confirm('Apakah Anda Yakin')" class="btn btn-danger btn-xs">
+                          <i class="fa fa-trash" style="font-size:18px"></i>
+                        </a>
+
                 </td>
               </tr>    
-              <?php } ?>          
+              <?php $nilai++;} ?>          
             </tbody>
           </table>
         </div>
