@@ -1626,6 +1626,59 @@ public function get_jadwal_klemseng()
     return $query;  
 }
 
+
+public function ambil_data_klemseng($id)
+{
+    $this->db->select(
+        '   
+            klemseng.id_jadwal_klemseng as id_jadwal_klemseng,
+            klemseng.hasil_1 as hasil_1,
+            klemseng.hasil_2 as hasil_2,
+            klemseng.hasil_3 as hasil_3,
+            klemseng.hasil_4 as hasil_4,
+        '
+    );
+    $this->db->from('order');
+    $this->db->join('klemseng','klemseng.id_order = order.id_order');    
+    $this->db->where('klemseng.id_order', $id);          
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function ambilIDOrder_klemseng($id_order)
+{
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        
+        klemseng.id_jadwal_klemseng as id_jadwal_klemseng,
+        klemseng.id_klemseng as id_klemseng,
+        klemseng.hasil_1 as hasil_1,
+        klemseng.hasil_2 as hasil_2,            
+        klemseng.hasil_3 as hasil_3, 
+        klemseng.hasil_4 as hasil_4, 
+        klemseng.tanggal_pelaksanaan_klemseng as tanggal_pelaksanaan_klemseng',
+        
+    );           
+
+    $this->db->from('order');                           
+    $this->db->join('klemseng','order.id_order = klemseng.id_order' ); 
+    $this->db->where('klemseng.tanggal_pelaksanaan_klemseng !=', '0000-00-00');    
+    $this->db->where('klemseng.id_order', $id_order);
+    $this->db->order_by('klemseng.tanggal_pelaksanaan_klemseng', 'asc');        
+    
+    $query = $this->db->get();
+    return $query;  
+}
+
 public function edit_klemseng($id)
 {
     
@@ -1705,7 +1758,8 @@ public function edit_klemseng($id)
 
     $this->db->join('susun','order.id_order = susun.id_order' );
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-    $this->db->where('order.id_order', $id);       
+    $this->db->where('klemseng.id_klemseng', $id);     
+    $this->db->limit(1);  
     
     $query = $this->db->get();
     return $query;  
@@ -1713,9 +1767,8 @@ public function edit_klemseng($id)
 }
 
 public function proses_edit_klemseng($data)
-{
-    $ubah_klemseng = array(         
-        'status_klemseng' =>$data['status_klemseng'],
+{   
+    $ubah_klemseng = array(                     
         'tanggal_pelaksanaan_klemseng' =>$data['tanggal_pelaksanaan_klemseng'],
         'keterangan_jadwal_klemseng' =>$data['keterangan_jadwal_klemseng'],
 
@@ -1750,11 +1803,59 @@ public function proses_edit_klemseng($data)
 
     );                        
     $this->db->set($ubah_klemseng);
-    $this->db->where('id_order',$data['id_order']);
+    $this->db->where('id_klemseng',$data['id_klemseng']);
     $this->db->update('klemseng'); 
+
+    $ubah_klemseng_khusus = array(                                                                                           
+        'status_klemseng' =>$data['status_klemseng'],                                                         
+    );                        
+    $this->db->set($ubah_klemseng_khusus);
+    $this->db->where('id_order',$data['id_order']);
+    $this->db->update('klemseng');  
+
 }
 
+public function proses_tambah_klemseng($data)
+{
+        $tambah_jadwal_klemseng = array(                                                                         
+            'id_order' =>$data['id_order'],                                   
+            'tanggal_pelaksanaan_klemseng' =>$data['tanggal_pelaksanaan_klemseng'],   
+            'id_jadwal_klemseng' =>$data['id_jadwal_klemseng'],   
+            'status_klemseng' =>$data['status_klemseng'],   
+            'keterangan_jadwal_klemseng' =>$data['keterangan_jadwal_klemseng'], 
 
+            'tanggal_pengerjaan_1' =>$data['tanggal_pengerjaan_1'],   
+            'hasil_1' =>$data['hasil_1'],   
+            'rejek_1' =>$data['rejek_1'],   
+            'operator_1' =>$data['operator_1'],   
+            'kru_1' =>$data['kru_1'],   
+            'keterangan_1' =>$data['keterangan_1'],   
+
+            'tanggal_pengerjaan_2' =>$data['tanggal_pengerjaan_2'],   
+            'hasil_2' =>$data['hasil_2'],   
+            'rejek_2' =>$data['rejek_2'],   
+            'operator_2' =>$data['operator_2'],   
+            'kru_2' =>$data['kru_2'],   
+            'keterangan_2' =>$data['keterangan_2'],    
+            
+            'tanggal_pengerjaan_3' =>$data['tanggal_pengerjaan_3'],   
+            'hasil_3' =>$data['hasil_3'],   
+            'rejek_3' =>$data['rejek_3'],   
+            'operator_3' =>$data['operator_3'],   
+            'kru_3' =>$data['kru_3'],   
+            'keterangan_3' =>$data['keterangan_3'], 
+
+            'tanggal_pengerjaan_4' =>$data['tanggal_pengerjaan_4'],   
+            'hasil_4' =>$data['hasil_4'],   
+            'rejek_4' =>$data['rejek_4'],   
+            'operator_4' =>$data['operator_4'],   
+            'kru_4' =>$data['kru_4'],   
+            'keterangan_4' =>$data['keterangan_4'], 
+
+        );                                                          
+        $this->db->insert('klemseng',$tambah_jadwal_klemseng);
+
+}
 
 //// MESIN spiral
 public function get_jadwal_spiral()
@@ -2158,91 +2259,53 @@ public function hapus_sub_update($data)
 
 
 // hapus klemseng
-public function hapus_jadwal_klemseng($data)
+public function hapus_klemseng($id)
 {
-    $hapus_klemseng = array(         
-        'status_klemseng' =>null,
-        'tanggal_pelaksanaan_klemseng' =>null,
-        'keterangan_jadwal_klemseng' =>null,
-
-        'tanggal_pengerjaan_1' =>null,
-        'hasil_1' =>null,
-        'rejek_1' =>null,
-        'operator_1' =>null,
-        'kru_1' =>null,
-        'keterangan_1' =>null,
-        
-        'tanggal_pengerjaan_2' =>null,
-        'hasil_2' =>null,
-        'rejek_2' =>null,
-        'operator_2' =>null,
-        'kru_2' =>null,
-        'keterangan_2' =>null,
-
-        'tanggal_pengerjaan_3' =>null,
-        'hasil_3' =>null,
-        'rejek_3' =>null,
-        'operator_3' =>null,
-        'kru_3' =>null,
-        'keterangan_3' =>null,
-
-        'tanggal_pengerjaan_4' =>null,
-        'hasil_4' =>null,
-        'rejek_4' =>null,
-        'operator_4' =>null,
-        'kru_4' =>null,
-        'keterangan_4' =>null,
-
-
-    );                        
-    $this->db->set($hapus_klemseng);
-    $this->db->where('id_order',$data['id_order']);
-    $this->db->update('klemseng'); 
+    $this->db->where('id_klemseng', $id);
+    $this->db->delete('klemseng');
 }
 
-// hapus spiral
-public function hapus_jadwal_spiral($data)
+public function hapus_klemseng_update($data)
 {
-    $hapus_spiral = array(         
-        'status_spiral' =>null,
-        'tanggal_pelaksanaan_spiral' =>null,
-        'keterangan_jadwal_spiral' =>null,
+    $hapus_klemseng = array(
+        'id_jadwal_klemseng' => 0,   
+        'status_klemseng' => null,             
+        'tanggal_pelaksanaan_klemseng' => null,
+        'keterangan_jadwal_klemseng' => null,
 
-        'tanggal_pengerjaan_1' =>null,
-        'hasil_1' =>null,
-        'rejek_1' =>null,
-        'operator_1' =>null,
-        'kru_1' =>null,
-        'keterangan_1' =>null,
-        
-        'tanggal_pengerjaan_2' =>null,
-        'hasil_2' =>null,
-        'rejek_2' =>null,
-        'operator_2' =>null,
-        'kru_2' =>null,
-        'keterangan_2' =>null,
+        'tanggal_pengerjaan_1' => null,
+        'hasil_1' => null,
+        'rejek_1' => null,
+        'operator_1' => null,
+        'kru_1' => null,
+        'keterangan_1' => null,
 
-        'tanggal_pengerjaan_3' =>null,
-        'hasil_3' =>null,
-        'rejek_3' =>null,
-        'operator_3' =>null,
-        'kru_3' =>null,
-        'keterangan_3' =>null,
+        'tanggal_pengerjaan_2' => null,
+        'hasil_2' => null,
+        'rejek_2' => null,
+        'operator_2' => null,
+        'kru_2' => null,
+        'keterangan_2' => null,        
 
-        'tanggal_pengerjaan_4' =>null,
-        'hasil_4' =>null,
-        'rejek_4' =>null,
-        'operator_4' =>null,
-        'kru_4' =>null,
-        'keterangan_4' =>null,
+        'tanggal_pengerjaan_3' => null,
+        'hasil_3' => null,
+        'rejek_3' => null,
+        'operator_3' => null,
+        'kru_3' => null,
+        'keterangan_3' => null,        
 
-
-    );                        
-    $this->db->set($hapus_spiral);
-    $this->db->where('id_order',$data['id_order']);
-    $this->db->update('spiral'); 
+        'tanggal_pengerjaan_4' => null,
+        'hasil_4' => null,
+        'rejek_4' => null,
+        'operator_4' => null,
+        'kru_4' => null,
+        'keterangan_4' => null,        
+                                                                              
+    );            
+    $this->db->set($hapus_klemseng);    
+    $this->db->where('id_order',$data);    
+    $this->db->update('klemseng');
 }
-
 
 
 

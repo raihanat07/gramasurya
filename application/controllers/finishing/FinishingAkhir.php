@@ -972,40 +972,141 @@ public function jadwal_fa_klemseng()
 {
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_klemseng();
-	$data = array(
-		'judul' => 'Finishing Akhir Mesin Kalender',
-		'fa' => $query->result(),
-	);		
+		$data = array(
+			'judul' => 'Finishing Akhir Mesin Kalender',
+			'fa' => $query->result(),
+		);
+				
+		$jadwal_max = 0;		
+
+		foreach($data["fa"] as $s => $row){
+			// var_dump($row->id_order);
+
+			$id_order = $row->id_order;
+			$ambil = $this->fa->ambil_data_klemseng($id_order)->result();
+			// var_dump($id_order);						
+
+			foreach($ambil as $sq) {				
+				if($sq->id_jadwal_klemseng > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_klemseng;
+				}				
+			}	
+			$data["id_jadwal_max"][] = $jadwal_max;	
+			$jadwal_max = 0;			   		
+
+		}
+
 	$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_klemseng',$data);
 }
 public function edit_jadwal_fa_klemseng($id)
 {
 	// check_already_login_finishing();
-	$query = $this->fa->edit_klemseng($id);
-	$data = array(
-		'judul' => 'Finishing Akhir Mesin Kalender',
-		'fa' => $query->result(),
-	);		
+	$query = $this->fa->edit_klemseng($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Kalender',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;			
+			$ambil = $this->fa->ambilIDOrder_klemseng($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_klemseng > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_klemseng;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_klemseng;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-klemseng',$data);
 }
-public function tambah_jadwal_fa_klemseng()
+public function tambah_jadwal_fa_klemseng($id)
 {
 	// check_already_login_finishing();
-	$query = $this->fa->get();
-	$data = array(
-		'judul' => 'Finishing Akhir Mesin Kalender',
-		'fa' => $query->result(),
-	);		
+	$query = $this->fa->edit_klemseng($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Kalender',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;			
+			$ambil = $this->fa->ambilIDOrder_klemseng($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_klemseng > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_klemseng;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_klemseng;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 	$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-klemseng',$data);
 }    
 public function lihat_jadwal_fa_klemseng($id)
 {
 	// check_already_login_finishing();
-	$query = $this->fa->edit_klemseng($id);
-	$data = array(
-		'judul' => 'Finishing Akhir Mesin Kalender',
-		'fa' => $query->result(),
-	);		
+	$query = $this->fa->edit_klemseng($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Kalender',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;			
+			$ambil = $this->fa->ambilIDOrder_klemseng($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_klemseng > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_klemseng;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_klemseng;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 	$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-klemseng',$data);
 }
 public function proses_klemseng()
@@ -1016,7 +1117,13 @@ public function proses_klemseng()
 		$this->fa->proses_edit_klemseng($inputan);				
 			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
 			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_klemseng')."'; </script>"; 
-	}		
+	}	
+	if(isset($_POST['add'])){							
+		$inputan = $this->input->post(null, TRUE);
+		$this->fa->proses_tambah_klemseng($inputan);				
+			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_klemseng')."'; </script>"; 
+	}			
 }
 
 
@@ -1131,7 +1238,27 @@ public function hapus_sub($id)
 	}
 }
 
+// hapus klemseng
+public function hapus_klemseng($id)
+{		
+	$data_id = explode("-" , $id);
 
+	// data 0 = id_mesin, data 1 = id_order
+	$jumlah_id = 0;
+			$ambil = $this->fa->ambilIDOrder_klemseng($data_id[1])->result();
+			foreach($ambil as $d){
+				$jumlah_id+=1;
+			}				
+	if($jumlah_id >1){
+			$this->fa->hapus_klemseng($data_id[0]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_klemseng')."'; </script>"; 
+	}else{
+			$this->fa->hapus_klemseng_update($data_id[1]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_klemseng')."'; </script>"; 
+	}
+}
 
 
 
