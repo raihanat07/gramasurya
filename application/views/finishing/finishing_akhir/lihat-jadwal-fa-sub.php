@@ -196,6 +196,12 @@
           </div>
         </div><br>        
                  
+        </div>
+
+        <br><div class="col" align="left">            
+            <div class="col-md-2">                                                          
+                                  <div ><label>Total Hasil Keseluruhan : <?= $total_1; ?></label>
+            </div></div>        
         </div><hr><br>
 
         <div class="row">

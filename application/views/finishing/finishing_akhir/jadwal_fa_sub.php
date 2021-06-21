@@ -48,6 +48,7 @@
               </tr>
             </thead>
             <tbody>
+            <?php $nilai = 0; ?>
             <?php foreach($fa as $s => $row) {?>  
               <tr align="center">
                 <td><?= $row->tanggal_pelaksanaan_sub; ?></td>                
@@ -62,16 +63,29 @@
                 <td><?= $row->hasil; ?></td>
                 <td><?= $row->keterangan_jadwal_sub; ?></td>  
                 <td><?php echo $row->status_sub == "sub" ?  "finishing akhir" : $row->so_status?></td>                
-                <td align="center">                  
-                  <a href="<?=site_url()?>finishing/FinishingAkhir/edit_jadwal_fa_sub/<?= $row->id_order; ?>">
+                <td align="center">  
+
+                  <?php if( $row->id_jadwal_sub == $id_jadwal_max[$nilai] and $row->status_sub != "sub") {?>  
+                          <a href="<?=site_url()?>finishing/FinishingAkhir/tambah_jadwal_fa_sub/<?= $row->id_sub; ?>">
+                            <i class="fa fa-plus" style="font-size:18px;margin-right: 20px;"></i>
+                          </a>  
+                          <?php } ?> 
+
+                  <a href="<?=site_url()?>finishing/FinishingAkhir/edit_jadwal_fa_sub/<?= $row->id_sub; ?>">
                     <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
-                  <a href="<?=site_url()?>finishing/FinishingAkhir/lihat_jadwal_fa_sub/<?= $row->id_order; ?>">
+                  <a href="<?=site_url()?>finishing/FinishingAkhir/lihat_jadwal_fa_sub/<?= $row->id_sub; ?>">
                     <i class="fa fa-eye" style="font-size:18px;"></i>
                   </a>
+
+                    <!-- hapus -->
+                   <a style="margin-left:20px;" href="<?=site_url('finishing/FinishingAkhir/hapus_sub/'.$row->id_sub."-".$row->id_order)?>" onclick="return confirm('Apakah Anda Yakin')" class="btn btn-danger btn-xs">
+                          <i class="fa fa-trash" style="font-size:18px"></i>
+                        </a>
+
                 </td>
               </tr>    
-              <?php } ?>          
+              <?php $nilai++;} ?>          
             </tbody>
           </table>
         </div>

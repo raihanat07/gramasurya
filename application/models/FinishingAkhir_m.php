@@ -1404,6 +1404,53 @@ public function get_jadwal_sub()
     return $query;  
 }
 
+
+public function ambil_data_sub($id)
+{
+    $this->db->select(
+        '   
+            sub_finishing.id_jadwal_sub as id_jadwal_sub,
+            sub_finishing.hasil as hasil,
+        '
+    );
+    $this->db->from('order');
+    $this->db->join('sub_finishing','sub_finishing.id_order = order.id_order');    
+    $this->db->where('sub_finishing.id_order', $id);          
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function ambilIDOrder_sub($id_order)
+{
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        
+        sub_finishing.id_jadwal_sub as id_jadwal_sub,
+        sub_finishing.id_sub as id_sub,
+        sub_finishing.hasil as hasil,         
+        sub_finishing.tanggal_pelaksanaan_sub as tanggal_pelaksanaan_sub',
+        
+    );           
+
+    $this->db->from('order');                           
+    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' ); 
+    $this->db->where('sub_finishing.tanggal_pelaksanaan_sub !=', '0000-00-00');    
+    $this->db->where('sub_finishing.id_order', $id_order);
+    $this->db->order_by('sub_finishing.tanggal_pelaksanaan_sub', 'asc');        
+    
+    $query = $this->db->get();
+    return $query;  
+}
+
 public function edit_sub($id)
 {
     
@@ -1469,17 +1516,18 @@ public function edit_sub($id)
 
     $this->db->join('susun','order.id_order = susun.id_order' );
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-    $this->db->where('order.id_order', $id);       
+    $this->db->where('sub_finishing.id_sub', $id);    
+    $this->db->limit(1);   
     
     $query = $this->db->get();
     return $query;  
 
 }
 
+
 public function proses_edit_sub($data)
-{
-    $ubah_sub = array(         
-        'status_sub' =>$data['status_sub'],
+{   
+    $ubah_sub = array(                     
         'tanggal_pelaksanaan_sub' =>$data['tanggal_pelaksanaan_sub'],
         'keterangan_jadwal_sub' =>$data['keterangan_jadwal_sub'],
 
@@ -1488,20 +1536,55 @@ public function proses_edit_sub($data)
         'rejek' =>$data['rejek'],
         'operator' =>$data['operator'],
         'kru' =>$data['kru'],
-        'keterangan' =>$data['keterangan'],    
-        
-        'jenis_sub_binding' =>$data['jenis_sub_binding'],
-        'jenis_sub_hardcover' =>$data['jenis_sub_hardcover'],
-        'jenis_sub_jahit' =>$data['jenis_sub_jahit'],
-        'jenis_sub_fa_potong' =>$data['jenis_sub_fa_potong'],
-        'jenis_sub_klemseng' =>$data['jenis_sub_klemseng'],
-        'jenis_sub_spiral' =>$data['jenis_sub_spiral'],
+        'keterangan' =>$data['keterangan'],        
 
-    );         
-    // var_dump($ubah_sub);die;
+    );                        
     $this->db->set($ubah_sub);
-    $this->db->where('id_order',$data['id_order']);
+    $this->db->where('id_sub',$data['id_sub']);
     $this->db->update('sub_finishing'); 
+
+    $ubah_sub_khusus = array(                                                                                           
+        'status_sub' =>$data['status_sub'],                                                         
+
+        'jenis_sub_binding' =>$data['jenis_sub_binding'], 
+        'jenis_sub_hardcover' =>$data['jenis_sub_hardcover'], 
+        'jenis_sub_jahit' =>$data['jenis_sub_jahit'], 
+        'jenis_sub_fa_potong' =>$data['jenis_sub_fa_potong'], 
+        'jenis_sub_klemseng' =>$data['jenis_sub_klemseng'], 
+        'jenis_sub_spiral' =>$data['jenis_sub_spiral'], 
+    );                        
+    $this->db->set($ubah_sub_khusus);
+    $this->db->where('id_order',$data['id_order']);
+    $this->db->update('sub_finishing');  
+
+}
+
+public function proses_tambah_sub($data)
+{
+        $tambah_jadwal_sub = array(                                                                         
+            'id_order' =>$data['id_order'],                                   
+            'tanggal_pelaksanaan_sub' =>$data['tanggal_pelaksanaan_sub'],   
+            'id_jadwal_sub' =>$data['id_jadwal_sub'],   
+            'status_sub' =>$data['status_sub'],   
+            'keterangan_jadwal_sub' =>$data['keterangan_jadwal_sub'], 
+
+            'tanggal_kembali_sub' =>$data['tanggal_kembali_sub'],   
+            'hasil' =>$data['hasil'],   
+            'rejek' =>$data['rejek'],   
+            'operator' =>$data['operator'],   
+            'kru' =>$data['kru'],   
+            'keterangan' =>$data['keterangan'],   
+
+            'jenis_sub_binding' =>$data['jenis_sub_binding'], 
+            'jenis_sub_hardcover' =>$data['jenis_sub_hardcover'], 
+            'jenis_sub_jahit' =>$data['jenis_sub_jahit'], 
+            'jenis_sub_fa_potong' =>$data['jenis_sub_fa_potong'], 
+            'jenis_sub_klemseng' =>$data['jenis_sub_klemseng'], 
+            'jenis_sub_spiral' =>$data['jenis_sub_spiral'],
+
+        );                                                          
+        $this->db->insert('sub_finishing',$tambah_jadwal_sub);
+
 }
 
 
@@ -2037,33 +2120,42 @@ public function hapus_fa_potong_update($data)
 }
 
 
+
 // hapus sub
-public function hapus_jadwal_sub($data)
-    {
-        $hapus_sub = array(         
-            'status_sub' =>null,
-            'tanggal_pelaksanaan_sub' =>null,
-            'keterangan_jadwal_sub' =>null,
-
-            'jenis_sub_binding' =>null,
-            'jenis_sub_hardcover' =>null,
-            'jenis_sub_jahit' =>null,
-            'jenis_sub_fa_potong' =>null,
-            'jenis_sub_klemseng' =>null,
-            'jenis_sub_spiral' =>null,
-
-            'tanggal_kembali_sub' =>null,
-            'hasil' =>null,
-            'rejek' =>null,
-            'operator' =>null,
-            'kru' =>null,
-            'keterangan' =>null,                     
-
-        );                        
-        $this->db->set($hapus_sub);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('sub_finishing'); 
+public function hapus_sub($id)
+{
+    $this->db->where('id_sub', $id);
+    $this->db->delete('sub_finishing');
 }
+
+public function hapus_sub_update($data)
+{
+    $hapus_sub = array(
+        'id_jadwal_sub' => 0,   
+        'status_sub' => null,             
+        'tanggal_pelaksanaan_sub' => null,
+        'keterangan_jadwal_sub' => null,
+
+        'tanggal_kembali_sub' => null,
+        'hasil' => null,
+        'rejek' => null,
+        'operator' => null,
+        'kru' => null,
+        'keterangan' => null,     
+        
+        'jenis_sub_binding' =>null,
+        'jenis_sub_hardcover' =>null,
+        'jenis_sub_jahit' =>null,
+        'jenis_sub_fa_potong' =>null,
+        'jenis_sub_klemseng' =>null,
+        'jenis_sub_spiral' =>null,
+                                                                              
+    );            
+    $this->db->set($hapus_sub);    
+    $this->db->where('id_order',$data);    
+    $this->db->update('sub_finishing');
+}
+
 
 // hapus klemseng
 public function hapus_jadwal_klemseng($data)
