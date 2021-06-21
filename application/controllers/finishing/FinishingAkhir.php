@@ -88,23 +88,7 @@ class FinishingAkhir extends CI_Controller {
 		if(isset($_POST['edit'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->fa->edit_fa($inputan);								
-		}
-		// jika jadwal kosong
-		if($inputan["tanggal_pelaksanaan_binding"] == ""){
-			$this->fa->hapus_jadwal_binding($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_hardcover"] == ""){
-			$this->fa->hapus_jadwal_hardcover($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_jahit"] == ""){
-			$this->fa->hapus_jadwal_jahit($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_fa_potong"] == ""){
-			$this->fa->hapus_jadwal_fa_potong($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_sub"] == ""){
-			$this->fa->hapus_jadwal_sub($inputan);	
-		}
+		}		
 		
 
 		echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
@@ -122,14 +106,7 @@ public function proses_fa_kalender()
 		if(isset($_POST['edit'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->fa->edit_fa_kalender($inputan);								
-		}
-		// jika jadwal kosong
-		if($inputan["tanggal_pelaksanaan_klemseng"] == ""){
-			$this->fa->hapus_jadwal_klemseng($inputan);	
-		}
-		if($inputan["tanggal_pelaksanaan_spiral"] == ""){
-			$this->fa->hapus_jadwal_spiral($inputan);	
-		}		
+		}			
 		
 
 		echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
@@ -149,26 +126,100 @@ public function proses_fa_kalender()
 			'judul' => 'Finishing Akhir Mesin Finishing',
 			'fa' => $query->result(),
 		);		
+
+		$jadwal_max = 0;		
+
+		foreach($data["fa"] as $s => $row){
+			// var_dump($row->id_order);
+
+			$id_order = $row->id_order;
+			$ambil = $this->fa->ambil_data_binding($id_order)->result();
+			// var_dump($id_order);						
+
+			foreach($ambil as $sq) {				
+				if($sq->id_jadwal_binding > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_binding;
+				}				
+			}	
+			$data["id_jadwal_max"][] = $jadwal_max;	
+			$jadwal_max = 0;			   		
+
+		}
+
 		$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_binding',$data);
-	}
+}
 	public function edit_jadwal_fa_binding($id)
 	{
 		// check_already_login_finishing();
-		$query = $this->fa->edit_binding($id);		
-		$data = array(
-			'judul' => 'Finishing Akhir Mesin Finishing',
-			'fa' => $query->result(),
-		);				
+			$query = $this->fa->edit_binding($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Finishing',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;
+			$ambil = $this->fa->ambilIDOrder_binding($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_binding > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_binding;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_binding;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+		
 		$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-binding',$data);
 	}
-    public function tambah_jadwal_fa_binding()
+    public function tambah_jadwal_fa_binding($id)
 	{
 		// check_already_login_finishing();
-		$query = $this->fa->get();
+		$query = $this->fa->edit_binding($id);
 		$data = array(
 			'judul' => 'Finishing Akhir Mesin Finishing',
 			'fa' => $query->result(),
-		);		
+		);	
+		$id_order = $data['fa'][0]->id_order;
+			$ambil = $this->fa->ambilIDOrder_binding($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_binding > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_binding;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_binding;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+		
 		$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-binding',$data);
 	}    
     public function lihat_jadwal_fa_binding($id)
@@ -179,6 +230,34 @@ public function proses_fa_kalender()
 			'judul' => 'Finishing Akhir Mesin Finishing',
 			'fa' => $query->result(),
 		);		
+
+		$id_order = $data['fa'][0]->id_order;
+			$ambil = $this->fa->ambilIDOrder_binding($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_binding > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_binding;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_binding;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 		$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-binding',$data);
 	}
 	public function proses_binding()
@@ -213,7 +292,15 @@ public function proses_fa_kalender()
 			$this->fa->proses_edit_binding($inputan);				
 				echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
 				echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_binding')."'; </script>"; 
-		}		
+		}	
+
+		if(isset($_POST['add'])){							
+			$inputan = $this->input->post(null, TRUE);
+			$this->fa->proses_tambah_binding($inputan);				
+				echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
+				echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_binding')."'; </script>"; 
+		}	
+			
 }
 
 // MESIN HARDCOVER
@@ -224,37 +311,138 @@ public function proses_fa_kalender()
 		$data = array(
 			'judul' => 'Finishing Akhir Mesin Finishing',
 			'fa' => $query->result(),
-		);		
+		);
+				
+		$jadwal_max = 0;		
+
+		foreach($data["fa"] as $s => $row){
+			// var_dump($row->id_order);
+
+			$id_order = $row->id_order;
+			$ambil = $this->fa->ambil_data_hardcover($id_order)->result();
+			// var_dump($id_order);						
+
+			foreach($ambil as $sq) {				
+				if($sq->id_jadwal_hardcover > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_hardcover;
+				}				
+			}	
+			$data["id_jadwal_max"][] = $jadwal_max;	
+			$jadwal_max = 0;			   		
+
+		}
+		
 		$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_hardcover',$data);
 }
 	public function edit_jadwal_fa_hardcover($id)
 	{
 		// check_already_login_finishing();
-		$query = $this->fa->edit_hardcover($id);
-		$data = array(
-			'judul' => 'Finishing Akhir Mesin Finishing',
-			'fa' => $query->result(),
-		);		
+		$query = $this->fa->edit_hardcover($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Finishing',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;			
+			$ambil = $this->fa->ambilIDOrder_hardcover($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_hardcover > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_hardcover;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_hardcover;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 		$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-hardcover',$data);
 }
-    public function tambah_jadwal_fa_hardcover()
+    public function tambah_jadwal_fa_hardcover($id)
 	{
 		// check_already_login_finishing();
-		$query = $this->fa->get();
-		$data = array(
-			'judul' => 'Finishing Akhir Mesin Finishing',
-			'fa' => $query->result(),
-		);		
+		$query = $this->fa->edit_hardcover($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Finishing',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;
+			$ambil = $this->fa->ambilIDOrder_hardcover($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_hardcover > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_hardcover;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_hardcover;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 		$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-hardcover',$data);
 	}    
     public function lihat_jadwal_fa_hardcover($id)
 	{
 		// check_already_login_finishing();
-		$query = $this->fa->edit_hardcover($id);
-		$data = array(
-			'judul' => 'Finishing Akhir Mesin Finishing',
-			'fa' => $query->result(),
-		);		
+		$query = $this->fa->edit_hardcover($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Finishing',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;
+			$ambil = $this->fa->ambilIDOrder_hardcover($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_hardcover > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_hardcover;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_hardcover;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 		$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-hardcover',$data);
 }
 	public function proses_hardcover()
@@ -265,7 +453,13 @@ public function proses_fa_kalender()
 			$this->fa->proses_edit_hardcover($inputan);				
 				echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
 				echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_hardcover')."'; </script>"; 
-		}		
+		}
+		if(isset($_POST['add'])){							
+			$inputan = $this->input->post(null, TRUE);
+			$this->fa->proses_tambah_hardcover($inputan);				
+				echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
+				echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_hardcover')."'; </script>"; 
+		}			
 }
 	
 //// MESIN jahit
@@ -273,40 +467,141 @@ public function jadwal_fa_jahit()
 {
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_jahit();
-	$data = array(
-		'judul' => 'Finishing Akhir Mesin Finishing',
-		'fa' => $query->result(),
-	);		
+		$data = array(
+			'judul' => 'Finishing Akhir Mesin Finishing',
+			'fa' => $query->result(),
+		);		
+
+		$jadwal_max = 0;		
+
+		foreach($data["fa"] as $s => $row){
+			// var_dump($row->id_order);
+
+			$id_order = $row->id_order;
+			$ambil = $this->fa->ambil_data_jahit($id_order)->result();
+			// var_dump($id_order);						
+
+			foreach($ambil as $sq) {				
+				if($sq->id_jadwal_jahit > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_jahit;
+				}				
+			}	
+			$data["id_jadwal_max"][] = $jadwal_max;	
+			$jadwal_max = 0;			   		
+
+		}
+
 	$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_jahit',$data);
 }
 public function edit_jadwal_fa_jahit($id)
 {
 	// check_already_login_finishing();
-	$query = $this->fa->edit_jahit($id);
-	$data = array(
-		'judul' => 'Finishing Akhir Mesin Finishing',
-		'fa' => $query->result(),
-	);		
+	$query = $this->fa->edit_jahit($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Finishing',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;
+			$ambil = $this->fa->ambilIDOrder_jahit($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_jahit > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_jahit;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_jahit;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-jahit',$data);
 }
-public function tambah_jadwal_fa_jahit()
+public function tambah_jadwal_fa_jahit($id)
 {
 	// check_already_login_finishing();
-	$query = $this->fa->get();
-	$data = array(
-		'judul' => 'Finishing Akhir Mesin Finishing',
-		'fa' => $query->result(),
-	);		
+	$query = $this->fa->edit_jahit($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Finishing',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;
+			$ambil = $this->fa->ambilIDOrder_jahit($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_jahit > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_jahit;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_jahit;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 	$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-jahit',$data);
 }    
 public function lihat_jadwal_fa_jahit($id)
 {
 	// check_already_login_finishing();
-	$query = $this->fa->edit_jahit($id);
-	$data = array(
-		'judul' => 'Finishing Akhir Mesin Finishing',
-		'fa' => $query->result(),
-	);		
+	$query = $this->fa->edit_jahit($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Finishing',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;
+			$ambil = $this->fa->ambilIDOrder_jahit($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_jahit > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_jahit;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_jahit;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 	$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-jahit',$data);
 }
 public function proses_jahit()
@@ -317,7 +612,13 @@ public function proses_jahit()
 		$this->fa->proses_edit_jahit($inputan);				
 			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
 			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_jahit')."'; </script>"; 
-	}		
+	}
+	if(isset($_POST['add'])){							
+		$inputan = $this->input->post(null, TRUE);
+		$this->fa->proses_tambah_jahit($inputan);				
+			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_jahit')."'; </script>"; 
+	}			
 }
 
 //// MESIN fa_potong
@@ -325,40 +626,141 @@ public function jadwal_fa_potong()
 {
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_fa_potong();
-	$data = array(
-		'judul' => 'Finishing Akhir Mesin Finishing',
-		'fa' => $query->result(),
-	);		
+		$data = array(
+			'judul' => 'Finishing Akhir Mesin Finishing',
+			'fa' => $query->result(),
+		);		
+
+		$jadwal_max = 0;		
+
+		foreach($data["fa"] as $s => $row){
+			// var_dump($row->id_order);
+
+			$id_order = $row->id_order;
+			$ambil = $this->fa->ambil_data_fa_potong($id_order)->result();
+			// var_dump($id_order);						
+
+			foreach($ambil as $sq) {				
+				if($sq->id_jadwal_fa_potong > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_fa_potong;
+				}				
+			}	
+			$data["id_jadwal_max"][] = $jadwal_max;	
+			$jadwal_max = 0;			   		
+
+		}
+
 	$this->template->load('finishing/template','finishing/finishing_akhir/jadwal_fa_potong',$data);
 }
 public function edit_jadwal_fa_potong($id)
 {
 	// check_already_login_finishing();
-	$query = $this->fa->edit_fa_potong($id);
-	$data = array(
-		'judul' => 'Finishing Akhir Mesin Finishing',
-		'fa' => $query->result(),
-	);		
+	$query = $this->fa->edit_fa_potong($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Finishing',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;
+			$ambil = $this->fa->ambilIDOrder_fa_potong($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_fa_potong > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_fa_potong;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_fa_potong;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-potong',$data);
 }
-public function tambah_jadwal_fa_potong()
+public function tambah_jadwal_fa_potong($id)
 {
 	// check_already_login_finishing();
-	$query = $this->fa->get();
-	$data = array(
-		'judul' => 'Finishing Akhir Mesin Finishing',
-		'fa' => $query->result(),
-	);		
+	$query = $this->fa->edit_fa_potong($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Finishing',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;
+			$ambil = $this->fa->ambilIDOrder_fa_potong($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_fa_potong > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_fa_potong;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_fa_potong;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 	$this->template->load('finishing/template','finishing/finishing_akhir/tambah-jadwal-fa-potong',$data);
 }    
 public function lihat_jadwal_fa_potong($id)
 {
 	// check_already_login_finishing();
-	$query = $this->fa->edit_fa_potong($id);
-	$data = array(
-		'judul' => 'Finishing Akhir Mesin Finishing',
-		'fa' => $query->result(),
-	);		
+	$query = $this->fa->edit_fa_potong($id);		
+			$data = array(
+				'judul' => 'Finishing Akhir Mesin Finishing',
+				'fa' => $query->result(),
+			);	
+			$id_order = $data['fa'][0]->id_order;
+			$ambil = $this->fa->ambilIDOrder_fa_potong($id_order)->result();
+	
+			$jadwal_max = 0;
+			$tampung_jadwal = [];
+			$total_1=0;
+			$total_2=0;
+			$total_3=0;
+			$total_4=0;
+			foreach($ambil as $sq) {
+				if($sq->id_jadwal_fa_potong > $jadwal_max) {
+					$jadwal_max = $sq->id_jadwal_fa_potong;
+				}
+				$tampung_jadwal[] = $sq->id_jadwal_fa_potong;
+				$total_1 += $sq->hasil_1;
+				$total_2 += $sq->hasil_2;
+				$total_3 += $sq->hasil_3;
+				$total_4 += $sq->hasil_4;
+			}
+	
+			$data['jadwal_max'] = $jadwal_max;
+			$data['tampung_jadwal'] = $tampung_jadwal;
+			$data['total_1'] = $total_1;
+			$data['total_2'] = $total_2;
+			$data['total_3'] = $total_3;
+			$data['total_4'] = $total_4;
+
 	$this->template->load('finishing/template','finishing/finishing_akhir/lihat-jadwal-fa-potong',$data);
 }
 public function proses_fa_potong()
@@ -369,7 +771,13 @@ public function proses_fa_potong()
 		$this->fa->proses_edit_fa_potong($inputan);				
 			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
 			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_potong')."'; </script>"; 
-	}		
+	}
+	if(isset($_POST['add'])){							
+		$inputan = $this->input->post(null, TRUE);
+		$this->fa->proses_tambah_fa_potong($inputan);				
+			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_potong')."'; </script>"; 
+	}			
 }
 
 //// MESIN sub
@@ -529,6 +937,99 @@ public function proses_klemseng()
 			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_klemseng')."'; </script>"; 
 	}		
 }
+
+
+
+// hapus binding
+	public function hapus_binding($id)
+	{		
+		$data_id = explode("-" , $id);
+
+		// data 0 = id_mesin, data 1 = id_order
+		$jumlah_id = 0;
+				$ambil = $this->fa->ambilIDOrder_binding($data_id[1])->result();
+				foreach($ambil as $d){
+					$jumlah_id+=1;
+				}				
+		if($jumlah_id >1){
+				$this->fa->hapus_binding($data_id[0]);
+				echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+				echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_binding')."'; </script>"; 
+		}else{
+				$this->fa->hapus_binding_update($data_id[1]);
+				echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+				echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_binding')."'; </script>"; 
+		}
+}
+
+// hapus hardcover
+public function hapus_hardcover($id)
+{		
+	$data_id = explode("-" , $id);
+
+	// data 0 = id_mesin, data 1 = id_order
+	$jumlah_id = 0;
+			$ambil = $this->fa->ambilIDOrder_hardcover($data_id[1])->result();
+			foreach($ambil as $d){
+				$jumlah_id+=1;
+			}				
+	if($jumlah_id >1){
+			$this->fa->hapus_hardcover($data_id[0]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_hardcover')."'; </script>"; 
+	}else{
+			$this->fa->hapus_hardcover_update($data_id[1]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_hardcover')."'; </script>"; 
+	}
+}
+
+// hapus jahit
+public function hapus_jahit($id)
+{		
+	$data_id = explode("-" , $id);
+
+	// data 0 = id_mesin, data 1 = id_order
+	$jumlah_id = 0;
+			$ambil = $this->fa->ambilIDOrder_jahit($data_id[1])->result();
+			foreach($ambil as $d){
+				$jumlah_id+=1;
+			}				
+	if($jumlah_id >1){
+			$this->fa->hapus_jahit($data_id[0]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_jahit')."'; </script>"; 
+	}else{
+			$this->fa->hapus_jahit_update($data_id[1]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_jahit')."'; </script>"; 
+	}
+}
+
+// hapus fa_potong
+public function hapus_potong($id)
+{		
+	$data_id = explode("-" , $id);
+
+	// data 0 = id_mesin, data 1 = id_order
+	$jumlah_id = 0;
+			$ambil = $this->fa->ambilIDOrder_fa_potong($data_id[1])->result();
+			foreach($ambil as $d){
+				$jumlah_id+=1;
+			}				
+	if($jumlah_id >1){
+			$this->fa->hapus_fa_potong($data_id[0]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_potong')."'; </script>"; 
+	}else{
+			$this->fa->hapus_fa_potong_update($data_id[1]);
+			echo "<script> alert('Data Berhasil Dihapus'); </script>";				
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_potong')."'; </script>"; 
+	}
+}
+
+
+
 
 
 

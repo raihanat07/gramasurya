@@ -291,293 +291,6 @@ public function edit_fa_kalender($data)
 
 
 
-// hapus binding
-    public function hapus_jadwal_binding($data)
-    {
-        $hapus_binding = array(         
-            'status_binding' =>null,
-            'tanggal_pelaksanaan_binding' =>null,
-            'keterangan_jadwal_binding' =>null,
-
-            'tanggal_pengerjaan_1' =>null,
-            'hasil_1' =>null,
-            'rejek_1' =>null,
-            'operator_1' =>null,
-            'kru_1' =>null,
-            'keterangan_1' =>null,
-            
-            'tanggal_pengerjaan_2' =>null,
-            'hasil_2' =>null,
-            'rejek_2' =>null,
-            'operator_2' =>null,
-            'kru_2' =>null,
-            'keterangan_2' =>null,
-
-            'tanggal_pengerjaan_3' =>null,
-            'hasil_3' =>null,
-            'rejek_3' =>null,
-            'operator_3' =>null,
-            'kru_3' =>null,
-            'keterangan_3' =>null,
-
-            'tanggal_pengerjaan_4' =>null,
-            'hasil_4' =>null,
-            'rejek_4' =>null,
-            'operator_4' =>null,
-            'kru_4' =>null,
-            'keterangan_4' =>null,
-
-
-        );                        
-        $this->db->set($hapus_binding);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('binding'); 
-}
-
-// hapus hardcover
-public function hapus_jadwal_hardcover($data)
-    {
-        $hapus_hardcover = array(         
-            'status_hardcover' =>null,
-            'tanggal_pelaksanaan_hardcover' =>null,
-            'keterangan_jadwal_hardcover' =>null,
-
-            'tanggal_pengerjaan_1' =>null,
-            'hasil_1' =>null,
-            'rejek_1' =>null,
-            'operator_1' =>null,
-            'kru_1' =>null,
-            'keterangan_1' =>null,
-            
-            'tanggal_pengerjaan_2' =>null,
-            'hasil_2' =>null,
-            'rejek_2' =>null,
-            'operator_2' =>null,
-            'kru_2' =>null,
-            'keterangan_2' =>null,
-
-            'tanggal_pengerjaan_3' =>null,
-            'hasil_3' =>null,
-            'rejek_3' =>null,
-            'operator_3' =>null,
-            'kru_3' =>null,
-            'keterangan_3' =>null,
-
-            'tanggal_pengerjaan_4' =>null,
-            'hasil_4' =>null,
-            'rejek_4' =>null,
-            'operator_4' =>null,
-            'kru_4' =>null,
-            'keterangan_4' =>null,
-
-
-        );                        
-        $this->db->set($hapus_hardcover);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('hardcover'); 
-}
-
-// hapus jahit
-public function hapus_jadwal_jahit($data)
-    {
-        $hapus_jahit = array(         
-            'status_jahit' =>null,
-            'tanggal_pelaksanaan_jahit' =>null,
-            'keterangan_jadwal_jahit' =>null,
-
-            'tanggal_pengerjaan_1' =>null,
-            'hasil_1' =>null,
-            'rejek_1' =>null,
-            'operator_1' =>null,
-            'kru_1' =>null,
-            'keterangan_1' =>null,
-            
-            'tanggal_pengerjaan_2' =>null,
-            'hasil_2' =>null,
-            'rejek_2' =>null,
-            'operator_2' =>null,
-            'kru_2' =>null,
-            'keterangan_2' =>null,
-
-            'tanggal_pengerjaan_3' =>null,
-            'hasil_3' =>null,
-            'rejek_3' =>null,
-            'operator_3' =>null,
-            'kru_3' =>null,
-            'keterangan_3' =>null,
-
-            'tanggal_pengerjaan_4' =>null,
-            'hasil_4' =>null,
-            'rejek_4' =>null,
-            'operator_4' =>null,
-            'kru_4' =>null,
-            'keterangan_4' =>null,
-
-
-        );                        
-        $this->db->set($hapus_jahit);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('jahit'); 
-}
-
-// hapus fa_potong
-public function hapus_jadwal_fa_potong($data)
-    {
-        $hapus_fa_potong = array(         
-            'status_fa_potong' =>null,
-            'tanggal_pelaksanaan_fa_potong' =>null,
-            'keterangan_jadwal_fa_potong' =>null,
-
-            'tanggal_pengerjaan_1' =>null,
-            'hasil_1' =>null,
-            'rejek_1' =>null,
-            'operator_1' =>null,
-            'kru_1' =>null,
-            'keterangan_1' =>null,
-            
-            'tanggal_pengerjaan_2' =>null,
-            'hasil_2' =>null,
-            'rejek_2' =>null,
-            'operator_2' =>null,
-            'kru_2' =>null,
-            'keterangan_2' =>null,
-
-            'tanggal_pengerjaan_3' =>null,
-            'hasil_3' =>null,
-            'rejek_3' =>null,
-            'operator_3' =>null,
-            'kru_3' =>null,
-            'keterangan_3' =>null,
-
-            'tanggal_pengerjaan_4' =>null,
-            'hasil_4' =>null,
-            'rejek_4' =>null,
-            'operator_4' =>null,
-            'kru_4' =>null,
-            'keterangan_4' =>null,
-
-
-        );                        
-        $this->db->set($hapus_fa_potong);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('fa_potong'); 
-}
-
-// hapus sub
-public function hapus_jadwal_sub($data)
-    {
-        $hapus_sub = array(         
-            'status_sub' =>null,
-            'tanggal_pelaksanaan_sub' =>null,
-            'keterangan_jadwal_sub' =>null,
-
-            'jenis_sub_binding' =>null,
-            'jenis_sub_hardcover' =>null,
-            'jenis_sub_jahit' =>null,
-            'jenis_sub_fa_potong' =>null,
-            'jenis_sub_klemseng' =>null,
-            'jenis_sub_spiral' =>null,
-
-            'tanggal_kembali_sub' =>null,
-            'hasil' =>null,
-            'rejek' =>null,
-            'operator' =>null,
-            'kru' =>null,
-            'keterangan' =>null,                     
-
-        );                        
-        $this->db->set($hapus_sub);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('sub_finishing'); 
-}
-
-// hapus klemseng
-public function hapus_jadwal_klemseng($data)
-{
-    $hapus_klemseng = array(         
-        'status_klemseng' =>null,
-        'tanggal_pelaksanaan_klemseng' =>null,
-        'keterangan_jadwal_klemseng' =>null,
-
-        'tanggal_pengerjaan_1' =>null,
-        'hasil_1' =>null,
-        'rejek_1' =>null,
-        'operator_1' =>null,
-        'kru_1' =>null,
-        'keterangan_1' =>null,
-        
-        'tanggal_pengerjaan_2' =>null,
-        'hasil_2' =>null,
-        'rejek_2' =>null,
-        'operator_2' =>null,
-        'kru_2' =>null,
-        'keterangan_2' =>null,
-
-        'tanggal_pengerjaan_3' =>null,
-        'hasil_3' =>null,
-        'rejek_3' =>null,
-        'operator_3' =>null,
-        'kru_3' =>null,
-        'keterangan_3' =>null,
-
-        'tanggal_pengerjaan_4' =>null,
-        'hasil_4' =>null,
-        'rejek_4' =>null,
-        'operator_4' =>null,
-        'kru_4' =>null,
-        'keterangan_4' =>null,
-
-
-    );                        
-    $this->db->set($hapus_klemseng);
-    $this->db->where('id_order',$data['id_order']);
-    $this->db->update('klemseng'); 
-}
-
-// hapus spiral
-public function hapus_jadwal_spiral($data)
-{
-    $hapus_spiral = array(         
-        'status_spiral' =>null,
-        'tanggal_pelaksanaan_spiral' =>null,
-        'keterangan_jadwal_spiral' =>null,
-
-        'tanggal_pengerjaan_1' =>null,
-        'hasil_1' =>null,
-        'rejek_1' =>null,
-        'operator_1' =>null,
-        'kru_1' =>null,
-        'keterangan_1' =>null,
-        
-        'tanggal_pengerjaan_2' =>null,
-        'hasil_2' =>null,
-        'rejek_2' =>null,
-        'operator_2' =>null,
-        'kru_2' =>null,
-        'keterangan_2' =>null,
-
-        'tanggal_pengerjaan_3' =>null,
-        'hasil_3' =>null,
-        'rejek_3' =>null,
-        'operator_3' =>null,
-        'kru_3' =>null,
-        'keterangan_3' =>null,
-
-        'tanggal_pengerjaan_4' =>null,
-        'hasil_4' =>null,
-        'rejek_4' =>null,
-        'operator_4' =>null,
-        'kru_4' =>null,
-        'keterangan_4' =>null,
-
-
-    );                        
-    $this->db->set($hapus_spiral);
-    $this->db->where('id_order',$data['id_order']);
-    $this->db->update('spiral'); 
-}
-
-
 
 //// MESIN binding
     public function get_jadwal_binding()
@@ -615,6 +328,58 @@ public function hapus_jadwal_spiral($data)
         
         $query = $this->db->get();
         return $query;  
+}
+
+public function ambil_data_binding($id)
+{
+    $this->db->select(
+        '   
+            binding.id_jadwal_binding as id_jadwal_binding,
+            binding.hasil_1 as hasil_1,
+            binding.hasil_2 as hasil_2,
+            binding.hasil_3 as hasil_3,
+            binding.hasil_4 as hasil_4,
+        '
+    );
+    $this->db->from('order');
+    $this->db->join('binding','binding.id_order = order.id_order');    
+    $this->db->where('binding.id_order', $id);          
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function ambilIDOrder_binding($id_order)
+{
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        
+        binding.id_jadwal_binding as id_jadwal_binding,
+        binding.id_binding as id_binding,
+        binding.hasil_1 as hasil_1,
+        binding.hasil_2 as hasil_2,            
+        binding.hasil_3 as hasil_3, 
+        binding.hasil_4 as hasil_4, 
+        binding.tanggal_pelaksanaan_binding as tanggal_pelaksanaan_binding',
+        
+    );           
+
+    $this->db->from('order');                           
+    $this->db->join('binding','order.id_order = binding.id_order' ); 
+    $this->db->where('binding.tanggal_pelaksanaan_binding !=', '0000-00-00');    
+    $this->db->where('binding.id_order', $id_order);
+    $this->db->order_by('binding.tanggal_pelaksanaan_binding', 'asc');        
+    
+    $query = $this->db->get();
+    return $query;  
 }
 
     public function edit_binding($id)
@@ -694,9 +459,9 @@ public function hapus_jadwal_spiral($data)
         $this->db->join('klemseng','order.id_order = klemseng.id_order' );
         $this->db->join('spiral','order.id_order = spiral.id_order' );
 
-        $this->db->join('susun','order.id_order = susun.id_order' );
+        $this->db->join('susun','order.id_order = susun.id_order', 'left' );
         $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-        $this->db->where('order.id_order', $id);       
+        $this->db->where('binding.id_binding', $id);       
         
         $query = $this->db->get();
         return $query;  
@@ -704,9 +469,8 @@ public function hapus_jadwal_spiral($data)
 }
 
     public function proses_edit_binding($data)
-    {
-        $ubah_binding = array(         
-            'status_binding' =>$data['status_binding'],
+    {   
+        $ubah_binding = array(                     
             'tanggal_pelaksanaan_binding' =>$data['tanggal_pelaksanaan_binding'],
             'keterangan_jadwal_binding' =>$data['keterangan_jadwal_binding'],
 
@@ -741,10 +505,59 @@ public function hapus_jadwal_spiral($data)
 
         );                        
         $this->db->set($ubah_binding);
-        $this->db->where('id_order',$data['id_order']);
+        $this->db->where('id_binding',$data['id_binding']);
         $this->db->update('binding'); 
+
+        $ubah_binding_khusus = array(                                                                                           
+            'status_binding' =>$data['status_binding'],                                                         
+        );                        
+        $this->db->set($ubah_binding_khusus);
+        $this->db->where('id_order',$data['id_order']);
+        $this->db->update('binding');  
+
 }
 
+public function proses_tambah_binding($data)
+	{
+            $tambah_jadwal_binding = array(                                                                         
+                'id_order' =>$data['id_order'],                                   
+                'tanggal_pelaksanaan_binding' =>$data['tanggal_pelaksanaan_binding'],   
+                'id_jadwal_binding' =>$data['id_jadwal_binding'],   
+                'status_binding' =>$data['status_binding'],   
+                'keterangan_jadwal_binding' =>$data['keterangan_jadwal_binding'], 
+
+                'tanggal_pengerjaan_1' =>$data['tanggal_pengerjaan_1'],   
+                'hasil_1' =>$data['hasil_1'],   
+                'rejek_1' =>$data['rejek_1'],   
+                'operator_1' =>$data['operator_1'],   
+                'kru_1' =>$data['kru_1'],   
+                'keterangan_1' =>$data['keterangan_1'],   
+
+                'tanggal_pengerjaan_2' =>$data['tanggal_pengerjaan_2'],   
+                'hasil_2' =>$data['hasil_2'],   
+                'rejek_2' =>$data['rejek_2'],   
+                'operator_2' =>$data['operator_2'],   
+                'kru_2' =>$data['kru_2'],   
+                'keterangan_2' =>$data['keterangan_2'],    
+                
+                'tanggal_pengerjaan_3' =>$data['tanggal_pengerjaan_3'],   
+                'hasil_3' =>$data['hasil_3'],   
+                'rejek_3' =>$data['rejek_3'],   
+                'operator_3' =>$data['operator_3'],   
+                'kru_3' =>$data['kru_3'],   
+                'keterangan_3' =>$data['keterangan_3'], 
+
+                'tanggal_pengerjaan_4' =>$data['tanggal_pengerjaan_4'],   
+                'hasil_4' =>$data['hasil_4'],   
+                'rejek_4' =>$data['rejek_4'],   
+                'operator_4' =>$data['operator_4'],   
+                'kru_4' =>$data['kru_4'],   
+                'keterangan_4' =>$data['keterangan_4'], 
+
+            );                                                          
+            $this->db->insert('binding',$tambah_jadwal_binding);
+
+}
 //// MESIN hardcover
 public function get_jadwal_hardcover()
 {
@@ -777,6 +590,58 @@ public function get_jadwal_hardcover()
     $this->db->from('order');                           
     $this->db->join('hardcover','order.id_order = hardcover.id_order' ); 
     $this->db->where('hardcover.tanggal_pelaksanaan_hardcover !=', '0000-00-00');    
+    $this->db->order_by('hardcover.tanggal_pelaksanaan_hardcover', 'asc');        
+    
+    $query = $this->db->get();
+    return $query;  
+}
+
+public function ambil_data_hardcover($id)
+{
+    $this->db->select(
+        '   
+            hardcover.id_jadwal_hardcover as id_jadwal_hardcover,
+            hardcover.hasil_1 as hasil_1,
+            hardcover.hasil_2 as hasil_2,
+            hardcover.hasil_3 as hasil_3,
+            hardcover.hasil_4 as hasil_4,
+        '
+    );
+    $this->db->from('order');
+    $this->db->join('hardcover','hardcover.id_order = order.id_order');    
+    $this->db->where('hardcover.id_order', $id);          
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function ambilIDOrder_hardcover($id_order)
+{
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        
+        hardcover.id_jadwal_hardcover as id_jadwal_hardcover,
+        hardcover.id_hardcover as id_hardcover,
+        hardcover.hasil_1 as hasil_1,
+        hardcover.hasil_2 as hasil_2,            
+        hardcover.hasil_3 as hasil_3, 
+        hardcover.hasil_4 as hasil_4, 
+        hardcover.tanggal_pelaksanaan_hardcover as tanggal_pelaksanaan_hardcover',
+        
+    );           
+
+    $this->db->from('order');                           
+    $this->db->join('hardcover','order.id_order = hardcover.id_order' ); 
+    $this->db->where('hardcover.tanggal_pelaksanaan_hardcover !=', '0000-00-00');    
+    $this->db->where('hardcover.id_order', $id_order);
     $this->db->order_by('hardcover.tanggal_pelaksanaan_hardcover', 'asc');        
     
     $query = $this->db->get();
@@ -862,17 +727,18 @@ public function edit_hardcover($id)
 
     $this->db->join('susun','order.id_order = susun.id_order' );
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-    $this->db->where('order.id_order', $id);       
+    $this->db->where('hardcover.id_hardcover', $id);  
+    $this->db->limit(1);
     
     $query = $this->db->get();
     return $query;  
 
 }
 
+
 public function proses_edit_hardcover($data)
-{
-    $ubah_hardcover = array(         
-        'status_hardcover' =>$data['status_hardcover'],
+{   
+    $ubah_hardcover = array(                     
         'tanggal_pelaksanaan_hardcover' =>$data['tanggal_pelaksanaan_hardcover'],
         'keterangan_jadwal_hardcover' =>$data['keterangan_jadwal_hardcover'],
 
@@ -907,8 +773,58 @@ public function proses_edit_hardcover($data)
 
     );                        
     $this->db->set($ubah_hardcover);
-    $this->db->where('id_order',$data['id_order']);
+    $this->db->where('id_hardcover',$data['id_hardcover']);
     $this->db->update('hardcover'); 
+
+    $ubah_hardcover_khusus = array(                                                                                           
+        'status_hardcover' =>$data['status_hardcover'],                                                         
+    );                        
+    $this->db->set($ubah_hardcover_khusus);
+    $this->db->where('id_order',$data['id_order']);
+    $this->db->update('hardcover');  
+
+}
+
+public function proses_tambah_hardcover($data)
+{
+        $tambah_jadwal_hardcover = array(                                                                         
+            'id_order' =>$data['id_order'],                                   
+            'tanggal_pelaksanaan_hardcover' =>$data['tanggal_pelaksanaan_hardcover'],   
+            'id_jadwal_hardcover' =>$data['id_jadwal_hardcover'],   
+            'status_hardcover' =>$data['status_hardcover'],   
+            'keterangan_jadwal_hardcover' =>$data['keterangan_jadwal_hardcover'], 
+
+            'tanggal_pengerjaan_1' =>$data['tanggal_pengerjaan_1'],   
+            'hasil_1' =>$data['hasil_1'],   
+            'rejek_1' =>$data['rejek_1'],   
+            'operator_1' =>$data['operator_1'],   
+            'kru_1' =>$data['kru_1'],   
+            'keterangan_1' =>$data['keterangan_1'],   
+
+            'tanggal_pengerjaan_2' =>$data['tanggal_pengerjaan_2'],   
+            'hasil_2' =>$data['hasil_2'],   
+            'rejek_2' =>$data['rejek_2'],   
+            'operator_2' =>$data['operator_2'],   
+            'kru_2' =>$data['kru_2'],   
+            'keterangan_2' =>$data['keterangan_2'],    
+            
+            'tanggal_pengerjaan_3' =>$data['tanggal_pengerjaan_3'],   
+            'hasil_3' =>$data['hasil_3'],   
+            'rejek_3' =>$data['rejek_3'],   
+            'operator_3' =>$data['operator_3'],   
+            'kru_3' =>$data['kru_3'],   
+            'keterangan_3' =>$data['keterangan_3'], 
+
+            'tanggal_pengerjaan_4' =>$data['tanggal_pengerjaan_4'],   
+            'hasil_4' =>$data['hasil_4'],   
+            'rejek_4' =>$data['rejek_4'],   
+            'operator_4' =>$data['operator_4'],   
+            'kru_4' =>$data['kru_4'],   
+            'keterangan_4' =>$data['keterangan_4'], 
+
+        );                                                          
+        $this->db->insert('hardcover',$tambah_jadwal_hardcover);
+
 }
 
 //// MESIN jahit
@@ -943,6 +859,59 @@ public function get_jadwal_jahit()
     $this->db->from('order');                           
     $this->db->join('jahit','order.id_order = jahit.id_order' ); 
     $this->db->where('jahit.tanggal_pelaksanaan_jahit !=', '0000-00-00');    
+    $this->db->order_by('jahit.tanggal_pelaksanaan_jahit', 'asc');        
+    
+    $query = $this->db->get();
+    return $query;  
+}
+
+
+public function ambil_data_jahit($id)
+{
+    $this->db->select(
+        '   
+            jahit.id_jadwal_jahit as id_jadwal_jahit,
+            jahit.hasil_1 as hasil_1,
+            jahit.hasil_2 as hasil_2,
+            jahit.hasil_3 as hasil_3,
+            jahit.hasil_4 as hasil_4,
+        '
+    );
+    $this->db->from('order');
+    $this->db->join('jahit','jahit.id_order = order.id_order');    
+    $this->db->where('jahit.id_order', $id);          
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function ambilIDOrder_jahit($id_order)
+{
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        
+        jahit.id_jadwal_jahit as id_jadwal_jahit,
+        jahit.id_jahit as id_jahit,
+        jahit.hasil_1 as hasil_1,
+        jahit.hasil_2 as hasil_2,            
+        jahit.hasil_3 as hasil_3, 
+        jahit.hasil_4 as hasil_4, 
+        jahit.tanggal_pelaksanaan_jahit as tanggal_pelaksanaan_jahit',
+        
+    );           
+
+    $this->db->from('order');                           
+    $this->db->join('jahit','order.id_order = jahit.id_order' ); 
+    $this->db->where('jahit.tanggal_pelaksanaan_jahit !=', '0000-00-00');    
+    $this->db->where('jahit.id_order', $id_order);
     $this->db->order_by('jahit.tanggal_pelaksanaan_jahit', 'asc');        
     
     $query = $this->db->get();
@@ -1028,7 +997,8 @@ public function edit_jahit($id)
 
     $this->db->join('susun','order.id_order = susun.id_order' );
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-    $this->db->where('order.id_order', $id);       
+    $this->db->where('jahit.id_jahit', $id);  
+    $this->db->limit(1);     
     
     $query = $this->db->get();
     return $query;  
@@ -1036,9 +1006,8 @@ public function edit_jahit($id)
 }
 
 public function proses_edit_jahit($data)
-{
-    $ubah_jahit = array(         
-        'status_jahit' =>$data['status_jahit'],
+{   
+    $ubah_jahit = array(                     
         'tanggal_pelaksanaan_jahit' =>$data['tanggal_pelaksanaan_jahit'],
         'keterangan_jadwal_jahit' =>$data['keterangan_jadwal_jahit'],
 
@@ -1073,8 +1042,58 @@ public function proses_edit_jahit($data)
 
     );                        
     $this->db->set($ubah_jahit);
-    $this->db->where('id_order',$data['id_order']);
+    $this->db->where('id_jahit',$data['id_jahit']);
     $this->db->update('jahit'); 
+
+    $ubah_jahit_khusus = array(                                                                                           
+        'status_jahit' =>$data['status_jahit'],                                                         
+    );                        
+    $this->db->set($ubah_jahit_khusus);
+    $this->db->where('id_order',$data['id_order']);
+    $this->db->update('jahit');  
+
+}
+
+public function proses_tambah_jahit($data)
+{
+        $tambah_jadwal_jahit = array(                                                                         
+            'id_order' =>$data['id_order'],                                   
+            'tanggal_pelaksanaan_jahit' =>$data['tanggal_pelaksanaan_jahit'],   
+            'id_jadwal_jahit' =>$data['id_jadwal_jahit'],   
+            'status_jahit' =>$data['status_jahit'],   
+            'keterangan_jadwal_jahit' =>$data['keterangan_jadwal_jahit'], 
+
+            'tanggal_pengerjaan_1' =>$data['tanggal_pengerjaan_1'],   
+            'hasil_1' =>$data['hasil_1'],   
+            'rejek_1' =>$data['rejek_1'],   
+            'operator_1' =>$data['operator_1'],   
+            'kru_1' =>$data['kru_1'],   
+            'keterangan_1' =>$data['keterangan_1'],   
+
+            'tanggal_pengerjaan_2' =>$data['tanggal_pengerjaan_2'],   
+            'hasil_2' =>$data['hasil_2'],   
+            'rejek_2' =>$data['rejek_2'],   
+            'operator_2' =>$data['operator_2'],   
+            'kru_2' =>$data['kru_2'],   
+            'keterangan_2' =>$data['keterangan_2'],    
+            
+            'tanggal_pengerjaan_3' =>$data['tanggal_pengerjaan_3'],   
+            'hasil_3' =>$data['hasil_3'],   
+            'rejek_3' =>$data['rejek_3'],   
+            'operator_3' =>$data['operator_3'],   
+            'kru_3' =>$data['kru_3'],   
+            'keterangan_3' =>$data['keterangan_3'], 
+
+            'tanggal_pengerjaan_4' =>$data['tanggal_pengerjaan_4'],   
+            'hasil_4' =>$data['hasil_4'],   
+            'rejek_4' =>$data['rejek_4'],   
+            'operator_4' =>$data['operator_4'],   
+            'kru_4' =>$data['kru_4'],   
+            'keterangan_4' =>$data['keterangan_4'], 
+
+        );                                                          
+        $this->db->insert('jahit',$tambah_jadwal_jahit);
+
 }
 
 //// MESIN fa_potong
@@ -1109,6 +1128,58 @@ public function get_jadwal_fa_potong()
     $this->db->from('order');                           
     $this->db->join('fa_potong','order.id_order = fa_potong.id_order' ); 
     $this->db->where('fa_potong.tanggal_pelaksanaan_fa_potong !=', '0000-00-00');    
+    $this->db->order_by('fa_potong.tanggal_pelaksanaan_fa_potong', 'asc');        
+    
+    $query = $this->db->get();
+    return $query;  
+}
+
+public function ambil_data_fa_potong($id)
+{
+    $this->db->select(
+        '   
+            fa_potong.id_jadwal_fa_potong as id_jadwal_fa_potong,
+            fa_potong.hasil_1 as hasil_1,
+            fa_potong.hasil_2 as hasil_2,
+            fa_potong.hasil_3 as hasil_3,
+            fa_potong.hasil_4 as hasil_4,
+        '
+    );
+    $this->db->from('order');
+    $this->db->join('fa_potong','fa_potong.id_order = order.id_order');    
+    $this->db->where('fa_potong.id_order', $id);          
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function ambilIDOrder_fa_potong($id_order)
+{
+    $this->db->select('
+        order.id_order as id_order,
+        order.nomor_so as nomor_so,
+        order.tanggal_masuk as tanggal_masuk,
+        order.deadline as deadline,
+        order.nama_pemesan as nama_pemesan,
+        order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, 
+        order.halaman as halaman, 
+        order.oplag as oplag, 
+        order.so_status as so_status,
+        
+        fa_potong.id_jadwal_fa_potong as id_jadwal_fa_potong,
+        fa_potong.id_fa_potong as id_fa_potong,
+        fa_potong.hasil_1 as hasil_1,
+        fa_potong.hasil_2 as hasil_2,            
+        fa_potong.hasil_3 as hasil_3, 
+        fa_potong.hasil_4 as hasil_4, 
+        fa_potong.tanggal_pelaksanaan_fa_potong as tanggal_pelaksanaan_fa_potong',
+        
+    );           
+
+    $this->db->from('order');                           
+    $this->db->join('fa_potong','order.id_order = fa_potong.id_order' ); 
+    $this->db->where('fa_potong.tanggal_pelaksanaan_fa_potong !=', '0000-00-00');    
+    $this->db->where('fa_potong.id_order', $id_order);
     $this->db->order_by('fa_potong.tanggal_pelaksanaan_fa_potong', 'asc');        
     
     $query = $this->db->get();
@@ -1196,17 +1267,18 @@ public function edit_fa_potong($id)
 
     $this->db->join('susun','order.id_order = susun.id_order' );
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-    $this->db->where('order.id_order', $id);       
+    $this->db->where('fa_potong.id_fa_potong', $id);   
+    $this->db->limit(1);        
     
     $query = $this->db->get();
     return $query;  
 
 }
 
+
 public function proses_edit_fa_potong($data)
-{
-    $ubah_fa_potong = array(         
-        'status_fa_potong' =>$data['status_fa_potong'],
+{   
+    $ubah_fa_potong = array(                     
         'tanggal_pelaksanaan_fa_potong' =>$data['tanggal_pelaksanaan_fa_potong'],
         'keterangan_jadwal_fa_potong' =>$data['keterangan_jadwal_fa_potong'],
 
@@ -1241,8 +1313,58 @@ public function proses_edit_fa_potong($data)
 
     );                        
     $this->db->set($ubah_fa_potong);
-    $this->db->where('id_order',$data['id_order']);
+    $this->db->where('id_fa_potong',$data['id_fa_potong']);
     $this->db->update('fa_potong'); 
+
+    $ubah_fa_potong_khusus = array(                                                                                           
+        'status_fa_potong' =>$data['status_fa_potong'],                                                         
+    );                        
+    $this->db->set($ubah_fa_potong_khusus);
+    $this->db->where('id_order',$data['id_order']);
+    $this->db->update('fa_potong');  
+
+}
+
+public function proses_tambah_fa_potong($data)
+{
+        $tambah_jadwal_fa_potong = array(                                                                         
+            'id_order' =>$data['id_order'],                                   
+            'tanggal_pelaksanaan_fa_potong' =>$data['tanggal_pelaksanaan_fa_potong'],   
+            'id_jadwal_fa_potong' =>$data['id_jadwal_fa_potong'],   
+            'status_fa_potong' =>$data['status_fa_potong'],   
+            'keterangan_jadwal_fa_potong' =>$data['keterangan_jadwal_fa_potong'], 
+
+            'tanggal_pengerjaan_1' =>$data['tanggal_pengerjaan_1'],   
+            'hasil_1' =>$data['hasil_1'],   
+            'rejek_1' =>$data['rejek_1'],   
+            'operator_1' =>$data['operator_1'],   
+            'kru_1' =>$data['kru_1'],   
+            'keterangan_1' =>$data['keterangan_1'],   
+
+            'tanggal_pengerjaan_2' =>$data['tanggal_pengerjaan_2'],   
+            'hasil_2' =>$data['hasil_2'],   
+            'rejek_2' =>$data['rejek_2'],   
+            'operator_2' =>$data['operator_2'],   
+            'kru_2' =>$data['kru_2'],   
+            'keterangan_2' =>$data['keterangan_2'],    
+            
+            'tanggal_pengerjaan_3' =>$data['tanggal_pengerjaan_3'],   
+            'hasil_3' =>$data['hasil_3'],   
+            'rejek_3' =>$data['rejek_3'],   
+            'operator_3' =>$data['operator_3'],   
+            'kru_3' =>$data['kru_3'],   
+            'keterangan_3' =>$data['keterangan_3'], 
+
+            'tanggal_pengerjaan_4' =>$data['tanggal_pengerjaan_4'],   
+            'hasil_4' =>$data['hasil_4'],   
+            'rejek_4' =>$data['rejek_4'],   
+            'operator_4' =>$data['operator_4'],   
+            'kru_4' =>$data['kru_4'],   
+            'keterangan_4' =>$data['keterangan_4'], 
+
+        );                                                          
+        $this->db->insert('fa_potong',$tambah_jadwal_fa_potong);
+
 }
 
 //// MESIN SUB
@@ -1716,6 +1838,321 @@ public function proses_edit_spiral($data)
     $this->db->where('id_order',$data['id_order']);
     $this->db->update('spiral'); 
 }
+
+//// Hapus binding
+public function hapus_binding($id)
+{
+    $this->db->where('id_binding', $id);
+    $this->db->delete('binding');
+}
+
+public function hapus_binding_update($data)
+{
+    $hapus_binding = array(
+        'id_jadwal_binding' => 0,   
+        'status_binding' => null,             
+        'tanggal_pelaksanaan_binding' => null,
+        'keterangan_jadwal_binding' => null,
+
+        'tanggal_pengerjaan_1' => null,
+        'hasil_1' => null,
+        'rejek_1' => null,
+        'operator_1' => null,
+        'kru_1' => null,
+        'keterangan_1' => null,
+
+        'tanggal_pengerjaan_2' => null,
+        'hasil_2' => null,
+        'rejek_2' => null,
+        'operator_2' => null,
+        'kru_2' => null,
+        'keterangan_2' => null,        
+
+        'tanggal_pengerjaan_3' => null,
+        'hasil_3' => null,
+        'rejek_3' => null,
+        'operator_3' => null,
+        'kru_3' => null,
+        'keterangan_3' => null,        
+
+        'tanggal_pengerjaan_4' => null,
+        'hasil_4' => null,
+        'rejek_4' => null,
+        'operator_4' => null,
+        'kru_4' => null,
+        'keterangan_4' => null,        
+                                                                              
+    );            
+    $this->db->set($hapus_binding);    
+    $this->db->where('id_order',$data);    
+    $this->db->update('binding');
+}
+
+
+// hapus hardcover
+public function hapus_hardcover($id)
+{
+    $this->db->where('id_hardcover', $id);
+    $this->db->delete('hardcover');
+}
+
+public function hapus_hardcover_update($data)
+{
+    $hapus_hardcover = array(
+        'id_jadwal_hardcover' => 0,   
+        'status_hardcover' => null,             
+        'tanggal_pelaksanaan_hardcover' => null,
+        'keterangan_jadwal_hardcover' => null,
+
+        'tanggal_pengerjaan_1' => null,
+        'hasil_1' => null,
+        'rejek_1' => null,
+        'operator_1' => null,
+        'kru_1' => null,
+        'keterangan_1' => null,
+
+        'tanggal_pengerjaan_2' => null,
+        'hasil_2' => null,
+        'rejek_2' => null,
+        'operator_2' => null,
+        'kru_2' => null,
+        'keterangan_2' => null,        
+
+        'tanggal_pengerjaan_3' => null,
+        'hasil_3' => null,
+        'rejek_3' => null,
+        'operator_3' => null,
+        'kru_3' => null,
+        'keterangan_3' => null,        
+
+        'tanggal_pengerjaan_4' => null,
+        'hasil_4' => null,
+        'rejek_4' => null,
+        'operator_4' => null,
+        'kru_4' => null,
+        'keterangan_4' => null,        
+                                                                              
+    );            
+    $this->db->set($hapus_hardcover);    
+    $this->db->where('id_order',$data);    
+    $this->db->update('hardcover');
+}
+
+// hapus jahit
+public function hapus_jahit($id)
+{
+    $this->db->where('id_jahit', $id);
+    $this->db->delete('jahit');
+}
+
+public function hapus_jahit_update($data)
+{
+    $hapus_jahit = array(
+        'id_jadwal_jahit' => 0,   
+        'status_jahit' => null,             
+        'tanggal_pelaksanaan_jahit' => null,
+        'keterangan_jadwal_jahit' => null,
+
+        'tanggal_pengerjaan_1' => null,
+        'hasil_1' => null,
+        'rejek_1' => null,
+        'operator_1' => null,
+        'kru_1' => null,
+        'keterangan_1' => null,
+
+        'tanggal_pengerjaan_2' => null,
+        'hasil_2' => null,
+        'rejek_2' => null,
+        'operator_2' => null,
+        'kru_2' => null,
+        'keterangan_2' => null,        
+
+        'tanggal_pengerjaan_3' => null,
+        'hasil_3' => null,
+        'rejek_3' => null,
+        'operator_3' => null,
+        'kru_3' => null,
+        'keterangan_3' => null,        
+
+        'tanggal_pengerjaan_4' => null,
+        'hasil_4' => null,
+        'rejek_4' => null,
+        'operator_4' => null,
+        'kru_4' => null,
+        'keterangan_4' => null,        
+                                                                              
+    );            
+    $this->db->set($hapus_jahit);    
+    $this->db->where('id_order',$data);    
+    $this->db->update('jahit');
+}
+
+// hapus fa_potong
+public function hapus_fa_potong($id)
+{
+    $this->db->where('id_fa_potong', $id);
+    $this->db->delete('fa_potong');
+}
+
+public function hapus_fa_potong_update($data)
+{
+    $hapus_fa_potong = array(
+        'id_jadwal_fa_potong' => 0,   
+        'status_fa_potong' => null,             
+        'tanggal_pelaksanaan_fa_potong' => null,
+        'keterangan_jadwal_fa_potong' => null,
+
+        'tanggal_pengerjaan_1' => null,
+        'hasil_1' => null,
+        'rejek_1' => null,
+        'operator_1' => null,
+        'kru_1' => null,
+        'keterangan_1' => null,
+
+        'tanggal_pengerjaan_2' => null,
+        'hasil_2' => null,
+        'rejek_2' => null,
+        'operator_2' => null,
+        'kru_2' => null,
+        'keterangan_2' => null,        
+
+        'tanggal_pengerjaan_3' => null,
+        'hasil_3' => null,
+        'rejek_3' => null,
+        'operator_3' => null,
+        'kru_3' => null,
+        'keterangan_3' => null,        
+
+        'tanggal_pengerjaan_4' => null,
+        'hasil_4' => null,
+        'rejek_4' => null,
+        'operator_4' => null,
+        'kru_4' => null,
+        'keterangan_4' => null,        
+                                                                              
+    );            
+    $this->db->set($hapus_fa_potong);    
+    $this->db->where('id_order',$data);    
+    $this->db->update('fa_potong');
+}
+
+
+// hapus sub
+public function hapus_jadwal_sub($data)
+    {
+        $hapus_sub = array(         
+            'status_sub' =>null,
+            'tanggal_pelaksanaan_sub' =>null,
+            'keterangan_jadwal_sub' =>null,
+
+            'jenis_sub_binding' =>null,
+            'jenis_sub_hardcover' =>null,
+            'jenis_sub_jahit' =>null,
+            'jenis_sub_fa_potong' =>null,
+            'jenis_sub_klemseng' =>null,
+            'jenis_sub_spiral' =>null,
+
+            'tanggal_kembali_sub' =>null,
+            'hasil' =>null,
+            'rejek' =>null,
+            'operator' =>null,
+            'kru' =>null,
+            'keterangan' =>null,                     
+
+        );                        
+        $this->db->set($hapus_sub);
+        $this->db->where('id_order',$data['id_order']);
+        $this->db->update('sub_finishing'); 
+}
+
+// hapus klemseng
+public function hapus_jadwal_klemseng($data)
+{
+    $hapus_klemseng = array(         
+        'status_klemseng' =>null,
+        'tanggal_pelaksanaan_klemseng' =>null,
+        'keterangan_jadwal_klemseng' =>null,
+
+        'tanggal_pengerjaan_1' =>null,
+        'hasil_1' =>null,
+        'rejek_1' =>null,
+        'operator_1' =>null,
+        'kru_1' =>null,
+        'keterangan_1' =>null,
+        
+        'tanggal_pengerjaan_2' =>null,
+        'hasil_2' =>null,
+        'rejek_2' =>null,
+        'operator_2' =>null,
+        'kru_2' =>null,
+        'keterangan_2' =>null,
+
+        'tanggal_pengerjaan_3' =>null,
+        'hasil_3' =>null,
+        'rejek_3' =>null,
+        'operator_3' =>null,
+        'kru_3' =>null,
+        'keterangan_3' =>null,
+
+        'tanggal_pengerjaan_4' =>null,
+        'hasil_4' =>null,
+        'rejek_4' =>null,
+        'operator_4' =>null,
+        'kru_4' =>null,
+        'keterangan_4' =>null,
+
+
+    );                        
+    $this->db->set($hapus_klemseng);
+    $this->db->where('id_order',$data['id_order']);
+    $this->db->update('klemseng'); 
+}
+
+// hapus spiral
+public function hapus_jadwal_spiral($data)
+{
+    $hapus_spiral = array(         
+        'status_spiral' =>null,
+        'tanggal_pelaksanaan_spiral' =>null,
+        'keterangan_jadwal_spiral' =>null,
+
+        'tanggal_pengerjaan_1' =>null,
+        'hasil_1' =>null,
+        'rejek_1' =>null,
+        'operator_1' =>null,
+        'kru_1' =>null,
+        'keterangan_1' =>null,
+        
+        'tanggal_pengerjaan_2' =>null,
+        'hasil_2' =>null,
+        'rejek_2' =>null,
+        'operator_2' =>null,
+        'kru_2' =>null,
+        'keterangan_2' =>null,
+
+        'tanggal_pengerjaan_3' =>null,
+        'hasil_3' =>null,
+        'rejek_3' =>null,
+        'operator_3' =>null,
+        'kru_3' =>null,
+        'keterangan_3' =>null,
+
+        'tanggal_pengerjaan_4' =>null,
+        'hasil_4' =>null,
+        'rejek_4' =>null,
+        'operator_4' =>null,
+        'kru_4' =>null,
+        'keterangan_4' =>null,
+
+
+    );                        
+    $this->db->set($hapus_spiral);
+    $this->db->where('id_order',$data['id_order']);
+    $this->db->update('spiral'); 
+}
+
+
+
 
 
 

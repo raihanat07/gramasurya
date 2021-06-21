@@ -225,13 +225,14 @@
           <br><br><br><br><div class="col" align="left">            
             <div class="col-md-2">                        
                                   <label>Total Hasil : <?= $row->hasil_1+$row->hasil_2+$row->hasil_3+$row->hasil_4; ?></label><br>
+                                  <div ><label>Total Hasil Keseluruhan : <?= $total_1+$total_2+$total_3+$total_4; ?></label>
                                               
             </div></div>        
         </div><hr><br>
 
         <div class="row">
           <div class="col" align="right">
-          <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_hardcover" class="btn btn-default">Kembali</a>>            
+          <a href="<?=site_url()?>finishing/FinishingAkhir/jadwal_fa_hardcover" class="btn btn-default">Kembali</a>            
           </div>
         </div>
 
