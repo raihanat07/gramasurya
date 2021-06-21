@@ -26,10 +26,22 @@ class JadwalMesin_m extends CI_Model {
             mesin_72.druk as druk,
             mesin_72.total_kertas as total_kertas,
             mesin_72.set as set,
-            mesin_72.jenis_cetakan as jenis_cetakan',
+            mesin_72.jenis_cetakan as jenis_cetakan,
+            
+            spk.id_spk as id_spk,
+            spk.tanggal_buat_spk as tanggal_buat_spk,
+            spk.ukuran_potong as ukuran_potong,
+            spk.jumlah_cetak as jumlah_cetak,
+            spk.1muka_fc_bw_warna as 1muka_fc_bw_warna,
+            spk.2muka_fc_fc-bw_bw-bw as 2muka_fc_fc-bw_bw-bw,
+            spk.2muka_blk as 2muka_blk,
+            spk.2muka_blg as 2muka_blg,
+            spk.keterangan_spk as keterangan_spk
+            ',
         );
         $this->db->from('order');
         $this->db->join('mesin_72','mesin_72.id_order = order.id_order','left');
+        $this->db->join('spk','spk.id_order = order.id_order','left');
         $this->db->where('mesin_72.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('mesin_72.tanggal_pelaksanaan', 'asc');      
         $query = $this->db->get();
@@ -163,8 +175,10 @@ class JadwalMesin_m extends CI_Model {
         $query = $this->db->get();
         return $query;  
     }
+    
     public function add_spk_72($data){
         $tambah_spk = array(
+            'id_mesin_72' => $data['id_mesin_72'],
             'tanggal_buat_spk' => $data['tanggal_buat_spk'],
             'ukuran_potong' => $data['ukuran_potong'],
             'jumlah_cetak' => $data['jumlah_cetak'],
@@ -175,6 +189,21 @@ class JadwalMesin_m extends CI_Model {
             'keterangan_spk' => $data['keterangan_spk'],
         );
         $this->db->insert('spk',$tambah_spk);
+    }
+    public function edit_spk_72($data){
+        $edit_spk = array(
+            'tanggal_buat_spk' => $data['tanggal_buat_spk'],
+            'ukuran_potong' => $data['ukuran_potong'],
+            'jumlah_cetak' => $data['jumlah_cetak'],
+            '1muka_fc_bw_warna' => $data['1muka_fc_bw_warna'],
+            '2muka_fc_fc-bw_bw-bw' => $data['2muka_fc_fc-bw_bw-bw'],
+            '2muka_blk'=> $data['2muka_blk'],
+            '2muka_blg' => $data['2muka_blg'],
+            'keterangan_spk' => $data['keterangan_spk'],
+        );
+        $this->db->set($edit_spk);
+        $this->db->where('id_order',$data['id_order']);
+        $this->db->update('spk');
     }
     public function get_lihat_72($id)
     {

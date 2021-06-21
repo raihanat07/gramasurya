@@ -47,6 +47,16 @@ class JadwalMesin extends CI_Controller {
 		$data['judul'] = 'Jadwal Mesin Cetak';
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72-print',$data);		
 	}
+	public function edit_spk_72($id)
+	{
+		// check_already_login_cetak();
+		$query = $this->jm->get_lihat_72($id);
+		$data = array(
+			'judul' => 'Edit Jadwal Mesin Cetak',
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/mesin72-edit-spk',$data);
+	}
 	public function tambah_spk_72($id)
 	{
 		// $query = $this->dc->get_dc($id);
