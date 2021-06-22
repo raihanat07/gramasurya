@@ -36,12 +36,11 @@ class JadwalMesin_m extends CI_Model {
             spk.2muka_fc_fc-bw_bw-bw as 2muka_fc_fc-bw_bw-bw,
             spk.2muka_blk as 2muka_blk,
             spk.2muka_blg as 2muka_blg,
-            spk.keterangan_spk as keterangan_spk
-            ',
+            spk.keterangan_spk as keterangan_spk',
         );
-        $this->db->from('order');
-        $this->db->join('mesin_72','mesin_72.id_order = order.id_order','left');
-        $this->db->join('spk','spk.id_order = order.id_order','left');
+        $this->db->from('mesin_72');
+        $this->db->join('order','order.id_order = mesin_72.id_mesin_72','left');
+        $this->db->join('spk','spk.id_mesin_72 = mesin_72.id_mesin_72','left');
         $this->db->where('mesin_72.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('mesin_72.tanggal_pelaksanaan', 'asc');      
         $query = $this->db->get();
@@ -166,7 +165,7 @@ class JadwalMesin_m extends CI_Model {
         $this->db->join('finishing','finishing.id_order = order.id_order'); 
         $this->db->join('ctcp as ct','ct.id_order = order.id_order'); 
         $this->db->join('kertas as ke','ke.id_order = order.id_order'); 
-        $this->db->join('imposisi','imposisi.id_order = order.id_order');
+        $this->db->join('imposisi','imposisi.id_order = order.id_order');     
         $this->db->join('potong as po','po.id_order = order.id_order');  
         $this->db->join('cetak as ce','ce.id_order = order.id_order');         
         $this->db->where('mesin_72.tanggal_pelaksanaan !=', null);  
@@ -175,7 +174,23 @@ class JadwalMesin_m extends CI_Model {
         $query = $this->db->get();
         return $query;  
     }
-    
+    public function edit_jm($data){
+        $edit_ju = array(         
+            'id_order' =>$data['id_order'],
+            'tanggal_pelaksanaan' =>$data['tanggal_pelaksanaan_72'],
+            'operator' =>$data['operator_72'],
+            'target' =>$data['target_72'],
+        
+            'druk' =>$data['druk_72'],
+        
+            'set' =>$data['set_72'],
+            'jenis_cetakan' =>$data['jenis_cetakan_72']  
+                           
+        );
+        $this->db->set($edit_ju);
+        $this->db->where('id_order',$data['id_order']);
+        $this->db->update('mesin_72');
+    }
     public function add_spk_72($data){
         $tambah_spk = array(
             'id_mesin_72' => $data['id_mesin_72'],
@@ -313,22 +328,12 @@ class JadwalMesin_m extends CI_Model {
             finishing_akhir_jahit_kawat as jahit_kawat, 
             finishing_akhir_pond as pond, 
             finishing_akhir_klem as klem,
-            finishing_akhir_spiral as spiral,
-            
-            id_spk as id_spk,
-            tanggal_buat_spk as tanggal_buat_spk,
-            ukuran_potong as ukuran_potong,
-            jumlah_cetak as jumlah_cetak,
-            1muka_fc_bw_warna as 1muka_fc_bw_warna,
-            2muka_fc_fc-bw_bw-bw as 2muka_fc_fc-bw_bw-bw,
-            2muka_blk as 2muka_blk,
-            2muka_blg as 2muka_blg,
-            keterangan_spk as keterangan_spk',  
+            finishing_akhir_spiral as spiral',  
         );
         $this->db->from('order');
         $this->db->join('mesin_72','mesin_72.id_order = order.id_order','left');
         $this->db->join('finishing','finishing.id_order = order.id_order');
-        $this->db->join('spk','spk.id_order = order.id_order');  
+         
         $this->db->join('ctcp as ct','ct.id_order = order.id_order'); 
         $this->db->join('kertas as ke','ke.id_order = order.id_order'); 
         $this->db->join('potong as po','po.id_order = order.id_order'); 

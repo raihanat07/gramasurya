@@ -108,22 +108,6 @@ class JadwalUmum extends CI_Controller {
 			$inputan = $this->input->post(null, TRUE);
 			
 			
-			// if($inputan["jumlah_kertas_cover1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover1"];
-			// }
-			// if($inputan["jumlah_kertas_cover2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover2"];
-			// }
-
-			// if($inputan["jumlah_kertas_isi1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi1"];
-			// }
-			// if($inputan["jumlah_kertas_isi2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi2"];
-			// }
-			// if($inputan["jumlah_kertas_isi3"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
-			// }
 
 			if($inputan["target_72"] !=null){
 				$inputan["druk_72"] = $inputan["target_72"] * $inputan["oplag"];
@@ -139,23 +123,6 @@ class JadwalUmum extends CI_Controller {
 			$inputan = $this->input->post(null, TRUE);
 			
 			
-			// if($inputan["jumlah_kertas_cover1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover1"];
-			// }
-			// if($inputan["jumlah_kertas_cover2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover2"];
-			// }
-
-			// if($inputan["jumlah_kertas_isi1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi1"];
-			// }
-			// if($inputan["jumlah_kertas_isi2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi2"];
-			// }
-			// if($inputan["jumlah_kertas_isi3"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
-			// }
-
 			
 			if($inputan["target_74a"] !=null){
 				$inputan["druk_74a"] = $inputan["target_74a"] * $inputan["oplag"];
@@ -168,24 +135,6 @@ class JadwalUmum extends CI_Controller {
 
 		}  else if(isset($_POST['add74b'])){							
 			$inputan = $this->input->post(null, TRUE);
-			
-			
-			// if($inputan["jumlah_kertas_cover1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover1"];
-			// }
-			// if($inputan["jumlah_kertas_cover2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover2"];
-			// }
-
-			// if($inputan["jumlah_kertas_isi1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi1"];
-			// }
-			// if($inputan["jumlah_kertas_isi2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi2"];
-			// }
-			// if($inputan["jumlah_kertas_isi3"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
-			// }
 
 			
 			if($inputan["target_74b"] !=null){
@@ -200,22 +149,6 @@ class JadwalUmum extends CI_Controller {
 		}else if(isset($_POST['edit'])){ 
 			$inputan = $this->input->post(null, TRUE);
 
-			// if($inputan["jumlah_kertas_cover1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover1"];
-			// }
-			// if($inputan["jumlah_kertas_cover2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover2"];
-			// }
-
-			// if($inputan["jumlah_kertas_isi1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi1"];
-			// }
-			// if($inputan["jumlah_kertas_isi2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi2"];
-			// }
-			// if($inputan["jumlah_kertas_isi3"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
-			// }
 			
 			if($inputan["target_72"] !=null){
 				$inputan["druk_72"] = $inputan["target_72"] * $inputan["oplag"];
