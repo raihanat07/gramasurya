@@ -59,9 +59,16 @@
                         <td>Actions</td>
                       </tr>
                     </thead>
-                    <?php foreach($fa as $s => $row) {?> 
-                    <?php if(($row->id_jadwal_binding == 0  or $row->id_jadwal_binding == null ) and ($row->id_jadwal_hardcover == 0  or $row->id_jadwal_hardcover == null ) and ($row->id_jadwal_jahit == 0  or $row->id_jadwal_jahit == null ) and ($row->id_jadwal_fa_potong == 0  or $row->id_jadwal_fa_potong == null ) and ($row->id_jadwal_sub == 0  or $row->id_jadwal_sub == null )) 
-                    { if($row->status_laminasi == "laminasi" or $row->status_shoe == "shoe" or $row->status_mbo == "mbo" or $row->status_susun == "susun" or $row->status_sub_proses == "sub"){?>
+                    <?php $nilai=0;?>
+                    <?php $nilai_jadwal=0;?>
+                    <?php $id_banding[-1]=null;?>
+
+                    <?php foreach($fa as $s => $row) {?>                     
+                      <?php $id_banding[$nilai]=$row->id_order;?>
+                      
+                    <?php if(($row->id_jadwal_binding == $id_jadwal_binding_max[$nilai_jadwal]  or $row->id_jadwal_binding == null ) and ($row->id_jadwal_hardcover == $id_jadwal_hardcover_max[$nilai_jadwal]  or $row->id_jadwal_hardcover == null ) and ($row->id_jadwal_jahit == $id_jadwal_jahit_max[$nilai_jadwal]  or $row->id_jadwal_jahit == null ) and ($row->id_jadwal_fa_potong == $id_jadwal_fa_potong_max[$nilai_jadwal]  or $row->id_jadwal_fa_potong == null ) and ($row->id_jadwal_sub == $id_jadwal_sub_max[$nilai_jadwal]  or $row->id_jadwal_sub == null) and $id_banding[$nilai] != $id_banding[$nilai-1]) 
+                    { ?>
+                    
                       <tr>
                       <td align="center"><?= $row->nomor_so; ?></td>
                         <td><?= $row->tanggal_masuk; ?></td>
@@ -72,23 +79,23 @@
                         <td><?= $row->oplag; ?></td>
                         <td><?= $row->halaman; ?></td>
                             <?php if($row->tanggal_pelaksanaan_binding != "0000-00-00") {?>
-                        <td <?php echo $row->status_binding == "binding" ?  "style='color: red'" : "" ?>><?= $row->tanggal_pelaksanaan_binding ?></td>
+                        <td <?php echo $row->status_binding == "binding" ?  "style='color: red'" : "" ?>><?= $tanggal_binding[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
                             
                             <?php if($row->tanggal_pelaksanaan_hardcover != "0000-00-00") {?>
-                        <td <?php echo $row->status_hardcover == "hardcover" ?  "style='color: red'" : "" ?>><?= $row->tanggal_pelaksanaan_hardcover ?></td>
+                        <td <?php echo $row->status_hardcover == "hardcover" ?  "style='color: red'" : "" ?>><?= $tanggal_hardcover[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
                             <?php if($row->tanggal_pelaksanaan_jahit != "0000-00-00") {?>
-                        <td <?php echo $row->status_jahit == "jahit" ?  "style='color: red'" : "" ?>><?= $row->tanggal_pelaksanaan_jahit ?></td>
+                        <td <?php echo $row->status_jahit == "jahit" ?  "style='color: red'" : "" ?>><?= $tanggal_jahit[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
                             <?php if($row->tanggal_pelaksanaan_fa_potong != "0000-00-00") {?>
-                        <td <?php echo $row->status_fa_potong == "fa_potong" ?  "style='color: red'" : "" ?>><?= $row->tanggal_pelaksanaan_fa_potong ?></td>
+                        <td <?php echo $row->status_fa_potong == "fa_potong" ?  "style='color: red'" : "" ?>><?= $tanggal_fa_potong[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
                             <?php if($row->tanggal_pelaksanaan_sub != "0000-00-00") {?>
-                        <td <?php echo $row->status_sub == "sub" ?  "style='color: red'" : "" ?>><?= $row->tanggal_pelaksanaan_sub ?></td>
+                        <td <?php echo $row->status_sub == "sub" ?  "style='color: red'" : "" ?>><?= $tanggal_sub[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
                       
                         <td>
@@ -106,10 +113,10 @@
                           </a> -->
                         </td>
                       </tr>
-
-                      <?php } ?>
-                      <?php } ?>
-                      <?php } ?>
+                                                               
+                      <?php $nilai++;} ?>   
+                         
+                      <?php $nilai_jadwal++;} ?>                     
                     </tbody>
             
                 </table>
@@ -237,7 +244,7 @@
                                     <?php if($row->id_jahit == null) {?>                           
                                       <input type="date" class="form-control"  name="tanggal_pelaksanaan_jahit"  id="tgll_jahit<?= $row->id_order; ?>" > 
                                     <?php }else{ ?>                                                                       
-                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_jahit"  id="tgll_jahit<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_jahit; ?>">
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_jahit"  id="tgll_jahit<?= $row->id_order.$row->id_order; ?>" >
                                       <?php } ?>
                                   </div>  
                                   <div class="col-md-6"><br>       
@@ -253,18 +260,14 @@
                                   <div class="col-md-6">
                                     Jenis Mesin<br>
                                     <b>Mesin jahit</b>
-                                  </div>                                                                   
-                                  <div class="col-md-6">
-                                    Hasil Susun<br>
-                                    <b><?= $row->susun_hasil_1+$row->susun_hasil_2; ?></b>
-                                  </div>
+                                  </div>                                                                                                    
                                 </div><hr><br>
 
                                 <h4>Keterangan</h4>
                                 <?php if($row->id_jahit == null) {?>                                     
                                     <textarea name="keterangan_jadwal_jahit" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php }else{ ?>                                  
-                                    <textarea name="keterangan_jadwal_jahit" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_jahit; ?></textarea><br>
+                                    <textarea name="keterangan_jadwal_jahit" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
@@ -366,7 +369,7 @@
                                     <?php if($row->id_hardcover == null) {?>                           
                                       <input type="date" class="form-control"  name="tanggal_pelaksanaan_hardcover"  id="tgll_hardcover<?= $row->id_order; ?>" > 
                                     <?php }else{ ?>                                                                       
-                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_hardcover"  id="tgll_hardcover<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_hardcover; ?>">
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_hardcover"  id="tgll_hardcover<?= $row->id_order.$row->id_order; ?>" >
                                       <?php } ?>
                                   </div>  
                                   <div class="col-md-6"><br>       
@@ -383,17 +386,14 @@
                                     Jenis Mesin<br>
                                     <b>Mesin hardcover</b>
                                   </div>                                                                   
-                                  <div class="col-md-6">
-                                    Hasil Susun<br>
-                                    <b><?= $row->susun_hasil_1+$row->susun_hasil_2; ?></b>
-                                  </div>
+                                  
                                 </div><hr><br>
 
                                 <h4>Keterangan</h4>
                                 <?php if($row->id_hardcover == null) {?>                                     
                                     <textarea name="keterangan_jadwal_hardcover" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php }else{ ?>                                  
-                                    <textarea name="keterangan_jadwal_hardcover" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_hardcover; ?></textarea><br>
+                                    <textarea name="keterangan_jadwal_hardcover" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
@@ -495,7 +495,7 @@
                                     <?php if($row->id_sub == null) {?>                           
                                       <input type="date" class="form-control"  name="tanggal_pelaksanaan_sub"  id="tgll_sub<?= $row->id_order; ?>" > 
                                     <?php }else{ ?>                                                                       
-                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_sub"  id="tgll_sub<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_sub; ?>">
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_sub"  id="tgll_sub<?= $row->id_order.$row->id_order; ?>" >
                                       <?php } ?>
                                   </div>  
                                   <div class="col-md-6"><br>       
@@ -591,7 +591,7 @@
                                 <?php if($row->id_sub == null) {?>                                     
                                     <textarea name="keterangan_jadwal_sub" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php }else{ ?>                                  
-                                    <textarea name="keterangan_jadwal_sub" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_sub; ?></textarea><br>
+                                    <textarea name="keterangan_jadwal_sub" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
@@ -693,7 +693,7 @@
                                     <?php if($row->id_binding == null) {?>                           
                                       <input type="date" class="form-control"  name="tanggal_pelaksanaan_binding"  id="tgll_binding<?= $row->id_order; ?>" > 
                                     <?php }else{ ?>                                                                       
-                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_binding"  id="tgll_binding<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_binding; ?>">
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_binding"  id="tgll_binding<?= $row->id_order.$row->id_order; ?>">
                                       <?php } ?>
                                   </div>  
                                   <div class="col-md-6"><br>       
@@ -710,17 +710,14 @@
                                     Jenis Mesin<br>
                                     <b>Mesin binding</b>
                                   </div>                                                                   
-                                  <div class="col-md-6">
-                                    Hasil Susun<br>
-                                    <b><?= $row->susun_hasil_1+$row->susun_hasil_2; ?></b>
-                                  </div>
+                                  
                                 </div><hr><br>
 
                                 <h4>Keterangan</h4>
                                 <?php if($row->id_binding == null) {?>                                     
                                     <textarea name="keterangan_jadwal_binding" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php }else{ ?>                                  
-                                    <textarea name="keterangan_jadwal_binding" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_binding; ?></textarea><br>
+                                    <textarea name="keterangan_jadwal_binding" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
@@ -822,7 +819,7 @@
                                     <?php if($row->id_fa_potong == null) {?>                           
                                       <input type="date" class="form-control"  name="tanggal_pelaksanaan_fa_potong"  id="tgll_fa_potong<?= $row->id_order; ?>" > 
                                     <?php }else{ ?>                                                                       
-                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_fa_potong"  id="tgll_fa_potong<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_fa_potong; ?>">
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_fa_potong"  id="tgll_fa_potong<?= $row->id_order.$row->id_order; ?>" >
                                       <?php } ?>
                                   </div>  
                                   <div class="col-md-6"><br>       
@@ -838,18 +835,14 @@
                                   <div class="col-md-6">
                                     Jenis Mesin<br>
                                     <b>Mesin potong</b>
-                                  </div>                                                                   
-                                  <div class="col-md-6">
-                                    Hasil Binding<br>
-                                    <b><?= $row->binding_hasil_1+$row->binding_hasil_2+$row->binding_hasil_3+$row->binding_hasil_4; ?></b>
-                                  </div>
+                                  </div>                                                                                                     
                                 </div><hr><br>
 
                                 <h4>Keterangan</h4>
                                 <?php if($row->id_fa_potong == null) {?>                                     
                                     <textarea name="keterangan_jadwal_fa_potong" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php }else{ ?>                                  
-                                    <textarea name="keterangan_jadwal_fa_potong" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_fa_potong; ?></textarea><br>
+                                    <textarea name="keterangan_jadwal_fa_potong" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">

@@ -11,9 +11,8 @@ class FinishingAkhir_m extends CI_Model {
             finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_spiral as spiral,finishing.finishing_akhir_klem as klem,
             
             finishing.finishing_cover_uvi as uvi,finishing.finishing_cover_glossy as glossy,finishing.finishing_cover_doff as doff,    
+                       
             
-            susun.hasil_1 as susun_hasil_1,
-            susun.hasil_2 as susun_hasil_2,
 
             binding.hasil_1 as binding_hasil_1,
             binding.hasil_2 as binding_hasil_2,
@@ -33,12 +32,7 @@ class FinishingAkhir_m extends CI_Model {
             sub_finishing.status_sub as status_sub,
             klemseng.status_klemseng as status_klemseng,
             spiral.status_spiral as status_spiral,
-
-            laminasi.status_laminasi as status_laminasi,
-            shoe.status_shoe as status_shoe,
-            mbo.status_mbo as status_mbo,
-            susun.status_susun as status_susun,
-            sub_proses.status_sub as status_sub_proses,
+           
 
             binding.id_binding as id_binding,
             binding.id_jadwal_binding as id_jadwal_binding,
@@ -97,10 +91,10 @@ class FinishingAkhir_m extends CI_Model {
                                                 
         $this->db->join('susun','susun.id_order = order.id_order','left');
 
-        $this->db->join('laminasi','laminasi.id_order = order.id_order','left');
-        $this->db->join('shoe','shoe.id_order = order.id_order','left');
-        $this->db->join('mbo','mbo.id_order = order.id_order','left');
-        $this->db->join('sub_proses','sub_proses.id_order = order.id_order','left');
+        // $this->db->join('laminasi','laminasi.id_order = order.id_order','left');
+        // $this->db->join('shoe','shoe.id_order = order.id_order','left');
+        // $this->db->join('mbo','mbo.id_order = order.id_order','left');
+        // $this->db->join('sub_proses','sub_proses.id_order = order.id_order','left');
         
 
         $this->db->order_by('order.id_order', 'desc');
@@ -112,6 +106,128 @@ class FinishingAkhir_m extends CI_Model {
         return $query; 
 
 }
+
+
+// ambil tanggal tiap mesin hehe
+public function ambil_data_fa_binding($id)
+{
+    $this->db->select(
+        '   
+        binding.tanggal_pelaksanaan_binding as tanggal_binding,
+        binding.id_jadwal_binding as id_jadwal_binding,                 
+        '
+    );
+    $this->db->from('order');                            
+    $this->db->join('binding','binding.id_order = order.id_order','left');
+   
+
+    $this->db->where('order.id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+public function ambil_data_fa_hardcover($id)
+{
+    $this->db->select(
+        '   
+        hardcover.tanggal_pelaksanaan_hardcover as tanggal_hardcover,
+        hardcover.id_jadwal_hardcover as id_jadwal_hardcover,                 
+        '
+    );
+    $this->db->from('order');                            
+    $this->db->join('hardcover','hardcover.id_order = order.id_order','left');
+   
+
+    $this->db->where('order.id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function ambil_data_fa_jahit($id)
+{
+    $this->db->select(
+        '   
+        jahit.tanggal_pelaksanaan_jahit as tanggal_jahit,
+        jahit.id_jadwal_jahit as id_jadwal_jahit,                 
+        '
+    );
+    $this->db->from('order');                            
+    $this->db->join('jahit','jahit.id_order = order.id_order','left');
+   
+
+    $this->db->where('order.id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function ambil_data_fa_fa_potong($id)
+{
+    $this->db->select(
+        '   
+        fa_potong.tanggal_pelaksanaan_fa_potong as tanggal_fa_potong,
+        fa_potong.id_jadwal_fa_potong as id_jadwal_fa_potong,                 
+        '
+    );
+    $this->db->from('order');                            
+    $this->db->join('fa_potong','fa_potong.id_order = order.id_order','left');
+   
+
+    $this->db->where('order.id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function ambil_data_fa_sub($id)
+{
+    $this->db->select(
+        '   
+        sub_finishing.tanggal_pelaksanaan_sub as tanggal_sub,
+        sub_finishing.id_jadwal_sub as id_jadwal_sub,                 
+        '
+    );
+    $this->db->from('order');                            
+    $this->db->join('sub_finishing','sub_finishing.id_order = order.id_order','left');
+   
+
+    $this->db->where('order.id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function ambil_data_fa_klemseng($id)
+{
+    $this->db->select(
+        '   
+        klemseng.tanggal_pelaksanaan_klemseng as tanggal_klemseng,
+        klemseng.id_jadwal_klemseng as id_jadwal_klemseng,                 
+        '
+    );
+    $this->db->from('order');                            
+    $this->db->join('klemseng','klemseng.id_order = order.id_order','left');
+   
+
+    $this->db->where('order.id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function ambil_data_fa_spiral($id)
+{
+    $this->db->select(
+        '   
+        spiral.tanggal_pelaksanaan_spiral as tanggal_spiral,
+        spiral.id_jadwal_spiral as id_jadwal_spiral,                 
+        '
+    );
+    $this->db->from('order');                            
+    $this->db->join('spiral','spiral.id_order = order.id_order','left');
+   
+
+    $this->db->where('order.id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+
 
 
     public function tambah_fa($data)
@@ -172,42 +288,65 @@ class FinishingAkhir_m extends CI_Model {
 
 public function edit_fa($data)
 {
-        $ubah_binding = array(                           
-            'tanggal_pelaksanaan_binding' =>$data['tanggal_pelaksanaan_binding'],   
-            'keterangan_jadwal_binding' =>$data['keterangan_jadwal_binding'],                
-        );                        
-        $this->db->set($ubah_binding);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('binding');  
+            if($data["tanggal_pelaksanaan_binding"] != ""){
+                $ubah_binding = array(
+                    'id_order' =>$data['id_order'],               
+                    'id_jadwal_binding' =>$data['id_jadwal_binding'],     
+                    'tanggal_pelaksanaan_binding' =>$data['tanggal_pelaksanaan_binding'],   
+                    'keterangan_jadwal_binding' =>$data['keterangan_jadwal_binding'],                
+                );                                            
+                $this->db->insert('binding',$ubah_binding); 
+        }
 
-        $ubah_hardcover = array(                           
-            'tanggal_pelaksanaan_hardcover' =>$data['tanggal_pelaksanaan_hardcover'],   
-            'keterangan_jadwal_hardcover' =>$data['keterangan_jadwal_hardcover'],                
-        );                        
-        $this->db->set($ubah_hardcover);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('hardcover');  
+            if($data["tanggal_pelaksanaan_hardcover"] != ""){
+                $ubah_hardcover = array(
+                    'id_order' =>$data['id_order'],               
+                    'id_jadwal_hardcover' =>$data['id_jadwal_hardcover'],     
+                    'tanggal_pelaksanaan_hardcover' =>$data['tanggal_pelaksanaan_hardcover'],   
+                    'keterangan_jadwal_hardcover' =>$data['keterangan_jadwal_hardcover'],                
+                );                                            
+                $this->db->insert('hardcover',$ubah_hardcover); 
+        }
 
-        $ubah_jahit = array(                           
-            'tanggal_pelaksanaan_jahit' =>$data['tanggal_pelaksanaan_jahit'],   
-            'keterangan_jadwal_jahit' =>$data['keterangan_jadwal_jahit'],                
-        );                        
-        $this->db->set($ubah_jahit);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('jahit');  
+            if($data["tanggal_pelaksanaan_jahit"] != ""){
+                $ubah_jahit = array(
+                    'id_order' =>$data['id_order'],               
+                    'id_jadwal_jahit' =>$data['id_jadwal_jahit'],     
+                    'tanggal_pelaksanaan_jahit' =>$data['tanggal_pelaksanaan_jahit'],   
+                    'keterangan_jadwal_jahit' =>$data['keterangan_jadwal_jahit'],                
+                );                                            
+                $this->db->insert('jahit',$ubah_jahit); 
+        }
 
-        $ubah_fa_potong = array(                           
-            'tanggal_pelaksanaan_fa_potong' =>$data['tanggal_pelaksanaan_fa_potong'],   
-            'keterangan_jadwal_fa_potong' =>$data['keterangan_jadwal_fa_potong'],                
-        );                        
-        $this->db->set($ubah_fa_potong);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('fa_potong');  
+            if($data["tanggal_pelaksanaan_fa_potong"] != ""){
+                $ubah_fa_potong = array(
+                    'id_order' =>$data['id_order'],               
+                    'id_jadwal_fa_potong' =>$data['id_jadwal_fa_potong'],     
+                    'tanggal_pelaksanaan_fa_potong' =>$data['tanggal_pelaksanaan_fa_potong'],   
+                    'keterangan_jadwal_fa_potong' =>$data['keterangan_jadwal_fa_potong'],                
+                );                                            
+                $this->db->insert('fa_potong',$ubah_fa_potong); 
+        }
 
-        $ubah_sub = array(                           
-            'tanggal_pelaksanaan_sub' =>$data['tanggal_pelaksanaan_sub'],   
-            'keterangan_jadwal_sub' =>$data['keterangan_jadwal_sub'],                
+            if($data["tanggal_pelaksanaan_sub"] != ""){
+                $ubah_sub = array(
+                    'id_order' =>$data['id_order'],               
+                    'id_jadwal_sub' =>$data['id_jadwal_sub'],     
+                    'tanggal_pelaksanaan_sub' =>$data['tanggal_pelaksanaan_sub'],   
+                    'keterangan_jadwal_sub' =>$data['keterangan_jadwal_sub'], 
+                    
+                    'jenis_sub_binding' =>$data['jenis_sub_binding'],  
+                    'jenis_sub_hardcover' =>$data['jenis_sub_hardcover'],  
+                    'jenis_sub_jahit' =>$data['jenis_sub_jahit'],  
+                    'jenis_sub_fa_potong' =>$data['jenis_sub_fa_potong'],  
+                    'jenis_sub_klemseng' =>$data['jenis_sub_klemseng'],  
+                    'jenis_sub_spiral' =>$data['jenis_sub_spiral'],                
+                );                                            
+                $this->db->insert('sub_finishing',$ubah_sub); 
+        }
 
+
+        $ubah_sub_khusus = array(                                       
             'jenis_sub_binding' =>$data['jenis_sub_binding'],  
             'jenis_sub_hardcover' =>$data['jenis_sub_hardcover'],  
             'jenis_sub_jahit' =>$data['jenis_sub_jahit'],  
@@ -215,7 +354,7 @@ public function edit_fa($data)
             'jenis_sub_klemseng' =>$data['jenis_sub_klemseng'],  
             'jenis_sub_spiral' =>$data['jenis_sub_spiral'],  
         );                        
-        $this->db->set($ubah_sub);
+        $this->db->set($ubah_sub_khusus);
         $this->db->where('id_order',$data['id_order']);
         $this->db->update('sub_finishing');  
     
@@ -271,21 +410,25 @@ public function tambah_fa_kalender($data)
 
 public function edit_fa_kalender($data)
 {
-        $ubah_klemseng = array(                           
-            'tanggal_pelaksanaan_klemseng' =>$data['tanggal_pelaksanaan_klemseng'],   
-            'keterangan_jadwal_klemseng' =>$data['keterangan_jadwal_klemseng'],                
-        );                        
-        $this->db->set($ubah_klemseng);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('klemseng');  
-
-        $ubah_spiral = array(                           
-            'tanggal_pelaksanaan_spiral' =>$data['tanggal_pelaksanaan_spiral'],   
-            'keterangan_jadwal_spiral' =>$data['keterangan_jadwal_spiral'],                
-        );                        
-        $this->db->set($ubah_spiral);
-        $this->db->where('id_order',$data['id_order']);
-        $this->db->update('spiral');  
+    if($data["tanggal_pelaksanaan_klemseng"] != ""){
+            $ubah_klemseng = array(
+                'id_order' =>$data['id_order'],               
+                'id_jadwal_klemseng' =>$data['id_jadwal_klemseng'],     
+                'tanggal_pelaksanaan_klemseng' =>$data['tanggal_pelaksanaan_klemseng'],   
+                'keterangan_jadwal_klemseng' =>$data['keterangan_jadwal_klemseng'],                
+            );                                            
+            $this->db->insert('klemseng',$ubah_klemseng); 
+    }
+    
+     if($data["tanggal_pelaksanaan_spiral"] != ""){
+            $ubah_spiral = array(
+                'id_order' =>$data['id_order'],               
+                'id_jadwal_spiral' =>$data['id_jadwal_spiral'],     
+                'tanggal_pelaksanaan_spiral' =>$data['tanggal_pelaksanaan_spiral'],   
+                'keterangan_jadwal_spiral' =>$data['keterangan_jadwal_spiral'],                
+            );                                            
+            $this->db->insert('spiral',$ubah_spiral); 
+}
     
 }
 
@@ -461,7 +604,8 @@ public function ambilIDOrder_binding($id_order)
 
         $this->db->join('susun','order.id_order = susun.id_order', 'left' );
         $this->db->join('finishing','order.id_order = finishing.id_order' ); 
-        $this->db->where('binding.id_binding', $id);       
+        $this->db->where('binding.id_binding', $id);     
+        $this->db->limit(1);
         
         $query = $this->db->get();
         return $query;  
@@ -717,15 +861,15 @@ public function edit_hardcover($id)
     // $this->db->select_max('laminasi.id_jadwal_laminasi');
     $this->db->from('order');                           
 
-    $this->db->join('binding','order.id_order = binding.id_order' );         
-    $this->db->join('hardcover','order.id_order = hardcover.id_order' );
-    $this->db->join('jahit','order.id_order = jahit.id_order' );
+    $this->db->join('binding','order.id_order = binding.id_order', 'left' );         
+    $this->db->join('hardcover','order.id_order = hardcover.id_order', 'left' );
+    $this->db->join('jahit','order.id_order = jahit.id_order' , 'left');
     $this->db->join('fa_potong','order.id_order = fa_potong.id_order' );
-    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' );
-    $this->db->join('klemseng','order.id_order = klemseng.id_order' );
-    $this->db->join('spiral','order.id_order = spiral.id_order' );
+    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' , 'left');
+    $this->db->join('klemseng','order.id_order = klemseng.id_order', 'left' );
+    $this->db->join('spiral','order.id_order = spiral.id_order', 'left' );
 
-    $this->db->join('susun','order.id_order = susun.id_order' );
+    $this->db->join('susun','order.id_order = susun.id_order', 'left' );
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
     $this->db->where('hardcover.id_hardcover', $id);  
     $this->db->limit(1);
@@ -987,15 +1131,15 @@ public function edit_jahit($id)
     // $this->db->select_max('laminasi.id_jadwal_laminasi');
     $this->db->from('order');                           
 
-    $this->db->join('binding','order.id_order = binding.id_order' );         
-    $this->db->join('hardcover','order.id_order = hardcover.id_order' );
-    $this->db->join('jahit','order.id_order = jahit.id_order' );
+    $this->db->join('binding','order.id_order = binding.id_order', 'left' );         
+    $this->db->join('hardcover','order.id_order = hardcover.id_order', 'left' );
+    $this->db->join('jahit','order.id_order = jahit.id_order' , 'left');
     $this->db->join('fa_potong','order.id_order = fa_potong.id_order' );
-    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' );
-    $this->db->join('klemseng','order.id_order = klemseng.id_order' );
-    $this->db->join('spiral','order.id_order = spiral.id_order' );
+    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' , 'left');
+    $this->db->join('klemseng','order.id_order = klemseng.id_order' , 'left');
+    $this->db->join('spiral','order.id_order = spiral.id_order', 'left' );
 
-    $this->db->join('susun','order.id_order = susun.id_order' );
+    $this->db->join('susun','order.id_order = susun.id_order' , 'left');
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
     $this->db->where('jahit.id_jahit', $id);  
     $this->db->limit(1);     
@@ -1257,15 +1401,15 @@ public function edit_fa_potong($id)
     // $this->db->select_max('laminasi.id_jadwal_laminasi');
     $this->db->from('order');                           
 
-    $this->db->join('binding','order.id_order = binding.id_order' );         
-    $this->db->join('hardcover','order.id_order = hardcover.id_order' );
-    $this->db->join('jahit','order.id_order = jahit.id_order' );
-    $this->db->join('fa_potong','order.id_order = fa_potong.id_order' );
-    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' );
-    $this->db->join('klemseng','order.id_order = klemseng.id_order' );
-    $this->db->join('spiral','order.id_order = spiral.id_order' );
+    $this->db->join('binding','order.id_order = binding.id_order' , 'left');         
+    $this->db->join('hardcover','order.id_order = hardcover.id_order' , 'left');
+    $this->db->join('jahit','order.id_order = jahit.id_order' , 'left');
+    $this->db->join('fa_potong','order.id_order = fa_potong.id_order' , 'left');
+    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' , 'left');
+    $this->db->join('klemseng','order.id_order = klemseng.id_order' , 'left');
+    $this->db->join('spiral','order.id_order = spiral.id_order' , 'left');
 
-    $this->db->join('susun','order.id_order = susun.id_order' );
+    $this->db->join('susun','order.id_order = susun.id_order' , 'left');
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
     $this->db->where('fa_potong.id_fa_potong', $id);   
     $this->db->limit(1);        
@@ -1506,15 +1650,15 @@ public function edit_sub($id)
     // $this->db->select_max('laminasi.id_jadwal_laminasi');
     $this->db->from('order');                           
 
-    $this->db->join('binding','order.id_order = binding.id_order' );         
-    $this->db->join('hardcover','order.id_order = hardcover.id_order' );
-    $this->db->join('jahit','order.id_order = jahit.id_order' );
-    $this->db->join('fa_potong','order.id_order = fa_potong.id_order' );
-    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' );
-    $this->db->join('klemseng','order.id_order = klemseng.id_order' );
-    $this->db->join('spiral','order.id_order = spiral.id_order' );
+    $this->db->join('binding','order.id_order = binding.id_order' , 'left');         
+    $this->db->join('hardcover','order.id_order = hardcover.id_order' , 'left');
+    $this->db->join('jahit','order.id_order = jahit.id_order' , 'left');
+    $this->db->join('fa_potong','order.id_order = fa_potong.id_order' , 'left');
+    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' , 'left');
+    $this->db->join('klemseng','order.id_order = klemseng.id_order' , 'left');
+    $this->db->join('spiral','order.id_order = spiral.id_order' , 'left');
 
-    $this->db->join('susun','order.id_order = susun.id_order' );
+    $this->db->join('susun','order.id_order = susun.id_order' , 'left');
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
     $this->db->where('sub_finishing.id_sub', $id);    
     $this->db->limit(1);   
@@ -1748,15 +1892,15 @@ public function edit_klemseng($id)
     // $this->db->select_max('laminasi.id_jadwal_laminasi');
     $this->db->from('order');                           
 
-    $this->db->join('binding','order.id_order = binding.id_order' );         
-    $this->db->join('hardcover','order.id_order = hardcover.id_order' );
-    $this->db->join('jahit','order.id_order = jahit.id_order' );
-    $this->db->join('fa_potong','order.id_order = fa_potong.id_order' );
-    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' );
-    $this->db->join('klemseng','order.id_order = klemseng.id_order' );
-    $this->db->join('spiral','order.id_order = spiral.id_order' );
+    $this->db->join('binding','order.id_order = binding.id_order' ,'left' );         
+    $this->db->join('hardcover','order.id_order = hardcover.id_order' ,'left' );
+    $this->db->join('jahit','order.id_order = jahit.id_order' ,'left' );
+    $this->db->join('fa_potong','order.id_order = fa_potong.id_order' ,'left' );
+    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' ,'left' );
+    $this->db->join('klemseng','order.id_order = klemseng.id_order' ,'left' );
+    $this->db->join('spiral','order.id_order = spiral.id_order' ,'left' );
 
-    $this->db->join('susun','order.id_order = susun.id_order' );
+    $this->db->join('susun','order.id_order = susun.id_order' ,'left' );
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
     $this->db->where('klemseng.id_klemseng', $id);     
     $this->db->limit(1);  
@@ -2018,15 +2162,15 @@ public function edit_spiral($id)
     // $this->db->select_max('laminasi.id_jadwal_laminasi');
     $this->db->from('order');                           
 
-    $this->db->join('binding','order.id_order = binding.id_order' );         
-    $this->db->join('hardcover','order.id_order = hardcover.id_order' );
-    $this->db->join('jahit','order.id_order = jahit.id_order' );
-    $this->db->join('fa_potong','order.id_order = fa_potong.id_order' );
-    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' );
-    $this->db->join('klemseng','order.id_order = klemseng.id_order' );
-    $this->db->join('spiral','order.id_order = spiral.id_order' );
+    $this->db->join('binding','order.id_order = binding.id_order','left' );         
+    $this->db->join('hardcover','order.id_order = hardcover.id_order','left' );
+    $this->db->join('jahit','order.id_order = jahit.id_order','left' );
+    $this->db->join('fa_potong','order.id_order = fa_potong.id_order' ,'left');
+    $this->db->join('sub_finishing','order.id_order = sub_finishing.id_order' ,'left');
+    $this->db->join('klemseng','order.id_order = klemseng.id_order','left' );
+    $this->db->join('spiral','order.id_order = spiral.id_order','left' );
 
-    $this->db->join('susun','order.id_order = susun.id_order' );
+    $this->db->join('susun','order.id_order = susun.id_order','left' );
     $this->db->join('finishing','order.id_order = finishing.id_order' ); 
     $this->db->where('spiral.id_spiral', $id);       
     $this->db->limit(1);
