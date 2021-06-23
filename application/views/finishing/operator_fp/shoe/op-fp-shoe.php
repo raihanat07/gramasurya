@@ -58,7 +58,7 @@
       </div>
       <div class="row" style="padding: 10px;">
         <div class="col">
-          <a href="<?=site_url()?>finishing/OperatorFP/edit_op_shoe/<?= $row->id_order; ?>" class="btn btn-success" style="min-height: 50px;width: 100%;padding-top: 12px;">
+          <a href="<?=site_url()?>finishing/OperatorFP/edit_op_shoe/<?= $row->id_shoe; ?>" class="btn btn-success" style="min-height: 50px;width: 100%;padding-top: 12px;">
             <i class="fa fa-pencil" style="font-size:14px;margin-right:5px"></i>
             <b>Lapor Pengerjaan</b>
           </a>
