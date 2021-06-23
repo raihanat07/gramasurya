@@ -45,9 +45,17 @@
                         <td>Actions</td>
                       </tr>
                     </thead>
-                    <?php foreach($fa as $s => $row) {?> 
-                    <?php if(($row->id_jadwal_klemseng == 0  or $row->id_jadwal_klemseng == null ) and ($row->id_jadwal_spiral == 0  or $row->id_jadwal_spiral == null ) ) 
-                    { if($row->status_laminasi == "laminasi" or $row->status_shoe == "shoe" or $row->status_mbo == "mbo" or $row->status_susun == "susun" or $row->status_sub_proses == "sub"){ ?>
+                    <?php $nilai=0;?>
+                    <?php $nilai_jadwal=0;?>
+                    <?php $id_banding[-1]=null;?>
+
+                    <?php foreach($fa as $s => $row) {?>                     
+                      <?php $id_banding[$nilai]=$row->id_order;?>                      
+
+                    <?php if(($row->id_jadwal_klemseng == $id_jadwal_klemseng_max[$nilai_jadwal]  or $row->id_jadwal_klemseng == null ) and 
+                    ($row->id_jadwal_spiral == $id_jadwal_spiral_max[$nilai_jadwal]  or $row->id_jadwal_spiral == null )  and
+                     $id_banding[$nilai] != $id_banding[$nilai-1]) 
+                    { ?>
                       <tr>
                       <td align="center"><?= $row->nomor_so; ?></td>
                         <td><?= $row->tanggal_masuk; ?></td>
@@ -58,11 +66,11 @@
                         <td><?= $row->oplag; ?></td>
                         <td><?= $row->halaman; ?></td>
                             <?php if($row->tanggal_pelaksanaan_klemseng != "0000-00-00") {?>
-                        <td <?php echo $row->status_klemseng == "klemseng" ?  "style='color: red'" : "" ?>><?= $row->tanggal_pelaksanaan_klemseng ?></td>
+                        <td <?php echo $row->status_klemseng == "klemseng" ?  "style='color: red'" : "" ?>><?= $tanggal_klemseng[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
                             
                             <?php if($row->tanggal_pelaksanaan_spiral != "0000-00-00") {?>
-                        <td <?php echo $row->status_spiral == "spiral" ?  "style='color: red'" : "" ?>><?= $row->tanggal_pelaksanaan_spiral ?></td>
+                        <td <?php echo $row->status_spiral == "spiral" ?  "style='color: red'" : "" ?>><?= $tanggal_spiral[$nilai] ?></td>
                             <?php } else {?> <td></td> <?php } ?>
                       
                         <td>
@@ -81,9 +89,9 @@
                         </td>
                       </tr>
 
-                      <?php } ?>
-                      <?php } ?>
-                      <?php } ?>
+                       <?php $nilai++;} ?>   
+                         
+                      <?php $nilai_jadwal++;} ?>                      
                     </tbody>
             
                 </table>
@@ -209,7 +217,7 @@
                                     <?php if($row->id_spiral == null) {?>                           
                                       <input type="date" class="form-control"  name="tanggal_pelaksanaan_spiral"  id="tgll_spiral<?= $row->id_order; ?>" > 
                                     <?php }else{ ?>                                                                       
-                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_spiral"  id="tgll_spiral<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_spiral; ?>">
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_spiral"  id="tgll_spiral<?= $row->id_order.$row->id_order; ?>" >
                                       <?php } ?>
                                   </div>  
                                   <div class="col-md-6"><br>       
@@ -225,18 +233,14 @@
                                   <div class="col-md-6">
                                     Jenis Mesin<br>
                                     <b>Mesin spiral</b>
-                                  </div>                                                                   
-                                  <div class="col-md-6">
-                                    Hasil Gabungan<br>
-                                    <b><?= $row->susun_hasil_1+$row->susun_hasil_2; ?></b>
-                                  </div>
+                                  </div>                                                                                                     
                                 </div><hr><br>
 
                                 <h4>Keterangan</h4>
                                 <?php if($row->id_spiral == null) {?>                                     
                                     <textarea name="keterangan_jadwal_spiral" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php }else{ ?>                                  
-                                    <textarea name="keterangan_jadwal_spiral" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_spiral; ?></textarea><br>
+                                    <textarea name="keterangan_jadwal_spiral" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">
@@ -339,7 +343,7 @@
                                     <?php if($row->id_klemseng == null) {?>                           
                                       <input type="date" class="form-control"  name="tanggal_pelaksanaan_klemseng"  id="tgll_klemseng<?= $row->id_order; ?>" > 
                                     <?php }else{ ?>                                                                       
-                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_klemseng"  id="tgll_klemseng<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_klemseng; ?>">
+                                      <input type="date" class="form-control"  name="tanggal_pelaksanaan_klemseng"  id="tgll_klemseng<?= $row->id_order.$row->id_order; ?>" >
                                       <?php } ?>
                                   </div>  
                                   <div class="col-md-6"><br>       
@@ -355,18 +359,14 @@
                                   <div class="col-md-6">
                                     Jenis Mesin<br>
                                     <b>Mesin klemseng</b>
-                                  </div>                                                                   
-                                  <div class="col-md-6">
-                                    Hasil Gabungan<br>
-                                    <b><?= $row->susun_hasil_1+$row->susun_hasil_2; ?></b>
-                                  </div>
+                                  </div>                                                                                                     
                                 </div><hr><br>
 
                                 <h4>Keterangan</h4>
                                 <?php if($row->id_klemseng == null) {?>                                     
                                     <textarea name="keterangan_jadwal_klemseng" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php }else{ ?>                                  
-                                    <textarea name="keterangan_jadwal_klemseng" class="form-control" placeholder="catatan" style="height: 240px;"><?= $row->keterangan_jadwal_klemseng; ?></textarea><br>
+                                    <textarea name="keterangan_jadwal_klemseng" class="form-control" placeholder="catatan" style="height: 240px;"></textarea><br>
                                 <?php } ?>
                                 <div class="row">
                                   <div class="col" align="right">

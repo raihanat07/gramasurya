@@ -61,8 +61,12 @@
                     </thead>
                     <?php $nilai=0;?>
                     <?php $nilai_jadwal=0;?>
+                    <?php $id_banding[-1]=null;?>
+
                     <?php foreach($fp as $s => $row) {?> 
-                    <?php if(($row->id_jadwal_laminasi == $id_jadwal_laminasi_max[$nilai_jadwal]  or $row->id_jadwal_laminasi == null ) and ($row->id_jadwal_mbo == $id_jadwal_mbo_max[$nilai_jadwal]  or $row->id_jadwal_mbo == null ) and ($row->id_jadwal_shoe == $id_jadwal_shoe_max[$nilai_jadwal]  or $row->id_jadwal_shoe == null ) and ($row->id_jadwal_susun == $id_jadwal_susun_max[$nilai_jadwal]  or $row->id_jadwal_susun == null ) and ($row->id_jadwal_sub == $id_jadwal_sub_max[$nilai_jadwal]  or $row->id_jadwal_sub == null )) { ?>
+                      <?php $id_banding[$nilai]=$row->id_order;?>
+
+                    <?php if(($row->id_jadwal_laminasi == $id_jadwal_laminasi_max[$nilai_jadwal]  or $row->id_jadwal_laminasi == null ) and ($row->id_jadwal_mbo == $id_jadwal_mbo_max[$nilai_jadwal]  or $row->id_jadwal_mbo == null ) and ($row->id_jadwal_shoe == $id_jadwal_shoe_max[$nilai_jadwal]  or $row->id_jadwal_shoe == null ) and ($row->id_jadwal_susun == $id_jadwal_susun_max[$nilai_jadwal]  or $row->id_jadwal_susun == null ) and ($row->id_jadwal_sub == $id_jadwal_sub_max[$nilai_jadwal]  or $row->id_jadwal_sub == null ) and $id_banding[$nilai] != $id_banding[$nilai-1]) { ?>
                       <tr>
                       <td align="center"><?= $row->nomor_so; ?></td>
                         <td><?= $row->tanggal_masuk; ?></td>

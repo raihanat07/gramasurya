@@ -53,7 +53,8 @@ class FinishingProses extends CI_Controller {
 					// AMBIL TANGGAL TIAP MESIN, NANTI DISIMPAN DIDALAM SEBUAH ARRAY
 					// data laminasi
 						$ambil_laminasi = $this->fp->ambil_data_fp_laminasi($id_order)->result();
-						foreach($ambil_laminasi as $sq) {		
+						
+						foreach($ambil_laminasi as $sq) {									
 							if($sq->tanggal_laminasi != null and $sq->tanggal_laminasi != "0000-00-00" and $sq->tanggal_laminasi != $laminasi[$nilai_mesin-1]){	
 								$tanggal_laminasi .= $sq->tanggal_laminasi.", <br>";
 							}
