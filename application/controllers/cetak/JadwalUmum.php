@@ -146,6 +146,45 @@ class JadwalUmum extends CI_Controller {
 				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
 				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
 
+		}else if(isset($_POST['add102a'])){							
+			$inputan = $this->input->post(null, TRUE);
+
+			
+			if($inputan["target_102a"] !=null){
+				$inputan["druk_102a"] = $inputan["target_102a"] * $inputan["oplag"];
+			}
+
+			$this->ju->tambah_ju102a($inputan);							
+			// $this->ctcp->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
+				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
+
+		}else if(isset($_POST['add102b'])){							
+			$inputan = $this->input->post(null, TRUE);
+
+			
+			if($inputan["target_102b"] !=null){
+				$inputan["druk_102b"] = $inputan["target_102b"] * $inputan["oplag"];
+			}
+
+			$this->ju->tambah_ju102b($inputan);							
+			// $this->ctcp->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
+				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
+
+		}else if(isset($_POST['addtokko'])){							
+			$inputan = $this->input->post(null, TRUE);
+
+			
+			if($inputan["target_tokko"] !=null){
+				$inputan["druk_tokko"] = $inputan["target_tokko"] * $inputan["oplag"];
+			}
+
+			$this->ju->tambah_jutokko($inputan);							
+			// $this->ctcp->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
+				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
+
 		}else if(isset($_POST['edit'])){ 
 			$inputan = $this->input->post(null, TRUE);
 

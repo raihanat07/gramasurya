@@ -186,6 +186,81 @@
 
                 <?php } ?>
 
+                <?php } else if($row->id_mesin_102a !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_74b ==null) {?>
+
+                  <?php if($row->jenis_cetakan_102a == "Cover") {?>
+
+                    <td><?= $row->nama_mesin_102a ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_102a ?></td>
+
+                  <?php } else {?>
+                    <td></td>
+                    <td></td> 
+                    
+                  <?php } ?>
+
+                  <?php if($row->jenis_cetakan_102a == "Isi") {?>
+
+                    <td><?= $row->nama_mesin_102a ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_102a ?></td>
+
+                  <?php } else {?>
+
+                    <td></td>
+                    <td></td> 
+
+                  <?php } ?>
+
+                  <?php } else if($row->id_mesin_102b !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_74b ==null && $row->id_mesin_102a ==null) {?>
+
+                  <?php if($row->jenis_cetakan_102b == "Cover") {?>
+
+                    <td><?= $row->nama_mesin_102b ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_102b ?></td>
+
+                  <?php } else {?>
+                    <td></td>
+                    <td></td> 
+                    
+                  <?php } ?>
+
+                  <?php if($row->jenis_cetakan_102b == "Isi") {?>
+
+                    <td><?= $row->nama_mesin_102b ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_102b ?></td>
+
+                  <?php } else {?>
+
+                    <td></td>
+                    <td></td> 
+
+                  <?php } ?>
+
+                  <?php } else if($row->id_mesin_tokko !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_74b ==null && $row->id_mesin_102a ==null && $row->id_mesin_102b ==null) {?>
+
+                  <?php if($row->jenis_cetakan_tokko == "Cover") {?>
+
+                    <td><?= $row->nama_mesin_tokko ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_tokko ?></td>
+
+                  <?php } else {?>
+                    <td></td>
+                    <td></td> 
+                    
+                  <?php } ?>
+
+                  <?php if($row->jenis_cetakan_tokko == "Isi") {?>
+
+                    <td><?= $row->nama_mesin_tokko ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_tokko ?></td>
+
+                  <?php } else {?>
+
+                    <td></td>
+                    <td></td> 
+
+                  <?php } ?>
+
                   <?php } else {?>
 
                   <td></td>
@@ -749,6 +824,520 @@
                         </div>
                       </div>
                       <!-- akhir mesin 74b -->
+
+                      <!-- mulai mesin 102A -->
+
+                      <div class="tab-pane" id="mesin102a<?= $row->id_order; ?>">
+                        <h4><label><?= $row->nomor_so; ?></label></h4>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <br>Tanggal Masuk
+                            <br><label><?= $row->tanggal_masuk; ?></label>
+                          </div>
+                          <div class="col-sm-6" style="color: red;">
+                            <br>Deadline
+                            <br><label><?= $row->deadline; ?></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <br>Nama Pemesan
+                            <br><label><?= $row->nama_pemesan; ?></label>
+                          </div>
+                          <div class="col-sm-4">
+                            <br>Nama Order
+                            <br><label><?= $row->nama_orderan; ?></label>
+                          </div>
+                          <div class="col-sm-4">
+                            <br>Ukuran
+                            <br><label><?= $row->ukuran; ?></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <br>Finishing<br>
+                            <label class="form-label">
+                              <?php 
+                                $finishing = "";
+                                if($row->bending != null){
+                                  $finishing .= "bending, ";
+                                }
+                                if($row->hard_cover != null){
+                                  $finishing .= 'hard cover, ';
+                                }   
+                                if($row->jahit_benang != null){
+                                  $finishing .= 'jahit benang, ';
+                                } 
+                                if($row->jahit_kawat != null){
+                                  $finishing .= 'jahit kawat, ';
+                                }    
+                                if($row->pond != null){
+                                  $finishing .= 'pond, ';
+                                }   
+                                if($row->spiral != null){
+                                  $finishing .= 'Spiral, ';
+                                }
+                                if($row->klem != null){
+                                  $finishing .= 'Klem, ';
+                                }
+                                $finishing = rtrim($finishing, ", ");
+                                echo $finishing;
+                              ?>
+                            </label>
+                          </div>
+                          <div class="col-sm-4">
+                            <br>Oplag
+                            <br><label><?= $row->oplag; ?></label>
+                            <input type="hidden" name="oplag" value="<?=$row->oplag?>">
+                          </div>
+                          <input type="text" name="nama_mesin_102a"  value="mesin102a" hidden>
+                          <input type="number" name="kertas_102a"  value="0" hidden>
+                        </div>
+                        <hr><br>
+                        <h4><label>Jadwal Mesin 102 - A</label></h4>
+                        <div class="row">                        
+                          <div class="col-md-6">
+                            Tanggal Pelaksanaan<br>
+                                <?php if($row->id_mesin_102a == null) {?>                                     
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_102a" placeholder="Tanggal Pelaksanaan Cover" id="tgl_102a<?= $row->id_order; ?>" >
+                                <?php }else{ ?>                                  
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_102a" id="tgl_102a<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_102a; ?>" placeholder="Tanggal Pelaksanaan Cover" >
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            Operator<br>
+                                <?php if($row->id_mesin_102a == null) {?>
+                                  <select id="inputState" class="form-select form-control" name="operator_102a" >
+                                    <option value="-">-</option>
+                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
+                                    <option value="Anam/Rois">Anam/Rois</option>
+                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
+                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
+                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
+                                    <option value="Heru/Toro">Heru/Toro</option>
+                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Heri">Heri</option>
+                                    <option value="Samiran">Samiran</option>
+                                  </select>
+                                <?php }else{ ?>  
+                                  <select id="inputState" class="form-select form-control" name="operator_102a" >
+                                    <option value="<?php  echo $row->operator_102a != "-" ?   $row->operator_102a  : '-' ?>"><?php  echo $row->operator_102a != "-" ?   $row->operator_102a  : '-' ?></option>
+                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
+                                    <option value="Anam/Rois">Anam/Rois</option>
+                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
+                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
+                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
+                                    <option value="Heru/Toro">Heru/Toro</option>
+                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Heri">Heri</option>
+                                    <option value="Samiran">Samiran</option>
+                                    <option value="-">-</option>
+                                  </select>                                
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Target<br>
+                              <?php if($row->id_mesin_102a == null) {?>                                     
+                                <input type="number" class="form-control" name="target_102a" placeholder="Jumlah Target" >
+                                <?php }else{ ?>  
+                                  <input type="number" class="form-control" name="target_102a" value="<?= $row->target_102a; ?>" placeholder="Jumlah Target" >
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                          
+                            <br>Jenis Lipatan<br>
+                            <?php if($row->id_mesin_102a == null) {?>                                     
+                                  <select id="inputState" class="form-select form-control" name="jenis_cetakan_102a" >
+                                    <option value="-">-</option>
+                                    <option value="Cover">Cover</option>
+                                    <option value="Isi">Isi</option>
+                                  </select>
+                                <?php }else{ ?>                                  
+                                  <select id="inputState" class="form-select form-control" name="jenis_cetakan_102a" >
+                                  <option value="<?php  echo $row->jenis_cetakan_102a != "-" ?   $row->jenis_cetakan_102a  : '-' ?>"><?php  echo $row->jenis_cetakan_102a != "-" ?   $row->jenis_cetakan_102a  : '-' ?>   </option>
+                                    <option value="-">-</option>
+                                    <option value="Cover">Cover</option>
+                                    <option value="Isi">Isi</option>
+                                  </select>
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Set<br>
+                                <?php if($row->id_mesin_102a == null) {?>                                     
+                                  <input type="number" class="form-control" name="set_102a" placeholder="Jumlah Set" >
+                                <?php }else{ ?>                                  
+                                    <input type="number" class="form-control" name="set_102a" value="<?= $row->set_102a?>" placeholder="Jumlah set cover" >
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Druk<br>
+                            <!-- <input type="number" class="form-control" name="druk_cover" hidden>
+                            <label>otomatis = target * oplag</label> -->
+                            <?php if($row->id_mesin_102a == null) {?>
+                              <input type="number" class="form-control" name="druk_102a" hidden>
+                            <?php } else {?> 
+                              <input type="number" class="form-control" name="druk_102a" hidden>
+                              <label><?= $row->druk_74a?></label>
+                             <?php } ?>
+                          </div>
+                        </div>
+                        <br><hr><br>
+                        <div class="row" align="right">
+                          <div class="col">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
+                              <?php if($row->id_mesin_102a == null) {?>  
+                            <button type="submit" class="btn btn-success" name="add102a">Jadwal</button>
+                              <?php }else{ ?>
+                            <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
+                              <?php } ?>
+                          </div>
+                        </div>
+                      </div>          
+
+                      <!-- mulai mesin 102A -->
+
+                      <!-- mulai mesin 102B -->
+
+                      <div class="tab-pane" id="mesin102b<?= $row->id_order; ?>">
+                        <h4><label><?= $row->nomor_so; ?></label></h4>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <br>Tanggal Masuk
+                            <br><label><?= $row->tanggal_masuk; ?></label>
+                          </div>
+                          <div class="col-sm-6" style="color: red;">
+                            <br>Deadline
+                            <br><label><?= $row->deadline; ?></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <br>Nama Pemesan
+                            <br><label><?= $row->nama_pemesan; ?></label>
+                          </div>
+                          <div class="col-sm-4">
+                            <br>Nama Order
+                            <br><label><?= $row->nama_orderan; ?></label>
+                          </div>
+                          <div class="col-sm-4">
+                            <br>Ukuran
+                            <br><label><?= $row->ukuran; ?></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <br>Finishing<br>
+                            <label class="form-label">
+                              <?php 
+                                $finishing = "";
+                                if($row->bending != null){
+                                  $finishing .= "bending, ";
+                                }
+                                if($row->hard_cover != null){
+                                  $finishing .= 'hard cover, ';
+                                }   
+                                if($row->jahit_benang != null){
+                                  $finishing .= 'jahit benang, ';
+                                } 
+                                if($row->jahit_kawat != null){
+                                  $finishing .= 'jahit kawat, ';
+                                }    
+                                if($row->pond != null){
+                                  $finishing .= 'pond, ';
+                                }   
+                                if($row->spiral != null){
+                                  $finishing .= 'Spiral, ';
+                                }
+                                if($row->klem != null){
+                                  $finishing .= 'Klem, ';
+                                }
+                                $finishing = rtrim($finishing, ", ");
+                                echo $finishing;
+                              ?>
+                            </label>
+                          </div>
+                          <div class="col-sm-4">
+                            <br>Oplag
+                            <br><label><?= $row->oplag; ?></label>
+                            <input type="hidden" name="oplag" value="<?=$row->oplag?>">
+                          </div>
+                          <input type="text" name="nama_mesin_102b"  value="mesin102b" hidden>
+                          <input type="number" name="kertas_102b"  value="0" hidden>
+                        </div>
+                        <hr><br>
+                        <h4><label>Jadwal Mesin 102 - B</label></h4>
+                        <div class="row">                        
+                          <div class="col-md-6">
+                            Tanggal Pelaksanaan<br>
+                                <?php if($row->id_mesin_102b == null) {?>                                     
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_102b" placeholder="Tanggal Pelaksanaan Cover" id="tgl_102b<?= $row->id_order; ?>" >
+                                <?php }else{ ?>                                  
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_102b" id="tgl_102b<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_102b; ?>" placeholder="Tanggal Pelaksanaan Cover" >
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            Operator<br>
+                                <?php if($row->id_mesin_102b == null) {?>
+                                  <select id="inputState" class="form-select form-control" name="operator_102b" >
+                                    <option value="-">-</option>
+                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
+                                    <option value="Anam/Rois">Anam/Rois</option>
+                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
+                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
+                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
+                                    <option value="Heru/Toro">Heru/Toro</option>
+                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Heri">Heri</option>
+                                    <option value="Samiran">Samiran</option>
+                                  </select>
+                                <?php }else{ ?>  
+                                  <select id="inputState" class="form-select form-control" name="operator_102b" >
+                                    <option value="<?php  echo $row->operator_102b != "-" ?   $row->operator_102b  : '-' ?>"><?php  echo $row->operator_102b != "-" ?   $row->operator_102b  : '-' ?></option>
+                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
+                                    <option value="Anam/Rois">Anam/Rois</option>
+                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
+                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
+                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
+                                    <option value="Heru/Toro">Heru/Toro</option>
+                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Heri">Heri</option>
+                                    <option value="Samiran">Samiran</option>
+                                    <option value="-">-</option>
+                                  </select>                                
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Target<br>
+                              <?php if($row->id_mesin_102b == null) {?>                                     
+                                <input type="number" class="form-control" name="target_102b" placeholder="Jumlah Target" >
+                                <?php }else{ ?>  
+                                  <input type="number" class="form-control" name="target_102b" value="<?= $row->target_102b; ?>" placeholder="Jumlah Target" >
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                          
+                            <br>Jenis Lipatan<br>
+                            <?php if($row->id_mesin_102b == null) {?>                                     
+                                  <select id="inputState" class="form-select form-control" name="jenis_cetakan_102b" >
+                                    <option value="-">-</option>
+                                    <option value="Cover">Cover</option>
+                                    <option value="Isi">Isi</option>
+                                  </select>
+                                <?php }else{ ?>                                  
+                                  <select id="inputState" class="form-select form-control" name="jenis_cetakan_102b" >
+                                  <option value="<?php  echo $row->jenis_cetakan_102b != "-" ?   $row->jenis_cetakan_102b  : '-' ?>"><?php  echo $row->jenis_cetakan_102b != "-" ?   $row->jenis_cetakan_102b  : '-' ?>   </option>
+                                    <option value="-">-</option>
+                                    <option value="Cover">Cover</option>
+                                    <option value="Isi">Isi</option>
+                                  </select>
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Set<br>
+                                <?php if($row->id_mesin_102b == null) {?>                                     
+                                  <input type="number" class="form-control" name="set_102b" placeholder="Jumlah Set" >
+                                <?php }else{ ?>                                  
+                                    <input type="number" class="form-control" name="set_102b" value="<?= $row->set_102b?>" placeholder="Jumlah set cover" >
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Druk<br>
+                            <!-- <input type="number" class="form-control" name="druk_cover" hidden>
+                            <label>otomatis = target * oplag</label> -->
+                            <?php if($row->id_mesin_102b == null) {?>
+                              <input type="number" class="form-control" name="druk_102b" hidden>
+                            <?php } else {?> 
+                              <input type="number" class="form-control" name="druk_102b" hidden>
+                              <label><?= $row->druk_74a?></label>
+                             <?php } ?>
+                          </div>
+                        </div>
+                        <br><hr><br>
+                        <div class="row" align="right">
+                          <div class="col">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
+                              <?php if($row->id_mesin_102b == null) {?>  
+                            <button type="submit" class="btn btn-success" name="add102b">Jadwal</button>
+                              <?php }else{ ?>
+                            <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
+                              <?php } ?>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- akhir mesin 102B -->
+
+
+                      <!-- mulai mesin TOKKO -->
+
+                      <div class="tab-pane" id="mesintokko<?= $row->id_order; ?>">
+                        <h4><label><?= $row->nomor_so; ?></label></h4>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <br>Tanggal Masuk
+                            <br><label><?= $row->tanggal_masuk; ?></label>
+                          </div>
+                          <div class="col-sm-6" style="color: red;">
+                            <br>Deadline
+                            <br><label><?= $row->deadline; ?></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <br>Nama Pemesan
+                            <br><label><?= $row->nama_pemesan; ?></label>
+                          </div>
+                          <div class="col-sm-4">
+                            <br>Nama Order
+                            <br><label><?= $row->nama_orderan; ?></label>
+                          </div>
+                          <div class="col-sm-4">
+                            <br>Ukuran
+                            <br><label><?= $row->ukuran; ?></label>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-4">
+                            <br>Finishing<br>
+                            <label class="form-label">
+                              <?php 
+                                $finishing = "";
+                                if($row->bending != null){
+                                  $finishing .= "bending, ";
+                                }
+                                if($row->hard_cover != null){
+                                  $finishing .= 'hard cover, ';
+                                }   
+                                if($row->jahit_benang != null){
+                                  $finishing .= 'jahit benang, ';
+                                } 
+                                if($row->jahit_kawat != null){
+                                  $finishing .= 'jahit kawat, ';
+                                }    
+                                if($row->pond != null){
+                                  $finishing .= 'pond, ';
+                                }   
+                                if($row->spiral != null){
+                                  $finishing .= 'Spiral, ';
+                                }
+                                if($row->klem != null){
+                                  $finishing .= 'Klem, ';
+                                }
+                                $finishing = rtrim($finishing, ", ");
+                                echo $finishing;
+                              ?>
+                            </label>
+                          </div>
+                          <div class="col-sm-4">
+                            <br>Oplag
+                            <br><label><?= $row->oplag; ?></label>
+                            <input type="hidden" name="oplag" value="<?=$row->oplag?>">
+                          </div>
+                          <input type="text" name="nama_mesin_tokko"  value="mesintokko" hidden>
+                          <input type="number" name="kertas_tokko"  value="0" hidden>
+                        </div>
+                        <hr><br>
+                        <h4><label>Jadwal Mesin TOKKO</label></h4>
+                        <div class="row">                        
+                          <div class="col-md-6">
+                            Tanggal Pelaksanaan<br>
+                                <?php if($row->id_mesin_tokko == null) {?>                                     
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_tokko" placeholder="Tanggal Pelaksanaan Cover" id="tgl_tokko<?= $row->id_order; ?>" >
+                                <?php }else{ ?>                                  
+                                    <input type="date" class="form-control" name="tanggal_pelaksanaan_tokko" id="tgl_tokko<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan_tokko; ?>" placeholder="Tanggal Pelaksanaan Cover" >
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            Operator<br>
+                                <?php if($row->id_mesin_tokko == null) {?>
+                                  <select id="inputState" class="form-select form-control" name="operator_tokko" >
+                                    <option value="-">-</option>
+                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
+                                    <option value="Anam/Rois">Anam/Rois</option>
+                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
+                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
+                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
+                                    <option value="Heru/Toro">Heru/Toro</option>
+                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Heri">Heri</option>
+                                    <option value="Samiran">Samiran</option>
+                                  </select>
+                                <?php }else{ ?>  
+                                  <select id="inputState" class="form-select form-control" name="operator_tokko" >
+                                    <option value="<?php  echo $row->operator_tokko != "-" ?   $row->operator_tokko  : '-' ?>"><?php  echo $row->operator_tokko != "-" ?   $row->operator_tokko  : '-' ?></option>
+                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
+                                    <option value="Anam/Rois">Anam/Rois</option>
+                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
+                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
+                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
+                                    <option value="Heru/Toro">Heru/Toro</option>
+                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Heri">Heri</option>
+                                    <option value="Samiran">Samiran</option>
+                                    <option value="-">-</option>
+                                  </select>                                
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Target<br>
+                              <?php if($row->id_mesin_tokko == null) {?>                                     
+                                <input type="number" class="form-control" name="target_tokko" placeholder="Jumlah Target" >
+                                <?php }else{ ?>  
+                                  <input type="number" class="form-control" name="target_tokko" value="<?= $row->target_tokko; ?>" placeholder="Jumlah Target" >
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                          
+                            <br>Jenis Lipatan<br>
+                            <?php if($row->id_mesin_tokko == null) {?>                                     
+                                  <select id="inputState" class="form-select form-control" name="jenis_cetakan_tokko" >
+                                    <option value="-">-</option>
+                                    <option value="Cover">Cover</option>
+                                    <option value="Isi">Isi</option>
+                                  </select>
+                                <?php }else{ ?>                                  
+                                  <select id="inputState" class="form-select form-control" name="jenis_cetakan_tokko" >
+                                  <option value="<?php  echo $row->jenis_cetakan_tokko != "-" ?   $row->jenis_cetakan_tokko  : '-' ?>"><?php  echo $row->jenis_cetakan_tokko != "-" ?   $row->jenis_cetakan_tokko  : '-' ?>   </option>
+                                    <option value="-">-</option>
+                                    <option value="Cover">Cover</option>
+                                    <option value="Isi">Isi</option>
+                                  </select>
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Set<br>
+                                <?php if($row->id_mesin_tokko == null) {?>                                     
+                                  <input type="number" class="form-control" name="set_tokko" placeholder="Jumlah Set" >
+                                <?php }else{ ?>                                  
+                                    <input type="number" class="form-control" name="set_tokko" value="<?= $row->set_tokko?>" placeholder="Jumlah set cover" >
+                                <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Druk<br>
+                            <!-- <input type="number" class="form-control" name="druk_cover" hidden>
+                            <label>otomatis = target * oplag</label> -->
+                            <?php if($row->id_mesin_tokko == null) {?>
+                              <input type="number" class="form-control" name="druk_tokko" hidden>
+                            <?php } else {?> 
+                              <input type="number" class="form-control" name="druk_tokko" hidden>
+                              <label><?= $row->druk_74a?></label>
+                             <?php } ?>
+                          </div>
+                        </div>
+                        <br><hr><br>
+                        <div class="row" align="right">
+                          <div class="col">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
+                              <?php if($row->id_mesin_tokko == null) {?>  
+                            <button type="submit" class="btn btn-success" name="addtokko">Jadwal</button>
+                              <?php }else{ ?>
+                            <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
+                              <?php } ?>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- akhir mesin TOKKO -->
                       
                     </div><br>
                   </div><!-- /.card-body -->

@@ -53,7 +53,37 @@ class JadwalUmum_m extends CI_Model {
             mesin_74_b.druk as druk_74b,
             mesin_74_b.total_kertas as total_kertas_74b,
             mesin_74_b.set as set_74b,
-            mesin_74_b.jenis_cetakan as jenis_cetakan_74b
+            mesin_74_b.jenis_cetakan as jenis_cetakan_74b,
+
+            mesin_102_a.id_mesin_102a as id_mesin_102a,
+            mesin_102_a.nama_mesin as nama_mesin_102a,
+            mesin_102_a.tanggal_pelaksanaan as tanggal_pelaksanaan_102a,
+            mesin_102_a.operator as operator_102a,
+            mesin_102_a.target as target_102a,
+            mesin_102_a.druk as druk_102a,
+            mesin_102_a.total_kertas as total_kertas_102a,
+            mesin_102_a.set as set_102a,
+            mesin_102_a.jenis_cetakan as jenis_cetakan_102a,
+
+            mesin_102_b.id_mesin_102b as id_mesin_102b,
+            mesin_102_b.nama_mesin as nama_mesin_102b,
+            mesin_102_b.tanggal_pelaksanaan as tanggal_pelaksanaan_102b,
+            mesin_102_b.operator as operator_102b,
+            mesin_102_b.target as target_102b,
+            mesin_102_b.druk as druk_102b,
+            mesin_102_b.total_kertas as total_kertas_102b,
+            mesin_102_b.set as set_102b,
+            mesin_102_b.jenis_cetakan as jenis_cetakan_102b,
+
+            mesin_tokko.id_mesin_tokko as id_mesin_tokko,
+            mesin_tokko.nama_mesin as nama_mesin_tokko,
+            mesin_tokko.tanggal_pelaksanaan as tanggal_pelaksanaan_tokko,
+            mesin_tokko.operator as operator_tokko,
+            mesin_tokko.target as target_tokko,
+            mesin_tokko.druk as druk_tokko,
+            mesin_tokko.total_kertas as total_kertas_tokko,
+            mesin_tokko.set as set_tokko,
+            mesin_tokko.jenis_cetakan as jenis_cetakan_tokko
             
             ',
         );
@@ -63,6 +93,9 @@ class JadwalUmum_m extends CI_Model {
         $this->db->join('mesin_72','mesin_72.id_order = order.id_order','left');
         $this->db->join('mesin_74_a','mesin_74_a.id_order = order.id_order','left');
         $this->db->join('mesin_74_b','mesin_74_b.id_order = order.id_order','left');
+        $this->db->join('mesin_102_a','mesin_102_a.id_order = order.id_order','left');
+        $this->db->join('mesin_102_b','mesin_102_b.id_order = order.id_order','left');
+        $this->db->join('mesin_tokko','mesin_tokko.id_order = order.id_order','left');
         $this->db->order_by('id_order', 'desc');    
         $query = $this->db->get();
         return $query; 
@@ -136,6 +169,51 @@ class JadwalUmum_m extends CI_Model {
                 'jenis_cetakan' =>$data['jenis_cetakan_74b']            
             );
             $this->db->insert('mesin_74_b',$tambah_ju74b);
+    }
+    public function tambah_ju102a($data)
+	{
+            $tambah_ju102a = array(         
+                'id_order' =>$data['id_order'],                                                                       
+                'tanggal_pelaksanaan' =>$data['tanggal_pelaksanaan_102a'],
+                'operator' =>$data['operator_102a'],
+                'target' =>$data['target_102a'],
+                'nama_mesin' =>$data['nama_mesin_102a'],
+                'druk' =>$data['druk_102a'],
+                'total_kertas' =>$data['kertas_102a'],
+                'set' =>$data['set_102a'],
+                'jenis_cetakan' =>$data['jenis_cetakan_102a']            
+            );
+            $this->db->insert('mesin_102_a',$tambah_ju102a);
+    }
+    public function tambah_ju102b($data)
+	{
+            $tambah_ju102b = array(         
+                'id_order' =>$data['id_order'],                                                                       
+                'tanggal_pelaksanaan' =>$data['tanggal_pelaksanaan_102b'],
+                'operator' =>$data['operator_102b'],
+                'target' =>$data['target_102b'],
+                'nama_mesin' =>$data['nama_mesin_102b'],
+                'druk' =>$data['druk_102b'],
+                'total_kertas' =>$data['kertas_102b'],
+                'set' =>$data['set_102b'],
+                'jenis_cetakan' =>$data['jenis_cetakan_102b']            
+            );
+            $this->db->insert('mesin_102_b',$tambah_ju102b);
+    }
+    public function tambah_jutokko($data)
+	{
+            $tambah_jutokko = array(         
+                'id_order' =>$data['id_order'],                                                                       
+                'tanggal_pelaksanaan' =>$data['tanggal_pelaksanaan_tokko'],
+                'operator' =>$data['operator_tokko'],
+                'target' =>$data['target_tokko'],
+                'nama_mesin' =>$data['nama_mesin_tokko'],
+                'druk' =>$data['druk_tokko'],
+                'total_kertas' =>$data['kertas_tokko'],
+                'set' =>$data['set_tokko'],
+                'jenis_cetakan' =>$data['jenis_cetakan_tokko']            
+            );
+            $this->db->insert('mesin_tokko',$tambah_jutokko);
     }
     
 
