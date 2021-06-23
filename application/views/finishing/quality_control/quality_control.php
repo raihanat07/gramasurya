@@ -44,7 +44,7 @@
 
             <?php if($id_banding[$nilai] != $id_banding[$nilai-1]){ ?>
               <tr>
-                <td><?= $row->nomor_so."<br>".$row->id_order;?></td>
+                <td><?= $row->nomor_so;?></td>
                 <td><?= $row->tanggal_masuk;?></td>
                 <td><?= $row->deadline;?></td>
                 <td><?= $row->nama_pemesan;?></td>
@@ -80,7 +80,13 @@
           </table>
           
           <?php $nilai = 0; ?>
+          <?php $id_banding[-1]=null;?>
+
           <?php foreach ($qc as $s => $row){ ?>
+            <?php $id_banding[$nilai]=$row->id_order;?>
+
+            <?php if($id_banding[$nilai] != $id_banding[$nilai-1]){ ?>
+
           <form action="<?=site_url('finishing/QualityControl/proses')?>" method="post">
 
           <input type="text" name="id_order" value="<?= $row->id_order;?>" hidden>
@@ -98,7 +104,7 @@
                 <!-- body modal -->
                 <div class="card">
                   <div class="card-header" align="center">
-                    <h3><?= $row->nomor_so."--".$row->id_order?></h3>
+                    <h3><?= $row->nomor_so?></h3>
                   </div>
                   <!-- /.card-header -->
                   <div class="card-body">
@@ -261,6 +267,7 @@
             </div>
             </form>
             <?php $nilai++;} ?>
+            <?php } ?>
 
           </div>
 
