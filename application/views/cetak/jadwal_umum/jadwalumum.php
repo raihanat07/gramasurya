@@ -261,6 +261,78 @@
 
                   <?php } ?>
 
+                  <?php } else if( $row->id_mesin_74b !=null && $row->id_mesin_72 !=null && $row->id_mesin_74a ==null && $row->id_mesin_102a ==null && $row->id_mesin_102b ==null && $row->id_mesin_tokko ==null)  {?>
+
+                    <?php if($row->jenis_cetakan_74b == "Cover") {?>
+
+                    <td><?= $row->nama_mesin_74b ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_74b ?></td>
+
+                    <?php } else if($row->jenis_cetakan == "Cover") {?>
+
+                    <td><?= $row->nama_mesin ?></td>
+                    <td><?= $row->tanggal_pelaksanaan ?></td> 
+
+                    <?php } else {?>
+
+                    <td></td>
+                    <td></td> 
+
+                    <?php } ?>
+
+                    <?php if($row->jenis_cetakan_74b == "Isi") {?>
+
+                    <td><?= $row->nama_mesin_74b ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_74b ?></td>
+
+                    <?php } else if($row->jenis_cetakan == "Isi") {?>
+
+                    <td><?= $row->nama_mesin ?></td>
+                    <td><?= $row->tanggal_pelaksanaan ?></td> 
+
+                    <?php } else {?>
+
+                    <td></td>
+                    <td></td> 
+
+                    <?php } ?>
+
+                    <?php } else if( $row->id_mesin_74b !=null && $row->id_mesin_74a !=null ) {?>
+
+                    <?php if($row->jenis_cetakan_74b == "Cover") {?>
+
+                    <td><?= $row->nama_mesin_74b ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_74b ?></td>
+
+                    <?php } else if($row->jenis_cetakan_74a == "Cover") {?>
+
+                    <td><?= $row->nama_mesin_74a ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_74a ?></td> 
+
+                    <?php } else {?>
+
+                    <td></td>
+                    <td></td> 
+
+                    <?php } ?>
+
+                    <?php if($row->jenis_cetakan_74b == "Isi") {?>
+
+                    <td><?= $row->nama_mesin_74b ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_74b ?></td>
+
+                    <?php } else if($row->jenis_cetakan_74a == "Isi") {?>
+
+                    <td><?= $row->nama_mesin_74a ?></td>
+                    <td><?= $row->tanggal_pelaksanaan_74a ?></td> 
+
+                    <?php } else {?>
+
+                    <td></td>
+                    <td></td> 
+
+                    <?php } ?>
+
                   <?php } else {?>
 
                   <td></td>
@@ -646,11 +718,7 @@
                         <div class="row" align="right">
                           <div class="col">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                              <?php if($row->id_mesin_72 == null) {?>  
                             <button type="submit" class="btn btn-success" name="add74a">Jadwal</button>
-                              <?php }else{ ?>
-                            <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
-                              <?php } ?>
                           </div>
                         </div>
                       </div>
@@ -815,11 +883,7 @@
                         <div class="row" align="right">
                           <div class="col">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                              <?php if($row->id_mesin_74b == null) {?>  
                             <button type="submit" class="btn btn-success" name="add74b">Jadwal</button>
-                              <?php }else{ ?>
-                            <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
-                              <?php } ?>
                           </div>
                         </div>
                       </div>
@@ -985,11 +1049,7 @@
                         <div class="row" align="right">
                           <div class="col">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                              <?php if($row->id_mesin_102a == null) {?>  
                             <button type="submit" class="btn btn-success" name="add102a">Jadwal</button>
-                              <?php }else{ ?>
-                            <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
-                              <?php } ?>
                           </div>
                         </div>
                       </div>          
@@ -1156,11 +1216,7 @@
                         <div class="row" align="right">
                           <div class="col">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                              <?php if($row->id_mesin_102b == null) {?>  
                             <button type="submit" class="btn btn-success" name="add102b">Jadwal</button>
-                              <?php }else{ ?>
-                            <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
-                              <?php } ?>
                           </div>
                         </div>
                       </div>
@@ -1328,11 +1384,7 @@
                         <div class="row" align="right">
                           <div class="col">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Kembali</button>
-                              <?php if($row->id_mesin_tokko == null) {?>  
                             <button type="submit" class="btn btn-success" name="addtokko">Jadwal</button>
-                              <?php }else{ ?>
-                            <button type="submit" class="btn btn-success" name="edit">Jadwal</button>
-                              <?php } ?>
                           </div>
                         </div>
                       </div>

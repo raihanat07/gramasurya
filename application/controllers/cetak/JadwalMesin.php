@@ -103,7 +103,7 @@ class JadwalMesin extends CI_Controller {
 	public function edit_spk_72($id)
 	{
 		// check_already_login_cetak();
-		$query = $this->jm->get_tambah_spk_72($id);
+		$query = $this->jm->get_lihat_spk_72($id);
 		$data = array(
 			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
@@ -167,7 +167,7 @@ class JadwalMesin extends CI_Controller {
 				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_72')."'; </script>"; 
 		} else if(isset($_POST['edit'])){ 
 			$inputan = $this->input->post(null, TRUE);			
-			$this->jm->edit($inputan);
+			$this->jm->edit_spk_72($inputan);
 				if($this->db->affected_rows() > 0){					
 					echo "<script> alert('Data Berhasil Diubah'); </script>";
 				}

@@ -431,7 +431,7 @@
                   Tanggal Buat SPK
                 </div>
                 <div class="col-md-4">
-                  <input type="date" class="form-control" name="tanggal_buat_spk" value="<?= $row->tanggal_buat_spk; ?>" placeholder="Tanggal Buat SPK" required>
+                  <input type="date" class="form-control" name="tanggal_buat_spk" value="<?= $row->tanggal_buat_spk; ?>" placeholder="Tanggal Buat SPK" >
                 </div>
                 <div class="col-sm-2" align="right">
                   Jenis Kertas
@@ -455,7 +455,7 @@
                   Ukuran Potong
                 </div>
                 <div class="col-md-4">
-                  <input type="text" class="form-control" name="ukuran_potong" value="<?= $row->ukuran_potong; ?>" placeholder="Ukuran Potong" required>
+                  <input type="text" class="form-control" name="ukuran_potong" value="<?= $row->ukuran_potong; ?>" placeholder="Ukuran Potong" >
                 </div>
                 <div class="col-sm-2" align="right">
                   Model Potongan
@@ -514,7 +514,7 @@
                   Jumlah Cetak
                 </div>
                 <div class="col-md-4">
-                  <input type="number" class="form-control" name="jumlah_cetak" value="<?= $row->jumlah_cetak; ?>" placeholder="Jumlah Cetak" required>
+                  <input type="number" class="form-control" name="jumlah_cetak" value="<?= $row->jumlah_cetak; ?>" placeholder="Jumlah Cetak" >
                 </div>
               </div><br>
               <div class="row">
@@ -548,7 +548,7 @@
               </div><br>
               <div class="row">
                 <div class="col">
-                  <textarea class="form-control" name="keterangan_spk" value="<?= $row->jumlah_cetak; ?>" placeholder="Keterangan" style="min-height: 250px;"></textarea>
+                  <textarea class="form-control" name="keterangan_spk" value="<?= $row->keterangan_spk; ?>" placeholder="Keterangan" style="min-height: 250px;"></textarea>
                 </div>
               </div><br>
               <div class="row">
