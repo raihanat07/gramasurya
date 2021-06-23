@@ -25,6 +25,19 @@ class JadwalMesin extends CI_Controller {
 		);
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72',$data);
 	}
+
+	public function jadwal_74a()
+	{
+		
+		$query = $this->jm->get_jadwal_74a();
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a',$data);
+	}
+
+	
 	public function lihat_72($id)
 	{
 		$query = $this->jm->get_lihat_72($id);
@@ -35,6 +48,18 @@ class JadwalMesin extends CI_Controller {
 		// check_already_login_cetak();
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72-lihat',$data);
 	}
+
+	public function lihat_74a($id)
+	{
+		$query = $this->jm->get_lihat_74a($id);
+		$data = array(
+			'judul' => 'Lihat Mesin 74a',
+			'jm' => $query->result(),
+		);
+		// check_already_login_cetak();
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a-lihat',$data);
+	}
+
 	public function edit_72($id)
 	{
 		$query = $this->jm->get_tambah_spk_72($id);
@@ -44,6 +69,31 @@ class JadwalMesin extends CI_Controller {
 		);
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72-edit',$data);
 	}
+
+	// public function edit_74a($id)
+	// {
+	// 	$query = $this->jm->get_edit_74a($id);
+	// 	$data = array(
+	// 		'judul' => 'Jadwal Mesin Cetak',
+	// 		'jm' => $query->result(),
+	// 	);
+	// 	$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a-edit',$data);
+	// }
+
+
+	public function edit_jadwal_74a(){
+		if(isset($_POST['edit'])){ 
+			$inputan = $this->input->post(null, TRUE);	
+			if($inputan["target_74a"] !=null){
+				$inputan["druk_74a"] = $inputan["target_74a"] * $inputan["oplag"];
+			}
+			$this->jm->edit_jm74a($inputan);							
+			// $this->dc->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Diubah'); </script>";		
+				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_74a')."'; </script>";
+		}	
+	}
+
 	public function print_72()
 	{
 		
@@ -76,6 +126,24 @@ class JadwalMesin extends CI_Controller {
 		
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/mesin72-tambah-spk',$data);
 	}
+
+	public function tambah_spk_74a($id)
+	{
+		// $query = $this->dc->get_dc($id);
+		// $data = array(
+		// 	$data['judul'] = 'Jadwal Mesin Cetak';
+		// 	'dc' => $query->result(),
+		// );
+		$query = $this->jm->get_tambah_spk_74a($id);
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query->result(),
+		);
+		// check_already_login_cetak();
+		
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/mesin74a-tambah-spk',$data);
+	}
+
 	public function edit_jadwal_72(){
 		if(isset($_POST['edit'])){ 
 			$inputan = $this->input->post(null, TRUE);	
