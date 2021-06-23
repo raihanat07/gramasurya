@@ -52,43 +52,53 @@
                 </tr>
               </thead>
               <tbody>
-                <?php foreach($so as $s => $row) {?>  
+              <?php $nilai=0;?>            
+              <?php $id_banding[-1]=null;?>
+
+
+                <?php foreach($lp as $s => $row) {?>  
+                  <?php $id_banding[$nilai]=$row->id_order;?>
+
+                <?php if($id_banding[$nilai] != $id_banding[$nilai-1]){ ?>
+
                   <tr>                
                     <td align="center"><?= $row->nomor_so; ?></td>
-                    <td><?= $row->nama_orderan; ?></td>
+                    <td><?= $row->nama_orderan."--<br>".$row->id_order; ?></td>
                     
                     <!-- LAMINASI -->
-                    <td>Uvi</td>
-                    <td>Gloss</td>
-                    <td>Doff</td>
+                    <td><?php echo $row->uvi == "uvi" ?  "uvi" : "" ?></td>
+                    <td><?php echo $row->glossy == "glossy" ?  "glossy" : "" ?></td>
+                    <td><?php echo $row->doff == "doff" ?  "doff" : "" ?></td>
                     
                     <!-- MBO -->
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
+                    <td><?= $total_mbo_1[$nilai]; ?></td>
+                    <td><?= $total_mbo_2[$nilai]; ?></td>
+                    <td><?= $total_mbo_3[$nilai]; ?></td>
+                    <td><?= $total_mbo_4[$nilai]; ?></td>
                     
                     <!-- SHOE -->
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
+                    <td><?= $total_shoe_1[$nilai]; ?></td>
+                    <td><?= $total_shoe_2[$nilai]; ?></td>
+                    <td><?= $total_shoe_3[$nilai]; ?></td>
+                    <td><?= $total_shoe_4[$nilai]; ?></td>
                     
                     <!-- Susun -->
-                    <td>99</td>
+                    <td><?= $total_susun[$nilai]; ?></td>
 
                     <!-- Bending -->
-                    <td>99</td>
+                    <td><?= $total_binding[$nilai]; ?></td>
                     
                     <!-- Potong -->
-                    <td>99</td>
+                    <td><?= $total_fa_potong[$nilai]; ?></td>
                     
                     <!-- Jahit -->
-                    <td>99</td>
+                    <td><?= $total_jahit[$nilai]; ?></td>
                     
                     <!-- Hardcover -->
-                    <td>99</td>
+                    <td><?= $total_hardcover[$nilai]; ?></td>
                   </tr> 
+
+                <?php $nilai++;} ?>
                 <?php } ?>
               </tbody>
             </table>
