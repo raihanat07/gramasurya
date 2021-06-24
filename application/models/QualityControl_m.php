@@ -21,6 +21,7 @@ class QualityControl_m extends CI_Model {
             
             ',      
         );           
+        
 
         $this->db->from('order');                
         $this->db->join('finishing','finishing.id_order = order.id_order');
@@ -30,6 +31,9 @@ class QualityControl_m extends CI_Model {
         $this->db->join('susun','susun.id_order = order.id_order','left');
         $this->db->join('sub_proses','sub_proses.id_order = order.id_order','left');                                          
         $this->db->join('qc','qc.id_order = order.id_order','left');
+        $this->db->where('order.so_status', "finishing proses");
+        $this->db->or_where('order.so_status', "finishing akhir");
+        $this->db->or_where('order.so_status', "quality control");
         
         
 
@@ -112,6 +116,20 @@ public function lihat_qc($id)
     $query = $this->db->get();
     return $query; 
 }
+
+
+
+public function status_umum($data)
+{            
+            $status = array(                                                                                           
+                'so_status' =>$data['status_umum'],                                                                            
+            );                        
+            $this->db->set($status);
+            $this->db->where('id_order',$data['id_order']);
+            $this->db->update('order');  
+
+}
+
 
 
 
