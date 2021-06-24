@@ -37,6 +37,17 @@ class JadwalMesin extends CI_Controller {
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a',$data);
 	}
 
+	public function jadwal_74b()
+	{
+		
+		$query = $this->jm->get_jadwal_74b();
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74b/jadwalmesin-74b',$data);
+	}
+
 	
 	public function lihat_72($id)
 	{
@@ -60,6 +71,17 @@ class JadwalMesin extends CI_Controller {
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a-lihat',$data);
 	}
 
+	public function lihat_74b($id)
+	{
+		$query = $this->jm->get_lihat_74b($id);
+		$data = array(
+			'judul' => 'Lihat Mesin 74b',
+			'jm' => $query->result(),
+		);
+		// check_already_login_cetak();
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74b/jadwalmesin-74b-lihat',$data);
+	}
+
 	public function edit_72($id)
 	{
 		$query = $this->jm->get_tambah_spk_72($id);
@@ -70,29 +92,29 @@ class JadwalMesin extends CI_Controller {
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72-edit',$data);
 	}
 
-	// public function edit_74a($id)
-	// {
-	// 	$query = $this->jm->get_edit_74a($id);
-	// 	$data = array(
-	// 		'judul' => 'Jadwal Mesin Cetak',
-	// 		'jm' => $query->result(),
-	// 	);
-	// 	$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a-edit',$data);
-	// }
-
-
-	public function edit_jadwal_74a(){
-		if(isset($_POST['edit'])){ 
-			$inputan = $this->input->post(null, TRUE);	
-			if($inputan["target_74a"] !=null){
-				$inputan["druk_74a"] = $inputan["target_74a"] * $inputan["oplag"];
-			}
-			$this->jm->edit_jm74a($inputan);							
-			// $this->dc->status_umum($inputan);						
-				echo "<script> alert('Data Berhasil Diubah'); </script>";		
-				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_74a')."'; </script>";
-		}	
+	public function edit_74a($id)
+	{
+		$query = $this->jm->get_tambah_spk_74a($id);
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a-edit',$data);
 	}
+
+
+	// public function edit_jadwal_74a($id){
+	// 	if(isset($_POST['edit'])){ 
+	// 		$inputan = $this->input->post(null, TRUE);	
+	// 		if($inputan["target_74a"] !=null){
+	// 			$inputan["druk_74a"] = $inputan["target_74a"] * $inputan["oplag"];
+	// 		}
+	// 		$this->jm->edit_jm74a($inputan);							
+	// 		// $this->dc->status_umum($inputan);						
+	// 			echo "<script> alert('Data Berhasil Diubah'); </script>";		
+	// 			echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_74a')."'; </script>";
+	// 	}	
+	// }
 
 	public function print_72()
 	{
@@ -156,6 +178,20 @@ class JadwalMesin extends CI_Controller {
 				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_72')."'; </script>";
 		}	
 	}
+
+	public function edit_jadwal_74a(){
+		if(isset($_POST['edit'])){ 
+			$inputan = $this->input->post(null, TRUE);	
+			if($inputan["target_74a"] !=null){
+				$inputan["druk_74a"] = $inputan["target_74a"] * $inputan["oplag"];
+			}
+			$this->jm->edit_jm74a($inputan);							
+			// $this->dc->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Diubah'); </script>";		
+				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_74a')."'; </script>";
+		}	
+	}
+
 	public function proses_tambah_72()
 	{
 		if(isset($_POST['add'])){							
