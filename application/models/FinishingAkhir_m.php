@@ -505,6 +505,7 @@ public function ambilIDOrder_binding($id_order)
         order.oplag as oplag, 
         order.so_status as so_status,
         
+        binding.status_binding as status_binding,
         binding.id_jadwal_binding as id_jadwal_binding,
         binding.id_binding as id_binding,
         binding.hasil_1 as hasil_1,
@@ -772,6 +773,7 @@ public function ambilIDOrder_hardcover($id_order)
         order.oplag as oplag, 
         order.so_status as so_status,
         
+        hardcover.status_hardcover as status_hardcover,
         hardcover.id_jadwal_hardcover as id_jadwal_hardcover,
         hardcover.id_hardcover as id_hardcover,
         hardcover.hasil_1 as hasil_1,
@@ -1042,6 +1044,7 @@ public function ambilIDOrder_jahit($id_order)
         order.oplag as oplag, 
         order.so_status as so_status,
         
+        jahit.status_jahit as status_jahit,
         jahit.id_jadwal_jahit as id_jadwal_jahit,
         jahit.id_jahit as id_jahit,
         jahit.hasil_1 as hasil_1,
@@ -1310,6 +1313,7 @@ public function ambilIDOrder_fa_potong($id_order)
         order.oplag as oplag, 
         order.so_status as so_status,
         
+        fa_potong.status_fa_potong as status_fa_potong,
         fa_potong.id_jadwal_fa_potong as id_jadwal_fa_potong,
         fa_potong.id_fa_potong as id_fa_potong,
         fa_potong.hasil_1 as hasil_1,
@@ -1578,6 +1582,7 @@ public function ambilIDOrder_sub($id_order)
         order.oplag as oplag, 
         order.so_status as so_status,
         
+        sub_finishing.status_sub as status_sub,
         sub_finishing.id_jadwal_sub as id_jadwal_sub,
         sub_finishing.id_sub as id_sub,
         sub_finishing.hasil as hasil,         
@@ -1803,6 +1808,7 @@ public function ambilIDOrder_klemseng($id_order)
         order.oplag as oplag, 
         order.so_status as so_status,
         
+        klemseng.status_klemseng as status_klemseng,
         klemseng.id_jadwal_klemseng as id_jadwal_klemseng,
         klemseng.id_klemseng as id_klemseng,
         klemseng.hasil_1 as hasil_1,
@@ -2072,6 +2078,7 @@ public function ambilIDOrder_spiral($id_order)
         order.oplag as oplag, 
         order.so_status as so_status,
         
+        spiral.status_spiral as status_spiral,
         spiral.id_jadwal_spiral as id_jadwal_spiral,
         spiral.id_spiral as id_spiral,
         spiral.hasil_1 as hasil_1,

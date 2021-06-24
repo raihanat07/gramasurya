@@ -90,6 +90,7 @@
           <form action="<?=site_url('finishing/QualityControl/proses')?>" method="post">
 
           <input type="text" name="id_order" value="<?= $row->id_order;?>" hidden>
+          <input type="text" name="so_status" value="<?= $row->so_status;?>" hidden>
           
           <div id="myModal<?= $row->id_order;?>" class="modal fade" role="dialog">
             <div class="modal-dialog modal-lg">
