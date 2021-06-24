@@ -64,7 +64,7 @@
 
                   <tr>                
                     <td align="center"><?= $row->nomor_so; ?></td>
-                    <td><?= $row->nama_orderan."--<br>".$row->id_order; ?></td>
+                    <td><?= $row->nama_orderan; ?></td>
                     
                     <!-- LAMINASI -->
                     <td><?= $total_emboss[$nilai]; ?></td>
