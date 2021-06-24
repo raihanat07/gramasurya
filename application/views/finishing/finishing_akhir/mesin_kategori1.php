@@ -91,7 +91,7 @@
                             <?php } else {?> <td></td> <?php } ?>
 
                             <?php if($row->tanggal_pelaksanaan_fa_potong != "0000-00-00") {?>
-                        <td <?php echo $row->status_fa_potong == "fa_potong" ?  "style='color: red'" : "" ?>><?= $tanggal_fa_potong[$nilai]; ?></td>
+                        <td <?php echo $row->status_fa_potong == "fa potong" ?  "style='color: red'" : "" ?>><?= $tanggal_fa_potong[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
                             <?php if($row->tanggal_pelaksanaan_sub != "0000-00-00") {?>
@@ -99,10 +99,9 @@
                             <?php } else {?> <td></td> <?php } ?>
                       
                         <td>
-                              <?php if($row->status_binding == "binding" or $row->status_hardcover == "hardcover" or $row->status_jahit == "jahit" or $row->status_fa_potong == "fa_potong" or $row->status_sub == "sub" or $row->status_klemseng == "klemseng" or $row->status_spiral == "spiral"){
-                                      echo "Finishing Akhir";}
-                                    else echo $row->so_status;
-                              ?>                                                
+                               <?php if( $row->so_status == "finishing akhir" || $row->so_status == "quality control"){ ?>
+                                      <label style="color:red;"> Finishing Akhir</label>
+                                    <?php } else {echo $row->so_status;}?>                                              
                         </td>                        
                         <td align="center">
                           <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order; ?>">

@@ -62,7 +62,7 @@
                 <td><?= $row->oplag; ?></td>
                 <td><?= $row->hasil; ?></td>
                 <td><?= $row->keterangan_jadwal_sub; ?></td>  
-                <td><?php echo $row->status_sub == "sub" ?  "finishing akhir" : $row->so_status?></td>                
+                <td <?php echo $row->status_sub == "sub" ?  "style='color: red'" : "" ?>><?php echo $row->status_sub == "sub" ?  "finishing akhir" : $row->so_status?></td>                
                 <td align="center">  
 
                   <?php if( $row->id_jadwal_sub == $id_jadwal_max[$nilai] and $row->status_sub != "sub") {?>  
