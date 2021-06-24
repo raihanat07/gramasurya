@@ -22,6 +22,7 @@
     <form action="<?=site_url('finishing/FinishingProses/proses_sub')?>" method="post">      
     <input type="text"  name="id_order"  value="<?= $row->id_order; ?>" hidden>
     <input type="text"  name="id_sub"  value="<?= $row->id_sub; ?>" hidden>
+    <input type="text"  name="so_status"  value="<?= $row->so_status; ?>" hidden>
 
     <input type="text"  name="status_laminasi"  value="<?= $row->status_laminasi; ?>" hidden>
     <input type="text"  name="status_mbo"  value="<?= $row->status_mbo; ?>" hidden>
@@ -29,11 +30,11 @@
     <input type="text"  name="status_susun"  value="<?= $row->status_susun; ?>" hidden>
     <input type="text"  name="status_sub"  value="<?= $row->status_sub; ?>" hidden>
 
-    <input type="text"  name="tanggal_pelaksanaan_laminasi"  value="<?= $row->status_laminasi; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_mbo"  value="<?= $row->status_mbo; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_shoe"  value="<?= $row->status_shoe; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_susun"  value="<?= $row->status_susun; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_sub"  value="<?= $row->status_sub; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_laminasi"  value="<?= $row->tanggal_pelaksanaan_laminasi; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_mbo"  value="<?= $row->tanggal_pelaksanaan_mbo; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_shoe"  value="<?= $row->tanggal_pelaksanaan_shoe; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_susun"  value="<?= $row->tanggal_pelaksanaan_susun; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_sub"  value="<?= $row->tanggal_pelaksanaan_sub; ?>" hidden>
 
     <div class="card-body">
       <div class="card-body">
