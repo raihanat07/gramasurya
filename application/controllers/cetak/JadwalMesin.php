@@ -142,6 +142,16 @@ class JadwalMesin extends CI_Controller {
 		);
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/mesin72-edit-spk',$data);
 	}
+	public function edit_spk_74a($id)
+	{
+		// check_already_login_cetak();
+		$query = $this->jm->get_lihat_74a($id);
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/mesin74a-edit-spk',$data);
+	}
 	public function tambah_spk_72($id)
 	{
 		// $query = $this->dc->get_dc($id);
@@ -215,22 +225,36 @@ class JadwalMesin extends CI_Controller {
 		}	
 	}
 
-	public function proses_tambah_72()
+	public function proses()
 	{
-		if(isset($_POST['add'])){							
+		if(isset($_POST['addspk72'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->jm->add_spk_72($inputan);
 				if($this->db->affected_rows() > 0){
 					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
 				}
 				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_72')."'; </script>"; 
-		} else if(isset($_POST['edit'])){ 
+		} else if(isset($_POST['addspk74a'])){							
+			$inputan = $this->input->post(null, TRUE);
+			$this->jm->add_spk_74a($inputan);
+				if($this->db->affected_rows() > 0){
+					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
+				}
+				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_74a')."'; </script>"; 
+		}else if(isset($_POST['editspk72'])){ 
 			$inputan = $this->input->post(null, TRUE);			
 			$this->jm->edit_spk_72($inputan);
 				if($this->db->affected_rows() > 0){					
 					echo "<script> alert('Data Berhasil Diubah'); </script>";
 				}
 				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_72')."'; </script>"; 
+		} else if(isset($_POST['editspk74a'])){ 
+			$inputan = $this->input->post(null, TRUE);			
+			$this->jm->edit_spk_74a($inputan);
+				if($this->db->affected_rows() > 0){					
+					echo "<script> alert('Data Berhasil Diubah'); </script>";
+				}
+				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_74a')."'; </script>"; 
 		}
 		
 		

@@ -636,10 +636,10 @@ class JadwalMesin_m extends CI_Model {
             spk.tanggal_buat_spk as tanggal_buat_spk,
             spk.ukuran_potong as ukuran_potong,
             spk.jumlah_cetak as jumlah_cetak,
-            spk.1muka_fc_bw_warna as 1muka_fc_bw_warna,
-            spk.2muka_fc_fc-bw_bw-bw as 2muka_fc_fc-bw_bw-bw,
-            spk.2muka_blk as 2muka_blk,
-            spk.2muka_blg as 2muka_blg,
+            spk.1muka_fc_bw_warna as muka1,
+            spk.2muka_fc_fc-bw_bw-bw as muka2,
+            spk.2muka_blk as muka3,
+            spk.2muka_blg as muka4,
             spk.keterangan_spk as keterangan_spk', 
         );
         $this->db->from('order');
@@ -657,6 +657,7 @@ class JadwalMesin_m extends CI_Model {
         $query = $this->db->get();
         return $query;  
     }
+    
     public function edit_jm($data){
         $edit_ju = array(         
             'id_order' =>$data['id_order'],
@@ -759,6 +760,23 @@ class JadwalMesin_m extends CI_Model {
         $this->db->where('id_order',$data['id_order']);
         $this->db->update('spk');
     }
+
+    public function edit_spk_74a($data){
+        $edit_spk = array(
+            'tanggal_buat_spk' => $data['tanggal_buat_spk'],
+            'ukuran_potong' => $data['ukuran_potong'],
+            'jumlah_cetak' => $data['jumlah_cetak'],
+            '1muka_fc_bw_warna' => $data['1muka_fc_bw_warna'],
+            '2muka_fc_fc-bw_bw-bw' => $data['2muka_fc_fc-bw_bw-bw'],
+            '2muka_blk'=> $data['2muka_blk'],
+            '2muka_blg' => $data['2muka_blg'],
+            'keterangan_spk' => $data['keterangan_spk'],
+        );
+        $this->db->set($edit_spk);
+        $this->db->where('id_order',$data['id_order']);
+        $this->db->update('spk');
+    }
+    
     public function get_lihat_72($id)
     {
         $this->db->select(
@@ -779,8 +797,10 @@ class JadwalMesin_m extends CI_Model {
             finishing.finishing_akhir_jahit_kawat as jahit_kawat, 
             finishing.finishing_akhir_pond as pond, 
             finishing.finishing_akhir_klem as klem,
-            finishing.finishing_akhir_spiral as spiral,         
-        
+            finishing.finishing_akhir_spiral as spiral,
+            
+            imposisi.total_plat_cover as total_plat_cover, 
+            imposisi.total_plat_isi as total_plat_isi,
 
             mesin_72.id_mesin_72 as id_mesin_72,
             mesin_72.nama_mesin as nama_mesin,
@@ -867,12 +887,24 @@ class JadwalMesin_m extends CI_Model {
             finishing_akhir_jahit_kawat as jahit_kawat, 
             finishing_akhir_pond as pond, 
             finishing_akhir_klem as klem,
-            finishing_akhir_spiral as spiral',  
+            finishing_akhir_spiral as spiral,
+            
+            spk.id_spk as id_spk,
+            spk.tanggal_buat_spk as tanggal_buat_spk,
+            spk.ukuran_potong as ukuran_potong,
+            spk.jumlah_cetak as jumlah_cetak,
+            spk.1muka_fc_bw_warna as 1muka_fc_bw_warna,
+            spk.2muka_fc_fc-bw_bw-bw as 2muka_fc_fc-bw_bw-bw,
+            spk.2muka_blk as 2muka_blk,
+            spk.2muka_blg as 2muka_blg,
+            spk.keterangan_spk as keterangan_spk
+            ',  
         );
         $this->db->from('order');
         $this->db->join('mesin_72','mesin_72.id_order = order.id_order','left');
+        $this->db->join('spk','spk.id_order = order.id_order','left');         
         $this->db->join('finishing','finishing.id_order = order.id_order');
-         
+        $this->db->join('imposisi','imposisi.id_order = order.id_order');     
         $this->db->join('ctcp as ct','ct.id_order = order.id_order'); 
         $this->db->join('kertas as ke','ke.id_order = order.id_order'); 
         $this->db->join('potong as po','po.id_order = order.id_order'); 
@@ -906,7 +938,9 @@ class JadwalMesin_m extends CI_Model {
             finishing.finishing_akhir_pond as pond, 
             finishing.finishing_akhir_klem as klem,
             finishing.finishing_akhir_spiral as spiral,         
-        
+            
+            imposisi.total_plat_cover as total_plat_cover, 
+            imposisi.total_plat_isi as total_plat_isi,
 
             mesin_74_a.id_mesin_74a as id_mesin_74a,
             mesin_74_a.nama_mesin as nama_mesin,
@@ -993,12 +1027,23 @@ class JadwalMesin_m extends CI_Model {
             finishing_akhir_jahit_kawat as jahit_kawat, 
             finishing_akhir_pond as pond, 
             finishing_akhir_klem as klem,
-            finishing_akhir_spiral as spiral',  
+            finishing_akhir_spiral as spiral,
+            
+            spk.id_spk as id_spk,
+            spk.tanggal_buat_spk as tanggal_buat_spk,
+            spk.ukuran_potong as ukuran_potong,
+            spk.jumlah_cetak as jumlah_cetak,
+            spk.1muka_fc_bw_warna as 1muka_fc_bw_warna,
+            spk.2muka_fc_fc-bw_bw-bw as 2muka_fc_fc-bw_bw-bw,
+            spk.2muka_blk as 2muka_blk,
+            spk.2muka_blg as 2muka_blg,
+            spk.keterangan_spk as keterangan_spk',  
         );
         $this->db->from('order');
         $this->db->join('mesin_74_a','mesin_74_a.id_order = order.id_order','left');
+        $this->db->join('spk','spk.id_order = order.id_order','left');          
         $this->db->join('finishing','finishing.id_order = order.id_order');
-         
+        $this->db->join('imposisi','imposisi.id_order = order.id_order');     
         $this->db->join('ctcp as ct','ct.id_order = order.id_order'); 
         $this->db->join('kertas as ke','ke.id_order = order.id_order'); 
         $this->db->join('potong as po','po.id_order = order.id_order'); 
@@ -1119,12 +1164,22 @@ class JadwalMesin_m extends CI_Model {
             finishing_akhir_jahit_kawat as jahit_kawat, 
             finishing_akhir_pond as pond, 
             finishing_akhir_klem as klem,
-            finishing_akhir_spiral as spiral',  
+            finishing_akhir_spiral as spiral,
+            
+            spk.id_spk as id_spk,
+            spk.tanggal_buat_spk as tanggal_buat_spk,
+            spk.ukuran_potong as ukuran_potong,
+            spk.jumlah_cetak as jumlah_cetak,
+            spk.1muka_fc_bw_warna as 1muka_fc_bw_warna,
+            spk.2muka_fc_fc-bw_bw-bw as 2muka_fc_fc-bw_bw-bw,
+            spk.2muka_blk as 2muka_blk,
+            spk.2muka_blg as 2muka_blg,
+            spk.keterangan_spk as keterangan_spk',  
         );
         $this->db->from('order');
         $this->db->join('mesin_74_b','mesin_74_b.id_order = order.id_order','left');
+        $this->db->join('spk','spk.id_order = order.id_order','left');          
         $this->db->join('finishing','finishing.id_order = order.id_order');
-         
         $this->db->join('ctcp as ct','ct.id_order = order.id_order'); 
         $this->db->join('kertas as ke','ke.id_order = order.id_order'); 
         $this->db->join('potong as po','po.id_order = order.id_order'); 

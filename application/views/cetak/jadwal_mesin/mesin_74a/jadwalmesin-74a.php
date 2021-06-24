@@ -71,11 +71,11 @@
               
               <td align="center">
               <?php if($row->id_spk == null){?>
-                  <a href="<?=site_url('cetak/JadwalMesin/tambah_spk_72/'.$row->id_mesin_74a)?>" class="btn btn-success">
+                  <a href="<?=site_url('cetak/JadwalMesin/tambah_spk_74a/'.$row->id_mesin_74a)?>" class="btn btn-success">
                   <i class="fa fa-plus" style="font-size:14px"></i> BUAT SPK    
                 </a>
                 <?php }else{?>
-                  <a href="<?=site_url('cetak/JadwalMesin/edit_spk_72/'.$row->id_mesin_72)?>" class="btn btn-success">
+                  <a href="<?=site_url('cetak/JadwalMesin/edit_spk_74a/'.$row->id_mesin_74a)?>" class="btn btn-success">
                   <i class="fa fa-pencil" style="font-size:14px"></i> EDIT SPK 
                 </a>
               
