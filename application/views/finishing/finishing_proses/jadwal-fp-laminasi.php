@@ -62,7 +62,7 @@
                         <td><?= $row->halaman; ?></td>    
                         <td><?= $row->hasil_1+$row->hasil_2; ?></td>  
                         <!-- <td><?= $tot[$nilai]; ?></td> -->
-                        <td><?php echo $row->status_laminasi == "laminasi" ?  "finishing proses cover" : $row->so_status?></td>   
+                        <td <?php echo $row->status_laminasi == "laminasi" ?  "style='color: red'" : "" ?>><?php echo $row->status_laminasi == "laminasi" ?  "finishing proses cover" : $row->so_status?></td>   
 
                         <td align="center">     
 

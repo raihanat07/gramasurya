@@ -97,10 +97,10 @@
                             <?php } else {?> <td></td> <?php } ?>
                       
                         <td>
-                              <?php if($row->status_laminasi == "laminasi" or $row->status_mbo == "mbo" or $row->status_shoe == "shoe" or $row->status_susun == "susun" or $row->status_sub == "sub"){
-                                      echo "Finishing Proses";}
-                                    else echo $row->so_status;
-                              ?>                                                
+                              <?php if( $row->so_status == "finishing proses" || $row->so_status == "finishing akhir" || $row->so_status == "quality control"){ ?>
+                                      <label style="color:red;"> Finishing Proses</label>
+                                    <?php } else {echo $row->so_status;}?>
+                                                                                               
                         </td>                        
                         <td align="center">
                           <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order; ?>">

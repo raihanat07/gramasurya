@@ -30,11 +30,11 @@
     <input type="text"  name="status_susun"  value="<?= $row->status_susun; ?>" hidden>
     <input type="text"  name="status_sub"  value="<?= $row->status_sub; ?>" hidden>
 
-    <input type="text"  name="tanggal_pelaksanaan_laminasi"  value="<?= $row->tanggal_pelaksanaan_laminasi; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_mbo"  value="<?= $row->tanggal_pelaksanaan_mbo; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_shoe"  value="<?= $row->tanggal_pelaksanaan_shoe; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_susun"  value="<?= $row->tanggal_pelaksanaan_susun; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_sub"  value="<?= $row->tanggal_pelaksanaan_sub; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_laminasi"  value="<?= $tanggal_laminasi; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_mbo"  value="<?= $tanggal_mbo; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_shoe"  value="<?= $tanggal_shoe; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_susun"  value="<?= $tanggal_susun; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_sub"  value="<?= $tanggal_sub; ?>" hidden>
 
     <div class="card-body">
       <div class="card-body">

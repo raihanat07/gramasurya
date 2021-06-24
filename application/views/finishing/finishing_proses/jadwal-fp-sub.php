@@ -60,7 +60,7 @@
                         <td><?= $row->oplag; ?></td>
                         <td><?= $row->halaman; ?></td> 
                         <td><?= $row->hasil_1+$row->hasil_2; ?></td>     
-                        <td><?php echo $row->status_sub == "sub" ?  "finishing proses" : $row->so_status?></td>   
+                        <td <?php echo $row->status_sub == "sub" ?  "style='color: red'" : "" ?>><?php echo $row->status_sub == "sub" ?  "finishing proses" : $row->so_status?></td>   
 
                         <td align="center"> 
 

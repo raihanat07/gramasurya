@@ -760,7 +760,8 @@ public function ambilIDOrder($id_order)
             order.so_status as so_status,
             
             mbo.id_jadwal_mbo as id_jadwal_mbo,
-            mbo.id_mbo as id_mbo,                              
+            mbo.id_mbo as id_mbo,  
+            mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_pelaksanaan_mbo,                            
             
             mbo.lipat_lembar_1 as lipat_lembar_1,                   
             mbo.lipat_lembar_2 as lipat_lembar_2,
@@ -1318,7 +1319,8 @@ public function ambil_data_shoe($id)
             order.so_status as so_status,
             
             shoe.id_jadwal_shoe as id_jadwal_shoe,
-            shoe.id_shoe as id_shoe,                              
+            shoe.id_shoe as id_shoe,    
+            shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_pelaksanaan_shoe,                          
             
             shoe.lipat_lembar_1 as lipat_lembar_1,                   
             shoe.lipat_lembar_2 as lipat_lembar_2,
