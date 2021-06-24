@@ -27,6 +27,10 @@ class Laporan extends CI_Controller {
 		
 		$banding_id[-1]=null;
 
+		$total_emboss = 0;
+		$total_doff = 0;	
+		$total_glossy = 0;		
+
 		$total_mbo_1 = 0;				
 		$total_mbo_2 = 0;
 		$total_mbo_3 = 0;
@@ -555,6 +559,23 @@ class Laporan extends CI_Controller {
 													$total_shoe_4 += $sq->hasil_lipatan_lembar_20;	
 												}			
 						}
+				
+
+				$ambil = $this->FinishingProses_m->ambilIDOrder($id_order)->result();
+				foreach($ambil as $sq) {				
+								if($sq->jenis_laminasi == "emboss"){
+									$total_emboss += $sq->hasil_1;
+									$total_emboss += $sq->hasil_2;
+								}
+								if($sq->jenis_laminasi == "glossy"){
+									$total_glossy += $sq->hasil_1;
+									$total_glossy += $sq->hasil_2;
+								}
+								if($sq->jenis_laminasi == "doff"){
+									$total_doff += $sq->hasil_1;
+									$total_doff += $sq->hasil_2;
+								}
+				}
 
 				$ambil = $this->FinishingProses_m->ambilIDOrder_susun($id_order)->result();
 				foreach($ambil as $sq) {				
@@ -602,6 +623,10 @@ class Laporan extends CI_Controller {
 
 			// Ditampung kedalam array datanya
 				if($banding_id[$nilai] != $banding_id[$nilai-1]){
+					$data["total_emboss"][$nilai] = $total_emboss;
+					$data["total_glossy"][$nilai] = $total_glossy;
+					$data["total_doff"][$nilai] = $total_doff;
+
 					$data["total_mbo_1"][$nilai] = $total_mbo_1;									
 					$data["total_mbo_2"][$nilai] = $total_mbo_2;
 					$data["total_mbo_3"][$nilai] = $total_mbo_3;
@@ -623,6 +648,10 @@ class Laporan extends CI_Controller {
 				}  						 											
 
 				// reset nilai yang akan di foreaach
+				$total_emboss = 0;
+				$total_doff = 0;	
+				$total_glossy = 0;
+
 				$total_mbo_1 = 0;	
 				$total_mbo_2 = 0;
 				$total_mbo_3 = 0;
