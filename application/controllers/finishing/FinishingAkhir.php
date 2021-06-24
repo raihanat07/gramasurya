@@ -495,9 +495,73 @@ public function proses_fa_kalender()
 			$data['total_2'] = $total_2;
 			$data['total_3'] = $total_3;
 			$data['total_4'] = $total_4;
+
+		
+
+		/////////    ambil tanggal tiap mesin finishing akhir
+						$tanggal_binding = "";
+						$tanggal_hardcover = "";
+						$tanggal_jahit = "";
+						$tanggal_fa_potong = "";
+						$tanggal_sub = "";
+						$tanggal_klemseng = "";
+						$tanggal_spiral = "";
+
+							$ambil_binding = $this->fa->ambilIDOrder_binding($id_order)->result();
+								foreach($ambil_binding as $sq) {
+									if($sq->tanggal_pelaksanaan_binding != "0000-00-00") {
+										$tanggal_binding = $sq->tanggal_pelaksanaan_binding;
+									}
+							}
+							$ambil_hardcover = $this->fa->ambilIDOrder_hardcover($id_order)->result();
+								foreach($ambil_hardcover as $sq) {
+									if($sq->tanggal_pelaksanaan_hardcover != "0000-00-00") {
+										$tanggal_hardcover = $sq->tanggal_pelaksanaan_hardcover;
+									}
+							}
+							$ambil_jahit = $this->fa->ambilIDOrder_jahit($id_order)->result();
+								foreach($ambil_jahit as $sq) {
+									if($sq->tanggal_pelaksanaan_jahit != "0000-00-00") {
+										$tanggal_jahit = $sq->tanggal_pelaksanaan_jahit;
+									}
+							}
+							$ambil_fa_potong = $this->fa->ambilIDOrder_fa_potong($id_order)->result();
+								foreach($ambil_fa_potong as $sq) {
+									if($sq->tanggal_pelaksanaan_fa_potong != "0000-00-00") {
+										$tanggal_fa_potong = $sq->tanggal_pelaksanaan_fa_potong;
+									}
+							}
+							$ambil_sub = $this->fa->ambilIDOrder_sub($id_order)->result();
+								foreach($ambil_sub as $sq) {
+									if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+										$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+									}
+							}
+							$ambil_klemseng = $this->fa->ambilIDOrder_klemseng($id_order)->result();
+								foreach($ambil_klemseng as $sq) {
+									if($sq->tanggal_pelaksanaan_klemseng != "0000-00-00") {
+										$tanggal_klemseng = $sq->tanggal_pelaksanaan_klemseng;
+									}
+							}
+							$ambil_spiral = $this->fa->ambilIDOrder_spiral($id_order)->result();
+								foreach($ambil_spiral as $sq) {
+									if($sq->tanggal_pelaksanaan_spiral != "0000-00-00") {
+										$tanggal_spiral = $sq->tanggal_pelaksanaan_spiral;
+									}
+							}
+
+
+	$data['tanggal_binding'] = $tanggal_binding;
+	$data['tanggal_hardcover'] = $tanggal_hardcover;
+	$data['tanggal_jahit'] = $tanggal_jahit;
+	$data['tanggal_fa_potong'] = $tanggal_fa_potong;
+	$data['tanggal_sub'] = $tanggal_sub;
+	$data['tanggal_klemseng'] = $tanggal_klemseng;
+	$data['tanggal_spiral'] = $tanggal_spiral;
 		
 		$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-binding',$data);
-	}
+}
+
     public function tambah_jadwal_fa_binding($id)
 	{
 		// check_already_login_finishing();
@@ -579,28 +643,158 @@ public function proses_fa_kalender()
 			$inputan = $this->input->post(null, TRUE);
 
 
-		// $jumlah_mesin = 0;
-        // $jumlah_selesai = 0;
-        // $inputan["status_umum"] = "cetak";
+			// prosess ubah status umum
+						if($inputan["so_status"] == "cetak" || $inputan["so_status"] == "finishing proses" || $inputan["so_status"] == "finishing akhir" || $inputan["so_status"] == "quality control"){
+												$jumlah_mesin = 0;
+												$jumlah_selesai = 0;
+												$inputan["status_umum"] = "";
+											
+												if($inputan["tanggal_pelaksanaan_binding"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_binding"] == "binding"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
 
-        // if($inputan["tanggal_pelaksanaan_binding"] !=0){
-        //   $jumlah_mesin +=1;
-        //   if($inputan["status_binding"] == "binding"){            
-        //     $jumlah_selesai +=1;
-        //   }                      
-        // }
+												if($inputan["tanggal_pelaksanaan_hardcover"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_hardcover"] == "hardcover"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_jahit"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_jahit"] == "jahit"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_fa_potong"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_fa_potong"] == "fa potong"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_sub"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_sub"] == "sub"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_klemseng"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_klemseng"] == "klemseng"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_spiral"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_spiral"] == "spiral"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												
+												// deklarasi status umum baru
+												if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+													$inputan["status_umum"] = "finishing akhir";
+												}else{
+													
+													$this->load->model('FinishingProses_m');
+													//    ambil tanggal tiap mesin finishing proses
+																		$tanggal_laminasi = "";
+																		$tanggal_mbo = "";
+																		$tanggal_shoe = "";
+																		$tanggal_susun = "";
+																		$tanggal_sub = "";
 
-        // // if($inputan["tanggal_pelaksanaan_hardcover"] !=0){
-		// // 	$jumlah_mesin +=1;
-		// // 	if($inputan["status_hardcover"] == hardcover){            
-		// // 	  $jumlah_selesai +=1;
-		// // 	}                      
-		// // }
-        
-        //   if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
-        //     $inputan["status_umum"] = "finishing proses";
-        //   }     
-		//   $this->fp->status_umum($inputan);	     
+																		$status_laminasi = "";
+																		$status_mbo = "";
+																		$status_shoe = "";
+																		$status_susun = "";
+																		$status_sub = "";
+																								$ambil_laminasi = $this->FinishingProses_m->ambilIDOrder($inputan["id_order"])->result();
+																									foreach($ambil_laminasi as $sq) {
+																										if($sq->tanggal_pelaksanaan_laminasi != "0000-00-00") {
+																											$tanggal_laminasi = $sq->tanggal_pelaksanaan_laminasi;
+																										}
+																										$status_laminasi = $sq->status_laminasi;
+																										
+																								}
+																								$ambil_mbo = $this->FinishingProses_m->ambilIDOrder_mbo($inputan["id_order"])->result();
+																									foreach($ambil_mbo as $sq) {
+																										if($sq->tanggal_pelaksanaan_mbo != "0000-00-00") {
+																											$tanggal_mbo = $sq->tanggal_pelaksanaan_mbo;
+																										}
+																										$status_mbo = $sq->status_mbo;
+																								}
+																								$ambil_shoe = $this->FinishingProses_m->ambilIDOrder_shoe($inputan["id_order"])->result();
+																									foreach($ambil_shoe as $sq) {
+																										if($sq->tanggal_pelaksanaan_shoe != "0000-00-00") {
+																											$tanggal_shoe = $sq->tanggal_pelaksanaan_shoe;
+																										}
+																										$status_shoe = $sq->status_shoe;
+																								}
+																								$ambil_susun = $this->FinishingProses_m->ambilIDOrder_susun($inputan["id_order"])->result();
+																									foreach($ambil_susun as $sq) {
+																										if($sq->tanggal_pelaksanaan_susun != "0000-00-00") {
+																											$tanggal_susun = $sq->tanggal_pelaksanaan_susun;
+																										}
+																										$status_susun = $sq->status_susun;
+																								}
+																								$ambil_sub = $this->FinishingProses_m->ambilIDOrder_sub($inputan["id_order"])->result();
+																									foreach($ambil_sub as $sq) {
+																										if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+																											$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+																										}
+																										$status_sub = $sq->status_sub;
+																								}
+																		
+													// prosess ubah status umum																	
+																							$jumlah_mesin = 0;
+																							$jumlah_selesai = 0;																							
+																						
+																							if($tanggal_laminasi !=""){
+																									$jumlah_mesin +=1;
+																									if($status_laminasi == "laminasi"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+
+																							if($tanggal_mbo !=""){
+																									$jumlah_mesin +=1;
+																									if($status_mbo == "mbo"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_shoe !=""){
+																									$jumlah_mesin +=1;
+																									if($status_shoe == "shoe"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_susun !=""){
+																									$jumlah_mesin +=1;
+																									if($status_susun == "susun"){           
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_sub !=""){
+																									$jumlah_mesin +=1;
+																									if($status_sub == "sub"){          
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							
+
+																							if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+																								$inputan["status_umum"] = "finishing proses";
+																							}
+																							else $inputan["status_umum"] = "cetak";																							
+																	   
+
+												}
+												$this->fa->status_umum($inputan);
+						}	     
+
 
 			$this->fa->proses_edit_binding($inputan);				
 				echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
@@ -681,6 +875,68 @@ public function proses_fa_kalender()
 			$data['total_2'] = $total_2;
 			$data['total_3'] = $total_3;
 			$data['total_4'] = $total_4;
+
+			
+		/////////    ambil tanggal tiap mesin finishing akhir
+						$tanggal_binding = "";
+						$tanggal_hardcover = "";
+						$tanggal_jahit = "";
+						$tanggal_fa_potong = "";
+						$tanggal_sub = "";
+						$tanggal_klemseng = "";
+						$tanggal_spiral = "";
+
+							$ambil_binding = $this->fa->ambilIDOrder_binding($id_order)->result();
+								foreach($ambil_binding as $sq) {
+									if($sq->tanggal_pelaksanaan_binding != "0000-00-00") {
+										$tanggal_binding = $sq->tanggal_pelaksanaan_binding;
+									}
+							}
+							$ambil_hardcover = $this->fa->ambilIDOrder_hardcover($id_order)->result();
+								foreach($ambil_hardcover as $sq) {
+									if($sq->tanggal_pelaksanaan_hardcover != "0000-00-00") {
+										$tanggal_hardcover = $sq->tanggal_pelaksanaan_hardcover;
+									}
+							}
+							$ambil_jahit = $this->fa->ambilIDOrder_jahit($id_order)->result();
+								foreach($ambil_jahit as $sq) {
+									if($sq->tanggal_pelaksanaan_jahit != "0000-00-00") {
+										$tanggal_jahit = $sq->tanggal_pelaksanaan_jahit;
+									}
+							}
+							$ambil_fa_potong = $this->fa->ambilIDOrder_fa_potong($id_order)->result();
+								foreach($ambil_fa_potong as $sq) {
+									if($sq->tanggal_pelaksanaan_fa_potong != "0000-00-00") {
+										$tanggal_fa_potong = $sq->tanggal_pelaksanaan_fa_potong;
+									}
+							}
+							$ambil_sub = $this->fa->ambilIDOrder_sub($id_order)->result();
+								foreach($ambil_sub as $sq) {
+									if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+										$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+									}
+							}
+							$ambil_klemseng = $this->fa->ambilIDOrder_klemseng($id_order)->result();
+								foreach($ambil_klemseng as $sq) {
+									if($sq->tanggal_pelaksanaan_klemseng != "0000-00-00") {
+										$tanggal_klemseng = $sq->tanggal_pelaksanaan_klemseng;
+									}
+							}
+							$ambil_spiral = $this->fa->ambilIDOrder_spiral($id_order)->result();
+								foreach($ambil_spiral as $sq) {
+									if($sq->tanggal_pelaksanaan_spiral != "0000-00-00") {
+										$tanggal_spiral = $sq->tanggal_pelaksanaan_spiral;
+									}
+							}
+
+
+	$data['tanggal_binding'] = $tanggal_binding;
+	$data['tanggal_hardcover'] = $tanggal_hardcover;
+	$data['tanggal_jahit'] = $tanggal_jahit;
+	$data['tanggal_fa_potong'] = $tanggal_fa_potong;
+	$data['tanggal_sub'] = $tanggal_sub;
+	$data['tanggal_klemseng'] = $tanggal_klemseng;
+	$data['tanggal_spiral'] = $tanggal_spiral;
 
 		$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-hardcover',$data);
 }
@@ -763,6 +1019,160 @@ public function proses_fa_kalender()
 		if(isset($_POST['edit'])){							
 			$inputan = $this->input->post(null, TRUE);
 
+			
+			// prosess ubah status umum
+						if($inputan["so_status"] == "cetak" || $inputan["so_status"] == "finishing proses" || $inputan["so_status"] == "finishing akhir" || $inputan["so_status"] == "quality control"){
+												$jumlah_mesin = 0;
+												$jumlah_selesai = 0;
+												$inputan["status_umum"] = "";
+											
+												if($inputan["tanggal_pelaksanaan_binding"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_binding"] == "binding"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+
+												if($inputan["tanggal_pelaksanaan_hardcover"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_hardcover"] == "hardcover"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_jahit"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_jahit"] == "jahit"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_fa_potong"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_fa_potong"] == "fa potong"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_sub"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_sub"] == "sub"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_klemseng"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_klemseng"] == "klemseng"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_spiral"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_spiral"] == "spiral"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												
+												// deklarasi status umum baru
+												if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+													$inputan["status_umum"] = "finishing akhir";
+												}else{
+													
+													$this->load->model('FinishingProses_m');
+													//    ambil tanggal tiap mesin finishing proses
+																		$tanggal_laminasi = "";
+																		$tanggal_mbo = "";
+																		$tanggal_shoe = "";
+																		$tanggal_susun = "";
+																		$tanggal_sub = "";
+
+																		$status_laminasi = "";
+																		$status_mbo = "";
+																		$status_shoe = "";
+																		$status_susun = "";
+																		$status_sub = "";
+																								$ambil_laminasi = $this->FinishingProses_m->ambilIDOrder($inputan["id_order"])->result();
+																									foreach($ambil_laminasi as $sq) {
+																										if($sq->tanggal_pelaksanaan_laminasi != "0000-00-00") {
+																											$tanggal_laminasi = $sq->tanggal_pelaksanaan_laminasi;
+																										}
+																										$status_laminasi = $sq->status_laminasi;
+																										
+																								}
+																								$ambil_mbo = $this->FinishingProses_m->ambilIDOrder_mbo($inputan["id_order"])->result();
+																									foreach($ambil_mbo as $sq) {
+																										if($sq->tanggal_pelaksanaan_mbo != "0000-00-00") {
+																											$tanggal_mbo = $sq->tanggal_pelaksanaan_mbo;
+																										}
+																										$status_mbo = $sq->status_mbo;
+																								}
+																								$ambil_shoe = $this->FinishingProses_m->ambilIDOrder_shoe($inputan["id_order"])->result();
+																									foreach($ambil_shoe as $sq) {
+																										if($sq->tanggal_pelaksanaan_shoe != "0000-00-00") {
+																											$tanggal_shoe = $sq->tanggal_pelaksanaan_shoe;
+																										}
+																										$status_shoe = $sq->status_shoe;
+																								}
+																								$ambil_susun = $this->FinishingProses_m->ambilIDOrder_susun($inputan["id_order"])->result();
+																									foreach($ambil_susun as $sq) {
+																										if($sq->tanggal_pelaksanaan_susun != "0000-00-00") {
+																											$tanggal_susun = $sq->tanggal_pelaksanaan_susun;
+																										}
+																										$status_susun = $sq->status_susun;
+																								}
+																								$ambil_sub = $this->FinishingProses_m->ambilIDOrder_sub($inputan["id_order"])->result();
+																									foreach($ambil_sub as $sq) {
+																										if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+																											$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+																										}
+																										$status_sub = $sq->status_sub;
+																								}
+																		
+													// prosess ubah status umum																	
+																							$jumlah_mesin = 0;
+																							$jumlah_selesai = 0;																							
+																						
+																							if($tanggal_laminasi !=""){
+																									$jumlah_mesin +=1;
+																									if($status_laminasi == "laminasi"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+
+																							if($tanggal_mbo !=""){
+																									$jumlah_mesin +=1;
+																									if($status_mbo == "mbo"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_shoe !=""){
+																									$jumlah_mesin +=1;
+																									if($status_shoe == "shoe"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_susun !=""){
+																									$jumlah_mesin +=1;
+																									if($status_susun == "susun"){           
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_sub !=""){
+																									$jumlah_mesin +=1;
+																									if($status_sub == "sub"){          
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							
+
+																							if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+																								$inputan["status_umum"] = "finishing proses";
+																							}
+																							else $inputan["status_umum"] = "cetak";																							
+																	   
+
+												}
+												$this->fa->status_umum($inputan);
+						}	     
+
+
 			$this->fa->proses_edit_hardcover($inputan);				
 				echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
 				echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_hardcover')."'; </script>"; 
@@ -840,6 +1250,68 @@ public function edit_jadwal_fa_jahit($id)
 			$data['total_2'] = $total_2;
 			$data['total_3'] = $total_3;
 			$data['total_4'] = $total_4;
+
+			
+		/////////    ambil tanggal tiap mesin finishing akhir
+						$tanggal_binding = "";
+						$tanggal_hardcover = "";
+						$tanggal_jahit = "";
+						$tanggal_fa_potong = "";
+						$tanggal_sub = "";
+						$tanggal_klemseng = "";
+						$tanggal_spiral = "";
+
+							$ambil_binding = $this->fa->ambilIDOrder_binding($id_order)->result();
+								foreach($ambil_binding as $sq) {
+									if($sq->tanggal_pelaksanaan_binding != "0000-00-00") {
+										$tanggal_binding = $sq->tanggal_pelaksanaan_binding;
+									}
+							}
+							$ambil_hardcover = $this->fa->ambilIDOrder_hardcover($id_order)->result();
+								foreach($ambil_hardcover as $sq) {
+									if($sq->tanggal_pelaksanaan_hardcover != "0000-00-00") {
+										$tanggal_hardcover = $sq->tanggal_pelaksanaan_hardcover;
+									}
+							}
+							$ambil_jahit = $this->fa->ambilIDOrder_jahit($id_order)->result();
+								foreach($ambil_jahit as $sq) {
+									if($sq->tanggal_pelaksanaan_jahit != "0000-00-00") {
+										$tanggal_jahit = $sq->tanggal_pelaksanaan_jahit;
+									}
+							}
+							$ambil_fa_potong = $this->fa->ambilIDOrder_fa_potong($id_order)->result();
+								foreach($ambil_fa_potong as $sq) {
+									if($sq->tanggal_pelaksanaan_fa_potong != "0000-00-00") {
+										$tanggal_fa_potong = $sq->tanggal_pelaksanaan_fa_potong;
+									}
+							}
+							$ambil_sub = $this->fa->ambilIDOrder_sub($id_order)->result();
+								foreach($ambil_sub as $sq) {
+									if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+										$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+									}
+							}
+							$ambil_klemseng = $this->fa->ambilIDOrder_klemseng($id_order)->result();
+								foreach($ambil_klemseng as $sq) {
+									if($sq->tanggal_pelaksanaan_klemseng != "0000-00-00") {
+										$tanggal_klemseng = $sq->tanggal_pelaksanaan_klemseng;
+									}
+							}
+							$ambil_spiral = $this->fa->ambilIDOrder_spiral($id_order)->result();
+								foreach($ambil_spiral as $sq) {
+									if($sq->tanggal_pelaksanaan_spiral != "0000-00-00") {
+										$tanggal_spiral = $sq->tanggal_pelaksanaan_spiral;
+									}
+							}
+
+
+	$data['tanggal_binding'] = $tanggal_binding;
+	$data['tanggal_hardcover'] = $tanggal_hardcover;
+	$data['tanggal_jahit'] = $tanggal_jahit;
+	$data['tanggal_fa_potong'] = $tanggal_fa_potong;
+	$data['tanggal_sub'] = $tanggal_sub;
+	$data['tanggal_klemseng'] = $tanggal_klemseng;
+	$data['tanggal_spiral'] = $tanggal_spiral;
 
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-jahit',$data);
 }
@@ -921,6 +1393,160 @@ public function proses_jahit()
 {				
 	if(isset($_POST['edit'])){							
 		$inputan = $this->input->post(null, TRUE);
+		
+		
+			// prosess ubah status umum
+			if($inputan["so_status"] == "cetak" || $inputan["so_status"] == "finishing proses" || $inputan["so_status"] == "finishing akhir" || $inputan["so_status"] == "quality control"){
+				$jumlah_mesin = 0;
+				$jumlah_selesai = 0;
+				$inputan["status_umum"] = "";
+			
+				if($inputan["tanggal_pelaksanaan_binding"] !=""){
+						$jumlah_mesin +=1;
+						if($inputan["status_binding"] == "binding"){            
+							$jumlah_selesai +=1;
+						}                      
+				}
+
+				if($inputan["tanggal_pelaksanaan_hardcover"] !=""){
+						$jumlah_mesin +=1;
+						if($inputan["status_hardcover"] == "hardcover"){            
+							$jumlah_selesai +=1;
+						}                      
+				}
+				if($inputan["tanggal_pelaksanaan_jahit"] !=""){
+						$jumlah_mesin +=1;
+						if($inputan["status_jahit"] == "jahit"){            
+							$jumlah_selesai +=1;
+						}                      
+				}
+				if($inputan["tanggal_pelaksanaan_fa_potong"] !=""){
+						$jumlah_mesin +=1;
+						if($inputan["status_fa_potong"] == "fa potong"){            
+							$jumlah_selesai +=1;
+						}                      
+				}
+				if($inputan["tanggal_pelaksanaan_sub"] !=""){
+						$jumlah_mesin +=1;
+						if($inputan["status_sub"] == "sub"){            
+							$jumlah_selesai +=1;
+						}                      
+				}
+				if($inputan["tanggal_pelaksanaan_klemseng"] !=""){
+						$jumlah_mesin +=1;
+						if($inputan["status_klemseng"] == "klemseng"){            
+							$jumlah_selesai +=1;
+						}                      
+				}
+				if($inputan["tanggal_pelaksanaan_spiral"] !=""){
+						$jumlah_mesin +=1;
+						if($inputan["status_spiral"] == "spiral"){            
+							$jumlah_selesai +=1;
+						}                      
+				}
+				
+				// deklarasi status umum baru
+				if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+					$inputan["status_umum"] = "finishing akhir";
+				}else{
+					
+					$this->load->model('FinishingProses_m');
+					//    ambil tanggal tiap mesin finishing proses
+										$tanggal_laminasi = "";
+										$tanggal_mbo = "";
+										$tanggal_shoe = "";
+										$tanggal_susun = "";
+										$tanggal_sub = "";
+
+										$status_laminasi = "";
+										$status_mbo = "";
+										$status_shoe = "";
+										$status_susun = "";
+										$status_sub = "";
+																$ambil_laminasi = $this->FinishingProses_m->ambilIDOrder($inputan["id_order"])->result();
+																	foreach($ambil_laminasi as $sq) {
+																		if($sq->tanggal_pelaksanaan_laminasi != "0000-00-00") {
+																			$tanggal_laminasi = $sq->tanggal_pelaksanaan_laminasi;
+																		}
+																		$status_laminasi = $sq->status_laminasi;
+																		
+																}
+																$ambil_mbo = $this->FinishingProses_m->ambilIDOrder_mbo($inputan["id_order"])->result();
+																	foreach($ambil_mbo as $sq) {
+																		if($sq->tanggal_pelaksanaan_mbo != "0000-00-00") {
+																			$tanggal_mbo = $sq->tanggal_pelaksanaan_mbo;
+																		}
+																		$status_mbo = $sq->status_mbo;
+																}
+																$ambil_shoe = $this->FinishingProses_m->ambilIDOrder_shoe($inputan["id_order"])->result();
+																	foreach($ambil_shoe as $sq) {
+																		if($sq->tanggal_pelaksanaan_shoe != "0000-00-00") {
+																			$tanggal_shoe = $sq->tanggal_pelaksanaan_shoe;
+																		}
+																		$status_shoe = $sq->status_shoe;
+																}
+																$ambil_susun = $this->FinishingProses_m->ambilIDOrder_susun($inputan["id_order"])->result();
+																	foreach($ambil_susun as $sq) {
+																		if($sq->tanggal_pelaksanaan_susun != "0000-00-00") {
+																			$tanggal_susun = $sq->tanggal_pelaksanaan_susun;
+																		}
+																		$status_susun = $sq->status_susun;
+																}
+																$ambil_sub = $this->FinishingProses_m->ambilIDOrder_sub($inputan["id_order"])->result();
+																	foreach($ambil_sub as $sq) {
+																		if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+																			$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+																		}
+																		$status_sub = $sq->status_sub;
+																}
+										
+					// prosess ubah status umum																	
+															$jumlah_mesin = 0;
+															$jumlah_selesai = 0;																							
+														
+															if($tanggal_laminasi !=""){
+																	$jumlah_mesin +=1;
+																	if($status_laminasi == "laminasi"){            
+																		$jumlah_selesai +=1;
+																	}                      
+															}
+
+															if($tanggal_mbo !=""){
+																	$jumlah_mesin +=1;
+																	if($status_mbo == "mbo"){            
+																		$jumlah_selesai +=1;
+																	}                      
+															}
+															if($tanggal_shoe !=""){
+																	$jumlah_mesin +=1;
+																	if($status_shoe == "shoe"){            
+																		$jumlah_selesai +=1;
+																	}                      
+															}
+															if($tanggal_susun !=""){
+																	$jumlah_mesin +=1;
+																	if($status_susun == "susun"){           
+																		$jumlah_selesai +=1;
+																	}                      
+															}
+															if($tanggal_sub !=""){
+																	$jumlah_mesin +=1;
+																	if($status_sub == "sub"){          
+																		$jumlah_selesai +=1;
+																	}                      
+															}
+															
+
+															if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+																$inputan["status_umum"] = "finishing proses";
+															}
+															else $inputan["status_umum"] = "cetak";																							
+									   
+
+				}
+				$this->fa->status_umum($inputan);
+}	     
+
 
 		$this->fa->proses_edit_jahit($inputan);				
 			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
@@ -999,6 +1625,68 @@ public function edit_jadwal_fa_potong($id)
 			$data['total_2'] = $total_2;
 			$data['total_3'] = $total_3;
 			$data['total_4'] = $total_4;
+
+			
+		/////////    ambil tanggal tiap mesin finishing akhir
+						$tanggal_binding = "";
+						$tanggal_hardcover = "";
+						$tanggal_jahit = "";
+						$tanggal_fa_potong = "";
+						$tanggal_sub = "";
+						$tanggal_klemseng = "";
+						$tanggal_spiral = "";
+
+							$ambil_binding = $this->fa->ambilIDOrder_binding($id_order)->result();
+								foreach($ambil_binding as $sq) {
+									if($sq->tanggal_pelaksanaan_binding != "0000-00-00") {
+										$tanggal_binding = $sq->tanggal_pelaksanaan_binding;
+									}
+							}
+							$ambil_hardcover = $this->fa->ambilIDOrder_hardcover($id_order)->result();
+								foreach($ambil_hardcover as $sq) {
+									if($sq->tanggal_pelaksanaan_hardcover != "0000-00-00") {
+										$tanggal_hardcover = $sq->tanggal_pelaksanaan_hardcover;
+									}
+							}
+							$ambil_jahit = $this->fa->ambilIDOrder_jahit($id_order)->result();
+								foreach($ambil_jahit as $sq) {
+									if($sq->tanggal_pelaksanaan_jahit != "0000-00-00") {
+										$tanggal_jahit = $sq->tanggal_pelaksanaan_jahit;
+									}
+							}
+							$ambil_fa_potong = $this->fa->ambilIDOrder_fa_potong($id_order)->result();
+								foreach($ambil_fa_potong as $sq) {
+									if($sq->tanggal_pelaksanaan_fa_potong != "0000-00-00") {
+										$tanggal_fa_potong = $sq->tanggal_pelaksanaan_fa_potong;
+									}
+							}
+							$ambil_sub = $this->fa->ambilIDOrder_sub($id_order)->result();
+								foreach($ambil_sub as $sq) {
+									if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+										$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+									}
+							}
+							$ambil_klemseng = $this->fa->ambilIDOrder_klemseng($id_order)->result();
+								foreach($ambil_klemseng as $sq) {
+									if($sq->tanggal_pelaksanaan_klemseng != "0000-00-00") {
+										$tanggal_klemseng = $sq->tanggal_pelaksanaan_klemseng;
+									}
+							}
+							$ambil_spiral = $this->fa->ambilIDOrder_spiral($id_order)->result();
+								foreach($ambil_spiral as $sq) {
+									if($sq->tanggal_pelaksanaan_spiral != "0000-00-00") {
+										$tanggal_spiral = $sq->tanggal_pelaksanaan_spiral;
+									}
+							}
+
+
+	$data['tanggal_binding'] = $tanggal_binding;
+	$data['tanggal_hardcover'] = $tanggal_hardcover;
+	$data['tanggal_jahit'] = $tanggal_jahit;
+	$data['tanggal_fa_potong'] = $tanggal_fa_potong;
+	$data['tanggal_sub'] = $tanggal_sub;
+	$data['tanggal_klemseng'] = $tanggal_klemseng;
+	$data['tanggal_spiral'] = $tanggal_spiral;
 
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-potong',$data);
 }
@@ -1081,6 +1769,160 @@ public function proses_fa_potong()
 	if(isset($_POST['edit'])){							
 		$inputan = $this->input->post(null, TRUE);
 
+		
+			// prosess ubah status umum
+						if($inputan["so_status"] == "cetak" || $inputan["so_status"] == "finishing proses" || $inputan["so_status"] == "finishing akhir" || $inputan["so_status"] == "quality control"){
+												$jumlah_mesin = 0;
+												$jumlah_selesai = 0;
+												$inputan["status_umum"] = "";
+											
+												if($inputan["tanggal_pelaksanaan_binding"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_binding"] == "binding"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+
+												if($inputan["tanggal_pelaksanaan_hardcover"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_hardcover"] == "hardcover"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_jahit"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_jahit"] == "jahit"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_fa_potong"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_fa_potong"] == "fa potong"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_sub"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_sub"] == "sub"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_klemseng"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_klemseng"] == "klemseng"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_spiral"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_spiral"] == "spiral"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												
+												// deklarasi status umum baru
+												if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+													$inputan["status_umum"] = "finishing akhir";
+												}else{
+													
+													$this->load->model('FinishingProses_m');
+													//    ambil tanggal tiap mesin finishing proses
+																		$tanggal_laminasi = "";
+																		$tanggal_mbo = "";
+																		$tanggal_shoe = "";
+																		$tanggal_susun = "";
+																		$tanggal_sub = "";
+
+																		$status_laminasi = "";
+																		$status_mbo = "";
+																		$status_shoe = "";
+																		$status_susun = "";
+																		$status_sub = "";
+																								$ambil_laminasi = $this->FinishingProses_m->ambilIDOrder($inputan["id_order"])->result();
+																									foreach($ambil_laminasi as $sq) {
+																										if($sq->tanggal_pelaksanaan_laminasi != "0000-00-00") {
+																											$tanggal_laminasi = $sq->tanggal_pelaksanaan_laminasi;
+																										}
+																										$status_laminasi = $sq->status_laminasi;
+																										
+																								}
+																								$ambil_mbo = $this->FinishingProses_m->ambilIDOrder_mbo($inputan["id_order"])->result();
+																									foreach($ambil_mbo as $sq) {
+																										if($sq->tanggal_pelaksanaan_mbo != "0000-00-00") {
+																											$tanggal_mbo = $sq->tanggal_pelaksanaan_mbo;
+																										}
+																										$status_mbo = $sq->status_mbo;
+																								}
+																								$ambil_shoe = $this->FinishingProses_m->ambilIDOrder_shoe($inputan["id_order"])->result();
+																									foreach($ambil_shoe as $sq) {
+																										if($sq->tanggal_pelaksanaan_shoe != "0000-00-00") {
+																											$tanggal_shoe = $sq->tanggal_pelaksanaan_shoe;
+																										}
+																										$status_shoe = $sq->status_shoe;
+																								}
+																								$ambil_susun = $this->FinishingProses_m->ambilIDOrder_susun($inputan["id_order"])->result();
+																									foreach($ambil_susun as $sq) {
+																										if($sq->tanggal_pelaksanaan_susun != "0000-00-00") {
+																											$tanggal_susun = $sq->tanggal_pelaksanaan_susun;
+																										}
+																										$status_susun = $sq->status_susun;
+																								}
+																								$ambil_sub = $this->FinishingProses_m->ambilIDOrder_sub($inputan["id_order"])->result();
+																									foreach($ambil_sub as $sq) {
+																										if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+																											$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+																										}
+																										$status_sub = $sq->status_sub;
+																								}
+																		
+													// prosess ubah status umum																	
+																							$jumlah_mesin = 0;
+																							$jumlah_selesai = 0;																							
+																						
+																							if($tanggal_laminasi !=""){
+																									$jumlah_mesin +=1;
+																									if($status_laminasi == "laminasi"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+
+																							if($tanggal_mbo !=""){
+																									$jumlah_mesin +=1;
+																									if($status_mbo == "mbo"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_shoe !=""){
+																									$jumlah_mesin +=1;
+																									if($status_shoe == "shoe"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_susun !=""){
+																									$jumlah_mesin +=1;
+																									if($status_susun == "susun"){           
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_sub !=""){
+																									$jumlah_mesin +=1;
+																									if($status_sub == "sub"){          
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							
+
+																							if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+																								$inputan["status_umum"] = "finishing proses";
+																							}
+																							else $inputan["status_umum"] = "cetak";																							
+																	   
+
+												}
+												$this->fa->status_umum($inputan);
+						}	     
+
+
 		$this->fa->proses_edit_fa_potong($inputan);				
 			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
 			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_potong')."'; </script>"; 
@@ -1148,7 +1990,69 @@ public function edit_jadwal_fa_sub($id)
 	
 			$data['jadwal_max'] = $jadwal_max;
 			$data['tampung_jadwal'] = $tampung_jadwal;
-			$data['total_1'] = $total_1;		
+			$data['total_1'] = $total_1;	
+			
+			
+		/////////    ambil tanggal tiap mesin finishing akhir
+						$tanggal_binding = "";
+						$tanggal_hardcover = "";
+						$tanggal_jahit = "";
+						$tanggal_fa_potong = "";
+						$tanggal_sub = "";
+						$tanggal_klemseng = "";
+						$tanggal_spiral = "";
+
+							$ambil_binding = $this->fa->ambilIDOrder_binding($id_order)->result();
+								foreach($ambil_binding as $sq) {
+									if($sq->tanggal_pelaksanaan_binding != "0000-00-00") {
+										$tanggal_binding = $sq->tanggal_pelaksanaan_binding;
+									}
+							}
+							$ambil_hardcover = $this->fa->ambilIDOrder_hardcover($id_order)->result();
+								foreach($ambil_hardcover as $sq) {
+									if($sq->tanggal_pelaksanaan_hardcover != "0000-00-00") {
+										$tanggal_hardcover = $sq->tanggal_pelaksanaan_hardcover;
+									}
+							}
+							$ambil_jahit = $this->fa->ambilIDOrder_jahit($id_order)->result();
+								foreach($ambil_jahit as $sq) {
+									if($sq->tanggal_pelaksanaan_jahit != "0000-00-00") {
+										$tanggal_jahit = $sq->tanggal_pelaksanaan_jahit;
+									}
+							}
+							$ambil_fa_potong = $this->fa->ambilIDOrder_fa_potong($id_order)->result();
+								foreach($ambil_fa_potong as $sq) {
+									if($sq->tanggal_pelaksanaan_fa_potong != "0000-00-00") {
+										$tanggal_fa_potong = $sq->tanggal_pelaksanaan_fa_potong;
+									}
+							}
+							$ambil_sub = $this->fa->ambilIDOrder_sub($id_order)->result();
+								foreach($ambil_sub as $sq) {
+									if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+										$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+									}
+							}
+							$ambil_klemseng = $this->fa->ambilIDOrder_klemseng($id_order)->result();
+								foreach($ambil_klemseng as $sq) {
+									if($sq->tanggal_pelaksanaan_klemseng != "0000-00-00") {
+										$tanggal_klemseng = $sq->tanggal_pelaksanaan_klemseng;
+									}
+							}
+							$ambil_spiral = $this->fa->ambilIDOrder_spiral($id_order)->result();
+								foreach($ambil_spiral as $sq) {
+									if($sq->tanggal_pelaksanaan_spiral != "0000-00-00") {
+										$tanggal_spiral = $sq->tanggal_pelaksanaan_spiral;
+									}
+							}
+
+
+	$data['tanggal_binding'] = $tanggal_binding;
+	$data['tanggal_hardcover'] = $tanggal_hardcover;
+	$data['tanggal_jahit'] = $tanggal_jahit;
+	$data['tanggal_fa_potong'] = $tanggal_fa_potong;
+	$data['tanggal_sub'] = $tanggal_sub;
+	$data['tanggal_klemseng'] = $tanggal_klemseng;
+	$data['tanggal_spiral'] = $tanggal_spiral;
 
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-sub',$data);
 }
@@ -1212,6 +2116,160 @@ public function proses_sub()
 {				
 	if(isset($_POST['edit'])){							
 		$inputan = $this->input->post(null, TRUE);
+
+		
+			// prosess ubah status umum
+						if($inputan["so_status"] == "cetak" || $inputan["so_status"] == "finishing proses" || $inputan["so_status"] == "finishing akhir" || $inputan["so_status"] == "quality control"){
+												$jumlah_mesin = 0;
+												$jumlah_selesai = 0;
+												$inputan["status_umum"] = "";
+											
+												if($inputan["tanggal_pelaksanaan_binding"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_binding"] == "binding"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+
+												if($inputan["tanggal_pelaksanaan_hardcover"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_hardcover"] == "hardcover"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_jahit"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_jahit"] == "jahit"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_fa_potong"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_fa_potong"] == "fa potong"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_sub"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_sub"] == "sub"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_klemseng"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_klemseng"] == "klemseng"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_spiral"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_spiral"] == "spiral"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												
+												// deklarasi status umum baru
+												if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+													$inputan["status_umum"] = "finishing akhir";
+												}else{
+													
+													$this->load->model('FinishingProses_m');
+													//    ambil tanggal tiap mesin finishing proses
+																		$tanggal_laminasi = "";
+																		$tanggal_mbo = "";
+																		$tanggal_shoe = "";
+																		$tanggal_susun = "";
+																		$tanggal_sub = "";
+
+																		$status_laminasi = "";
+																		$status_mbo = "";
+																		$status_shoe = "";
+																		$status_susun = "";
+																		$status_sub = "";
+																								$ambil_laminasi = $this->FinishingProses_m->ambilIDOrder($inputan["id_order"])->result();
+																									foreach($ambil_laminasi as $sq) {
+																										if($sq->tanggal_pelaksanaan_laminasi != "0000-00-00") {
+																											$tanggal_laminasi = $sq->tanggal_pelaksanaan_laminasi;
+																										}
+																										$status_laminasi = $sq->status_laminasi;
+																										
+																								}
+																								$ambil_mbo = $this->FinishingProses_m->ambilIDOrder_mbo($inputan["id_order"])->result();
+																									foreach($ambil_mbo as $sq) {
+																										if($sq->tanggal_pelaksanaan_mbo != "0000-00-00") {
+																											$tanggal_mbo = $sq->tanggal_pelaksanaan_mbo;
+																										}
+																										$status_mbo = $sq->status_mbo;
+																								}
+																								$ambil_shoe = $this->FinishingProses_m->ambilIDOrder_shoe($inputan["id_order"])->result();
+																									foreach($ambil_shoe as $sq) {
+																										if($sq->tanggal_pelaksanaan_shoe != "0000-00-00") {
+																											$tanggal_shoe = $sq->tanggal_pelaksanaan_shoe;
+																										}
+																										$status_shoe = $sq->status_shoe;
+																								}
+																								$ambil_susun = $this->FinishingProses_m->ambilIDOrder_susun($inputan["id_order"])->result();
+																									foreach($ambil_susun as $sq) {
+																										if($sq->tanggal_pelaksanaan_susun != "0000-00-00") {
+																											$tanggal_susun = $sq->tanggal_pelaksanaan_susun;
+																										}
+																										$status_susun = $sq->status_susun;
+																								}
+																								$ambil_sub = $this->FinishingProses_m->ambilIDOrder_sub($inputan["id_order"])->result();
+																									foreach($ambil_sub as $sq) {
+																										if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+																											$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+																										}
+																										$status_sub = $sq->status_sub;
+																								}
+																		
+													// prosess ubah status umum																	
+																							$jumlah_mesin = 0;
+																							$jumlah_selesai = 0;																							
+																						
+																							if($tanggal_laminasi !=""){
+																									$jumlah_mesin +=1;
+																									if($status_laminasi == "laminasi"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+
+																							if($tanggal_mbo !=""){
+																									$jumlah_mesin +=1;
+																									if($status_mbo == "mbo"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_shoe !=""){
+																									$jumlah_mesin +=1;
+																									if($status_shoe == "shoe"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_susun !=""){
+																									$jumlah_mesin +=1;
+																									if($status_susun == "susun"){           
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_sub !=""){
+																									$jumlah_mesin +=1;
+																									if($status_sub == "sub"){          
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							
+
+																							if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+																								$inputan["status_umum"] = "finishing proses";
+																							}
+																							else $inputan["status_umum"] = "cetak";																							
+																	   
+
+												}
+												$this->fa->status_umum($inputan);
+						}	     
+
 
 		$this->fa->proses_edit_sub($inputan);				
 			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
@@ -1291,6 +2349,68 @@ public function edit_jadwal_fa_spiral($id)
 			$data['total_2'] = $total_2;
 			$data['total_3'] = $total_3;
 			$data['total_4'] = $total_4;
+
+			
+		/////////    ambil tanggal tiap mesin finishing akhir
+						$tanggal_binding = "";
+						$tanggal_hardcover = "";
+						$tanggal_jahit = "";
+						$tanggal_fa_potong = "";
+						$tanggal_sub = "";
+						$tanggal_klemseng = "";
+						$tanggal_spiral = "";
+
+							$ambil_binding = $this->fa->ambilIDOrder_binding($id_order)->result();
+								foreach($ambil_binding as $sq) {
+									if($sq->tanggal_pelaksanaan_binding != "0000-00-00") {
+										$tanggal_binding = $sq->tanggal_pelaksanaan_binding;
+									}
+							}
+							$ambil_hardcover = $this->fa->ambilIDOrder_hardcover($id_order)->result();
+								foreach($ambil_hardcover as $sq) {
+									if($sq->tanggal_pelaksanaan_hardcover != "0000-00-00") {
+										$tanggal_hardcover = $sq->tanggal_pelaksanaan_hardcover;
+									}
+							}
+							$ambil_jahit = $this->fa->ambilIDOrder_jahit($id_order)->result();
+								foreach($ambil_jahit as $sq) {
+									if($sq->tanggal_pelaksanaan_jahit != "0000-00-00") {
+										$tanggal_jahit = $sq->tanggal_pelaksanaan_jahit;
+									}
+							}
+							$ambil_fa_potong = $this->fa->ambilIDOrder_fa_potong($id_order)->result();
+								foreach($ambil_fa_potong as $sq) {
+									if($sq->tanggal_pelaksanaan_fa_potong != "0000-00-00") {
+										$tanggal_fa_potong = $sq->tanggal_pelaksanaan_fa_potong;
+									}
+							}
+							$ambil_sub = $this->fa->ambilIDOrder_sub($id_order)->result();
+								foreach($ambil_sub as $sq) {
+									if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+										$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+									}
+							}
+							$ambil_klemseng = $this->fa->ambilIDOrder_klemseng($id_order)->result();
+								foreach($ambil_klemseng as $sq) {
+									if($sq->tanggal_pelaksanaan_klemseng != "0000-00-00") {
+										$tanggal_klemseng = $sq->tanggal_pelaksanaan_klemseng;
+									}
+							}
+							$ambil_spiral = $this->fa->ambilIDOrder_spiral($id_order)->result();
+								foreach($ambil_spiral as $sq) {
+									if($sq->tanggal_pelaksanaan_spiral != "0000-00-00") {
+										$tanggal_spiral = $sq->tanggal_pelaksanaan_spiral;
+									}
+							}
+
+
+	$data['tanggal_binding'] = $tanggal_binding;
+	$data['tanggal_hardcover'] = $tanggal_hardcover;
+	$data['tanggal_jahit'] = $tanggal_jahit;
+	$data['tanggal_fa_potong'] = $tanggal_fa_potong;
+	$data['tanggal_sub'] = $tanggal_sub;
+	$data['tanggal_klemseng'] = $tanggal_klemseng;
+	$data['tanggal_spiral'] = $tanggal_spiral;
 
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-spiral',$data);
 }
@@ -1373,6 +2493,160 @@ public function proses_spiral()
 	if(isset($_POST['edit'])){							
 		$inputan = $this->input->post(null, TRUE);
 
+		
+			// prosess ubah status umum
+						if($inputan["so_status"] == "cetak" || $inputan["so_status"] == "finishing proses" || $inputan["so_status"] == "finishing akhir" || $inputan["so_status"] == "quality control"){
+												$jumlah_mesin = 0;
+												$jumlah_selesai = 0;
+												$inputan["status_umum"] = "";
+											
+												if($inputan["tanggal_pelaksanaan_binding"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_binding"] == "binding"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+
+												if($inputan["tanggal_pelaksanaan_hardcover"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_hardcover"] == "hardcover"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_jahit"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_jahit"] == "jahit"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_fa_potong"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_fa_potong"] == "fa potong"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_sub"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_sub"] == "sub"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_klemseng"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_klemseng"] == "klemseng"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_spiral"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_spiral"] == "spiral"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												
+												// deklarasi status umum baru
+												if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+													$inputan["status_umum"] = "finishing akhir";
+												}else{
+													
+													$this->load->model('FinishingProses_m');
+													//    ambil tanggal tiap mesin finishing proses
+																		$tanggal_laminasi = "";
+																		$tanggal_mbo = "";
+																		$tanggal_shoe = "";
+																		$tanggal_susun = "";
+																		$tanggal_sub = "";
+
+																		$status_laminasi = "";
+																		$status_mbo = "";
+																		$status_shoe = "";
+																		$status_susun = "";
+																		$status_sub = "";
+																								$ambil_laminasi = $this->FinishingProses_m->ambilIDOrder($inputan["id_order"])->result();
+																									foreach($ambil_laminasi as $sq) {
+																										if($sq->tanggal_pelaksanaan_laminasi != "0000-00-00") {
+																											$tanggal_laminasi = $sq->tanggal_pelaksanaan_laminasi;
+																										}
+																										$status_laminasi = $sq->status_laminasi;
+																										
+																								}
+																								$ambil_mbo = $this->FinishingProses_m->ambilIDOrder_mbo($inputan["id_order"])->result();
+																									foreach($ambil_mbo as $sq) {
+																										if($sq->tanggal_pelaksanaan_mbo != "0000-00-00") {
+																											$tanggal_mbo = $sq->tanggal_pelaksanaan_mbo;
+																										}
+																										$status_mbo = $sq->status_mbo;
+																								}
+																								$ambil_shoe = $this->FinishingProses_m->ambilIDOrder_shoe($inputan["id_order"])->result();
+																									foreach($ambil_shoe as $sq) {
+																										if($sq->tanggal_pelaksanaan_shoe != "0000-00-00") {
+																											$tanggal_shoe = $sq->tanggal_pelaksanaan_shoe;
+																										}
+																										$status_shoe = $sq->status_shoe;
+																								}
+																								$ambil_susun = $this->FinishingProses_m->ambilIDOrder_susun($inputan["id_order"])->result();
+																									foreach($ambil_susun as $sq) {
+																										if($sq->tanggal_pelaksanaan_susun != "0000-00-00") {
+																											$tanggal_susun = $sq->tanggal_pelaksanaan_susun;
+																										}
+																										$status_susun = $sq->status_susun;
+																								}
+																								$ambil_sub = $this->FinishingProses_m->ambilIDOrder_sub($inputan["id_order"])->result();
+																									foreach($ambil_sub as $sq) {
+																										if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+																											$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+																										}
+																										$status_sub = $sq->status_sub;
+																								}
+																		
+													// prosess ubah status umum																	
+																							$jumlah_mesin = 0;
+																							$jumlah_selesai = 0;																							
+																						
+																							if($tanggal_laminasi !=""){
+																									$jumlah_mesin +=1;
+																									if($status_laminasi == "laminasi"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+
+																							if($tanggal_mbo !=""){
+																									$jumlah_mesin +=1;
+																									if($status_mbo == "mbo"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_shoe !=""){
+																									$jumlah_mesin +=1;
+																									if($status_shoe == "shoe"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_susun !=""){
+																									$jumlah_mesin +=1;
+																									if($status_susun == "susun"){           
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_sub !=""){
+																									$jumlah_mesin +=1;
+																									if($status_sub == "sub"){          
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							
+
+																							if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+																								$inputan["status_umum"] = "finishing proses";
+																							}
+																							else $inputan["status_umum"] = "cetak";																							
+																	   
+
+												}
+												$this->fa->status_umum($inputan);
+						}	     
+
+
 		$this->fa->proses_edit_spiral($inputan);				
 			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				
 			echo "<script>window.location='".site_url('finishing/FinishingAkhir/jadwal_fa_spiral')."'; </script>"; 
@@ -1451,6 +2725,68 @@ public function edit_jadwal_fa_klemseng($id)
 			$data['total_2'] = $total_2;
 			$data['total_3'] = $total_3;
 			$data['total_4'] = $total_4;
+
+			
+		/////////    ambil tanggal tiap mesin finishing akhir
+						$tanggal_binding = "";
+						$tanggal_hardcover = "";
+						$tanggal_jahit = "";
+						$tanggal_fa_potong = "";
+						$tanggal_sub = "";
+						$tanggal_klemseng = "";
+						$tanggal_spiral = "";
+
+							$ambil_binding = $this->fa->ambilIDOrder_binding($id_order)->result();
+								foreach($ambil_binding as $sq) {
+									if($sq->tanggal_pelaksanaan_binding != "0000-00-00") {
+										$tanggal_binding = $sq->tanggal_pelaksanaan_binding;
+									}
+							}
+							$ambil_hardcover = $this->fa->ambilIDOrder_hardcover($id_order)->result();
+								foreach($ambil_hardcover as $sq) {
+									if($sq->tanggal_pelaksanaan_hardcover != "0000-00-00") {
+										$tanggal_hardcover = $sq->tanggal_pelaksanaan_hardcover;
+									}
+							}
+							$ambil_jahit = $this->fa->ambilIDOrder_jahit($id_order)->result();
+								foreach($ambil_jahit as $sq) {
+									if($sq->tanggal_pelaksanaan_jahit != "0000-00-00") {
+										$tanggal_jahit = $sq->tanggal_pelaksanaan_jahit;
+									}
+							}
+							$ambil_fa_potong = $this->fa->ambilIDOrder_fa_potong($id_order)->result();
+								foreach($ambil_fa_potong as $sq) {
+									if($sq->tanggal_pelaksanaan_fa_potong != "0000-00-00") {
+										$tanggal_fa_potong = $sq->tanggal_pelaksanaan_fa_potong;
+									}
+							}
+							$ambil_sub = $this->fa->ambilIDOrder_sub($id_order)->result();
+								foreach($ambil_sub as $sq) {
+									if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+										$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+									}
+							}
+							$ambil_klemseng = $this->fa->ambilIDOrder_klemseng($id_order)->result();
+								foreach($ambil_klemseng as $sq) {
+									if($sq->tanggal_pelaksanaan_klemseng != "0000-00-00") {
+										$tanggal_klemseng = $sq->tanggal_pelaksanaan_klemseng;
+									}
+							}
+							$ambil_spiral = $this->fa->ambilIDOrder_spiral($id_order)->result();
+								foreach($ambil_spiral as $sq) {
+									if($sq->tanggal_pelaksanaan_spiral != "0000-00-00") {
+										$tanggal_spiral = $sq->tanggal_pelaksanaan_spiral;
+									}
+							}
+
+
+	$data['tanggal_binding'] = $tanggal_binding;
+	$data['tanggal_hardcover'] = $tanggal_hardcover;
+	$data['tanggal_jahit'] = $tanggal_jahit;
+	$data['tanggal_fa_potong'] = $tanggal_fa_potong;
+	$data['tanggal_sub'] = $tanggal_sub;
+	$data['tanggal_klemseng'] = $tanggal_klemseng;
+	$data['tanggal_spiral'] = $tanggal_spiral;
 
 	$this->template->load('finishing/template','finishing/finishing_akhir/edit-jadwal-fa-klemseng',$data);
 }
@@ -1532,6 +2868,160 @@ public function proses_klemseng()
 {				
 	if(isset($_POST['edit'])){							
 		$inputan = $this->input->post(null, TRUE);
+
+		
+			// prosess ubah status umum
+						if($inputan["so_status"] == "cetak" || $inputan["so_status"] == "finishing proses" || $inputan["so_status"] == "finishing akhir" || $inputan["so_status"] == "quality control"){
+												$jumlah_mesin = 0;
+												$jumlah_selesai = 0;
+												$inputan["status_umum"] = "";
+											
+												if($inputan["tanggal_pelaksanaan_binding"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_binding"] == "binding"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+
+												if($inputan["tanggal_pelaksanaan_hardcover"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_hardcover"] == "hardcover"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_jahit"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_jahit"] == "jahit"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_fa_potong"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_fa_potong"] == "fa potong"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_sub"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_sub"] == "sub"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_klemseng"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_klemseng"] == "klemseng"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												if($inputan["tanggal_pelaksanaan_spiral"] !=""){
+														$jumlah_mesin +=1;
+														if($inputan["status_spiral"] == "spiral"){            
+															$jumlah_selesai +=1;
+														}                      
+												}
+												
+												// deklarasi status umum baru
+												if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+													$inputan["status_umum"] = "finishing akhir";
+												}else{
+													
+													$this->load->model('FinishingProses_m');
+													//    ambil tanggal tiap mesin finishing proses
+																		$tanggal_laminasi = "";
+																		$tanggal_mbo = "";
+																		$tanggal_shoe = "";
+																		$tanggal_susun = "";
+																		$tanggal_sub = "";
+
+																		$status_laminasi = "";
+																		$status_mbo = "";
+																		$status_shoe = "";
+																		$status_susun = "";
+																		$status_sub = "";
+																								$ambil_laminasi = $this->FinishingProses_m->ambilIDOrder($inputan["id_order"])->result();
+																									foreach($ambil_laminasi as $sq) {
+																										if($sq->tanggal_pelaksanaan_laminasi != "0000-00-00") {
+																											$tanggal_laminasi = $sq->tanggal_pelaksanaan_laminasi;
+																										}
+																										$status_laminasi = $sq->status_laminasi;
+																										
+																								}
+																								$ambil_mbo = $this->FinishingProses_m->ambilIDOrder_mbo($inputan["id_order"])->result();
+																									foreach($ambil_mbo as $sq) {
+																										if($sq->tanggal_pelaksanaan_mbo != "0000-00-00") {
+																											$tanggal_mbo = $sq->tanggal_pelaksanaan_mbo;
+																										}
+																										$status_mbo = $sq->status_mbo;
+																								}
+																								$ambil_shoe = $this->FinishingProses_m->ambilIDOrder_shoe($inputan["id_order"])->result();
+																									foreach($ambil_shoe as $sq) {
+																										if($sq->tanggal_pelaksanaan_shoe != "0000-00-00") {
+																											$tanggal_shoe = $sq->tanggal_pelaksanaan_shoe;
+																										}
+																										$status_shoe = $sq->status_shoe;
+																								}
+																								$ambil_susun = $this->FinishingProses_m->ambilIDOrder_susun($inputan["id_order"])->result();
+																									foreach($ambil_susun as $sq) {
+																										if($sq->tanggal_pelaksanaan_susun != "0000-00-00") {
+																											$tanggal_susun = $sq->tanggal_pelaksanaan_susun;
+																										}
+																										$status_susun = $sq->status_susun;
+																								}
+																								$ambil_sub = $this->FinishingProses_m->ambilIDOrder_sub($inputan["id_order"])->result();
+																									foreach($ambil_sub as $sq) {
+																										if($sq->tanggal_pelaksanaan_sub != "0000-00-00") {
+																											$tanggal_sub = $sq->tanggal_pelaksanaan_sub;
+																										}
+																										$status_sub = $sq->status_sub;
+																								}
+																		
+													// prosess ubah status umum																	
+																							$jumlah_mesin = 0;
+																							$jumlah_selesai = 0;																							
+																						
+																							if($tanggal_laminasi !=""){
+																									$jumlah_mesin +=1;
+																									if($status_laminasi == "laminasi"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+
+																							if($tanggal_mbo !=""){
+																									$jumlah_mesin +=1;
+																									if($status_mbo == "mbo"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_shoe !=""){
+																									$jumlah_mesin +=1;
+																									if($status_shoe == "shoe"){            
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_susun !=""){
+																									$jumlah_mesin +=1;
+																									if($status_susun == "susun"){           
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							if($tanggal_sub !=""){
+																									$jumlah_mesin +=1;
+																									if($status_sub == "sub"){          
+																										$jumlah_selesai +=1;
+																									}                      
+																							}
+																							
+
+																							if($jumlah_selesai == $jumlah_mesin and $jumlah_selesai !=0){
+																								$inputan["status_umum"] = "finishing proses";
+																							}
+																							else $inputan["status_umum"] = "cetak";																							
+																	   
+
+												}
+												$this->fa->status_umum($inputan);
+						}	     
+
 
 		$this->fa->proses_edit_klemseng($inputan);				
 			echo "<script> alert('Data Berhasil Ditambahkan/Diubah'); </script>";				

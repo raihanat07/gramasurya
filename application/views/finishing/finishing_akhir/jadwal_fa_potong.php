@@ -62,7 +62,7 @@
                 <td><?= $row->oplag; ?></td>
                 <td><?= $row->hasil_1+$row->hasil_2+$row->hasil_3+$row->hasil_4; ?></td>
                 <td><?= $row->keterangan_jadwal_fa_potong; ?></td>  
-                <td><?php echo $row->status_fa_potong == "fa potong" ?  "finishing akhir" : $row->so_status?></td>                
+                <td <?php echo $row->status_fa_potong == "fa potong" ?  "style='color: red'" : "" ?>><?php echo $row->status_fa_potong == "fa potong" ?  "finishing akhir" : $row->so_status?></td>                
                 <td align="center">   
 
                 <?php if( $row->id_jadwal_fa_potong == $id_jadwal_max[$nilai] and $row->status_fa_potong != "fa potong") {?>  

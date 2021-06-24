@@ -21,6 +21,7 @@
     <form action="<?=site_url('finishing/FinishingAkhir/proses_spiral')?>" method="post">      
     <input type="text"  name="id_order"  value="<?= $row->id_order; ?>" hidden>
     <input type="text"  name="id_spiral"  value="<?= $row->id_spiral; ?>" hidden>
+    <input type="text"  name="so_status"  value="<?= $row->so_status; ?>" hidden>
 
     <input type="text"  name="status_binding"  value="<?= $row->status_binding; ?>" hidden>
     <input type="text"  name="status_hardcover"  value="<?= $row->status_hardcover; ?>" hidden>
@@ -30,13 +31,13 @@
     <input type="text"  name="status_klemseng"  value="<?= $row->status_klemseng; ?>" hidden>
     <input type="text"  name="status_spiral"  value="<?= $row->status_spiral; ?>" hidden>
 
-    <input type="text"  name="tanggal_pelaksanaan_binding"  value="<?= $row->tanggal_pelaksanaan_binding; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_hardcover"  value="<?= $row->tanggal_pelaksanaan_hardcover; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_jahit"  value="<?= $row->tanggal_pelaksanaan_jahit; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_fa_potong"  value="<?= $row->tanggal_pelaksanaan_fa_potong; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_sub"  value="<?= $row->tanggal_pelaksanaan_sub; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_klemseng"  value="<?= $row->tanggal_pelaksanaan_klemseng; ?>" hidden>
-    <input type="text"  name="tanggal_pelaksanaan_spiral"  value="<?= $row->tanggal_pelaksanaan_spiral; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_binding"  value="<?= $tanggal_binding; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_hardcover"  value="<?= $tanggal_hardcover; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_jahit"  value="<?= $tanggal_jahit; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_fa_potong"  value="<?= $tanggal_fa_potong; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_sub"  value="<?= $tanggal_sub; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_klemseng"  value="<?= $tanggal_klemseng; ?>" hidden>
+    <input type="text"  name="tanggal_pelaksanaan_spiral"  value="<?= $tanggal_spiral; ?>" hidden>
 
     <div class="card-body">
       <div class="card-body">

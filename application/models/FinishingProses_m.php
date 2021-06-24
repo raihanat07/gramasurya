@@ -517,6 +517,7 @@ public function ambilIDOrder($id_order)
         order.oplag as oplag, 
         order.so_status as so_status,
         
+        laminasi.status_laminasi as status_laminasi,
         laminasi.id_jadwal_laminasi as id_jadwal_laminasi,
         laminasi.id_laminasi as id_laminasi,
         laminasi.hasil_1 as hasil_1,
@@ -761,6 +762,7 @@ public function ambilIDOrder($id_order)
             
             mbo.id_jadwal_mbo as id_jadwal_mbo,
             mbo.id_mbo as id_mbo,  
+            mbo.status_mbo as status_mbo,
             mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_pelaksanaan_mbo,                            
             
             mbo.lipat_lembar_1 as lipat_lembar_1,                   
@@ -1320,6 +1322,7 @@ public function ambil_data_shoe($id)
             
             shoe.id_jadwal_shoe as id_jadwal_shoe,
             shoe.id_shoe as id_shoe,    
+            shoe.status_shoe as status_shoe,
             shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_pelaksanaan_shoe,                          
             
             shoe.lipat_lembar_1 as lipat_lembar_1,                   
@@ -1836,6 +1839,7 @@ public function proses_tambah_shoe($data)
                 order.oplag as oplag, 
                 order.so_status as so_status,
                 
+                susun.status_susun as status_susun,
                 susun.id_jadwal_susun as id_jadwal_susun,
                 susun.id_susun as id_susun,
                 susun.hasil_1 as hasil_1,
@@ -2023,6 +2027,7 @@ public function ambilIDOrder_sub($id_order)
         order.oplag as oplag, 
         order.so_status as so_status,
         
+        sub_proses.status_sub as status_sub,
         sub_proses.id_jadwal_sub as id_jadwal_sub,
         sub_proses.id_sub as id_sub,
         sub_proses.hasil_1 as hasil_1,
