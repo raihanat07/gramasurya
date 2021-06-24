@@ -54,7 +54,7 @@
             <div class="col-md-1"></div>
             <div class="col">
               <div class="card">
-                <a href="<?=site_url()?>cetak/JadwalMesin/display_jm" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
+                <a href="<?=site_url()?>cetak/JadwalMesin/jadwal_102a" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
                   <h3>Mesin 102A</h3>
                 </a>
               </div>
