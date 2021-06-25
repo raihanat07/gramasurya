@@ -261,7 +261,7 @@ class JadwalMesin extends CI_Controller {
 	public function edit_spk_102a($id)
 	{
 		// check_already_login_cetak();
-		$query = $this->jm->get_lihat_spk_102a($id);
+		$query = $this->jm->get_lihat_102a($id);
 		$data = array(
 			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
@@ -271,7 +271,7 @@ class JadwalMesin extends CI_Controller {
 	public function edit_spk_102b($id)
 	{
 		// check_already_login_cetak();
-		$query = $this->jm->get_lihat_spk_102b($id);
+		$query = $this->jm->get_lihat_102b($id);
 		$data = array(
 			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
@@ -281,7 +281,7 @@ class JadwalMesin extends CI_Controller {
 	public function edit_spk_tokko($id)
 	{
 		// check_already_login_cetak();
-		$query = $this->jm->get_lihat_spk_tokko($id);
+		$query = $this->jm->get_lihat_tokko($id);
 		$data = array(
 			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),

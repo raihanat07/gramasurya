@@ -2299,12 +2299,21 @@ class JadwalMesin_m extends CI_Model {
         $this->db->from('order');
         $this->db->join('mesin_102_a','mesin_102_a.id_order = order.id_order','left');
         $this->db->join('spk','spk.id_order = order.id_order','left');          
+<<<<<<< Updated upstream
         $this->db->join('finishing','finishing.id_order = order.id_order','left');  
         $this->db->join('imposisi','imposisi.id_order = order.id_order','left');         
         $this->db->join('ctcp as ct','ct.id_order = order.id_order','left'); 
         $this->db->join('kertas as ke','ke.id_order = order.id_order','left'); 
         $this->db->join('potong as po','po.id_order = order.id_order','left'); 
         $this->db->join('cetak as ce','ce.id_order = order.id_order','left');         
+=======
+        $this->db->join('finishing','finishing.id_order = order.id_order',); 
+        $this->db->join('imposisi','imposisi.id_order = order.id_order','left');  
+        $this->db->join('ctcp as ct','ct.id_order = order.id_order'); 
+        $this->db->join('kertas as ke','ke.id_order = order.id_order'); 
+        $this->db->join('potong as po','po.id_order = order.id_order'); 
+        $this->db->join('cetak as ce','ce.id_order = order.id_order');         
+>>>>>>> Stashed changes
         $this->db->where('mesin_102_a.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('id_order', 'desc');    
         $this->db->where('mesin_102_a.id_mesin_102a', $id);
