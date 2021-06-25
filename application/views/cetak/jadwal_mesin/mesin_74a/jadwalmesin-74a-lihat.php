@@ -28,7 +28,7 @@
             <div class="row">
               <div class="col-md-4">
                 <br>Tanggal Buat SPK
-                <br><label class="form-label">dari db</label>
+                <br><label class="form-label"><?= $row->tanggal_buat_spk; ?></label>
               </div>
               <div class="col-md-4">
                 <br>Tanggal Masuk
@@ -83,7 +83,7 @@
                     Cetak Mesin
                   </div>
                   <div class="col-md-6">
-                    <label>dari db</label>
+                    <label><?= $row->nama_mesin; ?></label>
                   </div>
                 </div>
                 <div class="row" style="padding-top: 5px;">
@@ -101,7 +101,12 @@
                     Jumlah Plate
                   </div>
                   <div class="col-md-6">
-                    <label>dari db</label>
+                    <label><?php if($row->jenis_cetakan == "Cover"){?> 
+                    <?=$row->total_plat_cover;?>
+                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                    <?= $row->total_plat_isi;?>
+                    <?php } ?>
+                    </label>
                   </div>
                 </div>
                 <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
@@ -110,7 +115,7 @@
                     Jumlah Cetak
                   </div>
                   <div class="col-md-6">
-                    <label>dari db</label>
+                    <label><?= $row->jumlah_cetak; ?></label>
                   </div>
                 </div>
               </div>
@@ -121,7 +126,16 @@
                     Jenis Kertas
                   </div>
                   <div class="col-md-6">
-                    <label>dari db</label>
+                    <label><?php if($row->jenis_cetakan == "Cover"){ ?>
+                  <?php echo $row->jenis_kertas_cover_1!=null && $row->jenis_kertas_cover_1!='-'? "".$row->jenis_kertas_cover_1."<br>": "" ?>
+                  <?php echo $row->jenis_kertas_cover_2!=null && $row->jenis_kertas_cover_2!='-'? "".$row->jenis_kertas_cover_2."<br>": "" ?>
+                  <?php echo $row->jenis_kertas_cover_3!=null && $row->jenis_kertas_cover_3!='-'? "".$row->jenis_kertas_cover_3."<br>": "" ?>
+                  <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                    <?php echo $row->jenis_kertas_isi_1!=null && $row->jenis_kertas_isi_1!='-'? "".$row->jenis_kertas_isi_1."<br>": "" ?>
+                    <?php echo $row->jenis_kertas_isi_2!=null && $row->jenis_kertas_isi_2!='-'? "".$row->jenis_kertas_isi_2."<br>": "" ?>
+                    <?php echo $row->jenis_kertas_isi_3!=null && $row->jenis_kertas_isi_3!='-'? "".$row->jenis_kertas_isi_3."<br>": "" ?>
+                  <?php } ?>
+                  </label>
                   </div>
                 </div>
                 <div class="row" style="padding-top: 5px;">
@@ -139,7 +153,17 @@
                     Model Potongan
                   </div>
                   <div class="col-md-6">
-                    <label>dari db</label>
+                    <label><?php if($row->jenis_cetakan == "Cover"){?> 
+                    <?php echo $row->potong_cover_1!=null? "potong 1 : ".$row->potong_cover_1."<br>": "" ?>
+                    <?php echo $row->potong_cover_2!=null? "potong 2 : ".$row->potong_cover_2."<br>": "" ?>
+                    <?php echo $row->potong_cover_3!=null? "potong 3 : ".$row->potong_cover_3."<br>": "" ?>
+                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                    <?php echo $row->potong_isi_1!=null? "potong 1 : ".$row->potong_isi_1."<br>": "" ?>
+                    <?php echo $row->potong_isi_2!=null? "potong 2 : ".$row->potong_isi_2."<br>": "" ?>
+                    <?php echo $row->potong_isi_3!=null? "potong 3 : ".$row->potong_isi_3."<br>": "" ?>
+                    <?php echo $row->potong_isi_4!=null? "potong 4 : ".$row->potong_isi_4."<br>": "" ?>
+                    <?php } ?>
+                    </label>
                   </div>
                 </div>
                 <div class="row" style="padding-top: 5px;">
@@ -148,7 +172,16 @@
                     Jumlah Kertas
                   </div>
                   <div class="col-md-6">
-                    <label>dari db</label>
+                    <label><?php if($row->jenis_cetakan == "Cover"){?> 
+                    <?php echo $row->jumlah_kertas_cover_1!=null && $row->jumlah_kertas_cover_1!='-'? " ".$row->jumlah_kertas_cover_1."<br>": "" ?>
+                    <?php echo $row->jumlah_kertas_cover_2!=null && $row->jumlah_kertas_cover_2!='-'? " ".$row->jumlah_kertas_cover_2."<br>": "" ?>
+                    <?php echo $row->jumlah_kertas_cover_3!=null && $row->jumlah_kertas_cover_3!='-'? " ".$row->jumlah_kertas_cover_3."<br>": "" ?>
+                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                      <?php echo $row->jumlah_kertas_isi_1!=null && $row->jumlah_kertas_isi_1!='-'? " ".$row->jumlah_kertas_isi_1."<br>": "" ?>
+                      <?php echo $row->jumlah_kertas_isi_2!=null && $row->jumlah_kertas_isi_2!='-'? " ".$row->jumlah_kertas_isi_2."<br>": "" ?>
+                      <?php echo $row->jumlah_kertas_isi_3!=null && $row->jumlah_kertas_isi_3!='-'? " ".$row->jumlah_kertas_isi_3."<br>": "" ?>
+                    <?php } ?>
+                    </label>
                   </div>
                 </div>
               </div>
