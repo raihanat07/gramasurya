@@ -150,6 +150,9 @@ class DisplayCetak_m extends CI_Model {
             potong.potong_isi_3 as potong_isi_3,
             
             display_cetak.id_display_cetak as id_display_cetak,
+            display_cetak.status_cetak_cover as status_cetak_cover,
+            display_cetak.status_cetak_isi as status_cetak_isi,
+            display_cetak.status_cetak as status_cetak,
             display_cetak.tanggal_cetak_cover1 as tanggal_cetak_cover1,
             display_cetak.tanggal_out_cetak_cover1 as tanggal_out_cetak_cover1,
             display_cetak.hasil_kertas_cover1 as hasil_kertas_cover1,
@@ -210,7 +213,10 @@ class DisplayCetak_m extends CI_Model {
 
     public function edit_dc($data)
 	{
-            $edit_dc = array(                                                
+            $edit_dc = array(                                           
+                'status_cetak_cover' =>$data['status_cetak_cover'],
+                'status_cetak_isi' =>$data['status_cetak_isi'],
+                'status_cetak' =>$data['status_cetak'],     
                 'tanggal_cetak_cover1' =>$data['tanggal_cetak_cover1'],
                 'tanggal_out_cetak_cover1' =>$data['tanggal_out_cetak_cover1'],
                 'hasil_kertas_cover1' =>$data['hasil_kertas_cover1'],
@@ -269,6 +275,9 @@ class DisplayCetak_m extends CI_Model {
             $tambah_dc = array(         
                 'id_order' =>$data['id_order'],                                                                       
                 'tanggal_cetak_cover1' =>$data['tanggal_cetak_cover1'],
+                'status_cetak_cover' =>$data['status_cetak_cover'],
+                'status_cetak_isi' =>$data['status_cetak_isi'],
+                'status_cetak' =>$data['status_cetak'],
                 'tanggal_out_cetak_cover1' =>$data['tanggal_out_cetak_cover1'],
                 'hasil_kertas_cover1' =>$data['hasil_kertas_cover1'],
                 'suborder_in_cetak_cover1' =>$data['suborder_in_cetak_cover1'],
