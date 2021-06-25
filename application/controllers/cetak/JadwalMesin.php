@@ -59,6 +59,28 @@ class JadwalMesin extends CI_Controller {
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102a/jadwalmesin-102a',$data);
 	}
 
+	public function jadwal_102b()
+	{
+		
+		$query = $this->jm->get_jadwal_102b();
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102b/jadwalmesin-102b',$data);
+	}
+
+	public function jadwal_tokko()
+	{
+		
+		$query = $this->jm->get_jadwal_tokko();
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_tokko/jadwalmesin-tokko',$data);
+	}
+
 	
 	public function lihat_72($id)
 	{
@@ -104,6 +126,28 @@ class JadwalMesin extends CI_Controller {
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102a/jadwalmesin-102a-lihat',$data);
 	}
 
+	public function lihat_102b($id)
+	{
+		$query = $this->jm->get_lihat_102b($id);
+		$data = array(
+			'judul' => 'Lihat Mesin 102b',
+			'jm' => $query->result(),
+		);
+		// check_already_login_cetak();
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102b/jadwalmesin-102b-lihat',$data);
+	}
+
+	public function lihat_tokko($id)
+	{
+		$query = $this->jm->get_lihat_tokko($id);
+		$data = array(
+			'judul' => 'Lihat Mesin Tokko',
+			'jm' => $query->result(),
+		);
+		// check_already_login_cetak();
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_tokko/jadwalmesin-tokko-lihat',$data);
+	}
+
 	public function edit_72($id)
 	{
 		$query = $this->jm->get_tambah_spk_72($id);
@@ -142,6 +186,26 @@ class JadwalMesin extends CI_Controller {
 			'jm' => $query->result(),
 		);
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102a/jadwalmesin-102a-edit',$data);
+	}
+
+	public function edit_102b($id)
+	{
+		$query = $this->jm->get_tambah_spk_102b($id);
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102b/jadwalmesin-102b-edit',$data);
+	}
+
+	public function edit_tokko($id)
+	{
+		$query = $this->jm->get_tambah_spk_tokko($id);
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_tokko/jadwalmesin-tokko-edit',$data);
 	}
 
 
@@ -254,6 +318,45 @@ class JadwalMesin extends CI_Controller {
 			// $this->dc->status_umum($inputan);						
 				echo "<script> alert('Data Berhasil Diubah'); </script>";		
 				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_74b')."'; </script>";
+		}	
+	}
+
+	public function edit_jadwal_102a(){
+		if(isset($_POST['edit'])){ 
+			$inputan = $this->input->post(null, TRUE);	
+			if($inputan["target_102a"] !=null){
+				$inputan["druk_102a"] = $inputan["target_102a"] * $inputan["oplag"];
+			}
+			$this->jm->edit_jm102a($inputan);							
+			// $this->dc->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Diubah'); </script>";		
+				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_102a')."'; </script>";
+		}	
+	}
+
+	public function edit_jadwal_102b(){
+		if(isset($_POST['edit'])){ 
+			$inputan = $this->input->post(null, TRUE);	
+			if($inputan["target_102b"] !=null){
+				$inputan["druk_102b"] = $inputan["target_102b"] * $inputan["oplag"];
+			}
+			$this->jm->edit_jm102b($inputan);							
+			// $this->dc->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Diubah'); </script>";		
+				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_102b')."'; </script>";
+		}	
+	}
+
+	public function edit_jadwal_tokko(){
+		if(isset($_POST['edit'])){ 
+			$inputan = $this->input->post(null, TRUE);	
+			if($inputan["target_tokko"] !=null){
+				$inputan["druk_tokko"] = $inputan["target_tokko"] * $inputan["oplag"];
+			}
+			$this->jm->edit_jmtokko($inputan);							
+			// $this->dc->status_umum($inputan);						
+				echo "<script> alert('Data Berhasil Diubah'); </script>";		
+				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_tokko')."'; </script>";
 		}	
 	}
 
