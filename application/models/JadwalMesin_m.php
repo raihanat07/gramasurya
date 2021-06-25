@@ -126,8 +126,9 @@ class JadwalMesin_m extends CI_Model {
             spk.2muka_blg as 2muka_blg,
             spk.keterangan_spk as keterangan_spk',
         );
-        $this->db->from('mesin_74_b');
-        $this->db->join('order','order.id_order = mesin_74_b.id_mesin_74b','left');
+
+        $this->db->from('order');
+        $this->db->join('mesin_74_b','order.id_order = mesin_74_b.id_order','left');
         $this->db->join('spk','spk.id_mesin_74b = mesin_74_b.id_mesin_74b','left');
         $this->db->where('mesin_74_b.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('mesin_74_b.tanggal_pelaksanaan', 'asc');      
@@ -170,8 +171,9 @@ class JadwalMesin_m extends CI_Model {
             spk.2muka_blg as 2muka_blg,
             spk.keterangan_spk as keterangan_spk',
         );
-        $this->db->from('mesin_102_a');
-        $this->db->join('order','order.id_order = mesin_102_a.id_mesin_102a','left');
+
+        $this->db->from('order');
+        $this->db->join('mesin_102_a','order.id_order = mesin_102_a.id_order','left');
         $this->db->join('spk','spk.id_mesin_102a = mesin_102_a.id_mesin_102a','left');
         $this->db->where('mesin_102_a.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('mesin_102_a.tanggal_pelaksanaan', 'asc');      
@@ -214,8 +216,8 @@ class JadwalMesin_m extends CI_Model {
             spk.2muka_blg as 2muka_blg,
             spk.keterangan_spk as keterangan_spk',
         );
-        $this->db->from('mesin_102_b');
-        $this->db->join('order','order.id_order = mesin_102_b.id_mesin_102b','left');
+        $this->db->from('order');
+        $this->db->join('mesin_102_b','order.id_order = mesin_102_b.id_order','left');
         $this->db->join('spk','spk.id_mesin_102b = mesin_102_b.id_mesin_102b','left');
         $this->db->where('mesin_102_b.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('mesin_102_b.tanggal_pelaksanaan', 'asc');      
@@ -258,9 +260,9 @@ class JadwalMesin_m extends CI_Model {
             spk.2muka_blg as 2muka_blg,
             spk.keterangan_spk as keterangan_spk',
         );
-        $this->db->from('mesin_tokko');
-        $this->db->join('order','order.id_order = mesin_tokko.id_mesin_tokko','left');
-        $this->db->join('spk','spk.id_mesin_102b = mesin_tokko.id_mesin_tokko','left');
+        $this->db->from('order');
+        $this->db->join('mesin_tokko','order.id_order = mesin_tokko.id_order','left');
+        $this->db->join('spk','spk.id_mesin_tokko = mesin_tokko.id_mesin_tokko','left');
         $this->db->where('mesin_tokko.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('mesin_tokko.tanggal_pelaksanaan', 'asc');      
         $query = $this->db->get();
