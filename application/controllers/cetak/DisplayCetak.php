@@ -85,23 +85,22 @@ class DisplayCetak extends CI_Controller {
 			if($inputan['status_cetak_cover'] !=null && $inputan['status_cetak_isi'] !=null){
 					$inputan['status_umum'] = "cetak";
 					$inputan['status_cetak'] = "cetak";
-					$this->dc->status_umum($inputan);
 			}
 			else if($inputan['status_cetak_cover'] !=null ){	
 				$inputan['status_umum'] = "cetak";	
 				$inputan['status_cetak'] = "cetak cover";
-				$this->dc->status_umum($inputan);
 
 			}
 			else if($inputan['status_cetak_isi'] !=null ){	
 				$inputan['status_umum'] = "cetak";			
 				$inputan['status_cetak'] = "cetak isi";
-				$this->dc->status_umum($inputan);
 
 			}
 			else
 				$inputan['status_cetak'] = "";
 
+			
+			$this->dc->status_umum($inputan);	
 			$this->dc->edit_dc($inputan);							
 			// $this->dc->status_umum($inputan);						
 				echo "<script> alert('Data Berhasil Diubah'); </script>";		
