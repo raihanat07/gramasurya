@@ -75,7 +75,7 @@
                   <i class="fa fa-plus" style="font-size:14px"></i> BUAT SPK    
                 </a>
                 <?php }else{?>
-                  <a href="<?=site_url('cetak/JadwalMesin/edit_spk_102b/'.$row->id_mesin_102b)?>" class="btn btn-success">
+                  <a href="<?=site_url('cetak/JadwalMesin/edit_spk_tokko/'.$row->id_mesin_tokko)?>" class="btn btn-success">
                   <i class="fa fa-pencil" style="font-size:14px"></i> EDIT SPK 
                 </a>
               
