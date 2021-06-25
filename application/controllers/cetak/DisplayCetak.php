@@ -80,23 +80,22 @@ class DisplayCetak extends CI_Controller {
 
 		} else if(isset($_POST['edit'])){ 
 			$inputan = $this->input->post(null, TRUE);
-
-			// if($inputan["jumlah_kertas_cover1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover1"];
-			// }
-			// if($inputan["jumlah_kertas_cover2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover2"];
-			// }
-
-			// if($inputan["jumlah_kertas_isi1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi1"];
-			// }
-			// if($inputan["jumlah_kertas_isi2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi2"];
-			// }
-			// if($inputan["jumlah_kertas_isi3"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
-			// }
+			
+			$inputan['status_order'] = "pracetak";
+			if($inputan['status_cetak_cover'] !=null && $inputan['status_cetak_isi'] !=null){
+					$inputan['status_order'] = "cetak";
+					$inputan['status_cetak'] = "cetak";
+			}
+			else if($inputan['status_cetak_cover'] !=null ){	
+				$inputan['status_order'] = "cetak";	
+				$inputan['status_cetak'] = "cetak cover";
+			}
+			else if($inputan['status_cetak_isi'] !=null ){	
+				$inputan['status_order'] = "cetak";			
+				$inputan['status_cetak'] = "cetak isi";
+			}
+			else
+				$inputan['status_cetak'] = "";
 
 			$this->dc->edit_dc($inputan);							
 			// $this->dc->status_umum($inputan);						
