@@ -787,7 +787,12 @@
                 <td><?= $row->tanggal_pelaksanaan ?></td>
               <?php } else {?> <td></td> <?php } ?> -->
 
-              <td><?= $row->so_status; ?></td>
+              <td><?php 
+                                if($row->status_cetak ==null) 
+                                  echo $row->so_status;
+                                else if($row->status_cetak !=null)
+                                  echo $row->status_cetak;   
+                                ?></td>
               <td align="center">
                 <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order ?>">
                   <i class="fa fa-plus" style="font-size:14px"></i> JADWAL

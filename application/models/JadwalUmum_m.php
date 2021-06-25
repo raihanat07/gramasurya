@@ -17,6 +17,11 @@ class JadwalUmum_m extends CI_Model {
              order.oplag as oplag, 
              order.so_status as so_status,
 
+            display_cetak.id_display_cetak as id_display_cetak,
+            display_cetak.status_cetak_cover as status_cetak_cover,
+            display_cetak.status_cetak_isi as status_cetak_isi,
+            display_cetak.status_cetak as status_cetak,
+
             finishing.finishing_akhir_bending as bending, 
             finishing.finishing_akhir_hard_cover as hard_cover, 
             finishing.finishing_akhir_jahit_benang as jahit_benang, 
@@ -88,7 +93,10 @@ class JadwalUmum_m extends CI_Model {
             ',
         );
 
+        $so_status = array('cetak','cetak cover','cetak isi');
+
         $this->db->from('order');
+        $this->db->join('display_cetak','display_cetak.id_order = order.id_order','left');
         $this->db->join('finishing','finishing.id_order = order.id_order','left');
         $this->db->join('mesin_72','mesin_72.id_order = order.id_order','left');
         $this->db->join('mesin_74_a','mesin_74_a.id_order = order.id_order','left');
@@ -96,6 +104,7 @@ class JadwalUmum_m extends CI_Model {
         $this->db->join('mesin_102_a','mesin_102_a.id_order = order.id_order','left');
         $this->db->join('mesin_102_b','mesin_102_b.id_order = order.id_order','left');
         $this->db->join('mesin_tokko','mesin_tokko.id_order = order.id_order','left');
+        $this->db->where_in('order.so_status',$so_status);
         $this->db->order_by('id_order', 'desc');    
         $query = $this->db->get();
         return $query; 

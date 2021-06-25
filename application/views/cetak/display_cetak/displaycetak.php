@@ -79,9 +79,9 @@
                                 ?>
                             </td>
                             <td><?php 
-                                if(($row->so_status == "pracetak") && $row->status_cetak ==null) 
+                                if($row->status_cetak ==null) 
                                   echo $row->so_status;
-                                else
+                                else if($row->status_cetak !=null)
                                   echo $row->status_cetak;   
                                 ?>
                             </td>

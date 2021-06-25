@@ -57,22 +57,29 @@ class DisplayCetak extends CI_Controller {
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
 			
-			$inputan['status_order'] = "pracetak";
+			$inputan['status_umum'] = "pracetak";
 			if($inputan['status_cetak_cover'] !=null && $inputan['status_cetak_isi'] !=null){
-					$inputan['status_order'] = "cetak";
+					$inputan['status_umum'] = "cetak";
 					$inputan['status_cetak'] = "cetak";
 			}
 			else if($inputan['status_cetak_cover'] !=null ){	
-				$inputan['status_order'] = "cetak";	
+				$inputan['status_umum'] = "cetak";	
 				$inputan['status_cetak'] = "cetak cover";
+
 			}
 			else if($inputan['status_cetak_isi'] !=null ){	
-				$inputan['status_order'] = "cetak";			
+				$inputan['status_umum'] = "cetak";			
 				$inputan['status_cetak'] = "cetak isi";
+
+			}else if($inputan['status_cetak'] !=null ){	
+				$inputan['status_umum'] = "cetak";			
+				$inputan['status_cetak'] = "cetak";
+
 			}
 			else
 				$inputan['status_cetak'] = "";
 
+			$this->dc->status_umum($inputan);							
 			$this->dc->tambah_dc($inputan);							
 			// $this->ctcp->status_umum($inputan);						
 				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
@@ -95,12 +102,15 @@ class DisplayCetak extends CI_Controller {
 				$inputan['status_umum'] = "cetak";			
 				$inputan['status_cetak'] = "cetak isi";
 
+			}else if($inputan['status_cetak'] !=null ){	
+				$inputan['status_umum'] = "cetak";			
+				$inputan['status_cetak'] = "cetak";
+
 			}
 			else
 				$inputan['status_cetak'] = "";
 
-			
-			$this->dc->status_umum($inputan);	
+			$this->dc->status_umum($inputan);							
 			$this->dc->edit_dc($inputan);							
 			// $this->dc->status_umum($inputan);						
 				echo "<script> alert('Data Berhasil Diubah'); </script>";		

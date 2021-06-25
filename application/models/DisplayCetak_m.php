@@ -14,7 +14,7 @@ class DisplayCetak_m extends CI_Model {
             display_cetak.status_cetak_isi as status_cetak_isi,
             display_cetak.status_cetak as status_cetak',
         );
-        $so_status = array('pracetak');
+        $so_status = array('pracetak','cetak','cetak cover','cetak isi');
 
         $this->db->from('order');
         $this->db->join('finishing','finishing.id_order = order.id_order','left');
@@ -325,14 +325,14 @@ class DisplayCetak_m extends CI_Model {
     }
 
     public function status_umum($data)
-{            
-            $status = array(                                                                                           
+    {            
+            $ganti_status = array(                                                                                           
                 'so_status' =>$data['status_umum'],                                                                            
             );                        
-            $this->db->set($status);
+            $this->db->set($ganti_status);
             $this->db->where('id_order',$data['id_order']);
             $this->db->update('order');  
 
-}
+    }
 
 }
