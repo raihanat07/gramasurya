@@ -80,19 +80,24 @@ class DisplayCetak extends CI_Controller {
 
 		} else if(isset($_POST['edit'])){ 
 			$inputan = $this->input->post(null, TRUE);
-			
-			$inputan['status_order'] = "pracetak";
+
+			$inputan['status_umum'] = "pracetak";
 			if($inputan['status_cetak_cover'] !=null && $inputan['status_cetak_isi'] !=null){
-					$inputan['status_order'] = "cetak";
+					$inputan['status_umum'] = "cetak";
 					$inputan['status_cetak'] = "cetak";
+					$this->dc->status_umum($inputan);
 			}
 			else if($inputan['status_cetak_cover'] !=null ){	
-				$inputan['status_order'] = "cetak";	
+				$inputan['status_umum'] = "cetak";	
 				$inputan['status_cetak'] = "cetak cover";
+				$this->dc->status_umum($inputan);
+
 			}
 			else if($inputan['status_cetak_isi'] !=null ){	
-				$inputan['status_order'] = "cetak";			
+				$inputan['status_umum'] = "cetak";			
 				$inputan['status_cetak'] = "cetak isi";
+				$this->dc->status_umum($inputan);
+
 			}
 			else
 				$inputan['status_cetak'] = "";

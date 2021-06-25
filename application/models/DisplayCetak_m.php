@@ -324,4 +324,15 @@ class DisplayCetak_m extends CI_Model {
          
     }
 
+    public function status_umum($data)
+{            
+            $status = array(                                                                                           
+                'so_status' =>$data['status_umum'],                                                                            
+            );                        
+            $this->db->set($status);
+            $this->db->where('id_order',$data['id_order']);
+            $this->db->update('order');  
+
+}
+
 }
