@@ -38,9 +38,9 @@ class JadwalMesin_m extends CI_Model {
             spk.2muka_blg as 2muka_blg,
             spk.keterangan_spk as keterangan_spk',
         );
-        $this->db->from('mesin_72');
-        $this->db->join('order','order.id_order = mesin_72.id_mesin_72','left');
-        $this->db->join('spk','spk.id_mesin_72 = mesin_72.id_mesin_72','left');
+        $this->db->from('order');
+        $this->db->join('mesin_72','order.id_order = mesin_72.id_order','left');
+        $this->db->join('spk','order.id_order = spk.id_order','left');
         $this->db->where('mesin_72.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('mesin_72.tanggal_pelaksanaan', 'asc');      
         $query = $this->db->get();
@@ -82,9 +82,9 @@ class JadwalMesin_m extends CI_Model {
             spk.2muka_blg as 2muka_blg,
             spk.keterangan_spk as keterangan_spk',
         );
-        $this->db->from('mesin_74_a');
-        $this->db->join('order','order.id_order = mesin_74_a.id_mesin_74a','left');
-        $this->db->join('spk','spk.id_mesin_74a = mesin_74_a.id_mesin_74a','left');
+        $this->db->from('order');
+        $this->db->join('mesin_74_a','order.id_order = mesin_74_a.id_order','left');
+        $this->db->join('spk','order.id_order = spk.id_order','left');
         $this->db->where('mesin_74_a.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('mesin_74_a.tanggal_pelaksanaan', 'asc');      
         $query = $this->db->get();
