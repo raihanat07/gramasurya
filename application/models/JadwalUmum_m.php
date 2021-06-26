@@ -93,7 +93,7 @@ class JadwalUmum_m extends CI_Model {
             ',
         );
 
-        $so_status = array('cetak','cetak cover','cetak isi');
+        $so_status = array('pracetak','cetak','cetak cover','cetak isi');
 
         $this->db->from('order');
         $this->db->join('display_cetak','display_cetak.id_order = order.id_order','left');
