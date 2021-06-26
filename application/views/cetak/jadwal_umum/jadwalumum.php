@@ -58,8 +58,7 @@
               <td>isi</td>
             </thead>
             
-                   <?php $nilai=0;?>
-                    <?php $nilai_jadwal=0;?>
+                   <?php $nilai=0;?>                    
                     <?php $id_banding[-1]=null;?>
 
             <?php foreach($ju as $s => $row) {?>
