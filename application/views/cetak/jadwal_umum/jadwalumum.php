@@ -26,27 +26,46 @@
           <table id="table1" class="table table-bordered table-hover" style="font-size: 12px;">
             <thead>
             <tr align="center">
-              <td rowspan="2" style="padding-top: 30px;">Nomor SO</td>
-              <td rowspan="2" style="padding-top: 30px;">Tanggal Masuk</td>
-              <td rowspan="2" style="padding-top: 30px;">Deadline</td>
-              <td rowspan="2" style="padding-top: 30px;">Nama Pemesan</td>
-              <td rowspan="2" style="padding-top: 30px;">Nama Order</td>
-              <td rowspan="2" style="padding-top: 30px;">Ukuran</td>
-              <td rowspan="2" style="padding-top: 30px;">Oplag</td>
-              <td rowspan="2" style="padding-top: 30px;">Jumlah Kertas</td>
-              <td colspan="2">Cover</td>
-              <td colspan="2">Isi</td>
+              <td rowspan="2" style="padding-top: 20px;">Nomor SO</td>
+              <td rowspan="2" style="padding-top: 20px;">Tanggal Masuk</td>
+              <td rowspan="2" style="padding-top: 20px;">Deadline</td>
+              <td rowspan="2" style="padding-top: 20px;">Nama Pemesan</td>
+              <td rowspan="2" style="padding-top: 20px;">Nama Order</td>
+              <td rowspan="2" style="padding-top: 20px;">Ukuran</td>
+              <td rowspan="2" style="padding-top: 20px;">Oplag</td>
+              <td rowspan="2" style="padding-top: 20px;">Jumlah Kertas</td>
+              <td colspan="2">Mesin 72</td>
+              <td colspan="2">Mesin 74a</td>
+              <td colspan="2">Mesin 74b</td>
+              <td colspan="2">Mesin 102a</td>
+              <td colspan="2">Mesin 102b</td>
+              <td colspan="2">Mesin Tokko</td>
               <td rowspan="2" style="padding-top: 30px;">Status</td>
               <td rowspan="2" style="padding-top: 30px;">Actions</td>
             </tr>
             <tr>
-              <td>Mesin</td>
-              <td>Tanggal</td>
-              <td>Mesin</td>
-              <td>Tanggal</td>
-            </tr>
+              <td>cover</td>
+              <td>isi</td>
+              <td>cover</td>
+              <td>isi</td>
+              <td>cover</td>
+              <td>isi</td>
+              <td>cover</td>
+              <td>isi</td>
+              <td>cover</td>
+              <td>isi</td>
+              <td>cover</td>
+              <td>isi</td>
             </thead>
+            
+                   <?php $nilai=0;?>
+                    <?php $nilai_jadwal=0;?>
+                    <?php $id_banding[-1]=null;?>
+
             <?php foreach($ju as $s => $row) {?>
+              <?php $id_banding[$nilai]=$row->id_order;?>   
+
+              <?php if($id_banding[$nilai] != $id_banding[$nilai-1]){ ?>
            
             <tr>
             <td align="center"><?= $row->nomor_so; ?></td>
@@ -62,730 +81,26 @@
               <td></td>
               <td></td> -->
 
-
-              
-              <?php if($row->id_mesin_72 !=null && $row->id_mesin_74a ==null && $row->id_mesin_74b ==null && $row->id_mesin_102a ==null && $row->id_mesin_102b ==null && $row->id_mesin_tokko ==null) {?>
-
-                <?php if($row->jenis_cetakan == "Cover" && $row->jenis_cetakan == "Isi") {?>
-
-                  <td><?= $row->nama_mesin ?></td>
-                  <td><?= $row->tanggal_pelaksanaan ?></td>
-                  <td><?= $row->nama_mesin ?></td>
-                  <td><?= $row->tanggal_pelaksanaan ?></td>
-
-                <?php } else {?>
-
-                  <?php if($row->jenis_cetakan == "Cover") {?>
-
-                    <td><?= $row->nama_mesin ?></td>
-                    <td><?= $row->tanggal_pelaksanaan ?></td>
-
-                  <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                  <?php } ?>
-
-                  <?php if($row->jenis_cetakan == "Isi") {?>
-
-                    <td><?= $row->nama_mesin ?></td>
-                    <td><?= $row->tanggal_pelaksanaan ?></td>
-
-                  <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                  <?php } ?>
-
-                <?php } ?>
-              
-              <?php } else if($row->id_mesin_74a !=null && $row->id_mesin_72 ==null && $row->id_mesin_74b ==null && $row->id_mesin_102a ==null && $row->id_mesin_102b ==null && $row->id_mesin_tokko ==null) {?>
-
-                  <?php if($row->jenis_cetakan_74a == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_74a ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_74a ?></td>
-
-                  <?php } else {?>
-                    <td></td>
-                    <td></td> 
-                    
-                  <?php } ?>
-
-                  <?php if($row->jenis_cetakan_74a == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_74a ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74a ?></td>
-
-                  <?php } else {?>
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-              
-              <?php } else if( $row->id_mesin_72 !=null && $row->id_mesin_74a !=null )  {?>
-
-                <?php if($row->jenis_cetakan_74a == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_74a ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74a ?></td>
-
-                <?php } else if($row->jenis_cetakan == "Cover") {?>
-
-                  <td><?= $row->nama_mesin ?></td>
-                  <td><?= $row->tanggal_pelaksanaan ?></td> 
-
-                <?php } else {?>
-                
-                  <td></td>
-                  <td></td> 
-
-                <?php } ?>
-
-                <?php if($row->jenis_cetakan_74a == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_74a ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74a ?></td>
-
-                <?php } else if($row->jenis_cetakan == "Isi") {?>
-                
-                  <td><?= $row->nama_mesin ?></td>
-                  <td><?= $row->tanggal_pelaksanaan ?></td> 
-
-                <?php } else {?>
-                
-                  <td></td>
-                  <td></td> 
-
-                <?php } ?>
-              
-                <?php } else if($row->id_mesin_74b !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_102a ==null && $row->id_mesin_102b ==null && $row->id_mesin_tokko ==null) {?>
-
-                <?php if($row->jenis_cetakan_74b == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_74b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74b ?></td>
-
-                <?php } else {?>
-                  <td></td>
-                  <td></td> 
+              <!-- /////////////////////////////////////////////////////////////////////////////////////////////// eksekusi hehe -->
                   
-                <?php } ?>
+                  <td><?= $tgl_cover_72[$nilai]; ?></td>                                   
+                  <td><?= $tgl_isi_72[$nilai]; ?></td>
 
-                <?php if($row->jenis_cetakan_74b == "Isi") {?>
+                  <td><?= $tgl_cover_74a[$nilai]; ?></td>                                   
+                  <td><?= $tgl_isi_74a[$nilai]; ?></td>
 
-                  <td><?= $row->nama_mesin_74b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74b ?></td>
+                  <td><?= $tgl_cover_74b[$nilai]; ?></td>                                   
+                  <td><?= $tgl_isi_74b[$nilai]; ?></td>
 
-                <?php } else {?>
+                  <td><?= $tgl_cover_102a[$nilai]; ?></td>                                   
+                  <td><?= $tgl_isi_102a[$nilai]; ?></td>
 
-                  <td></td>
-                  <td></td> 
+                  <td><?= $tgl_cover_102b[$nilai]; ?></td>                                   
+                  <td><?= $tgl_isi_102b[$nilai]; ?></td>
 
-                <?php } ?>
-
-                <?php } else if($row->id_mesin_102a !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_74b ==null) {?>
-
-                  <?php if($row->jenis_cetakan_102a == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_102a ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_102a ?></td>
-
-                  <?php } else {?>
-                    <td></td>
-                    <td></td> 
-                    
-                  <?php } ?>
-
-                  <?php if($row->jenis_cetakan_102a == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_102a ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_102a ?></td>
-
-                  <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                  <?php } ?>
-
-                  <?php } else if($row->id_mesin_102b !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_74b ==null && $row->id_mesin_102a ==null) {?>
-
-                  <?php if($row->jenis_cetakan_102b == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_102b ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_102b ?></td>
-
-                  <?php } else {?>
-                    <td></td>
-                    <td></td> 
-                    
-                  <?php } ?>
-
-                  <?php if($row->jenis_cetakan_102b == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_102b ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_102b ?></td>
-
-                  <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                  <?php } ?>
-
-                  <?php } else if($row->id_mesin_tokko !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_74b ==null && $row->id_mesin_102a ==null && $row->id_mesin_102b ==null) {?>
-
-                  <?php if($row->jenis_cetakan_tokko == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_tokko ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_tokko ?></td>
-
-                  <?php } else {?>
-                    <td></td>
-                    <td></td> 
-                    
-                  <?php } ?>
-
-                  <?php if($row->jenis_cetakan_tokko == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_tokko ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_tokko ?></td>
-
-                  <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                  <?php } ?>
-
-                  <?php } else if( $row->id_mesin_74b !=null && $row->id_mesin_72 !=null && $row->id_mesin_74a ==null && $row->id_mesin_102a ==null && $row->id_mesin_102b ==null && $row->id_mesin_tokko ==null)  {?>
-
-                    <?php if($row->jenis_cetakan_74b == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_74b ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_74b ?></td>
-
-                    <?php } else if($row->jenis_cetakan == "Cover") {?>
-
-                    <td><?= $row->nama_mesin ?></td>
-                    <td><?= $row->tanggal_pelaksanaan ?></td> 
-
-                    <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                    <?php } ?>
-
-                    <?php if($row->jenis_cetakan_74b == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_74b ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_74b ?></td>
-
-                    <?php } else if($row->jenis_cetakan == "Isi") {?>
-
-                    <td><?= $row->nama_mesin ?></td>
-                    <td><?= $row->tanggal_pelaksanaan ?></td> 
-
-                    <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                    <?php } ?>
-
-                    <?php } else if( $row->id_mesin_102a !=null && $row->id_mesin_72 !=null && $row->id_mesin_74a ==null && $row->id_mesin_74b ==null && $row->id_mesin_102b ==null && $row->id_mesin_tokko ==null)  {?>
-
-                      <?php if($row->jenis_cetakan_102a == "Cover") {?>
-
-                      <td><?= $row->nama_mesin_102a ?></td>
-                      <td><?= $row->tanggal_pelaksanaan_102a ?></td>
-
-                      <?php } else if($row->jenis_cetakan == "Cover") {?>
-
-                      <td><?= $row->nama_mesin ?></td>
-                      <td><?= $row->tanggal_pelaksanaan ?></td> 
-
-                      <?php } else {?>
-
-                      <td></td>
-                      <td></td> 
-
-                      <?php } ?>
-
-                      <?php if($row->jenis_cetakan_102a == "Isi") {?>
-
-                      <td><?= $row->nama_mesin_102a ?></td>
-                      <td><?= $row->tanggal_pelaksanaan_102a ?></td>
-
-                      <?php } else if($row->jenis_cetakan == "Isi") {?>
-
-                      <td><?= $row->nama_mesin ?></td>
-                      <td><?= $row->tanggal_pelaksanaan ?></td> 
-
-                      <?php } else {?>
-
-                      <td></td>
-                      <td></td> 
-
-                      <?php } ?>
-
-                      <?php } else if( $row->id_mesin_102b !=null && $row->id_mesin_72 !=null && $row->id_mesin_74a ==null && $row->id_mesin_74b ==null && $row->id_mesin_102a ==null && $row->id_mesin_tokko ==null)  {?>
-
-                  <?php if($row->jenis_cetakan_102b == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_102b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_102b ?></td>
-
-                  <?php } else if($row->jenis_cetakan == "Cover") {?>
-
-                  <td><?= $row->nama_mesin ?></td>
-                  <td><?= $row->tanggal_pelaksanaan ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php if($row->jenis_cetakan_102b == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_102b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_102b ?></td>
-
-                  <?php } else if($row->jenis_cetakan == "Isi") {?>
-
-                  <td><?= $row->nama_mesin ?></td>
-                  <td><?= $row->tanggal_pelaksanaan ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php } else if( $row->id_mesin_tokko !=null && $row->id_mesin_72 !=null && $row->id_mesin_74a ==null && $row->id_mesin_74b ==null && $row->id_mesin_102a ==null && $row->id_mesin_102b ==null)  {?>
-
-                  <?php if($row->jenis_cetakan_tokko == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_tokko ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_tokko ?></td>
-
-                  <?php } else if($row->jenis_cetakan == "Cover") {?>
-
-                  <td><?= $row->nama_mesin ?></td>
-                  <td><?= $row->tanggal_pelaksanaan ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php if($row->jenis_cetakan_tokko == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_tokko ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_tokko ?></td>
-
-                  <?php } else if($row->jenis_cetakan == "Isi") {?>
-
-                  <td><?= $row->nama_mesin ?></td>
-                  <td><?= $row->tanggal_pelaksanaan ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php } else if( $row->id_mesin_74b !=null && $row->id_mesin_74a !=null && $row->id_mesin_72 ==null && $row->id_mesin_102a ==null && $row->id_mesin_102b ==null && $row->id_mesin_tokko ==null)  {?>
-
-                  <?php if($row->jenis_cetakan_74b == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_74b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74b ?></td>
-
-                  <?php } else if($row->jenis_cetakan_74a == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_74a ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74a ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php if($row->jenis_cetakan_74b == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_74b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74b ?></td>
-
-                  <?php } else if($row->jenis_cetakan_74a == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_74a ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74a ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php } else if( $row->id_mesin_102a !=null && $row->id_mesin_74a !=null && $row->id_mesin_72 ==null && $row->id_mesin_74b ==null && $row->id_mesin_102b ==null && $row->id_mesin_tokko ==null)  {?>
-
-                  <?php if($row->jenis_cetakan_102a == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_102a ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_102a ?></td>
-
-                  <?php } else if($row->jenis_cetakan_74a == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_74a ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74a ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php if($row->jenis_cetakan_102a == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_102a ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_102a ?></td>
-
-                  <?php } else if($row->jenis_cetakan_74a == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_74a ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74a ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php } else if( $row->id_mesin_102b !=null && $row->id_mesin_74a !=null && $row->id_mesin_72 ==null && $row->id_mesin_74b ==null && $row->id_mesin_102a ==null && $row->id_mesin_tokko ==null)  {?>
-
-                    <?php if($row->jenis_cetakan_102b == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_102b ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_102b ?></td>
-
-                    <?php } else if($row->jenis_cetakan_74a == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_74a ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_74a ?></td> 
-
-                    <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                    <?php } ?>
-
-                    <?php if($row->jenis_cetakan_102b == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_102b ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_102b ?></td>
-
-                    <?php } else if($row->jenis_cetakan_74a == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_74a ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_74a ?></td> 
-
-                    <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                    <?php } ?>
-
-                    <?php } else if( $row->id_mesin_tokko !=null && $row->id_mesin_74a !=null && $row->id_mesin_72 ==null && $row->id_mesin_74b ==null && $row->id_mesin_102a ==null && $row->id_mesin_102b ==null)  {?>
-
-                    <?php if($row->jenis_cetakan_tokko == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_tokko ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_tokko ?></td>
-
-                    <?php } else if($row->jenis_cetakan_74a == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_74a ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_74a ?></td> 
-
-                    <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                    <?php } ?>
-
-                    <?php if($row->jenis_cetakan_tokko == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_tokko ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_tokko ?></td>
-
-                    <?php } else if($row->jenis_cetakan_74a == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_74a ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_74a ?></td> 
-
-                    <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                    <?php } ?>
-
-                    <?php } else if( $row->id_mesin_102a !=null && $row->id_mesin_74b !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_102b ==null && $row->id_mesin_tokko ==null)  {?>
-
-                    <?php if($row->jenis_cetakan_102a == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_102a ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_102a ?></td>
-
-                    <?php } else if($row->jenis_cetakan_74b == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_74b ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_74b ?></td> 
-
-                    <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                    <?php } ?>
-
-                    <?php if($row->jenis_cetakan_102a == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_102a ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_102a ?></td>
-
-                    <?php } else if($row->jenis_cetakan_74b == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_74b ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_74b ?></td> 
-
-                    <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                    <?php } ?>
-
-                    <?php } else if( $row->id_mesin_102b !=null && $row->id_mesin_74b !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_102a ==null && $row->id_mesin_tokko ==null)  {?>
-
-                  <?php if($row->jenis_cetakan_102b == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_102b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_102b ?></td>
-
-                  <?php } else if($row->jenis_cetakan_74b == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_74b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74b ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php if($row->jenis_cetakan_102b == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_102b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_102b ?></td>
-
-                  <?php } else if($row->jenis_cetakan_74b == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_74b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74b ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php } else if( $row->id_mesin_tokko !=null && $row->id_mesin_74b !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_102a ==null && $row->id_mesin_102b ==null)  {?>
-
-                  <?php if($row->jenis_cetakan_tokko == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_tokko ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_tokko ?></td>
-
-                  <?php } else if($row->jenis_cetakan_74b == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_74b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74b ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php if($row->jenis_cetakan_tokko == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_tokko ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_tokko ?></td>
-
-                  <?php } else if($row->jenis_cetakan_74b == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_74b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_74b ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php } else if( $row->id_mesin_102b !=null && $row->id_mesin_102a !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_74b ==null && $row->id_mesin_tokko ==null)  {?>
-
-                  <?php if($row->jenis_cetakan_102b == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_102b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_102b ?></td>
-
-                  <?php } else if($row->jenis_cetakan_102a == "Cover") {?>
-
-                  <td><?= $row->nama_mesin_102a ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_102a ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php if($row->jenis_cetakan_102b == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_102b ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_102b ?></td>
-
-                  <?php } else if($row->jenis_cetakan_102a == "Isi") {?>
-
-                  <td><?= $row->nama_mesin_102a ?></td>
-                  <td><?= $row->tanggal_pelaksanaan_102a ?></td> 
-
-                  <?php } else {?>
-
-                  <td></td>
-                  <td></td> 
-
-                  <?php } ?>
-
-                  <?php } else if( $row->id_mesin_102a !=null && $row->id_mesin_tokko !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_102b ==null && $row->id_mesin_102b ==null)  {?>
-
-                    <?php if($row->jenis_cetakan_102a == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_102a ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_102a ?></td>
-
-                    <?php } else if($row->jenis_cetakan_tokko == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_tokko ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_tokko ?></td> 
-
-                    <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                    <?php } ?>
-
-                    <?php if($row->jenis_cetakan_102a == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_102a ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_102a ?></td>
-
-                    <?php } else if($row->jenis_cetakan_tokko == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_tokko ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_tokko ?></td> 
-
-                    <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                    <?php } ?>
-
-                    <?php } else if( $row->id_mesin_tokko !=null && $row->id_mesin_102b !=null && $row->id_mesin_72 ==null && $row->id_mesin_74a ==null && $row->id_mesin_74b ==null && $row->id_mesin_102a ==null)  {?>
-
-                    <?php if($row->jenis_cetakan_tokko == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_tokko ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_tokko ?></td>
-
-                    <?php } else if($row->jenis_cetakan_102b == "Cover") {?>
-
-                    <td><?= $row->nama_mesin_102b ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_102b ?></td> 
-
-                    <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                    <?php } ?>
-
-                    <?php if($row->jenis_cetakan_tokko == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_tokko ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_tokko ?></td>
-
-                    <?php } else if($row->jenis_cetakan_102b == "Isi") {?>
-
-                    <td><?= $row->nama_mesin_102b ?></td>
-                    <td><?= $row->tanggal_pelaksanaan_102b ?></td> 
-
-                    <?php } else {?>
-
-                    <td></td>
-                    <td></td> 
-
-                    <?php } ?>
-
-                    <?php } else {?>
-
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-
-                <?php } ?>
-                 
-
-              <!-- <?php if($row->tanggal_pelaksanaan !=null) {?>
-                <td><?= $row->tanggal_pelaksanaan ?></td>
-              <?php } else {?> <td></td> <?php } ?>
-
-              <?php if($row->mesin_72 !=null) {?>
-                <td><?= $row->mesin_72 ?></td>
-              <?php } else {?> <td></td> <?php } ?>
-
-              <?php if($row->tanggal_pelaksanaan !=null) {?>
-                <td><?= $row->tanggal_pelaksanaan ?></td>
-              <?php } else {?> <td></td> <?php } ?> -->
+                  <td><?= $tgl_cover_tokko[$nilai]; ?></td>                                   
+                  <td><?= $tgl_isi_tokko[$nilai]; ?></td>
+                                         
 
               <td><?php 
                                 if($row->status_cetak ==null) 
@@ -797,9 +112,12 @@
                 <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order ?>">
                   <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
                 </button>
-              </td>
-              <?php } ?>
+              </td>              
+
+
             </tr>
+            <?php $nilai++;} ?>
+            <?php } ?>
           </table>
           
           <?php foreach($ju as $s => $row) {?>  
@@ -996,7 +314,12 @@
                         </div>
                       </div>
 
-                      <!--Mesin 74a  -->
+
+
+
+
+
+          <!--/////////////////////////////////////////////////////Mesin 74a  -->
                       <div class="tab-pane" id="mesin74a<?= $row->id_order; ?>">
                         <h4><label><?= $row->nomor_so; ?></label></h4>
                         <div class="row">

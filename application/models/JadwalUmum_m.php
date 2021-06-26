@@ -314,6 +314,115 @@ class JadwalUmum_m extends CI_Model {
     //     return $query;
     // }
 
+public function cek_72($id)
+{
+    $this->db->select(
+        '   
+       id_mesin_72,
+       jenis_cetakan,
+       tanggal_pelaksanaan as tanggal_pelaksanaan_72
+                      
+        '
+    );
+    $this->db->from('mesin_72');                                   
+    $this->db->where('id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function cek_74a($id)
+{
+    $this->db->select(
+        '   
+       id_mesin_74a,
+       jenis_cetakan,
+       tanggal_pelaksanaan as tanggal_pelaksanaan_74a
+                      
+        '
+    );
+    $this->db->from('mesin_74_a');                                   
+    $this->db->where('id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function cek_74b($id)
+{
+    $this->db->select(
+        '   
+       id_mesin_74b,
+       jenis_cetakan,
+       tanggal_pelaksanaan as tanggal_pelaksanaan_74b
+                      
+        '
+    );
+    $this->db->from('mesin_74_b');                                   
+    $this->db->where('id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function cek_102a($id)
+{
+    $this->db->select(
+        '   
+       id_mesin_102a,
+       jenis_cetakan,
+       tanggal_pelaksanaan as tanggal_pelaksanaan_102a
+                      
+        '
+    );
+    $this->db->from('mesin_102_a');                                   
+    $this->db->where('id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+
+public function cek_102b($id)
+{
+    $this->db->select(
+        '   
+       id_mesin_102b,
+       jenis_cetakan,
+       tanggal_pelaksanaan as tanggal_pelaksanaan_102b
+                      
+        '
+    );
+    $this->db->from('mesin_102_b');                                   
+    $this->db->where('id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function cek_tokko($id)
+{
+    $this->db->select(
+        '   
+       id_mesin_tokko,
+       jenis_cetakan,
+       tanggal_pelaksanaan as tanggal_pelaksanaan_tokko
+                      
+        '
+    );
+    $this->db->from('mesin_tokko');                                   
+    $this->db->where('id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 }
