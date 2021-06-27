@@ -2230,9 +2230,11 @@ class JadwalMesin_m extends CI_Model {
         $this->db->join('cetak as ce','ce.id_order = order.id_order','left');         
         $this->db->where('mesin_72.tanggal_pelaksanaan !=', '0000-00-00','left');  
         $this->db->order_by('id_order', 'desc');    
+        
         $this->db->where('mesin_72.id_mesin_72', $id);
-        $query = $this->db->get();
         $this->db->limit(1);
+
+        $query = $this->db->get();
         
         return $query;  
     }
