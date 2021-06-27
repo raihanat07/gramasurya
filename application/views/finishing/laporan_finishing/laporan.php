@@ -5,36 +5,7 @@
       <div class="col-md-12">
         <h1>Finishing</h1><br>
         <div class="row">
-                <div class="col-md-4">
-                  <section class="content">
-                    <div class="card">
-                      <div class="card-header border bg-primary">
-                        <h3 class="card-title">Filter Data Perhari</h3>
-
-                        <div class="card-tools">
-                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                            <i class="fa fa-minus"></i></button>
-                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                            <i class="fa fa-times"></i></button> -->
-                        </div>
-                      </div>
-                      <div class="card-body">
-                      <form  action="<?=site_url('pracetak/laporan/filter_hari')?>" method="post">
-                            <div class="row">
-                                <div class="col-md-12">
-                                  <label>masukkan tanggal</label> 
-                                  <input type="date" class="form-control" name="hari" placeholder="Deadline" required>
-                                </div>
-                            </div><br>
-                            <div class="row">
-                              <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
-                            </div>
-                          </form>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <section class="content">
                     <div class="card">
                       <div class="card-header border bg-primary">
@@ -48,7 +19,7 @@
                         </div>
                       </div>
                       <div class="card-body">
-                         <form  action="<?=site_url('pracetak/laporan/filter_bulan')?>" method="post">
+                         <form  action="<?=site_url('finishing/laporan/filter_bulan')?>" method="post">
                             <div class="row">
                                 <div class="col-md-6">
                                   <label>Bulan</label> 
@@ -82,7 +53,7 @@
                     </div>
                   </section>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <section class="content">
                     <div class="card">
                       <div class="card-header border bg-primary">
@@ -96,7 +67,7 @@
                         </div>
                       </div>
                       <div class="card-body">
-                      <form  action="<?=site_url('pracetak/laporan/filter_tahun')?>" method="post">
+                      <form  action="<?=site_url('finishing/laporan/filter_tahun')?>" method="post">
                             <div class="row">
                                 <div class="col-md-12">    
                                 <label>Tahun</label> 
