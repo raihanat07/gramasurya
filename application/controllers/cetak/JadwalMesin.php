@@ -17,12 +17,15 @@ class JadwalMesin extends CI_Controller {
 	}
 	public function jadwal_72()
 	{
-		
+																
+
 		$query = $this->jm->get_jadwal_72();
 		$data = array(
 			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
+
+		
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72',$data);
 	}
 
@@ -531,15 +534,46 @@ class JadwalMesin extends CI_Controller {
 
 	public function proses()
 	{
-		if(isset($_POST['addspk72'])){							
+		if(isset($_POST['addspk72'])){		
 			$inputan = $this->input->post(null, TRUE);
+		
+			$this->load->model('JadwalUmum_m');
+
+																$ambil = $this->JadwalUmum_m->cek_72($inputan['id_order'])->result();														 																
+
+																foreach($ambil as $sq) {
+																	 if($sq->id_mesin_72 != $inputan['id_mesin_72']) {
+																		 $temp['id']=$sq->id_mesin_72;
+																		 $temp['id_order']=$inputan['id_order'];
+																		//  var_dump($temp);die;
+																		$this->jm->addd_spk_72($temp);
+
+																	}
+																	
+																	 
+																}
+														 
+																			
 			$this->jm->add_spk_72($inputan);
-				if($this->db->affected_rows() > 0){
-					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
-				}
+				
+					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";	
 				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_72')."'; </script>"; 
 		} else if(isset($_POST['addspk74a'])){							
 			$inputan = $this->input->post(null, TRUE);
+			$this->load->model('JadwalUmum_m');
+																$ambil = $this->JadwalUmum_m->cek_74a($inputan['id_order'])->result();														 																
+
+																foreach($ambil as $sq) {
+																	 if($sq->id_mesin_74a != $inputan['id_mesin_74a']) {
+																		 $temp['id']=$sq->id_mesin_74a;
+																		 $temp['id_order']=$inputan['id_order'];
+																		//  var_dump($temp);die;
+																		$this->jm->addd_spk_74a($temp);
+
+																	}
+																	
+																	 
+																}
 			$this->jm->add_spk_74a($inputan);
 				if($this->db->affected_rows() > 0){
 					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
@@ -547,13 +581,40 @@ class JadwalMesin extends CI_Controller {
 				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_74a')."'; </script>"; 
 		}else if(isset($_POST['addspk74b'])){							
 			$inputan = $this->input->post(null, TRUE);
-			$this->jm->add_spk_74b($inputan);
+			$this->load->model('JadwalUmum_m');
+																$ambil = $this->JadwalUmum_m->cek_74b($inputan['id_order'])->result();														 																
+
+																foreach($ambil as $sq) {
+																	 if($sq->id_mesin_74b != $inputan['id_mesin_74b']) {
+																		 $temp['id']=$sq->id_mesin_74b;
+																		 $temp['id_order']=$inputan['id_order'];
+																		//  var_dump($temp);die;
+																		$this->jm->addd_spk_74b($temp);
+
+																	}
+																	
+																	 
+																}			$this->jm->add_spk_74b($inputan);
 				if($this->db->affected_rows() > 0){
 					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
 				}
 				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_74b')."'; </script>"; 
 		}else if(isset($_POST['addspk102a'])){							
 			$inputan = $this->input->post(null, TRUE);
+			$this->load->model('JadwalUmum_m');
+																$ambil = $this->JadwalUmum_m->cek_102a($inputan['id_order'])->result();														 																
+
+																foreach($ambil as $sq) {
+																	 if($sq->id_mesin_102a != $inputan['id_mesin_102a']) {
+																		 $temp['id']=$sq->id_mesin_102a;
+																		 $temp['id_order']=$inputan['id_order'];
+																		//  var_dump($temp);die;
+																		$this->jm->addd_spk_102a($temp);
+
+																	}
+																	
+																	 
+																}
 			$this->jm->add_spk_102a($inputan);
 				if($this->db->affected_rows() > 0){
 					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
@@ -561,6 +622,20 @@ class JadwalMesin extends CI_Controller {
 				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_102a')."'; </script>"; 
 		}else if(isset($_POST['addspk102b'])){							
 			$inputan = $this->input->post(null, TRUE);
+			$this->load->model('JadwalUmum_m');
+																$ambil = $this->JadwalUmum_m->cek_102b($inputan['id_order'])->result();														 																
+
+																foreach($ambil as $sq) {
+																	 if($sq->id_mesin_102b != $inputan['id_mesin_102b']) {
+																		 $temp['id']=$sq->id_mesin_102b;
+																		 $temp['id_order']=$inputan['id_order'];
+																		//  var_dump($temp);die;
+																		$this->jm->addd_spk_102b($temp);
+
+																	}
+																	
+																	 
+																}
 			$this->jm->add_spk_102b($inputan);
 				if($this->db->affected_rows() > 0){
 					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
@@ -568,6 +643,20 @@ class JadwalMesin extends CI_Controller {
 				echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_102b')."'; </script>"; 
 		}else if(isset($_POST['addspktokko'])){							
 			$inputan = $this->input->post(null, TRUE);
+			$this->load->model('JadwalUmum_m');
+																$ambil = $this->JadwalUmum_m->cek_tokko($inputan['id_order'])->result();														 																
+
+																foreach($ambil as $sq) {
+																	 if($sq->id_mesin_tokko != $inputan['id_mesin_tokko']) {
+																		 $temp['id']=$sq->id_mesin_tokko;
+																		 $temp['id_order']=$inputan['id_order'];
+																		//  var_dump($temp);die;
+																		$this->jm->addd_spk_tokko($temp);
+
+																	}
+																	
+																	 
+																}
 			$this->jm->add_spk_tokko($inputan);
 				if($this->db->affected_rows() > 0){
 					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";

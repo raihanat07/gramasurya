@@ -330,6 +330,7 @@ public function cek_72($id)
     return $query;   
 }
 
+
 public function cek_74a($id)
 {
     $this->db->select(

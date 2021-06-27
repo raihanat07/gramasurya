@@ -42,7 +42,12 @@
               <td colspan="2">Actions</td>
             </tr>
             </thead>
+            <?php $banding_id[-1] = null;?>
+            <?php $nilai = 0;?>
+
             <?php foreach($jm as $s => $row) {
+              $banding_id[$nilai] = $row->id_mesin_74b;
+              if($banding_id[$nilai] != $banding_id[$nilai-1]){
               ?>
               
             <tr>
@@ -72,7 +77,7 @@
               <td align="center">
               <?php if($row->id_spk == null){?>
                   <a href="<?=site_url('cetak/JadwalMesin/tambah_spk_74b/'.$row->id_mesin_74b)?>" class="btn btn-success">
-                  <i class="fa fa-plus" style="font-size:14px"></i> BUAT SPK    
+                  <i class="fa fa-plus" style="font-size:14px"></i> EDIT SPK    
                 </a>
                 <?php }else{?>
                   <a href="<?=site_url('cetak/JadwalMesin/edit_spk_74b/'.$row->id_mesin_74b)?>" class="btn btn-success">
@@ -83,7 +88,10 @@
               <?php }?>     
             </tr>
             <?php } ?>
+            <?php $nilai++;}?>  
+
           </table>
+          
         </div>
         <!-- /.card-body -->
         <!-- <div class="card-footer">

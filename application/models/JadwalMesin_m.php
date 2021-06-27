@@ -28,7 +28,9 @@ class JadwalMesin_m extends CI_Model {
             mesin_72.set as set,
             mesin_72.jenis_cetakan as jenis_cetakan,
             
-            spk.id_spk as id_spk
+            spk.id_spk as id_spk,
+            spk.jc as jc
+
             
             ',
             // spk.tanggal_buat_spk as tanggal_buat_spk,
@@ -1175,6 +1177,7 @@ class JadwalMesin_m extends CI_Model {
         $this->db->where('mesin_72.tanggal_pelaksanaan !=', null);  
         $this->db->order_by('id_order', 'desc');    
         $this->db->where('mesin_72.id_mesin_72', $id);    
+        $this->db->limit(1);
         $query = $this->db->get();
         return $query;  
     }
@@ -1314,6 +1317,7 @@ class JadwalMesin_m extends CI_Model {
         $this->db->where('mesin_74_a.tanggal_pelaksanaan !=', null);  
         $this->db->order_by('id_order', 'desc');    
         $this->db->where('mesin_74_a.id_mesin_74a', $id);    
+        $this->db->limit(1);
         $query = $this->db->get();
         return $query;  
     }
@@ -1452,7 +1456,8 @@ class JadwalMesin_m extends CI_Model {
         $this->db->join('cetak as ce','ce.id_order = order.id_order','left');
         $this->db->where('mesin_74_b.tanggal_pelaksanaan !=', null);  
         $this->db->order_by('id_order', 'desc');    
-        $this->db->where('mesin_74_b.id_mesin_74b', $id);    
+        $this->db->where('mesin_74_b.id_mesin_74b', $id);
+        $this->db->limit(1);    
         $query = $this->db->get();
         return $query;  
     }
@@ -1593,7 +1598,9 @@ class JadwalMesin_m extends CI_Model {
         $this->db->where('mesin_102_a.tanggal_pelaksanaan !=', null);  
         $this->db->order_by('id_order', 'desc');    
         $this->db->where('mesin_102_a.id_mesin_102a', $id);    
+        $this->db->limit(1);
         $query = $this->db->get();
+
         return $query;  
     }
 
@@ -1732,7 +1739,9 @@ class JadwalMesin_m extends CI_Model {
         $this->db->where('mesin_102_b.tanggal_pelaksanaan !=', null);  
         $this->db->order_by('id_order', 'desc');    
         $this->db->where('mesin_102_b.id_mesin_102b', $id);    
+        $this->db->limit(1);
         $query = $this->db->get();
+
         return $query;  
     }
 
@@ -1850,7 +1859,8 @@ class JadwalMesin_m extends CI_Model {
         $tambah_spk = array(
             'id_order' => $data['id_order'],
             'id_mesin_72' => $data['id_mesin_72'],
-                                                                         
+            'jc' => $data['jc'],
+                                                          
             'tanggal_buat_spk' => $data['tanggal_buat_spk'],
             'ukuran_potong' => $data['ukuran_potong'],
             'jumlah_cetak' => $data['jumlah_cetak'],
@@ -1859,6 +1869,53 @@ class JadwalMesin_m extends CI_Model {
             'muka2_blk'=> $data['muka2_blk'],
             'muka2_blg' => $data['muka2_blg'],
             'keterangan_spk' => $data['keterangan_spk'],
+        );
+        $this->db->insert('spk',$tambah_spk);
+    }
+    public function addd_spk_72($data){
+        $tambah_spk = array(
+            'id_order' => $data['id_order'],
+            'id_mesin_72' => $data['id'],
+        );
+        $this->db->insert('spk',$tambah_spk);
+    }
+
+    public function addd_spk_74a($data){
+        $tambah_spk = array(
+            'id_order' => $data['id_order'],
+            'id_mesin_74a' => $data['id'],
+        );
+        $this->db->insert('spk',$tambah_spk);
+    }
+
+    public function addd_spk_tokko($data){
+        $tambah_spk = array(
+            'id_order' => $data['id_order'],
+            'id_mesin_tokko' => $data['id'],
+        );
+        $this->db->insert('spk',$tambah_spk);
+    }
+
+    public function addd_spk_74b($data){
+        $tambah_spk = array(
+            'id_order' => $data['id_order'],
+            'id_mesin_74b' => $data['id'],
+        );
+        $this->db->insert('spk',$tambah_spk);
+    }
+
+    public function addd_spk_102a($data){
+        $tambah_spk = array(
+            'id_order' => $data['id_order'],
+            'id_mesin_102a' => $data['id'],
+        );
+        $this->db->insert('spk',$tambah_spk);
+    }
+
+    public function addd_spk_102b($data){
+        $tambah_spk = array(
+            'id_order' => $data['id_order'],
+            'id_mesin_102b' => $data['id'],
         );
         $this->db->insert('spk',$tambah_spk);
     }
@@ -1955,7 +2012,7 @@ class JadwalMesin_m extends CI_Model {
             'keterangan_spk' => $data['keterangan_spk'],
         );
         $this->db->set($edit_spk);
-        $this->db->where('id_order',$data['id_order']);
+        $this->db->where('id_mesin_72',$data['id_mesin_72']);
         $this->db->update('spk');
     }
 
@@ -2175,6 +2232,7 @@ class JadwalMesin_m extends CI_Model {
         $this->db->order_by('id_order', 'desc');    
         $this->db->where('mesin_72.id_mesin_72', $id);
         $query = $this->db->get();
+        $this->db->limit(1);
         
         return $query;  
     }
@@ -2313,6 +2371,7 @@ class JadwalMesin_m extends CI_Model {
         $this->db->where('mesin_74_a.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('id_order', 'desc');    
         $this->db->where('mesin_74_a.id_mesin_74a', $id);
+        $this->db->limit(1);
         $query = $this->db->get();
         
         return $query;  
@@ -2452,6 +2511,7 @@ class JadwalMesin_m extends CI_Model {
         $this->db->where('mesin_74_b.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('id_order', 'desc');    
         $this->db->where('mesin_74_b.id_mesin_74b', $id);
+        $this->db->limit(1);
         $query = $this->db->get();
         
         return $query;  
@@ -2591,6 +2651,7 @@ class JadwalMesin_m extends CI_Model {
         $this->db->where('mesin_102_a.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('id_order', 'desc');    
         $this->db->where('mesin_102_a.id_mesin_102a', $id);
+        $this->db->limit(1);
         $query = $this->db->get();
         
         return $query;  
@@ -2730,6 +2791,7 @@ class JadwalMesin_m extends CI_Model {
         $this->db->where('mesin_102_b.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('id_order', 'desc');    
         $this->db->where('mesin_102_b.id_mesin_102b', $id);
+        $this->db->limit(1);
         $query = $this->db->get();
         
         return $query;  
@@ -2869,10 +2931,13 @@ class JadwalMesin_m extends CI_Model {
         $this->db->where('mesin_tokko.tanggal_pelaksanaan !=', '0000-00-00');  
         $this->db->order_by('id_order', 'desc');    
         $this->db->where('mesin_tokko.id_mesin_tokko', $id);
+        $this->db->limit(1);
         $query = $this->db->get();
         
         return $query;  
     }
+
+   
 
 
 

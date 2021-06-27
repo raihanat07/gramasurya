@@ -397,6 +397,12 @@
             <input type="text" name="id_mesin_72"  value="<?php echo $row->id_mesin_72; ?>" hidden>
             <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
 
+            <?php if($row->jenis_cetakan == "Cover"){?> 
+              <input type="text" name="jc"  value="Cover" hidden>
+                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                      <input type="text" name="jc"  value="Isi" hidden>
+                    <?php } ?>
+
               <div class="row">
                 <div class="col-md-4">
                   <br>Nomor SO
