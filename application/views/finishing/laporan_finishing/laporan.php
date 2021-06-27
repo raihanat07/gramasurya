@@ -2,8 +2,122 @@
 <section class="content-header">
   <div class="container-fluid">
     <div class="row mb-2">
-      <div class="col-sm-6">
-        <h1>Finishing</h1>
+      <div class="col-md-12">
+        <h1>Finishing</h1><br>
+        <div class="row">
+                <div class="col-md-4">
+                  <section class="content">
+                    <div class="card">
+                      <div class="card-header border bg-primary">
+                        <h3 class="card-title">Filter Data Perhari</h3>
+
+                        <div class="card-tools">
+                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i></button>
+                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fa fa-times"></i></button> -->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                      <form  action="<?=site_url('pracetak/laporan/filter_hari')?>" method="post">
+                            <div class="row">
+                                <div class="col-md-12">
+                                  <label>masukkan tanggal</label> 
+                                  <input type="date" class="form-control" name="hari" placeholder="Deadline" required>
+                                </div>
+                            </div><br>
+                            <div class="row">
+                              <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
+                            </div>
+                          </form>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div class="col-md-4">
+                  <section class="content">
+                    <div class="card">
+                      <div class="card-header border bg-primary">
+                        <h3 class="card-title">Filter Data Perbulan</h3>
+
+                        <div class="card-tools">
+                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i></button>
+                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fa fa-times"></i></button> -->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                         <form  action="<?=site_url('pracetak/laporan/filter_bulan')?>" method="post">
+                            <div class="row">
+                                <div class="col-md-6">
+                                  <label>Bulan</label> 
+                                    <select name="bulan" class="form-control">
+                                      <?php 
+                                      $mulai = 1;
+                                      $bulan=array("bulan","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
+                                      for($i = $mulai; $i < $mulai + 12; $i++){
+                                        echo '<option value="'.$i.'">'.$bulan[$i].'</option>';
+                                      }
+                                      ?>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">    
+                                <label>Tahun</label> 
+                                  <select name="tahun" class="form-control">
+                                      <?php 
+                                      $mulai = 2021;
+                                      for($i = $mulai; $i < $mulai + 6; $i++){
+                                        echo '<option value="'.$i.'">'.$i.'</option>';
+                                      }
+                                      ?>
+                                    </select>
+                              </div>
+                            </div><br>
+                            <div class="row">
+                              <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
+                            </div>
+                          </form>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <div class="col-md-4">
+                  <section class="content">
+                    <div class="card">
+                      <div class="card-header border bg-primary">
+                        <h3 class="card-title">Filter Data Pertahun</h3>
+
+                        <div class="card-tools">
+                          <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i></button>
+                          <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                            <i class="fa fa-times"></i></button> -->
+                        </div>
+                      </div>
+                      <div class="card-body">
+                      <form  action="<?=site_url('pracetak/laporan/filter_tahun')?>" method="post">
+                            <div class="row">
+                                <div class="col-md-12">    
+                                <label>Tahun</label> 
+                                   <select name="tahun" class="form-control">
+                                      <?php 
+                                      $mulai = 2021;
+                                      for($i = $mulai; $i < $mulai + 6; $i++){
+                                        echo '<option value="'.$i.'">'.$i.'</option>';
+                                      }
+                                      ?>
+                                    </select>
+                              </div>
+                            </div><br>
+                            <div class="row">
+                              <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-12">Tampilkan Data</button>
+                            </div>
+                          </form>
+                    </div>
+                  </section>
+                </div>
+              </div>
       </div>
     </div>
   </div>
