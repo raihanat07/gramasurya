@@ -548,7 +548,7 @@
               </div><br>
               <div class="row">
                 <div class="col">
-                  <textarea class="form-control" name="keterangan_spk" value="<?= $row->keterangan_spk; ?>" placeholder="Keterangan" style="min-height: 250px;"></textarea>
+                  <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;"><?= $row->keterangan_spk; ?></textarea>
                 </div>
               </div><br>
               <div class="row">

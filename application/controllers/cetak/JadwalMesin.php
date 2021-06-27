@@ -221,12 +221,71 @@ class JadwalMesin extends CI_Controller {
 	// 			echo "<script>window.location='".site_url('cetak/jadwalmesin/jadwal_74a')."'; </script>";
 	// 	}	
 	// }
+	public function print_72($id)
+	{
+		$query = $this->jm->get_lihat_72($id);
+		$data = array(
+			'judul' => 'Print Mesin 72',
+			'jm' => $query->result(),
+		);
+		// check_already_login_cetak();
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72-print',$data);
+	}
 
-	public function print_72()
+	// public function print_72($id)
+	// {
+		
+	// 	$query = $this->jm->get_lihat_72($id);
+	// 	$data = array(
+	// 		'judul' => 'Print Mesin 72',
+	// 		'jm' => $query->result(),
+	// 	);
+	// 	$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72-print',$data);		
+	// }
+	public function print_74a($id)
 	{
 		
-		$data['judul'] = 'Jadwal Mesin Cetak';
-		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72-print',$data);		
+		$query = $this->jm->get_lihat_74a($id);
+		$data = array(
+			'judul' => 'Print Mesin 74a',
+			'jm' => $query->result(),
+		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a-print',$data);		
+	}
+	public function print_102a($id)
+	{
+		
+		$query = $this->jm->get_lihat_102a($id);
+		$data = array(
+			'judul' => 'Print Mesin 102a',
+			'jm' => $query->result(),
+		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102a/jadwalmesin-102a-print',$data);		
+	}
+	public function print_102b($id)
+	{
+		
+		$query = $this->jm->get_lihat_102b($id);
+		$data = array(
+			'judul' => 'Print Mesin 102b',
+			'jm' => $query->result(),
+		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102b/jadwalmesin-102b-print',$data);		
+	}
+	public function print_74b($id)
+	{
+		
+		$query = $this->jm->get_lihat_74b($id);
+		$data = array(
+			'judul' => 'Print Mesin 74b',
+			'jm' => $query->result(),
+		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74b/jadwalmesin-74b-print',$data);		
+	}
+	public function print_tokko($id)
+	{
+		
+		$query = $this->jm->get_lihat_tokko($id);
+		$data = array(
+			'judul' => 'Print Mesin tokko',
+			'jm' => $query->result(),
+		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_tokko/jadwalmesin-tokko-print',$data);		
 	}
 	public function edit_spk_72($id)
 	{

@@ -396,6 +396,7 @@
             <form action="<?=site_url('cetak/jadwalmesin/proses')?>" method="POST">
             <input type="text" name="id_mesin_72"  value="<?php echo $row->id_mesin_72; ?>" hidden>
             <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
+
               <div class="row">
                 <div class="col-md-4">
                   <br>Nomor SO
@@ -479,7 +480,8 @@
                   Jumlah Plat
                 </div>
                 <div class="col-md-4">
-                   <label><?php if($row->jenis_cetakan == "Cover"){?> 
+                   <label>
+                   <?php if($row->jenis_cetakan == "Cover"){?> 
                     <?=$row->total_plat_cover;?>
                     <?php } else if ($row->jenis_cetakan == "Isi"){?>
                     <?= $row->total_plat_isi;?>

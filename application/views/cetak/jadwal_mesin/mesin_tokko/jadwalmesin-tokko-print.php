@@ -222,7 +222,7 @@
 
             <div class="row">
               <div class="col">
-                <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;" disabled><?= $row->keterangan_spk;?></textarea>
+                <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
               </div>
             </div><br>
 
@@ -253,7 +253,7 @@
             
             <div class="row" align="right">
               <div class="col">
-              <a href="<?=site_url('cetak/JadwalMesin/print_tokko/'.$row->id_order)?>" class="btn btn-default">Print</a>
+                <a href="<?=site_url('cetak/JadwalMesin/print_jm')?>" class="btn btn-default">Print</a>
               </div>
             </div>
           </div>
@@ -264,6 +264,9 @@
         </div> -->
         <!-- /.card-footer-->
         <?php } ?>
+        <script>
+                window.print();
+            </script>
       </div>
       <!-- /.card -->
      

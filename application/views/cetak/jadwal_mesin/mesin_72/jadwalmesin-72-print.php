@@ -12,433 +12,272 @@
     <!-- Main content -->
     <section class="content">
 
-      <div class="row">
-        <!-- ATAS -->
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title coba">SPK ORDER [<label>dari db</label>]</h3>
-            </div>
-            <div class="card-body">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-4">
-                    Tanggal Buat SPK
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                  <div class="col-md-4">
-                    Tanggal Masuk
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                  <div class="col-md-4">
-                    Deadline
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    Nama Pemesan
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                  <div class="col-md-4">
-                    Nama Orderan
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                  <div class="col-md-4">
-                    Jenis Cetakan
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <br>Nama Pemesan
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                  <div class="col-md-4">
-                    <br>Nama Cetak
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                  <div class="col-md-4">
-                    <br>Jenis Cetakan
-                    <br><label class="form-label" style="background: #8683FC;padding: 1px;border-radius: 3px;">dari db</label>
-                  </div>
-                </div>
+      <!-- Default box -->
+      <div class="card">
+        <div class="card-header">
+        <?php foreach($jm as $s => $row) {?> 
+          <h3 class="card-title coba">SPK ORDER [<label><?= $row->nomor_so; ?></label>]</h3>
 
-                <div class="card" style="background: #A9A9A9">
-                  <div class="row" align="center">
-                    <div class="col-md-4">
-                      <div class="card-header text-center">
-                        <b>SPK CETAK</b>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="card-header text-center">
-                        <b>SPK KERTAS DAN POTONG</b>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="card-header text-center">
-                        <b>WARNA DAN PROSES CETAK</b>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Cetak Mesin
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                    <div class="row" style="padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Ukuran Kertas
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                    <div class="row" style="padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Jumlah Plate
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                    <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Jumlah Cetak
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="row" style="padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Jenis Kertas
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                    <div class="row" style="padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Ukuran Plano
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                    <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Model Potongan
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                    <div class="row" style="padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Jumlah Kertas
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="row" style="padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-md-11">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                  </div>
-                </div><br>
-
-                <div class="card" style="background: #A9A9A9">
-                  <div class="row" align="center">
-                    <div class="col">
-                      <div class="card-header text-center">
-                        <b>KETERANGAN</b>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col">
-                    <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 100px;" disabled></textarea>
-                  </div>
-                </div>
-
-                <div class="row" align="center" style="height: 100px;">
-                  <div class="col-md-4">
-                    <br>Opertor Cetak
-                  </div>
-                  <div class="col-md-4">
-                    <br>Kasi Cetak
-                  </div>
-                  <div class="col-md-4">
-                    Menyetujui<br>Manajer Produksi
-                  </div>
-                </div><br>
-                <div class="row" align="center">
-                  <div class="col-md-1">(</div>
-                  <div class="col-md-2"></div>
-                  <div class="col-md-1">)</div>
-                  
-                  <div class="col-md-1">(</div>
-                  <div class="col-md-2"></div>
-                  <div class="col-md-1">)</div>
-
-                  <div class="col-md-1">(</div>
-                  <div class="col-md-2"></div>
-                  <div class="col-md-1">)</div>
-                </div>
-
-                <script>
-                  window.print();
-                </script>
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+              <i class="fa fa-minus"></i></button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <br>Tanggal Buat SPK
+                <br><label class="form-label"><?= $row->tanggal_buat_spk; ?></label>
+              </div>
+              <div class="col-md-4">
+                <br>Tanggal Masuk
+                <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
+              </div>
+              <div class="col-md-4">
+                <br>Deadline
+                <br><label class="form-label"><?= $row->deadline; ?></label>
               </div>
             </div>
-            <!-- /.card-body -->
-            <!-- <div class="card-footer">
-              Footer
-            </div> -->
-            <!-- /.card-footer-->
-          </div>
-          <!-- /.card -->
-        </div>
-
-        <!-- BAWAH -->
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header">
-              <h3 class="card-title coba">SPK ORDER [<label>dari db</label>]</h3>
-            </div>
-            <div class="card-body">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-4">
-                    Tanggal Buat SPK
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                  <div class="col-md-4">
-                    Tanggal Masuk
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                  <div class="col-md-4">
-                    Deadline
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    Nama Pemesan
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                  <div class="col-md-4">
-                    Nama Orderan
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                  <div class="col-md-4">
-                    Jenis Cetakan
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-4">
-                    <br>Nama Pemesan
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                  <div class="col-md-4">
-                    <br>Nama Cetak
-                    <br><label class="form-label">dari db</label>
-                  </div>
-                  <div class="col-md-4">
-                    <br>Jenis Cetakan
-                    <br><label class="form-label" style="background: #8683FC;padding: 1px;border-radius: 3px;">dari db</label>
-                  </div>
-                </div>
-
-                <div class="card" style="background: #A9A9A9">
-                  <div class="row" align="center">
-                    <div class="col-md-4">
-                      <div class="card-header text-center">
-                        <b>SPK CETAK</b>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="card-header text-center">
-                        <b>SPK KERTAS DAN POTONG</b>
-                      </div>
-                    </div>
-                    <div class="col-md-4">
-                      <div class="card-header text-center">
-                        <b>WARNA DAN PROSES CETAK</b>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-md-4">
-                    <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Cetak Mesin
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                    <div class="row" style="padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Ukuran Kertas
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                    <div class="row" style="padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Jumlah Plate
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                    <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Jumlah Cetak
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="row" style="padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Jenis Kertas
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                    <div class="row" style="padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Ukuran Plano
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                    <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Model Potongan
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                    <div class="row" style="padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-sm-5">
-                        Jumlah Kertas
-                      </div>
-                      <div class="col-md-6">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4">
-                    <div class="row" style="padding-top: 5px;">
-                      <div class="col-md-1"></div>
-                      <div class="col-md-11">
-                        <label>dari db</label>
-                      </div>
-                    </div>
-                  </div>
-                </div><br>
-
-                <div class="card" style="background: #A9A9A9">
-                  <div class="row" align="center">
-                    <div class="col">
-                      <div class="card-header text-center">
-                        <b>KETERANGAN</b>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col">
-                    <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 100px;" disabled></textarea>
-                  </div>
-                </div>
-
-                <div class="row" align="center" style="height: 100px;">
-                  <div class="col-md-4">
-                    <br>Opertor Cetak
-                  </div>
-                  <div class="col-md-4">
-                    <br>Kasi Cetak
-                  </div>
-                  <div class="col-md-4">
-                    Menyetujui<br>Manajer Produksi
-                  </div>
-                </div><br>
-                <div class="row" align="center">
-                  <div class="col-md-1">(</div>
-                  <div class="col-md-2"></div>
-                  <div class="col-md-1">)</div>
-                  
-                  <div class="col-md-1">(</div>
-                  <div class="col-md-2"></div>
-                  <div class="col-md-1">)</div>
-
-                  <div class="col-md-1">(</div>
-                  <div class="col-md-2"></div>
-                  <div class="col-md-1">)</div>
-                </div>
-
-                <script>
-                  window.print();
-                </script>
+            <div class="row">
+              <div class="col-md-4">
+                <br>Nama Pemesan
+                <br><label class="form-label"><?= $row->nama_pemesan; ?></label>
+              </div>
+              <div class="col-md-4">
+                <br>Nama Orderan
+                <br><label class="form-label"><?= $row->nama_orderan; ?></label>
+              </div>
+              <div class="col-md-4">
+                <br>Jenis Cetakan
+                <br><label class="form-label"><?= $row->jenis_cetakan; ?></label>
               </div>
             </div>
-            <!-- /.card-body -->
-            <!-- <div class="card-footer">
-              Footer
-            </div> -->
-            <!-- /.card-footer-->
+          
+
+            <div class="card" style="background: #A9A9A9">
+              <div class="row" align="center">
+                <div class="col-md-4">
+                  <div class="card-header text-center">
+                    <b>SPK CETAK</b>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card-header text-center">
+                    <b>SPK KERTAS DAN POTONG</b>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card-header text-center">
+                    <b>WARNA DAN PROSES CETAK</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
+                  <div class="col-md-1"></div>
+                  <div class="col-sm-5">
+                    Mesin Cetak
+                  </div>
+                  <div class="col-md-6">
+                    <label><?= $row->nama_mesin; ?></label>
+                  </div>
+                </div>
+                <div class="row" style="padding-top: 5px;">
+                  <div class="col-md-1"></div>
+                  <div class="col-sm-5">
+                    Ukuran Kertas
+                  </div>
+                  <div class="col-md-6">
+                    <label>
+                    
+                    <?php if($row->jenis_cetakan == "Cover"){?> 
+                      <?php echo $row->ukuran_plano_cover_1!=null && $row->ukuran_plano_cover_1!='-'? "ukuran 1 : ".$row->ukuran_plano_cover_1."<br>": "" ?>
+                      <?php echo $row->ukuran_plano_cover_2!=null && $row->ukuran_plano_cover_2!='-'? "ukuran 2 : ".$row->ukuran_plano_cover_2."<br>": "" ?>
+                      <?php echo $row->ukuran_plano_cover_3!=null && $row->ukuran_plano_cover_3!='-'? "ukuran 3 : ".$row->ukuran_plano_cover_3."<br>": "" ?>
+                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                      <?php echo $row->ukuran_plano_isi_1!=null && $row->ukuran_plano_isi_1!='-'? "ukuran 1 : ".$row->ukuran_plano_isi_1."<br>": "" ?>
+                      <?php echo $row->ukuran_plano_isi_2!=null && $row->ukuran_plano_isi_2!='-'? "ukuran 2 : ".$row->ukuran_plano_isi_2."<br>": "" ?>
+                      <?php echo $row->ukuran_plano_isi_3!=null && $row->ukuran_plano_isi_3!='-'? "ukuran 3 : ".$row->ukuran_plano_isi_3."<br>": "" ?>
+                    <?php } ?>
+                    
+                    </label>
+                  </div>
+                </div>
+                <div class="row" style="padding-top: 5px;">
+                  <div class="col-md-1"></div>
+                  <div class="col-sm-5">
+                    Jumlah Plate
+                  </div>
+                  <div class="col-md-6">
+                  <label><?php if($row->jenis_cetakan == "Cover"){?> 
+                    <?=$row->total_plat_cover;?>
+                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                    <?= $row->total_plat_isi;?>
+                    <?php } ?>
+                  </label>
+                  </div>
+                </div>
+                <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
+                  <div class="col-md-1"></div>
+                  <div class="col-sm-5">
+                    Jumlah Cetak
+                  </div>
+                  <div class="col-md-6">
+                    <label><?= $row->jumlah_cetak; ?></label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row" style="padding-top: 5px;">
+                  <div class="col-md-1"></div>
+                  <div class="col-sm-5">
+                    Jenis Kertas
+                  </div>
+                  <div class="col-md-6">
+                    <label>
+                    <?php if($row->jenis_cetakan == "Cover"){ ?>
+                  <?php echo $row->jenis_kertas_cover_1!=null && $row->jenis_kertas_cover_1!='-'? "".$row->jenis_kertas_cover_1."<br>": "" ?>
+                  <?php echo $row->jenis_kertas_cover_2!=null && $row->jenis_kertas_cover_2!='-'? "".$row->jenis_kertas_cover_2."<br>": "" ?>
+                  <?php echo $row->jenis_kertas_cover_3!=null && $row->jenis_kertas_cover_3!='-'? "".$row->jenis_kertas_cover_3."<br>": "" ?>
+                  <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                    <?php echo $row->jenis_kertas_isi_1!=null && $row->jenis_kertas_isi_1!='-'? "".$row->jenis_kertas_isi_1."<br>": "" ?>
+                    <?php echo $row->jenis_kertas_isi_2!=null && $row->jenis_kertas_isi_2!='-'? "".$row->jenis_kertas_isi_2."<br>": "" ?>
+                    <?php echo $row->jenis_kertas_isi_3!=null && $row->jenis_kertas_isi_3!='-'? "".$row->jenis_kertas_isi_3."<br>": "" ?>
+                  <?php } ?>
+                    </label>
+                  </div>
+                </div>
+                <div class="row" style="padding-top: 5px;">
+                  <div class="col-md-1"></div>
+                  <div class="col-sm-5">
+                    Ukuran Plano
+                  </div>
+                  <div class="col-md-6">
+                    <label><?= $row->ukuran; ?></label>
+                  </div>
+                </div>
+                <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
+                  <div class="col-md-1"></div>
+                  <div class="col-sm-5">
+                    Model Potongan
+                  </div>
+                  <div class="col-md-6">
+                  <label><?php if($row->jenis_cetakan == "Cover"){?> 
+                    <?php echo $row->potong_cover_1!=null? "potong 1 : ".$row->potong_cover_1."<br>": "" ?>
+                    <?php echo $row->potong_cover_2!=null? "potong 2 : ".$row->potong_cover_2."<br>": "" ?>
+                    <?php echo $row->potong_cover_3!=null? "potong 3 : ".$row->potong_cover_3."<br>": "" ?>
+                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                    <?php echo $row->potong_isi_1!=null? "potong 1 : ".$row->potong_isi_1."<br>": "" ?>
+                    <?php echo $row->potong_isi_2!=null? "potong 2 : ".$row->potong_isi_2."<br>": "" ?>
+                    <?php echo $row->potong_isi_3!=null? "potong 3 : ".$row->potong_isi_3."<br>": "" ?>
+                    <?php echo $row->potong_isi_4!=null? "potong 4 : ".$row->potong_isi_4."<br>": "" ?>
+                    <?php } ?>
+                  </label>
+                  </div>
+                </div>
+                <div class="row" style="padding-top: 5px;">
+                  <div class="col-md-1"></div>
+                  <div class="col-sm-5">
+                    Jumlah Kertas
+                  </div>
+                  <div class="col-md-6">
+                  <label>
+                  <?php if($row->jenis_cetakan == "Cover"){?> 
+                    <?php echo $row->jumlah_kertas_cover_1!=null && $row->jumlah_kertas_cover_1!='-'? " ".$row->jumlah_kertas_cover_1."<br>": "" ?>
+                    <?php echo $row->jumlah_kertas_cover_2!=null && $row->jumlah_kertas_cover_2!='-'? " ".$row->jumlah_kertas_cover_2."<br>": "" ?>
+                    <?php echo $row->jumlah_kertas_cover_3!=null && $row->jumlah_kertas_cover_3!='-'? " ".$row->jumlah_kertas_cover_3."<br>": "" ?>
+                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                      <?php echo $row->jumlah_kertas_isi_1!=null && $row->jumlah_kertas_isi_1!='-'? " ".$row->jumlah_kertas_isi_1."<br>": "" ?>
+                      <?php echo $row->jumlah_kertas_isi_2!=null && $row->jumlah_kertas_isi_2!='-'? " ".$row->jumlah_kertas_isi_2."<br>": "" ?>
+                      <?php echo $row->jumlah_kertas_isi_3!=null && $row->jumlah_kertas_isi_3!='-'? " ".$row->jumlah_kertas_isi_3."<br>": "" ?>
+                    <?php } ?>
+                  </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row" style="padding-top: 5px;">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-11">
+                    <label>
+                    <?php if($row->muka1_fc_bw_warna !=null){?> 
+                    <?=$row->muka1_fc_bw_warna;?>
+                    <?php } else if ($row->muka2_fc_fc !=null ){?>
+                    <?= $row->muka2_fc_fc;?>
+                    <?php } else if ($row->muka2_blk !=null ){?>
+                    <?= $row->muka2_blk;?>
+                    <?php } else if ($row->muka2_blg !=null ){?>
+                    <?= $row->muka2_blg;?>
+                    <?php } ?> 
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div><br>
+
+            <div class="card" style="background: #A9A9A9">
+              <div class="row" align="center">
+                <div class="col">
+                  <div class="card-header text-center">
+                    <b>KETERANGAN</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <textarea class="form-control" name="keterangan_spk" <?= $row->keterangan_spk; ?> placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
+              </div>
+            </div><br>
+
+            <div class="row" align="center" style="height: 150px;">
+              <div class="col-md-4">
+                <br>Operator Cetak
+              </div>
+              <div class="col-md-4">
+                <br>Kasi Cetak
+              </div>
+              <div class="col-md-4">
+                Menyetujui<br>Manajer Produksi
+              </div>
+            </div><br>
+            <div class="row" align="center">
+              <div class="col-md-1">(</div>
+              <div class="col-md-2"></div>
+              <div class="col-md-1">)</div>
+              
+              <div class="col-md-1">(</div>
+              <div class="col-md-2"></div>
+              <div class="col-md-1">)</div>
+
+              <div class="col-md-1">(</div>
+              <div class="col-md-2"></div>
+              <div class="col-md-1">)</div>
+            </div><br>
+            
+            <div class="row" align="right">
+              <div class="col">
+                <a href="<?=site_url('cetak/JadwalMesin/print_72')?>" class="btn btn-default">Print</a>
+              </div>
+            </div>
           </div>
-          <!-- /.card -->
         </div>
+        <!-- /.card-body -->
+        <!-- <div class="card-footer">
+          Footer
+        </div> -->
+        <!-- /.card-footer-->
+        <?php } ?>
+        <script>
+                window.print();
+            </script>
       </div>
-
+      <!-- /.card -->
+     
     </section>
     <!-- /.content -->
