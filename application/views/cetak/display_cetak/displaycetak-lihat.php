@@ -578,7 +578,7 @@
                 </div>
                 <div class="row">
                     <div class="col" align="right">
-                        <button type="reset" class="btn btn-default">Kembali</button>
+                        <button type="button" class="btn btn-default"><a href="<?=site_url()?>cetak/DisplayCetak">Kembali</a></button>
                     </div>
                 </div>                 
             </form>

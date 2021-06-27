@@ -566,7 +566,7 @@
                 <div class="row">
                     <div class="col" align="right">
                         <button type="submit" name="edit" class="btn btn-success">Simpan</button>
-                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <button type="button" class="btn btn-default"><a href="<?=site_url()?>cetak/DisplayCetak">Kembali</a></button>
                     </div>
                 </div>                 
             </form>
