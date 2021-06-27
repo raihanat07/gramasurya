@@ -222,7 +222,7 @@
 
             <div class="row">
               <div class="col">
-                <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
+                <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;" disabled><?= $row->keterangan_spk;?></textarea>
               </div>
             </div><br>
 

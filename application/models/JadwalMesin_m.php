@@ -1166,12 +1166,12 @@ class JadwalMesin_m extends CI_Model {
         $this->db->from('order');
         $this->db->join('mesin_72','mesin_72.id_order = order.id_order','left');
         $this->db->join('spk','spk.id_order = order.id_order','left');         
-        $this->db->join('finishing','finishing.id_order = order.id_order'); 
-        $this->db->join('ctcp as ct','ct.id_order = order.id_order'); 
-        $this->db->join('kertas as ke','ke.id_order = order.id_order'); 
-        $this->db->join('imposisi','imposisi.id_order = order.id_order');     
-        $this->db->join('potong as po','po.id_order = order.id_order');  
-        $this->db->join('cetak as ce','ce.id_order = order.id_order');
+        $this->db->join('finishing','finishing.id_order = order.id_order','left'); 
+        $this->db->join('ctcp as ct','ct.id_order = order.id_order','left'); 
+        $this->db->join('kertas as ke','ke.id_order = order.id_order','left'); 
+        $this->db->join('imposisi','imposisi.id_order = order.id_order','left');     
+        $this->db->join('potong as po','po.id_order = order.id_order','left');  
+        $this->db->join('cetak as ce','ce.id_order = order.id_order','left');
         $this->db->where('mesin_72.tanggal_pelaksanaan !=', null);  
         $this->db->order_by('id_order', 'desc');    
         $this->db->where('mesin_72.id_mesin_72', $id);    
