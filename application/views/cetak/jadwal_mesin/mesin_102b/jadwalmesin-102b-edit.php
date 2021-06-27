@@ -12,9 +12,9 @@
     <!-- Main content -->
     <section class="content">
     <?php foreach($jm as $s => $row) {?>
-      <form action="<?=site_url('cetak/JadwalMesin/edit_jadwal_72')?>" method="post"> 
+      <form action="<?=site_url('cetak/JadwalMesin/edit_jadwal_102b')?>" method="post"> 
       <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
-      <input type="text" name="id_mesin_72"  value="<?php echo $row->id_mesin_72; ?>" hidden>
+      <input type="text" name="id_mesin_102b"  value="<?php echo $row->id_mesin_102b; ?>" hidden>
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
@@ -92,11 +92,11 @@
             <div class="row">
               <div class="col-md-6">
                 <label>Tanggal Pelaksanaan</label>
-                <input type="date" class="form-control" name="tanggal_pelaksanaan_72" id="tgl_72<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan; ?>" placeholder="Tanggal Pelaksanaan Cover" >
+                <input type="date" class="form-control" name="tanggal_pelaksanaan_102b" id="tgl_102b<?= $row->id_order.$row->id_order; ?>" value="<?= $row->tanggal_pelaksanaan; ?>" placeholder="Tanggal Pelaksanaan Cover" >
               </div>
               <div class="col-md-6">
                 <label>Nama Operator</label>
-                <select id="inputState" class="form-select form-control" name="operator_72" >
+                <select id="inputState" class="form-select form-control" name="operator_102b" >
                                     <option value="<?php  echo $row->operator != "-" ?   $row->operator  : '-' ?>"><?php  echo $row->operator != "-" ?   $row->operator  : '-' ?></option>
                                     <option value="Roni/Ariyanto">Roni/Ariyanto</option>
                                     <option value="Anam/Rois">Anam/Rois</option>
@@ -114,11 +114,11 @@
             <div class="row">
               <div class="col-md-6">
                 <label>Target</label>
-                <input type="number" class="form-control" name="target_72" value="<?= $row->target; ?>" placeholder="Jumlah Target" >
+                <input type="number" class="form-control" name="target_102b" value="<?= $row->target; ?>" placeholder="Jumlah Target" >
               </div>
               <div class="col-md-6">
                 <label>Jenis Lipatan</label>
-                <select id="inputState" class="form-select form-control" name="jenis_cetakan_72" >
+                <select id="inputState" class="form-select form-control" name="jenis_cetakan_102b" >
                                   <option value="<?php  echo $row->jenis_cetakan != "-" ?   $row->jenis_cetakan  : '-' ?>"><?php  echo $row->jenis_cetakan != "-" ?   $row->jenis_cetakan  : '-' ?>   </option>
                                     <option value="-">-</option>
                                     <option value="Cover">Cover</option>
@@ -129,11 +129,11 @@
             <div class="row">
               <div class="col-md-6">
                 <label>Set</label>
-                <input type="number" class="form-control" name="set_72" value="<?= $row->set?>" placeholder="Jumlah set cover" >
+                <input type="number" class="form-control" name="set_102b" value="<?= $row->set?>" placeholder="Jumlah set cover" >
               </div>
               <div class="col-md-6">
                 <label>Drug</label><br>
-                <input type="number" class="form-control" name="druk_72" hidden>
+                <input type="number" class="form-control" name="druk_102b" hidden>
                 <label><?= $row->druk?></label>
               </div>
             </div><br>

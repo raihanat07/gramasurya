@@ -393,9 +393,9 @@
             <br><hr><br>
             <h3 class="text-center">Form Pembuatan SPK</h3>
             <div class="card-body">
-            <form action="<?=site_url('cetak/jadwalmesin/proses_tambah_72')?>" method="POST">
+            <form action="<?=site_url('cetak/jadwalmesin/proses')?>" method="POST">
             <input type="text" name="id_mesin_72"  value="<?php echo $row->id_mesin_72; ?>" hidden>
-            <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
+            <input type="text" name="id_mesin_72"  value="<?php echo $row->id_mesin_72; ?>" hidden>
               <div class="row">
                 <div class="col-md-4">
                   <br>Nomor SO
@@ -529,20 +529,20 @@
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-3">
-                  <input type="text" name="1muka_fc_bw_warna" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="1muka_fc_bw_warna" value="1 Muka : FC / BW / WARNA">
+                  <input type="text" name="muka1_fc_bw_warna" value="" hidden>
+                  <input class="form-check-input" type="checkbox" name="muka1_fc_bw_warna"  value="1 Muka : FC / BW / WARNA" <?php echo $row->muka1_fc_bw_warna == "1 Muka : FC / BW / WARNA"   ?  "checked" : "" ?>>
                   <label class="form-check-label" for="flexCheckDefault">1 Muka : FC / BW / WARNA</label><br>
 
-                  <input type="text" name="2muka_fc_fc-bw_bw-bw" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="2muka_fc_fc-bw_bw-bw" value="2 Muka : FC / FC-BW / BW-BW">
+                  <input type="text" name="muka2_fc_fc" value="" hidden>
+                  <input class="form-check-input" type="checkbox" name="muka2_fc_fc" value="2 Muka : FC / FC-BW / BW-BW" <?php echo $row->muka2_fc_fc == "2 Muka : FC / FC-BW / BW-BW"   ?  "checked" : "" ?>>
                   <label class="form-check-label" for="flexCheckDefault">2 Muka : FC / FC-BW / BW-BW</label><br>
 
-                  <input type="text" name="2muka_blk" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="2muka_blk" value="2 Muka BLK (Balik Kertas)">
+                  <input type="text" name="muka2_blk" value="" hidden>
+                  <input class="form-check-input" type="checkbox" name="muka2_blk" value="2 Muka BLK (Balik Kertas)" <?php echo $row->muka2_blk == "2 Muka BLK (Balik Kertas)"   ?  "checked" : "" ?>>
                   <label class="form-check-label" for="flexCheckDefault">2 Muka BLK (Balik Kertas)</label><br>
 
-                  <input type="text" name="2muka_blg" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="2muka_blg" value="2 Muka BLG (Balik Graper)">
+                  <input type="text" name="muka2_blg" value="" hidden>
+                  <input class="form-check-input" type="checkbox" name="muka2_blg" value="2 Muka BLG (Balik Graper)" <?php echo $row->muka2_blg == "2 Muka BLG (Balik Graper)"   ?  "checked" : "" ?>>
                   <label class="form-check-label" for="flexCheckDefault">2 Muka BLG (Balik Graper)</label>
                 </div>
               </div><br>
@@ -553,7 +553,7 @@
               </div><br>
               <div class="row">
                 <div class="col" align="right">
-                  <button type="submit" name="edit" class="btn btn-success">Simpan</button>
+                  <button type="submit" name="editspk72" class="btn btn-success">Simpan</button>
                 </div>
               </div>
             </form>

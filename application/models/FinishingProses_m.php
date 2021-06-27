@@ -517,6 +517,7 @@ public function ambilIDOrder($id_order)
         order.oplag as oplag, 
         order.so_status as so_status,
         
+        laminasi.jenis_laminasi as jenis_laminasi,
         laminasi.status_laminasi as status_laminasi,
         laminasi.id_jadwal_laminasi as id_jadwal_laminasi,
         laminasi.id_laminasi as id_laminasi,

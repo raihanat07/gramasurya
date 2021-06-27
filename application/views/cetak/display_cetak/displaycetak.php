@@ -78,7 +78,13 @@
                                 echo $finishing;
                                 ?>
                             </td>
-                            <td><?= $row->so_status; ?></td>
+                            <td><?php 
+                                if($row->status_cetak ==null) 
+                                  echo $row->so_status;
+                                else if($row->status_cetak !=null)
+                                  echo $row->status_cetak;   
+                                ?>
+                            </td>
               <td align="center">
                 <!-- edit diplay cetak -->
                 

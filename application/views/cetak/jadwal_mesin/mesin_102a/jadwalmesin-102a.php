@@ -15,7 +15,7 @@
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title coba">Jadwal Mesin</h3>
+          <h3 class="card-title coba">Jadwal Mesin 102a</h3>
 
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -60,10 +60,10 @@
               <td><?= $row->target; ?></td>
               <td><?= $row->druk; ?></td>
               <td align="center">
-                <a href="<?=site_url('cetak/JadwalMesin/lihat_74b/'.$row->id_mesin_74b)?>">
+                <a href="<?=site_url('cetak/JadwalMesin/lihat_102a/'.$row->id_mesin_102a)?>">
                   <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
-                <a href="<?=site_url('cetak/JadwalMesin/edit_74b/'.$row->id_mesin_74b)?>">
+                <a href="<?=site_url('cetak/JadwalMesin/edit_102a/'.$row->id_mesin_102a)?>">
                   <i class="fa fa-pencil" style="font-size:18px;"></i>
                 </a>
               </td>
@@ -71,11 +71,11 @@
               
               <td align="center">
               <?php if($row->id_spk == null){?>
-                  <a href="<?=site_url('cetak/JadwalMesin/tambah_spk_74b/'.$row->id_mesin_74b)?>" class="btn btn-success">
+                  <a href="<?=site_url('cetak/JadwalMesin/tambah_spk_102a/'.$row->id_mesin_102a)?>" class="btn btn-success">
                   <i class="fa fa-plus" style="font-size:14px"></i> BUAT SPK    
                 </a>
                 <?php }else{?>
-                  <a href="<?=site_url('cetak/JadwalMesin/edit_spk_74b/'.$row->id_mesin_74b)?>" class="btn btn-success">
+                  <a href="<?=site_url('cetak/JadwalMesin/edit_spk_102a/'.$row->id_mesin_102a)?>" class="btn btn-success">
                   <i class="fa fa-pencil" style="font-size:14px"></i> EDIT SPK 
                 </a>
               

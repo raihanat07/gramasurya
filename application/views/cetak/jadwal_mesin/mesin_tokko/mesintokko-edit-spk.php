@@ -1,5 +1,5 @@
 <!-- Content Header (Page header) -->
-<section class="content-header">
+    <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -394,7 +394,7 @@
             <h3 class="text-center">Form Pembuatan SPK</h3>
             <div class="card-body">
             <form action="<?=site_url('cetak/jadwalmesin/proses')?>" method="POST">
-            <input type="text" name="id_mesin_74a"  value="<?php echo $row->id_mesin_74a; ?>" hidden>
+            <input type="text" name="id_mesin_tokko"  value="<?php echo $row->id_mesin_tokko; ?>" hidden>
             <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
               <div class="row">
                 <div class="col-md-4">
@@ -431,7 +431,7 @@
                   Tanggal Buat SPK
                 </div>
                 <div class="col-md-4">
-                  <input type="date" class="form-control" name="tanggal_buat_spk" placeholder="Tanggal Buat SPK" required>
+                  <input type="date" class="form-control" name="tanggal_buat_spk" value="<?= $row->tanggal_buat_spk; ?>" placeholder="Tanggal Buat SPK" >
                 </div>
                 <div class="col-sm-2" align="right">
                   Jenis Kertas
@@ -455,7 +455,7 @@
                   Ukuran Potong
                 </div>
                 <div class="col-md-4">
-                  <input type="text" class="form-control" name="ukuran_potong" placeholder="Ukuran Potong" required>
+                  <input type="text" class="form-control" name="ukuran_potong" value="<?= $row->ukuran_potong; ?>" placeholder="Ukuran Potong" >
                 </div>
                 <div class="col-sm-2" align="right">
                   Model Potongan
@@ -514,7 +514,7 @@
                   Jumlah Cetak
                 </div>
                 <div class="col-md-4">
-                  <input type="number" class="form-control" name="jumlah_cetak" placeholder="Jumlah Cetak" required>
+                  <input type="number" class="form-control" name="jumlah_cetak" value="<?= $row->jumlah_cetak; ?>" placeholder="Jumlah Cetak" >
                 </div>
               </div><br>
               <div class="row">
@@ -529,31 +529,31 @@
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-3">
-                  <input type="text" name="muka1_fc_bw_warna" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="muka1_fc_bw_warna" value="1 Muka : FC / BW / WARNA">
+                  <input type="text" name="1muka_fc_bw_warna" value="" hidden>
+                  <input class="form-check-input" type="checkbox" name="muka1_fc_bw_warna"  value="1 Muka : FC / BW / WARNA" <?php echo $row->muka1_fc_bw_warna == "1 Muka : FC / BW / WARNA"   ?  "checked" : "" ?>>
                   <label class="form-check-label" for="flexCheckDefault">1 Muka : FC / BW / WARNA</label><br>
 
-                  <input type="text" name="muka2_fc_fc" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="muka2_fc_fc" value="2 Muka : FC / FC-BW / BW-BW">
+                  <input type="text" name="2muka_fc_fc-bw_bw-bw" value="" hidden>
+                  <input class="form-check-input" type="checkbox" name="muka2_fc_fc-bw_bw-bw" value="2 Muka : FC / FC-BW / BW-BW" <?php echo $row->muka2_fc_fc == "2 Muka : FC / FC-BW / BW-BW"   ?  "checked" : "" ?>>
                   <label class="form-check-label" for="flexCheckDefault">2 Muka : FC / FC-BW / BW-BW</label><br>
 
-                  <input type="text" name="muka2_blk" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="muka2_blk" value="2 Muka BLK (Balik Kertas)">
+                  <input type="text" name="2muka_blk" value="" hidden>
+                  <input class="form-check-input" type="checkbox" name="muka2_blk" value="2 Muka BLK (Balik Kertas)" <?php echo $row->muka2_blk == "2 Muka BLK (Balik Kertas)"   ?  "checked" : "" ?>>
                   <label class="form-check-label" for="flexCheckDefault">2 Muka BLK (Balik Kertas)</label><br>
 
-                  <input type="text" name="muka2_blg" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="muka2_blg" value="2 Muka BLG (Balik Graper)">
+                  <input type="text" name="2muka_blg" value="" hidden>
+                  <input class="form-check-input" type="checkbox" name="muka2_blg" value="2 Muka BLG (Balik Graper)" <?php echo $row->muka2_blg == "2 Muka BLG (Balik Graper)"   ?  "checked" : "" ?>>
                   <label class="form-check-label" for="flexCheckDefault">2 Muka BLG (Balik Graper)</label>
                 </div>
               </div><br>
               <div class="row">
                 <div class="col">
-                  <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;"></textarea>
+                  <textarea class="form-control" name="keterangan_spk" value="<?= $row->keterangan_spk; ?>" placeholder="Keterangan" style="min-height: 250px;"></textarea>
                 </div>
               </div><br>
               <div class="row">
                 <div class="col" align="right">
-                  <button type="submit" name="addspk74a" class="btn btn-success">Simpan</button>
+                  <button type="submit" name="editspktokko" class="btn btn-success">Simpan</button>
                 </div>
               </div>
             </form>

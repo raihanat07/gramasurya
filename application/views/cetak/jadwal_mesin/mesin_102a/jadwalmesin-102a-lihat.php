@@ -262,7 +262,7 @@
             
             <div class="row" align="right">
               <div class="col">
-              <a href="<?=site_url('cetak/JadwalMesin/print_74a/'.$row->id_order)?>" class="btn btn-default">Print</a>
+              <a href="<?=site_url('cetak/JadwalMesin/print_102a/'.$row->id_order)?>" class="btn btn-default">Print</a>
               </div>
             </div>
           </div>

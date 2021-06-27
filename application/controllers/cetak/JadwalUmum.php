@@ -16,6 +16,121 @@ class JadwalUmum extends CI_Controller {
 			'judul' => 'Jadwal Umum Cetak',
 			'ju' => $query->result(),
 		);
+					$nilai = 0;					
+					$banding_id[-1]=null;
+
+					$tgl_cover_72 = "";		
+					$tgl_isi_72 = "";
+					$tgl_cover_74a = "";		
+					$tgl_isi_74a = "";
+					$tgl_cover_74b = "";		
+					$tgl_isi_74b = "";
+					$tgl_cover_102a = "";		
+					$tgl_isi_102a = "";
+					$tgl_cover_102b = "";		
+					$tgl_isi_102b = "";
+					$tgl_cover_tokko = "";		
+					$tgl_isi_tokko = "";
+
+					foreach($data["ju"] as $s => $row){
+										// var_dump($row->id_order);
+
+										$id_order = $row->id_order;
+										$banding_id[$nilai] = $id_order;
+
+										$ambil = $this->ju->cek_72($id_order)->result();													
+																foreach($ambil as $sq) {				
+																	if($sq->jenis_cetakan == "Cover") {
+																		$tgl_cover_72 = $sq->tanggal_pelaksanaan_72;
+																	}	
+																	if($sq->jenis_cetakan == "Isi") {
+																		$tgl_isi_72 = $sq->tanggal_pelaksanaan_72;
+																	}				
+																}
+										$ambil = $this->ju->cek_74a($id_order)->result();													
+																foreach($ambil as $sq) {				
+																	if($sq->jenis_cetakan == "Cover") {
+																		$tgl_cover_74a = $sq->tanggal_pelaksanaan_74a;
+																	}	
+																	if($sq->jenis_cetakan == "Isi") {
+																		$tgl_isi_74a = $sq->tanggal_pelaksanaan_74a;
+																	}				
+																}
+
+										$ambil = $this->ju->cek_74b($id_order)->result();													
+																foreach($ambil as $sq) {				
+																	if($sq->jenis_cetakan == "Cover") {
+																		$tgl_cover_74b = $sq->tanggal_pelaksanaan_74b;
+																	}	
+																	if($sq->jenis_cetakan == "Isi") {
+																		$tgl_isi_74b = $sq->tanggal_pelaksanaan_74b;
+																	}				
+																}
+										$ambil = $this->ju->cek_102a($id_order)->result();													
+																foreach($ambil as $sq) {				
+																	if($sq->jenis_cetakan == "Cover") {
+																		$tgl_cover_102a = $sq->tanggal_pelaksanaan_102a;
+																	}	
+																	if($sq->jenis_cetakan == "Isi") {
+																		$tgl_isi_102a = $sq->tanggal_pelaksanaan_102a;
+																	}				
+																}
+										$ambil = $this->ju->cek_102b($id_order)->result();													
+																foreach($ambil as $sq) {				
+																	if($sq->jenis_cetakan == "Cover") {
+																		$tgl_cover_102b = $sq->tanggal_pelaksanaan_102b;
+																	}	
+																	if($sq->jenis_cetakan == "Isi") {
+																		$tgl_isi_102b = $sq->tanggal_pelaksanaan_102b;
+																	}				
+																}
+										$ambil = $this->ju->cek_tokko($id_order)->result();													
+																foreach($ambil as $sq) {				
+																	if($sq->jenis_cetakan == "Cover") {
+																		$tgl_cover_tokko = $sq->tanggal_pelaksanaan_tokko;
+																	}	
+																	if($sq->jenis_cetakan == "Isi") {
+																		$tgl_isi_tokko = $sq->tanggal_pelaksanaan_tokko;
+																	}				
+																}
+																
+
+										if($banding_id[$nilai] != $banding_id[$nilai-1]){
+											$data["tgl_cover_72"][$nilai] = $tgl_cover_72;																 					
+											$data["tgl_isi_72"][$nilai] = $tgl_isi_72;																 						
+											$data["tgl_cover_74a"][$nilai] = $tgl_cover_74a;																 					
+											$data["tgl_isi_74a"][$nilai] = $tgl_isi_74a;
+											$data["tgl_cover_74b"][$nilai] = $tgl_cover_74b;																 					
+											$data["tgl_isi_74b"][$nilai] = $tgl_isi_74b;
+											$data["tgl_cover_102a"][$nilai] = $tgl_cover_102a;																 					
+											$data["tgl_isi_102a"][$nilai] = $tgl_isi_102a;		
+											$data["tgl_cover_102b"][$nilai] = $tgl_cover_102b;																 					
+											$data["tgl_isi_102b"][$nilai] = $tgl_isi_102b;		
+											$data["tgl_cover_tokko"][$nilai] = $tgl_cover_tokko;																 					
+											$data["tgl_isi_tokko"][$nilai] = $tgl_isi_tokko;											
+						
+											$nilai++;	
+										}  			
+						// reset
+					$tgl_cover_72 = "";		
+					$tgl_isi_72 = "";
+					$tgl_cover_74a = "";		
+					$tgl_isi_74a = "";
+					$tgl_cover_74b = "";		
+					$tgl_isi_74b = "";
+					$tgl_cover_102a = "";		
+					$tgl_isi_102a = "";
+					$tgl_cover_102b = "";		
+					$tgl_isi_102b = "";
+					$tgl_cover_tokko = "";		
+					$tgl_isi_tokko = "";																														   		
+
+					}
+					// var_dump($data["tgl_cover_72"]);die;
+
+
+
+
 		$this->template->load('cetak/template','cetak/jadwal_umum/jadwalumum',$data);
 	}
 
@@ -106,84 +221,191 @@ class JadwalUmum extends CI_Controller {
 	{		
 		if(isset($_POST['add72'])){							
 			$inputan = $this->input->post(null, TRUE);
-			
-			
+						
+								// ini dia hehe
+								if($inputan["target_72"] !=null){
+									$inputan["druk_72"] = $inputan["target_72"] * $inputan["oplag"];
+								}	
 
-			if($inputan["target_72"] !=null){
-				$inputan["druk_72"] = $inputan["target_72"] * $inputan["oplag"];
-			}
-			
+								// proses seleksi breeeeeh
+								$cek_cover = null;
+								$cek_isi = null;
+								$ambil = $this->ju->cek_72($inputan["id_order"])->result();
 
-			$this->ju->tambah_ju72($inputan);							
-			// $this->ctcp->status_umum($inputan);						
-				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
-				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
+								foreach($ambil as $sq){
+										if($sq->jenis_cetakan == "Cover"){
+											$cek_cover = "berisi";
+										}
+										if($sq->jenis_cetakan == "Isi"){
+											$cek_isi = "berisi";
+										}
+								}						
+											if($inputan["jenis_cetakan_72"] == "Cover" && $cek_cover != "berisi"){
+												$inputan["jenis_cetakan_72"] = "Cover";
+												$this->ju->tambah_ju72($inputan);																											
+											}else if($inputan["jenis_cetakan_72"] == "Isi" && $cek_isi != "berisi"){
+												$inputan["jenis_cetakan_72"] = "Isi";
+												$this->ju->tambah_ju72($inputan);														
+											}												
+									echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
+									echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
+
 
 		} else if(isset($_POST['add74a'])){							
 			$inputan = $this->input->post(null, TRUE);
 			
 			
-			
-			if($inputan["target_74a"] !=null){
-				$inputan["druk_74a"] = $inputan["target_74a"] * $inputan["oplag"];
-			}
+			// ini dia hehe
+								if($inputan["target_74a"] !=null){
+									$inputan["druk_74a"] = $inputan["target_74a"] * $inputan["oplag"];
+								}	
 
-			$this->ju->tambah_ju74a($inputan);							
-			// $this->ctcp->status_umum($inputan);						
-				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
-				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
+								// proses seleksi breeeeeh
+								$cek_cover = null;
+								$cek_isi = null;
+								$ambil = $this->ju->cek_74a($inputan["id_order"])->result();
+
+								foreach($ambil as $sq){
+										if($sq->jenis_cetakan == "Cover"){
+											$cek_cover = "berisi";
+										}
+										if($sq->jenis_cetakan == "Isi"){
+											$cek_isi = "berisi";
+										}
+								}						
+											if($inputan["jenis_cetakan_74a"] == "Cover" && $cek_cover != "berisi"){
+												$inputan["jenis_cetakan_74a"] = "Cover";
+												$this->ju->tambah_ju74a($inputan);																											
+											}else if($inputan["jenis_cetakan_74a"] == "Isi" && $cek_isi != "berisi"){
+												$inputan["jenis_cetakan_74a"] = "Isi";
+												$this->ju->tambah_ju74a($inputan);														
+											}												
+									echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
+									echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
 
 		}  else if(isset($_POST['add74b'])){							
 			$inputan = $this->input->post(null, TRUE);
 
-			
-			if($inputan["target_74b"] !=null){
-				$inputan["druk_74b"] = $inputan["target_74b"] * $inputan["oplag"];
-			}
+			// ini dia hehe
+								if($inputan["target_74b"] !=null){
+									$inputan["druk_74b"] = $inputan["target_74b"] * $inputan["oplag"];
+								}	
 
-			$this->ju->tambah_ju74b($inputan);							
-			// $this->ctcp->status_umum($inputan);						
-				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
-				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
+								// proses seleksi breeeeeh
+								$cek_cover = null;
+								$cek_isi = null;
+								$ambil = $this->ju->cek_74b($inputan["id_order"])->result();
+
+								foreach($ambil as $sq){
+										if($sq->jenis_cetakan == "Cover"){
+											$cek_cover = "berisi";
+										}
+										if($sq->jenis_cetakan == "Isi"){
+											$cek_isi = "berisi";
+										}
+								}						
+											if($inputan["jenis_cetakan_74b"] == "Cover" && $cek_cover != "berisi"){
+												$inputan["jenis_cetakan_74b"] = "Cover";
+												$this->ju->tambah_ju74b($inputan);																											
+											}else if($inputan["jenis_cetakan_74b"] == "Isi" && $cek_isi != "berisi"){
+												$inputan["jenis_cetakan_74b"] = "Isi";
+												$this->ju->tambah_ju74b($inputan);														
+											}												
+									echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
+									echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
 
 		}else if(isset($_POST['add102a'])){							
 			$inputan = $this->input->post(null, TRUE);
 
-			
-			if($inputan["target_102a"] !=null){
-				$inputan["druk_102a"] = $inputan["target_102a"] * $inputan["oplag"];
-			}
+			// ini dia hehe
+								if($inputan["target_102a"] !=null){
+									$inputan["druk_102a"] = $inputan["target_102a"] * $inputan["oplag"];
+								}	
 
-			$this->ju->tambah_ju102a($inputan);							
-			// $this->ctcp->status_umum($inputan);						
-				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
-				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
+								// proses seleksi breeeeeh
+								$cek_cover = null;
+								$cek_isi = null;
+								$ambil = $this->ju->cek_102a($inputan["id_order"])->result();
+
+								foreach($ambil as $sq){
+										if($sq->jenis_cetakan == "Cover"){
+											$cek_cover = "berisi";
+										}
+										if($sq->jenis_cetakan == "Isi"){
+											$cek_isi = "berisi";
+										}
+								}						
+											if($inputan["jenis_cetakan_102a"] == "Cover" && $cek_cover != "berisi"){
+												$inputan["jenis_cetakan_102a"] = "Cover";
+												$this->ju->tambah_ju102a($inputan);																											
+											}else if($inputan["jenis_cetakan_102a"] == "Isi" && $cek_isi != "berisi"){
+												$inputan["jenis_cetakan_102a"] = "Isi";
+												$this->ju->tambah_ju102a($inputan);														
+											}												
+									echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
+									echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
 
 		}else if(isset($_POST['add102b'])){							
 			$inputan = $this->input->post(null, TRUE);
 
-			
-			if($inputan["target_102b"] !=null){
-				$inputan["druk_102b"] = $inputan["target_102b"] * $inputan["oplag"];
-			}
+			// ini dia hehe
+								if($inputan["target_102b"] !=null){
+									$inputan["druk_102b"] = $inputan["target_102b"] * $inputan["oplag"];
+								}	
 
-			$this->ju->tambah_ju102b($inputan);							
-			// $this->ctcp->status_umum($inputan);						
-				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
-				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
+								// proses seleksi breeeeeh
+								$cek_cover = null;
+								$cek_isi = null;
+								$ambil = $this->ju->cek_102b($inputan["id_order"])->result();
+
+								foreach($ambil as $sq){
+										if($sq->jenis_cetakan == "Cover"){
+											$cek_cover = "berisi";
+										}
+										if($sq->jenis_cetakan == "Isi"){
+											$cek_isi = "berisi";
+										}
+								}						
+											if($inputan["jenis_cetakan_102b"] == "Cover" && $cek_cover != "berisi"){
+												$inputan["jenis_cetakan_102b"] = "Cover";
+												$this->ju->tambah_ju102b($inputan);																											
+											}else if($inputan["jenis_cetakan_102b"] == "Isi" && $cek_isi != "berisi"){
+												$inputan["jenis_cetakan_102b"] = "Isi";
+												$this->ju->tambah_ju102b($inputan);														
+											}												
+									echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
+									echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
 
 		}else if(isset($_POST['addtokko'])){							
 			$inputan = $this->input->post(null, TRUE);
 
-			
-			if($inputan["target_tokko"] !=null){
-				$inputan["druk_tokko"] = $inputan["target_tokko"] * $inputan["oplag"];
-			}
+			// ini dia hehe
+								if($inputan["target_tokko"] !=null){
+									$inputan["druk_tokko"] = $inputan["target_tokko"] * $inputan["oplag"];
+								}	
 
-			$this->ju->tambah_jutokko($inputan);							
-			// $this->ctcp->status_umum($inputan);						
-				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
-				echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
+								// proses seleksi breeeeeh
+								$cek_cover = null;
+								$cek_isi = null;
+								$ambil = $this->ju->cek_tokko($inputan["id_order"])->result();
+
+								foreach($ambil as $sq){
+										if($sq->jenis_cetakan == "Cover"){
+											$cek_cover = "berisi";
+										}
+										if($sq->jenis_cetakan == "Isi"){
+											$cek_isi = "berisi";
+										}
+								}						
+											if($inputan["jenis_cetakan_tokko"] == "Cover" && $cek_cover != "berisi"){
+												$inputan["jenis_cetakan_tokko"] = "Cover";
+												$this->ju->tambah_jutokko($inputan);																											
+											}else if($inputan["jenis_cetakan_tokko"] == "Isi" && $cek_isi != "berisi"){
+												$inputan["jenis_cetakan_tokko"] = "Isi";
+												$this->ju->tambah_jutokko($inputan);														
+											}												
+									echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
+									echo "<script>window.location='".site_url('cetak/jadwalumum')."'; </script>";
 
 		}else if(isset($_POST['edit'])){ 
 			$inputan = $this->input->post(null, TRUE);

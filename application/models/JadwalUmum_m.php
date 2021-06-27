@@ -17,6 +17,11 @@ class JadwalUmum_m extends CI_Model {
              order.oplag as oplag, 
              order.so_status as so_status,
 
+            display_cetak.id_display_cetak as id_display_cetak,
+            display_cetak.status_cetak_cover as status_cetak_cover,
+            display_cetak.status_cetak_isi as status_cetak_isi,
+            display_cetak.status_cetak as status_cetak,
+
             finishing.finishing_akhir_bending as bending, 
             finishing.finishing_akhir_hard_cover as hard_cover, 
             finishing.finishing_akhir_jahit_benang as jahit_benang, 
@@ -88,7 +93,10 @@ class JadwalUmum_m extends CI_Model {
             ',
         );
 
+        $so_status = array('pracetak','cetak','cetak cover','cetak isi');
+
         $this->db->from('order');
+        $this->db->join('display_cetak','display_cetak.id_order = order.id_order','left');
         $this->db->join('finishing','finishing.id_order = order.id_order','left');
         $this->db->join('mesin_72','mesin_72.id_order = order.id_order','left');
         $this->db->join('mesin_74_a','mesin_74_a.id_order = order.id_order','left');
@@ -96,6 +104,7 @@ class JadwalUmum_m extends CI_Model {
         $this->db->join('mesin_102_a','mesin_102_a.id_order = order.id_order','left');
         $this->db->join('mesin_102_b','mesin_102_b.id_order = order.id_order','left');
         $this->db->join('mesin_tokko','mesin_tokko.id_order = order.id_order','left');
+        $this->db->where_in('order.so_status',$so_status);
         $this->db->order_by('id_order', 'desc');    
         $query = $this->db->get();
         return $query; 
@@ -304,6 +313,115 @@ class JadwalUmum_m extends CI_Model {
     //     $query = $this->db->get();
     //     return $query;
     // }
+
+public function cek_72($id)
+{
+    $this->db->select(
+        '   
+       id_mesin_72,
+       jenis_cetakan,
+       tanggal_pelaksanaan as tanggal_pelaksanaan_72
+                      
+        '
+    );
+    $this->db->from('mesin_72');                                   
+    $this->db->where('id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function cek_74a($id)
+{
+    $this->db->select(
+        '   
+       id_mesin_74a,
+       jenis_cetakan,
+       tanggal_pelaksanaan as tanggal_pelaksanaan_74a
+                      
+        '
+    );
+    $this->db->from('mesin_74_a');                                   
+    $this->db->where('id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function cek_74b($id)
+{
+    $this->db->select(
+        '   
+       id_mesin_74b,
+       jenis_cetakan,
+       tanggal_pelaksanaan as tanggal_pelaksanaan_74b
+                      
+        '
+    );
+    $this->db->from('mesin_74_b');                                   
+    $this->db->where('id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function cek_102a($id)
+{
+    $this->db->select(
+        '   
+       id_mesin_102a,
+       jenis_cetakan,
+       tanggal_pelaksanaan as tanggal_pelaksanaan_102a
+                      
+        '
+    );
+    $this->db->from('mesin_102_a');                                   
+    $this->db->where('id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+
+public function cek_102b($id)
+{
+    $this->db->select(
+        '   
+       id_mesin_102b,
+       jenis_cetakan,
+       tanggal_pelaksanaan as tanggal_pelaksanaan_102b
+                      
+        '
+    );
+    $this->db->from('mesin_102_b');                                   
+    $this->db->where('id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+public function cek_tokko($id)
+{
+    $this->db->select(
+        '   
+       id_mesin_tokko,
+       jenis_cetakan,
+       tanggal_pelaksanaan as tanggal_pelaksanaan_tokko
+                      
+        '
+    );
+    $this->db->from('mesin_tokko');                                   
+    $this->db->where('id_order', $id);                   
+    $query = $this->db->get();
+    return $query;   
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 

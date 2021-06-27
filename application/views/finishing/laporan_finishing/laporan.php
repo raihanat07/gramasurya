@@ -147,15 +147,16 @@
                   <td rowspan="2">Potong</td>
                   <td rowspan="2">Jahit</td>
                   <td rowspan="2">Hardcover</td>
+                  <td rowspan="2">STATUS</td>
                 </tr>
                 <tr>
                   <!-- LAMINASI -->
-                  <td>Uvi</td>
-                  <td>Gloss</td>
+                  <td>emboss</td>
+                  <td>Glossy</td>
                   <td>Doff</td>
                   <!-- MBO -->
                   <td>1</td>
-                  <td>2</td>
+                  <td>2</td>  
                   <td>3</td>
                   <td>4</td>
                   <!-- SHOE -->
@@ -177,12 +178,12 @@
 
                   <tr>                
                     <td align="center"><?= $row->nomor_so; ?></td>
-                    <td><?= $row->nama_orderan."--<br>".$row->id_order; ?></td>
+                    <td><?= $row->nama_orderan; ?></td>
                     
                     <!-- LAMINASI -->
-                    <td><?php echo $row->uvi == "uvi" ?  "uvi" : "" ?></td>
-                    <td><?php echo $row->glossy == "glossy" ?  "glossy" : "" ?></td>
-                    <td><?php echo $row->doff == "doff" ?  "doff" : "" ?></td>
+                    <td><?= $total_emboss[$nilai]; ?></td>
+                    <td><?= $total_glossy[$nilai]; ?></td>
+                    <td><?= $total_doff[$nilai]; ?></td>
                     
                     <!-- MBO -->
                     <td><?= $total_mbo_1[$nilai]; ?></td>
@@ -210,6 +211,8 @@
                     
                     <!-- Hardcover -->
                     <td><?= $total_hardcover[$nilai]; ?></td>
+                    <!-- STATUS -->
+                    <td><?= $row->so_status; ?></td>
                   </tr> 
 
                 <?php $nilai++;} ?>

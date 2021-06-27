@@ -1,5 +1,5 @@
 <!-- Content Header (Page header) -->
-<section class="content-header">
+    <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -394,7 +394,7 @@
             <h3 class="text-center">Form Pembuatan SPK</h3>
             <div class="card-body">
             <form action="<?=site_url('cetak/jadwalmesin/proses')?>" method="POST">
-            <input type="text" name="id_mesin_74a"  value="<?php echo $row->id_mesin_74a; ?>" hidden>
+            <input type="text" name="id_mesin_102b"  value="<?php echo $row->id_mesin_102b; ?>" hidden>
             <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
               <div class="row">
                 <div class="col-md-4">
@@ -553,7 +553,7 @@
               </div><br>
               <div class="row">
                 <div class="col" align="right">
-                  <button type="submit" name="addspk74a" class="btn btn-success">Simpan</button>
+                  <button type="submit" name="addspk102b" class="btn btn-success">Simpan</button>
                 </div>
               </div>
             </form>

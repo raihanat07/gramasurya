@@ -91,15 +91,18 @@
                     <div class="col-md-2" align="right"><label>Status</label></div>
                     
                     <div class="col-md-2" style="margin-left:20px ">
-                        <input class="form-check-input" type="checkbox" name="status_cetak_cover" value="Cetak Cover">
+                    <input type="text" name="status_cetak_cover" value="" hidden>
+                        <input class="form-check-input" type="checkbox" name="status_cetak_cover" value="Cetak Cover" <?php echo $row->status_cetak_cover == "Cetak Cover"  ?  "checked" : "" ?>>
                         <label class="form-check-label" for="flexCheckDefault">Cetak Cover</label>
                     </div>
                     <div class="col-md-2">
-                        <input class="form-check-input" type="checkbox" name="status_cetak_isi" value="Cetak Isi">
+                    <input type="text" name="status_cetak_isi" value="" hidden>
+                        <input class="form-check-input" type="checkbox" name="status_cetak_isi" value="Cetak Isi"  <?php echo $row->status_cetak_isi == "Cetak Isi" ?  "checked" : "" ?>>
                         <label class="form-check-label" for="flexCheckDefault">Cetak Isi</label>
                     </div>
                     <div class="col-md-2">
-                        <input class="form-check-input" type="checkbox" name="status_cetak" value="Cetak">
+                    <input type="text" name="status_cetak" value="" hidden>
+                        <input class="form-check-input" type="checkbox" name="status_cetak" value="Cetak"  <?php echo $row->status_cetak == "cetak" ?  "checked" : "" ?>>
                         <label class="form-check-label" for="flexCheckDefault">Cetak</label>
                     </div>
                 </div><br>

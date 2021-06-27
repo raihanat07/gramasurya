@@ -50,7 +50,7 @@
               </div>
               <div class="col-md-4">
                 <br>Jenis Cetakan
-                <br><label class="form-label"><?= $row->jenis_cetakan; ?></label>
+                <br><label class="form-label">dari db</label>
               </div>
             </div>
           
@@ -92,9 +92,7 @@
                     Ukuran Kertas
                   </div>
                   <div class="col-md-6">
-                    <label>
-                    
-                    <?php if($row->jenis_cetakan == "Cover"){?> 
+                    <label><?php if($row->jenis_cetakan == "Cover"){?> 
                       <?php echo $row->ukuran_plano_cover_1!=null && $row->ukuran_plano_cover_1!='-'? "ukuran 1 : ".$row->ukuran_plano_cover_1."<br>": "" ?>
                       <?php echo $row->ukuran_plano_cover_2!=null && $row->ukuran_plano_cover_2!='-'? "ukuran 2 : ".$row->ukuran_plano_cover_2."<br>": "" ?>
                       <?php echo $row->ukuran_plano_cover_3!=null && $row->ukuran_plano_cover_3!='-'? "ukuran 3 : ".$row->ukuran_plano_cover_3."<br>": "" ?>
@@ -102,9 +100,7 @@
                       <?php echo $row->ukuran_plano_isi_1!=null && $row->ukuran_plano_isi_1!='-'? "ukuran 1 : ".$row->ukuran_plano_isi_1."<br>": "" ?>
                       <?php echo $row->ukuran_plano_isi_2!=null && $row->ukuran_plano_isi_2!='-'? "ukuran 2 : ".$row->ukuran_plano_isi_2."<br>": "" ?>
                       <?php echo $row->ukuran_plano_isi_3!=null && $row->ukuran_plano_isi_3!='-'? "ukuran 3 : ".$row->ukuran_plano_isi_3."<br>": "" ?>
-                    <?php } ?>
-                    
-                    </label>
+                    <?php } ?></label>
                   </div>
                 </div>
                 <div class="row" style="padding-top: 5px;">
@@ -113,12 +109,11 @@
                     Jumlah Plate
                   </div>
                   <div class="col-md-6">
-                  <label><?php if($row->jenis_cetakan == "Cover"){?> 
+                    <label><?php if($row->jenis_cetakan == "Cover"){?> 
                     <?=$row->total_plat_cover;?>
                     <?php } else if ($row->jenis_cetakan == "Isi"){?>
                     <?= $row->total_plat_isi;?>
-                    <?php } ?>
-                  </label>
+                    <?php } ?></label>
                   </div>
                 </div>
                 <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
@@ -147,8 +142,7 @@
                     <?php echo $row->jenis_kertas_isi_1!=null && $row->jenis_kertas_isi_1!='-'? "".$row->jenis_kertas_isi_1."<br>": "" ?>
                     <?php echo $row->jenis_kertas_isi_2!=null && $row->jenis_kertas_isi_2!='-'? "".$row->jenis_kertas_isi_2."<br>": "" ?>
                     <?php echo $row->jenis_kertas_isi_3!=null && $row->jenis_kertas_isi_3!='-'? "".$row->jenis_kertas_isi_3."<br>": "" ?>
-                  <?php } ?>
-                    </label>
+                  <?php } ?></label>
                   </div>
                 </div>
                 <div class="row" style="padding-top: 5px;">
@@ -166,7 +160,7 @@
                     Model Potongan
                   </div>
                   <div class="col-md-6">
-                  <label><?php if($row->jenis_cetakan == "Cover"){?> 
+                    <label><?php if($row->jenis_cetakan == "Cover"){?> 
                     <?php echo $row->potong_cover_1!=null? "potong 1 : ".$row->potong_cover_1."<br>": "" ?>
                     <?php echo $row->potong_cover_2!=null? "potong 2 : ".$row->potong_cover_2."<br>": "" ?>
                     <?php echo $row->potong_cover_3!=null? "potong 3 : ".$row->potong_cover_3."<br>": "" ?>
@@ -175,8 +169,7 @@
                     <?php echo $row->potong_isi_2!=null? "potong 2 : ".$row->potong_isi_2."<br>": "" ?>
                     <?php echo $row->potong_isi_3!=null? "potong 3 : ".$row->potong_isi_3."<br>": "" ?>
                     <?php echo $row->potong_isi_4!=null? "potong 4 : ".$row->potong_isi_4."<br>": "" ?>
-                    <?php } ?>
-                  </label>
+                    <?php } ?></label>
                   </div>
                 </div>
                 <div class="row" style="padding-top: 5px;">
@@ -185,8 +178,8 @@
                     Jumlah Kertas
                   </div>
                   <div class="col-md-6">
-                  <label>
-                  <?php if($row->jenis_cetakan == "Cover"){?> 
+                    <label>
+                    <?php if($row->jenis_cetakan == "Cover"){?> 
                     <?php echo $row->jumlah_kertas_cover_1!=null && $row->jumlah_kertas_cover_1!='-'? " ".$row->jumlah_kertas_cover_1."<br>": "" ?>
                     <?php echo $row->jumlah_kertas_cover_2!=null && $row->jumlah_kertas_cover_2!='-'? " ".$row->jumlah_kertas_cover_2."<br>": "" ?>
                     <?php echo $row->jumlah_kertas_cover_3!=null && $row->jumlah_kertas_cover_3!='-'? " ".$row->jumlah_kertas_cover_3."<br>": "" ?>
@@ -194,8 +187,7 @@
                       <?php echo $row->jumlah_kertas_isi_1!=null && $row->jumlah_kertas_isi_1!='-'? " ".$row->jumlah_kertas_isi_1."<br>": "" ?>
                       <?php echo $row->jumlah_kertas_isi_2!=null && $row->jumlah_kertas_isi_2!='-'? " ".$row->jumlah_kertas_isi_2."<br>": "" ?>
                       <?php echo $row->jumlah_kertas_isi_3!=null && $row->jumlah_kertas_isi_3!='-'? " ".$row->jumlah_kertas_isi_3."<br>": "" ?>
-                    <?php } ?>
-                  </label>
+                    <?php } ?></label>
                   </div>
                 </div>
               </div>
@@ -212,8 +204,7 @@
                     <?= $row->muka2_blk;?>
                     <?php } else if ($row->muka2_blg !=null ){?>
                     <?= $row->muka2_blg;?>
-                    <?php } ?> 
-                    </label>
+                    <?php } ?> </label>
                   </div>
                 </div>
               </div>
@@ -231,7 +222,7 @@
 
             <div class="row">
               <div class="col">
-                <textarea class="form-control" name="keterangan_spk" <?= $row->keterangan_spk; ?> placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
+                <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;" disabled></textarea>
               </div>
             </div><br>
 
@@ -262,7 +253,7 @@
             
             <div class="row" align="right">
               <div class="col">
-              <a href="<?=site_url('cetak/JadwalMesin/print_74a/'.$row->id_order)?>" class="btn btn-default">Print</a>
+                <a href="<?=site_url('cetak/JadwalMesin/print_jm')?>" class="btn btn-default">Print</a>
               </div>
             </div>
           </div>
@@ -273,6 +264,9 @@
         </div> -->
         <!-- /.card-footer-->
         <?php } ?>
+        <script>
+                window.print();
+            </script>
       </div>
       <!-- /.card -->
      

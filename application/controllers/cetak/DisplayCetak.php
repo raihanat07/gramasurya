@@ -57,24 +57,29 @@ class DisplayCetak extends CI_Controller {
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
 			
-			
-			// if($inputan["jumlah_kertas_cover1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover1"];
-			// }
-			// if($inputan["jumlah_kertas_cover2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover2"];
-			// }
+			$inputan['status_umum'] = "pracetak";
+			if($inputan['status_cetak_cover'] !=null && $inputan['status_cetak_isi'] !=null){
+					$inputan['status_umum'] = "cetak";
+					$inputan['status_cetak'] = "cetak";
+			}
+			else if($inputan['status_cetak_cover'] !=null ){	
+				$inputan['status_umum'] = "cetak";	
+				$inputan['status_cetak'] = "cetak cover";
 
-			// if($inputan["jumlah_kertas_isi1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi1"];
-			// }
-			// if($inputan["jumlah_kertas_isi2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi2"];
-			// }
-			// if($inputan["jumlah_kertas_isi3"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
-			// }
+			}
+			else if($inputan['status_cetak_isi'] !=null ){	
+				$inputan['status_umum'] = "cetak";			
+				$inputan['status_cetak'] = "cetak isi";
 
+			}else if($inputan['status_cetak'] !=null ){	
+				$inputan['status_umum'] = "cetak";			
+				$inputan['status_cetak'] = "cetak";
+
+			}
+			else
+				$inputan['status_cetak'] = "";
+
+			$this->dc->status_umum($inputan);							
 			$this->dc->tambah_dc($inputan);							
 			// $this->ctcp->status_umum($inputan);						
 				echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
@@ -83,23 +88,29 @@ class DisplayCetak extends CI_Controller {
 		} else if(isset($_POST['edit'])){ 
 			$inputan = $this->input->post(null, TRUE);
 
-			// if($inputan["jumlah_kertas_cover1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover1"];
-			// }
-			// if($inputan["jumlah_kertas_cover2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_cover2"];
-			// }
+			$inputan['status_umum'] = "pracetak";
+			if($inputan['status_cetak_cover'] !=null && $inputan['status_cetak_isi'] !=null){
+					$inputan['status_umum'] = "cetak";
+					$inputan['status_cetak'] = "cetak";
+			}
+			else if($inputan['status_cetak_cover'] !=null ){	
+				$inputan['status_umum'] = "cetak";	
+				$inputan['status_cetak'] = "cetak cover";
 
-			// if($inputan["jumlah_kertas_isi1"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi1"];
-			// }
-			// if($inputan["jumlah_kertas_isi2"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi2"];
-			// }
-			// if($inputan["jumlah_kertas_isi3"] !=null){
-			// 	$inputan["total_kertas"] = $inputan["total_kertas"] + $inputan["jumlah_kertas_isi3"];
-			// }
+			}
+			else if($inputan['status_cetak_isi'] !=null ){	
+				$inputan['status_umum'] = "cetak";			
+				$inputan['status_cetak'] = "cetak isi";
 
+			}else if($inputan['status_cetak'] !=null ){	
+				$inputan['status_umum'] = "cetak";			
+				$inputan['status_cetak'] = "cetak";
+
+			}
+			else
+				$inputan['status_cetak'] = "";
+
+			$this->dc->status_umum($inputan);							
 			$this->dc->edit_dc($inputan);							
 			// $this->dc->status_umum($inputan);						
 				echo "<script> alert('Data Berhasil Diubah'); </script>";		
