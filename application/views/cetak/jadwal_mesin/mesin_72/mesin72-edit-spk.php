@@ -5,7 +5,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="<?=site_url()?>cetak/JadwalMesin/display_jm" class="btn btn-warning btn-lg">
+                <a href="<?=site_url()?>cetak/JadwalMesin/jadwal_72" class="btn btn-warning btn-lg">
                 <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
                 </a>
               </li>
@@ -395,7 +395,7 @@
             <div class="card-body">
             <form action="<?=site_url('cetak/jadwalmesin/proses')?>" method="POST">
             <input type="text" name="id_mesin_72"  value="<?php echo $row->id_mesin_72; ?>" hidden>
-            <input type="text" name="id_mesin_72"  value="<?php echo $row->id_mesin_72; ?>" hidden>
+            <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
               <div class="row">
                 <div class="col-md-4">
                   <br>Nomor SO
