@@ -23,7 +23,7 @@
       <!-- Default box -->
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title">Data Laporan Bulan <?= $bulan ?> Tahun <?= $tahun ?> </h3>
+            <h3 class="card-title">Data Laporan Bulan Tahun <?= $tahun ?> </h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
