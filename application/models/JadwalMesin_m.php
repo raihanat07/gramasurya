@@ -28,8 +28,7 @@ class JadwalMesin_m extends CI_Model {
             mesin_72.set as set,
             mesin_72.jenis_cetakan as jenis_cetakan,
             
-            spk.id_spk as id_spk,
-            spk.jc as jc
+            spk.id_spk as id_spk
 
             
             ',
@@ -1858,9 +1857,7 @@ class JadwalMesin_m extends CI_Model {
     public function add_spk_72($data){
         $tambah_spk = array(
             'id_order' => $data['id_order'],
-            'id_mesin_72' => $data['id_mesin_72'],
-            'jc' => $data['jc'],
-                                                          
+            'id_mesin_72' => $data['id_mesin_72'],                                                          
             'tanggal_buat_spk' => $data['tanggal_buat_spk'],
             'ukuran_potong' => $data['ukuran_potong'],
             'jumlah_cetak' => $data['jumlah_cetak'],
