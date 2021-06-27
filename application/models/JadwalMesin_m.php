@@ -1469,7 +1469,7 @@ class JadwalMesin_m extends CI_Model {
                            
         );
         $this->db->set($edit_ju);
-        $this->db->where('id_order',$data['id_order']);
+        $this->db->where('id_mesin_72',$data['id_mesin_72']);
         $this->db->update('mesin_72');
     }
 
@@ -1488,7 +1488,7 @@ class JadwalMesin_m extends CI_Model {
                            
         );
         $this->db->set($edit_ju);
-        $this->db->where('id_order',$data['id_order']);
+        $this->db->where('id_mesin_74a',$data['id_mesin_74a']);
         $this->db->update('mesin_74_a');
     }
 
@@ -1506,7 +1506,7 @@ class JadwalMesin_m extends CI_Model {
                            
         );
         $this->db->set($edit_ju);
-        $this->db->where('id_order',$data['id_order']);
+        $this->db->where('id_mesin_74b',$data['id_mesin_74b']);
         $this->db->update('mesin_74_b');
     }
 
@@ -1524,7 +1524,7 @@ class JadwalMesin_m extends CI_Model {
                            
         );
         $this->db->set($edit_ju);
-        $this->db->where('id_order',$data['id_order']);
+        $this->db->where('id_mesin_102a',$data['id_mesin_102a']);
         $this->db->update('mesin_102_a');
     }
 
@@ -1542,7 +1542,7 @@ class JadwalMesin_m extends CI_Model {
                            
         );
         $this->db->set($edit_ju);
-        $this->db->where('id_order',$data['id_order']);
+        $this->db->where('id_mesin_102b',$data['id_mesin_102b']);
         $this->db->update('mesin_102_b');
     }
 
@@ -1560,7 +1560,7 @@ class JadwalMesin_m extends CI_Model {
                            
         );
         $this->db->set($edit_ju);
-        $this->db->where('id_order',$data['id_order']);
+        $this->db->where('id_mesin_tokko',$data['id_mesin_tokko']);
         $this->db->update('mesin_tokko');
     }
 
