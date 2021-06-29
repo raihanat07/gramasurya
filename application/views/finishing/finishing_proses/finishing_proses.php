@@ -69,8 +69,8 @@
                     <?php if(($row->id_jadwal_laminasi == $id_jadwal_laminasi_max[$nilai_jadwal]  or $row->id_jadwal_laminasi == null ) and ($row->id_jadwal_mbo == $id_jadwal_mbo_max[$nilai_jadwal]  or $row->id_jadwal_mbo == null ) and ($row->id_jadwal_shoe == $id_jadwal_shoe_max[$nilai_jadwal]  or $row->id_jadwal_shoe == null ) and ($row->id_jadwal_susun == $id_jadwal_susun_max[$nilai_jadwal]  or $row->id_jadwal_susun == null ) and ($row->id_jadwal_sub == $id_jadwal_sub_max[$nilai_jadwal]  or $row->id_jadwal_sub == null ) and $id_banding[$nilai] != $id_banding[$nilai-1]) { ?>
                       <tr>
                       <td align="center"><?= $row->nomor_so; ?></td>
-                        <td><?= $row->tanggal_masuk; ?></td>
-                        <td style="color: red"><?= $row->deadline; ?></td>
+                        <td><?= date('d-m-Y', strtotime($row->tanggal_masuk)); ?></td>
+                        <td style="color: red"><?= date('d-m-Y', strtotime($row->deadline)); ?></td>
                         <td><?= $row->nama_pemesan; ?></td>
                         <td><?= $row->nama_orderan; ?></td>
                         <td><?= $row->ukuran; ?></td>

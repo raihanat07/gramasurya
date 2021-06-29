@@ -58,7 +58,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <br>anggal Masuk
-                        <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
+                        <br><label class="form-label"><?= date('d F Y', strtotime( $row->tanggal_masuk)); ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Nama Orderan
@@ -72,7 +72,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <br>Deadline
-                        <br><label class="form-label"><?= $row->deadline; ?></label>
+                        <br><label class="form-label"><?= date('d F Y', strtotime( $row->deadline)); ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Ukuran

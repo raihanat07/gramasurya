@@ -51,10 +51,10 @@
               ?>
               
             <tr>
-              <td><?= $row->tanggal_pelaksanaan; ?></td>
+              <td><?= date('d-m-Y', strtotime($row->tanggal_pelaksanaan)); ?></td>
               <td><?= $row->nomor_so; ?></td>
-              <td><?= $row->tanggal_masuk; ?></td>
-              <td style="color: red"><?= $row->deadline; ?></td>
+              <td><?= date('d-m-Y', strtotime($row->tanggal_masuk)); ?></td>
+              <td style="color: red"><?= date('d-m-Y', strtotime($row->deadline)); ?></td>
               <td><?= $row->nama_pemesan; ?></td>
               <td><?= $row->nama_orderan; ?></td>
               <td><?= $row->ukuran; ?></td>

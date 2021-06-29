@@ -51,10 +51,10 @@
             <?php $nilai = 0; ?>
             <?php foreach($fa as $s => $row) {?>  
               <tr align="center">
-                <td><?= $row->tanggal_pelaksanaan_binding; ?></td>                
+                <td><?= date('d-m-Y', strtotime($row->tanggal_pelaksanaan_binding)); ?></td>                
                 <td><?= $row->nomor_so; ?></td>
-                <td><?= $row->tanggal_masuk; ?></td>
-                <td><?= $row->deadline; ?></td>
+                <td><?= date('d-m-Y', strtotime($row->tanggal_masuk)); ?></td>
+                <td><?= date('d-m-Y', strtotime($row->deadline)); ?></td>
                 <td><?= $row->nama_pemesan; ?></td>
                 <td><?= $row->nama_orderan; ?></td>
                 <td><?= $row->ukuran; ?></td>

@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <br>anggal Masuk
-                        <br><label class="form-label"><?= $row->tanggal_masuk; ?></label>
+                        <br><label class="form-label"><?= date('d F Y', strtotime( $row->tanggal_masuk )); ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Nama Orderan
@@ -61,7 +61,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <br>Deadline
-                        <br><label class="form-label"><?= $row->deadline; ?></label>
+                        <br><label class="form-label"><?= date('d F Y', strtotime( $row->deadline)); ?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Ukuran
@@ -155,7 +155,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Cover 1</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_cover1" value="<?= $row->tanggal_cetak_cover1; ?>" disabled>
+                                                <input type="date" class="form-control" name="tanggal_cetak_cover1" value="<?= date('d F Y', strtotime( $row->tanggal_cetak_cover1)); ?>" disabled>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -165,7 +165,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 1</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover1" value="<?= $row->tanggal_out_cetak_cover1; ?>" disabled>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover1" value="<?= date('d F Y', strtotime( $row->tanggal_out_cetak_cover1)); ?>" disabled>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -228,7 +228,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Cover 2</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_cover2" value="<?= $row->tanggal_cetak_cover2; ?>"  disabled>
+                                                <input type="date" class="form-control" name="tanggal_cetak_cover2" value="<?= date('d F Y', strtotime( $row->tanggal_cetak_cover2)); ?>"  disabled>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -238,7 +238,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 2</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover2" value="<?= $row->tanggal_out_cetak_cover2; ?>"  disabled>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover2" value="<?= date('d-m-Y', strtotime( $row->tanggal_out_cetak_cover2)); ?>"  disabled>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -301,7 +301,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Cover 3</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_cover3" value="<?= $row->tanggal_cetak_cover3; ?>"  disabled>
+                                                <input type="date" class="form-control" name="tanggal_cetak_cover3" value="<?= date('d F Y', strtotime( $row->tanggal_cetak_cover3)); ?>"  disabled>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -311,7 +311,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Cover 3</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover3" value="<?= $row->tanggal_out_cetak_cover3; ?>"  disabled>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_cover3" value="<?= date('d F Y', strtotime( $row->tanggal_out_cetak_cover3)); ?>"  disabled>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -374,7 +374,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Isi 1</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_isi1" value="<?= $row->tanggal_cetak_isi1; ?>"  disabled>
+                                                <input type="date" class="form-control" name="tanggal_cetak_isi1" value="<?= date('d F Y', strtotime( $row->tanggal_cetak_isi1)); ?>"  disabled>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -384,7 +384,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Isi 1</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi1" value="<?= $row->tanggal_out_cetak_isi1; ?>"  disabled>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi1" value="<?= date('d-m-Y', strtotime( $row->tanggal_out_cetak_isi1)); ?>"  disabled>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -447,7 +447,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Isi 2</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_isi2" value="<?= $row->tanggal_cetak_isi2; ?>"  disabled>
+                                                <input type="date" class="form-control" name="tanggal_cetak_isi2" value="<?= date('d F Y', strtotime( $row->tanggal_cetak_isi2)); ?>"  disabled>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -457,7 +457,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Isi 2</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi2" value="<?= $row->tanggal_out_cetak_isi2; ?>"  disabled>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi2" value="<?= date('d F Y', strtotime( $row->tanggal_out_cetak_isi2)); ?>"  disabled>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -520,7 +520,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Cetak Isi 3</label>
-                                                <input type="date" class="form-control" name="tanggal_cetak_isi3" value="<?= $row->tanggal_cetak_isi3; ?>"  disabled>
+                                                <input type="date" class="form-control" name="tanggal_cetak_isi3" value="<?= date('d F Y', strtotime( $row->tanggal_cetak_isi3)); ?>"  disabled>
                                             </div>
                                         </div><br>
                                         <div class="row">
@@ -530,7 +530,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <label class="form-label">Tanggal Out Cetak Isi 3</label>
-                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi3" value="<?= $row->tanggal_out_cetak_isi3; ?>"  disabled>
+                                                <input type="date" class="form-control" name="tanggal_out_cetak_isi3" value="<?= date('d-m-Y', strtotime( $row->tanggal_out_cetak_isi3)); ?>"  disabled>
                                             </div>
                                         </div><br>
                                         <div class="row">

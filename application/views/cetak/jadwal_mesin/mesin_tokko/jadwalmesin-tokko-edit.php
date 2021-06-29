@@ -51,7 +51,7 @@
               <div class="col-md-4">
                 <div class="row"><br>
                   <div class="col-md-5">Tanggal Masuk</div>
-                  <div class="col-md-7"><label class="form-label"><?= $row->tanggal_masuk; ?></label></div>
+                  <div class="col-md-7"><label class="form-label"><?= date('d F Y', strtotime($row->tanggal_masuk)); ?></label></div>
                 </div>
               </div>
               <div class="col-md-4">
@@ -71,7 +71,7 @@
               <div class="col-md-4">
                 <div class="row"><br>
                   <div class="col-md-5">Deadline</div>
-                  <div class="col-md-7"><label class="form-label"><?= $row->deadline; ?></label></div>
+                  <div class="col-md-7"><label class="form-label"><?= date('d F Y', strtotime($row->deadline)); ?></label></div>
                 </div>
               </div>
               <div class="col-md-4">

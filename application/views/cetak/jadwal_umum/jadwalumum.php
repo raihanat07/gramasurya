@@ -3,7 +3,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>CETAK</h1>
+            <h1>CETAK</h1><br>
+            <ul class="nav nav-pills">
+              <li class="nav-item"><a class="nav-link active" href="#mesin1" data-toggle="tab">MESIN 1</a></li>
+              <li class="nav-item"><a class="nav-link" href="#mesin2" data-toggle="tab">MESIN 2</a></li>
+            </ul>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -23,65 +27,59 @@
           </div>
         </div>
         <div class="card-body">
-          <table id="table1" class="table table-bordered table-hover" style="font-size: 12px;">
-            <thead>
-            <tr align="center">
-              <td rowspan="2" style="padding-top: 20px;">Nomor SO</td>
-              <td rowspan="2" style="padding-top: 20px;">Tanggal Masuk</td>
-              <td rowspan="2" style="padding-top: 20px;">Deadline</td>
-              <td rowspan="2" style="padding-top: 20px;">Nama Pemesan</td>
-              <td rowspan="2" style="padding-top: 20px;">Nama Order</td>
-              <td rowspan="2" style="padding-top: 20px;">Ukuran</td>
-              <td rowspan="2" style="padding-top: 20px;">Oplag</td>
-              <td rowspan="2" style="padding-top: 20px;">Jumlah Kertas</td>
-              <td colspan="2">Mesin 72</td>
-              <td colspan="2">Mesin 74a</td>
-              <td colspan="2">Mesin 74b</td>
-              <td colspan="2">Mesin 102a</td>
-              <td colspan="2">Mesin 102b</td>
-              <td colspan="2">Mesin Tokko</td>
-              <td rowspan="2" style="padding-top: 30px;">Status</td>
-              <td rowspan="2" style="padding-top: 30px;">Actions</td>
-            </tr>
-            <tr>
-              <td>cover</td>
-              <td>isi</td>
-              <td>cover</td>
-              <td>isi</td>
-              <td>cover</td>
-              <td>isi</td>
-              <td>cover</td>
-              <td>isi</td>
-              <td>cover</td>
-              <td>isi</td>
-              <td>cover</td>
-              <td>isi</td>
-            </thead>
-            
-                   <?php $nilai=0;?>                    
-                    <?php $id_banding[-1]=null;?>
+          <div class="tab-content">
+            <div class="active tab-pane" id="mesin1">
+              <table id="table1" class="table table-bordered table-hover" style="font-size: 12px;">
+                <thead>
+                  <tr align="center">
+                    <td rowspan="2" style="padding-top: 20px;">Nomor SO</td>
+                    <td rowspan="2" style="padding-top: 20px;">Tanggal Masuk</td>
+                    <td rowspan="2" style="padding-top: 20px;">Deadline</td>
+                    <td rowspan="2" style="padding-top: 20px;">Nama Pemesan</td>
+                    <td rowspan="2" style="padding-top: 20px;">Nama Order</td>
+                    <td rowspan="2" style="padding-top: 20px;">Ukuran</td>
+                    <td rowspan="2" style="padding-top: 20px;">Oplag</td>
+                    <td rowspan="2" style="padding-top: 20px;">Jumlah Kertas</td>
+                    <td colspan="2">Mesin 72</td>
+                    <td colspan="2">Mesin 74a</td>
+                    <td colspan="2">Mesin 74b</td>
+                    <td rowspan="2" style="padding-top: 30px;">Status</td>
+                    <td rowspan="2" style="padding-top: 30px;">Actions</td>
+                  </tr>
+                  <tr>
+                    <td>cover</td>
+                    <td>isi</td>
+                    <td>cover</td>
+                    <td>isi</td>
+                    <td>cover</td>
+                    <td>isi</td>
+                  </tr>
+                </thead>
+                
+                  <?php $nilai=0;?>                    
+                  <?php $id_banding[-1]=null;?>
 
-            <?php foreach($ju as $s => $row) {?>
-              <?php $id_banding[$nilai]=$row->id_order;?>   
+                  <?php foreach($ju as $s => $row) {?>
+                  <?php $id_banding[$nilai]=$row->id_order;?>   
 
-              <?php if($id_banding[$nilai] != $id_banding[$nilai-1]){ ?>
-           
-            <tr>
-            <td align="center"><?= $row->nomor_so; ?></td>
-              <td><?= $row->tanggal_masuk; ?></td>
-              <td style="color: red"><?= $row->deadline; ?></td>
-              <td><?= $row->nama_pemesan; ?></td>
-              <td><?= $row->nama_orderan; ?></td>
-              <td><?= $row->ukuran; ?></td>
-              <td><?= $row->oplag; ?></td>
-              <td><?= $row->total_kertas; ?></td>
-              <!-- <td> </td>
-              <td></td>
-              <td></td>
-              <td></td> -->
+                  <?php if($id_banding[$nilai] != $id_banding[$nilai-1]){ ?>
+               
+                <tr>
+                  <td align="center"><?= $row->nomor_so; ?></td>
+                  <td><?= $row->tanggal_masuk; ?></td>
+                  <td style="color: red"><?= $row->deadline; ?></td>
+                  <td><?= $row->nama_pemesan; ?></td>
+                  <td><?= $row->nama_orderan; ?></td>
+                  <td><?= $row->ukuran; ?></td>
+                  <td><?= $row->oplag; ?></td>
+                  <td><?= $row->total_kertas; ?></td>
+                  <!-- <td> </td>
+                  <td></td>
+                  <td></td>
+                  <td></td> -->
 
-              <!-- /////////////////////////////////////////////////////////////////////////////////////////////// eksekusi hehe -->
-                  
+                  <!-- /////////////////////////////////////////////////////////////////////////////////////////////// eksekusi hehe -->
+                      
                   <td><?= $tgl_cover_72[$nilai]; ?></td>                                   
                   <td><?= $tgl_isi_72[$nilai]; ?></td>
 
@@ -91,6 +89,75 @@
                   <td><?= $tgl_cover_74b[$nilai]; ?></td>                                   
                   <td><?= $tgl_isi_74b[$nilai]; ?></td>
 
+                  <td><?php 
+                    if($row->status_cetak ==null) 
+                      echo $row->so_status;
+                    else if($row->status_cetak !=null)
+                      echo $row->status_cetak;   
+                    ?></td>
+                  <td align="center">
+                    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order ?>">
+                      <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
+                    </button>
+                  </td>              
+                </tr>
+                <?php $nilai++;} ?>
+                <?php } ?>
+              </table>
+            </div>
+            <div class="tab-pane" id="mesin2">
+              <table id="table1" class="table table-bordered table-hover" style="font-size: 12px;">
+                <thead>
+                  <tr align="center">
+                    <td rowspan="2" style="padding-top: 20px;">Nomor SO</td>
+                    <td rowspan="2" style="padding-top: 20px;">Tanggal Masuk</td>
+                    <td rowspan="2" style="padding-top: 20px;">Deadline</td>
+                    <td rowspan="2" style="padding-top: 20px;">Nama Pemesan</td>
+                    <td rowspan="2" style="padding-top: 20px;">Nama Order</td>
+                    <td rowspan="2" style="padding-top: 20px;">Ukuran</td>
+                    <td rowspan="2" style="padding-top: 20px;">Oplag</td>
+                    <td rowspan="2" style="padding-top: 20px;">Jumlah Kertas</td>
+                    <td colspan="2">Mesin 102a</td>
+                    <td colspan="2">Mesin 102b</td>
+                    <td colspan="2">Mesin Tokko</td>
+                    <td rowspan="2" style="padding-top: 30px;">Status</td>
+                    <td rowspan="2" style="padding-top: 30px;">Actions</td>
+                  </tr>
+                  <tr>
+                    <td>cover</td>
+                    <td>isi</td>
+                    <td>cover</td>
+                    <td>isi</td>
+                    <td>cover</td>
+                    <td>isi</td>
+                  </tr>
+                </thead>
+
+                  <?php $nilai=0;?>                    
+                  <?php $id_banding[-1]=null;?>
+
+                  <?php foreach($ju as $s => $row) {?>
+                  <?php $id_banding[$nilai]=$row->id_order;?>   
+
+                  <?php if($id_banding[$nilai] != $id_banding[$nilai-1]){ ?>
+               
+                <tr>
+                  <td align="center"><?= $row->nomor_so; ?></td>
+                  <td><?= $row->tanggal_masuk; ?></td>
+                  <td style="color: red"><?= $row->deadline; ?></td>
+                  <td><?= $row->nama_pemesan; ?></td>
+                  <td><?= $row->nama_orderan; ?></td>
+                  <td><?= $row->ukuran; ?></td>
+                  <td><?= $row->oplag; ?></td>
+                  <td><?= $row->total_kertas; ?></td>
+                  <!-- <td> </td>
+                  <td></td>
+                  <td></td>
+                  <td></td> -->
+
+                  <!-- /////////////////////////////////////////////////////////////////////////////////////////////// eksekusi hehe -->
+                      
+                  
                   <td><?= $tgl_cover_102a[$nilai]; ?></td>                                   
                   <td><?= $tgl_isi_102a[$nilai]; ?></td>
 
@@ -99,25 +166,25 @@
 
                   <td><?= $tgl_cover_tokko[$nilai]; ?></td>                                   
                   <td><?= $tgl_isi_tokko[$nilai]; ?></td>
-                                         
+                                           
 
-              <td><?php 
-                                if($row->status_cetak ==null) 
-                                  echo $row->so_status;
-                                else if($row->status_cetak !=null)
-                                  echo $row->status_cetak;   
-                                ?></td>
-              <td align="center">
-                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order ?>">
-                  <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
-                </button>
-              </td>              
-
-
-            </tr>
-            <?php $nilai++;} ?>
-            <?php } ?>
-          </table>
+                  <td><?php 
+                    if($row->status_cetak ==null) 
+                      echo $row->so_status;
+                    else if($row->status_cetak !=null)
+                      echo $row->status_cetak;   
+                    ?></td>
+                  <td align="center">
+                    <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order ?>">
+                      <i class="fa fa-plus" style="font-size:14px"></i> JADWAL
+                    </button>
+                  </td>              
+                </tr>
+                <?php $nilai++;} ?>
+                <?php } ?>
+              </table>
+            </div>
+          </div>
           
           <?php foreach($ju as $s => $row) {?>  
           <form action="<?=site_url('cetak/JadwalUmum/proses')?>" method="post">
@@ -155,11 +222,11 @@
                         <div class="row">
                           <div class="col-sm-6">
                             <br>Tanggal Masuk
-                            <br><label><?= $row->tanggal_masuk; ?></label>
+                            <br><label><?= date('d F Y', strtotime($row->tanggal_masuk)); ?></label>
                           </div>
                           <div class="col-sm-6" style="color: red;">
                             <br>Deadline
-                            <br><label><?= $row->deadline; ?></label>
+                            <br><label><?= date('d F Y', strtotime($row->deadline)); ?></label>
                           </div>
                         </div>
                         <div class="row">
@@ -232,28 +299,34 @@
                                 <?php if($row->id_mesin_72 == null) {?>
                                   <select id="inputState" class="form-select form-control" name="operator_72" >
                                     <option value="-">-</option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                   </select>
                                 <?php }else{ ?>  
                                   <select id="inputState" class="form-select form-control" name="operator_72" >
                                     <option value="<?php  echo $row->operator != "-" ?   $row->operator  : '-' ?>"><?php  echo $row->operator != "-" ?   $row->operator  : '-' ?></option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                     <option value="-">-</option>
                                   </select>                                
                                 <?php } ?>
@@ -265,6 +338,10 @@
                                 <?php }else{ ?>  
                                   <input type="number" class="form-control" name="target_72" value="<?= $row->target; ?>" placeholder="Jumlah Target" >
                                 <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Kru<br>
+                            <input type="text" name="kru_operator_72" placeholder="Nama Kru" class="form-control">
                           </div>
                           <div class="col-md-6">
                           
@@ -401,28 +478,34 @@
                                 <?php if($row->id_mesin_72 == null) {?>
                                   <select id="inputState" class="form-select form-control" name="operator_74a" >
                                     <option value="-">-</option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                   </select>
                                 <?php }else{ ?>  
                                   <select id="inputState" class="form-select form-control" name="operator_74a" >
                                     <option value="<?php  echo $row->operator_74a != "-" ?   $row->operator_74a  : '-' ?>"><?php  echo $row->operator_74a != "-" ?   $row->operator_74a  : '-' ?></option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                     <option value="-">-</option>
                                   </select>                                
                                 <?php } ?>
@@ -434,6 +517,10 @@
                                 <?php }else{ ?>  
                                   <input type="number" class="form-control" name="target_74a" value="<?= $row->target_74a; ?>" placeholder="Jumlah Target" >
                                 <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Kru<br>
+                            <input type="text" name="kru_operator_74a" placeholder="Nama Kru" class="form-control">
                           </div>
                           <div class="col-md-6">
                           
@@ -566,28 +653,34 @@
                                 <?php if($row->id_mesin_74b == null) {?>
                                   <select id="inputState" class="form-select form-control" name="operator_74b" >
                                     <option value="-">-</option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                   </select>
                                 <?php }else{ ?>  
                                   <select id="inputState" class="form-select form-control" name="operator_74b" >
                                     <option value="<?php  echo $row->operator_74b != "-" ?   $row->operator_74b  : '-' ?>"><?php  echo $row->operator_74b != "-" ?   $row->operator_74b  : '-' ?></option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                     <option value="-">-</option>
                                   </select>                                
                                 <?php } ?>
@@ -599,6 +692,10 @@
                                 <?php }else{ ?>  
                                   <input type="number" class="form-control" name="target_74b" value="<?= $row->target_74b; ?>" placeholder="Jumlah Target" >
                                 <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Kru<br>
+                            <input type="text" name="kru_operator_74b" placeholder="Nama Kru" class="form-control">
                           </div>
                           <div class="col-md-6">
                           
@@ -732,28 +829,34 @@
                                 <?php if($row->id_mesin_102a == null) {?>
                                   <select id="inputState" class="form-select form-control" name="operator_102a" >
                                     <option value="-">-</option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                   </select>
                                 <?php }else{ ?>  
                                   <select id="inputState" class="form-select form-control" name="operator_102a" >
                                     <option value="<?php  echo $row->operator_102a != "-" ?   $row->operator_102a  : '-' ?>"><?php  echo $row->operator_102a != "-" ?   $row->operator_102a  : '-' ?></option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                     <option value="-">-</option>
                                   </select>                                
                                 <?php } ?>
@@ -765,6 +868,10 @@
                                 <?php }else{ ?>  
                                   <input type="number" class="form-control" name="target_102a" value="<?= $row->target_102a; ?>" placeholder="Jumlah Target" >
                                 <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Kru<br>
+                            <input type="text" name="kru_operator_102a" placeholder="Nama Kru" class="form-control">
                           </div>
                           <div class="col-md-6">
                           
@@ -899,28 +1006,34 @@
                                 <?php if($row->id_mesin_102b == null) {?>
                                   <select id="inputState" class="form-select form-control" name="operator_102b" >
                                     <option value="-">-</option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                   </select>
                                 <?php }else{ ?>  
                                   <select id="inputState" class="form-select form-control" name="operator_102b" >
                                     <option value="<?php  echo $row->operator_102b != "-" ?   $row->operator_102b  : '-' ?>"><?php  echo $row->operator_102b != "-" ?   $row->operator_102b  : '-' ?></option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                     <option value="-">-</option>
                                   </select>                                
                                 <?php } ?>
@@ -932,6 +1045,10 @@
                                 <?php }else{ ?>  
                                   <input type="number" class="form-control" name="target_102b" value="<?= $row->target_102b; ?>" placeholder="Jumlah Target" >
                                 <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Kru<br>
+                            <input type="text" name="kru_operator_102b" placeholder="Nama Kru" class="form-control">
                           </div>
                           <div class="col-md-6">
                           
@@ -1067,28 +1184,34 @@
                                 <?php if($row->id_mesin_tokko == null) {?>
                                   <select id="inputState" class="form-select form-control" name="operator_tokko" >
                                     <option value="-">-</option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                   </select>
                                 <?php }else{ ?>  
                                   <select id="inputState" class="form-select form-control" name="operator_tokko" >
                                     <option value="<?php  echo $row->operator_tokko != "-" ?   $row->operator_tokko  : '-' ?>"><?php  echo $row->operator_tokko != "-" ?   $row->operator_tokko  : '-' ?></option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                     <option value="-">-</option>
                                   </select>                                
                                 <?php } ?>
@@ -1100,6 +1223,10 @@
                                 <?php }else{ ?>  
                                   <input type="number" class="form-control" name="target_tokko" value="<?= $row->target_tokko; ?>" placeholder="Jumlah Target" >
                                 <?php } ?>
+                          </div>
+                          <div class="col-md-6">
+                            <br>Kru<br>
+                            <input type="text" name="kru_operator_tokko" placeholder="Nama Kru" class="form-control">
                           </div>
                           <div class="col-md-6">
                           

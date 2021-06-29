@@ -51,10 +51,10 @@
                     
                     <?php foreach($fp as $s => $row) {?>                      
                       <tr>
-                        <td><?= $row->tanggal_pelaksanaan_laminasi; ?></td>
+                        <td><?= date('d-m-Y', strtotime($row->tanggal_pelaksanaan_laminasi)); ?></td>
                         <td><?= $row->nomor_so; ?></td>
-                        <td><?= $row->tanggal_masuk; ?></td>
-                        <td><?= $row->deadline; ?></td>
+                        <td><?= date('d-m-Y', strtotime($row->tanggal_masuk)); ?></td>
+                        <td><?= date('d-m-Y', strtotime($row->deadline)); ?></td>
                         <td><?= $row->nama_pemesan; ?></td>
                         <td><?= $row->nama_orderan; ?></td>
                         <td><?= $row->ukuran; ?></td>

@@ -45,7 +45,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <br>Tanggal Masuk
-                        <br><label class="form-label"><?=$row->tanggal_masuk?></label>
+                        <br><label class="form-label"><?= date('d F Y', strtotime( $row->tanggal_masuk))?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Nama Orderan
@@ -59,7 +59,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <br>Deadline
-                        <br><label class="form-label"><?=$row->deadline?></label>
+                        <br><label class="form-label"><?= date('d F Y', strtotime( $row->deadline))?></label>
                     </div>
                     <div class="col-md-4">
                         <br>Ukuran
@@ -227,8 +227,8 @@
                                                     <div class="col-md-1"><?= $row->cover1warna1; ?></div>
                                                     <div class="col-md-1"><?php  echo $row->cover1status1 != "-" ?   $row->cover1status1  : '-' ?></div>
                                                     <div class="col-md-2"><?= $row->cover1keterangan1; ?></div>
-                                                    <div class="col-md-2"><?= $row->cover1tglimposisi1; ?></div>
-                                                    <div class="col-md-2"><?= $row->cover1tglctcp1; ?></div>
+                                                    <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->cover1tglimposisi1)); ?></div>
+                                                    <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->cover1tglctcp1)); ?></div>
                                                 </div><br>
                                                 <!-- /.PLAT 1 -->
 
@@ -242,8 +242,8 @@
                                                         <div class="col-md-1"><?= $row->cover1warna2; ?></div>
                                                         <div class="col-md-1"><?php  echo $row->cover1status2 != "-" ?   $row->cover1status2  : '-' ?></div>
                                                         <div class="col-md-2"><?= $row->cover1keterangan2; ?></div>
-                                                        <div class="col-md-2"><?= $row->cover1tglimposisi2; ?></div>
-                                                        <div class="col-md-2"><?= $row->cover1tglctcp2; ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->cover1tglimposisi2)); ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->cover1tglctcp2)); ?></div>
                                                     </div><br>
                                                 <?php } ?>
                                                 <!-- /.PLAT 2 -->
@@ -258,8 +258,8 @@
                                                         <div class="col-md-1"><?= $row->cover1warna3; ?></div>
                                                         <div class="col-md-1"><?php  echo $row->cover1status3 != "-" ?   $row->cover1status2  : '-' ?></div>
                                                         <div class="col-md-2"><?= $row->cover1keterangan3; ?></div>
-                                                        <div class="col-md-2"><?= $row->cover1tglimposisi3; ?></div>
-                                                        <div class="col-md-2"><?= $row->cover1tglctcp3; ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->cover1tglimposisi3)); ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->cover1tglctcp3 )); ?></div>
                                                     </div>
                                                 <?php } ?>
                                                 <!-- /.PLAT 3 -->
@@ -321,8 +321,8 @@
                                                     <div class="col-md-1"><?= $row->isi1warna1; ?></div>
                                                     <div class="col-md-1"><?php  echo $row->isi1status1 != "-" ?   $row->isi1status1  : '-' ?></div>
                                                     <div class="col-md-2"><?= $row->isi1keterangan1; ?></div>
-                                                    <div class="col-md-2"><?= $row->isi1tglimposisi1; ?></div>
-                                                    <div class="col-md-2"><?= $row->isi1tglctcp1; ?></div>
+                                                    <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi1tglimposisi1)); ?></div>
+                                                    <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi1tglctcp1)); ?></div>
                                                 </div><br>
                                                 <!-- /.PLAT 1 -->
 
@@ -336,8 +336,8 @@
                                                         <div class="col-md-1"><?= $row->isi1warna2; ?></div>
                                                         <div class="col-md-1"><?php  echo $row->isi1status2 != "-" ?   $row->isi1status2  : '-' ?></div>
                                                         <div class="col-md-2"><?= $row->isi1keterangan2; ?></div>
-                                                        <div class="col-md-2"><?= $row->isi1tglimposisi2; ?></div>
-                                                        <div class="col-md-2"><?= $row->isi1tglctcp2; ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi1tglimposisi2)); ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi1tglctcp2)); ?></div>
                                                     </div><br>
                                                 <?php } ?>
                                                 <!-- /.PLAT 2 -->
@@ -352,8 +352,8 @@
                                                         <div class="col-md-1"><?= $row->isi1warna3; ?></div>
                                                         <div class="col-md-1"><?php  echo $row->isi1status3 != "-" ?   $row->isi1status3  : '-' ?></div>
                                                         <div class="col-md-2"><?= $row->isi1keterangan3; ?></div>
-                                                        <div class="col-md-2"><?= $row->isi1tglimposisi3; ?></div>
-                                                        <div class="col-md-2"><?= $row->isi1tglctcp3; ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi1tglimposisi3)); ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi1tglctcp3)); ?></div>
                                                     </div>
                                                 <?php } ?>
                                                 <!-- /.PLAT 2 -->
@@ -421,8 +421,8 @@
                                                     <div class="col-md-1"><?= $row->cover2warna1; ?></div>
                                                     <div class="col-md-1"><?php  echo $row->cover2status1 != "-" ?   $row->cover2status1  : '-' ?></div>
                                                     <div class="col-md-2"><?= $row->cover2keterangan1; ?></div>
-                                                    <div class="col-md-2"><?= $row->cover2tglimposisi1; ?></div>
-                                                    <div class="col-md-2"><?= $row->cover2tglctcp1; ?></div>
+                                                    <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->cover2tglimposisi1)); ?></div>
+                                                    <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->cover2tglctcp1)); ?></div>
                                                 </div><br>
                                                 <!-- /.PLAT 1 -->
 
@@ -436,8 +436,8 @@
                                                         <div class="col-md-1"><?= $row->cover2warna2; ?></div>
                                                         <div class="col-md-1"><?php  echo $row->cover2status2 != "-" ?   $row->cover2status2  : '-' ?></div>
                                                         <div class="col-md-2"><?= $row->cover2keterangan2; ?></div>
-                                                        <div class="col-md-2"><?= $row->cover2tglimposisi2; ?></div>
-                                                        <div class="col-md-2"><?= $row->cover2tglctcp2; ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->cover2tglimposisi2)); ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->cover2tglctcp2)); ?></div>
                                                     </div><br>
                                                 <?php } ?>
                                                 <!-- /.PLAT 2 -->
@@ -452,8 +452,8 @@
                                                         <div class="col-md-1"><?= $row->cover2warna3; ?></div>
                                                         <div class="col-md-1"><?php  echo $row->cover2status3 != "-" ?   $row->cover2status2  : '-' ?></div>
                                                         <div class="col-md-2"><?= $row->cover2keterangan3; ?></div>
-                                                        <div class="col-md-2"><?= $row->cover2tglimposisi3; ?></div>
-                                                        <div class="col-md-2"><?= $row->cover2tglctcp3; ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->cover2tglimposisi3)); ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->cover2tglctcp3)); ?></div>
                                                     </div>
                                                 <?php } ?>
                                                 <!-- /.PLAT 3 -->
@@ -536,8 +536,8 @@
                                                     <div class="col-md-1"><?= $row->isi2warna1; ?></div>
                                                     <div class="col-md-1"><?php  echo $row->isi2status1 != "-" ?   $row->isi2status1  : '-' ?></div>
                                                     <div class="col-md-2"><?= $row->isi2keterangan1; ?></div>
-                                                    <div class="col-md-2"><?= $row->isi2tglimposisi1; ?></div>
-                                                    <div class="col-md-2"><?= $row->isi2tglctcp1; ?></div>
+                                                    <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi2tglimposisi1)); ?></div>
+                                                    <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi2tglctcp1)); ?></div>
                                                 </div><br>
                                                 <!-- /.PLAT 1 -->
 
@@ -551,8 +551,8 @@
                                                         <div class="col-md-1"><?= $row->isi2warna2; ?></div>
                                                         <div class="col-md-1"><?php  echo $row->isi2status2 != "-" ?   $row->isi2status2  : '-' ?></div>
                                                         <div class="col-md-2"><?= $row->isi2keterangan2; ?></div>
-                                                        <div class="col-md-2"><?= $row->isi2tglimposisi2; ?></div>
-                                                        <div class="col-md-2"><?= $row->isi2tglctcp2; ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi2tglimposisi2)); ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi2tglctcp2)); ?></div>
                                                     </div><br>
                                                 <?php } ?>
                                                 <!-- /.PLAT 2 -->
@@ -567,8 +567,8 @@
                                                         <div class="col-md-1"><?= $row->isi2warna3; ?></div>
                                                         <div class="col-md-1"><?php  echo $row->isi2status3 != "-" ?   $row->isi2status3  : '-' ?></div>
                                                         <div class="col-md-2"><?= $row->isi2keterangan3; ?></div>
-                                                        <div class="col-md-2"><?= $row->isi2tglimposisi3; ?></div>
-                                                        <div class="col-md-2"><?= $row->isi2tglctcp3; ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi2tglimposisi3)); ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi2tglctcp3)); ?></div>
                                                     </div>
                                                 <?php } ?>
                                                 <!-- /.PLAT 2 -->
@@ -662,8 +662,8 @@
                                                     <div class="col-md-1"><?= $row->isi3warna1; ?></div>
                                                     <div class="col-md-1"><?php  echo $row->isi3status1 != "-" ?   $row->isi3status1  : '-' ?></div>
                                                     <div class="col-md-2"><?= $row->isi3keterangan1; ?></div>
-                                                    <div class="col-md-2"><?= $row->isi3tglimposisi1; ?></div>
-                                                    <div class="col-md-2"><?= $row->isi3tglctcp1; ?></div>
+                                                    <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi3tglimposisi1)); ?></div>
+                                                    <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi3tglctcp1)); ?></div>
                                                 </div><br>
                                                 <!-- /.PLAT 1 -->
 
@@ -677,8 +677,8 @@
                                                         <div class="col-md-1"><?= $row->isi3warna2; ?></div>
                                                         <div class="col-md-1"><?php  echo $row->isi3status2 != "-" ?   $row->isi3status2  : '-' ?></div>
                                                         <div class="col-md-2"><?= $row->isi3keterangan2; ?></div>
-                                                        <div class="col-md-2"><?= $row->isi3tglimposisi2; ?></div>
-                                                        <div class="col-md-2"><?= $row->isi3tglctcp2; ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi3tglimposisi2)); ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi3tglctcp2)); ?></div>
                                                     </div><br>
                                                 <?php } ?>
                                                 <!-- /.PLAT 2 -->
@@ -693,8 +693,8 @@
                                                         <div class="col-md-1"><?= $row->isi3warna3; ?></div>
                                                         <div class="col-md-1"><?php  echo $row->isi3status3 != "-" ?   $row->isi3status3  : '-' ?></div>
                                                         <div class="col-md-2"><?= $row->isi3keterangan3; ?></div>
-                                                        <div class="col-md-2"><?= $row->isi3tglimposisi3; ?></div>
-                                                        <div class="col-md-2"><?= $row->isi3tglctcp3; ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi3tglimposisi3)); ?></div>
+                                                        <div class="col-md-2"><?= date('d-m-Y', strtotime( $row->isi3tglctcp3)); ?></div>
                                                     </div>
                                                 <?php } ?>
                                                 <!-- /.PLAT 2 -->

@@ -58,7 +58,7 @@
                         <br><label class="form-label">Tanggal Masuk</label>
                     </div>
                     <div class="col-md-2">
-                        <br><?= $row->tanggal_masuk; ?>
+                        <br><?= date('d F Y', strtotime( $row->tanggal_masuk)); ?>
                     </div>
                     <div class="col-md-2" align="right">
                         <br><label class="form-label">Nama Orderan</label>
@@ -78,7 +78,7 @@
                         <br><label class="form-label">Deadline</label>
                     </div>
                     <div class="col-md-2">
-                        <br><?= $row->deadline; ?>
+                        <br><?= date('d F Y', strtotime($row->deadline)); ?>
                     </div>
                     <div class="col-md-4"></div>
                     <div class="col-md-2" align="right">

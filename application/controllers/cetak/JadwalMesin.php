@@ -89,7 +89,7 @@ class JadwalMesin extends CI_Controller {
 	{
 		$query = $this->jm->get_lihat_72($id);
 		$data = array(
-			'judul' => 'Lihat Mesin 72',
+			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
 		// check_already_login_cetak();
@@ -100,7 +100,7 @@ class JadwalMesin extends CI_Controller {
 	{
 		$query = $this->jm->get_lihat_74a($id);
 		$data = array(
-			'judul' => 'Lihat Mesin 74a',
+			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
 		// check_already_login_cetak();
@@ -111,7 +111,7 @@ class JadwalMesin extends CI_Controller {
 	{
 		$query = $this->jm->get_lihat_74b($id);
 		$data = array(
-			'judul' => 'Lihat Mesin 74b',
+			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
 		// check_already_login_cetak();
@@ -122,7 +122,7 @@ class JadwalMesin extends CI_Controller {
 	{
 		$query = $this->jm->get_lihat_102a($id);
 		$data = array(
-			'judul' => 'Lihat Mesin 102a',
+			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
 		// check_already_login_cetak();
@@ -133,7 +133,7 @@ class JadwalMesin extends CI_Controller {
 	{
 		$query = $this->jm->get_lihat_102b($id);
 		$data = array(
-			'judul' => 'Lihat Mesin 102b',
+			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
 		// check_already_login_cetak();
@@ -144,7 +144,7 @@ class JadwalMesin extends CI_Controller {
 	{
 		$query = $this->jm->get_lihat_tokko($id);
 		$data = array(
-			'judul' => 'Lihat Mesin Tokko',
+			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
 		// check_already_login_cetak();
@@ -228,7 +228,7 @@ class JadwalMesin extends CI_Controller {
 	{
 		$query = $this->jm->get_lihat_72($id);
 		$data = array(
-			'judul' => 'Print Mesin 72',
+			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
 		// check_already_login_cetak();
@@ -250,7 +250,7 @@ class JadwalMesin extends CI_Controller {
 		
 		$query = $this->jm->get_lihat_74a($id);
 		$data = array(
-			'judul' => 'Print Mesin 74a',
+			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a-print',$data);		
 	}
@@ -259,7 +259,7 @@ class JadwalMesin extends CI_Controller {
 		
 		$query = $this->jm->get_lihat_102a($id);
 		$data = array(
-			'judul' => 'Print Mesin 102a',
+			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102a/jadwalmesin-102a-print',$data);		
 	}
@@ -268,7 +268,7 @@ class JadwalMesin extends CI_Controller {
 		
 		$query = $this->jm->get_lihat_102b($id);
 		$data = array(
-			'judul' => 'Print Mesin 102b',
+			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102b/jadwalmesin-102b-print',$data);		
 	}
@@ -277,7 +277,7 @@ class JadwalMesin extends CI_Controller {
 		
 		$query = $this->jm->get_lihat_74b($id);
 		$data = array(
-			'judul' => 'Print Mesin 74b',
+			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74b/jadwalmesin-74b-print',$data);		
 	}
@@ -286,7 +286,7 @@ class JadwalMesin extends CI_Controller {
 		
 		$query = $this->jm->get_lihat_tokko($id);
 		$data = array(
-			'judul' => 'Print Mesin tokko',
+			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_tokko/jadwalmesin-tokko-print',$data);		
 	}
