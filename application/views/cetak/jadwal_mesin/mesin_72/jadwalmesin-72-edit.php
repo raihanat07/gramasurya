@@ -98,15 +98,18 @@
                 <label>Nama Operator</label>
                 <select id="inputState" class="form-select form-control" name="operator_72" >
                                     <option value="<?php  echo $row->operator != "-" ?   $row->operator  : '-' ?>"><?php  echo $row->operator != "-" ?   $row->operator  : '-' ?></option>
-                                    <option value="Roni/Ariyanto">Roni/Ariyanto</option>
-                                    <option value="Anam/Rois">Anam/Rois</option>
-                                    <option value="Yono/Bukori">Yono/Bukori (Crew Fajar)</option>
-                                    <option value="Natiman/Feri (Crew Fajar)">Natiman/Feri (Crew Fajar)</option>
-                                    <option value="Kanang/Yoga">Kanang/Yoga</option>
-                                    <option value="Heru/Toro">Heru/Toro</option>
-                                    <option value="Nasikin/Agus Tugio">Nasikin/Agus Tugio</option>
+                                    <option value="Maryono">Maryono</option>
+                                    <option value="Ferri">Ferri</option>
+                                    <option value="Agus">Agus</option>
+                                    <option value="Ngatiman">Ngatiman</option>
+                                    <option value="Heru">Heru</option>
+                                    <option value="Ariyanto">Ariyanto</option>
                                     <option value="Heri">Heri</option>
                                     <option value="Samiran">Samiran</option>
+                                    <option value="Nasikin">Nasikin</option>
+                                    <option value="Buchori">Buchori</option>
+                                    <option value="Irfan">Irfan</option>
+                                    <option value="Yoga">Yoga</option>
                                     <option value="-">-</option>
                                   </select>  
               </div>
@@ -117,6 +120,12 @@
                 <input type="number" class="form-control" name="target_72" value="<?= $row->target; ?>" placeholder="Jumlah Target" >
               </div>
               <div class="col-md-6">
+                <label>Kru</label>
+                <input type="text" name="kru_operator_72" placeholder="Nama Kru" class="form-control">
+              </div>
+            </div><br>
+            <div class="row">
+              <div class="col-md-6">
                 <label>Jenis Lipatan</label>
                 <select id="inputState" class="form-select form-control" name="jenis_cetakan_72" >
                                   <option value="<?php  echo $row->jenis_cetakan != "-" ?   $row->jenis_cetakan  : '-' ?>"><?php  echo $row->jenis_cetakan != "-" ?   $row->jenis_cetakan  : '-' ?>   </option>
@@ -125,12 +134,12 @@
                                     <option value="Isi">Isi</option>
                                   </select>
               </div>
-            </div><br>
-            <div class="row">
               <div class="col-md-6">
                 <label>Set</label>
                 <input type="number" class="form-control" name="set_72" value="<?= $row->set?>" placeholder="Jumlah set cover" >
               </div>
+            </div><br>
+            <div class="row">
               <div class="col-md-6">
                 <label>Drug</label><br>
                 <input type="number" class="form-control" name="druk_72" hidden>
