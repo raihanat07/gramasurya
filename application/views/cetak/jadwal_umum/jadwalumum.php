@@ -106,7 +106,7 @@
               </table>
             </div>
             <div class="tab-pane" id="mesin2">
-              <table id="table1" class="table table-bordered table-hover" style="font-size: 12px;">
+              <table id="table2" class="table table-bordered table-hover" style="font-size: 12px;">
                 <thead>
                   <tr align="center">
                     <td rowspan="2" style="padding-top: 20px;">Nomor SO</td>

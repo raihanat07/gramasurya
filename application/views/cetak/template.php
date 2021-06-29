@@ -219,6 +219,7 @@
   <script>
       $(function () {
     $("#table1").DataTable();
+    $("#table2").DataTable();
   });
   </script>
 </body>
