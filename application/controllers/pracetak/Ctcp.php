@@ -84,6 +84,10 @@ class Ctcp extends CI_Controller {
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
 
+			if($inputan['namaoperatorctcp2'] == null){
+				$inputan['namaoperatorctcp2'] = "";
+			}
+
 			$inputan['status_order'] = "imposisi";
 			if($inputan['status_ctcp_cover'] !=null && $inputan['status_ctcp_isi'] !=null){
 					$inputan['status_order'] = "ctcp";
@@ -107,7 +111,7 @@ class Ctcp extends CI_Controller {
 				$inputan["total_plat_gagal_cover"] = $inputan["total_plat_gagal_cover"] + $inputan["jumlahplategagalcover2"] ;
 			}
 
-
+			$inputan["total_plat_gagal_isi"] = 0;
 			if($inputan["jumlahplategagalisi1"] !=null ){
 				$inputan["total_plat_gagal_isi"] = $inputan["total_plat_gagal_isi"] + $inputan["jumlahplategagalisi1"] ;
 			}
