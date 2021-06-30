@@ -121,7 +121,7 @@
               </div>
               <div class="col-md-6">
                 <label>Kru</label>
-                <input type="text" name="kru_operator_102a" placeholder="Nama Kru" class="form-control">
+                <input type="text" name="kru_operator_102a" value="<?= $row->kru_operator_102a; ?>" placeholder="Nama Kru" class="form-control">
               </div>
             </div><br>
             <div class="row">
