@@ -40,7 +40,7 @@ class Auth extends CI_Controller {
                 }else if($this->session->userdata('level') == 7){
                     echo "<script>
                     alert('Selamat Login Berhasil')
-                    window.location = '".site_url('direksi/index')."';
+                    window.location = '".site_url('finishing/OperatorFP')."';
                 </script>";
                 }
                 
