@@ -42,6 +42,11 @@ class Auth extends CI_Controller {
                     alert('Selamat Login Berhasil')
                     window.location = '".site_url('finishing/OperatorFP')."';
                 </script>";
+                }else if($this->session->userdata('level') == 8){
+                    echo "<script>
+                    alert('Selamat Login Berhasil')
+                    window.location = '".site_url('pracetak/SuratOrder')."';
+                </script>";
                 }
                 
             }else {

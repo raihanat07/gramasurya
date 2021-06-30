@@ -171,6 +171,217 @@
               <?php } ?>
             </ul>
           </li>
+          <?php if ($this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
+         <!-- Template Cetak -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link ">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Cetak
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=site_url()?>cetak/DisplayUmum" 
+                <?php  if($judul == "Display Umum"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Display Umum</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>cetak/DisplayCetak"
+                    <?php  if($judul == "Display Cetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Display Cetak</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>cetak/JadwalUmum" 
+                <?php  if($judul == "Jadwal Umum Cetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Jadwal Umum</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>cetak/JadwalMesin" 
+                 <?php  if($judul == "Jadwal Mesin Cetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Jadwal Mesin</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>cetak/Spk"
+                    <?php  if($judul == "Laporan Cetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Laporan</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- Akhir Template Cetak -->
+
+          <!-- Awal Template Finishing -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Finishing
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=site_url()?>finishing/Display"
+                    <?php  if($judul == "Display Umum"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Display Umum</p>
+                </a>
+              </li>
+              <?php if ($this->fungsi->user_login()->level == 3 || $this->fungsi->user_login()->level == 6) { ?>
+              <li class="nav-item">
+                <a href="<?=site_url()?>finishing/FinishingProses" 
+                <?php  if($judul == "Finishing Proses"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Finishing Proses</p>
+                </a>
+              </li>
+              <li class="nav-item has-treeview menu-open">
+                <a href="#" 
+                 <?php  if($judul == "Finishing Akhir"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Finishing Akhir <i class="fa fa-angle-left right"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?=site_url()?>finishing/FinishingAkhir/mesin_kategori1"
+                      <?php  if($judul == "Finishing Akhir Mesin Finishing"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Mesin Finishing</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?=site_url()?>finishing/FinishingAkhir/mesin_kalender"
+                      <?php  if($judul == "Finishing Akhir Mesin Kalender"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Mesin Kalender</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>finishing/QualityControl" 
+                 <?php  if($judul == "Quality Control"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Quality Control</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>finishing/Laporan"
+                    <?php  if($judul == "Laporan"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Laporan</p>
+                </a>
+              </li>
+              <?php } ?>
+              <li class="nav-item has-treeview menu-open">
+                <a href="#" 
+                 <?php  if($judul == "Operator"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Operator <i class="fa fa-angle-left right"></i></p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?=site_url()?>finishing/OperatorFP"
+                      <?php  if($judul == "Operator Finishing Proses"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Finishing Proses</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?=site_url()?>finishing/OperatorFA"
+                      <?php  if($judul == "Operator Finishing Akhir"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Finishing Akhir</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <!-- Akhir Template Finishing -->
+          <?php } ?>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

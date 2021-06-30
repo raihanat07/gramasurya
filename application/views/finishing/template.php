@@ -73,6 +73,160 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
+          <?php if ($this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
+          <!-- Awal Template Pracetak -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                PRACETAK
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=site_url()?>pracetak/SuratOrder"
+                  <?php  if($judul == "Surat Order Pracetak" || $judul == "Tambah SO Pracetak" || $judul == "Edit SO Pracetak" || $judul == "Lihat SO Pracetak"){?>
+                    class= "nav-link active"
+                  <?php }else {?>
+                    class= "nav-link"
+                  <?php } ?>
+                >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Surat Order</p>
+                </a>
+              </li>
+              <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 4 || $this->fungsi->user_login()->level == 6) { ?>
+                <li class="nav-item">
+                  <a href="<?=site_url()?>pracetak/Imposisi" 
+                    <?php  if($judul == "Imposisi" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak" || $judul == "Edit Imposisi Pracetak" || $judul == "Print Imposisi Pracetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                  >
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Imposisi</p>
+                  </a>
+                </li>
+              <?php } ?>
+              <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 5 || $this->fungsi->user_login()->level == 6) { ?>
+                <li class="nav-item">
+                  <a href="<?=site_url()?>pracetak/Ctcp" 
+                    <?php  if($judul == "CTCP" || $judul == "Tambah Ctcp Pracetak" || $judul == "Edit Ctcp Pracetak" || $judul == "Lihat Ctcp Pracetak" || $judul == "Edit Ctcp Pracetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                  >
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>CTCP</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?=site_url()?>pracetak/Laporan" 
+                    <?php  if($judul == "Laporan" || $judul == "Tambah Laporan Pracetak" || $judul == "Edit Laporan Pracetak" || $judul == "Lihat Laporan Pracetak" || $judul == "Print Laporan Pracetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                  >
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Laporan</p>
+                  </a>
+                </li>
+              <?php } ?>
+              <?php if ($this->fungsi->user_login()->level == 6) { ?>
+                <li class="nav-item">
+                  <a href="<?=site_url()?>pracetak/User" 
+                    <?php  if($judul == "User"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                  >
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>User</p>
+                  </a>
+                </li>
+              <?php } ?>
+            </ul>
+          </li>
+          <!-- Akhir Template Pracetak -->
+          <!-- Awal Template cetak -->
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link ">
+              <i class="nav-icon fa fa-dashboard"></i>
+              <p>
+                Cetak
+                <i class="right fa fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=site_url()?>cetak/DisplayUmum" 
+                <?php  if($judul == "Display Umum"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Display Umum</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>cetak/DisplayCetak"
+                    <?php  if($judul == "Display Cetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Display Cetak</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>cetak/JadwalUmum" 
+                <?php  if($judul == "Jadwal Umum Cetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Jadwal Umum</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>cetak/JadwalMesin" 
+                 <?php  if($judul == "Jadwal Mesin Cetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Jadwal Mesin</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=site_url()?>cetak/Spk"
+                    <?php  if($judul == "Laporan Cetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                    >
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Laporan</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- Akhir Template cetak -->
+          <?php }?>
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fa fa-dashboard"></i>

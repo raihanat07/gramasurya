@@ -54,6 +54,7 @@
                         <option value="5">Admin CTCP</option>
                         <option value="6">Super Admin</option>
                         <option value="7">Operator</option>
+                        <option value="8">Direksi</option>
                     </select>
                     <?=form_error('level')?>
                 </div>
