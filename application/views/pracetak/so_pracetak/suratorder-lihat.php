@@ -303,7 +303,7 @@
           </div>
           <!-- /.card-body -->
           <div class="card-footer">
-            <a href="<?=site_url()?>pracetak" class="btn btn-default float-right">Kembali</a>
+            <a href="<?=site_url()?>pracetak/Suratorder" class="btn btn-default float-right">Kembali</a>
           </div>
           <!-- /.card-footer-->
           <?php } ?>

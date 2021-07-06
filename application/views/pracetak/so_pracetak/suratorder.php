@@ -8,7 +8,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">
-                <a href="<?=site_url('pracetak/SuratOrder/tambah_so')?>"  class="btn btn-success btn-lg">
+                <a href="<?=site_url('pracetak/Suratorder/tambah_so')?>"  class="btn btn-success btn-lg">
                   <i class="fa fa-pencil"></i> TAMBAH
                 </a>
               </li>
@@ -122,14 +122,14 @@
                 </td>
                 <td><?= $row->so_status; ?></td>
                 <td align="center">
-                  <a href="<?=site_url('pracetak/SuratOrder/lihat_so/'.$row->id_order)?>">
+                  <a href="<?=site_url('pracetak/Suratorder/lihat_so/'.$row->id_order)?>">
                     <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
-                  <a href="<?=site_url('pracetak/SuratOrder/edit_so/'.$row->id_order)?>">
+                  <a href="<?=site_url('pracetak/Suratorder/edit_so/'.$row->id_order)?>">
                     <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
                   <?php if ($this->fungsi->user_login()->level == 6) { ?>
-                    <a href="<?=site_url('pracetak/SuratOrder/del/'.$row->id_order)?>" onclick="return confirm('Apakah Anda Yakin')" class="btn btn-danger btn-xs">
+                    <a href="<?=site_url('pracetak/Suratorder/del/'.$row->id_order)?>" onclick="return confirm('Apakah Anda Yakin')" class="btn btn-danger btn-xs">
                       <i class="fa fa-trash" style="font-size:18px"></i>
                     </a>
                   <?php } ?>

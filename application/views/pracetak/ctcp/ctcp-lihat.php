@@ -128,7 +128,7 @@
                                         <div class="col-md-3" align="left">
                                             <div class="form-check">
                                                 <input type="text" name="status_ctcp_cover" value="" hidden>
-                                                <input class="form-check-input" type="checkbox" name="status_ctcp_cover" value="ctcp cover" <?php echo $row->ctcp_status == "ctcp cover" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
+                                                <input class="form-check-input" type="checkbox" name="status_ctcp_cover" value="ctcp cover" <?php echo $row->ctcp_status == "ctcp cover" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?> disabled>
                                                 <label class="form-check-label" for="flexCheckDefault">CTCP Cover</label>
                                             </div>
                                         </div>
@@ -163,7 +163,7 @@
                                         <div class="col-md-3" align="left">
                                             <div class="form-check">
                                                 <input type="text" name="status_ctcp_isi" value="" hidden>
-                                                <input class="form-check-input" type="checkbox" name="status_ctcp_isi" value="ctcp isi" <?php echo $row->ctcp_status == "ctcp isi" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?>>
+                                                <input class="form-check-input" type="checkbox" name="status_ctcp_isi" value="ctcp isi" <?php echo $row->ctcp_status == "ctcp isi" || $row->ctcp_status == "ctcp" ?  "checked" : "" ?> disabled>
                                                 <label class="form-check-label" for="flexCheckDefault">CTCP Isi</label>
                                             </div>
                                         </div>

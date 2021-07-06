@@ -96,7 +96,7 @@ class JadwalUmum_m extends CI_Model {
             mesin_tokko.set as set_tokko,
             mesin_tokko.jenis_cetakan as jenis_cetakan_tokko
             
-            ',
+            '
         );
 
         $so_status = array('pracetak','cetak','cetak cover','cetak isi');
@@ -128,7 +128,7 @@ class JadwalUmum_m extends CI_Model {
                 mesin_72.druk as druk,
                 mesin_72.total_kertas as total_kertas,
                 mesin_72.set as set,
-                mesin_72.jenis_cetakan as jenis_cetakan,                 
+                mesin_72.jenis_cetakan as jenis_cetakan                 
                 '
             );
             $this->db->from('order');                            

@@ -5,7 +5,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="<?=site_url()?>cetak/JadwalMesin/jadwal_72" class="btn btn-warning btn-lg">
+                <a href="<?=site_url()?>cetak/Jadwalmesin/jadwal_72" class="btn btn-warning btn-lg">
                 <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
                 </a>
               </li>

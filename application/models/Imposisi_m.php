@@ -10,7 +10,7 @@ class Imposisi_m extends CI_Model {
         $this->db->select(
             'imposisi.imposisi_status as imposisi_status,
             order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
-            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, finishing.finishing_akhir_spiral as spiral, imposisi.id_imposisi as id_imposisi',
+            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, finishing.finishing_akhir_spiral as spiral, imposisi.id_imposisi as id_imposisi'
         );
         // $status_impo = array('imposisi', 'imposisi cover', 'imposisi isi','imposisi khusus');
         // $status_ctcp = array('ctcp', 'ctcp cover', 'ctcp isi','ctcp khusus');
@@ -36,7 +36,7 @@ class Imposisi_m extends CI_Model {
         $this->db->select(
             'imposisi.imposisi_status as imposisi_status,
             order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
-            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, finishing.finishing_akhir_spiral as spiral, imposisi.id_imposisi as id_imposisi',
+            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, finishing.finishing_akhir_spiral as spiral, imposisi.id_imposisi as id_imposisi'
         );
         // $status_impo = array('imposisi', 'imposisi cover', 'imposisi isi','imposisi khusus');
         // $status_ctcp = array('ctcp', 'ctcp cover', 'ctcp isi','ctcp khusus');
@@ -63,7 +63,7 @@ class Imposisi_m extends CI_Model {
     {
         $this->db->select(
             'order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
-            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, finishing.finishing_akhir_spiral as spiral, imposisi.id_imposisi as id_imposisi',
+            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, finishing.finishing_akhir_spiral as spiral, imposisi.id_imposisi as id_imposisi'
         );
         $this->db->from('order');
         $this->db->join('imposisi','imposisi.id_order = order.id_order','left'); 
@@ -227,7 +227,7 @@ class Imposisi_m extends CI_Model {
             imposisi.isi3tglimposisi3 as isi3tglimposisi3, 
             imposisi.tanggal_imposisi_cover as tanggal_imposisi_cover,
             imposisi.tanggal_imposisi_isi as tanggal_imposisi_isi, 
-            imposisi.catatan_imposisi as catatan_imposisi',
+            imposisi.catatan_imposisi as catatan_imposisi'
         );
         $this->db->from('order');
         $this->db->join('finishing','finishing.id_order = order.id_order');
@@ -382,7 +382,7 @@ class Imposisi_m extends CI_Model {
                 'isi3tglimposisi3' =>$data['isi3tglimposisi3'],
                 // 'tanggal_imposisi_cover' =>$data['tanggal_imposisi_cover'],
                 // 'tanggal_imposisi_isi' =>$data['tanggal_imposisi_isi'],
-                'catatan_imposisi' =>$data['catatan_imposisi'],
+                'catatan_imposisi' =>$data['catatan_imposisi']
             );            
             $this->db->insert('imposisi',$tambah_imposisi);
 

@@ -16,10 +16,10 @@ class LaporanFinishing_m extends CI_Model {
             qc.hasil as hasil,
             qc.rejek as rejek,
             qc.keterangan as keterangan,
-            qc.status as status,
+            qc.status as status
         
             
-            ',      
+            '
         );           
 
         $this->db->from('order');    
@@ -64,10 +64,10 @@ class LaporanFinishing_m extends CI_Model {
             qc.hasil as hasil,
             qc.rejek as rejek,
             qc.keterangan as keterangan,
-            qc.status as status,
+            qc.status as status
         
             
-            ',      
+            '      
         );           
 
         $this->db->from('order');    
@@ -113,10 +113,10 @@ public function filter_tahun($tahun)
             qc.hasil as hasil,
             qc.rejek as rejek,
             qc.keterangan as keterangan,
-            qc.status as status,
+            qc.status as status
         
             
-            ',      
+            '  
         );           
 
         $this->db->from('order');    

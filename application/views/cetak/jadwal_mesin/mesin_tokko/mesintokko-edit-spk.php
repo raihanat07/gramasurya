@@ -5,7 +5,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="<?=site_url()?>cetak/JadwalMesin/jadwal_tokko" class="btn btn-warning btn-lg">
+                <a href="<?=site_url()?>cetak/Jadwalmesin/jadwal_tokko" class="btn btn-warning btn-lg">
                 <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
                 </a>
               </li>
@@ -25,6 +25,8 @@
       <div class="card">
         <div class="card-header">
         <?php foreach($jm as $s => $row) {?> 
+        <?php foreach($khusus as $s => $khu) {?>
+        
           <h3 class="card-title coba">Pembuatan SPK</h3>
 
           <div class="card-tools">
@@ -394,7 +396,7 @@
             <h3 class="text-center">Form Pembuatan SPK</h3>
             <div class="card-body">
             <form action="<?=site_url('cetak/jadwalmesin/proses')?>" method="POST">
-            <input type="text" name="id_mesin_tokko"  value="<?php echo $row->id_mesin_tokko; ?>" hidden>
+            <input type="text" name="id_mesin_tokko"  value="<?php echo $khu->id_mesin_tokko; ?>" hidden>
             <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
               <div class="row">
                 <div class="col-md-4">
@@ -431,7 +433,7 @@
                   Tanggal Buat SPK
                 </div>
                 <div class="col-md-4">
-                  <input type="date" class="form-control" name="tanggal_buat_spk" value="<?= $row->tanggal_buat_spk; ?>" placeholder="Tanggal Buat SPK" >
+                  <input type="date" class="form-control" name="tanggal_buat_spk" value="<?= $khu->tanggal_buat_spk; ?>" placeholder="Tanggal Buat SPK" >
                 </div>
                 <div class="col-sm-2" align="right">
                   Jenis Kertas
@@ -455,7 +457,7 @@
                   Ukuran Potong
                 </div>
                 <div class="col-md-4">
-                  <input type="text" class="form-control" name="ukuran_potong" value="<?= $row->ukuran_potong; ?>" placeholder="Ukuran Potong" >
+                  <input type="text" class="form-control" name="ukuran_potong" value="<?= $khu->ukuran_potong; ?>" placeholder="Ukuran Potong" >
                 </div>
                 <div class="col-sm-2" align="right">
                   Model Potongan
@@ -514,7 +516,7 @@
                   Jumlah Cetak
                 </div>
                 <div class="col-md-4">
-                  <input type="number" class="form-control" name="jumlah_cetak" value="<?= $row->jumlah_cetak; ?>" placeholder="Jumlah Cetak" >
+                  <input type="number" class="form-control" name="jumlah_cetak" value="<?= $khu->jumlah_cetak; ?>" placeholder="Jumlah Cetak" >
                 </div>
               </div><br>
               <div class="row">
@@ -529,26 +531,26 @@
                 </div>
                 <div class="col-md-1"></div>
                 <div class="col-md-3">
-                  <input type="text" name="1muka_fc_bw_warna" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="muka1_fc_bw_warna"  value="1 Muka : FC / BW / WARNA" <?php echo $row->muka1_fc_bw_warna == "1 Muka : FC / BW / WARNA"   ?  "checked" : "" ?>>
+                  <input type="text" name="muka1_fc_bw_warna" value="" hidden>
+                  <input class="form-check-input" type="checkbox" name="muka1_fc_bw_warna"  value="1 Muka : FC / BW / WARNA" <?php echo $khu->muka1_fc_bw_warna == "1 Muka : FC / BW / WARNA"   ?  "checked" : "" ?>>
                   <label class="form-check-label" for="flexCheckDefault">1 Muka : FC / BW / WARNA</label><br>
 
-                  <input type="text" name="2muka_fc_fc-bw_bw-bw" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="muka2_fc_fc-bw_bw-bw" value="2 Muka : FC / FC-BW / BW-BW" <?php echo $row->muka2_fc_fc == "2 Muka : FC / FC-BW / BW-BW"   ?  "checked" : "" ?>>
+                  <input type="text" name="muka2_fc_fc" value="" hidden>
+                  <input class="form-check-input" type="checkbox" name="muka2_fc_fc" value="2 Muka : FC / FC-BW / BW-BW" <?php echo $khu->muka2_fc_fc == "2 Muka : FC / FC-BW / BW-BW"   ?  "checked" : "" ?>>
                   <label class="form-check-label" for="flexCheckDefault">2 Muka : FC / FC-BW / BW-BW</label><br>
 
-                  <input type="text" name="2muka_blk" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="muka2_blk" value="2 Muka BLK (Balik Kertas)" <?php echo $row->muka2_blk == "2 Muka BLK (Balik Kertas)"   ?  "checked" : "" ?>>
+                  <input type="text" name="muka2_blk" value="" hidden>
+                  <input class="form-check-input" type="checkbox" name="muka2_blk" value="2 Muka BLK (Balik Kertas)" <?php echo $khu->muka2_blk == "2 Muka BLK (Balik Kertas)"   ?  "checked" : "" ?>>
                   <label class="form-check-label" for="flexCheckDefault">2 Muka BLK (Balik Kertas)</label><br>
 
-                  <input type="text" name="2muka_blg" value="" hidden>
-                  <input class="form-check-input" type="checkbox" name="muka2_blg" value="2 Muka BLG (Balik Graper)" <?php echo $row->muka2_blg == "2 Muka BLG (Balik Graper)"   ?  "checked" : "" ?>>
+                  <input type="text" name="muka2_blg" value="" hidden>
+                  <input class="form-check-input" type="checkbox" name="muka2_blg" value="2 Muka BLG (Balik Graper)" <?php echo $khu->muka2_blg == "2 Muka BLG (Balik Graper)"   ?  "checked" : "" ?>>
                   <label class="form-check-label" for="flexCheckDefault">2 Muka BLG (Balik Graper)</label>
                 </div>
               </div><br>
               <div class="row">
                 <div class="col">
-                  <textarea class="form-control" name="keterangan_spk"  placeholder="Keterangan" style="min-height: 250px;"><?= $row->keterangan_spk; ?></textarea>
+                  <textarea class="form-control" name="keterangan_spk"  placeholder="Keterangan" style="min-height: 250px;"><?= $khu->keterangan_spk; ?></textarea>
                 </div>
               </div><br>
               <div class="row">
@@ -565,6 +567,7 @@
           Footer
         </div> -->
         <!-- /.card-footer-->
+        <?php } ?>
         <?php } ?>
       </div>
       <!-- /.card -->

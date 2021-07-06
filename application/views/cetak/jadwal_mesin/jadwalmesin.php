@@ -27,7 +27,7 @@
             <div class="col-md-1"></div>
             <div class="col">
               <div class="card">
-                <a href="<?=site_url()?>cetak/JadwalMesin/jadwal_72" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
+                <a href="<?=site_url()?>cetak/Jadwalmesin/jadwal_72" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
                   <h3>Mesin 72</h3>
                 </a>
               </div>
@@ -35,7 +35,7 @@
             <div class="col-md-1"></div>
             <div class="col">
               <div class="card">
-                <a href="<?=site_url()?>cetak/JadwalMesin/jadwal_74a" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
+                <a href="<?=site_url()?>cetak/Jadwalmesin/jadwal_74a" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
                   <h3>Mesin 74A</h3>
                 </a>
               </div>
@@ -43,7 +43,7 @@
             <div class="col-md-1"></div>
             <div class="col">
               <div class="card">
-                <a href="<?=site_url()?>cetak/JadwalMesin/jadwal_74b" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
+                <a href="<?=site_url()?>cetak/Jadwalmesin/jadwal_74b" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
                   <h3>Mesin 74B</h3>
                 </a>
               </div>
@@ -54,7 +54,7 @@
             <div class="col-md-1"></div>
             <div class="col">
               <div class="card">
-                <a href="<?=site_url()?>cetak/JadwalMesin/jadwal_102a" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
+                <a href="<?=site_url()?>cetak/Jadwalmesin/jadwal_102a" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
                   <h3>Mesin 102A</h3>
                 </a>
               </div>
@@ -62,7 +62,7 @@
             <div class="col-md-1"></div>
             <div class="col">
               <div class="card">
-                <a href="<?=site_url()?>cetak/JadwalMesin/jadwal_102b" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
+                <a href="<?=site_url()?>cetak/Jadwalmesin/jadwal_102b" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
                   <h3>Mesin 102B</h3>
                 </a>
               </div>
@@ -70,7 +70,7 @@
             <div class="col-md-1"></div>
             <div class="col">
               <div class="card">
-                <a href="<?=site_url()?>cetak/JadwalMesin/jadwal_tokko" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
+                <a href="<?=site_url()?>cetak/Jadwalmesin/jadwal_tokko" class="btn btn-info" style="min-height: 50px;padding-top: 15px;">
                   <h3>Mesin TOKKO</h3>
                 </a>
               </div>

@@ -4,7 +4,7 @@ function check_already_login_pracetak(){
     $ci =& get_instance();
     $user_session = $ci->session->userdata('id_user');
     if($user_session){
-        redirect('pracetak/SuratOrder');
+        redirect('pracetak/Suratorder');
     }
 }
 
@@ -19,21 +19,21 @@ function check_pracetak(){
     $ci =& get_instance();
     $ci->load->library('fungsi');
     if($ci->fungsi->user_login()->level != 1 && $ci->fungsi->user_login()->level != 6 && $ci->fungsi->user_login()->level != 8){
-        redirect('pracetak/SuratOrder');
+        redirect('pracetak/Suratorder');
     }
 }
 function check_pracetak_imposisi(){
     $ci =& get_instance();
     $ci->load->library('fungsi');
     if($ci->fungsi->user_login()->level != 1 && $ci->fungsi->user_login()->level != 4 && $ci->fungsi->user_login()->level != 6 && $ci->fungsi->user_login()->level != 8){
-        redirect('pracetak/SuratOrder');
+        redirect('pracetak/Suratorder');
     }
 }
 function check_pracetak_ctcp(){
     $ci =& get_instance();
     $ci->load->library('fungsi');
     if($ci->fungsi->user_login()->level != 1 && $ci->fungsi->user_login()->level != 5 && $ci->fungsi->user_login()->level != 6 && $ci->fungsi->user_login()->level != 8){
-        redirect('pracetak/SuratOrder');
+        redirect('pracetak/Suratorder');
     }
 }
 function check_finishing(){
@@ -47,21 +47,21 @@ function check_finishing_operator(){
     $ci =& get_instance();
     $ci->load->library('fungsi');
     if($ci->fungsi->user_login()->level != 3 && $ci->fungsi->user_login()->level != 7 && $ci->fungsi->user_login()->level != 6 && $ci->fungsi->user_login()->level != 8){
-        redirect('pracetak/SuratOrder');
+        redirect('pracetak/Suratorder');
     }
 }
 function check_pracetak_admin(){
     $ci =& get_instance();
     $ci->load->library('fungsi');
     if($ci->fungsi->user_login()->level != 6){
-        redirect('pracetak/SuratOrder');
+        redirect('pracetak/Suratorder');
     }
 }
 function check_already_login_cetak(){
     $ci =& get_instance();
     $user_session = $ci->session->userdata('id_user');
     if($user_session){
-        redirect('cetak/DisplayUmum');
+        redirect('cetak/Displayumum');
     }
 }
 

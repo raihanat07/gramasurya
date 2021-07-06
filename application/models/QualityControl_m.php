@@ -16,10 +16,10 @@ class QualityControl_m extends CI_Model {
             qc.hasil as hasil,
             qc.rejek as rejek,
             qc.keterangan as keterangan,
-            qc.status as status,
+            qc.status as status
         
             
-            ',      
+            '    
         );           
         
 
@@ -53,7 +53,7 @@ public function proses_tambah_qc($data)
             'status' =>$data['status'],   
             'hasil' =>$data['hasil'],   
             'rejek' =>$data['rejek'],                                 
-            'keterangan' =>$data['keterangan'], 
+            'keterangan' =>$data['keterangan'] 
 
         );                                                          
         $this->db->insert('qc',$tambah_qc);
@@ -67,7 +67,7 @@ public function proses_edit_qc($data)
             'status' =>$data['status'],   
             'hasil' =>$data['hasil'],   
             'rejek' =>$data['rejek'],                                 
-            'keterangan' =>$data['keterangan'], 
+            'keterangan' =>$data['keterangan'] 
 
         );                                                          
         $this->db->set($ubah_qc);
@@ -89,10 +89,10 @@ public function lihat_qc($id)
         qc.hasil as hasil,
         qc.rejek as rejek,
         qc.keterangan as keterangan,
-        qc.status as status,
+        qc.status as status
     
         
-        ',      
+        '    
     );           
 
     $this->db->from('order');                
@@ -122,7 +122,7 @@ public function lihat_qc($id)
 public function status_umum($data)
 {            
             $status = array(                                                                                           
-                'so_status' =>$data['status_umum'],                                                                            
+                'so_status' =>$data['status_umum']                                                                           
             );                        
             $this->db->set($status);
             $this->db->where('id_order',$data['id_order']);

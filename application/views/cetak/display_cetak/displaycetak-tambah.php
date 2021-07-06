@@ -29,7 +29,7 @@
     <div class="card-body">
     <?php foreach($dc as $s => $row) {?> 
         <div class="card-body">
-        <form action="<?=site_url('cetak/DisplayCetak/proses')?>" method="post">
+        <form action="<?=site_url('cetak/Displaycetak/proses')?>" method="post">
         <input type="text" name="id_order"  value="<?= $row->id_order; ?>" hidden>
         <!-- <input type="text" name="total_kertas" hidden>             -->
             
@@ -563,7 +563,7 @@
                 <div class="row">
                     <div class="col" align="right">
                         <button type="submit" name="add" class="btn btn-success">Simpan</button>
-                        <button type="button" class="btn btn-default"><a href="<?=site_url()?>cetak/DisplayCetak">Kembali</a></button>
+                        <button type="button" class="btn btn-default"><a href="<?=site_url()?>cetak/Displaycetak">Kembali</a></button>
                     </div>
                 </div>                 
             </form>

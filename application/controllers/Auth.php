@@ -22,10 +22,10 @@ class Auth extends CI_Controller {
                     'level' =>$row->level
                 );
                 $this->session->set_userdata($params);
-                if($this->session->userdata('level') == 1 || $this->session->userdata('level') == 4 ||  $this->session->userdata('level') == 5 ||  $this->session->userdata('level') == 6 ){
+                if($this->session->userdata('level') == 1 || $this->session->userdata('level') == 4 ||  $this->session->userdata('level') == 5 ||  $this->session->userdata('level') == 6 ||  $this->session->userdata('level') == 8 ){
                     echo "<script>
                     alert('Selamat Login Berhasil')
-                    window.location = '".site_url('pracetak/SuratOrder')."';
+                    window.location = '".site_url('pracetak/Suratorder')."';
                 </script>";
                 }else if($this->session->userdata('level') == 2){
                     echo "<script>
@@ -41,11 +41,6 @@ class Auth extends CI_Controller {
                     echo "<script>
                     alert('Selamat Login Berhasil')
                     window.location = '".site_url('finishing/OperatorFP')."';
-                </script>";
-                }else if($this->session->userdata('level') == 8){
-                    echo "<script>
-                    alert('Selamat Login Berhasil')
-                    window.location = '".site_url('pracetak/SuratOrder')."';
                 </script>";
                 }
                 

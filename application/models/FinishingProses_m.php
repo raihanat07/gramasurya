@@ -98,7 +98,7 @@ class FinishingProses_m extends CI_Model {
             sub_proses.jenis_sub_susun_gabung as jenis_sub_susun_gabung,  
             sub_proses.jenis_sub_laminasi as jenis_sub_laminasi
             
-            ',      
+            '      
         );           
 
         $this->db->from('order');                
@@ -125,7 +125,7 @@ class FinishingProses_m extends CI_Model {
             $this->db->select(
                 '   
                 laminasi.tanggal_pelaksanaan_laminasi as tanggal_laminasi,
-                laminasi.id_jadwal_laminasi as id_jadwal_laminasi,                 
+                laminasi.id_jadwal_laminasi as id_jadwal_laminasi                 
                 '
             );
             $this->db->from('order');                            
@@ -141,7 +141,7 @@ class FinishingProses_m extends CI_Model {
         $this->db->select(
             '   
             mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_mbo,    
-            mbo.id_jadwal_mbo as id_jadwal_mbo,               
+            mbo.id_jadwal_mbo as id_jadwal_mbo              
             '
         );
         $this->db->from('order');                            
@@ -157,7 +157,7 @@ class FinishingProses_m extends CI_Model {
         $this->db->select(
             '   
             shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_shoe,   
-            shoe.id_jadwal_shoe as id_jadwal_shoe,                
+            shoe.id_jadwal_shoe as id_jadwal_shoe                
             '
         );
         $this->db->from('order');                            
@@ -173,7 +173,7 @@ class FinishingProses_m extends CI_Model {
             $this->db->select(
                 '   
                 susun.tanggal_pelaksanaan_mesin_susun as tanggal_susun, 
-                susun.id_jadwal_susun as id_jadwal_susun,                  
+                susun.id_jadwal_susun as id_jadwal_susun                  
                 '
             );
             $this->db->from('order');                            
@@ -189,7 +189,7 @@ class FinishingProses_m extends CI_Model {
             $this->db->select(
                 '   
                 sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_sub, 
-                sub_proses.id_jadwal_sub as id_jadwal_sub,                  
+                sub_proses.id_jadwal_sub as id_jadwal_sub                  
                 '
             );
             $this->db->from('order');                            
@@ -206,7 +206,7 @@ class FinishingProses_m extends CI_Model {
             $tambah_laminasi = array(
                 'id_order' =>$data['id_order'],               
                 'tanggal_pelaksanaan_laminasi' =>$data['tanggal_pelaksanaan_laminasi'],   
-                'keterangan_jadwal_fp_laminasi' =>$data['keterangan_jadwal_fp_laminasi'],                
+                'keterangan_jadwal_fp_laminasi' =>$data['keterangan_jadwal_fp_laminasi']                
             );            
             $this->db->insert('laminasi',$tambah_laminasi);
 
@@ -260,7 +260,7 @@ class FinishingProses_m extends CI_Model {
                 'lipat_lembar_17' =>$data['shoe_lipat_lembar_17'],   
                 'lipat_lembar_18' =>$data['shoe_lipat_lembar_18'],   
                 'lipat_lembar_19' =>$data['shoe_lipat_lembar_19'],   
-                'lipat_lembar_20' =>$data['shoe_lipat_lembar_20'],                                                
+                'lipat_lembar_20' =>$data['shoe_lipat_lembar_20']                                                
             );            
             $this->db->insert('shoe',$tambah_shoe);
             
@@ -277,7 +277,7 @@ class FinishingProses_m extends CI_Model {
                 'keterangan_jadwal_sub_proses' =>$data['keterangan_jadwal_sub_proses'],                
                 'jenis_sub_lipat' =>$data['jenis_sub_lipat'],  
                 'jenis_sub_susun_gabung' =>$data['jenis_sub_susun_gabung'],  
-                'jenis_sub_laminasi' =>$data['jenis_sub_laminasi'],                 
+                'jenis_sub_laminasi' =>$data['jenis_sub_laminasi']                
             );            
             $this->db->insert('sub_proses',$tambah_sub_fp);
 }
@@ -289,7 +289,7 @@ class FinishingProses_m extends CI_Model {
                                 'id_order' =>$data['id_order'],               
                                 'id_jadwal_laminasi' =>$data['id_jadwal_laminasi'],     
                                 'tanggal_pelaksanaan_laminasi' =>$data['tanggal_pelaksanaan_laminasi'],   
-                                'keterangan_jadwal_fp_laminasi' =>$data['keterangan_jadwal_fp_laminasi'],                
+                                'keterangan_jadwal_fp_laminasi' =>$data['keterangan_jadwal_fp_laminasi']               
                             );                                            
                             $this->db->insert('laminasi',$ubah_laminasi); 
             }
@@ -320,7 +320,7 @@ class FinishingProses_m extends CI_Model {
                                 'lipat_lembar_18' =>$data['mbo_lipat_lembar_18'],   
                                 'lipat_lembar_19' =>$data['mbo_lipat_lembar_19'],   
                                 'lipat_lembar_20' =>$data['mbo_lipat_lembar_20']
-                                ,                                                                           
+                                                                                                         
                             );                       
                             $this->db->insert('mbo',$ubah_mbo); 
             }
@@ -345,7 +345,7 @@ class FinishingProses_m extends CI_Model {
                                 'lipat_lembar_17' =>$data['mbo_lipat_lembar_17'],   
                                 'lipat_lembar_18' =>$data['mbo_lipat_lembar_18'],   
                                 'lipat_lembar_19' =>$data['mbo_lipat_lembar_19'],   
-                                'lipat_lembar_20' =>$data['mbo_lipat_lembar_20'],                                                
+                                'lipat_lembar_20' =>$data['mbo_lipat_lembar_20']                                                
                             );                        
                             $this->db->set($ubah_mbo_lipat);
                             $this->db->where('id_order',$data['id_order']);
@@ -378,7 +378,7 @@ class FinishingProses_m extends CI_Model {
                                 'lipat_lembar_17' =>$data['shoe_lipat_lembar_17'],   
                                 'lipat_lembar_18' =>$data['shoe_lipat_lembar_18'],   
                                 'lipat_lembar_19' =>$data['shoe_lipat_lembar_19'],   
-                                'lipat_lembar_20' =>$data['shoe_lipat_lembar_20'],                                                                               
+                                'lipat_lembar_20' =>$data['shoe_lipat_lembar_20']                                                                              
                             );            
                             $this->db->insert('shoe',$ubah_shoe);
             }
@@ -404,7 +404,7 @@ class FinishingProses_m extends CI_Model {
                 'lipat_lembar_17' =>$data['shoe_lipat_lembar_17'],   
                 'lipat_lembar_18' =>$data['shoe_lipat_lembar_18'],   
                 'lipat_lembar_19' =>$data['shoe_lipat_lembar_19'],   
-                'lipat_lembar_20' =>$data['shoe_lipat_lembar_20'],                                                
+                'lipat_lembar_20' =>$data['shoe_lipat_lembar_20']                                                
             );            
             $this->db->set($ubah_shoe_lipat);
             $this->db->where('id_order',$data['id_order']);
@@ -418,7 +418,7 @@ class FinishingProses_m extends CI_Model {
                     'id_order' =>$data['id_order'], 
                     'id_jadwal_susun' =>$data['id_jadwal_susun'],                
                     'tanggal_pelaksanaan_mesin_susun' =>$data['tanggal_pelaksanaan_mesin_susun'],   
-                    'keterangan_jadwal_fp_susun' =>$data['keterangan_jadwal_fp_susun'],                
+                    'keterangan_jadwal_fp_susun' =>$data['keterangan_jadwal_fp_susun']                
                 );            
                 $this->db->insert('susun',$ubah_susun);
             }
@@ -431,7 +431,7 @@ class FinishingProses_m extends CI_Model {
                     'keterangan_jadwal_sub_proses' =>$data['keterangan_jadwal_sub_proses'],                
                     'jenis_sub_lipat' =>$data['jenis_sub_lipat'],  
                     'jenis_sub_susun_gabung' =>$data['jenis_sub_susun_gabung'],  
-                    'jenis_sub_laminasi' =>$data['jenis_sub_laminasi'],                 
+                    'jenis_sub_laminasi' =>$data['jenis_sub_laminasi']                 
                 );            
                 $this->db->insert('sub_proses',$ubah_sub_fp);
             }
@@ -439,7 +439,7 @@ class FinishingProses_m extends CI_Model {
             $ubah_sub_khusus = array(                                
                     'jenis_sub_lipat' =>$data['jenis_sub_lipat'],  
                     'jenis_sub_susun_gabung' =>$data['jenis_sub_susun_gabung'],  
-                    'jenis_sub_laminasi' =>$data['jenis_sub_laminasi'],                                   
+                    'jenis_sub_laminasi' =>$data['jenis_sub_laminasi']                                   
             );            
             $this->db->set($ubah_sub_khusus);
             $this->db->where('id_order',$data['id_order']);
@@ -475,7 +475,7 @@ class FinishingProses_m extends CI_Model {
             laminasi.id_laminasi as id_laminasi,
             laminasi.hasil_1 as hasil_1,
             laminasi.hasil_2 as hasil_2,            
-            laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi',
+            laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi'
             
         );           
 
@@ -493,7 +493,7 @@ class FinishingProses_m extends CI_Model {
             '   
                 laminasi.id_jadwal_laminasi as id_jadwal_laminasi,
                 laminasi.hasil_1 as hasil_1,
-                laminasi.hasil_2 as hasil_2,
+                laminasi.hasil_2 as hasil_2
             '
         );
         $this->db->from('order');
@@ -523,7 +523,7 @@ public function ambilIDOrder($id_order)
         laminasi.id_laminasi as id_laminasi,
         laminasi.hasil_1 as hasil_1,
         laminasi.hasil_2 as hasil_2,            
-        laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi',
+        laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi'
         
     );           
 
@@ -580,8 +580,8 @@ public function ambilIDOrder($id_order)
             laminasi.rejek_2 as rejek_2,
             laminasi.operator_2 as operator_2,
             laminasi.kru_2 as kru_2,
-            laminasi.keterangan_2 as keterangan_2,                           
-            ',
+            laminasi.keterangan_2 as keterangan_2                           
+            '
         );           
         // $this->db->select_max('laminasi.id_jadwal_laminasi');
         $this->db->from('order');                           
@@ -616,7 +616,7 @@ public function ambilIDOrder($id_order)
                 'rejek_2' =>$data['rejek_2'],   
                 'operator_2' =>$data['operator_2'],   
                 'kru_2' =>$data['kru_2'],   
-                'keterangan_2' =>$data['keterangan_2'],                   
+                'keterangan_2' =>$data['keterangan_2']                  
 
             );                        
             $this->db->set($ubah_laminasi);
@@ -652,7 +652,7 @@ public function ambilIDOrder($id_order)
                 'rejek_2' =>$data['rejek_2'],   
                 'operator_2' =>$data['operator_2'],   
                 'kru_2' =>$data['kru_2'],   
-                'keterangan_2' =>$data['keterangan_2'],                   
+                'keterangan_2' =>$data['keterangan_2']                  
 
             );                                                          
             $this->db->insert('laminasi',$tambah_jadwal_laminasi);
@@ -700,7 +700,7 @@ public function ambilIDOrder($id_order)
             mbo.id_jadwal_mbo as id_jadwal_mbo,
             mbo.status_mbo as status_mbo,
             mbo.id_mbo as id_mbo,               
-            mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_pelaksanaan_mbo',
+            mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_pelaksanaan_mbo'
             
         );           
 
@@ -737,7 +737,7 @@ public function ambilIDOrder($id_order)
                     mbo.hasil_lipatan_lembar_17 as hasil_lipatan_lembar_17,
                     mbo.hasil_lipatan_lembar_18 as hasil_lipatan_lembar_18,
                     mbo.hasil_lipatan_lembar_19 as hasil_lipatan_lembar_19,
-                    mbo.hasil_lipatan_lembar_20 as hasil_lipatan_lembar_20,        
+                    mbo.hasil_lipatan_lembar_20 as hasil_lipatan_lembar_20        
                     
                 '
             );
@@ -806,7 +806,7 @@ public function ambilIDOrder($id_order)
             mbo.hasil_lipatan_lembar_17 as hasil_lipatan_lembar_17,
             mbo.hasil_lipatan_lembar_18 as hasil_lipatan_lembar_18,
             mbo.hasil_lipatan_lembar_19 as hasil_lipatan_lembar_19,
-            mbo.hasil_lipatan_lembar_20 as hasil_lipatan_lembar_20',            
+            mbo.hasil_lipatan_lembar_20 as hasil_lipatan_lembar_20'           
         );           
 
         $this->db->from('order');                           
@@ -957,7 +957,7 @@ public function edit_mbo($id)
             mbo.keterangan_lembar_19 as keterangan_lembar_19,
             mbo.keterangan_lembar_20 as keterangan_lembar_20
 
-            ',
+            '
         );           
         // $this->db->select_max('mbo.id_jadwal_mbo');
         $this->db->from('order');               
@@ -1085,7 +1085,7 @@ public function proses_edit_mbo($data)
                 'keterangan_lembar_17' =>$data['keterangan_lembar_17'],
                 'keterangan_lembar_18' =>$data['keterangan_lembar_18'],
                 'keterangan_lembar_19' =>$data['keterangan_lembar_19'],
-                'keterangan_lembar_20' =>$data['keterangan_lembar_20'],
+                'keterangan_lembar_20' =>$data['keterangan_lembar_20']
 
 
             );                        
@@ -1213,7 +1213,7 @@ public function proses_tambah_mbo($data)
                 'keterangan_lembar_17' =>$data['keterangan_lembar_17'],
                 'keterangan_lembar_18' =>$data['keterangan_lembar_18'],
                 'keterangan_lembar_19' =>$data['keterangan_lembar_19'],
-                'keterangan_lembar_20' =>$data['keterangan_lembar_20'],
+                'keterangan_lembar_20' =>$data['keterangan_lembar_20']
 
         );                                                          
         $this->db->insert('mbo',$tambah_jadwal_mbo);
@@ -1259,7 +1259,7 @@ public function proses_tambah_mbo($data)
                 shoe.id_jadwal_shoe as id_jadwal_shoe,
                 shoe.status_shoe as status_shoe,
                 shoe.id_shoe as id_shoe,               
-                shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_pelaksanaan_shoe',
+                shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_pelaksanaan_shoe'
                 
             );           
 
@@ -1295,7 +1295,7 @@ public function ambil_data_shoe($id)
             shoe.hasil_lipatan_lembar_17 as hasil_lipatan_lembar_17,
             shoe.hasil_lipatan_lembar_18 as hasil_lipatan_lembar_18,
             shoe.hasil_lipatan_lembar_19 as hasil_lipatan_lembar_19,
-            shoe.hasil_lipatan_lembar_20 as hasil_lipatan_lembar_20,        
+            shoe.hasil_lipatan_lembar_20 as hasil_lipatan_lembar_20    
             
         '
     );
@@ -1366,7 +1366,7 @@ public function ambil_data_shoe($id)
             shoe.hasil_lipatan_lembar_17 as hasil_lipatan_lembar_17,
             shoe.hasil_lipatan_lembar_18 as hasil_lipatan_lembar_18,
             shoe.hasil_lipatan_lembar_19 as hasil_lipatan_lembar_19,
-            shoe.hasil_lipatan_lembar_20 as hasil_lipatan_lembar_20',            
+            shoe.hasil_lipatan_lembar_20 as hasil_lipatan_lembar_20'           
         );           
 
         $this->db->from('order');                           
@@ -1517,7 +1517,7 @@ public function edit_shoe($id)
             shoe.keterangan_lembar_19 as keterangan_lembar_19,
             shoe.keterangan_lembar_20 as keterangan_lembar_20
 
-            ',
+            '
         );           
         // $this->db->select_max('shoe.id_jadwal_shoe');
         $this->db->from('order');                           
@@ -1644,7 +1644,7 @@ public function proses_edit_shoe($data)
                 'keterangan_lembar_17' =>$data['keterangan_lembar_17'],
                 'keterangan_lembar_18' =>$data['keterangan_lembar_18'],
                 'keterangan_lembar_19' =>$data['keterangan_lembar_19'],
-                'keterangan_lembar_20' =>$data['keterangan_lembar_20'],
+                'keterangan_lembar_20' =>$data['keterangan_lembar_20']
 
 
             );                        
@@ -1772,7 +1772,7 @@ public function proses_tambah_shoe($data)
                 'keterangan_lembar_17' =>$data['keterangan_lembar_17'],
                 'keterangan_lembar_18' =>$data['keterangan_lembar_18'],
                 'keterangan_lembar_19' =>$data['keterangan_lembar_19'],
-                'keterangan_lembar_20' =>$data['keterangan_lembar_20'],
+                'keterangan_lembar_20' =>$data['keterangan_lembar_20']
 
         );                                                          
         $this->db->insert('shoe',$tambah_jadwal_shoe);
@@ -1799,7 +1799,7 @@ public function proses_tambah_shoe($data)
                 susun.id_susun as id_susun,
                 susun.hasil_1 as hasil_1,
                 susun.hasil_2 as hasil_2,            
-                susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun',                
+                susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun'          
             );           
 
             $this->db->from('order');                           
@@ -1816,7 +1816,7 @@ public function proses_tambah_shoe($data)
                 '   
                     susun.id_jadwal_susun as id_jadwal_susun,
                     susun.hasil_1 as hasil_1,
-                    susun.hasil_2 as hasil_2,
+                    susun.hasil_2 as hasil_2
                 '
             );
             $this->db->from('order');
@@ -1845,7 +1845,7 @@ public function proses_tambah_shoe($data)
                 susun.id_susun as id_susun,
                 susun.hasil_1 as hasil_1,
                 susun.hasil_2 as hasil_2,            
-                susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun',
+                susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_susun'
                 
             );           
 
@@ -1898,8 +1898,8 @@ public function proses_tambah_shoe($data)
                 susun.tanggal_pengerjaan_2 as tanggal_pengerjaan_2,
                 susun.hasil_2 as hasil_2,                
                 susun.operator_2 as operator_2,                
-                susun.keterangan_2 as keterangan_2,                           
-                ',
+                susun.keterangan_2 as keterangan_2                           
+                '
             );           
             // $this->db->select_max('susun.id_jadwal_susun');
             $this->db->from('order');                           
@@ -1930,7 +1930,7 @@ public function proses_tambah_shoe($data)
                 'tanggal_pengerjaan_2' =>$data['tanggal_pengerjaan_2'],   
                 'hasil_2' =>$data['hasil_2'],                   
                 'operator_2' =>$data['operator_2'],                   
-                'keterangan_2' =>$data['keterangan_2'],                   
+                'keterangan_2' =>$data['keterangan_2']                   
 
             );                        
             $this->db->set($ubah_susun);
@@ -1960,7 +1960,7 @@ public function proses_tambah_shoe($data)
                 'tanggal_pengerjaan_2' =>$data['tanggal_pengerjaan_2'],   
                 'hasil_2' =>$data['hasil_2'],                   
                 'operator_2' =>$data['operator_2'],                   
-                'keterangan_2' =>$data['keterangan_2'],                   
+                'keterangan_2' =>$data['keterangan_2']                   
 
             );                                                          
             $this->db->insert('susun',$tambah_jadwal_susun);
@@ -1987,7 +1987,7 @@ public function get_jadwal_sub()
         sub_proses.hasil_1 as hasil_1,
         sub_proses.hasil_2 as hasil_2,   
         sub_proses.id_sub as id_sub,                  
-        sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub',                
+        sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub'                
     );           
 
     $this->db->from('order');                           
@@ -2004,7 +2004,7 @@ public function get_jadwal_sub()
                     '   
                         sub_proses.id_jadwal_sub as id_jadwal_sub,
                         sub_proses.hasil_1 as hasil_1,
-                        sub_proses.hasil_2 as hasil_2,
+                        sub_proses.hasil_2 as hasil_2
                     '
                 );
                 $this->db->from('order');
@@ -2033,7 +2033,7 @@ public function ambilIDOrder_sub($id_order)
         sub_proses.id_sub as id_sub,
         sub_proses.hasil_1 as hasil_1,
         sub_proses.hasil_2 as hasil_2,            
-        sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub',
+        sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub'
         
     );           
 
@@ -2090,8 +2090,8 @@ public function edit_sub($id)
         sub_proses.tanggal_kembali_2 as tanggal_kembali_2,
         sub_proses.hasil_2 as hasil_2,                
         sub_proses.rejek_2 as rejek_2,                
-        sub_proses.keterangan_2 as keterangan_2,                           
-        ',
+        sub_proses.keterangan_2 as keterangan_2                          
+        '
     );           
     // $this->db->select_max('sub_proses.id_jadwal_sub');
     $this->db->from('order');                           
@@ -2122,7 +2122,7 @@ public function proses_edit_sub($data)
                 'tanggal_kembali_2' =>$data['tanggal_kembali_2'],   
                 'hasil_2' =>$data['hasil_2'],                   
                 'rejek_2' =>$data['rejek_2'],                   
-                'keterangan_2' =>$data['keterangan_2'],                                   
+                'keterangan_2' =>$data['keterangan_2']                                  
 
             );                        
             $this->db->set($ubah_sub);
@@ -2133,7 +2133,7 @@ public function proses_edit_sub($data)
                 'status_sub' =>$data['status_sub'],     
                 'jenis_sub_lipat' =>$data['jenis_sub_lipat'],
                 'jenis_sub_susun_gabung' =>$data['jenis_sub_susun_gabung'],
-                'jenis_sub_laminasi' =>$data['jenis_sub_laminasi'],                                                          
+                'jenis_sub_laminasi' =>$data['jenis_sub_laminasi']                                                          
             );                        
             $this->db->set($ubah_sub_khusus);
             $this->db->where('id_order',$data['id_order']);
@@ -2159,7 +2159,7 @@ public function proses_tambah_sub($data)
             
             'jenis_sub_lipat' =>$data['jenis_sub_lipat'],
             'jenis_sub_susun_gabung' =>$data['jenis_sub_susun_gabung'],
-            'jenis_sub_laminasi' =>$data['jenis_sub_laminasi'], 
+            'jenis_sub_laminasi' =>$data['jenis_sub_laminasi']
 
         );                                                          
         $this->db->insert('sub_proses',$tambah_jadwal_sub);
@@ -2193,7 +2193,7 @@ public function hapus_laminasi_update($data)
         'kru_2' => null,
         'keterangan_2' => null,
         'status_laminasi' => null,
-        'jenis_laminasi' => null,                                                                        
+        'jenis_laminasi' => null                                                                       
     );            
     $this->db->set($hapus_laminasi);    
     $this->db->where('id_order',$data);    
@@ -2317,7 +2317,7 @@ public function hapus_shoe_update($data)
         'keterangan_lembar_17' => null,
         'keterangan_lembar_18' => null,
         'keterangan_lembar_19' => null,
-        'keterangan_lembar_20' => null,
+        'keterangan_lembar_20' => null
         
     );            
     $this->db->set($hapus_shoe);    
@@ -2441,7 +2441,7 @@ $hapus_mbo = array(
     'keterangan_lembar_17' => null,
     'keterangan_lembar_18' => null,
     'keterangan_lembar_19' => null,
-    'keterangan_lembar_20' => null,
+    'keterangan_lembar_20' => null
     
 );            
 $this->db->set($hapus_mbo);    
@@ -2469,7 +2469,7 @@ $hapus_susun = array(
             'hasil_2' =>null,
             'operator_2' =>null,
             'keterangan_2' =>null,
-            'status_susun' =>null,
+            'status_susun' =>null
 );            
 $this->db->set($hapus_susun);    
 $this->db->where('id_order',$data);    
@@ -2499,7 +2499,7 @@ $hapus_sub = array(
     'status_sub' =>null,
     'jenis_sub_lipat' =>null,
     'jenis_sub_susun_gabung' =>null,
-    'jenis_sub_laminasi' =>null,
+    'jenis_sub_laminasi' =>null
 );            
 $this->db->set($hapus_sub);    
 $this->db->where('id_order',$data);    
@@ -2518,7 +2518,7 @@ $this->db->update('sub_proses');
 public function status_umum($data)
 {            
             $status = array(                                                                                           
-                'so_status' =>$data['status_umum'],                                                                            
+                'so_status' =>$data['status_umum']                                                                           
             );                        
             $this->db->set($status);
             $this->db->where('id_order',$data['id_order']);

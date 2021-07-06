@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class JadwalMesin extends CI_Controller {
+class Jadwalmesin extends CI_Controller {
 
 	public function __construct()
     {
@@ -24,7 +24,26 @@ class JadwalMesin extends CI_Controller {
 			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
+		  //  	var_dump($data["jm"]);die;
 
+		                    $cek_id_mesin = null;
+                            foreach($data["jm"] as  $row){
+                    
+                    			$id_mesin = $row->id_mesin_72;
+                    			$ambil_data = $this->jm->spk_72($id_mesin)->result();
+                    // 			var_dump($cek_id_mesin);die;
+                                
+                                    foreach($ambil_data as $sq) {
+                                			 $cek_id_mesin = $sq->id_mesin_72;
+                                		}
+                    			
+                    			
+                    
+                    			$data["cek_id_mesin"][] = $cek_id_mesin;	
+                    			$cek_id_mesin = null;
+                    
+                    		}
+                    // 		var_dump($data["cek_id_mesin"]);die;
 		
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72',$data);
 	}
@@ -37,6 +56,24 @@ class JadwalMesin extends CI_Controller {
 			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
+		
+		                    $cek_id_mesin = null;
+                            foreach($data["jm"] as  $row){
+                    
+                    			$id_mesin = $row->id_mesin_74a;
+                    			$ambil_data = $this->jm->spk_74a($id_mesin)->result();
+                                
+                                    foreach($ambil_data as $sq) {
+                                			 $cek_id_mesin = $sq->id_mesin_74a;
+                                		}
+                    			
+                    			
+                    
+                    			$data["cek_id_mesin"][] = $cek_id_mesin;	
+                    			$cek_id_mesin = null;
+                    
+                    		}
+		
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a',$data);
 	}
 
@@ -48,6 +85,24 @@ class JadwalMesin extends CI_Controller {
 			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
+		
+		         $cek_id_mesin = null;
+                            foreach($data["jm"] as  $row){
+                    
+                    			$id_mesin = $row->id_mesin_74b;
+                    			$ambil_data = $this->jm->spk_74b($id_mesin)->result();
+                                
+                                    foreach($ambil_data as $sq) {
+                                			 $cek_id_mesin = $sq->id_mesin_74b;
+                                		}
+                    			
+                    			
+                    
+                    			$data["cek_id_mesin"][] = $cek_id_mesin;	
+                    			$cek_id_mesin = null;
+                    
+                    		}
+                    		
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74b/jadwalmesin-74b',$data);
 	}
 
@@ -59,6 +114,24 @@ class JadwalMesin extends CI_Controller {
 			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
+		
+		             $cek_id_mesin = null;
+                            foreach($data["jm"] as  $row){
+                    
+                    			$id_mesin = $row->id_mesin_102a;
+                    			$ambil_data = $this->jm->spk_102a($id_mesin)->result();
+                                
+                                    foreach($ambil_data as $sq) {
+                                			 $cek_id_mesin = $sq->id_mesin_102a;
+                                		}
+                    			
+                    			
+                    
+                    			$data["cek_id_mesin"][] = $cek_id_mesin;	
+                    			$cek_id_mesin = null;
+                    
+                    		}
+                    		
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102a/jadwalmesin-102a',$data);
 	}
 
@@ -70,6 +143,24 @@ class JadwalMesin extends CI_Controller {
 			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
+		
+		             $cek_id_mesin = null;
+                            foreach($data["jm"] as  $row){
+                    
+                    			$id_mesin = $row->id_mesin_102b;
+                    			$ambil_data = $this->jm->spk_102b($id_mesin)->result();
+                                
+                                    foreach($ambil_data as $sq) {
+                                			 $cek_id_mesin = $sq->id_mesin_102b;
+                                		}
+                    			
+                    			
+                    
+                    			$data["cek_id_mesin"][] = $cek_id_mesin;	
+                    			$cek_id_mesin = null;
+                    
+                    		}
+                    		
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102b/jadwalmesin-102b',$data);
 	}
 
@@ -81,6 +172,24 @@ class JadwalMesin extends CI_Controller {
 			'judul' => 'Jadwal Mesin Cetak',
 			'jm' => $query->result(),
 		);
+		
+		             $cek_id_mesin = null;
+                            foreach($data["jm"] as  $row){
+                    
+                    			$id_mesin = $row->id_mesin_tokko;
+                    			$ambil_data = $this->jm->spk_tokko($id_mesin)->result();
+                                
+                                    foreach($ambil_data as $sq) {
+                                			 $cek_id_mesin = $sq->id_mesin_tokko;
+                                		}
+                    			
+                    			
+                    
+                    			$data["cek_id_mesin"][] = $cek_id_mesin;	
+                    			$cek_id_mesin = null;
+                    
+                    		}
+                    		
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_tokko/jadwalmesin-tokko',$data);
 	}
 
@@ -293,60 +402,96 @@ class JadwalMesin extends CI_Controller {
 	public function edit_spk_72($id)
 	{
 		// check_already_login_cetak();
-		$query = $this->jm->get_lihat_spk_72($id);
+		$data_id = explode("-" , $id);
+		
+		$query1 = $this->jm->get_lihat_spk_72($data_id[1]);
+		$query2 = $this->jm->get_lihat_spk_72_khusus($data_id[0]);
+		
+		
 		$data = array(
 			'judul' => 'Jadwal Mesin Cetak',
-			'jm' => $query->result(),
+			'jm' => $query1->result(),
+			'khusus' => $query2->result(),
 		);
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/mesin72-edit-spk',$data);
 	}
 	public function edit_spk_74a($id)
 	{
 		// check_already_login_cetak();
-		$query = $this->jm->get_lihat_spk_74a($id);
+		$data_id = explode("-" , $id);
+		
+		$query1 = $this->jm->get_lihat_spk_74a($data_id[1]);
+		$query2 = $this->jm->get_lihat_spk_74a_khusus($data_id[0]);
+		
+		
 		$data = array(
 			'judul' => 'Jadwal Mesin Cetak',
-			'jm' => $query->result(),
+			'jm' => $query1->result(),
+			'khusus' => $query2->result(),
 		);
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/mesin74a-edit-spk',$data);
 	}
 	public function edit_spk_74b($id)
 	{
 		// check_already_login_cetak();
-		$query = $this->jm->get_lihat_spk_74b($id);
+	    $data_id = explode("-" , $id);
+		
+		$query1 = $this->jm->get_lihat_spk_74b($data_id[1]);
+		$query2 = $this->jm->get_lihat_spk_74b_khusus($data_id[0]);
+		
+		
 		$data = array(
 			'judul' => 'Jadwal Mesin Cetak',
-			'jm' => $query->result(),
+			'jm' => $query1->result(),
+			'khusus' => $query2->result(),
 		);
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74b/mesin74b-edit-spk',$data);
 	}
 	public function edit_spk_102a($id)
 	{
 		// check_already_login_cetak();
-		$query = $this->jm->get_lihat_spk_102a($id);
+	    $data_id = explode("-" , $id);
+		
+		$query1 = $this->jm->get_lihat_spk_102a($data_id[1]);
+		$query2 = $this->jm->get_lihat_spk_102a_khusus($data_id[0]);
+		
+		
 		$data = array(
 			'judul' => 'Jadwal Mesin Cetak',
-			'jm' => $query->result(),
+			'jm' => $query1->result(),
+			'khusus' => $query2->result(),
 		);
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102a/mesin102a-edit-spk',$data);
 	}
 	public function edit_spk_102b($id)
 	{
 		// check_already_login_cetak();
-		$query = $this->jm->get_lihat_102b($id);
+		$data_id = explode("-" , $id);
+		
+		$query1 = $this->jm->get_lihat_spk_102b($data_id[1]);
+		$query2 = $this->jm->get_lihat_spk_102b_khusus($data_id[0]);
+		
+		
 		$data = array(
 			'judul' => 'Jadwal Mesin Cetak',
-			'jm' => $query->result(),
+			'jm' => $query1->result(),
+			'khusus' => $query2->result(),
 		);
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102b/mesin102b-edit-spk',$data);
 	}
 	public function edit_spk_tokko($id)
 	{
 		// check_already_login_cetak();
-		$query = $this->jm->get_lihat_tokko($id);
+	    $data_id = explode("-" , $id);
+		
+		$query1 = $this->jm->get_lihat_spk_tokko($data_id[1]);
+		$query2 = $this->jm->get_lihat_spk_tokko_khusus($data_id[0]);
+		
+		
 		$data = array(
 			'judul' => 'Jadwal Mesin Cetak',
-			'jm' => $query->result(),
+			'jm' => $query1->result(),
+			'khusus' => $query2->result(),
 		);
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_tokko/mesintokko-edit-spk',$data);
 	}
@@ -539,20 +684,6 @@ class JadwalMesin extends CI_Controller {
 		
 			$this->load->model('JadwalUmum_m');
 
-																$ambil = $this->JadwalUmum_m->cek_72($inputan['id_order'])->result();														 																
-
-																foreach($ambil as $sq) {
-																	 if($sq->id_mesin_72 != $inputan['id_mesin_72']) {
-																		 $temp['id']=$sq->id_mesin_72;
-																		 $temp['id_order']=$inputan['id_order'];
-																		//  var_dump($temp);die;
-																		$this->jm->addd_spk_72($temp);
-
-																	}
-																	
-																	 
-																}
-														 
 																			
 			$this->jm->add_spk_72($inputan);
 				
@@ -561,19 +692,7 @@ class JadwalMesin extends CI_Controller {
 		} else if(isset($_POST['addspk74a'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->load->model('JadwalUmum_m');
-																$ambil = $this->JadwalUmum_m->cek_74a($inputan['id_order'])->result();														 																
-
-																foreach($ambil as $sq) {
-																	 if($sq->id_mesin_74a != $inputan['id_mesin_74a']) {
-																		 $temp['id']=$sq->id_mesin_74a;
-																		 $temp['id_order']=$inputan['id_order'];
-																		//  var_dump($temp);die;
-																		$this->jm->addd_spk_74a($temp);
-
-																	}
-																	
-																	 
-																}
+															
 			$this->jm->add_spk_74a($inputan);
 				if($this->db->affected_rows() > 0){
 					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
@@ -582,19 +701,7 @@ class JadwalMesin extends CI_Controller {
 		}else if(isset($_POST['addspk74b'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->load->model('JadwalUmum_m');
-																$ambil = $this->JadwalUmum_m->cek_74b($inputan['id_order'])->result();														 																
-
-																foreach($ambil as $sq) {
-																	 if($sq->id_mesin_74b != $inputan['id_mesin_74b']) {
-																		 $temp['id']=$sq->id_mesin_74b;
-																		 $temp['id_order']=$inputan['id_order'];
-																		//  var_dump($temp);die;
-																		$this->jm->addd_spk_74b($temp);
-
-																	}
-																	
-																	 
-																}			$this->jm->add_spk_74b($inputan);
+																			$this->jm->add_spk_74b($inputan);
 				if($this->db->affected_rows() > 0){
 					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
 				}
@@ -602,19 +709,7 @@ class JadwalMesin extends CI_Controller {
 		}else if(isset($_POST['addspk102a'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->load->model('JadwalUmum_m');
-																$ambil = $this->JadwalUmum_m->cek_102a($inputan['id_order'])->result();														 																
-
-																foreach($ambil as $sq) {
-																	 if($sq->id_mesin_102a != $inputan['id_mesin_102a']) {
-																		 $temp['id']=$sq->id_mesin_102a;
-																		 $temp['id_order']=$inputan['id_order'];
-																		//  var_dump($temp);die;
-																		$this->jm->addd_spk_102a($temp);
-
-																	}
-																	
-																	 
-																}
+																
 			$this->jm->add_spk_102a($inputan);
 				if($this->db->affected_rows() > 0){
 					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
@@ -623,19 +718,7 @@ class JadwalMesin extends CI_Controller {
 		}else if(isset($_POST['addspk102b'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->load->model('JadwalUmum_m');
-																$ambil = $this->JadwalUmum_m->cek_102b($inputan['id_order'])->result();														 																
-
-																foreach($ambil as $sq) {
-																	 if($sq->id_mesin_102b != $inputan['id_mesin_102b']) {
-																		 $temp['id']=$sq->id_mesin_102b;
-																		 $temp['id_order']=$inputan['id_order'];
-																		//  var_dump($temp);die;
-																		$this->jm->addd_spk_102b($temp);
-
-																	}
-																	
-																	 
-																}
+															
 			$this->jm->add_spk_102b($inputan);
 				if($this->db->affected_rows() > 0){
 					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
@@ -644,19 +727,7 @@ class JadwalMesin extends CI_Controller {
 		}else if(isset($_POST['addspktokko'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->load->model('JadwalUmum_m');
-																$ambil = $this->JadwalUmum_m->cek_tokko($inputan['id_order'])->result();														 																
-
-																foreach($ambil as $sq) {
-																	 if($sq->id_mesin_tokko != $inputan['id_mesin_tokko']) {
-																		 $temp['id']=$sq->id_mesin_tokko;
-																		 $temp['id_order']=$inputan['id_order'];
-																		//  var_dump($temp);die;
-																		$this->jm->addd_spk_tokko($temp);
-
-																	}
-																	
-																	 
-																}
+															
 			$this->jm->add_spk_tokko($inputan);
 				if($this->db->affected_rows() > 0){
 					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";

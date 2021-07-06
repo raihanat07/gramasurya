@@ -71,7 +71,7 @@ class SuratOrder_m extends CI_Model {
             'ukuran' =>$data['ukuran'],
             'halaman' =>$data['halaman'],
             'oplag' =>$data['oplag'],
-            'so_status' =>$data['so_status'],                        
+            'so_status' =>$data['so_status']                        
         );
         $this->db->insert('order',$tambah_so);
 
@@ -152,7 +152,7 @@ class SuratOrder_m extends CI_Model {
             'insit_cover_3' =>$data['insit_cover_3'],
             'insit_isi_3' =>$data['insit_isi_3'],
             'keterangan_cetak_cover' =>$data['keterangan_cetak_cover'],  
-            'keterangan_cetak_isi' =>$data['keterangan_cetak_isi'],    
+            'keterangan_cetak_isi' =>$data['keterangan_cetak_isi']    
             
         );
         $this->db->insert('cetak',$tambah_cetak);
@@ -174,7 +174,7 @@ class SuratOrder_m extends CI_Model {
             'finishing_akhir_jahit_kawat' =>$data['finishing_akhir_jahit_kawat'],
             'finishing_akhir_pond' =>$data['finishing_akhir_pond'],
             'finishing_akhir_klem' =>$data['finishing_akhir_klem'],
-            'finishing_akhir_spiral' =>$data['finishing_akhir_spiral'],
+            'finishing_akhir_spiral' =>$data['finishing_akhir_spiral']
             // 'keterangan_finishing_cover' =>$data['keterangan_finishing_cover'],
             // 'keterangan_finishing_isi' =>$data['keterangan_finishing_isi'],
             // 'keterangan_finishing_akhir' =>$data['keterangan_finishing_akhir']
@@ -292,7 +292,7 @@ class SuratOrder_m extends CI_Model {
             'ukuran' =>$data['ukuran'],
             'halaman' =>$data['halaman'],
             'oplag' =>$data['oplag'],
-            'so_status' =>$data['so_status'],                        
+            'so_status' =>$data['so_status']                        
         );
         $this->db->set($ubah_so);
         $this->db->where('id_order',$data['id_order']);
@@ -354,7 +354,7 @@ class SuratOrder_m extends CI_Model {
             'potong_isi_2' =>$data['potong_isi_2'],
             'potong_cover_3' =>$data['potong_cover_3'],
             'potong_isi_3' =>$data['potong_isi_3'],
-            'potong_isi_4' =>$data['potong_isi_4'],
+            'potong_isi_4' =>$data['potong_isi_4']
          );
          $this->db->set($ubah_potong);
          $this->db->where('id_order',$data['id_order']);
@@ -382,7 +382,7 @@ class SuratOrder_m extends CI_Model {
             'insit_cover_3' =>$data['insit_cover_3'],
             'insit_isi_3' =>$data['insit_isi_3'],
             'keterangan_cetak_cover' =>$data['keterangan_cetak_cover'],  
-            'keterangan_cetak_isi' =>$data['keterangan_cetak_isi'],    
+            'keterangan_cetak_isi' =>$data['keterangan_cetak_isi']  
             
         );
         $this->db->set($ubah_cetak);
@@ -406,7 +406,7 @@ class SuratOrder_m extends CI_Model {
             'finishing_akhir_jahit_kawat' =>$data['finishing_akhir_jahit_kawat'],
             'finishing_akhir_pond' =>$data['finishing_akhir_pond'],
             'finishing_akhir_klem' =>$data['finishing_akhir_klem'],
-            'finishing_akhir_spiral' =>$data['finishing_akhir_spiral'],
+            'finishing_akhir_spiral' =>$data['finishing_akhir_spiral']
             // 'keterangan_finishing_cover' =>$data['keterangan_finishing_cover'],
             // 'keterangan_finishing_isi' =>$data['keterangan_finishing_isi'],
             // 'keterangan_finishing_akhir' =>$data['keterangan_finishing_akhir']

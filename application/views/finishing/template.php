@@ -85,7 +85,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=site_url()?>pracetak/SuratOrder"
+                <a href="<?=site_url()?>pracetak/Suratorder"
                   <?php  if($judul == "Surat Order Pracetak" || $judul == "Tambah SO Pracetak" || $judul == "Edit SO Pracetak" || $judul == "Lihat SO Pracetak"){?>
                     class= "nav-link active"
                   <?php }else {?>
@@ -96,7 +96,7 @@
                   <p>Surat Order</p>
                 </a>
               </li>
-              <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 4 || $this->fungsi->user_login()->level == 6) { ?>
+              <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 4 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
                 <li class="nav-item">
                   <a href="<?=site_url()?>pracetak/Imposisi" 
                     <?php  if($judul == "Imposisi" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak" || $judul == "Edit Imposisi Pracetak" || $judul == "Print Imposisi Pracetak"){?>
@@ -110,7 +110,7 @@
                   </a>
                 </li>
               <?php } ?>
-              <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 5 || $this->fungsi->user_login()->level == 6) { ?>
+              <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 5 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
                 <li class="nav-item">
                   <a href="<?=site_url()?>pracetak/Ctcp" 
                     <?php  if($judul == "CTCP" || $judul == "Tambah Ctcp Pracetak" || $judul == "Edit Ctcp Pracetak" || $judul == "Lihat Ctcp Pracetak" || $judul == "Edit Ctcp Pracetak"){?>
@@ -136,7 +136,7 @@
                   </a>
                 </li>
               <?php } ?>
-              <?php if ($this->fungsi->user_login()->level == 6) { ?>
+              <?php if ($this->fungsi->user_login()->level == 6 ) { ?>
                 <li class="nav-item">
                   <a href="<?=site_url()?>pracetak/User" 
                     <?php  if($judul == "User"){?>
@@ -176,7 +176,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>cetak/DisplayCetak"
+                <a href="<?=site_url()?>cetak/Displaycetak"
                     <?php  if($judul == "Display Cetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -188,7 +188,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>cetak/JadwalUmum" 
+                <a href="<?=site_url()?>cetak/Jadwalumum" 
                 <?php  if($judul == "Jadwal Umum Cetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -200,7 +200,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=site_url()?>cetak/JadwalMesin" 
+                <a href="<?=site_url()?>cetak/Jadwalmesin" 
                  <?php  if($judul == "Jadwal Mesin Cetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -248,7 +248,7 @@
                   <p>Display Umum</p>
                 </a>
               </li>
-              <?php if ($this->fungsi->user_login()->level == 3 || $this->fungsi->user_login()->level == 6) { ?>
+              <?php if ($this->fungsi->user_login()->level == 3 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
               <li class="nav-item">
                 <a href="<?=site_url()?>finishing/FinishingProses" 
                 <?php  if($judul == "Finishing Proses"){?>

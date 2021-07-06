@@ -73,9 +73,9 @@ class FinishingAkhir_m extends CI_Model {
             spiral.id_spiral as id_spiral,
             spiral.id_jadwal_spiral as id_jadwal_spiral,
             spiral.tanggal_pelaksanaan_spiral as tanggal_pelaksanaan_spiral,
-            spiral.keterangan_jadwal_spiral as keterangan_jadwal_spiral,
+            spiral.keterangan_jadwal_spiral as keterangan_jadwal_spiral
             
-            ',      
+            '      
         );           
 
         $this->db->from('order');                
@@ -114,7 +114,7 @@ public function ambil_data_fa_binding($id)
     $this->db->select(
         '   
         binding.tanggal_pelaksanaan_binding as tanggal_binding,
-        binding.id_jadwal_binding as id_jadwal_binding,                 
+        binding.id_jadwal_binding as id_jadwal_binding                 
         '
     );
     $this->db->from('order');                            
@@ -130,7 +130,7 @@ public function ambil_data_fa_hardcover($id)
     $this->db->select(
         '   
         hardcover.tanggal_pelaksanaan_hardcover as tanggal_hardcover,
-        hardcover.id_jadwal_hardcover as id_jadwal_hardcover,                 
+        hardcover.id_jadwal_hardcover as id_jadwal_hardcover                 
         '
     );
     $this->db->from('order');                            
@@ -147,7 +147,7 @@ public function ambil_data_fa_jahit($id)
     $this->db->select(
         '   
         jahit.tanggal_pelaksanaan_jahit as tanggal_jahit,
-        jahit.id_jadwal_jahit as id_jadwal_jahit,                 
+        jahit.id_jadwal_jahit as id_jadwal_jahit                
         '
     );
     $this->db->from('order');                            
@@ -164,7 +164,7 @@ public function ambil_data_fa_fa_potong($id)
     $this->db->select(
         '   
         fa_potong.tanggal_pelaksanaan_fa_potong as tanggal_fa_potong,
-        fa_potong.id_jadwal_fa_potong as id_jadwal_fa_potong,                 
+        fa_potong.id_jadwal_fa_potong as id_jadwal_fa_potong                 
         '
     );
     $this->db->from('order');                            
@@ -181,7 +181,7 @@ public function ambil_data_fa_sub($id)
     $this->db->select(
         '   
         sub_finishing.tanggal_pelaksanaan_sub as tanggal_sub,
-        sub_finishing.id_jadwal_sub as id_jadwal_sub,                 
+        sub_finishing.id_jadwal_sub as id_jadwal_sub                
         '
     );
     $this->db->from('order');                            
@@ -198,7 +198,7 @@ public function ambil_data_fa_klemseng($id)
     $this->db->select(
         '   
         klemseng.tanggal_pelaksanaan_klemseng as tanggal_klemseng,
-        klemseng.id_jadwal_klemseng as id_jadwal_klemseng,                 
+        klemseng.id_jadwal_klemseng as id_jadwal_klemseng                
         '
     );
     $this->db->from('order');                            
@@ -215,7 +215,7 @@ public function ambil_data_fa_spiral($id)
     $this->db->select(
         '   
         spiral.tanggal_pelaksanaan_spiral as tanggal_spiral,
-        spiral.id_jadwal_spiral as id_jadwal_spiral,                 
+        spiral.id_jadwal_spiral as id_jadwal_spiral                 
         '
     );
     $this->db->from('order');                            
@@ -235,7 +235,7 @@ public function ambil_data_fa_spiral($id)
             $tambah_binding = array(
                 'id_order' =>$data['id_order'],               
                 'tanggal_pelaksanaan_binding' =>$data['tanggal_pelaksanaan_binding'],   
-                'keterangan_jadwal_binding' =>$data['keterangan_jadwal_binding'],                
+                'keterangan_jadwal_binding' =>$data['keterangan_jadwal_binding']                
             );            
             $this->db->insert('binding',$tambah_binding);
 
@@ -249,14 +249,14 @@ public function ambil_data_fa_spiral($id)
             $tambah_jahit = array(
                 'id_order' =>$data['id_order'],               
                 'tanggal_pelaksanaan_jahit' =>$data['tanggal_pelaksanaan_jahit'],   
-                'keterangan_jadwal_jahit' =>$data['keterangan_jadwal_jahit'],                
+                'keterangan_jadwal_jahit' =>$data['keterangan_jadwal_jahit']               
             );            
             $this->db->insert('jahit',$tambah_jahit);
 
             $tambah_fa_potong = array(
                 'id_order' =>$data['id_order'],               
                 'tanggal_pelaksanaan_fa_potong' =>$data['tanggal_pelaksanaan_fa_potong'],   
-                'keterangan_jadwal_fa_potong' =>$data['keterangan_jadwal_fa_potong'],                
+                'keterangan_jadwal_fa_potong' =>$data['keterangan_jadwal_fa_potong']              
             );            
             $this->db->insert('fa_potong',$tambah_fa_potong);
 
@@ -269,17 +269,17 @@ public function ambil_data_fa_spiral($id)
                 'jenis_sub_jahit' =>$data['jenis_sub_jahit'],
                 'jenis_sub_fa_potong' =>$data['jenis_sub_fa_potong'],
                 'jenis_sub_klemseng' =>$data['jenis_sub_klemseng'],
-                'jenis_sub_spiral' =>$data['jenis_sub_spiral'],
+                'jenis_sub_spiral' =>$data['jenis_sub_spiral']
             );            
             $this->db->insert('sub_finishing',$tambah_sub);
 
             $tambah_klemseng = array(
-                'id_order' =>$data['id_order'],                                            
+                'id_order' =>$data['id_order']                                            
             );            
             $this->db->insert('klemseng',$tambah_klemseng);
 
             $tambah_spiral = array(
-                'id_order' =>$data['id_order'],                                            
+                'id_order' =>$data['id_order']                                            
             );            
             $this->db->insert('spiral',$tambah_spiral);
 
@@ -293,7 +293,7 @@ public function edit_fa($data)
                     'id_order' =>$data['id_order'],               
                     'id_jadwal_binding' =>$data['id_jadwal_binding'],     
                     'tanggal_pelaksanaan_binding' =>$data['tanggal_pelaksanaan_binding'],   
-                    'keterangan_jadwal_binding' =>$data['keterangan_jadwal_binding'],                
+                    'keterangan_jadwal_binding' =>$data['keterangan_jadwal_binding']                
                 );                                            
                 $this->db->insert('binding',$ubah_binding); 
         }
@@ -303,7 +303,7 @@ public function edit_fa($data)
                     'id_order' =>$data['id_order'],               
                     'id_jadwal_hardcover' =>$data['id_jadwal_hardcover'],     
                     'tanggal_pelaksanaan_hardcover' =>$data['tanggal_pelaksanaan_hardcover'],   
-                    'keterangan_jadwal_hardcover' =>$data['keterangan_jadwal_hardcover'],                
+                    'keterangan_jadwal_hardcover' =>$data['keterangan_jadwal_hardcover']                
                 );                                            
                 $this->db->insert('hardcover',$ubah_hardcover); 
         }
@@ -313,7 +313,7 @@ public function edit_fa($data)
                     'id_order' =>$data['id_order'],               
                     'id_jadwal_jahit' =>$data['id_jadwal_jahit'],     
                     'tanggal_pelaksanaan_jahit' =>$data['tanggal_pelaksanaan_jahit'],   
-                    'keterangan_jadwal_jahit' =>$data['keterangan_jadwal_jahit'],                
+                    'keterangan_jadwal_jahit' =>$data['keterangan_jadwal_jahit']                
                 );                                            
                 $this->db->insert('jahit',$ubah_jahit); 
         }
@@ -323,7 +323,7 @@ public function edit_fa($data)
                     'id_order' =>$data['id_order'],               
                     'id_jadwal_fa_potong' =>$data['id_jadwal_fa_potong'],     
                     'tanggal_pelaksanaan_fa_potong' =>$data['tanggal_pelaksanaan_fa_potong'],   
-                    'keterangan_jadwal_fa_potong' =>$data['keterangan_jadwal_fa_potong'],                
+                    'keterangan_jadwal_fa_potong' =>$data['keterangan_jadwal_fa_potong']               
                 );                                            
                 $this->db->insert('fa_potong',$ubah_fa_potong); 
         }
@@ -340,7 +340,7 @@ public function edit_fa($data)
                     'jenis_sub_jahit' =>$data['jenis_sub_jahit'],  
                     'jenis_sub_fa_potong' =>$data['jenis_sub_fa_potong'],  
                     'jenis_sub_klemseng' =>$data['jenis_sub_klemseng'],  
-                    'jenis_sub_spiral' =>$data['jenis_sub_spiral'],                
+                    'jenis_sub_spiral' =>$data['jenis_sub_spiral']              
                 );                                            
                 $this->db->insert('sub_finishing',$ubah_sub); 
         }
@@ -352,7 +352,7 @@ public function edit_fa($data)
             'jenis_sub_jahit' =>$data['jenis_sub_jahit'],  
             'jenis_sub_fa_potong' =>$data['jenis_sub_fa_potong'],  
             'jenis_sub_klemseng' =>$data['jenis_sub_klemseng'],  
-            'jenis_sub_spiral' =>$data['jenis_sub_spiral'],  
+            'jenis_sub_spiral' =>$data['jenis_sub_spiral']  
         );                        
         $this->db->set($ubah_sub_khusus);
         $this->db->where('id_order',$data['id_order']);
@@ -366,41 +366,41 @@ public function tambah_fa_kalender($data)
             $tambah_klemseng = array(
                 'id_order' =>$data['id_order'],               
                 'tanggal_pelaksanaan_klemseng' =>$data['tanggal_pelaksanaan_klemseng'],   
-                'keterangan_jadwal_klemseng' =>$data['keterangan_jadwal_klemseng'],                
+                'keterangan_jadwal_klemseng' =>$data['keterangan_jadwal_klemseng']                
             );            
             $this->db->insert('klemseng',$tambah_klemseng);
 
             $tambah_spiral = array(
                 'id_order' =>$data['id_order'],               
                 'tanggal_pelaksanaan_spiral' =>$data['tanggal_pelaksanaan_spiral'],   
-                'keterangan_jadwal_spiral' =>$data['keterangan_jadwal_spiral'],                
+                'keterangan_jadwal_spiral' =>$data['keterangan_jadwal_spiral']                
             );            
             $this->db->insert('spiral',$tambah_spiral);
 
 
 
             $tambah_binding = array(
-                'id_order' =>$data['id_order'],                                            
+                'id_order' =>$data['id_order']                                            
             );            
             $this->db->insert('binding',$tambah_binding);
 
             $tambah_hardcover = array(
-                'id_order' =>$data['id_order'],                                            
+                'id_order' =>$data['id_order']                                            
             );            
             $this->db->insert('hardcover',$tambah_hardcover);
 
             $tambah_jahit = array(
-                'id_order' =>$data['id_order'],                                              
+                'id_order' =>$data['id_order']                                            
             );            
             $this->db->insert('jahit',$tambah_jahit);
 
             $tambah_fa_potong = array(
-                'id_order' =>$data['id_order'],                                         
+                'id_order' =>$data['id_order']                                         
             );            
             $this->db->insert('fa_potong',$tambah_fa_potong);
 
             $tambah_sub = array(
-                'id_order' =>$data['id_order'],                               
+                'id_order' =>$data['id_order']                             
             );            
             $this->db->insert('sub_finishing',$tambah_sub);
            
@@ -415,7 +415,7 @@ public function edit_fa_kalender($data)
                 'id_order' =>$data['id_order'],               
                 'id_jadwal_klemseng' =>$data['id_jadwal_klemseng'],     
                 'tanggal_pelaksanaan_klemseng' =>$data['tanggal_pelaksanaan_klemseng'],   
-                'keterangan_jadwal_klemseng' =>$data['keterangan_jadwal_klemseng'],                
+                'keterangan_jadwal_klemseng' =>$data['keterangan_jadwal_klemseng']               
             );                                            
             $this->db->insert('klemseng',$ubah_klemseng); 
     }
@@ -425,7 +425,7 @@ public function edit_fa_kalender($data)
                 'id_order' =>$data['id_order'],               
                 'id_jadwal_spiral' =>$data['id_jadwal_spiral'],     
                 'tanggal_pelaksanaan_spiral' =>$data['tanggal_pelaksanaan_spiral'],   
-                'keterangan_jadwal_spiral' =>$data['keterangan_jadwal_spiral'],                
+                'keterangan_jadwal_spiral' =>$data['keterangan_jadwal_spiral']                
             );                                            
             $this->db->insert('spiral',$ubah_spiral); 
 }
@@ -460,7 +460,7 @@ public function edit_fa_kalender($data)
             binding.tanggal_pelaksanaan_binding as tanggal_pelaksanaan_binding,
             binding.keterangan_jadwal_binding as keterangan_jadwal_binding
             
-            ',
+            '
             
         );           
 
@@ -481,7 +481,7 @@ public function ambil_data_binding($id)
             binding.hasil_1 as hasil_1,
             binding.hasil_2 as hasil_2,
             binding.hasil_3 as hasil_3,
-            binding.hasil_4 as hasil_4,
+            binding.hasil_4 as hasil_4
         '
     );
     $this->db->from('order');
@@ -512,7 +512,7 @@ public function ambilIDOrder_binding($id_order)
         binding.hasil_2 as hasil_2,            
         binding.hasil_3 as hasil_3, 
         binding.hasil_4 as hasil_4, 
-        binding.tanggal_pelaksanaan_binding as tanggal_pelaksanaan_binding',
+        binding.tanggal_pelaksanaan_binding as tanggal_pelaksanaan_binding'
         
     );           
 
@@ -589,8 +589,8 @@ public function ambilIDOrder_binding($id_order)
             binding.rejek_4 as rejek_4,
             binding.operator_4 as operator_4,
             binding.kru_4 as kru_4,
-            binding.keterangan_4 as keterangan_4,                    
-            ',
+            binding.keterangan_4 as keterangan_4                    
+            '
         );           
         // $this->db->select_max('laminasi.id_jadwal_laminasi');
         $this->db->from('order');                           
@@ -645,7 +645,7 @@ public function ambilIDOrder_binding($id_order)
             'rejek_4' =>$data['rejek_4'],
             'operator_4' =>$data['operator_4'],
             'kru_4' =>$data['kru_4'],
-            'keterangan_4' =>$data['keterangan_4'],
+            'keterangan_4' =>$data['keterangan_4']
 
 
         );                        
@@ -654,7 +654,7 @@ public function ambilIDOrder_binding($id_order)
         $this->db->update('binding'); 
 
         $ubah_binding_khusus = array(                                                                                           
-            'status_binding' =>$data['status_binding'],                                                         
+            'status_binding' =>$data['status_binding']                                                      
         );                        
         $this->db->set($ubah_binding_khusus);
         $this->db->where('id_order',$data['id_order']);
@@ -697,7 +697,7 @@ public function proses_tambah_binding($data)
                 'rejek_4' =>$data['rejek_4'],   
                 'operator_4' =>$data['operator_4'],   
                 'kru_4' =>$data['kru_4'],   
-                'keterangan_4' =>$data['keterangan_4'], 
+                'keterangan_4' =>$data['keterangan_4']
 
             );                                                          
             $this->db->insert('binding',$tambah_jadwal_binding);
@@ -728,7 +728,7 @@ public function get_jadwal_hardcover()
         hardcover.tanggal_pelaksanaan_hardcover as tanggal_pelaksanaan_hardcover,
         hardcover.keterangan_jadwal_hardcover as keterangan_jadwal_hardcover
         
-        ',
+        '
         
     );           
 
@@ -749,7 +749,7 @@ public function ambil_data_hardcover($id)
             hardcover.hasil_1 as hasil_1,
             hardcover.hasil_2 as hasil_2,
             hardcover.hasil_3 as hasil_3,
-            hardcover.hasil_4 as hasil_4,
+            hardcover.hasil_4 as hasil_4
         '
     );
     $this->db->from('order');
@@ -780,7 +780,7 @@ public function ambilIDOrder_hardcover($id_order)
         hardcover.hasil_2 as hasil_2,            
         hardcover.hasil_3 as hasil_3, 
         hardcover.hasil_4 as hasil_4, 
-        hardcover.tanggal_pelaksanaan_hardcover as tanggal_pelaksanaan_hardcover',
+        hardcover.tanggal_pelaksanaan_hardcover as tanggal_pelaksanaan_hardcover'
         
     );           
 
@@ -857,8 +857,8 @@ public function edit_hardcover($id)
         hardcover.rejek_4 as rejek_4,
         hardcover.operator_4 as operator_4,
         hardcover.kru_4 as kru_4,
-        hardcover.keterangan_4 as keterangan_4,                    
-        ',
+        hardcover.keterangan_4 as keterangan_4,                   
+        '
     );           
     // $this->db->select_max('laminasi.id_jadwal_laminasi');
     $this->db->from('order');                           
@@ -914,7 +914,7 @@ public function proses_edit_hardcover($data)
         'rejek_4' =>$data['rejek_4'],
         'operator_4' =>$data['operator_4'],
         'kru_4' =>$data['kru_4'],
-        'keterangan_4' =>$data['keterangan_4'],
+        'keterangan_4' =>$data['keterangan_4']
 
 
     );                        
@@ -966,7 +966,7 @@ public function proses_tambah_hardcover($data)
             'rejek_4' =>$data['rejek_4'],   
             'operator_4' =>$data['operator_4'],   
             'kru_4' =>$data['kru_4'],   
-            'keterangan_4' =>$data['keterangan_4'], 
+            'keterangan_4' =>$data['keterangan_4']
 
         );                                                          
         $this->db->insert('hardcover',$tambah_jadwal_hardcover);
@@ -998,7 +998,7 @@ public function get_jadwal_jahit()
         jahit.tanggal_pelaksanaan_jahit as tanggal_pelaksanaan_jahit,
         jahit.keterangan_jadwal_jahit as keterangan_jadwal_jahit
         
-        ',
+        '
         
     );           
 
@@ -1020,7 +1020,7 @@ public function ambil_data_jahit($id)
             jahit.hasil_1 as hasil_1,
             jahit.hasil_2 as hasil_2,
             jahit.hasil_3 as hasil_3,
-            jahit.hasil_4 as hasil_4,
+            jahit.hasil_4 as hasil_4
         '
     );
     $this->db->from('order');
@@ -1051,7 +1051,7 @@ public function ambilIDOrder_jahit($id_order)
         jahit.hasil_2 as hasil_2,            
         jahit.hasil_3 as hasil_3, 
         jahit.hasil_4 as hasil_4, 
-        jahit.tanggal_pelaksanaan_jahit as tanggal_pelaksanaan_jahit',
+        jahit.tanggal_pelaksanaan_jahit as tanggal_pelaksanaan_jahit'
         
     );           
 
@@ -1128,8 +1128,8 @@ public function edit_jahit($id)
         jahit.rejek_4 as rejek_4,
         jahit.operator_4 as operator_4,
         jahit.kru_4 as kru_4,
-        jahit.keterangan_4 as keterangan_4,                    
-        ',
+        jahit.keterangan_4 as keterangan_4                   
+        '
     );           
     // $this->db->select_max('laminasi.id_jadwal_laminasi');
     $this->db->from('order');                           
@@ -1184,7 +1184,7 @@ public function proses_edit_jahit($data)
         'rejek_4' =>$data['rejek_4'],
         'operator_4' =>$data['operator_4'],
         'kru_4' =>$data['kru_4'],
-        'keterangan_4' =>$data['keterangan_4'],
+        'keterangan_4' =>$data['keterangan_4']
 
 
     );                        
@@ -1193,7 +1193,7 @@ public function proses_edit_jahit($data)
     $this->db->update('jahit'); 
 
     $ubah_jahit_khusus = array(                                                                                           
-        'status_jahit' =>$data['status_jahit'],                                                         
+        'status_jahit' =>$data['status_jahit'],                                                        
     );                        
     $this->db->set($ubah_jahit_khusus);
     $this->db->where('id_order',$data['id_order']);
@@ -1236,7 +1236,7 @@ public function proses_tambah_jahit($data)
             'rejek_4' =>$data['rejek_4'],   
             'operator_4' =>$data['operator_4'],   
             'kru_4' =>$data['kru_4'],   
-            'keterangan_4' =>$data['keterangan_4'], 
+            'keterangan_4' =>$data['keterangan_4'] 
 
         );                                                          
         $this->db->insert('jahit',$tambah_jadwal_jahit);
@@ -1268,7 +1268,7 @@ public function get_jadwal_fa_potong()
         fa_potong.tanggal_pelaksanaan_fa_potong as tanggal_pelaksanaan_fa_potong,
         fa_potong.keterangan_jadwal_fa_potong as keterangan_jadwal_fa_potong
         
-        ',
+        '
         
     );           
 
@@ -1289,7 +1289,7 @@ public function ambil_data_fa_potong($id)
             fa_potong.hasil_1 as hasil_1,
             fa_potong.hasil_2 as hasil_2,
             fa_potong.hasil_3 as hasil_3,
-            fa_potong.hasil_4 as hasil_4,
+            fa_potong.hasil_4 as hasil_4
         '
     );
     $this->db->from('order');
@@ -1320,7 +1320,7 @@ public function ambilIDOrder_fa_potong($id_order)
         fa_potong.hasil_2 as hasil_2,            
         fa_potong.hasil_3 as hasil_3, 
         fa_potong.hasil_4 as hasil_4, 
-        fa_potong.tanggal_pelaksanaan_fa_potong as tanggal_pelaksanaan_fa_potong',
+        fa_potong.tanggal_pelaksanaan_fa_potong as tanggal_pelaksanaan_fa_potong'
         
     );           
 
@@ -1399,8 +1399,8 @@ public function edit_fa_potong($id)
         fa_potong.rejek_4 as rejek_4,
         fa_potong.operator_4 as operator_4,
         fa_potong.kru_4 as kru_4,
-        fa_potong.keterangan_4 as keterangan_4,                    
-        ',
+        fa_potong.keterangan_4 as keterangan_4                 
+        '
     );           
     // $this->db->select_max('laminasi.id_jadwal_laminasi');
     $this->db->from('order');                           
@@ -1456,7 +1456,7 @@ public function proses_edit_fa_potong($data)
         'rejek_4' =>$data['rejek_4'],
         'operator_4' =>$data['operator_4'],
         'kru_4' =>$data['kru_4'],
-        'keterangan_4' =>$data['keterangan_4'],
+        'keterangan_4' =>$data['keterangan_4']
 
 
     );                        
@@ -1465,7 +1465,7 @@ public function proses_edit_fa_potong($data)
     $this->db->update('fa_potong'); 
 
     $ubah_fa_potong_khusus = array(                                                                                           
-        'status_fa_potong' =>$data['status_fa_potong'],                                                         
+        'status_fa_potong' =>$data['status_fa_potong']                                                       
     );                        
     $this->db->set($ubah_fa_potong_khusus);
     $this->db->where('id_order',$data['id_order']);
@@ -1508,7 +1508,7 @@ public function proses_tambah_fa_potong($data)
             'rejek_4' =>$data['rejek_4'],   
             'operator_4' =>$data['operator_4'],   
             'kru_4' =>$data['kru_4'],   
-            'keterangan_4' =>$data['keterangan_4'], 
+            'keterangan_4' =>$data['keterangan_4']
 
         );                                                          
         $this->db->insert('fa_potong',$tambah_jadwal_fa_potong);
@@ -1539,7 +1539,7 @@ public function get_jadwal_sub()
         sub_finishing.tanggal_pelaksanaan_sub as tanggal_pelaksanaan_sub,
         sub_finishing.keterangan_jadwal_sub as keterangan_jadwal_sub
         
-        ',
+        '
         
     );           
 
@@ -1558,7 +1558,7 @@ public function ambil_data_sub($id)
     $this->db->select(
         '   
             sub_finishing.id_jadwal_sub as id_jadwal_sub,
-            sub_finishing.hasil as hasil,
+            sub_finishing.hasil as hasil
         '
     );
     $this->db->from('order');
@@ -1586,7 +1586,7 @@ public function ambilIDOrder_sub($id_order)
         sub_finishing.id_jadwal_sub as id_jadwal_sub,
         sub_finishing.id_sub as id_sub,
         sub_finishing.hasil as hasil,         
-        sub_finishing.tanggal_pelaksanaan_sub as tanggal_pelaksanaan_sub',
+        sub_finishing.tanggal_pelaksanaan_sub as tanggal_pelaksanaan_sub'
         
     );           
 
@@ -1649,8 +1649,8 @@ public function edit_sub($id)
         sub_finishing.rejek as rejek,
         sub_finishing.operator as operator,
         sub_finishing.kru as kru,
-        sub_finishing.keterangan as keterangan,                         
-        ',
+        sub_finishing.keterangan as keterangan                         
+        '
     );           
     // $this->db->select_max('laminasi.id_jadwal_laminasi');
     $this->db->from('order');                           
@@ -1685,7 +1685,7 @@ public function proses_edit_sub($data)
         'rejek' =>$data['rejek'],
         'operator' =>$data['operator'],
         'kru' =>$data['kru'],
-        'keterangan' =>$data['keterangan'],        
+        'keterangan' =>$data['keterangan']       
 
     );                        
     $this->db->set($ubah_sub);
@@ -1700,7 +1700,7 @@ public function proses_edit_sub($data)
         'jenis_sub_jahit' =>$data['jenis_sub_jahit'], 
         'jenis_sub_fa_potong' =>$data['jenis_sub_fa_potong'], 
         'jenis_sub_klemseng' =>$data['jenis_sub_klemseng'], 
-        'jenis_sub_spiral' =>$data['jenis_sub_spiral'], 
+        'jenis_sub_spiral' =>$data['jenis_sub_spiral']
     );                        
     $this->db->set($ubah_sub_khusus);
     $this->db->where('id_order',$data['id_order']);
@@ -1729,7 +1729,7 @@ public function proses_tambah_sub($data)
             'jenis_sub_jahit' =>$data['jenis_sub_jahit'], 
             'jenis_sub_fa_potong' =>$data['jenis_sub_fa_potong'], 
             'jenis_sub_klemseng' =>$data['jenis_sub_klemseng'], 
-            'jenis_sub_spiral' =>$data['jenis_sub_spiral'],
+            'jenis_sub_spiral' =>$data['jenis_sub_spiral']
 
         );                                                          
         $this->db->insert('sub_finishing',$tambah_jadwal_sub);
@@ -1762,7 +1762,7 @@ public function get_jadwal_klemseng()
         klemseng.tanggal_pelaksanaan_klemseng as tanggal_pelaksanaan_klemseng,
         klemseng.keterangan_jadwal_klemseng as keterangan_jadwal_klemseng
         
-        ',
+        '
         
     );           
 
@@ -1784,7 +1784,7 @@ public function ambil_data_klemseng($id)
             klemseng.hasil_1 as hasil_1,
             klemseng.hasil_2 as hasil_2,
             klemseng.hasil_3 as hasil_3,
-            klemseng.hasil_4 as hasil_4,
+            klemseng.hasil_4 as hasil_4
         '
     );
     $this->db->from('order');
@@ -1815,7 +1815,7 @@ public function ambilIDOrder_klemseng($id_order)
         klemseng.hasil_2 as hasil_2,            
         klemseng.hasil_3 as hasil_3, 
         klemseng.hasil_4 as hasil_4, 
-        klemseng.tanggal_pelaksanaan_klemseng as tanggal_pelaksanaan_klemseng',
+        klemseng.tanggal_pelaksanaan_klemseng as tanggal_pelaksanaan_klemseng'
         
     );           
 
@@ -1892,8 +1892,8 @@ public function edit_klemseng($id)
         klemseng.rejek_4 as rejek_4,
         klemseng.operator_4 as operator_4,
         klemseng.kru_4 as kru_4,
-        klemseng.keterangan_4 as keterangan_4,                    
-        ',
+        klemseng.keterangan_4 as keterangan_4                   
+        '
     );           
     // $this->db->select_max('laminasi.id_jadwal_laminasi');
     $this->db->from('order');                           
@@ -1948,7 +1948,7 @@ public function proses_edit_klemseng($data)
         'rejek_4' =>$data['rejek_4'],
         'operator_4' =>$data['operator_4'],
         'kru_4' =>$data['kru_4'],
-        'keterangan_4' =>$data['keterangan_4'],
+        'keterangan_4' =>$data['keterangan_4']
 
 
     );                        
@@ -1957,7 +1957,7 @@ public function proses_edit_klemseng($data)
     $this->db->update('klemseng'); 
 
     $ubah_klemseng_khusus = array(                                                                                           
-        'status_klemseng' =>$data['status_klemseng'],                                                         
+        'status_klemseng' =>$data['status_klemseng']                                                        
     );                        
     $this->db->set($ubah_klemseng_khusus);
     $this->db->where('id_order',$data['id_order']);
@@ -2000,7 +2000,7 @@ public function proses_tambah_klemseng($data)
             'rejek_4' =>$data['rejek_4'],   
             'operator_4' =>$data['operator_4'],   
             'kru_4' =>$data['kru_4'],   
-            'keterangan_4' =>$data['keterangan_4'], 
+            'keterangan_4' =>$data['keterangan_4']
 
         );                                                          
         $this->db->insert('klemseng',$tambah_jadwal_klemseng);
@@ -2032,7 +2032,7 @@ public function get_jadwal_spiral()
         spiral.tanggal_pelaksanaan_spiral as tanggal_pelaksanaan_spiral,
         spiral.keterangan_jadwal_spiral as keterangan_jadwal_spiral
         
-        ',
+        '
         
     );           
 
@@ -2054,7 +2054,7 @@ public function ambil_data_spiral($id)
             spiral.hasil_1 as hasil_1,
             spiral.hasil_2 as hasil_2,
             spiral.hasil_3 as hasil_3,
-            spiral.hasil_4 as hasil_4,
+            spiral.hasil_4 as hasil_4
         '
     );
     $this->db->from('order');
@@ -2085,7 +2085,7 @@ public function ambilIDOrder_spiral($id_order)
         spiral.hasil_2 as hasil_2,            
         spiral.hasil_3 as hasil_3, 
         spiral.hasil_4 as hasil_4, 
-        spiral.tanggal_pelaksanaan_spiral as tanggal_pelaksanaan_spiral',
+        spiral.tanggal_pelaksanaan_spiral as tanggal_pelaksanaan_spiral'
         
     );           
 
@@ -2163,8 +2163,8 @@ public function edit_spiral($id)
         spiral.rejek_4 as rejek_4,
         spiral.operator_4 as operator_4,
         spiral.kru_4 as kru_4,
-        spiral.keterangan_4 as keterangan_4,                    
-        ',
+        spiral.keterangan_4 as keterangan_4                  
+        '
     );           
     // $this->db->select_max('laminasi.id_jadwal_laminasi');
     $this->db->from('order');                           
@@ -2220,7 +2220,7 @@ public function proses_edit_spiral($data)
         'rejek_4' =>$data['rejek_4'],
         'operator_4' =>$data['operator_4'],
         'kru_4' =>$data['kru_4'],
-        'keterangan_4' =>$data['keterangan_4'],
+        'keterangan_4' =>$data['keterangan_4']
 
 
     );                        
@@ -2229,7 +2229,7 @@ public function proses_edit_spiral($data)
     $this->db->update('spiral'); 
 
     $ubah_spiral_khusus = array(                                                                                           
-        'status_spiral' =>$data['status_spiral'],                                                         
+        'status_spiral' =>$data['status_spiral']                                                        
     );                        
     $this->db->set($ubah_spiral_khusus);
     $this->db->where('id_order',$data['id_order']);
@@ -2272,7 +2272,7 @@ public function proses_tambah_spiral($data)
             'rejek_4' =>$data['rejek_4'],   
             'operator_4' =>$data['operator_4'],   
             'kru_4' =>$data['kru_4'],   
-            'keterangan_4' =>$data['keterangan_4'], 
+            'keterangan_4' =>$data['keterangan_4']
 
         );                                                          
         $this->db->insert('spiral',$tambah_jadwal_spiral);
@@ -2320,7 +2320,7 @@ public function hapus_binding_update($data)
         'rejek_4' => null,
         'operator_4' => null,
         'kru_4' => null,
-        'keterangan_4' => null,        
+        'keterangan_4' => null        
                                                                               
     );            
     $this->db->set($hapus_binding);    
@@ -2370,7 +2370,7 @@ public function hapus_hardcover_update($data)
         'rejek_4' => null,
         'operator_4' => null,
         'kru_4' => null,
-        'keterangan_4' => null,        
+        'keterangan_4' => null        
                                                                               
     );            
     $this->db->set($hapus_hardcover);    
@@ -2419,7 +2419,7 @@ public function hapus_jahit_update($data)
         'rejek_4' => null,
         'operator_4' => null,
         'kru_4' => null,
-        'keterangan_4' => null,        
+        'keterangan_4' => null        
                                                                               
     );            
     $this->db->set($hapus_jahit);    
@@ -2468,7 +2468,7 @@ public function hapus_fa_potong_update($data)
         'rejek_4' => null,
         'operator_4' => null,
         'kru_4' => null,
-        'keterangan_4' => null,        
+        'keterangan_4' => null        
                                                                               
     );            
     $this->db->set($hapus_fa_potong);    
@@ -2505,7 +2505,7 @@ public function hapus_sub_update($data)
         'jenis_sub_jahit' =>null,
         'jenis_sub_fa_potong' =>null,
         'jenis_sub_klemseng' =>null,
-        'jenis_sub_spiral' =>null,
+        'jenis_sub_spiral' =>null
                                                                               
     );            
     $this->db->set($hapus_sub);    
@@ -2555,7 +2555,7 @@ public function hapus_klemseng_update($data)
         'rejek_4' => null,
         'operator_4' => null,
         'kru_4' => null,
-        'keterangan_4' => null,        
+        'keterangan_4' => null        
                                                                               
     );            
     $this->db->set($hapus_klemseng);    
@@ -2605,7 +2605,7 @@ public function hapus_spiral_update($data)
         'rejek_4' => null,
         'operator_4' => null,
         'kru_4' => null,
-        'keterangan_4' => null,        
+        'keterangan_4' => null      
                                                                               
     );            
     $this->db->set($hapus_spiral);    
@@ -2617,7 +2617,7 @@ public function hapus_spiral_update($data)
 public function status_umum($data)
 {            
             $status = array(                                                                                           
-                'so_status' =>$data['status_umum'],                                                                            
+                'so_status' =>$data['status_umum']                                                                            
             );                        
             $this->db->set($status);
             $this->db->where('id_order',$data['id_order']);

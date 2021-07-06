@@ -5,7 +5,7 @@
       <div class="col-sm-6">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="<?=site_url()?>pracetak" class="btn btn-warning btn-lg">
+            <a href="<?=site_url()?>pracetak/Suratorder" class="btn btn-warning btn-lg">
             <i class="fa fa-chevron-left" style="font-size:18px"></i> KEMBALI
             </a>
           </li>
@@ -36,7 +36,7 @@
     <div class="card-body">
       <div class="card-body">
       
-        <form action="<?=site_url('pracetak/SuratOrder/proses')?>" method="POST">
+        <form action="<?=site_url('pracetak/Suratorder/proses')?>" method="POST">
         <?php foreach($so as $s => $row) {?>  
         <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>            
           <div class="row">

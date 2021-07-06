@@ -65,22 +65,22 @@
               <td><?= $row->target; ?></td>
               <td><?= $row->druk; ?></td>
               <td align="center">
-                <a href="<?=site_url('cetak/JadwalMesin/lihat_74b/'.$row->id_mesin_74b)?>">
+                <a href="<?=site_url('cetak/Jadwalmesin/lihat_74b/'.$row->id_mesin_74b)?>">
                   <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
-                <a href="<?=site_url('cetak/JadwalMesin/edit_74b/'.$row->id_mesin_74b)?>">
+                <a href="<?=site_url('cetak/Jadwalmesin/edit_74b/'.$row->id_mesin_74b)?>">
                   <i class="fa fa-pencil" style="font-size:18px;"></i>
                 </a>
               </td>
 
               
               <td align="center">
-              <?php if($row->id_spk == null){?>
-                  <a href="<?=site_url('cetak/JadwalMesin/tambah_spk_74b/'.$row->id_mesin_74b)?>" class="btn btn-success">
-                  <i class="fa fa-plus" style="font-size:14px"></i> EDIT SPK    
+              <?php if($cek_id_mesin[$nilai] == null){?>
+                  <a href="<?=site_url('cetak/Jadwalmesin/tambah_spk_74b/'.$row->id_mesin_74b)?>" class="btn btn-success">
+                  <i class="fa fa-plus" style="font-size:14px"></i> TAMBAH SPK    
                 </a>
                 <?php }else{?>
-                  <a href="<?=site_url('cetak/JadwalMesin/edit_spk_74b/'.$row->id_mesin_74b)?>" class="btn btn-success">
+                  <a href="<?=site_url('cetak/Jadwalmesin/edit_spk_74b/'.$row->id_mesin_74b."-".$row->id_order)?>" class="btn btn-success">
                   <i class="fa fa-pencil" style="font-size:14px"></i> EDIT SPK 
                 </a>
               

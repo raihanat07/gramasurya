@@ -179,7 +179,7 @@ class Laporan_m extends CI_Model {
             data_ctcp.jumlahplategagalisi3 as jumlahplategagalisi3,
             data_ctcp.tanggal_out_ctcp_cover as tanggal_out_ctcp_cover,
             data_ctcp.tanggal_out_ctcp_isi1 as tanggal_out_ctcp_isi1,
-            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2',
+            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2'
             
 
 
@@ -239,7 +239,7 @@ class Laporan_m extends CI_Model {
             data_ctcp.jumlahplategagalisi3,
             data_ctcp.tanggal_out_ctcp_cover as tanggal_out_ctcp_cover,
             data_ctcp.tanggal_out_ctcp_isi1 as tanggal_out_ctcp_isi1,
-            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2',
+            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2'
         );
         $this->db->from('order');
         $this->db->join('finishing','finishing.id_order = order.id_order');
@@ -426,7 +426,7 @@ class Laporan_m extends CI_Model {
             data_ctcp.jumlahplategagalisi3 as jumlahplategagalisi3,
             data_ctcp.tanggal_out_ctcp_cover as tanggal_out_ctcp_cover,
             data_ctcp.tanggal_out_ctcp_isi1 as tanggal_out_ctcp_isi1,
-            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2',
+            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2'
         );
         $this->db->from('order');
         $this->db->join('finishing','finishing.id_order = order.id_order');
@@ -481,7 +481,7 @@ class Laporan_m extends CI_Model {
     public function edit_laporan($data)
 	{
             $ganti_status = array(
-                'so_status' =>$data['status_laporan_pracetak'],
+                'so_status' =>$data['status_laporan_pracetak']
             );
             $this->db->set($ganti_status);
             $this->db->where('id_order',$data['id_order']);
@@ -662,7 +662,7 @@ class Laporan_m extends CI_Model {
             data_ctcp.jumlahplategagalisi3 as jumlahplategagalisi3,
             data_ctcp.tanggal_out_ctcp_cover as tanggal_out_ctcp_cover,
             data_ctcp.tanggal_out_ctcp_isi1 as tanggal_out_ctcp_isi1,
-            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2',
+            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2'
             
 
 
@@ -857,7 +857,7 @@ class Laporan_m extends CI_Model {
             data_ctcp.jumlahplategagalisi3 as jumlahplategagalisi3,
             data_ctcp.tanggal_out_ctcp_cover as tanggal_out_ctcp_cover,
             data_ctcp.tanggal_out_ctcp_isi1 as tanggal_out_ctcp_isi1,
-            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2',
+            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2'
             
 
 
@@ -1051,7 +1051,7 @@ class Laporan_m extends CI_Model {
             data_ctcp.jumlahplategagalisi3 as jumlahplategagalisi3,
             data_ctcp.tanggal_out_ctcp_cover as tanggal_out_ctcp_cover,
             data_ctcp.tanggal_out_ctcp_isi1 as tanggal_out_ctcp_isi1,
-            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2',
+            data_ctcp.tanggal_out_ctcp_isi2 as tanggal_out_ctcp_isi2'
             
 
 

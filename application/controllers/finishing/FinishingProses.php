@@ -11,6 +11,7 @@ class FinishingProses extends CI_Controller {
     }
 	public function index()
 	{
+	    
 		// check_already_login_finishing();
 		$query = $this->fp->get();
 		$data = array(
