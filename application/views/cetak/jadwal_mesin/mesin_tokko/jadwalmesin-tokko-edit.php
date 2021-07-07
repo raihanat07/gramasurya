@@ -14,7 +14,7 @@
     <?php foreach($jm as $s => $row) {?>
       <form action="<?=site_url('cetak/Jadwalmesin/edit_jadwal_tokko')?>" method="post"> 
       <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
-      <input type="text" name="id_mesin_tokko"  value="<?php echo $row->id_order; ?>" hidden>
+      <input type="text" name="id_mesin_tokko"  value="<?php echo $row->id_mesin_tokko; ?>" hidden>
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
