@@ -57,7 +57,9 @@
               </div>
               <div class="col-md-4">
                 <br>Jenis Cetakan
-                <br><label class="form-label"><?= $row->jenis_cetakan; ?></label>
+                <?php foreach($khusus as $s => $khu) {?> 
+                <br><label class="form-label"><?= $khu->jenis_cetakan; ?></label>
+                <?php } ?>
               </div>
             </div>
           
@@ -247,7 +249,7 @@
               <div class="col">
                 <textarea class="form-control" name="keterangan_spk"  placeholder="Keterangan" style="min-height: 250px;" disabled>
                 <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
-                <?= $row->keterangan_spk; ?>
+                <?= $khu->keterangan_spk; ?>
                 <?php }} ?>
                 
                 </textarea>

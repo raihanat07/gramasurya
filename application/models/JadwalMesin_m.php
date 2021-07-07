@@ -1152,7 +1152,7 @@ class JadwalMesin_m extends CI_Model {
     {
         $this->db->select(
             'spk.id_mesin_72,
-           
+             mesin_72.jenis_cetakan as jenis_cetakan,
             
             spk.id_spk as id_spk,
             spk.tanggal_buat_spk as tanggal_buat_spk,
@@ -1165,6 +1165,7 @@ class JadwalMesin_m extends CI_Model {
             spk.keterangan_spk as keterangan_spk'
         );
         $this->db->from('spk');
+        $this->db->join('mesin_72','mesin_72.id_mesin_72 = spk.id_mesin_72','left');
       
         $this->db->where('spk.id_mesin_72', $id);    
         // $this->db->limit(1);
@@ -1319,7 +1320,7 @@ class JadwalMesin_m extends CI_Model {
     {
         $this->db->select(
             'spk.id_mesin_74a,
-           
+             mesin_74_a.jenis_cetakan as jenis_cetakan,
             
             spk.id_spk as id_spk,
             spk.tanggal_buat_spk as tanggal_buat_spk,
@@ -1332,6 +1333,7 @@ class JadwalMesin_m extends CI_Model {
             spk.keterangan_spk as keterangan_spk'
         );
         $this->db->from('spk');
+        $this->db->join('mesin_74_a','mesin_74_a.id_mesin_74a = spk.id_mesin_74a','left');
       
         $this->db->where('spk.id_mesin_74a', $id);    
         // $this->db->limit(1);
@@ -1485,7 +1487,7 @@ class JadwalMesin_m extends CI_Model {
     {
         $this->db->select(
             'spk.id_mesin_74b,
-           
+             mesin_74_b.jenis_cetakan as jenis_cetakan,
             
             spk.id_spk as id_spk,
             spk.tanggal_buat_spk as tanggal_buat_spk,
@@ -1498,6 +1500,7 @@ class JadwalMesin_m extends CI_Model {
             spk.keterangan_spk as keterangan_spk'
         );
         $this->db->from('spk');
+        $this->db->join('mesin_74_b','mesin_74_b.id_mesin_74b = spk.id_mesin_74b','left');
       
         $this->db->where('spk.id_mesin_74b', $id);    
         // $this->db->limit(1);
@@ -1653,7 +1656,7 @@ class JadwalMesin_m extends CI_Model {
     {
         $this->db->select(
             'spk.id_mesin_102a,
-           
+            mesin_102_a.jenis_cetakan as jenis_cetakan,
             
             spk.id_spk as id_spk,
             spk.tanggal_buat_spk as tanggal_buat_spk,
@@ -1666,6 +1669,7 @@ class JadwalMesin_m extends CI_Model {
             spk.keterangan_spk as keterangan_spk'
         );
         $this->db->from('spk');
+        $this->db->join('mesin_102_a','mesin_102_a.id_mesin_102a = spk.id_mesin_102a','left');
       
         $this->db->where('spk.id_mesin_102a', $id);    
         // $this->db->limit(1);
@@ -1821,7 +1825,7 @@ class JadwalMesin_m extends CI_Model {
     {
         $this->db->select(
             'spk.id_mesin_102b,
-           
+            mesin_102_b.jenis_cetakan as jenis_cetakan,
             
             spk.id_spk as id_spk,
             spk.tanggal_buat_spk as tanggal_buat_spk,
@@ -1834,6 +1838,7 @@ class JadwalMesin_m extends CI_Model {
             spk.keterangan_spk as keterangan_spk'
         );
         $this->db->from('spk');
+        $this->db->join('mesin_102_b','mesin_102_b.id_mesin_102b = spk.id_mesin_102b','left');
       
         $this->db->where('spk.id_mesin_102b', $id);    
         // $this->db->limit(1);
@@ -1987,7 +1992,7 @@ class JadwalMesin_m extends CI_Model {
     {
         $this->db->select(
             'spk.id_mesin_tokko,
-           
+            mesin_tokko.jenis_cetakan as jenis_cetakan,
             
             spk.id_spk as id_spk,
             spk.tanggal_buat_spk as tanggal_buat_spk,
@@ -2000,6 +2005,7 @@ class JadwalMesin_m extends CI_Model {
             spk.keterangan_spk as keterangan_spk'
         );
         $this->db->from('spk');
+        $this->db->join('mesin_tokko','mesin_tokko.id_mesin_tokko = spk.id_mesin_tokko','left');
       
         $this->db->where('spk.id_mesin_tokko', $id);    
         // $this->db->limit(1);

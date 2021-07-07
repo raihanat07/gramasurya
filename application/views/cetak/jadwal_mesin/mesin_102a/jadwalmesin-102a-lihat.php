@@ -53,7 +53,9 @@
               </div>
               <div class="col-md-4">
                 <br>Jenis Cetakan
-                <br><label class="form-label"><?= $row->jenis_cetakan; ?></label>
+                <?php foreach($khusus as $s => $khu) {?> 
+                <br><label class="form-label"><?= $khu->jenis_cetakan; ?></label>
+                <?php } ?>
               </div>
             </div>
           
@@ -131,7 +133,7 @@
                   </div>
                   <div class="col-md-6">
                   <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
-                    <label><?= $row->jumlah_cetak; ?></label>
+                    <label><?= $khu->jumlah_cetak; ?></label>
                   <?php }} ?>
                   </div>
                 </div>
