@@ -65,7 +65,7 @@
               <td><?= $row->target; ?></td>
               <td><?= $row->druk; ?></td>
               <td align="center">
-                <a href="<?=site_url('cetak/Jadwalmesin/lihat_72/'.$row->id_mesin_72)?>">
+                <a href="<?=site_url('cetak/Jadwalmesin/lihat_72/'.$row->id_mesin_72."-".$row->id_order)?>">
                   <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
                 <a href="<?=site_url('cetak/Jadwalmesin/edit_72/'.$row->id_mesin_72)?>">

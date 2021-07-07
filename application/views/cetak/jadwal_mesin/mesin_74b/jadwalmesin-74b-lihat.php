@@ -28,7 +28,11 @@
             <div class="row">
               <div class="col-md-4">
                 <br>Tanggal Buat SPK
-                <br><label class="form-label"><?= date('d F Y', strtotime($row->tanggal_buat_spk)); ?></label>
+                <br>
+                
+                <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
+                    <label class="form-label"><?= date('d F Y', strtotime($khu->tanggal_buat_spk)); ?></label>
+                <?php }} ?>
               </div>
               <div class="col-md-4">
                 <br>Tanggal Masuk
@@ -127,7 +131,9 @@
                     Jumlah Cetak
                   </div>
                   <div class="col-md-6">
-                    <label><?= $row->jumlah_cetak; ?></label>
+                  <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
+                    <label><?= $khu->jumlah_cetak; ?></label>
+                  <?php }} ?>
                   </div>
                 </div>
               </div>
@@ -203,17 +209,19 @@
                 <div class="row" style="padding-top: 5px;">
                   <div class="col-md-1"></div>
                   <div class="col-md-11">
+                  <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
                     <label>
-                    <?php if($row->muka1_fc_bw_warna !=null){?> 
-                    <?=$row->muka1_fc_bw_warna;?>
-                    <?php } else if ($row->muka2_fc_fc !=null ){?>
-                    <?= $row->muka2_fc_fc;?>
-                    <?php } else if ($row->muka2_blk !=null ){?>
-                    <?= $row->muka2_blk;?>
-                    <?php } else if ($row->muka2_blg !=null ){?>
-                    <?= $row->muka2_blg;?>
+                    <?php if($khu->muka1_fc_bw_warna !=null){?> <br>
+                    <?=$khu->muka1_fc_bw_warna;?>
+                    <?php }if ($khu->muka2_fc_fc !=null ){?> <br>
+                    <?= $khu->muka2_fc_fc;?>
+                    <?php }if ($khu->muka2_blk !=null ){?> <br>
+                    <?= $khu->muka2_blk;?>
+                    <?php }if ($khu->muka2_blg !=null ){?> <br>
+                    <?= $khu->muka2_blg;?>
                     <?php } ?> 
                     </label>
+                  <?php }} ?>
                   </div>
                 </div>
               </div>
@@ -231,7 +239,11 @@
 
             <div class="row">
               <div class="col">
-                <textarea class="form-control" name="keterangan_spk"  placeholder="Keterangan" style="min-height: 250px;" disabled><?= $row->keterangan_spk; ?></textarea>
+                <textarea class="form-control" name="keterangan_spk"  placeholder="Keterangan" style="min-height: 250px;" disabled>
+                <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
+                    <?= $khu->keterangan_spk; ?>
+                <?php }} ?>
+                </textarea>
               </div>
             </div><br>
 
