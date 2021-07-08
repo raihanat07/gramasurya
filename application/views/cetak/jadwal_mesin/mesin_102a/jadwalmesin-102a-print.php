@@ -241,7 +241,7 @@
 
             <div class="row">
               <div class="col">
-                <textarea class="form-control" name="keterangan_spk" <?= $row->keterangan_spk; ?> placeholder="Keterangan" style="min-height: 190px;" disabled></textarea>
+                <textarea class="form-control" name="keterangan_spk" <?= $row->keterangan_spk; ?> placeholder="Keterangan" style="min-height: 150px;" disabled></textarea>
               </div>
             </div>
 
@@ -507,7 +507,7 @@
 
             <div class="row">
               <div class="col">
-                <textarea class="form-control" name="keterangan_spk" <?= $row->keterangan_spk; ?> placeholder="Keterangan" style="min-height: 190px;" disabled></textarea>
+                <textarea class="form-control" name="keterangan_spk" <?= $row->keterangan_spk; ?> placeholder="Keterangan" style="min-height: 150px;" disabled></textarea>
               </div>
             </div>
 
