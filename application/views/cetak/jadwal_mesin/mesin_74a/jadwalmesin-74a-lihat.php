@@ -205,6 +205,16 @@
                   </label>
                   </div>
                 </div>
+                <div class="row" style="padding-top: 5px;">
+                  <div class="col-md-1"></div>
+                  <div class="col-sm-5">
+                    Ukuran Potong
+                  </div>
+                  <div class="col-md-6">
+                  <label>dari db
+                  </label>
+                  </div>
+                </div>
               </div>
               <div class="col-md-4">
                 <div class="row" style="padding-top: 5px;">
