@@ -275,7 +275,7 @@
             
             <div class="row" align="right">
               <div class="col">
-              <a href="<?=site_url('cetak/Jadwalmesin/print_74a/'.$row->id_mesin_74a)?>" class="btn btn-default">Print</a>
+              <a href="<?=site_url('cetak/Jadwalmesin/print_74a/'.$row->id_mesin_74a."-".$row->id_order)?>" class="btn btn-default">Print</a>
               </div>
             </div>
           </div>

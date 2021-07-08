@@ -221,6 +221,22 @@ class Jadwalmesin extends CI_Controller {
 		// check_already_login_cetak();
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72-lihat',$data);
 	}
+	public function print_74a($id)
+	{
+		$data_id = explode("-" , $id);
+		
+		$query1 = $this->jm->get_lihat_74a($data_id[1]);
+		$query2 = $this->jm->get_lihat_spk_74a_khusus($data_id[0]);
+		
+		
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query1->result(),						
+			'khusus' => $query2->result(),	
+		);
+		// check_already_login_cetak();
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a-print',$data);
+	}
 
 	public function lihat_74a($id)
 	{
@@ -237,6 +253,23 @@ class Jadwalmesin extends CI_Controller {
 		);
 		// check_already_login_cetak();
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a-lihat',$data);
+	}
+
+	public function print_74b($id)
+	{
+		$data_id = explode("-" , $id);
+		
+		$query1 = $this->jm->get_lihat_74b($data_id[1]);
+		$query2 = $this->jm->get_lihat_spk_74b_khusus($data_id[0]);
+		
+		
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query1->result(),						
+			'khusus' => $query2->result(),	
+		);
+		// check_already_login_cetak();
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74b/jadwalmesin-74b-print',$data);
 	}
 
 	public function lihat_74b($id)
@@ -273,6 +306,23 @@ class Jadwalmesin extends CI_Controller {
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102a/jadwalmesin-102a-lihat',$data);
 	}
 
+	public function print_102a($id)
+	{
+		$data_id = explode("-" , $id);
+		
+		$query1 = $this->jm->get_lihat_102a($data_id[1]);
+		$query2 = $this->jm->get_lihat_spk_102a_khusus($data_id[0]);
+		
+		
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query1->result(),						
+			'khusus' => $query2->result(),	
+		);
+		// check_already_login_cetak();
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102a/jadwalmesin-102a-print',$data);
+	}
+
 	public function lihat_102b($id)
 	{
 		$data_id = explode("-" , $id);
@@ -290,6 +340,23 @@ class Jadwalmesin extends CI_Controller {
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102b/jadwalmesin-102b-lihat',$data);
 	}
 
+	public function print_102b($id)
+	{
+		$data_id = explode("-" , $id);
+		
+		$query1 = $this->jm->get_lihat_102b($data_id[1]);
+		$query2 = $this->jm->get_lihat_spk_102b_khusus($data_id[0]);
+		
+		
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query1->result(),						
+			'khusus' => $query2->result(),	
+		);
+		// check_already_login_cetak();
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102b/jadwalmesin-102b-print',$data);
+	}
+
 	public function lihat_tokko($id)
 	{
 		$data_id = explode("-" , $id);
@@ -305,6 +372,23 @@ class Jadwalmesin extends CI_Controller {
 		);
 		// check_already_login_cetak();
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_tokko/jadwalmesin-tokko-lihat',$data);
+	}
+
+	public function print_tokko($id)
+	{
+		$data_id = explode("-" , $id);
+		
+		$query1 = $this->jm->get_lihat_tokko($data_id[1]);
+		$query2 = $this->jm->get_lihat_spk_tokko_khusus($data_id[0]);
+		
+		
+		$data = array(
+			'judul' => 'Jadwal Mesin Cetak',
+			'jm' => $query1->result(),						
+			'khusus' => $query2->result(),	
+		);
+		// check_already_login_cetak();
+		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_tokko/jadwalmesin-tokko-print',$data);
 	}
 
 	public function edit_72($id)
@@ -382,14 +466,41 @@ class Jadwalmesin extends CI_Controller {
 	// }
 	public function print_72($id)
 	{
-		$query = $this->jm->get_lihat_72($id);
+		$data_id = explode("-" , $id);
+		
+		$query1 = $this->jm->get_lihat_72($data_id[1]);
+		$query2 = $this->jm->get_lihat_spk_72_khusus($data_id[0]);
+		
+		
 		$data = array(
 			'judul' => 'Jadwal Mesin Cetak',
-			'jm' => $query->result(),
+			'jm' => $query1->result(),						
+			'khusus' => $query2->result(),	
 		);
+
+		// print_r($query2->result());die;
+		// if($query2->result() != ""){
+			// $data['khusus'] = $query2->result();
+		// }
+		// else	
+		// if($data["khusus"] == null){
+		// var_dump($data["khusus"]);die;
+		// }
+		
+		// var_dump($data["jm"]);die;
 		// check_already_login_cetak();
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72-print',$data);
 	}
+	// public function print_72($id)
+	// {
+	// 	$query = $this->jm->get_lihat_72($id);
+	// 	$data = array(
+	// 		'judul' => 'Jadwal Mesin Cetak',
+	// 		'jm' => $query->result(),
+	// 	);
+	// 	// check_already_login_cetak();
+	// 	$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72-print',$data);
+	// }
 
 	// public function print_72($id)
 	// {
@@ -401,51 +512,51 @@ class Jadwalmesin extends CI_Controller {
 	// 	);
 	// 	$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72-print',$data);		
 	// }
-	public function print_74a($id)
-	{
+	// public function print_74a($id)
+	// {
 		
-		$query = $this->jm->get_lihat_74a($id);
-		$data = array(
-			'judul' => 'Jadwal Mesin Cetak',
-			'jm' => $query->result(),
-		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a-print',$data);		
-	}
-	public function print_102a($id)
-	{
+	// 	$query = $this->jm->get_lihat_74a($id);
+	// 	$data = array(
+	// 		'judul' => 'Jadwal Mesin Cetak',
+	// 		'jm' => $query->result(),
+	// 	);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74a/jadwalmesin-74a-print',$data);		
+	// }
+	// public function print_102a($id)
+	// {
 		
-		$query = $this->jm->get_lihat_102a($id);
-		$data = array(
-			'judul' => 'Jadwal Mesin Cetak',
-			'jm' => $query->result(),
-		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102a/jadwalmesin-102a-print',$data);		
-	}
-	public function print_102b($id)
-	{
+	// 	$query = $this->jm->get_lihat_102a($id);
+	// 	$data = array(
+	// 		'judul' => 'Jadwal Mesin Cetak',
+	// 		'jm' => $query->result(),
+	// 	);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102a/jadwalmesin-102a-print',$data);		
+	// }
+	// public function print_102b($id)
+	// {
 		
-		$query = $this->jm->get_lihat_102b($id);
-		$data = array(
-			'judul' => 'Jadwal Mesin Cetak',
-			'jm' => $query->result(),
-		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102b/jadwalmesin-102b-print',$data);		
-	}
-	public function print_74b($id)
-	{
+	// 	$query = $this->jm->get_lihat_102b($id);
+	// 	$data = array(
+	// 		'judul' => 'Jadwal Mesin Cetak',
+	// 		'jm' => $query->result(),
+	// 	);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_102b/jadwalmesin-102b-print',$data);		
+	// }
+	// public function print_74b($id)
+	// {
 		
-		$query = $this->jm->get_lihat_74b($id);
-		$data = array(
-			'judul' => 'Jadwal Mesin Cetak',
-			'jm' => $query->result(),
-		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74b/jadwalmesin-74b-print',$data);		
-	}
-	public function print_tokko($id)
-	{
+	// 	$query = $this->jm->get_lihat_74b($id);
+	// 	$data = array(
+	// 		'judul' => 'Jadwal Mesin Cetak',
+	// 		'jm' => $query->result(),
+	// 	);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_74b/jadwalmesin-74b-print',$data);		
+	// }
+	// public function print_tokko($id)
+	// {
 		
-		$query = $this->jm->get_lihat_tokko($id);
-		$data = array(
-			'judul' => 'Jadwal Mesin Cetak',
-			'jm' => $query->result(),
-		);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_tokko/jadwalmesin-tokko-print',$data);		
-	}
+	// 	$query = $this->jm->get_lihat_tokko($id);
+	// 	$data = array(
+	// 		'judul' => 'Jadwal Mesin Cetak',
+	// 		'jm' => $query->result(),
+	// 	);		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_tokko/jadwalmesin-tokko-print',$data);		
+	// }
 	public function edit_spk_72($id)
 	{
 		// check_already_login_cetak();
