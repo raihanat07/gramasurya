@@ -211,7 +211,10 @@
                     Ukuran Potong
                   </div>
                   <div class="col-md-6">
-                  <label>dari db
+                  <label>
+                  <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
+                <?= $khu->ukuran_potong; ?>
+                <?php }} ?>
                   </label>
                   </div>
                 </div>
