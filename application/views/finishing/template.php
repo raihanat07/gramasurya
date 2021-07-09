@@ -258,7 +258,7 @@
                     <?php } ?>
                     >
                   <i class="fa fa-circle-o nav-icon"></i>
-                  <p>Finishing Proses</p>
+                  <p>Finishing Proses<i class="fa fa-angle-left right"></i></p>
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">

@@ -204,7 +204,9 @@
                     Ukuran Potong
                   </div>
                   <div class="col-md-6">
-                  <label>dari db
+                  <label><?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
+                <?= $khu->ukuran_potong; ?>
+                <?php }} ?>
                   </label>
                   </div>
                 </div>
@@ -241,7 +243,11 @@
 
             <div class="row">
               <div class="col">
-                <textarea class="form-control" name="keterangan_spk" <?= $row->keterangan_spk; ?> placeholder="Keterangan" style="min-height: 150px;" disabled></textarea>
+                <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 150px;" disabled>
+                <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
+                <?= $khu->keterangan_spk; ?>
+                <?php }} ?>
+                </textarea>
               </div>
             </div>
 
@@ -470,7 +476,10 @@
                     Ukuran Potong
                   </div>
                   <div class="col-md-6">
-                  <label>dari db
+                  <label>
+                  <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
+                <?= $khu->ukuran_potong; ?>
+                <?php }} ?>
                   </label>
                   </div>
                 </div>
@@ -507,7 +516,10 @@
 
             <div class="row">
               <div class="col">
-                <textarea class="form-control" name="keterangan_spk" <?= $row->keterangan_spk; ?> placeholder="Keterangan" style="min-height: 150px;" disabled></textarea>
+                <textarea class="form-control" name="keterangan_spk"  placeholder="Keterangan" style="min-height: 150px;" disabled><?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
+                <?= $khu->keterangan_spk; ?>
+                <?php }} ?>
+                </textarea>
               </div>
             </div>
 
