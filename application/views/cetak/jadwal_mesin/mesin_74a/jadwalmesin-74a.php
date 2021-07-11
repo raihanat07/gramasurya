@@ -71,6 +71,11 @@
                 <a href="<?=site_url('cetak/Jadwalmesin/edit_74a/'.$row->id_mesin_74a)?>">
                   <i class="fa fa-pencil" style="font-size:18px;"></i>
                 </a>
+                <?php if($cek_id_mesin[$nilai] != null){?>
+                  <a href="<?=site_url('cetak/Jadwalmesin/print_74a/'.$row->id_mesin_tokko."-".$row->id_order)?>">
+                    <i class="fa fa-print" style="font-size:18px;margin-left: 20px;"></i>
+                  </a>
+                <?php } ?>
               </td>
 
               

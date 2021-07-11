@@ -87,6 +87,13 @@
                   <div class="col-md-7"><label class="form-label"><?=$row->oplag?></label></div>
                 </div>
               </div>
+              <div class="col-md-4">
+                <div class="row"><br>
+                  <div class="col-md-5">Insit</div>
+                  <input type="hidden" name="oplag" value="<?=$row->oplag?>">
+                  <div class="col-md-7"><label class="form-label">dari db</label></div>
+                </div>
+              </div>
             </div><br>
             
             <div class="row">

@@ -77,7 +77,7 @@
           <!-- Awal Template Pracetak -->
           <li class="nav-item has-treeview">
             <a style="font-style: bold;" href="#" class="nav-link">
-              <i class="nav-icon fa fa-dashboard"></i>
+              <i class="nav-icon fa fa-sticky-note"></i>
               <p>
                 PRACETAK
                 <i class="right fa fa-angle-left"></i>
@@ -156,7 +156,7 @@
           <!-- Awal Template cetak -->
           <li class="nav-item has-treeview">
             <a style="font-style: bold;" href="#" class="nav-link ">
-              <i class="nav-icon fa fa-dashboard"></i>
+              <i class="nav-icon fa fa-print"></i>
               <p>
                 Cetak
                 <i class="right fa fa-angle-left"></i>
@@ -229,7 +229,7 @@
           <?php }?>
           <li class="nav-item has-treeview menu-open">
             <a style="font-style: bold;" href="#" class="nav-link active">
-              <i class="nav-icon fa fa-dashboard"></i>
+              <i class="nav-icon fa fa-archive"></i>
               <p>
                 Finishing
                 <i class="right fa fa-angle-left"></i>

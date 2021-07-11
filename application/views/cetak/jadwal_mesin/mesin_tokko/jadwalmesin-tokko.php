@@ -69,8 +69,13 @@
                   <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
                 <a href="<?=site_url('cetak/Jadwalmesin/edit_tokko/'.$row->id_mesin_tokko)?>">
-                  <i class="fa fa-pencil" style="font-size:18px;"></i>
+                  <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
+                <?php if($cek_id_mesin[$nilai] != null){ ?>
+                <a href="<?=site_url('cetak/Jadwalmesin/print_tokko/'.$row->id_mesin_tokko."-".$row->id_order)?>">
+                  <i class="fa fa-print" style="font-size:18px;"></i>
+                </a>
+                <?php } ?>
               </td>
 
               
