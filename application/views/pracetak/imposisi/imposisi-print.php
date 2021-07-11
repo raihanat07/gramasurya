@@ -13,9 +13,12 @@
 <section class="content">
 
     <!-- Default box -->
-<div class="card">
+    <div class="card">
         <div class="card-header">
-            <center><b class="card-title" style="font-size: 50px;width: 100%;">WORK ORDER</b></center>
+            <img style="width:200px;" src="<?=base_url()?>/assets/dist/img/logo gramasurys.png">
+            <div class="card-body bg-light text-dark" align="center" style="margin-top:10px;">
+                <h1 class="card-title" style="font-size: 40px;width: 100%;">WORK ORDER</h1>
+            </div>
         </div>
         <div class="card-body">
             <div class="card-body">

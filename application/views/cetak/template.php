@@ -61,13 +61,13 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar elevation-4" style="background: #27253A;">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background: #27253A;">
     <!-- Brand Logo -->
     <a style="color: white;font-style: bold;" href="<?=site_url()?>cetak/DisplayUmum" class="brand-link">
       <img src="<?=base_url()?>/assets/dist/img/logo-sip-dz.png" alt="logo SIP" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">SI Produksi</span>
-    </a><hr style="background: white;">
+      <span class="brand-text font-weight-light"><h4>SI Produksi</h4></span>
+    </a>
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
@@ -77,7 +77,7 @@
           <!-- Awal Template Cetak -->
           <?php if ($this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
             <li class="nav-item has-treeview">
-            <a style="color: white;font-style: bold;" href="#" class="nav-link">
+            <a style="font-style: bold;" href="#" class="nav-link">
               <i class="nav-icon fa fa-dashboard"></i>
               <p>
                 PRACETAK
@@ -86,7 +86,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a style="color: white;font-style: bold;" href="<?=site_url()?>pracetak/Suratorder"
+                <a style="font-style: bold;" href="<?=site_url()?>pracetak/Suratorder"
                   <?php  if($judul == "Surat Order Pracetak" || $judul == "Tambah SO Pracetak" || $judul == "Edit SO Pracetak" || $judul == "Lihat SO Pracetak"){?>
                     class= "nav-link active"
                   <?php }else {?>
@@ -99,7 +99,7 @@
               </li>
               <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 4 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
                 <li class="nav-item">
-                  <a style="color: white;font-style: bold;" href="<?=site_url()?>pracetak/Imposisi" 
+                  <a style="font-style: bold;" href="<?=site_url()?>pracetak/Imposisi" 
                     <?php  if($judul == "Imposisi" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak" || $judul == "Edit Imposisi Pracetak" || $judul == "Print Imposisi Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -113,7 +113,7 @@
               <?php } ?>
               <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 5 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
                 <li class="nav-item">
-                  <a style="color: white;font-style: bold;" href="<?=site_url()?>pracetak/Ctcp" 
+                  <a style="font-style: bold;" href="<?=site_url()?>pracetak/Ctcp" 
                     <?php  if($judul == "CTCP" || $judul == "Tambah Ctcp Pracetak" || $judul == "Edit Ctcp Pracetak" || $judul == "Lihat Ctcp Pracetak" || $judul == "Edit Ctcp Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -125,7 +125,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a style="color: white;font-style: bold;" href="<?=site_url()?>pracetak/Laporan" 
+                  <a style="font-style: bold;" href="<?=site_url()?>pracetak/Laporan" 
                     <?php  if($judul == "Laporan" || $judul == "Tambah Laporan Pracetak" || $judul == "Edit Laporan Pracetak" || $judul == "Lihat Laporan Pracetak" || $judul == "Print Laporan Pracetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -139,7 +139,7 @@
               <?php } ?>
               <?php if ($this->fungsi->user_login()->level == 6) { ?>
                 <li class="nav-item">
-                  <a style="color: white;font-style: bold;" href="<?=site_url()?>pracetak/User" 
+                  <a style="font-style: bold;" href="<?=site_url()?>pracetak/User" 
                     <?php  if($judul == "User"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -156,7 +156,7 @@
           <?php }?>
           <!-- Akhir Template Cetak -->
           <li class="nav-item has-treeview menu-open">
-            <a style="color: white;font-style: bold;" href="#" class="nav-link active">
+            <a style="font-style: bold;" href="#" class="nav-link active">
               <i class="nav-icon fa fa-dashboard"></i>
               <p>
                 Cetak
@@ -165,7 +165,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a style="color: white;font-style: bold;" href="<?=site_url()?>cetak/DisplayUmum" 
+                <a style="font-style: bold;" href="<?=site_url()?>cetak/DisplayUmum" 
                 <?php  if($judul == "Display Umum"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -177,7 +177,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a style="color: white;font-style: bold;" href="<?=site_url()?>cetak/Displaycetak"
+                <a style="font-style: bold;" href="<?=site_url()?>cetak/Displaycetak"
                     <?php  if($judul == "Display Cetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -189,7 +189,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a style="color: white;font-style: bold;" href="<?=site_url()?>cetak/Jadwalumum" 
+                <a style="font-style: bold;" href="<?=site_url()?>cetak/Jadwalumum" 
                 <?php  if($judul == "Jadwal Umum Cetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -201,7 +201,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a style="color: white;font-style: bold;" href="<?=site_url()?>cetak/Jadwalmesin" 
+                <a style="font-style: bold;" href="<?=site_url()?>cetak/Jadwalmesin" 
                  <?php  if($judul == "Jadwal Mesin Cetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -213,7 +213,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a style="color: white;font-style: bold;" href="<?=site_url()?>cetak/Spk"
+                <a style="font-style: bold;" href="<?=site_url()?>cetak/Spk"
                     <?php  if($judul == "Laporan Cetak"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -230,7 +230,7 @@
           <!-- Awal Template Finishing -->
           <?php if ($this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
           <li class="nav-item has-treeview">
-            <a style="color: white;font-style: bold;" href="#" class="nav-link ">
+            <a style="font-style: bold;" href="#" class="nav-link ">
               <i class="nav-icon fa fa-dashboard"></i>
               <p>
                 Finishing
@@ -239,7 +239,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a style="color: white;font-style: bold;" href="<?=site_url()?>finishing/Display"
+                <a style="font-style: bold;" href="<?=site_url()?>finishing/Display"
                     <?php  if($judul == "Display Umum"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -252,7 +252,7 @@
               </li>
               <?php if ($this->fungsi->user_login()->level == 3 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
               <li class="nav-item">
-                <a style="color: white;font-style: bold;" href="<?=site_url()?>finishing/FinishingProses" 
+                <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingProses" 
                 <?php  if($judul == "Finishing Proses"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -264,7 +264,7 @@
                 </a>
               </li>
               <li class="nav-item has-treeview menu-open">
-                <a style="color: white;font-style: bold;" href="#" 
+                <a style="font-style: bold;" href="#" 
                  <?php  if($judul == "Finishing Akhir"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -276,7 +276,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a style="color: white;font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/mesin_kategori1"
+                    <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/mesin_kategori1"
                       <?php  if($judul == "Finishing Akhir Mesin Finishing"){?>
                         class= "nav-link active"
                       <?php }else {?>
@@ -287,7 +287,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a style="color: white;font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/mesin_kalender"
+                    <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/mesin_kalender"
                       <?php  if($judul == "Finishing Akhir Mesin Kalender"){?>
                         class= "nav-link active"
                       <?php }else {?>
@@ -300,7 +300,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a style="color: white;font-style: bold;" href="<?=site_url()?>finishing/QualityControl" 
+                <a style="font-style: bold;" href="<?=site_url()?>finishing/QualityControl" 
                  <?php  if($judul == "Quality Control"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -312,7 +312,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a style="color: white;font-style: bold;" href="<?=site_url()?>finishing/Laporan"
+                <a style="font-style: bold;" href="<?=site_url()?>finishing/Laporan"
                     <?php  if($judul == "Laporan"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -325,7 +325,7 @@
               </li>
               <?php } ?>
               <li class="nav-item has-treeview menu-open">
-                <a style="color: white;font-style: bold;" href="#" 
+                <a style="font-style: bold;" href="#" 
                  <?php  if($judul == "Operator"){?>
                       class= "nav-link active"
                     <?php }else {?>
@@ -337,7 +337,7 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a style="color: white;font-style: bold;" href="<?=site_url()?>finishing/OperatorFP"
+                    <a style="font-style: bold;" href="<?=site_url()?>finishing/OperatorFP"
                       <?php  if($judul == "Operator Finishing Proses"){?>
                         class= "nav-link active"
                       <?php }else {?>
@@ -348,7 +348,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a style="color: white;font-style: bold;" href="<?=site_url()?>finishing/OperatorFA"
+                    <a style="font-style: bold;" href="<?=site_url()?>finishing/OperatorFA"
                       <?php  if($judul == "Operator Finishing Akhir"){?>
                         class= "nav-link active"
                       <?php }else {?>

@@ -58,7 +58,6 @@
                 <?php } ?>
               </div>
             </div>
-          
 
             <div class="card" style="background: #A9A9A9">
               <div class="row" align="center">
@@ -79,8 +78,8 @@
                 </div>
               </div>
             </div>
-
             <div class="row">
+              <!-- SPK CETAK -->
               <div class="col-md-4">
                 <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
                   <div class="col-md-1"></div>
@@ -98,17 +97,15 @@
                   </div>
                   <div class="col-md-6">
                     <label>
-                    
-                    <?php if($row->jenis_cetakan == "Cover"){?> 
-                      <?php echo $row->ukuran_plano_cover_1!=null && $row->ukuran_plano_cover_1!='-'? "ukuran 1 : ".$row->ukuran_plano_cover_1."<br>": "" ?>
-                      <?php echo $row->ukuran_plano_cover_2!=null && $row->ukuran_plano_cover_2!='-'? "ukuran 2 : ".$row->ukuran_plano_cover_2."<br>": "" ?>
-                      <?php echo $row->ukuran_plano_cover_3!=null && $row->ukuran_plano_cover_3!='-'? "ukuran 3 : ".$row->ukuran_plano_cover_3."<br>": "" ?>
-                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
-                      <?php echo $row->ukuran_plano_isi_1!=null && $row->ukuran_plano_isi_1!='-'? "ukuran 1 : ".$row->ukuran_plano_isi_1."<br>": "" ?>
-                      <?php echo $row->ukuran_plano_isi_2!=null && $row->ukuran_plano_isi_2!='-'? "ukuran 2 : ".$row->ukuran_plano_isi_2."<br>": "" ?>
-                      <?php echo $row->ukuran_plano_isi_3!=null && $row->ukuran_plano_isi_3!='-'? "ukuran 3 : ".$row->ukuran_plano_isi_3."<br>": "" ?>
-                    <?php } ?>
-                    
+                      <?php if($row->jenis_cetakan == "Cover"){?> 
+                        <?php echo $row->ukuran_plano_cover_1!=null && $row->ukuran_plano_cover_1!='-'? "ukuran 1 : ".$row->ukuran_plano_cover_1."<br>": "" ?>
+                        <?php echo $row->ukuran_plano_cover_2!=null && $row->ukuran_plano_cover_2!='-'? "ukuran 2 : ".$row->ukuran_plano_cover_2."<br>": "" ?>
+                        <?php echo $row->ukuran_plano_cover_3!=null && $row->ukuran_plano_cover_3!='-'? "ukuran 3 : ".$row->ukuran_plano_cover_3."<br>": "" ?>
+                      <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                        <?php echo $row->ukuran_plano_isi_1!=null && $row->ukuran_plano_isi_1!='-'? "ukuran 1 : ".$row->ukuran_plano_isi_1."<br>": "" ?>
+                        <?php echo $row->ukuran_plano_isi_2!=null && $row->ukuran_plano_isi_2!='-'? "ukuran 2 : ".$row->ukuran_plano_isi_2."<br>": "" ?>
+                        <?php echo $row->ukuran_plano_isi_3!=null && $row->ukuran_plano_isi_3!='-'? "ukuran 3 : ".$row->ukuran_plano_isi_3."<br>": "" ?>
+                      <?php } ?>
                     </label>
                   </div>
                 </div>
@@ -118,12 +115,13 @@
                     Jumlah Plate
                   </div>
                   <div class="col-md-6">
-                  <label><?php if($row->jenis_cetakan == "Cover"){?> 
-                    <?=$row->total_plat_cover;?>
-                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
-                    <?= $row->total_plat_isi;?>
-                    <?php } ?>
-                  </label>
+                    <label>
+                      <?php if($row->jenis_cetakan == "Cover"){?> 
+                        <?=$row->total_plat_cover;?>
+                      <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                        <?= $row->total_plat_isi;?>
+                      <?php } ?>
+                    </label>
                   </div>
                 </div>
                 <div class="row" style="background: #8683FC;border-radius: 3px;padding-top: 5px;">
@@ -132,12 +130,24 @@
                     Jumlah Cetak
                   </div>
                   <div class="col-md-6">
-                  <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
-                    <label><?= $khu->jumlah_cetak; ?></label>
-                  <?php }} ?>
+                    <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
+                      <label><?= $khu->jumlah_cetak; ?></label>
+                    <?php }} ?>
+                  </div>
+                </div>
+                <div class="row" style="padding-top: 5px;">
+                  <div class="col-md-1"></div>
+                  <div class="col-sm-5">
+                    Insit
+                  </div>
+                  <div class="col-md-6">
+                    <label>
+                      dari db
+                    </label>
                   </div>
                 </div>
               </div>
+              <!-- SPK KERTAS DAN POTONG -->
               <div class="col-md-4">
                 <div class="row" style="padding-top: 5px;">
                   <div class="col-md-1"></div>
@@ -146,15 +156,15 @@
                   </div>
                   <div class="col-md-6">
                     <label>
-                    <?php if($row->jenis_cetakan == "Cover"){ ?>
-                  <?php echo $row->jenis_kertas_cover_1!=null && $row->jenis_kertas_cover_1!='-'? "".$row->jenis_kertas_cover_1."<br>": "" ?>
-                  <?php echo $row->jenis_kertas_cover_2!=null && $row->jenis_kertas_cover_2!='-'? "".$row->jenis_kertas_cover_2."<br>": "" ?>
-                  <?php echo $row->jenis_kertas_cover_3!=null && $row->jenis_kertas_cover_3!='-'? "".$row->jenis_kertas_cover_3."<br>": "" ?>
-                  <?php } else if ($row->jenis_cetakan == "Isi"){?>
-                    <?php echo $row->jenis_kertas_isi_1!=null && $row->jenis_kertas_isi_1!='-'? "".$row->jenis_kertas_isi_1."<br>": "" ?>
-                    <?php echo $row->jenis_kertas_isi_2!=null && $row->jenis_kertas_isi_2!='-'? "".$row->jenis_kertas_isi_2."<br>": "" ?>
-                    <?php echo $row->jenis_kertas_isi_3!=null && $row->jenis_kertas_isi_3!='-'? "".$row->jenis_kertas_isi_3."<br>": "" ?>
-                  <?php } ?>
+                      <?php if($row->jenis_cetakan == "Cover"){ ?>
+                        <?php echo $row->jenis_kertas_cover_1!=null && $row->jenis_kertas_cover_1!='-'? "".$row->jenis_kertas_cover_1."<br>": "" ?>
+                        <?php echo $row->jenis_kertas_cover_2!=null && $row->jenis_kertas_cover_2!='-'? "".$row->jenis_kertas_cover_2."<br>": "" ?>
+                        <?php echo $row->jenis_kertas_cover_3!=null && $row->jenis_kertas_cover_3!='-'? "".$row->jenis_kertas_cover_3."<br>": "" ?>
+                      <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                        <?php echo $row->jenis_kertas_isi_1!=null && $row->jenis_kertas_isi_1!='-'? "".$row->jenis_kertas_isi_1."<br>": "" ?>
+                        <?php echo $row->jenis_kertas_isi_2!=null && $row->jenis_kertas_isi_2!='-'? "".$row->jenis_kertas_isi_2."<br>": "" ?>
+                        <?php echo $row->jenis_kertas_isi_3!=null && $row->jenis_kertas_isi_3!='-'? "".$row->jenis_kertas_isi_3."<br>": "" ?>
+                      <?php } ?>
                     </label>
                   </div>
                 </div>
@@ -173,17 +183,18 @@
                     Model Potongan
                   </div>
                   <div class="col-md-6">
-                  <label><?php if($row->jenis_cetakan == "Cover"){?> 
-                    <?php echo $row->potong_cover_1!=null? "potong 1 : ".$row->potong_cover_1."<br>": "" ?>
-                    <?php echo $row->potong_cover_2!=null? "potong 2 : ".$row->potong_cover_2."<br>": "" ?>
-                    <?php echo $row->potong_cover_3!=null? "potong 3 : ".$row->potong_cover_3."<br>": "" ?>
-                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
-                    <?php echo $row->potong_isi_1!=null? "potong 1 : ".$row->potong_isi_1."<br>": "" ?>
-                    <?php echo $row->potong_isi_2!=null? "potong 2 : ".$row->potong_isi_2."<br>": "" ?>
-                    <?php echo $row->potong_isi_3!=null? "potong 3 : ".$row->potong_isi_3."<br>": "" ?>
-                    <?php echo $row->potong_isi_4!=null? "potong 4 : ".$row->potong_isi_4."<br>": "" ?>
-                    <?php } ?>
-                  </label>
+                    <label>
+                      <?php if($row->jenis_cetakan == "Cover"){?> 
+                        <?php echo $row->potong_cover_1!=null? "potong 1 : ".$row->potong_cover_1."<br>": "" ?>
+                        <?php echo $row->potong_cover_2!=null? "potong 2 : ".$row->potong_cover_2."<br>": "" ?>
+                        <?php echo $row->potong_cover_3!=null? "potong 3 : ".$row->potong_cover_3."<br>": "" ?>
+                        <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                        <?php echo $row->potong_isi_1!=null? "potong 1 : ".$row->potong_isi_1."<br>": "" ?>
+                        <?php echo $row->potong_isi_2!=null? "potong 2 : ".$row->potong_isi_2."<br>": "" ?>
+                        <?php echo $row->potong_isi_3!=null? "potong 3 : ".$row->potong_isi_3."<br>": "" ?>
+                        <?php echo $row->potong_isi_4!=null? "potong 4 : ".$row->potong_isi_4."<br>": "" ?>
+                      <?php } ?>
+                    </label>
                   </div>
                 </div>
                 <div class="row" style="padding-top: 5px;">
@@ -192,17 +203,17 @@
                     Jumlah Kertas
                   </div>
                   <div class="col-md-6">
-                  <label>
-                  <?php if($row->jenis_cetakan == "Cover"){?> 
-                    <?php echo $row->jumlah_kertas_cover_1!=null && $row->jumlah_kertas_cover_1!='-'? " ".$row->jumlah_kertas_cover_1."<br>": "" ?>
-                    <?php echo $row->jumlah_kertas_cover_2!=null && $row->jumlah_kertas_cover_2!='-'? " ".$row->jumlah_kertas_cover_2."<br>": "" ?>
-                    <?php echo $row->jumlah_kertas_cover_3!=null && $row->jumlah_kertas_cover_3!='-'? " ".$row->jumlah_kertas_cover_3."<br>": "" ?>
-                    <?php } else if ($row->jenis_cetakan == "Isi"){?>
-                      <?php echo $row->jumlah_kertas_isi_1!=null && $row->jumlah_kertas_isi_1!='-'? " ".$row->jumlah_kertas_isi_1."<br>": "" ?>
-                      <?php echo $row->jumlah_kertas_isi_2!=null && $row->jumlah_kertas_isi_2!='-'? " ".$row->jumlah_kertas_isi_2."<br>": "" ?>
-                      <?php echo $row->jumlah_kertas_isi_3!=null && $row->jumlah_kertas_isi_3!='-'? " ".$row->jumlah_kertas_isi_3."<br>": "" ?>
-                    <?php } ?>
-                  </label>
+                    <label>
+                      <?php if($row->jenis_cetakan == "Cover"){?> 
+                        <?php echo $row->jumlah_kertas_cover_1!=null && $row->jumlah_kertas_cover_1!='-'? " ".$row->jumlah_kertas_cover_1."<br>": "" ?>
+                        <?php echo $row->jumlah_kertas_cover_2!=null && $row->jumlah_kertas_cover_2!='-'? " ".$row->jumlah_kertas_cover_2."<br>": "" ?>
+                        <?php echo $row->jumlah_kertas_cover_3!=null && $row->jumlah_kertas_cover_3!='-'? " ".$row->jumlah_kertas_cover_3."<br>": "" ?>
+                      <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                        <?php echo $row->jumlah_kertas_isi_1!=null && $row->jumlah_kertas_isi_1!='-'? " ".$row->jumlah_kertas_isi_1."<br>": "" ?>
+                        <?php echo $row->jumlah_kertas_isi_2!=null && $row->jumlah_kertas_isi_2!='-'? " ".$row->jumlah_kertas_isi_2."<br>": "" ?>
+                        <?php echo $row->jumlah_kertas_isi_3!=null && $row->jumlah_kertas_isi_3!='-'? " ".$row->jumlah_kertas_isi_3."<br>": "" ?>
+                      <?php } ?>
+                    </label>
                   </div>
                 </div>
                 <div class="row" style="padding-top: 5px;">
@@ -211,35 +222,36 @@
                     Ukuran Potong
                   </div>
                   <div class="col-md-6">
-                  <label>
-                  <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
-                <?= $khu->ukuran_potong; ?>
-                <?php }} ?>
-                  </label>
+                    <label>
+                      <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
+                        <?= $khu->ukuran_potong; ?>
+                      <?php }} ?>
+                    </label>
                   </div>
                 </div>
               </div>
+              <!-- SPK WARNA DAN PROSES CETAK -->
               <div class="col-md-4">
                 <div class="row" style="padding-top: 5px;">
                   <div class="col-md-1"></div>
                   <div class="col-md-11">
-                  <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
-                    <label>
-                    <?php if($khu->muka1_fc_bw_warna !=null){?> <br>
-                    <?=$khu->muka1_fc_bw_warna;?>
-                    <?php }  if ($khu->muka2_fc_fc !=null ){?><br>
-                    <?= $khu->muka2_fc_fc;?>
-                    <?php }  if ($khu->muka2_blk !=null ){?><br>
-                    <?= $khu->muka2_blk;?>
-                    <?php }  if ($khu->muka2_blg !=null ){?><br>
-                    <?= $khu->muka2_blg;?>
-                    <?php } ?> 
-                    </label>
+                    <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
+                      <label>
+                        <?php if($khu->muka1_fc_bw_warna !=null){?> <br>
+                          <?=$khu->muka1_fc_bw_warna;?>
+                        <?php } if ($khu->muka2_fc_fc !=null ){?> <br>
+                          <?= $khu->muka2_fc_fc;?>
+                        <?php } if ($khu->muka2_blk !=null ){?> <br>
+                          <?= $khu->muka2_blk;?>
+                        <?php } if ($khu->muka2_blg !=null ){?> <br>
+                          <?= $khu->muka2_blg;?>
+                        <?php } ?> 
+                      </label>
                     <?php }} ?>
                   </div>
                 </div>
               </div>
-            </div><br>
+            </div>
 
             <div class="card" style="background: #A9A9A9">
               <div class="row" align="center">
@@ -250,41 +262,59 @@
                 </div>
               </div>
             </div>
-
             <div class="row">
               <div class="col">
                 <textarea class="form-control" name="keterangan_spk"  placeholder="Keterangan" style="min-height: 250px;" disabled>
                 <?php if($khusus != null){foreach($khusus as $s => $khu) {?> 
-                  <?= $khu->keterangan_spk; ?>
+                <?= $khu->keterangan_spk; ?>
                 <?php }} ?>
-                
                 </textarea>
               </div>
             </div><br>
 
-            <div class="row" align="center" style="height: 150px;">
-              <div class="col-md-4">
-                <br>Operator Cetak
-              </div>
+            <div class="row" align="center" style="height: 180px;">
               <div class="col-md-4">
                 <br>Kasi Cetak
+              </div>
+              <div class="col-md-4">
+                <br>Operator Potong
               </div>
               <div class="col-md-4">
                 Menyetujui<br>Manajer Produksi
               </div>
             </div><br>
             <div class="row" align="center">
-              <div class="col-md-1">(</div>
-              <div class="col-md-2"></div>
-              <div class="col-md-1">)</div>
-              
-              <div class="col-md-1">(</div>
-              <div class="col-md-2"></div>
-              <div class="col-md-1">)</div>
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col">(</div>
+                  <div class="col-md-3"></div>
+                  <div class="col">)</div>
 
-              <div class="col-md-1">(</div>
-              <div class="col-md-2"></div>
-              <div class="col-md-1">)</div>
+                  <div class="col">(</div>
+                  <div class="col-md-2"></div>
+                  <div class="col">)</div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col">(</div>
+                  <div class="col-md-3"></div>
+                  <div class="col">)</div>
+
+                  <div class="col">(</div>
+                  <div class="col-md-2"></div>
+                  <div class="col">)</div>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col">(</div>
+                  <div class="col-md-4"></div>
+                  <div class="col">)</div>
+                </div>
+              </div>
             </div><br>
             
             <div class="row" align="right">
