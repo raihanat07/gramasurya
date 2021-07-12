@@ -168,7 +168,7 @@ class FinishingProses extends CI_Controller {
 		// check_already_login_finishing();
 		$query = $this->fp->get();
 		$data = array(
-			'judul' => 'Finishing Proses',
+			'judul' => 'Finishing Proses Laminasi',
 			'fp' => $query->result(),
 		);		
 
@@ -321,7 +321,7 @@ class FinishingProses extends CI_Controller {
 		// check_already_login_finishing();
 		$query = $this->fp->get();
 		$data = array(
-			'judul' => 'Finishing Proses',
+			'judul' => 'Finishing Proses Mbo',
 			'fp' => $query->result(),
 		);		
 
@@ -474,7 +474,7 @@ class FinishingProses extends CI_Controller {
 		// check_already_login_finishing();
 		$query = $this->fp->get();
 		$data = array(
-			'judul' => 'Finishing Proses',
+			'judul' => 'Finishing Proses Shoe',
 			'fp' => $query->result(),
 		);		
 
@@ -627,7 +627,7 @@ class FinishingProses extends CI_Controller {
 		// check_already_login_finishing();
 		$query = $this->fp->get();
 		$data = array(
-			'judul' => 'Finishing Proses',
+			'judul' => 'Finishing Proses Sub',
 			'fp' => $query->result(),
 		);		
 
@@ -780,7 +780,7 @@ class FinishingProses extends CI_Controller {
 		// check_already_login_finishing();
 		$query = $this->fp->get();
 		$data = array(
-			'judul' => 'Finishing Proses',
+			'judul' => 'Finishing Proses Susun',
 			'fp' => $query->result(),
 		);		
 

@@ -249,7 +249,7 @@
                 </a>
               </li>
               <?php if ($this->fungsi->user_login()->level == 3 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
-              <li class="nav-item">
+              <li class="nav-item has-treeview menu-open">
                 <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingProses" 
                 <?php  if($judul == "Finishing Proses"){?>
                       class= "nav-link active"
@@ -263,7 +263,7 @@
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
                     <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingProses/index_laminasi"
-                      <?php  if($judul == "Finishing Proses Mesin Laminasi"){?>
+                      <?php  if($judul == "Finishing Proses Laminasi"){?>
                         class= "nav-link active"
                       <?php }else {?>
                         class= "nav-link"
@@ -274,7 +274,7 @@
                   </li>
                   <li class="nav-item">
                     <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingProses/index_mbo"
-                      <?php  if($judul == "Finishing Akhir Mesin Kalender"){?>
+                      <?php  if($judul == "Finishing Proses Mbo"){?>
                         class= "nav-link active"
                       <?php }else {?>
                         class= "nav-link"
@@ -285,7 +285,7 @@
                   </li>
                   <li class="nav-item">
                     <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingProses/index_shoe"
-                      <?php  if($judul == "Finishing Akhir Mesin Kalender"){?>
+                      <?php  if($judul == "Finishing Proses Shoe"){?>
                         class= "nav-link active"
                       <?php }else {?>
                         class= "nav-link"
@@ -296,7 +296,7 @@
                   </li>
                   <li class="nav-item">
                     <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingProses/index_susun"
-                      <?php  if($judul == "Finishing Akhir Mesin Kalender"){?>
+                      <?php  if($judul == "Finishing Proses Susun"){?>
                         class= "nav-link active"
                       <?php }else {?>
                         class= "nav-link"
@@ -307,7 +307,7 @@
                   </li>
                   <li class="nav-item">
                     <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingProses/index_sub"
-                      <?php  if($judul == "Finishing Akhir Mesin Kalender"){?>
+                      <?php  if($judul == "Finishing Proses Sub"){?>
                         class= "nav-link active"
                       <?php }else {?>
                         class= "nav-link"
