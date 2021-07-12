@@ -239,7 +239,7 @@
           <div class="col-md-11"><img src="../assets/dist/img/logo gramasurys.png" style="width:230px;margin-top: 30px;margin-left: 30px;"></div>
           <div class="col-md-1"><img src="../assets/dist/img/logo-FK.png" style="width: 230px;margin-top: 30px;margin-left: 70px;"></div>
         </div>
-        <div class="row uc" align="center"> <h1><b title="ciee, gratis">SISTEM INFORMASI PRODUKSI</b> <br> <b>PT. GRAMASURYA</b></h1></div>
+        <div class="row uc" align="center"> <h1><b>SISTEM INFORMASI PRODUKSI</b> <br> <b>PT. GRAMASURYA</b></h1></div>
         
 
         <!--<div class="slideshow-container">
@@ -298,12 +298,12 @@
                   <form action="<?=site_url('auth/process')?>" method="post">
                     <div class="row" style="margin-top: -20px;">
                       <!-- <input type="text" name="username" id="username" class="form__input" placeholder="Username"> -->
-                      <div class="col-md-11"><input type="text" name="username" id="username" class="form__input" placeholder="Username"></div>
                       <div class="col-md-1" style="margin-top: 50px;"><span class="fa fa-user"></span></div>
+                      <div class="col-md-11"><input type="text" name="username" id="username" class="form__input" placeholder="Username"></div>
                     </div>
                     <div class="row" style="margin-top: -20px;margin-bottom: 30px;">
-                      <div class="col-md-11"><input type="password" name="password" id="password" class="form__input" placeholder="Password"></div>
                       <div class="col-md-1" style="margin-top: 50px;"><span class="fa fa-lock"></span></div>
+                      <div class="col-md-11"><input type="password" name="password" id="password" class="form__input" placeholder="Password"></div>
                     </div>
                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="login" title="KUY LOGIN">Sign in</button>
                   </form>

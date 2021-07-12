@@ -555,6 +555,14 @@
                 </div>
               </div><br>
               <div class="row">
+                <div class="col-sm-2" align="right">
+                  Insit
+                </div>
+                <div class="col-md-4">
+                  <label>dari db</label>
+                </div>
+              </div><br>
+              <div class="row">
                 <div class="col">
                   <textarea class="form-control" name="keterangan_spk" placeholder="Keterangan" style="min-height: 250px;"></textarea>
                 </div>
