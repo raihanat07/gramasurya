@@ -146,7 +146,15 @@
                   </div>
                   <div class="col-md-6">
                     <label>
-                      dari db
+                    <?php if($row->jenis_cetakan == "Cover"){ ?>
+                        <?php echo $row->insit_cover_1!=null && $row->insit_cover_1!='-'? "".$row->insit_cover_1."<br>": "" ?>
+                        <?php echo $row->insit_cover_2!=null && $row->insit_cover_2!='-'? "".$row->insit_cover_2."<br>": "" ?>
+                        <?php echo $row->insit_cover_3!=null && $row->insit_cover_3!='-'? "".$row->insit_cover_3."<br>": "" ?>
+                      <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                        <?php echo $row->insit_isi_1!=null && $row->insit_isi_1!='-'? "".$row->insit_isi_1."<br>": "" ?>
+                        <?php echo $row->insit_isi_2!=null && $row->insit_isi_2!='-'? "".$row->insit_isi_2."<br>": "" ?>
+                        <?php echo $row->insit_isi_3!=null && $row->insit_isi_3!='-'? "".$row->insit_isi_3."<br>": "" ?>
+                      <?php } ?>
                     </label>
                   </div>
                 </div>

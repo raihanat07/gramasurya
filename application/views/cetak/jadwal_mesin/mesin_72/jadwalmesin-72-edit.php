@@ -91,7 +91,15 @@
                 <div class="row"><br>
                   <div class="col-md-5">Insit</div>
                   <input type="hidden" name="oplag" value="<?=$row->oplag?>">
-                  <div class="col-md-7"><label class="form-label">dari db</label></div>
+                  <div class="col-md-7"><label class="form-label"><?php if($row->jenis_cetakan == "Cover"){ ?>
+                        <?php echo $row->insit_cover_1!=null && $row->insit_cover_1!='-'? "".$row->insit_cover_1."<br>": "" ?>
+                        <?php echo $row->insit_cover_2!=null && $row->insit_cover_2!='-'? "".$row->insit_cover_2."<br>": "" ?>
+                        <?php echo $row->insit_cover_3!=null && $row->insit_cover_3!='-'? "".$row->insit_cover_3."<br>": "" ?>
+                      <?php } else if ($row->jenis_cetakan == "Isi"){?>
+                        <?php echo $row->insit_isi_1!=null && $row->insit_isi_1!='-'? "".$row->insit_isi_1."<br>": "" ?>
+                        <?php echo $row->insit_isi_2!=null && $row->insit_isi_2!='-'? "".$row->insit_isi_2."<br>": "" ?>
+                        <?php echo $row->insit_isi_3!=null && $row->insit_isi_3!='-'? "".$row->insit_isi_3."<br>": "" ?>
+                      <?php } ?></label></div>
                 </div>
               </div>
             </div><br>
