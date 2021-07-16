@@ -330,26 +330,81 @@
                   <p>Finishing Akhir <i class="fa fa-angle-left right"></i></p>
                 </a>
                 <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/mesin_kategori1"
-                      <?php  if($judul == "Finishing Akhir Mesin Finishing"){?>
+                <li class="nav-item">
+                    <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/display_binding"
+                      <?php  if($judul == "Finishing Akhir Mesin Finishing Display Binding"){?>
                         class= "nav-link active"
                       <?php }else {?>
                         class= "nav-link"
                       <?php } ?>
                     >
-                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Mesin Finishing</p>
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Binding</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/mesin_kalender"
-                      <?php  if($judul == "Finishing Akhir Mesin Kalender"){?>
+                    <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/display_hardcover"
+                      <?php  if($judul == "Finishing Akhir Mesin Finishing Display Hardcover"){?>
                         class= "nav-link active"
                       <?php }else {?>
                         class= "nav-link"
                       <?php } ?>
                     >
-                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Mesin Kalender</p>
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>HARDCOVER</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/display_jahit"
+                      <?php  if($judul == "Finishing Akhir Mesin Finishing Display Jahit"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>JAHIT</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/display_potong"
+                      <?php  if($judul == "Finishing Akhir Mesin Finishing Display Potong"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>POTONG</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/display_sub"
+                      <?php  if($judul == "Finishing Akhir Mesin Finishing Display Sub"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>SUB</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/display_klemseng"
+                      <?php  if($judul == "Finishing Akhir Mesin Kalender Klemseng"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>KLEMSENG</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingAkhir/display_spiral"
+                      <?php  if($judul == "Finishing Akhir Mesin Kalender Spiral"){?>
+                        class= "nav-link active"
+                      <?php }else {?>
+                        class= "nav-link"
+                      <?php } ?>
+                    >
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>SPIRAL</p>
                     </a>
                   </li>
                 </ul>

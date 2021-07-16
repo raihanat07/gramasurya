@@ -19,12 +19,12 @@ class FinishingAkhir extends CI_Controller {
 	// 	);		
 	// 	$this->template->load('finishing/template','finishing/finishing_akhir/finishing_akhir',$data);
 	// }
-    public function mesin_kategori1()
+    public function display_binding()
 	{
 		// check_already_login_finishing();
 		$query = $this->fa->get();
 		$data = array(
-			'judul' => 'Finishing Akhir Mesin Finishing',
+			'judul' => 'Finishing Akhir Mesin Finishing Display Binding',
 			'fa' => $query->result(),
 		);		
 		// var_dump($data['fa']);die;
@@ -173,7 +173,631 @@ class FinishingAkhir extends CI_Controller {
 			// die;
 
 
-		$this->template->load('finishing/template','finishing/finishing_akhir/mesin_kategori1',$data);
+		$this->template->load('finishing/template','finishing/finishing_akhir/display_binding',$data);
+	}
+	public function display_hardcover()
+	{
+		// check_already_login_finishing();
+		$query = $this->fa->get();
+		$data = array(
+			'judul' => 'Finishing Akhir Mesin Finishing Display Hardcover',
+			'fa' => $query->result(),
+		);		
+		// var_dump($data['fa']);die;
+		
+		// ini dia 		
+		$nilai = 0;					
+		$nilai_mesin = 0;
+		$nilai_jadwal =0;
+
+		$binding[-1] = null;
+		$hardcover[-1] = null;
+		$jahit[-1] = null;
+		$fa_potong[-1] = null;
+		$sub[-1] = null;
+		
+		$banding_id[-1]=null;
+
+		$tanggal_binding = "";
+		$tanggal_hardcover = "";
+		$tanggal_jahit = "";
+		$tanggal_fa_potong = "";
+		$tanggal_sub = "";
+
+		$id_jadwal_binding_max = 0;
+		$id_jadwal_hardcover_max = 0;
+		$id_jadwal_jahit_max = 0;
+		$id_jadwal_fa_potong_max = 0;
+		$id_jadwal_sub_max = 0;
+
+		foreach($data["fa"] as $s => $row){
+					
+
+					$id_order = $row->id_order;
+					$banding_id[$nilai] = $id_order;					
+					// ambil nilai id order								
+					
+					// AMBIL TANGGAL TIAP MESIN, NANTI DISIMPAN DIDALAM SEBUAH ARRAY
+					// data binding
+						$ambil_binding = $this->fa->ambil_data_fa_binding($id_order)->result();
+						
+						foreach($ambil_binding as $sq) {	
+							// var_dump($sq->tanggal_binding);die;	
+							if($sq->tanggal_binding != null and $sq->tanggal_binding != "0000-00-00" and $sq->tanggal_binding != $binding[$nilai_mesin-1]){	
+								$tanggal_binding .= $sq->tanggal_binding.", <br>";
+							}
+							if($sq->id_jadwal_binding > $id_jadwal_binding_max){
+								$id_jadwal_binding_max = $sq->id_jadwal_binding;
+							}
+							
+							$binding[$nilai_mesin] = $sq->tanggal_binding;										
+							$nilai_mesin++;
+						}$nilai_mesin = 0;
+						
+
+					// data hardcover
+						$ambil_hardcover = $this->fa->ambil_data_fa_hardcover($id_order)->result();
+						foreach($ambil_hardcover as $sq) {							
+							if($sq->tanggal_hardcover != null and $sq->tanggal_hardcover != "0000-00-00" and $sq->tanggal_hardcover != $hardcover[$nilai_mesin-1]){	
+								$tanggal_hardcover .= $sq->tanggal_hardcover.", <br>";
+							}	
+							if($sq->id_jadwal_hardcover > $id_jadwal_hardcover_max){
+								$id_jadwal_hardcover_max = $sq->id_jadwal_hardcover;
+							}														
+							$hardcover[$nilai_mesin] = $sq->tanggal_hardcover;					
+							$nilai_mesin++;
+						}$nilai_mesin=0;
+
+					// data jahit
+					$ambil_jahit = $this->fa->ambil_data_fa_jahit($id_order)->result();
+					foreach($ambil_jahit as $sq) {							
+						if($sq->tanggal_jahit != null and $sq->tanggal_jahit != "0000-00-00" and $sq->tanggal_jahit != $jahit[$nilai_mesin-1]){	
+							$tanggal_jahit .= $sq->tanggal_jahit.", <br>";
+						}	
+						if($sq->id_jadwal_jahit > $id_jadwal_jahit_max){
+							$id_jadwal_jahit_max = $sq->id_jadwal_jahit;
+						}														
+						$jahit[$nilai_mesin] = $sq->tanggal_jahit;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+
+					// data fa_potong
+					$ambil_fa_potong = $this->fa->ambil_data_fa_fa_potong($id_order)->result();
+					foreach($ambil_fa_potong as $sq) {							
+						if($sq->tanggal_fa_potong != null and $sq->tanggal_fa_potong != "0000-00-00" and $sq->tanggal_fa_potong != $fa_potong[$nilai_mesin-1]){	
+							$tanggal_fa_potong .= $sq->tanggal_fa_potong.", <br>";
+						}	
+						if($sq->id_jadwal_fa_potong > $id_jadwal_fa_potong_max){
+							$id_jadwal_fa_potong_max = $sq->id_jadwal_fa_potong;
+						}														
+						$fa_potong[$nilai_mesin] = $sq->tanggal_fa_potong;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+
+					// data sub
+					$ambil_sub = $this->fa->ambil_data_fa_sub($id_order)->result();
+					foreach($ambil_sub as $sq) {							
+						if($sq->tanggal_sub != null and $sq->tanggal_sub != "0000-00-00" and $sq->tanggal_sub != $sub[$nilai_mesin-1]){	
+							$tanggal_sub .= $sq->tanggal_sub.", <br>";
+						}	
+						if($sq->id_jadwal_sub > $id_jadwal_sub_max){
+							$id_jadwal_sub_max = $sq->id_jadwal_sub;
+						}														
+						$sub[$nilai_mesin] = $sq->tanggal_sub;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+											
+						// var_dump($banding_id[$nilai]);
+						
+				if($banding_id[$nilai] != $banding_id[$nilai-1]){
+					$data["tanggal_binding"][$nilai] = $tanggal_binding;					
+					$data["tanggal_hardcover"][$nilai] = $tanggal_hardcover;
+					$data["tanggal_jahit"][$nilai] = $tanggal_jahit;
+					$data["tanggal_fa_potong"][$nilai] = $tanggal_fa_potong;
+					$data["tanggal_sub"][$nilai] = $tanggal_sub;	 					
+
+					// var_dump($data["tanggal_binding"]);
+					$nilai++;	
+				}  						 					
+				
+				// menangkap nilai id jadwal terkecil
+				$data["id_jadwal_binding_max"][$nilai_jadwal] = $id_jadwal_binding_max;
+				$data["id_jadwal_hardcover_max"][$nilai_jadwal] = $id_jadwal_hardcover_max;
+				$data["id_jadwal_jahit_max"][$nilai_jadwal] = $id_jadwal_jahit_max;
+				$data["id_jadwal_fa_potong_max"][$nilai_jadwal] = $id_jadwal_fa_potong_max;
+				$data["id_jadwal_sub_max"][$nilai_jadwal] = $id_jadwal_sub_max;
+
+				// reset nilai yang akan di foreaach
+				$tanggal_binding = "";
+				$tanggal_hardcover = "";
+				$tanggal_jahit = "";
+				$tanggal_fa_potong = "";
+				$tanggal_sub = "";		
+
+				$id_jadwal_binding_max = 0;
+				$id_jadwal_hardcover_max = 0;
+				$id_jadwal_jahit_max = 0;
+				$id_jadwal_fa_potong_max = 0;
+				$id_jadwal_sub_max = 0;
+				
+				$nilai_jadwal++;
+				// echo"<br><br><br><br><br><br><br><br><br><br>";
+					
+		}
+			// var_dump($data["tanggal_hardcover"]);die;
+			// var_dump($data);
+			// die;
+
+
+		$this->template->load('finishing/template','finishing/finishing_akhir/display_hardcover',$data);
+	}
+	public function display_jahit()
+	{
+		// check_already_login_finishing();
+		$query = $this->fa->get();
+		$data = array(
+			'judul' => 'Finishing Akhir Mesin Finishing Display Jahit',
+			'fa' => $query->result(),
+		);		
+		// var_dump($data['fa']);die;
+		
+		// ini dia 		
+		$nilai = 0;					
+		$nilai_mesin = 0;
+		$nilai_jadwal =0;
+
+		$binding[-1] = null;
+		$hardcover[-1] = null;
+		$jahit[-1] = null;
+		$fa_potong[-1] = null;
+		$sub[-1] = null;
+		
+		$banding_id[-1]=null;
+
+		$tanggal_binding = "";
+		$tanggal_hardcover = "";
+		$tanggal_jahit = "";
+		$tanggal_fa_potong = "";
+		$tanggal_sub = "";
+
+		$id_jadwal_binding_max = 0;
+		$id_jadwal_hardcover_max = 0;
+		$id_jadwal_jahit_max = 0;
+		$id_jadwal_fa_potong_max = 0;
+		$id_jadwal_sub_max = 0;
+
+		foreach($data["fa"] as $s => $row){
+					
+
+					$id_order = $row->id_order;
+					$banding_id[$nilai] = $id_order;					
+					// ambil nilai id order								
+					
+					// AMBIL TANGGAL TIAP MESIN, NANTI DISIMPAN DIDALAM SEBUAH ARRAY
+					// data binding
+						$ambil_binding = $this->fa->ambil_data_fa_binding($id_order)->result();
+						
+						foreach($ambil_binding as $sq) {	
+							// var_dump($sq->tanggal_binding);die;	
+							if($sq->tanggal_binding != null and $sq->tanggal_binding != "0000-00-00" and $sq->tanggal_binding != $binding[$nilai_mesin-1]){	
+								$tanggal_binding .= $sq->tanggal_binding.", <br>";
+							}
+							if($sq->id_jadwal_binding > $id_jadwal_binding_max){
+								$id_jadwal_binding_max = $sq->id_jadwal_binding;
+							}
+							
+							$binding[$nilai_mesin] = $sq->tanggal_binding;										
+							$nilai_mesin++;
+						}$nilai_mesin = 0;
+						
+
+					// data hardcover
+						$ambil_hardcover = $this->fa->ambil_data_fa_hardcover($id_order)->result();
+						foreach($ambil_hardcover as $sq) {							
+							if($sq->tanggal_hardcover != null and $sq->tanggal_hardcover != "0000-00-00" and $sq->tanggal_hardcover != $hardcover[$nilai_mesin-1]){	
+								$tanggal_hardcover .= $sq->tanggal_hardcover.", <br>";
+							}	
+							if($sq->id_jadwal_hardcover > $id_jadwal_hardcover_max){
+								$id_jadwal_hardcover_max = $sq->id_jadwal_hardcover;
+							}														
+							$hardcover[$nilai_mesin] = $sq->tanggal_hardcover;					
+							$nilai_mesin++;
+						}$nilai_mesin=0;
+
+					// data jahit
+					$ambil_jahit = $this->fa->ambil_data_fa_jahit($id_order)->result();
+					foreach($ambil_jahit as $sq) {							
+						if($sq->tanggal_jahit != null and $sq->tanggal_jahit != "0000-00-00" and $sq->tanggal_jahit != $jahit[$nilai_mesin-1]){	
+							$tanggal_jahit .= $sq->tanggal_jahit.", <br>";
+						}	
+						if($sq->id_jadwal_jahit > $id_jadwal_jahit_max){
+							$id_jadwal_jahit_max = $sq->id_jadwal_jahit;
+						}														
+						$jahit[$nilai_mesin] = $sq->tanggal_jahit;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+
+					// data fa_potong
+					$ambil_fa_potong = $this->fa->ambil_data_fa_fa_potong($id_order)->result();
+					foreach($ambil_fa_potong as $sq) {							
+						if($sq->tanggal_fa_potong != null and $sq->tanggal_fa_potong != "0000-00-00" and $sq->tanggal_fa_potong != $fa_potong[$nilai_mesin-1]){	
+							$tanggal_fa_potong .= $sq->tanggal_fa_potong.", <br>";
+						}	
+						if($sq->id_jadwal_fa_potong > $id_jadwal_fa_potong_max){
+							$id_jadwal_fa_potong_max = $sq->id_jadwal_fa_potong;
+						}														
+						$fa_potong[$nilai_mesin] = $sq->tanggal_fa_potong;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+
+					// data sub
+					$ambil_sub = $this->fa->ambil_data_fa_sub($id_order)->result();
+					foreach($ambil_sub as $sq) {							
+						if($sq->tanggal_sub != null and $sq->tanggal_sub != "0000-00-00" and $sq->tanggal_sub != $sub[$nilai_mesin-1]){	
+							$tanggal_sub .= $sq->tanggal_sub.", <br>";
+						}	
+						if($sq->id_jadwal_sub > $id_jadwal_sub_max){
+							$id_jadwal_sub_max = $sq->id_jadwal_sub;
+						}														
+						$sub[$nilai_mesin] = $sq->tanggal_sub;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+											
+						// var_dump($banding_id[$nilai]);
+						
+				if($banding_id[$nilai] != $banding_id[$nilai-1]){
+					$data["tanggal_binding"][$nilai] = $tanggal_binding;					
+					$data["tanggal_hardcover"][$nilai] = $tanggal_hardcover;
+					$data["tanggal_jahit"][$nilai] = $tanggal_jahit;
+					$data["tanggal_fa_potong"][$nilai] = $tanggal_fa_potong;
+					$data["tanggal_sub"][$nilai] = $tanggal_sub;	 					
+
+					// var_dump($data["tanggal_binding"]);
+					$nilai++;	
+				}  						 					
+				
+				// menangkap nilai id jadwal terkecil
+				$data["id_jadwal_binding_max"][$nilai_jadwal] = $id_jadwal_binding_max;
+				$data["id_jadwal_hardcover_max"][$nilai_jadwal] = $id_jadwal_hardcover_max;
+				$data["id_jadwal_jahit_max"][$nilai_jadwal] = $id_jadwal_jahit_max;
+				$data["id_jadwal_fa_potong_max"][$nilai_jadwal] = $id_jadwal_fa_potong_max;
+				$data["id_jadwal_sub_max"][$nilai_jadwal] = $id_jadwal_sub_max;
+
+				// reset nilai yang akan di foreaach
+				$tanggal_binding = "";
+				$tanggal_hardcover = "";
+				$tanggal_jahit = "";
+				$tanggal_fa_potong = "";
+				$tanggal_sub = "";		
+
+				$id_jadwal_binding_max = 0;
+				$id_jadwal_hardcover_max = 0;
+				$id_jadwal_jahit_max = 0;
+				$id_jadwal_fa_potong_max = 0;
+				$id_jadwal_sub_max = 0;
+				
+				$nilai_jadwal++;
+				// echo"<br><br><br><br><br><br><br><br><br><br>";
+					
+		}
+			// var_dump($data["tanggal_hardcover"]);die;
+			// var_dump($data);
+			// die;
+
+
+		$this->template->load('finishing/template','finishing/finishing_akhir/display_jahit',$data);
+	}
+	public function display_potong()
+	{
+		// check_already_login_finishing();
+		$query = $this->fa->get();
+		$data = array(
+			'judul' => 'Finishing Akhir Mesin Finishing Display Potong',
+			'fa' => $query->result(),
+		);		
+		// var_dump($data['fa']);die;
+		
+		// ini dia 		
+		$nilai = 0;					
+		$nilai_mesin = 0;
+		$nilai_jadwal =0;
+
+		$binding[-1] = null;
+		$hardcover[-1] = null;
+		$jahit[-1] = null;
+		$fa_potong[-1] = null;
+		$sub[-1] = null;
+		
+		$banding_id[-1]=null;
+
+		$tanggal_binding = "";
+		$tanggal_hardcover = "";
+		$tanggal_jahit = "";
+		$tanggal_fa_potong = "";
+		$tanggal_sub = "";
+
+		$id_jadwal_binding_max = 0;
+		$id_jadwal_hardcover_max = 0;
+		$id_jadwal_jahit_max = 0;
+		$id_jadwal_fa_potong_max = 0;
+		$id_jadwal_sub_max = 0;
+
+		foreach($data["fa"] as $s => $row){
+					
+
+					$id_order = $row->id_order;
+					$banding_id[$nilai] = $id_order;					
+					// ambil nilai id order								
+					
+					// AMBIL TANGGAL TIAP MESIN, NANTI DISIMPAN DIDALAM SEBUAH ARRAY
+					// data binding
+						$ambil_binding = $this->fa->ambil_data_fa_binding($id_order)->result();
+						
+						foreach($ambil_binding as $sq) {	
+							// var_dump($sq->tanggal_binding);die;	
+							if($sq->tanggal_binding != null and $sq->tanggal_binding != "0000-00-00" and $sq->tanggal_binding != $binding[$nilai_mesin-1]){	
+								$tanggal_binding .= $sq->tanggal_binding.", <br>";
+							}
+							if($sq->id_jadwal_binding > $id_jadwal_binding_max){
+								$id_jadwal_binding_max = $sq->id_jadwal_binding;
+							}
+							
+							$binding[$nilai_mesin] = $sq->tanggal_binding;										
+							$nilai_mesin++;
+						}$nilai_mesin = 0;
+						
+
+					// data hardcover
+						$ambil_hardcover = $this->fa->ambil_data_fa_hardcover($id_order)->result();
+						foreach($ambil_hardcover as $sq) {							
+							if($sq->tanggal_hardcover != null and $sq->tanggal_hardcover != "0000-00-00" and $sq->tanggal_hardcover != $hardcover[$nilai_mesin-1]){	
+								$tanggal_hardcover .= $sq->tanggal_hardcover.", <br>";
+							}	
+							if($sq->id_jadwal_hardcover > $id_jadwal_hardcover_max){
+								$id_jadwal_hardcover_max = $sq->id_jadwal_hardcover;
+							}														
+							$hardcover[$nilai_mesin] = $sq->tanggal_hardcover;					
+							$nilai_mesin++;
+						}$nilai_mesin=0;
+
+					// data jahit
+					$ambil_jahit = $this->fa->ambil_data_fa_jahit($id_order)->result();
+					foreach($ambil_jahit as $sq) {							
+						if($sq->tanggal_jahit != null and $sq->tanggal_jahit != "0000-00-00" and $sq->tanggal_jahit != $jahit[$nilai_mesin-1]){	
+							$tanggal_jahit .= $sq->tanggal_jahit.", <br>";
+						}	
+						if($sq->id_jadwal_jahit > $id_jadwal_jahit_max){
+							$id_jadwal_jahit_max = $sq->id_jadwal_jahit;
+						}														
+						$jahit[$nilai_mesin] = $sq->tanggal_jahit;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+
+					// data fa_potong
+					$ambil_fa_potong = $this->fa->ambil_data_fa_fa_potong($id_order)->result();
+					foreach($ambil_fa_potong as $sq) {							
+						if($sq->tanggal_fa_potong != null and $sq->tanggal_fa_potong != "0000-00-00" and $sq->tanggal_fa_potong != $fa_potong[$nilai_mesin-1]){	
+							$tanggal_fa_potong .= $sq->tanggal_fa_potong.", <br>";
+						}	
+						if($sq->id_jadwal_fa_potong > $id_jadwal_fa_potong_max){
+							$id_jadwal_fa_potong_max = $sq->id_jadwal_fa_potong;
+						}														
+						$fa_potong[$nilai_mesin] = $sq->tanggal_fa_potong;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+
+					// data sub
+					$ambil_sub = $this->fa->ambil_data_fa_sub($id_order)->result();
+					foreach($ambil_sub as $sq) {							
+						if($sq->tanggal_sub != null and $sq->tanggal_sub != "0000-00-00" and $sq->tanggal_sub != $sub[$nilai_mesin-1]){	
+							$tanggal_sub .= $sq->tanggal_sub.", <br>";
+						}	
+						if($sq->id_jadwal_sub > $id_jadwal_sub_max){
+							$id_jadwal_sub_max = $sq->id_jadwal_sub;
+						}														
+						$sub[$nilai_mesin] = $sq->tanggal_sub;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+											
+						// var_dump($banding_id[$nilai]);
+						
+				if($banding_id[$nilai] != $banding_id[$nilai-1]){
+					$data["tanggal_binding"][$nilai] = $tanggal_binding;					
+					$data["tanggal_hardcover"][$nilai] = $tanggal_hardcover;
+					$data["tanggal_jahit"][$nilai] = $tanggal_jahit;
+					$data["tanggal_fa_potong"][$nilai] = $tanggal_fa_potong;
+					$data["tanggal_sub"][$nilai] = $tanggal_sub;	 					
+
+					// var_dump($data["tanggal_binding"]);
+					$nilai++;	
+				}  						 					
+				
+				// menangkap nilai id jadwal terkecil
+				$data["id_jadwal_binding_max"][$nilai_jadwal] = $id_jadwal_binding_max;
+				$data["id_jadwal_hardcover_max"][$nilai_jadwal] = $id_jadwal_hardcover_max;
+				$data["id_jadwal_jahit_max"][$nilai_jadwal] = $id_jadwal_jahit_max;
+				$data["id_jadwal_fa_potong_max"][$nilai_jadwal] = $id_jadwal_fa_potong_max;
+				$data["id_jadwal_sub_max"][$nilai_jadwal] = $id_jadwal_sub_max;
+
+				// reset nilai yang akan di foreaach
+				$tanggal_binding = "";
+				$tanggal_hardcover = "";
+				$tanggal_jahit = "";
+				$tanggal_fa_potong = "";
+				$tanggal_sub = "";		
+
+				$id_jadwal_binding_max = 0;
+				$id_jadwal_hardcover_max = 0;
+				$id_jadwal_jahit_max = 0;
+				$id_jadwal_fa_potong_max = 0;
+				$id_jadwal_sub_max = 0;
+				
+				$nilai_jadwal++;
+				// echo"<br><br><br><br><br><br><br><br><br><br>";
+					
+		}
+			// var_dump($data["tanggal_hardcover"]);die;
+			// var_dump($data);
+			// die;
+
+
+		$this->template->load('finishing/template','finishing/finishing_akhir/display_potong',$data);
+	}
+	public function display_sub()
+	{
+		// check_already_login_finishing();
+		$query = $this->fa->get();
+		$data = array(
+			'judul' => 'Finishing Akhir Mesin Finishing Display Sub',
+			'fa' => $query->result(),
+		);		
+		// var_dump($data['fa']);die;
+		
+		// ini dia 		
+		$nilai = 0;					
+		$nilai_mesin = 0;
+		$nilai_jadwal =0;
+
+		$binding[-1] = null;
+		$hardcover[-1] = null;
+		$jahit[-1] = null;
+		$fa_potong[-1] = null;
+		$sub[-1] = null;
+		
+		$banding_id[-1]=null;
+
+		$tanggal_binding = "";
+		$tanggal_hardcover = "";
+		$tanggal_jahit = "";
+		$tanggal_fa_potong = "";
+		$tanggal_sub = "";
+
+		$id_jadwal_binding_max = 0;
+		$id_jadwal_hardcover_max = 0;
+		$id_jadwal_jahit_max = 0;
+		$id_jadwal_fa_potong_max = 0;
+		$id_jadwal_sub_max = 0;
+
+		foreach($data["fa"] as $s => $row){
+					
+
+					$id_order = $row->id_order;
+					$banding_id[$nilai] = $id_order;					
+					// ambil nilai id order								
+					
+					// AMBIL TANGGAL TIAP MESIN, NANTI DISIMPAN DIDALAM SEBUAH ARRAY
+					// data binding
+						$ambil_binding = $this->fa->ambil_data_fa_binding($id_order)->result();
+						
+						foreach($ambil_binding as $sq) {	
+							// var_dump($sq->tanggal_binding);die;	
+							if($sq->tanggal_binding != null and $sq->tanggal_binding != "0000-00-00" and $sq->tanggal_binding != $binding[$nilai_mesin-1]){	
+								$tanggal_binding .= $sq->tanggal_binding.", <br>";
+							}
+							if($sq->id_jadwal_binding > $id_jadwal_binding_max){
+								$id_jadwal_binding_max = $sq->id_jadwal_binding;
+							}
+							
+							$binding[$nilai_mesin] = $sq->tanggal_binding;										
+							$nilai_mesin++;
+						}$nilai_mesin = 0;
+						
+
+					// data hardcover
+						$ambil_hardcover = $this->fa->ambil_data_fa_hardcover($id_order)->result();
+						foreach($ambil_hardcover as $sq) {							
+							if($sq->tanggal_hardcover != null and $sq->tanggal_hardcover != "0000-00-00" and $sq->tanggal_hardcover != $hardcover[$nilai_mesin-1]){	
+								$tanggal_hardcover .= $sq->tanggal_hardcover.", <br>";
+							}	
+							if($sq->id_jadwal_hardcover > $id_jadwal_hardcover_max){
+								$id_jadwal_hardcover_max = $sq->id_jadwal_hardcover;
+							}														
+							$hardcover[$nilai_mesin] = $sq->tanggal_hardcover;					
+							$nilai_mesin++;
+						}$nilai_mesin=0;
+
+					// data jahit
+					$ambil_jahit = $this->fa->ambil_data_fa_jahit($id_order)->result();
+					foreach($ambil_jahit as $sq) {							
+						if($sq->tanggal_jahit != null and $sq->tanggal_jahit != "0000-00-00" and $sq->tanggal_jahit != $jahit[$nilai_mesin-1]){	
+							$tanggal_jahit .= $sq->tanggal_jahit.", <br>";
+						}	
+						if($sq->id_jadwal_jahit > $id_jadwal_jahit_max){
+							$id_jadwal_jahit_max = $sq->id_jadwal_jahit;
+						}														
+						$jahit[$nilai_mesin] = $sq->tanggal_jahit;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+
+					// data fa_potong
+					$ambil_fa_potong = $this->fa->ambil_data_fa_fa_potong($id_order)->result();
+					foreach($ambil_fa_potong as $sq) {							
+						if($sq->tanggal_fa_potong != null and $sq->tanggal_fa_potong != "0000-00-00" and $sq->tanggal_fa_potong != $fa_potong[$nilai_mesin-1]){	
+							$tanggal_fa_potong .= $sq->tanggal_fa_potong.", <br>";
+						}	
+						if($sq->id_jadwal_fa_potong > $id_jadwal_fa_potong_max){
+							$id_jadwal_fa_potong_max = $sq->id_jadwal_fa_potong;
+						}														
+						$fa_potong[$nilai_mesin] = $sq->tanggal_fa_potong;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+
+					// data sub
+					$ambil_sub = $this->fa->ambil_data_fa_sub($id_order)->result();
+					foreach($ambil_sub as $sq) {							
+						if($sq->tanggal_sub != null and $sq->tanggal_sub != "0000-00-00" and $sq->tanggal_sub != $sub[$nilai_mesin-1]){	
+							$tanggal_sub .= $sq->tanggal_sub.", <br>";
+						}	
+						if($sq->id_jadwal_sub > $id_jadwal_sub_max){
+							$id_jadwal_sub_max = $sq->id_jadwal_sub;
+						}														
+						$sub[$nilai_mesin] = $sq->tanggal_sub;					
+						$nilai_mesin++;
+					}$nilai_mesin=0;
+											
+						// var_dump($banding_id[$nilai]);
+						
+				if($banding_id[$nilai] != $banding_id[$nilai-1]){
+					$data["tanggal_binding"][$nilai] = $tanggal_binding;					
+					$data["tanggal_hardcover"][$nilai] = $tanggal_hardcover;
+					$data["tanggal_jahit"][$nilai] = $tanggal_jahit;
+					$data["tanggal_fa_potong"][$nilai] = $tanggal_fa_potong;
+					$data["tanggal_sub"][$nilai] = $tanggal_sub;	 					
+
+					// var_dump($data["tanggal_binding"]);
+					$nilai++;	
+				}  						 					
+				
+				// menangkap nilai id jadwal terkecil
+				$data["id_jadwal_binding_max"][$nilai_jadwal] = $id_jadwal_binding_max;
+				$data["id_jadwal_hardcover_max"][$nilai_jadwal] = $id_jadwal_hardcover_max;
+				$data["id_jadwal_jahit_max"][$nilai_jadwal] = $id_jadwal_jahit_max;
+				$data["id_jadwal_fa_potong_max"][$nilai_jadwal] = $id_jadwal_fa_potong_max;
+				$data["id_jadwal_sub_max"][$nilai_jadwal] = $id_jadwal_sub_max;
+
+				// reset nilai yang akan di foreaach
+				$tanggal_binding = "";
+				$tanggal_hardcover = "";
+				$tanggal_jahit = "";
+				$tanggal_fa_potong = "";
+				$tanggal_sub = "";		
+
+				$id_jadwal_binding_max = 0;
+				$id_jadwal_hardcover_max = 0;
+				$id_jadwal_jahit_max = 0;
+				$id_jadwal_fa_potong_max = 0;
+				$id_jadwal_sub_max = 0;
+				
+				$nilai_jadwal++;
+				// echo"<br><br><br><br><br><br><br><br><br><br>";
+					
+		}
+			// var_dump($data["tanggal_hardcover"]);die;
+			// var_dump($data);
+			// die;
+
+
+		$this->template->load('finishing/template','finishing/finishing_akhir/display_sub',$data);
 	}
     public function mesin_kalender()
 	{
@@ -277,6 +901,211 @@ class FinishingAkhir extends CI_Controller {
 
 		$this->template->load('finishing/template','finishing/finishing_akhir/mesin_kalender',$data);
 	}
+	public function display_klemseng()
+	{
+		// check_already_login_finishing();
+		$query = $this->fa->get();
+		$data = array(
+			'judul' => 'Finishing Akhir Mesin Kalender Klemseng',
+			'fa' => $query->result(),
+		);		
+
+		// ini dia 		
+		$nilai = 0;					
+		$nilai_mesin = 0;
+		$nilai_jadwal =0;
+
+		$klemseng[-1] = null;
+		$spiral[-1] = null;
+
+		
+		$banding_id[-1]=null;
+
+		$tanggal_klemseng = "";
+		$tanggal_spiral = "";
+	
+
+		$id_jadwal_klemseng_max = 0;
+		$id_jadwal_spiral_max = 0;
+	
+
+		foreach($data["fa"] as $s => $row){
+					
+
+					$id_order = $row->id_order;
+					$banding_id[$nilai] = $id_order;					
+					// ambil nilai id order								
+					
+					// AMBIL TANGGAL TIAP MESIN, NANTI DISIMPAN DIDALAM SEBUAH ARRAY
+					// data klemseng
+						$ambil_klemseng = $this->fa->ambil_data_fa_klemseng($id_order)->result();
+						
+						foreach($ambil_klemseng as $sq) {	
+							// var_dump($sq->tanggal_klemseng);die;	
+							if($sq->tanggal_klemseng != null and $sq->tanggal_klemseng != "0000-00-00" and $sq->tanggal_klemseng != $klemseng[$nilai_mesin-1]){	
+								$tanggal_klemseng .= $sq->tanggal_klemseng.", <br>";
+							}
+							if($sq->id_jadwal_klemseng > $id_jadwal_klemseng_max){
+								$id_jadwal_klemseng_max = $sq->id_jadwal_klemseng;
+							}
+							
+							$klemseng[$nilai_mesin] = $sq->tanggal_klemseng;										
+							$nilai_mesin++;
+						}$nilai_mesin = 0;
+						
+
+					// data spiral
+						$ambil_spiral = $this->fa->ambil_data_fa_spiral($id_order)->result();
+						foreach($ambil_spiral as $sq) {							
+							if($sq->tanggal_spiral != null and $sq->tanggal_spiral != "0000-00-00" and $sq->tanggal_spiral != $spiral[$nilai_mesin-1]){	
+								$tanggal_spiral .= $sq->tanggal_spiral.", <br>";
+							}	
+							if($sq->id_jadwal_spiral > $id_jadwal_spiral_max){
+								$id_jadwal_spiral_max = $sq->id_jadwal_spiral;
+							}														
+							$spiral[$nilai_mesin] = $sq->tanggal_spiral;					
+							$nilai_mesin++;
+						}$nilai_mesin=0;
+
+											
+						// var_dump($banding_id[$nilai]);
+						
+				if($banding_id[$nilai] != $banding_id[$nilai-1]){
+					$data["tanggal_klemseng"][$nilai] = $tanggal_klemseng;					
+					$data["tanggal_spiral"][$nilai] = $tanggal_spiral;					 					
+
+					// var_dump($data["tanggal_klemseng"]);
+					$nilai++;	
+				}  						 					
+				
+				// menangkap nilai id jadwal terkecil
+				$data["id_jadwal_klemseng_max"][$nilai_jadwal] = $id_jadwal_klemseng_max;
+				$data["id_jadwal_spiral_max"][$nilai_jadwal] = $id_jadwal_spiral_max;
+		
+
+				// reset nilai yang akan di foreaach
+				$tanggal_klemseng = "";
+				$tanggal_spiral = "";
+				
+
+				$id_jadwal_klemseng_max = 0;
+				$id_jadwal_spiral_max = 0;
+		
+				
+				$nilai_jadwal++;
+				// echo"<br><br><br><br><br><br><br><br><br><br>";
+					
+		}
+			// var_dump($data["id_jadwal_klemseng_max"]);die;
+			// var_dump($data);
+			// die;
+
+
+		$this->template->load('finishing/template','finishing/finishing_akhir/display_klemseng',$data);
+	}
+	public function display_spiral()
+	{
+		// check_already_login_finishing();
+		$query = $this->fa->get();
+		$data = array(
+			'judul' => 'Finishing Akhir Mesin Kalender Spiral',
+			'fa' => $query->result(),
+		);		
+
+		// ini dia 		
+		$nilai = 0;					
+		$nilai_mesin = 0;
+		$nilai_jadwal =0;
+
+		$klemseng[-1] = null;
+		$spiral[-1] = null;
+
+		
+		$banding_id[-1]=null;
+
+		$tanggal_klemseng = "";
+		$tanggal_spiral = "";
+	
+
+		$id_jadwal_klemseng_max = 0;
+		$id_jadwal_spiral_max = 0;
+	
+
+		foreach($data["fa"] as $s => $row){
+					
+
+					$id_order = $row->id_order;
+					$banding_id[$nilai] = $id_order;					
+					// ambil nilai id order								
+					
+					// AMBIL TANGGAL TIAP MESIN, NANTI DISIMPAN DIDALAM SEBUAH ARRAY
+					// data klemseng
+						$ambil_klemseng = $this->fa->ambil_data_fa_klemseng($id_order)->result();
+						
+						foreach($ambil_klemseng as $sq) {	
+							// var_dump($sq->tanggal_klemseng);die;	
+							if($sq->tanggal_klemseng != null and $sq->tanggal_klemseng != "0000-00-00" and $sq->tanggal_klemseng != $klemseng[$nilai_mesin-1]){	
+								$tanggal_klemseng .= $sq->tanggal_klemseng.", <br>";
+							}
+							if($sq->id_jadwal_klemseng > $id_jadwal_klemseng_max){
+								$id_jadwal_klemseng_max = $sq->id_jadwal_klemseng;
+							}
+							
+							$klemseng[$nilai_mesin] = $sq->tanggal_klemseng;										
+							$nilai_mesin++;
+						}$nilai_mesin = 0;
+						
+
+					// data spiral
+						$ambil_spiral = $this->fa->ambil_data_fa_spiral($id_order)->result();
+						foreach($ambil_spiral as $sq) {							
+							if($sq->tanggal_spiral != null and $sq->tanggal_spiral != "0000-00-00" and $sq->tanggal_spiral != $spiral[$nilai_mesin-1]){	
+								$tanggal_spiral .= $sq->tanggal_spiral.", <br>";
+							}	
+							if($sq->id_jadwal_spiral > $id_jadwal_spiral_max){
+								$id_jadwal_spiral_max = $sq->id_jadwal_spiral;
+							}														
+							$spiral[$nilai_mesin] = $sq->tanggal_spiral;					
+							$nilai_mesin++;
+						}$nilai_mesin=0;
+
+											
+						// var_dump($banding_id[$nilai]);
+						
+				if($banding_id[$nilai] != $banding_id[$nilai-1]){
+					$data["tanggal_klemseng"][$nilai] = $tanggal_klemseng;					
+					$data["tanggal_spiral"][$nilai] = $tanggal_spiral;					 					
+
+					// var_dump($data["tanggal_klemseng"]);
+					$nilai++;	
+				}  						 					
+				
+				// menangkap nilai id jadwal terkecil
+				$data["id_jadwal_klemseng_max"][$nilai_jadwal] = $id_jadwal_klemseng_max;
+				$data["id_jadwal_spiral_max"][$nilai_jadwal] = $id_jadwal_spiral_max;
+		
+
+				// reset nilai yang akan di foreaach
+				$tanggal_klemseng = "";
+				$tanggal_spiral = "";
+				
+
+				$id_jadwal_klemseng_max = 0;
+				$id_jadwal_spiral_max = 0;
+		
+				
+				$nilai_jadwal++;
+				// echo"<br><br><br><br><br><br><br><br><br><br>";
+					
+		}
+			// var_dump($data["id_jadwal_klemseng_max"]);die;
+			// var_dump($data);
+			// die;
+
+
+		$this->template->load('finishing/template','finishing/finishing_akhir/display_spiral',$data);
+	}
+	
     // public function jadwal_fa()
 	// {
 	// 	// check_already_login_finishing();
