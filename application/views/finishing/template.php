@@ -280,10 +280,10 @@
                         class= "nav-link"
                       <?php } ?>
                     >
-                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>MBO</p>
+                      <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>MBO - SHOE</p>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingProses/index_shoe"
                       <?php  if($judul == "Finishing Proses Shoe"){?>
                         class= "nav-link active"
@@ -293,7 +293,7 @@
                     >
                       <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>SHOE</p>
                     </a>
-                  </li>
+                  </li> -->
                   <li class="nav-item">
                     <a style="font-style: bold;" href="<?=site_url()?>finishing/FinishingProses/index_susun"
                       <?php  if($judul == "Finishing Proses Susun"){?>

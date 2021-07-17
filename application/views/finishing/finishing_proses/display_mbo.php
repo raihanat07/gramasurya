@@ -15,7 +15,7 @@
       <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Jadwal MBO</h3>
+                    <h3 class="card-title">Jadwal MBO - SHOE</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
@@ -40,12 +40,12 @@
                             MBO
                           </a>
                         </td>
-                        <!-- <td>
+                        <td>
                           <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp_shoe" class="btn btn-success">
                             Shoe
                           </a>
                         </td>
-                        <td>
+                        <!-- <td>
                           <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp_susun" class="btn btn-success">
                             Susun
                           </a>
@@ -84,11 +84,11 @@
                         <td <?php echo $row->status_mbo == "mbo" ?  "style='color: red'" : "" ?>><?= $tanggal_mbo[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
-                            <!-- <?php if($row->tanggal_shoe != "0000-00-00") {?>
+                            <?php if($row->tanggal_shoe != "0000-00-00") {?>
                         <td <?php echo $row->status_shoe == "shoe" ?  "style='color: red'" : "" ?>><?= $tanggal_shoe[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
-                            <?php if($row->tanggal_susun != "0000-00-00") {?>
+                            <!-- <?php if($row->tanggal_susun != "0000-00-00") {?>
                         <td <?php echo $row->status_susun == "susun" ?  "style='color: red'" : "" ?>><?= $tanggal_susun[$nilai]; ?></td>
                             <?php } else {?> <td></td> <?php } ?>
 
