@@ -147,8 +147,8 @@
                 <tr>
                   <td colspan="2" align="right">TOTAL</td>
                   <td><?= $grand_emboss?></td>
-                  <td><?= $grand_doff?></td>
                   <td><?= $grand_glossy?></td>
+                  <td><?= $grand_doff?></td>
                   <td><?= $grand_mbo_1?></td>
                   <td><?= $grand_mbo_2?></td>
                   <td><?= $grand_mbo_3?></td>
