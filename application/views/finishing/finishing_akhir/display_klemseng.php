@@ -98,6 +98,7 @@
                 <?php foreach($fa as $s => $row) {?> 
                   <form action="<?=site_url('finishing/FinishingAkhir/proses_fa_kalender')?>" method="post">
                   <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
+                  <input type="text" name="nama_mesin"  value="klemseng" hidden>
 
                   <input type="text" name="id_klemseng"  value="<?php echo $row->id_klemseng; ?>" hidden>
                   <input type="text" name="id_spiral"  value="<?php echo $row->id_spiral; ?>" hidden>

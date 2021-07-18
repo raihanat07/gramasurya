@@ -123,6 +123,7 @@
                 <?php foreach($fa as $s => $row) {?> 
                   <form action="<?=site_url('finishing/FinishingAkhir/proses_fa')?>" method="post">
                   <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
+                  <input type="text" name="nama_mesin"  value="potong" hidden>
 
                   <input type="text" name="id_binding"  value="<?php echo $row->id_binding; ?>" hidden>
                   <input type="text" name="id_hardcover"  value="<?php echo $row->id_hardcover; ?>" hidden>

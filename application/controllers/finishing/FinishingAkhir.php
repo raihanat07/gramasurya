@@ -1139,6 +1139,8 @@ class FinishingAkhir extends CI_Controller {
 }
 	public function proses_fa()
 	{
+		$inputan = $this->input->post(null, TRUE);
+
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->fa->tambah_fa($inputan);								
@@ -1206,13 +1208,31 @@ class FinishingAkhir extends CI_Controller {
 		
 
 		echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
-		echo "<script>window.location='".site_url('finishing/FinishingAkhir/mesin_kategori1')."'; </script>"; 
+
+		if($inputan["nama_mesin"] == "binding"){
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/display_binding')."'; </script>";
+		}
+		if($inputan["nama_mesin"] == "hardcover"){
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/display_hardcover')."'; </script>";
+		}
+		if($inputan["nama_mesin"] == "jahit"){
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/display_jahit')."'; </script>";
+		}
+		if($inputan["nama_mesin"] == "potong"){
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/display_potong')."'; </script>";
+		}
+		if($inputan["nama_mesin"] == "sub"){
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/display_sub')."'; </script>";
+		}		
+		
 
 
 }
 
 public function proses_fa_kalender()
 	{
+		$inputan = $this->input->post(null, TRUE);
+
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->fa->tambah_fa_kalender($inputan);	
@@ -1252,7 +1272,13 @@ public function proses_fa_kalender()
 		
 
 		echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
-		echo "<script>window.location='".site_url('finishing/FinishingAkhir/mesin_kalender')."'; </script>"; 
+		
+		if($inputan["nama_mesin"] == "spiral"){
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/display_spiral')."'; </script>";
+		}
+		if($inputan["nama_mesin"] == "klemseng"){
+			echo "<script>window.location='".site_url('finishing/FinishingAkhir/display_klemseng')."'; </script>";
+		}
 
 
 }

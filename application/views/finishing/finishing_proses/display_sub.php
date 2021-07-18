@@ -121,6 +121,7 @@
                 <?php foreach($fp as $s => $row) {?> 
                   <form action="<?=site_url('finishing/FinishingProses/proses_fp')?>" method="post">
                   <input type="text" name="id_order"  value="<?php echo $row->id_order; ?>" hidden>
+                  <input type="text" name="nama_mesin"  value="sub" hidden>
 
                   <input type="text" name="id_laminasi"  value="<?php echo $row->id_laminasi; ?>" hidden>
                   <input type="text" name="id_mbo"  value="<?php echo $row->id_mbo; ?>" hidden>

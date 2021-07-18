@@ -930,6 +930,8 @@ class FinishingProses extends CI_Controller {
 
 	public function proses_fp()
 	{
+		$inputan = $this->input->post(null, TRUE);
+
 		if(isset($_POST['add'])){							
 			$inputan = $this->input->post(null, TRUE);
 			$this->fp->tambah_fp($inputan);								
@@ -994,8 +996,20 @@ class FinishingProses extends CI_Controller {
 			$this->fp->edit_fp($inputan);								
 		}	
 
-		echo "<script> alert('Data Berhasil Ditambahkan'); </script>";				
-		echo "<script>window.location='".site_url('finishing/FinishingProses/')."'; </script>"; 
+		echo "<script> alert('Data Berhasil Ditambahkan'); </script>";		
+		
+		if($inputan["nama_mesin"] == "laminasi"){
+			echo "<script>window.location='".site_url('finishing/FinishingProses/index_laminasi')."'; </script>";
+		}
+		if($inputan["nama_mesin"] == "lipat"){
+			echo "<script>window.location='".site_url('finishing/FinishingProses/index_mbo')."'; </script>";
+		}
+		if($inputan["nama_mesin"] == "susun"){
+			echo "<script>window.location='".site_url('finishing/FinishingProses/index_susun')."'; </script>";
+		}
+		if($inputan["nama_mesin"] == "sub"){
+			echo "<script>window.location='".site_url('finishing/FinishingProses/index_sub')."'; </script>";
+		}	
 
 
 }
