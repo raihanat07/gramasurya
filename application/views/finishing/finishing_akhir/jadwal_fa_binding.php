@@ -21,7 +21,7 @@
                 <h3>Jadwal Mesin Binding</h3>
               </div>
               <div class="col-sm-6" align="right">
-                Kapasitas : 4000 / Hari
+                Kapasitas : 1000 / Hari
               </div>
             </div>
           </div>

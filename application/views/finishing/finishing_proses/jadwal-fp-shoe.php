@@ -21,7 +21,7 @@
                           <h3>Jadwal Mesin shoe</h3>
                         </div>
                         <div class="col-sm-6" align="right">
-                          Kapasitas : 4000 / Hari
+                          Kapasitas : 3500 / Hari
                         </div>
                       </div>
                     </div>

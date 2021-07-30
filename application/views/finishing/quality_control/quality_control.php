@@ -1,6 +1,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
   <div class="container-fluid">
+
     <div class="row mb-2">
       <div class="col-sm-6">
         <h1>QUALITY CONTROL</h1>
@@ -67,10 +68,13 @@
                   <a href="<?=site_url('finishing/QualityControl/lihat_qc/').$row->id_order;?>">
                     <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
-                <?php } ?>
+                  <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order?>">
+                    <i class="fa fa-pencil" style="font-size:14px"></i> QC
+                <?php } else { ?>
                   <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal<?= $row->id_order?>">
                     <i class="fa fa-plus" style="font-size:14px"></i> QC
                   </button>
+                <?php } ?>
                 </td>
               </tr>
               <?php $nilai++;} ?>

@@ -21,7 +21,7 @@
                 <h3>Jadwal Mesin jahit</h3>
               </div>
               <div class="col-sm-6" align="right">
-                Kapasitas : 4000 / Hari
+                Kapasitas : 1750 / Hari
               </div>
             </div>
           </div>

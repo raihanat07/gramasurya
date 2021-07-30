@@ -30,7 +30,7 @@
 <section class="content">
   <div class="row" style="padding: 10px;">
     <div class="col">
-      <h5><b>12 Maret 2021</b></h5>
+      <h5><b><?= $tanggal= date("d F Y");?></b></h5>
     </div>
   </div>
   <?php foreach($fa as $s => $row) {?> 
