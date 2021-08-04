@@ -36,120 +36,62 @@
         <table id="table1" class="table table-bordered table-hover" style="font-size: 12px">
             <thead>
               <tr align="center">
-                <td rowspan="2">Nomor SO</td>
-                <td rowspan="2">Tanggal Masuk</td>
-                <td rowspan="2">Deadline</td>
-                <td rowspan="2">Nama Pemesan</td>
-                <td rowspan="2">Nama Orderan</td>
-                <td colspan="4">Plat</td>
-                <td rowspan="2">Status</td>
-                <td rowspan="2">Actions</td>
-              </tr>
-              <tr align="center">
-                <td>102</td>
-                <td>74</td>
-                <td>72</td>
-                <td>Paper Plate</td>
+                <td>Nomor SO</td>
+                <td>Tanggal Masuk</td>
+                <td>Deadline</td>
+                <td>Nama Pemesan</td>
+                <td>Nama Order</td>
+                <td>Ukuran</td>
+                <td>Halaman</td>
+                <td>Finishing Akhir</td>
+                <td>Status</td>
+                <td>Actions</td>
               </tr>
             </thead>
-            <?php 
-            $total1=0;
-            $total2=0;
-            $total3=0;
-            $total4=0;
-            foreach($laporan as $s => $row) {?>  
+            <?php foreach($laporan as $s => $row) {?>  
             <tr>
               <td align="center"><?= $row->nomor_so; ?></td>
-              <td><?= date('d-m-Y', strtotime( $row->tanggal_masuk)); ?></td>
-              <td style="color: red"><?= date('d-m-Y', strtotime( $row->deadline)); ?></td>
+              <td><?= date('d-m-Y', strtotime( $row->tanggal_masuk )); ?></td>
+              <td style="color: red"><?= date('d-m-Y', strtotime( $row->deadline )); ?></td>
               <td><?= $row->nama_pemesan; ?></td>
               <td><?= $row->nama_orderan; ?></td>
-              <!--UNTUK TOTAL PLAT YANG DIGUNAKAN -->
-              
-                                            <?php 
-                                            // menentukan apakah plat yang digunakan jenis 72/74/102/Tokko
-                                            // bagian COVER
-                                                $cover1 = 0;
-                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
-                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
-                                                    $row->cover1mesin1 == "102" ? $cover1=$cover1+$p1 :  $cover1;
-                                                    $row->cover2mesin1 == "102" ? $cover1=$cover1+$p2 :  $cover1;
-                                            
-                                                $cover2 = 0;
-                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
-                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
-                                                    $row->cover1mesin1 == "74" ? $cover2=$cover2+$p1 :  $cover2;
-                                                    $row->cover2mesin1 == "74" ? $cover2=$cover2+$p2 :  $cover2;
-                                            
-                                     
-                                                $cover3 = 0;
-                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
-                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
-                                                    $row->cover1mesin1 == "72" ? $cover3=$cover3+$p1 :  $cover3;
-                                                    $row->cover2mesin1 == "72" ? $cover3=$cover3+$p2 :  $cover3;                                          
-                                        
-                                                $cover4 = 0;
-                                                $p1 = $row->cover1plat1+$row->cover1plat2+$row->cover1plat3 + $row->jumlahplategagalcover1;                                                
-                                                $p2 = $row->cover2plat1+$row->cover2plat2+$row->cover2plat3 + $row->jumlahplategagalcover2;
-                                                    $row->cover1mesin1 == "Tokko" ? $cover4=$cover4+$p1 :  $cover4;
-                                                    $row->cover2mesin1 == "Tokko" ? $cover4=$cover4+$p2 :  $cover4;
-
-                                                // bagian ISI
-                                                        $isi1 = 0;
-                                                        $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
-                                                        $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
-                                                        $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
-                                                            $row->isi1mesin1 == "102" ? $isi1=$isi1+$p1 :  $isi1;
-                                                            $row->isi2mesin1 == "102" ? $isi1=$isi1+$p2 :  $isi1;
-                                                            $row->isi3mesin1 == "102" ? $isi1=$isi1+$p3 :  $isi1;
-                                                   
-                                                        $isi2 = 0;
-                                                        $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
-                                                        $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
-                                                        $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
-                                                            $row->isi1mesin1 == "74" ? $isi2=$isi2+$p1 :  $isi2;
-                                                            $row->isi2mesin1 == "74" ? $isi2=$isi2+$p2 :  $isi2;
-                                                            $row->isi3mesin1 == "74" ? $isi2=$isi2+$p3 :  $isi2;
-                                                   
-                                                        $isi3 = 0;
-                                                        $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
-                                                        $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
-                                                        $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
-                                                            $row->isi1mesin1 == "72" ? $isi3=$isi3+$p1 :  $isi3;
-                                                            $row->isi2mesin1 == "72" ? $isi3=$isi3+$p2 :  $isi3;
-                                                            $row->isi3mesin1 == "72" ? $isi3=$isi3+$p3 :  $isi3;
-                                                   
-                                                        $isi4 = 0;
-                                                        $p1 = $row->isi1plat1+$row->isi1plat2+$row->isi1plat3 + $row->jumlahplategagalisi1;                                                
-                                                        $p2 = $row->isi2plat1+$row->isi2plat2+$row->isi2plat3 + $row->jumlahplategagalisi2;
-                                                        $p3 = $row->isi3plat1+$row->isi3plat2+$row->isi3plat3 + $row->jumlahplategagalisi3;
-                                                            $row->isi1mesin1 == "Tokko" ? $isi4=$isi4+$p1 :  $isi4;
-                                                            $row->isi2mesin1 == "Tokko" ? $isi4=$isi4+$p2 :  $isi4;
-                                                            $row->isi3mesin1 == "Tokko" ? $isi4=$isi4+$p3 :  $isi4;
-                                                   
-                                                   ?>
-                                                                                                                             
-              <td><?= $cover1+$isi1; ?></td>
-              <td><?= $cover2+$isi2; ?></td>
-              <td><?= $cover3+$isi3; ?></td>
-              <td><?= $cover4+$isi4; ?></td>
-              <?php
-                $total1=$total1+$cover1+$isi1;
-                $total2=$total2+$cover2+$isi2;
-                $total3=$total3+$cover3+$isi3;
-                $total4=$total4+$cover4+$isi4;
-              ?>
-
+              <td><?= $row->ukuran; ?></td>
+              <td><?= $row->halaman; ?></td>
               <td>
-
-
-                  <?php 
-                        if($row->so_status == "pracetak") 
-                          echo $row->so_status;
-                        else 
-                          echo $row->ctcp_status;
-                        
+                <?php 
+                  $finishing = "";
+                  if($row->bending != null){
+                    $finishing .= "bending, ";
+                  }
+                  if($row->hard_cover != null){
+                    $finishing .= 'hard cover, ';
+                  }   
+                  if($row->jahit_benang != null){
+                    $finishing .= 'jahit benang, ';
+                  } 
+                  if($row->jahit_kawat != null){
+                    $finishing .= 'jahit kawat, ';
+                  }    
+                  if($row->pond != null){
+                    $finishing .= 'pond, ';
+                  }   
+                  if($row->klem != null){
+                    $finishing .= 'klem, ';
+                  } 
+                  if($row->spiral != null){
+                    $finishing .= 'Spiral, ';
+                  }
+                  $finishing = rtrim($finishing, ", ");
+                  echo $finishing;
                   ?>
+              </td>
+              <td>
+                <?php 
+                      if($row->ctcp_status ==null) 
+                        echo $row->imposisi_status;
+                      else 
+                        echo $row->ctcp_status;
+                ?>
               </td>
               <td align="center">
                   
@@ -167,14 +109,6 @@
               </td>
             </tr> 
             <?php } ?>
-            <tr>
-              <td colspan="5" align="right">Total Plat</td>
-              <td><?= $total1; ?></td>
-              <td><?= $total2; ?></td>
-              <td><?= $total3; ?></td>
-              <td><?= $total4; ?></td>
-              <td colspan="2"></td>
-            </tr> 
           </table> 
           <div class="row no-print">
               <div class="col-12">
