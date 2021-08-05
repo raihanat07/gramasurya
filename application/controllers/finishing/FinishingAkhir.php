@@ -1291,7 +1291,7 @@ public function proses_fa_kalender()
 		// check_already_login_finishing();
 		$query = $this->fa->get_jadwal_binding();
 		$data = array(
-			'judul' => 'Finishing Akhir Mesin Finishing',
+			'judul' => 'Finishing Akhir Mesin Finishing Display Binding',
 			'fa' => $query->result(),
 		);		
 
@@ -1671,7 +1671,7 @@ public function proses_fa_kalender()
 		// check_already_login_finishing();
 		$query = $this->fa->get_jadwal_hardcover();
 		$data = array(
-			'judul' => 'Finishing Akhir Mesin Finishing',
+			'judul' => 'Finishing Akhir Mesin Finishing Display Hardcover',
 			'fa' => $query->result(),
 		);
 				
@@ -2046,7 +2046,7 @@ public function jadwal_fa_jahit()
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_jahit();
 		$data = array(
-			'judul' => 'Finishing Akhir Mesin Finishing',
+			'judul' => 'Finishing Akhir Mesin Finishing Display Jahit',
 			'fa' => $query->result(),
 		);		
 
@@ -2421,7 +2421,7 @@ public function jadwal_fa_potong()
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_fa_potong();
 		$data = array(
-			'judul' => 'Finishing Akhir Mesin Finishing',
+			'judul' => 'Finishing Akhir Mesin Finishing Display Potong',
 			'fa' => $query->result(),
 		);		
 
@@ -2796,7 +2796,7 @@ public function jadwal_fa_sub()
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_sub();
 		$data = array(
-			'judul' => 'Finishing Akhir Mesin Finishing',
+			'judul' => 'Finishing Akhir Mesin Finishing Display Sub',
 			'fa' => $query->result(),
 		);		
 
@@ -3146,7 +3146,7 @@ public function jadwal_fa_spiral()
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_spiral();
 		$data = array(
-			'judul' => 'Finishing Akhir Mesin Kalender',
+			'judul' => 'Finishing Akhir Mesin Kalender Spiral',
 			'fa' => $query->result(),
 		);		
 
@@ -3521,7 +3521,7 @@ public function jadwal_fa_klemseng()
 	// check_already_login_finishing();
 	$query = $this->fa->get_jadwal_klemseng();
 		$data = array(
-			'judul' => 'Finishing Akhir Mesin Kalender',
+			'judul' => 'Finishing Akhir Mesin Kalender Klemseng',
 			'fa' => $query->result(),
 		);
 				

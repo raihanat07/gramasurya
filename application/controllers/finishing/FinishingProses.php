@@ -1025,7 +1025,7 @@ class FinishingProses extends CI_Controller {
 	   // check_already_login_finishing();
 	   $query = $this->fp->get_jadwal_laminasi();
 	   $data = array(
-		   'judul' => 'Finishing Proses',
+		   'judul' => 'Finishing Proses Laminasi',
 		   'fp' => $query->result(),
 	   );
 	   // NANGKAP DATA SE ID ORDER
@@ -1266,7 +1266,7 @@ class FinishingProses extends CI_Controller {
 		// check_already_login_finishing();
 		$query = $this->fp->get_jadwal_mbo();
 		$data = array(
-			'judul' => 'Finishing Proses',
+			'judul' => 'Finishing Proses Mbo',
 			'fp' => $query->result(),
 		);		
 
@@ -1546,7 +1546,7 @@ public function jadwal_fp_shoe()
 	// check_already_login_finishing();
 	$query = $this->fp->get_jadwal_shoe();
 	$data = array(
-		'judul' => 'Finishing Proses',
+		'judul' => 'Finishing Proses Mbo',
 		'fp' => $query->result(),
 	);		
 	$jadwal_max = 0;		
@@ -1823,7 +1823,7 @@ public function proses_shoe()
 		// check_already_login_finishing();
 		$query = $this->fp->get_jadwal_susun();
 		$data = array(
-			'judul' => 'Finishing Proses',
+			'judul' => 'Finishing Proses Susun',
 			'fp' => $query->result(),
 		);		
 		$jadwal_max = 0;		
@@ -2058,7 +2058,7 @@ public function proses_shoe()
 		// check_already_login_finishing();
 		$query = $this->fp->get_jadwal_sub();
 		$data = array(
-			'judul' => 'Finishing Proses',
+			'judul' => 'Finishing Proses Sub',
 			'fp' => $query->result(),
 		);		
 		$jadwal_max = 0;		
