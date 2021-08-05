@@ -29,7 +29,7 @@
         <!-- /.card-header -->
         <div class="card-body">
           <!-- id="table1" -->
-          <table id="example2" class="table table-bordered table-striped" style="font-size: 12px">
+          <table id="table1" class="table table-bordered table-striped" style="font-size: 12px">
             <thead>
               <tr align="center">
                 <td>Tanggal Pelaksanaan</td>                
