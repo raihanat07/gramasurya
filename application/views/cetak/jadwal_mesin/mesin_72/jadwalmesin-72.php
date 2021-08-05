@@ -39,7 +39,7 @@
               <td>Jumlah Set</td>
               <td>Target</td>
               <td>Druk</td>
-              <td colspan="2">Actions</td>
+              <td>Actions</td>
             </tr>
             </thead>
             <?php $banding_id[-1] = null;?>
@@ -69,17 +69,13 @@
                   <i class="fa fa-eye" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
                 <a href="<?=site_url('cetak/Jadwalmesin/edit_72/'.$row->id_mesin_72)?>">
-                  <i class="fa fa-pencil" style="font-size:18px;"></i>
+                  <i class="fa fa-pencil" style="font-size:18px;margin-right: 20px;"></i>
                 </a>
                 <?php if($cek_id_mesin[$nilai] != null){?>
                   <a href="<?=site_url('cetak/Jadwalmesin/print_72/'.$row->id_mesin_72."-".$row->id_order)?>">
-                    <i class="fa fa-print" style="font-size:18px;margin-left: 20px;"></i>
+                    <i class="fa fa-print" style="font-size:18px;margin-right: 20px;"></i>
                   </a>
                <?php } ?>
-              </td>
-
-              
-              <td align="center">
               <?php if($cek_id_mesin[$nilai] == null){?>
                   <a href="<?=site_url('cetak/Jadwalmesin/tambah_spk_72/'.$row->id_mesin_72)?>" class="btn btn-success">
                   <i class="fa fa-plus" style="font-size:14px"></i> TAMBAH SPK
