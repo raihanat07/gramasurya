@@ -231,79 +231,28 @@
     }
   </style>
 </head>
-<body class="hold-transition login-page">
-  <div class="container-fluid">
-    <div class="row no-gutter">
-      <div class="d-md-flex bg-image" style="width: 65%">
-        <div class="row"> 
-          <div class="col-md-11"><img src="../assets/dist/img/logo gramasurys.png" style="width:230px;margin-top: 30px;margin-left: 30px;"></div>
-          <div class="col-md-1"><img src="../assets/dist/img/logo-FK.png" style="width: 230px;margin-top: 30px;margin-left: 70px;"></div>
-        </div>
-        <div class="row uc" align="center"> <h1><b>SISTEM INFORMASI PRODUKSI</b> <br> <b>PT. GRAMASURYA</b></h1></div>
-        
-
-        <!--<div class="slideshow-container">
-          <div class="mySlides">
-            <img src="../assets/dist/img/FOTO-LOGIN.jpg" style="width:100%">
-            <div class="text">Caption Text</div>
-          </div>
-
-          <div class="mySlides">
-            <img src="../assets/dist/img/logo-sip-dz.png" style="width:100%">
-            <div class="text">Caption Two</div>
-          </div>
-
-          <div class="mySlides">
-            <img src="../assets/dist/img/logo gramasurys.png" style="width:100%">
-            <div class="text">Caption Three</div>
-          </div>
-        </div><br><br>
-        <div style="text-align:center">
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-          <span class="dot"></span> 
-        </div>-->
-
-        <script>
-          var slideIndex = 0;
-          showSlides();
-
-          function showSlides() {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-              slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            for (i = 0; i < dots.length; i++) {
-              dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 2000); // Change image every 2 seconds
-          }
-        </script>
-      </div>
-      <div style="width: 35%">
+<body>
+  <div class="container-fluid ps-md-0">
+    <div class="row g-0">
+      <div class="d-none d-md-flex col-md-8 col-lg-8 bg-image"></div>
+      <div class="col-md-4 col-lg-4" style="background: #f7e6ff">
         <div class="login d-flex align-items-center py-5">
           <div class="container">
             <div class="row">
-              <div class="col-md-9 mx-auto">
-                <div class="card" style="padding:50px;">
+              <div class="col-md-12 col-lg-10 mx-auto">
+                <div class="card" style="padding: 20px;">
                   <center><img src="../assets/dist/img/logo gramasurys 2.png" style="width: 75px;margin-bottom: 10px;margin-top: 30px;" title="LOGO PT. GRAMASURYA"></center>
                   <h3 class="login-heading mb-4 text-center"><b>MASUK</b></h3>
                   <center><hr style="width: 200px;margin-top: -20px;"></center>
                   <form action="<?=site_url('auth/process')?>" method="post">
                     <div class="row" style="margin-top: -20px;">
                       <!-- <input type="text" name="username" id="username" class="form__input" placeholder="Username"> -->
-                      <div class="col-md-1" style="margin-top: 50px;"><span class="fa fa-user"></span></div>
-                      <div class="col-md-11"><input type="text" name="username" id="username" class="form__input" placeholder="Username"></div>
+                      <div class="col-1" style="margin-top: 50px;"><span class="fa fa-user"></span></div>
+                      <div class="col-11"><input type="text" name="username" id="username" class="form__input" placeholder="Username"></div>
                     </div>
                     <div class="row" style="margin-top: -20px;margin-bottom: 30px;">
-                      <div class="col-md-1" style="margin-top: 50px;"><span class="fa fa-lock"></span></div>
-                      <div class="col-md-11"><input type="password" name="password" id="password" class="form__input" placeholder="Password"></div>
+                      <div class="col-1" style="margin-top: 50px;"><span class="fa fa-lock"></span></div>
+                      <div class="col-11"><input type="password" name="password" id="password" class="form__input" placeholder="Password"></div>
                     </div>
                     <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit" name="login" title="KUY LOGIN">Sign in</button>
                   </form>
@@ -315,24 +264,5 @@
       </div>
     </div>
   </div>
-
-
-  <!-- /.login-box -->
-
-  <!-- jQuery -->
-  <script src="<?=base_url()?>assets/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="<?=base_url()?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- iCheck -->
-  <script src="<?=base_url()?>assets/plugins/iCheck/icheck.min.js"></script>
-  <script>
-    $(function () {
-      $('input').iCheck({
-        checkboxClass: 'icheckbox_square-blue',
-        radioClass   : 'iradio_square-blue',
-        increaseArea : '20%' // optional
-      })
-    })
-  </script>
 </body>
 </html>
