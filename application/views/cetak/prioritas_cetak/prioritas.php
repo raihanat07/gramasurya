@@ -81,7 +81,7 @@
                 <td>Actions</td>
               </tr>
             </thead>
-            <?php foreach($pp as $s => $row) {?>  
+            <?php foreach($pc as $s => $row) {?>  
               <tr>
               
                 <td align="center"><?= $row->nomor_so; ?></td>
