@@ -103,6 +103,20 @@
               </li>
               <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 4 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
                 <li class="nav-item">
+                  <a style="font-style: bold;" href="<?=site_url()?>pracetak/Prioritas" 
+                    <?php  if($judul == "Prioritas" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak" || $judul == "Edit Imposisi Pracetak" || $judul == "Print Imposisi Pracetak"){?>
+                      class= "nav-link active"
+                    <?php }else {?>
+                      class= "nav-link"
+                    <?php } ?>
+                  >
+                    <i class="fa fa-circle-o nav-icon"></i>
+                    <p>Prioritas Pracetak</p>
+                  </a>
+                </li>
+              <?php } ?>
+              <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 4 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
+                <li class="nav-item">
                   <a style="font-style: bold;" href="<?=site_url()?>pracetak/Imposisi" 
                     <?php  if($judul == "Imposisi" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak" || $judul == "Edit Imposisi Pracetak" || $judul == "Print Imposisi Pracetak"){?>
                       class= "nav-link active"
