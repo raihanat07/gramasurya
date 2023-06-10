@@ -9,17 +9,104 @@ class Prioritas extends CI_Controller {
         $this->load->model('PrioritasCetak_m', 'pc');
     }
 
-	public function index()
-	{
-		// check_already_login_cetak();
-		$query = $this->pc->get();
-		$data = array(
-			'judul' => 'Prioritas Cetak',
-			'pc' => $query->result(),
-		);
-		// $data['judul'] = 'Display Cetak';
-		$this->template->load('cetak/template','cetak/prioritas_cetak/prioritas',$data);
-	}
+        public function index()
+    {
+        // Ambil data tugas dari model
+        $tasks = $this->pc->get();
+
+        // Urutkan tugas berdasarkan halaman terkecil
+        usort($tasks, function($a, $b) {
+            return $a->halaman - $b->halaman;
+        });
+
+        // Muat view dengan template dan kirimkan data tugas
+        $view_data = array(
+            'judul' => 'Prioritas Cetak',
+            'pc' => $tasks, // Menggunakan data tugas yang telah diurutkan
+        );
+
+        // Muat view dengan template dan kirimkan data tugas
+        $this->template->load('cetak/template', 'cetak/prioritas_cetak/prioritas', $view_data);
+    }
+
+    
+
+
+
+    //     public function index()
+    // {
+    //     // Ambil data tugas dari model
+    //     $tasks = $this->pc->get();
+
+    //     // Urutkan tugas berdasarkan EDD terlebih dahulu
+    //     usort($tasks, function($a, $b) {
+    //         $eddComparison = strtotime($a->deadline) - strtotime($b->deadline);
+    //         if ($eddComparison != 0) {
+    //             return $eddComparison;
+    //         } else {
+    //             $sptComparison = $a->halaman - $b->halaman;
+    //             if ($sptComparison != 0) {
+    //                 return $sptComparison;
+    //             } else {
+    //                 return $a->id_order - $b->id_order; // Prioritas berdasarkan ID tugas jika semua kriteria sama
+    //             }
+    //         }
+    //     });
+
+    //     // Muat view dengan template dan kirimkan data tugas
+    //     $view_data = array(
+    //         'judul' => 'Prioritas Cetak',
+    //         'pc' => $tasks, // Menggunakan data tugas yang telah diurutkan
+    //     );
+
+    //     // Muat view dengan template dan kirimkan data tugas
+    //     $this->template->load('cetak/template', 'cetak/prioritas_cetak/prioritas', $view_data);
+    // }                                               
+
+
+    //     public function index()
+    // {
+    //     // Ambil data tugas dari model
+    //     $tasks = $this->pc->get();
+
+    //     // Urutkan tugas berdasarkan deadline tercepat dan halaman tersedikit
+    //     usort($tasks, function($a, $b) {
+    //         $deadlineComparison = strtotime($a->deadline) - strtotime($b->deadline);
+    //         if ($deadlineComparison != 0) {
+    //             return $deadlineComparison;
+    //         } else {
+    //             return $a->halaman - $b->halaman;
+    //         }
+    //     });
+
+    //     // Muat view dengan template dan kirimkan data tugas
+    //     $view_data = array(
+    //         'judul' => 'Prioritas Cetak',
+    //         'pc' => $tasks, // Menggunakan data tugas yang telah diurutkan
+    //     );
+
+    //     // Muat view dengan template dan kirimkan data tugas
+    //     $this->template->load('cetak/template', 'cetak/prioritas_cetak/prioritas', $view_data);
+    // }
+
+
+    
+
+
+    
+
+
+	// public function index()
+	// {
+	// 	// check_already_login_cetak();
+	// 	$query = $this->pc->get();
+	// 	$data = array(
+	// 		'judul' => 'Prioritas Cetak',
+	// 		'pc' => $query->result(),
+	// 	);
+	// 	// $data['judul'] = 'Display Cetak';
+	// 	$this->template->load('cetak/template','cetak/prioritas_cetak/prioritas',$data);
+	// }
 	public function lihat_dc($id)
 	{
 		// check_already_login_cetak();

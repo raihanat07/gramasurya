@@ -6,9 +6,24 @@ class Ctcp_m extends CI_Model {
 	public function get()
     {
         $this->db->select(
-            'data_ctcp.ctcp_status as ctcp_status, imposisi.imposisi_status as imposisi_status,
-            order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
-            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, finishing.finishing_akhir_spiral as spiral, data_ctcp.id_data_ctcp as id_data_ctcp'
+            '
+            imposisi.imposisi_status as imposisi_status,
+            order.id_order as id_order, 
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+            order.ukuran as ukuran, 
+            order.halaman as halaman, 
+            order.oplag as oplag, 
+            order.so_status as so_status, 
+            finishing.finishing_akhir_bending as bending, 
+            finishing.finishing_akhir_hard_cover as hard_cover, 
+            finishing.finishing_akhir_jahit_benang as jahit_benang, 
+            finishing.finishing_akhir_jahit_kawat as jahit_kawat, 
+            finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, 
+            finishing.finishing_akhir_spiral as spiral, data_ctcp.id_data_ctcp as id_data_ctcp'
         );
         // $status_ctcp = array('ctcp', 'ctcp cover', 'ctcp isi');        
         $status_imposisi = array('imposisi cover','imposisi isi','imposisi');
@@ -34,6 +49,157 @@ class Ctcp_m extends CI_Model {
                
         $query = $this->db->get();
         return $query;  
+    }
+    public function get_cover()
+    {
+        $this->db->select(
+            'order.id_order as id_order, 
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+            order.ukuran as ukuran, 
+            order.halaman as halaman, 
+            order.oplag as oplag, 
+            order.so_status as so_status, 
+            finishing.finishing_akhir_bending as bending, 
+            finishing.finishing_akhir_hard_cover as hard_cover, 
+            finishing.finishing_akhir_jahit_benang as jahit_benang, 
+            finishing.finishing_akhir_jahit_kawat as jahit_kawat, 
+            finishing.finishing_akhir_pond as pond,
+            finishing.finishing_akhir_klem as klem, 
+            finishing.finishing_akhir_spiral as spiral, 
+            data_ctcp.id_data_ctcp as id_data_ctcp,
+            data_ctcp.ctcp_status as ctcp_status,
+            data_ctcp.cover1tglctcp1,
+            data_ctcp.cover1tglctcp2,
+            data_ctcp.cover1tglctcp3, 
+            '
+        );
+        $status_ctcp = array('ctcp', 'ctcp cover');        
+        // $status_imposisi = array('imposisi cover','imposisi isi','imposisi');
+
+        $this->db->from('order');
+        $this->db->join('imposisi','order.id_order = imposisi.id_order','left' );      
+        $this->db->join('data_ctcp','data_ctcp.id_order = imposisi.id_order','left');          
+        $this->db->join('finishing','finishing.id_order = order.id_order');        
+        $this->db->where_in('data_ctcp.ctcp_status',$status_ctcp);
+        $this->db->order_by('order.id_order', 'desc');        
+        // $this->db->where('laporan_pracetak.id_laporan_pracetak', null);  
+        // $this->db->or_where_in('data_ctcp.ctcp_status', $status_ctcp);       
+        
+        //  $status_umum = array('marketing','imposisi');
+
+        // $this->db->from('order');
+        // $this->db->join('imposisi','imposisi.id_order = order.id_order','left'); 
+        // $this->db->join('data_ctcp','imposisi.id_order = data_ctcp.id_order','left' );
+        // $this->db->join('finishing','finishing.id_order = order.id_order');                
+        // $this->db->where_in('order.so_status',$status_umum);
+        // $this->db->where('data_ctcp.id_data_ctcp', null);  
+
+               
+        $query = $this->db->get();
+        return $query;  
+    }
+    public function get_isi()
+    { 
+        $this->db->select(
+            'data_ctcp.ctcp_status as ctcp_status, 
+            imposisi.imposisi_status as imposisi_status,
+            order.id_order as id_order, 
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+            order.ukuran as ukuran, 
+            order.halaman as halaman, 
+            order.oplag as oplag, 
+            order.so_status as so_status, 
+            finishing.finishing_akhir_bending as bending, 
+            finishing.finishing_akhir_hard_cover as hard_cover, 
+            finishing.finishing_akhir_jahit_benang as jahit_benang, 
+            finishing.finishing_akhir_jahit_kawat as jahit_kawat, 
+            finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, 
+            finishing.finishing_akhir_spiral as spiral, data_ctcp.id_data_ctcp as id_data_ctcp'
+        );
+        $status_ctcp = array('ctcp', 'ctcp isi');        
+        // $status_imposisi = array('imposisi cover','imposisi isi','imposisi');
+
+        $this->db->from('order');
+        $this->db->join('imposisi','order.id_order = imposisi.id_order' );      
+        $this->db->join('data_ctcp','data_ctcp.id_order = imposisi.id_order','left');          
+        $this->db->join('finishing','finishing.id_order = order.id_order');        
+        $this->db->where_in('data_ctcp.ctcp_status',$status_ctcp);
+        $this->db->order_by('order.id_order', 'desc');        
+        // $this->db->where('laporan_pracetak.id_laporan_pracetak', null);  
+        // $this->db->or_where_in('data_ctcp.ctcp_status', $status_ctcp);       
+        
+        //  $status_umum = array('marketing','imposisi');
+
+        // $this->db->from('order');
+        // $this->db->join('imposisi','imposisi.id_order = order.id_order','left'); 
+        // $this->db->join('data_ctcp','imposisi.id_order = data_ctcp.id_order','left' );
+        // $this->db->join('finishing','finishing.id_order = order.id_order');                
+        // $this->db->where_in('order.so_status',$status_umum);
+        // $this->db->where('data_ctcp.id_data_ctcp', null);  
+
+               
+        $query = $this->db->get();
+        return $query;  
+    }
+    public function filter_haricover($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+            
+            data_ctcp.id_data_ctcp as id_data_ctcp,
+            data_ctcp.ctcp_status as ctcp_status,
+            data_ctcp.cover1tglctcp1,
+            data_ctcp.cover1tglctcp2,
+            data_ctcp.cover1tglctcp3,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('data_ctcp', 'order.id_order = data_ctcp.id_order', 'left');
+        $this->db->where('date(data_ctcp.cover1tglctcp1)', $hari);
+        $this->db->order_by('data_ctcp.cover1tglctcp1');
+        $query = $this->db->get();
+        return $query;
+    }
+    public function filter_hariisi($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+            
+            data_ctcp.id_data_ctcp as id_data_ctcp,
+            data_ctcp.ctcp_status as ctcp_status,
+            data_ctcp.isi1tglctcp1,
+            data_ctcp.isi1tglctcp2,
+            data_ctcp.isi1tglctcp3,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('imposisi', 'order.id_order = imposisi.id_order', 'left');
+        $this->db->where('date(data_ctcp.isi1tglctcp1)', $hari);
+        $this->db->order_by('data_ctcp.isi1tglctcp1');
+        $query = $this->db->get();
+        return $query;
     }
     public function filter_bulan($bulan, $tahun)
     {

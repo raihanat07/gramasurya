@@ -3,6 +3,150 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class JadwalMesin_m extends CI_Model {
 
+    public function filter_hari72($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+        
+            mesin_72.id_mesin_72 as id_mesin_72,
+            mesin_72.tanggal_pelaksanaan as tanggal_pelaksanaan,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('mesin_72', 'order.id_order = mesin_72.id_order', 'left');
+        $this->db->where('date(mesin_72.tanggal_pelaksanaan)', $hari);
+        $this->db->order_by('mesin_72.tanggal_pelaksanaan');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function filter_hari74a($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+        
+            mesin_74_a.id_mesin_74a as id_mesin_74a,
+            mesin_74_a.tanggal_pelaksanaan as tanggal_pelaksanaan,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('mesin_74_a', 'order.id_order = mesin_74_a.id_order', 'left');
+        $this->db->where('date(mesin_74_a.tanggal_pelaksanaan)', $hari);
+        $this->db->order_by('mesin_74_a.tanggal_pelaksanaan');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function filter_hari74b($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+        
+            mesin_74_b.id_mesin_74b as id_mesin_74b,
+            mesin_74_b.tanggal_pelaksanaan as tanggal_pelaksanaan,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('mesin_74_b', 'order.id_order = mesin_74_b.id_order', 'left');
+        $this->db->where('date(mesin_74_b.tanggal_pelaksanaan)', $hari);
+        $this->db->order_by('mesin_74_b.tanggal_pelaksanaan');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function filter_hari102a($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+        
+            mesin_102_a.id_mesin_102a as id_mesin_102a,
+            mesin_102_a.tanggal_pelaksanaan as tanggal_pelaksanaan,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('mesin_102_a', 'order.id_order = mesin_102_a.id_order', 'left');
+        $this->db->where('date(mesin_102_a.tanggal_pelaksanaan)', $hari);
+        $this->db->order_by('mesin_102_a.tanggal_pelaksanaan');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function filter_hari102b($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+        
+            mesin_102_b.id_mesin_102b as id_mesin_102b,
+            mesin_102_b.tanggal_pelaksanaan as tanggal_pelaksanaan,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('mesin_102_b', 'order.id_order = mesin_102_b.id_order', 'left');
+        $this->db->where('date(mesin_102_b.tanggal_pelaksanaan)', $hari);
+        $this->db->order_by('mesin_102_b.tanggal_pelaksanaan');
+        $query = $this->db->get();
+        return $query;
+    }
+
+    public function filter_haritokko($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+        
+            mesin_tokko.id_mesin_tokko as id_mesin_tokko,
+            mesin_tokko.tanggal_pelaksanaan as tanggal_pelaksanaan,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('mesin_tokko', 'order.id_order = mesin_tokko.id_order', 'left');
+        $this->db->where('date(mesin_tokko.tanggal_pelaksanaan)', $hari);
+        $this->db->order_by('mesin_tokko.tanggal_pelaksanaan');
+        $query = $this->db->get();
+        return $query;
+    }
+
     public function get_jadwal_72()
     {
         $this->db->select(

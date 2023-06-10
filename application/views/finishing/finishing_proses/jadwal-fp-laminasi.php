@@ -3,7 +3,18 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>FINISHING PROSES</h1>
+        <h1>FINISHING PROSES</h1></br>
+        <label>PROSES HITUNG EDD</label>
+          <form action="<?= site_url('finishing/FinishingProses/filter_harilaminasi') ?>" method="post">
+            <div class="row">
+              <div class="col-md-3">
+                <input type="date" class="form-control" name="hari" placeholder="Deadline" required>
+              </div>
+              <div class="col-md-6">
+                <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-3">Submit</button>
+              </div>
+            </div>
+          </form>
       </div>
     </div>
   </div><!-- /.container-fluid -->

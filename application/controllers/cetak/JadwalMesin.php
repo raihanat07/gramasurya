@@ -48,6 +48,84 @@ class Jadwalmesin extends CI_Controller {
 		$this->template->load('cetak/template','cetak/jadwal_mesin/mesin_72/jadwalmesin-72',$data);
 	}
 
+	public function filter_hari72()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->jm->filter_hari72($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template', 'cetak/jadwal_mesin/mesin_72/jadwal-hari', $data);
+	}
+
+	public function filter_hari74a()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->jm->filter_hari74a($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template', 'cetak/jadwal_mesin/mesin_74a/jadwal-hari', $data);
+	}
+
+	public function filter_hari74b()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->jm->filter_hari74b($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template', 'cetak/jadwal_mesin/mesin_74b/jadwal-hari', $data);
+	}
+
+	public function filter_hari102a()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->jm->filter_hari102a($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template', 'cetak/jadwal_mesin/mesin_102a/jadwal-hari', $data);
+	}
+
+	public function filter_hari102b()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->jm->filter_hari102b($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template', 'cetak/jadwal_mesin/mesin_102b/jadwal-hari', $data);
+	}
+
+	public function filter_haritokko()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->jm->filter_haritokko($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('cetak/template', 'cetak/jadwal_mesin/mesin_tokko/jadwal-hari', $data);
+	}
+
 	public function jadwal_74a()
 	{
 		

@@ -132,16 +132,33 @@
               <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 4 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
                 <li class="nav-item">
                   <a style="font-style: bold;" href="<?=site_url()?>pracetak/Imposisi" 
-                    <?php  if($judul == "Imposisi" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak" || $judul == "Edit Imposisi Pracetak" || $judul == "Print Imposisi Pracetak"){?>
+                    <?php  if($judul == "Imposisi" || $judul == "Tambah Imposisi" || $judul == "Lihat Imposisi Pracetak" || $judul == "Edit Imposisi Pracetak" || $judul == "Print Imposisi Pracetak" || $judul == "Imposisi Cover" || $judul == "Imposisi Isi" || $judul == "Data SO"){?>
                       class= "nav-link active"
                     <?php }else {?>
                       class= "nav-link"
                     <?php } ?>
                   >
-                    <i class="fa fa-circle-o nav-icon"></i>
+                    <i class="fa fa-gears nav-icon"></i>
                     <p>Imposisi</p>
                   </a>
-                </li>
+                    <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a style="font-style: bold;" href="<?= site_url() ?>pracetak/Imposisi" <?php if ($judul == "Data SO") { ?> class="nav-link active" <?php } else { ?> class="nav-link" <?php } ?>>
+                          <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Data SO</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a style="font-style: bold;" href="<?= site_url() ?>pracetak/Imposisi/imposisi_cover" <?php if ($judul == "Imposisi Cover") { ?> class="nav-link active" <?php } else { ?> class="nav-link" <?php } ?>>
+                          <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Cover</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a style="font-style: bold;" href="<?= site_url() ?>pracetak/Imposisi/imposisi_isi" <?php if ($judul == "Imposisi Isi") { ?> class="nav-link active" <?php } else { ?> class="nav-link" <?php } ?>>
+                          <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Isi</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
               <?php } ?>
               <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 5 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
                 <li class="nav-item">
@@ -152,9 +169,26 @@
                       class= "nav-link"
                     <?php } ?>
                   >
-                    <i class="fa fa-circle-o nav-icon"></i>
+                    <i class="fa fa-gears nav-icon"></i>
                     <p>CTCP</p>
                   </a>
+                  <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                        <a style="font-style: bold;" href="<?= site_url() ?>pracetak/Ctcp" <?php if ($judul == "Data Imposisi") { ?> class="nav-link active" <?php } else { ?> class="nav-link" <?php } ?>>
+                          <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Data Imposisi</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a style="font-style: bold;" href="<?= site_url() ?>pracetak/Ctcp/ctcp_cover" <?php if ($judul == "Ctcp Cover") { ?> class="nav-link active" <?php } else { ?> class="nav-link" <?php } ?>>
+                          <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Cover</p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a style="font-style: bold;" href="<?= site_url() ?>pracetak/Ctcp/ctcp_isi" <?php if ($judul == "Ctcp Isi") { ?> class="nav-link active" <?php } else { ?> class="nav-link" <?php } ?>>
+                          <p><i class="fa fa-circle-o nav-icon" style="margin-left: 20px;"></i>Isi</p>
+                        </a>
+                      </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                   <a style="font-style: bold;" href="<?=site_url()?>pracetak/Laporan" 

@@ -15,12 +15,60 @@ class Imposisi extends CI_Controller {
 		check_not_login();
 		$query = $this->imposisi->get();
 		$data = array(
-			'judul' => 'Imposisi',
+			'judul' => 'Data SO',
 			'imposisi' => $query->result(),
 		);
 		//  var_dump($query->result_array()[0]['id_order']);
 		//  die;
 		$this->template->load('pracetak/template','pracetak/imposisi/imposisi',$data);
+	}
+	public function imposisi_cover()
+	{	
+		check_not_login();
+		$query = $this->imposisi->get_cover();
+		$data = array(
+			'judul' => 'Imposisi Cover',
+			'imposisi' => $query->result(),
+		);
+		//  var_dump($query->result_array()[0]['id_order']);
+		//  die;
+		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-cover',$data);
+	}
+	public function imposisi_isi()
+	{	
+		check_not_login();
+		$query = $this->imposisi->get_isi();
+		$data = array(
+			'judul' => 'Imposisi Isi',
+			'imposisi' => $query->result(),
+		);
+		//  var_dump($query->result_array()[0]['id_order']);
+		//  die;
+		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-isi',$data);
+	}
+	public function filter_haricover()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->imposisi->filter_haricover($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-cover', $data);
+	}
+	public function filter_hariisi()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->imposisi->filter_hariisi($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-isi', $data);
 	}
 	public function filter_bulan()
 	{

@@ -9,6 +9,68 @@ class FinishingProses extends CI_Controller {
 		check_finishing();
         $this->load->model('FinishingProses_m', 'fp');
     }
+	
+	public function filter_harilaminasi()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->imposisi->filter_harilaminasi($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-cover', $data);
+	}
+	public function filter_harimbo()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->imposisi->filter_harimbo($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-cover', $data);
+	}
+	public function filter_harishoe()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->imposisi->filter_harishoe($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-cover', $data);
+	}
+	public function filter_harisub()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->imposisi->filter_harisub($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-cover', $data);
+	}
+	public function filter_harisusun()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->imposisi->filter_harisusun($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-cover', $data);
+	}
+
 	public function index()
 	{
 	    

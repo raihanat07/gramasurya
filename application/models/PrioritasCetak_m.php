@@ -4,27 +4,62 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class PrioritasCetak_m extends CI_Model {
 
     public function get()
-    {
-        $this->db->select(
-            'order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
-            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_klem as klem,finishing.finishing_akhir_spiral as spiral,
-            laporan_pracetak.status_laporan_pracetak as status_laporan_pracetak,
-            display_cetak.id_display_cetak as id_display_cetak,
-            display_cetak.status_cetak_cover as status_cetak_cover,
-            display_cetak.status_cetak_isi as status_cetak_isi,
-            display_cetak.status_cetak as status_cetak'
-        );
-        $so_status = array('pracetak','cetak','cetak cover','cetak isi');
+{
+    $this->db->select('
+        order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, 
+        order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, 
+        order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
+        finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, 
+        finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, 
+        finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_klem as klem,finishing.finishing_akhir_spiral as spiral,
+        laporan_pracetak.status_laporan_pracetak as status_laporan_pracetak,
+        display_cetak.id_display_cetak as id_display_cetak,
+        display_cetak.status_cetak_cover as status_cetak_cover,
+        display_cetak.status_cetak_isi as status_cetak_isi,
+        display_cetak.status_cetak as status_cetak'
+    );
+    $so_status = array('pracetak','cetak','cetak cover','cetak isi');
 
-        $this->db->from('order');
-        $this->db->join('finishing','finishing.id_order = order.id_order','left');
-        $this->db->join('laporan_pracetak','laporan_pracetak.id_order = order.id_order','left');
-        $this->db->join('display_cetak','display_cetak.id_order = order.id_order','left');
-        $this->db->where_in('order.so_status',$so_status);
-        $this->db->order_by('id_order', 'desc');    
-        $query = $this->db->get();
-        return $query;   
-    }
+    $this->db->from('order');
+    $this->db->join('finishing','finishing.id_order = order.id_order','left');
+    $this->db->join('laporan_pracetak','laporan_pracetak.id_order = order.id_order','left');
+    $this->db->join('display_cetak','display_cetak.id_order = order.id_order','left');
+    $this->db->where_in('order.so_status',$so_status);
+    $this->db->order_by('order.deadline', 'asc'); // Mengurutkan berdasarkan deadline tercepat
+    $this->db->order_by('order.halaman', 'asc'); // Mengurutkan berdasarkan halaman terkecil
+    $query = $this->db->get();
+
+    return $query->result(); // Mengembalikan hasil query dalam bentuk objek
+}
+
+    
+
+
+    
+
+
+    // public function get()
+    // {
+    //     $this->db->select(
+    //         'order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
+    //         finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond, finishing.finishing_akhir_klem as klem,finishing.finishing_akhir_spiral as spiral,
+    //         laporan_pracetak.status_laporan_pracetak as status_laporan_pracetak,
+    //         display_cetak.id_display_cetak as id_display_cetak,
+    //         display_cetak.status_cetak_cover as status_cetak_cover,
+    //         display_cetak.status_cetak_isi as status_cetak_isi,
+    //         display_cetak.status_cetak as status_cetak'
+    //     );
+    //     $so_status = array('pracetak','cetak','cetak cover','cetak isi');
+
+    //     $this->db->from('order');
+    //     $this->db->join('finishing','finishing.id_order = order.id_order','left');
+    //     $this->db->join('laporan_pracetak','laporan_pracetak.id_order = order.id_order','left');
+    //     $this->db->join('display_cetak','display_cetak.id_order = order.id_order','left');
+    //     $this->db->where_in('order.so_status',$so_status);
+    //     $this->db->order_by('id_order', 'desc');    
+    //     $query = $this->db->get();
+    //     return $query;   
+    // }
 
     public function get_lihatdc($id)
     {

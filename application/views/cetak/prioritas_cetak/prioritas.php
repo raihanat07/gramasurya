@@ -1,5 +1,5 @@
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<!-- <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
@@ -49,7 +49,7 @@
           </div>
         </div>
       </div><!-- /.container-fluid -->
-    </section>
+    </section> -->
 
     <!-- Main content -->
     <section class="content">
@@ -65,7 +65,7 @@
           </div>
         </div>
         <div class="card-body">
-          <table id="table1" class="table table-bordered table-striped" style="font-size: 12px">
+          <table id="" class="table table-bordered table-striped" style="font-size: 12px">
             <thead>
               <tr align="center">
                 <td>Nomor SO</td>
@@ -137,7 +137,13 @@
               </tr> 
             <?php } ?>
           </table>
-        </div>
+          <!-- <h1>Daftar Tugas</h1>
+            <ul>
+                <?php foreach ($tasks as $task): ?>
+                    <li>Tugas: <?php echo $task['name']; ?>, Due Date: <?php echo $task['due_date']; ?>, EDD: <?php echo $task['edd']; ?></li>
+                <?php endforeach; ?>
+            </ul>
+        </div> -->
         <!-- /.card-body -->
         <!-- <div class="card-footer">
           Footer

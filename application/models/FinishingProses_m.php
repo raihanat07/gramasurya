@@ -119,6 +119,122 @@ class FinishingProses_m extends CI_Model {
         return $query; 
 }
 
+public function filter_harilaminasi($hari)
+{	
+    $this->db->select(
+        'order.id_order as id_order,
+        order.nomor_so as nomor_so, 
+        order.tanggal_masuk as tanggal_masuk, 
+        order.deadline as deadline, 
+        order.nama_pemesan as nama_pemesan,  
+        order.nama_orderan as nama_orderan, 
+        
+        laminasi.id_laminasi as id_laminasi,
+        laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi,
+        '
+    );
+
+    $this->db->from('order');
+    $this->db->join('laminasi', 'order.id_order = laminasi.id_order', 'left');
+    $this->db->where('date(laminasi.tanggal_pelaksanaan_laminasi)', $hari);
+    $this->db->order_by('laminasi.tanggal_pelaksanaan_laminasi');
+    $query = $this->db->get();
+    return $query;
+}					
+
+public function filter_harimbo($hari)
+{
+    $this->db->select(
+        'order.id_order as id_order,
+        order.nomor_so as nomor_so, 
+        order.tanggal_masuk as tanggal_masuk, 
+        order.deadline as deadline, 
+        order.nama_pemesan as nama_pemesan,  
+        order.nama_orderan as nama_orderan, 
+    
+        mesin_72.id_mesin_72 as id_mesin_72,
+        mesin_72.tanggal_pelaksanaan as tanggal_pelaksanaan,
+        
+        '
+    );
+
+    $this->db->from('order');
+    $this->db->join('mesin_72', 'order.id_order = mesin_72.id_order', 'left');
+    $this->db->where('date(mesin_72.tanggal_pelaksanaan)', $hari);
+    $this->db->order_by('mesin_72.tanggal_pelaksanaan');
+    $query = $this->db->get();
+    return $query;
+}
+public function filter_harishoe($hari)
+{
+    $this->db->select(
+        'order.id_order as id_order,
+        order.nomor_so as nomor_so, 
+        order.tanggal_masuk as tanggal_masuk, 
+        order.deadline as deadline, 
+        order.nama_pemesan as nama_pemesan,  
+        order.nama_orderan as nama_orderan, 
+    
+        mesin_72.id_mesin_72 as id_mesin_72,
+        mesin_72.tanggal_pelaksanaan as tanggal_pelaksanaan,
+        
+        '
+    );
+
+    $this->db->from('order');
+    $this->db->join('mesin_72', 'order.id_order = mesin_72.id_order', 'left');
+    $this->db->where('date(mesin_72.tanggal_pelaksanaan)', $hari);
+    $this->db->order_by('mesin_72.tanggal_pelaksanaan');
+    $query = $this->db->get();
+    return $query;
+}
+public function filter_harisub($hari)
+{
+    $this->db->select(
+        'order.id_order as id_order,
+        order.nomor_so as nomor_so, 
+        order.tanggal_masuk as tanggal_masuk, 
+        order.deadline as deadline, 
+        order.nama_pemesan as nama_pemesan,  
+        order.nama_orderan as nama_orderan, 
+    
+        mesin_72.id_mesin_72 as id_mesin_72,
+        mesin_72.tanggal_pelaksanaan as tanggal_pelaksanaan,
+        
+        '
+    );
+
+    $this->db->from('order');
+    $this->db->join('mesin_72', 'order.id_order = mesin_72.id_order', 'left');
+    $this->db->where('date(mesin_72.tanggal_pelaksanaan)', $hari);
+    $this->db->order_by('mesin_72.tanggal_pelaksanaan');
+    $query = $this->db->get();
+    return $query;
+}
+public function filter_harisusun($hari)
+{
+    $this->db->select(
+        'order.id_order as id_order,
+        order.nomor_so as nomor_so, 
+        order.tanggal_masuk as tanggal_masuk, 
+        order.deadline as deadline, 
+        order.nama_pemesan as nama_pemesan,  
+        order.nama_orderan as nama_orderan, 
+    
+        mesin_72.id_mesin_72 as id_mesin_72,
+        mesin_72.tanggal_pelaksanaan as tanggal_pelaksanaan,
+        
+        '
+    );
+
+    $this->db->from('order');
+    $this->db->join('mesin_72', 'order.id_order = mesin_72.id_order', 'left');
+    $this->db->where('date(mesin_72.tanggal_pelaksanaan)', $hari);
+    $this->db->order_by('mesin_72.tanggal_pelaksanaan');
+    $query = $this->db->get();
+    return $query;
+}
+
 // ambil tanggal tiap mesin hehe
         public function ambil_data_fp_laminasi($id)
         {

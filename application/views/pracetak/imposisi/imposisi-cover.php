@@ -4,36 +4,19 @@
     <div class="row mb-2">
       <div class="col-sm-6">
         <h1>IMPOSISI</h1><br>
-        <label>TAMPILKAN DATA PERBULAN</label><br>
-        <form action="<?=site_url('pracetak/imposisi/filter_bulan')?>" method="post">
-          <div class="row">
-            <div class="col-md-3">
-              <select name="bulan" class="form-control">
-                <?php 
-                  $mulai = 1;
-                  $bulan=array("bulan","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
-                  for($i = $mulai; $i < $mulai + 12; $i++){
-                    echo '<option value="'.$i.'">'.$bulan[$i].'</option>';
-                  }
-                ?>
-              </select>
+
+          <label>LIHAT PRIORITAS</label>
+          <form action="<?= site_url('pracetak/imposisi/filter_haricover') ?>" method="post">
+            <div class="row">
+              <div class="col-md-3">
+                <input type="date" class="form-control" name="hari" placeholder="Deadline" required>
+              </div>
+              <div class="col-md-6">
+                <button type="submit" name="tampilkan_data" class="btn btn-primary col-md-3">Submit</button>
+              </div>
             </div>
-            <div class="col-md-3">
-              <select name="tahun" class="form-control">
-                <?php 
-                  $mulai = 2021;
-                  for($i = $mulai; $i < $mulai + 6; $i++){
-                    echo '<option value="'.$i.'">'.$i.'</option>';
-                  }
-                ?>
-              </select>
-            </div>
-            <div class="col-md-2">
-              <button type="submit" name="filter_data" class="btn btn-primary">Filter Data</button>
-            </div>
-          </div>
-        </form>
-      </div>
+          </form>
+
     </div>
   </div><!-- /.container-fluid -->
 </section>
@@ -55,6 +38,9 @@
       <table id="table1" class="table table-bordered table-hover" style="font-size: 12px">
         <thead>
           <tr align="center">
+            <td>Tanggal Imposisi 1</td>
+            <td>Tanggal Imposisi 2</td>
+            <td>Tanggal Imposisi 3</td>
             <td>Nomor SO</td>
             <td>Tanggal Masuk</td>
             <td>Deadline</td>
@@ -69,6 +55,33 @@
         </thead>
         <?php foreach($imposisi as $s => $row) {?>  
         <tr>
+          <td align="center">
+            <?php
+              if($row->cover1tglimposisi1 !=null){
+                echo $row->cover1tglimposisi1;
+              }
+              else
+                echo "-";
+            ?>
+          </td>
+          <td align="center">
+            <?php
+              if($row->cover1tglimposisi2 !=null){
+                echo $row->cover1tglimposisi2;
+              }
+              else
+                echo "-";
+            ?>
+          </td>
+          <td align="center">
+            <?php
+              if($row->cover1tglimposisi3 !=null){
+                echo $row->cover1tglimposisi3;
+              }
+              else
+                echo "-";
+            ?>
+          </td>
           <td align="center"><?= $row->nomor_so; ?></td>
           <td><?= date('d-m-Y', strtotime( $row->tanggal_masuk)); ?></td>
           <td style="color: red"><?= date('d-m-Y', strtotime( $row->deadline)); ?></td>
@@ -104,16 +117,14 @@
               echo $finishing;
               ?>
           </td>
-          <td><?= $row->so_status; ?></td>
-
-          <!-- <td>
+          <td>
             <?php 
               if(($row->so_status == "marketing") && $row->imposisi_status ==null) 
                 echo $row->so_status;
               else
                 echo $row->imposisi_status;   
             ?>          
-          </td> -->
+          </td>
           <td align="center">
             <!-- lihat detail imposisi -->
             <?php if($row->id_imposisi != null) {?>

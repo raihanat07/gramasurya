@@ -20,6 +20,50 @@ class Ctcp extends CI_Controller {
 		);	
 		$this->template->load('pracetak/template','pracetak/ctcp/ctcp',$data);
 	}
+	public function ctcp_cover()
+	{	
+		check_not_login();
+		$query = $this->ctcp->get_cover();
+		$data = array(
+			'judul' => 'CTCP Cover',
+			'ctcp' => $query->result(),
+		);	
+		$this->template->load('pracetak/template','pracetak/ctcp/ctcp-cover',$data);
+	}
+	public function ctcp_isi()
+	{	
+		check_not_login();
+		$query = $this->ctcp->get_isi();
+		$data = array(
+			'judul' => 'CTCP Isi',
+			'ctcp' => $query->result(),
+		);	
+		$this->template->load('pracetak/template','pracetak/ctcp/ctcp-isi',$data);
+	}
+	public function filter_haricover()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->ctcp->filter_haricover($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('pracetak/template', 'pracetak/ctcp/jadwal-hari-cover', $data);
+	}
+	public function filter_hariisi()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->imposisi->filter_hariisi($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('pracetak/template', 'pracetak/ctcp/jadwal-hari-cover', $data);
+	}
 	public function filter_bulan()
 	{
 		check_not_login();
