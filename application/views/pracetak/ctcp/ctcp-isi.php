@@ -5,7 +5,7 @@
       <div class="col-sm-6">
         <h1>CTCP</h1><br>
         <label>PROSES HITUNG EDD</label>
-          <form action="<?= site_url('pracetak/imposisi/filter_hariisi') ?>" method="post">
+          <form action="<?= site_url('pracetak/ctcp/filter_hariisi') ?>" method="post">
             <div class="row">
               <div class="col-md-3">
                 <input type="date" class="form-control" name="hari" placeholder="Deadline" required>

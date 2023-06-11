@@ -4,7 +4,7 @@
     <div class="row mb-2">
       <div class="col-md-6">
         <ol class="breadcrumb">
-          <a href="<?= site_url('cetak/Jadwalmesin/jadwal_72') ?>" class="btn btn-warning">
+          <a href="<?= site_url('finishing/FinishingProses/jadwal_fp_mbo') ?>" class="btn btn-warning">
             <i class="fa fa-undo"></i> Kembali
           </a>
         </ol>

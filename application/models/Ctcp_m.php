@@ -195,7 +195,7 @@ class Ctcp_m extends CI_Model {
         );
 
         $this->db->from('order');
-        $this->db->join('imposisi', 'order.id_order = imposisi.id_order', 'left');
+        $this->db->join('data_ctcp', 'order.id_order = data_ctcp.id_order', 'left');
         $this->db->where('date(data_ctcp.isi1tglctcp1)', $hari);
         $this->db->order_by('data_ctcp.isi1tglctcp1');
         $query = $this->db->get();

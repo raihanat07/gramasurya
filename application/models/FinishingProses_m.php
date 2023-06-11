@@ -152,16 +152,16 @@ public function filter_harimbo($hari)
         order.nama_pemesan as nama_pemesan,  
         order.nama_orderan as nama_orderan, 
     
-        mesin_72.id_mesin_72 as id_mesin_72,
-        mesin_72.tanggal_pelaksanaan as tanggal_pelaksanaan,
+        mbo.id_mbo as id_mbo,
+        mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_pelaksanaan_mesin_mbo,
         
         '
     );
 
     $this->db->from('order');
-    $this->db->join('mesin_72', 'order.id_order = mesin_72.id_order', 'left');
-    $this->db->where('date(mesin_72.tanggal_pelaksanaan)', $hari);
-    $this->db->order_by('mesin_72.tanggal_pelaksanaan');
+    $this->db->join('mbo', 'order.id_order = mbo.id_order', 'left');
+    $this->db->where('date(mbo.tanggal_pelaksanaan_mesin_mbo)', $hari);
+    $this->db->order_by('mbo.tanggal_pelaksanaan_mesin_mbo');
     $query = $this->db->get();
     return $query;
 }
@@ -175,16 +175,16 @@ public function filter_harishoe($hari)
         order.nama_pemesan as nama_pemesan,  
         order.nama_orderan as nama_orderan, 
     
-        mesin_72.id_mesin_72 as id_mesin_72,
-        mesin_72.tanggal_pelaksanaan as tanggal_pelaksanaan,
+        shoe.id_shoe as id_shoe,
+        shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_pelaksanaan_mesin_shoe,
         
         '
     );
 
     $this->db->from('order');
-    $this->db->join('mesin_72', 'order.id_order = mesin_72.id_order', 'left');
-    $this->db->where('date(mesin_72.tanggal_pelaksanaan)', $hari);
-    $this->db->order_by('mesin_72.tanggal_pelaksanaan');
+    $this->db->join('shoe', 'order.id_order = shoe.id_order', 'left');
+    $this->db->where('date(shoe.tanggal_pelaksanaan_mesin_shoe)', $hari);
+    $this->db->order_by('shoe.tanggal_pelaksanaan_mesin_shoe');
     $query = $this->db->get();
     return $query;
 }
@@ -198,16 +198,16 @@ public function filter_harisub($hari)
         order.nama_pemesan as nama_pemesan,  
         order.nama_orderan as nama_orderan, 
     
-        mesin_72.id_mesin_72 as id_mesin_72,
-        mesin_72.tanggal_pelaksanaan as tanggal_pelaksanaan,
+        sub_proses.id_sub as id_sub,
+        sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub_proses,
         
         '
     );
 
     $this->db->from('order');
-    $this->db->join('mesin_72', 'order.id_order = mesin_72.id_order', 'left');
-    $this->db->where('date(mesin_72.tanggal_pelaksanaan)', $hari);
-    $this->db->order_by('mesin_72.tanggal_pelaksanaan');
+    $this->db->join('sub_proses', 'order.id_order = sub_proses.id_order', 'left');
+    $this->db->where('date(sub_proses.tanggal_pelaksanaan_sub_proses)', $hari);
+    $this->db->order_by('sub_proses.tanggal_pelaksanaan_sub_proses');
     $query = $this->db->get();
     return $query;
 }
@@ -221,16 +221,16 @@ public function filter_harisusun($hari)
         order.nama_pemesan as nama_pemesan,  
         order.nama_orderan as nama_orderan, 
     
-        mesin_72.id_mesin_72 as id_mesin_72,
-        mesin_72.tanggal_pelaksanaan as tanggal_pelaksanaan,
+        susun.id_susun as id_susun,
+        susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_mesin_susun,
         
         '
     );
 
     $this->db->from('order');
-    $this->db->join('mesin_72', 'order.id_order = mesin_72.id_order', 'left');
-    $this->db->where('date(mesin_72.tanggal_pelaksanaan)', $hari);
-    $this->db->order_by('mesin_72.tanggal_pelaksanaan');
+    $this->db->join('susun', 'order.id_order = susun.id_order', 'left');
+    $this->db->where('date(susun.tanggal_pelaksanaan_mesin_susun)', $hari);
+    $this->db->order_by('susun.tanggal_pelaksanaan_mesin_susun');
     $query = $this->db->get();
     return $query;
 }

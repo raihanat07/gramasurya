@@ -105,7 +105,173 @@ class FinishingAkhir_m extends CI_Model {
         $query = $this->db->get();
         return $query; 
 
+}public function filter_haribinding($hari)
+{
+    $this->db->select(
+        'order.id_order as id_order,
+        order.nomor_so as nomor_so, 
+        order.tanggal_masuk as tanggal_masuk, 
+        order.deadline as deadline, 
+        order.nama_pemesan as nama_pemesan,  
+        order.nama_orderan as nama_orderan, 
+    
+        binding.id_binding as id_binding,
+        binding.tanggal_pelaksanaan_binding as tanggal_pelaksanaan_binding,
+        
+        '
+    );
+
+    $this->db->from('order');
+    $this->db->join('binding', 'order.id_order = binding.id_order', 'left');
+    $this->db->where('date(binding.tanggal_pelaksanaan_binding)', $hari);
+    $this->db->order_by('binding.tanggal_pelaksanaan_binding');
+    $query = $this->db->get();
+    return $query;
 }
+public function filter_harihardcover($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+        
+            hardcover.id_hardcover as id_hardcover,
+            hardcover.id_jadwal_hardcover as id_jadwal_hardcover,
+            hardcover.tanggal_pelaksanaan_hardcover as tanggal_pelaksanaan_hardcover,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('hardcover', 'order.id_order = hardcover.id_order', 'left');
+        $this->db->where('date(hardcover.tanggal_pelaksanaan_hardcover)', $hari);
+        $this->db->order_by('hardcover.tanggal_pelaksanaan_hardcover');
+        $query = $this->db->get();
+        return $query;
+    }
+    public function filter_harijahit($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+        
+            jahit.id_jahit as id_jahit,
+            jahit.id_jadwal_jahit as id_jadwal_jahit,
+            jahit.tanggal_pelaksanaan_jahit as tanggal_pelaksanaan_jahit,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('jahit', 'order.id_order = jahit.id_order', 'left');
+        $this->db->where('date(jahit.tanggal_pelaksanaan_jahit)', $hari);
+        $this->db->order_by('jahit.tanggal_pelaksanaan_jahit');
+        $query = $this->db->get();
+        return $query;
+    }
+    public function filter_hariklemseng($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+        
+            klemseng.id_klemseng as id_klemseng,
+            klemseng.id_jadwal_klemseng as id_jadwal_klemseng,
+            klemseng.tanggal_pelaksanaan_klemseng as tanggal_pelaksanaan_klemseng,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('klemseng', 'order.id_order = klemseng.id_order', 'left');
+        $this->db->where('date(klemseng.tanggal_pelaksanaan_klemseng)', $hari);
+        $this->db->order_by('klemseng.tanggal_pelaksanaan_klemseng');
+        $query = $this->db->get();
+        return $query;
+    }
+    public function filter_haripotong($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+        
+            fa_potong.id_fa_potong as id_fa_potong,
+            fa_potong.id_jadwal_fa_potong as id_jadwal_fa_potong,
+            fa_potong.tanggal_pelaksanaan_fa_potong as tanggal_pelaksanaan_fa_potong,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('fa_potong', 'order.id_order = fa_potong.id_order', 'left');
+        $this->db->where('date(fa_potong.tanggal_pelaksanaan_fa_potong)', $hari);
+        $this->db->order_by('fa_potong.tanggal_pelaksanaan_fa_potong');
+        $query = $this->db->get();
+        return $query;
+    }
+    public function filter_harispiral($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+        
+            spiral.id_spiral as id_spiral,
+            spiral.id_jadwal_spiral as id_jadwal_spiral,
+            spiral.tanggal_pelaksanaan_spiral as tanggal_pelaksanaan_spiral,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('spiral', 'order.id_order = spiral.id_order', 'left');
+        $this->db->where('date(spiral.tanggal_pelaksanaan_spiral)', $hari);
+        $this->db->order_by('spiral.tanggal_pelaksanaan_spiral');
+        $query = $this->db->get();
+        return $query;
+    }
+    public function filter_harisub($hari)
+    {
+        $this->db->select(
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so, 
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+        
+            sub_finishing.id_sub as id_sub,
+            sub_finishing.id_jadwal_sub as id_jadwal_sub,
+            sub_finishing.tanggal_pelaksanaan_sub as tanggal_pelaksanaan_sub,
+            
+            '
+        );
+
+        $this->db->from('order');
+        $this->db->join('sub_finishing', 'order.id_order = sub_finishing.id_order', 'left');
+        $this->db->where('date(sub_finishing.tanggal_pelaksanaan_sub)', $hari);
+        $this->db->order_by('sub_finishing.tanggal_pelaksanaan_sub');
+        $query = $this->db->get();
+        return $query;
+    }
 
 
 // ambil tanggal tiap mesin hehe

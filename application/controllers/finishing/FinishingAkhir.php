@@ -9,6 +9,90 @@ class FinishingAkhir extends CI_Controller {
 		check_finishing();
         $this->load->model('FinishingAkhir_m', 'fa');
     }
+	public function filter_haribinding()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->fa->filter_haribinding($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'fa' => $query->result(),
+		);
+		$this->template->load('finishing/template', 'finishing/finishing_akhir/jadwal-hari-binding', $data);
+	}
+	public function filter_harihardcover()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->fa->filter_harihardcover($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('finishing/template', 'finishing/finishing_akhir/jadwal-hari-hardcover', $data);
+	}
+	public function filter_harijahit()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->fa->filter_harijahit($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('finishing/template', 'finishing/finishing_akhir/jadwal-hari-jahit', $data);
+	}
+	public function filter_hariklemseng()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->fa->filter_hariklemseng($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('finishing/template', 'finishing/finishing_akhir/jadwal-hari-klemseng', $data);
+	}
+	public function filter_haripotong()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->fa->filter_haripotong($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('finishing/template', 'finishing/finishing_akhir/jadwal-hari-potong', $data);
+	}
+	public function filter_harispiral()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->fa->filter_harispiral($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('finishing/template', 'finishing/finishing_akhir/jadwal-hari-spiral', $data);
+	}
+	public function filter_harisub()
+	{
+		check_not_login();
+		$hari = $this->input->post('hari');
+		$query = $this->fa->filter_harisub($hari);
+		$data = array(
+			'judul' => 'EDD',
+			'hari' => $hari,
+			'jm' => $query->result(),
+		);
+		$this->template->load('finishing/template', 'finishing/finishing_akhir/jadwal-hari-sub', $data);
+	}
 	// public function index()
 	// {
 	// 	// check_already_login_finishing();

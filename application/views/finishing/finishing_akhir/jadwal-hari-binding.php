@@ -4,7 +4,7 @@
     <div class="row mb-2">
       <div class="col-md-6">
         <ol class="breadcrumb">
-          <a href="<?= site_url('finishing/FinishingProses/jadwal_fp_susun') ?>" class="btn btn-warning">
+          <a href="<?= site_url('finishing/FinishingAkhir/jadwal_fa_binding') ?>" class="btn btn-warning">
             <i class="fa fa-undo"></i> Kembali
           </a>
         </ol>
@@ -45,14 +45,14 @@
             <td>Due Date</td>
             <td>Lateness</td>
         </thead>
-        <?php foreach ($jm as $s => $row) { ?>
+        <?php foreach ($fa as $s => $row) { ?>
           <?php
-          $total1 = count($jm);
+          $total1 = count($fa);
           $total2 = 0;
           $total3 = 0;
           $total4 = 0;
 
-          $tgl1 = strtotime($row->tanggal_pelaksanaan);
+          $tgl1 = strtotime($row->tanggal_pelaksanaan_binding);
           $tgl2 = strtotime($row->deadline);
 
           $jarak = $tgl2 - $tgl1;
@@ -72,7 +72,7 @@
           ?>
           <tr align="center">
             <td><?= $row->nomor_so; ?></td>
-            <td><?= date('d-m-Y', strtotime($row->tanggal_pelaksanaan)); ?></td>
+            <td><?= date('d-m-Y', strtotime($row->tanggal_pelaksanaan_binding)); ?></td>
             <td style="color: red"><?= date('d-m-Y', strtotime($row->deadline)); ?></td>
             <td><?= $row->nama_pemesan; ?></td>
             <td><?= $row->nama_orderan; ?></td>

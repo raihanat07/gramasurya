@@ -14,61 +14,61 @@ class FinishingProses extends CI_Controller {
 	{
 		check_not_login();
 		$hari = $this->input->post('hari');
-		$query = $this->imposisi->filter_harilaminasi($hari);
+		$query = $this->fp->filter_harilaminasi($hari);
 		$data = array(
 			'judul' => 'EDD',
 			'hari' => $hari,
 			'jm' => $query->result(),
 		);
-		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-cover', $data);
+		$this->template->load('finishing/template', 'finishing/finishing_proses/jadwal-hari-laminasi', $data);
 	}
 	public function filter_harimbo()
 	{
 		check_not_login();
 		$hari = $this->input->post('hari');
-		$query = $this->imposisi->filter_harimbo($hari);
+		$query = $this->fp->filter_harimbo($hari);
 		$data = array(
 			'judul' => 'EDD',
 			'hari' => $hari,
 			'jm' => $query->result(),
 		);
-		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-cover', $data);
+		$this->template->load('finishing/template', 'finishing/finishing_proses/jadwal-hari-mbo', $data);
 	}
 	public function filter_harishoe()
 	{
 		check_not_login();
 		$hari = $this->input->post('hari');
-		$query = $this->imposisi->filter_harishoe($hari);
+		$query = $this->fp->filter_harishoe($hari);
 		$data = array(
 			'judul' => 'EDD',
 			'hari' => $hari,
 			'jm' => $query->result(),
 		);
-		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-cover', $data);
+		$this->template->load('finishing/template', 'finishing/finishing_proses/jadwal-hari-shoe', $data);
 	}
 	public function filter_harisub()
 	{
 		check_not_login();
 		$hari = $this->input->post('hari');
-		$query = $this->imposisi->filter_harisub($hari);
+		$query = $this->fp->filter_harisub($hari);
 		$data = array(
 			'judul' => 'EDD',
 			'hari' => $hari,
 			'jm' => $query->result(),
 		);
-		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-cover', $data);
+		$this->template->load('finishing/template', 'finishing/finishing_proses/jadwal-hari-sub', $data);
 	}
 	public function filter_harisusun()
 	{
 		check_not_login();
 		$hari = $this->input->post('hari');
-		$query = $this->imposisi->filter_harisusun($hari);
+		$query = $this->fp->filter_harisusun($hari);
 		$data = array(
 			'judul' => 'EDD',
 			'hari' => $hari,
 			'jm' => $query->result(),
 		);
-		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-cover', $data);
+		$this->template->load('finishing/template', 'finishing/finishing_proses/jadwal-hari-susun', $data);
 	}
 
 	public function index()

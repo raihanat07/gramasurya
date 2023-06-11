@@ -56,13 +56,13 @@ class Ctcp extends CI_Controller {
 	{
 		check_not_login();
 		$hari = $this->input->post('hari');
-		$query = $this->imposisi->filter_hariisi($hari);
+		$query = $this->ctcp->filter_hariisi($hari);
 		$data = array(
 			'judul' => 'EDD',
 			'hari' => $hari,
 			'jm' => $query->result(),
 		);
-		$this->template->load('pracetak/template', 'pracetak/ctcp/jadwal-hari-cover', $data);
+		$this->template->load('pracetak/template', 'pracetak/ctcp/jadwal-hari-isi', $data);
 	}
 	public function filter_bulan()
 	{
