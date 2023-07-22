@@ -60,6 +60,7 @@
             <?php
               if($row->isi1tglimposisi1 !=null){
                 echo $row->isi1tglimposisi1;
+                
               }
               else
                 echo "-";

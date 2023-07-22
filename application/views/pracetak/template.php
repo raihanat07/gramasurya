@@ -115,7 +115,7 @@
                   <p>Surat Order</p>
                 </a>
               </li>
-              <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 4 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
+              <!-- <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 4 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
                 <li class="nav-item">
                   <a style="font-style: bold;" href="<?=site_url()?>pracetak/Prioritas" 
                     <?php  if($judul == "Prioritas Pracetak"){?>
@@ -128,7 +128,7 @@
                     <p>Prioritas Pracetak</p>
                   </a>
                 </li>
-              <?php } ?>
+              <?php } ?> -->
               <?php if ($this->fungsi->user_login()->level == 1 || $this->fungsi->user_login()->level == 4 || $this->fungsi->user_login()->level == 6 || $this->fungsi->user_login()->level == 8) { ?>
                 <li class="nav-item">
                   <a style="font-style: bold;" href="<?=site_url()?>pracetak/Imposisi" 

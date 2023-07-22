@@ -134,31 +134,35 @@ class Imposisi_m extends CI_Model {
         return $query; 
     }
     public function filter_haricover($hari)
-    {
-        $this->db->select(
-            'order.id_order as id_order,
-            order.nomor_so as nomor_so, 
-            order.tanggal_masuk as tanggal_masuk, 
-            order.deadline as deadline, 
-            order.nama_pemesan as nama_pemesan,  
-            order.nama_orderan as nama_orderan, 
-            
-            imposisi.id_imposisi as id_imposisi,
-            imposisi.imposisi_status as imposisi_status,
-            imposisi.cover1tglimposisi1 as cover1tglimposisi1,
-            imposisi.cover1tglimposisi2 as cover1tglimposisi2,
-            imposisi.cover1tglimposisi3 as cover1tglimposisi3,
-            
-            '
-        );
+{
+    $this->db->select(
+        'order.id_order as id_order,
+        order.nomor_so as nomor_so, 
+        order.tanggal_masuk as tanggal_masuk, 
+        order.deadline as deadline, 
+        order.nama_pemesan as nama_pemesan,  
+        order.nama_orderan as nama_orderan,
+        order.halaman as halaman,  
 
-        $this->db->from('order');
-        $this->db->join('imposisi', 'order.id_order = imposisi.id_order', 'left');
-        $this->db->where('date(imposisi.cover1tglimposisi1)', $hari);
-        $this->db->order_by('imposisi.cover1tglimposisi1');
-        $query = $this->db->get();
-        return $query;
-    }
+        imposisi.id_imposisi as id_imposisi,
+        imposisi.imposisi_status as imposisi_status,
+        imposisi.cover1tglimposisi1 as cover1tglimposisi1,
+        imposisi.cover1tglimposisi2 as cover1tglimposisi2,
+        imposisi.cover1tglimposisi3 as cover1tglimposisi3,
+        imposisi.cover2tglimposisi1 as cover2tglimposisi1,
+        imposisi.cover2tglimposisi2 as cover2tglimposisi2,
+        imposisi.cover2tglimposisi3 as cover2tglimposisi3,
+        '
+    );
+
+    $this->db->from('order');
+    $this->db->join('imposisi', 'order.id_order = imposisi.id_order', 'left');
+    $this->db->where('date(imposisi.cover1tglimposisi1)', $hari);
+    $this->db->order_by('order.halaman', 'ASC'); // Mengurutkan berdasarkan halaman terkecil secara ascending (ASC)
+    $query = $this->db->get();
+    return $query;
+}
+
     public function filter_hariisi($hari)
     {
         $this->db->select(
@@ -167,14 +171,20 @@ class Imposisi_m extends CI_Model {
             order.tanggal_masuk as tanggal_masuk, 
             order.deadline as deadline, 
             order.nama_pemesan as nama_pemesan,  
-            order.nama_orderan as nama_orderan, 
+            order.nama_orderan as nama_orderan,
+            order.halaman as halaman,  
             
             imposisi.id_imposisi as id_imposisi,
             imposisi.imposisi_status as imposisi_status,
             imposisi.isi1tglimposisi1 as isi1tglimposisi1,
             imposisi.isi1tglimposisi2 as isi1tglimposisi2,
             imposisi.isi1tglimposisi3 as isi1tglimposisi3,
-            
+            imposisi.isi2tglimposisi1 as isi2tglimposisi1,
+            imposisi.isi2tglimposisi2 as isi2tglimposisi2,
+            imposisi.isi2tglimposisi3 as isi2tglimposisi3,
+            imposisi.isi3tglimposisi1 as isi3tglimposisi1,
+            imposisi.isi3tglimposisi2 as isi3tglimposisi2,
+            imposisi.isi3tglimposisi3 as isi3tglimposisi3,
             '
         );
 

@@ -20,7 +20,7 @@
   <div class="card">
     <div class="card-header">
 
-      <h3 class="card-title">Proses EDD Tanggal <?= $hari ?> </h3>
+      <h3 class="card-title">Prioritas Pada Tanggal <?= $hari ?> </h3>
 
       <div class="card-tools">
         <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -41,8 +41,9 @@
             <td>Nama Pemesan</td>
             <td>Nama Order</td>
             <td>Processing Time</td>
-            <td>Flow Time</td>
-            <td>Due Date</td>
+            <td>Completion Time</td>
+            <td>EDD</td>
+            <td>SPT</td>
             <td>Lateness</td>
         </thead>
         <?php foreach ($jm as $s => $row) { ?>
@@ -51,15 +52,17 @@
           $total2 = 0;
           $total3 = 0;
           $total4 = 0;
+          $tampung = 0;
+          $i = 1;
 
           $tgl1 = strtotime($row->tanggal_pelaksanaan);
           $tgl2 = strtotime($row->deadline);
 
           $jarak = $tgl2 - $tgl1;
 
-          $processingtime = $jarak / 60 / 60 / 24;
+          $processingtime = $jarak / (60 * 60 * 24);
 
-          $flowtime = $processingtime;
+          $flowtime = $processingtime + $tampung;
 
           // Due Date
           $tg1 = strtotime($row->tanggal_masuk);
@@ -79,6 +82,7 @@
             <td><?= $processingtime; ?></td>
             <td><?= $flowtime; ?></td>
             <td><?= $duedate; ?></td>
+            <td><?= $row->halaman; ?></td>
             <td><?= $latenes; ?></td>
           </tr>
 
@@ -86,6 +90,8 @@
           $total2 += $processingtime;
           $total3 += $flowtime;
           $total3 += $latenes;
+          $tampung = $flowtime;
+          $i++;
         } ?>
         <thead>
           <tr>
@@ -100,7 +106,7 @@
       </table>
     </div>
   </div>
-  </div>
+
 
 
   <!-- /.card -->
@@ -126,7 +132,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-4">
-          <br>Waktu penyelesaian rata - rata
+          <br>Waktu penyelesaian rata - rata (hari)
           <br><label class="form-label"><?= $waktu_rata; ?></label>
         </div>
         <div class="col-md-6">
