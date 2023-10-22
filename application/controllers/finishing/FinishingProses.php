@@ -1225,7 +1225,7 @@ class FinishingProses extends CI_Controller {
 	   $data['total_2'] = $total_2;
 	   
 	   $this->template->load('finishing/template','finishing/finishing_proses/tambah-jadwal-fp-laminasi',$data);
-}   
+	}   
    public function lihat_jadwal_fp_laminasi($id)
    {
 	   // check_already_login_finishing();

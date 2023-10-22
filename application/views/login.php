@@ -55,7 +55,7 @@
     }
 
     .bg-image {
-      background-image: url('../assets/dist/img/FOTO-LOGIN.jpg');
+      background-image: url('../assets/dist/img/.png');
       background-size: cover;
       background-position: center;
       /*filter: brightness(75%)*/
@@ -234,8 +234,8 @@
 <body>
   <div class="container-fluid ps-md-0">
     <div class="row g-0">
-      <div class="d-none d-md-flex col-md-8 col-lg-8 bg-image"></div>
-      <div class="col-md-4 col-lg-4" style="background: #f7e6ff">
+      <div class="d-none d-md-flex col-md-8 col-lg-8 bg-image" style="background: #ffe0cc"></div>
+      <div class="col-md-4 col-lg-4" style="background: #ffe0cc">
         <div class="login d-flex align-items-center py-5">
           <div class="container">
             <div class="row">

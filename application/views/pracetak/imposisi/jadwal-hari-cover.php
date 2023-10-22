@@ -37,25 +37,27 @@
           <tr align="center">
             <td>Prioritas (No SO)</td>
             <td>Tanggal Pelaksanaan</td>
+            <<td>Tanggal Masuk</td>
             <td>Deadline</td>
             <td>Nama Pemesan</td>
             <td>Nama Order</td>
             <td>Processing Time</td>
-            <td>Completion Time</td>
+            <td>Flow Time</td>
             <td>EDD</td>
             <td>SPT</td>
             <td>Lateness</td>
         </thead>
-        <?php foreach ($jm as $s => $row) { ?>
+
+        <?php foreach ($ic as $s => $row) { ?>
           <?php
-          $total1 = count($jm);
+          $total1 = count($ic);
           $total2 = 0;
           $total3 = 0;
           $total4 = 0;
           $tampung = 0;
           $i = 1;
-
-          $tgl1 = strtotime($row->tanggal_pelaksanaan);
+          
+          $tgl1 = strtotime($row->cover1tglimposisi1);
           $tgl2 = strtotime($row->deadline);
 
           $jarak = $tgl2 - $tgl1;
@@ -71,11 +73,15 @@
           $day = $tg2 - $tg1;
           $duedate = $day / 60 / 60 / 24;
 
-          $latenes = $flowtime - $duedate;
+          $latenes =  $flowtime - $duedate ;
+          $tampung = $flowtime;
+          $i++; 
           ?>
+
           <tr align="center">
             <td><?= $row->nomor_so; ?></td>
-            <td><?= date('d-m-Y', strtotime($row->tanggal_pelaksanaan)); ?></td>
+            <td><?= date('d-m-Y', strtotime($row->cover1tglimposisi1)); ?></td>
+            <td><?= date('d-m-Y', strtotime($row->tanggal_masuk)); ?></td>
             <td style="color: red"><?= date('d-m-Y', strtotime($row->deadline)); ?></td>
             <td><?= $row->nama_pemesan; ?></td>
             <td><?= $row->nama_orderan; ?></td>
@@ -87,7 +93,7 @@
           </tr>
 
         <?php
-          $total2 += $processingtime;
+          $total2 = $total2 + $processingtime;
           $total3 += $flowtime;
           $total3 += $latenes;
           $tampung = $flowtime;
@@ -123,6 +129,7 @@
           <i class="fa fa-minus"></i></button>
       </div>
     </div>
+
     <?php
     $waktu_rata = $total3 / $total1;
     $utilitas = $total2 / $total3;
@@ -150,8 +157,8 @@
           <br><label class="form-label"><?= $keterlambatan_rata; ?></label>
         </div>
       </div>
-      <!-- /.card -->
     </div>
+    
 </section>
 <!-- /.content -->
 <!-- /.content -->

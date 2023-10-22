@@ -134,7 +134,7 @@ class Imposisi_m extends CI_Model {
         return $query; 
     }
     public function filter_haricover($hari)
-{
+    {
     $this->db->select(
         'order.id_order as id_order,
         order.nomor_so as nomor_so, 
@@ -142,7 +142,8 @@ class Imposisi_m extends CI_Model {
         order.deadline as deadline, 
         order.nama_pemesan as nama_pemesan,  
         order.nama_orderan as nama_orderan,
-        order.halaman as halaman,  
+        order.halaman as halaman,
+        order.tanggal_masuk as tanggal_masuk,   
 
         imposisi.id_imposisi as id_imposisi,
         imposisi.imposisi_status as imposisi_status,
@@ -158,10 +159,11 @@ class Imposisi_m extends CI_Model {
     $this->db->from('order');
     $this->db->join('imposisi', 'order.id_order = imposisi.id_order', 'left');
     $this->db->where('date(imposisi.cover1tglimposisi1)', $hari);
-    $this->db->order_by('order.halaman', 'ASC'); // Mengurutkan berdasarkan halaman terkecil secara ascending (ASC)
+    // $this->db->order_by('order.halaman', 'ASC'); // Mengurutkan berdasarkan halaman terkecil secara ascending (ASC)
+    $this->db->order_by('order.deadline', 'ASC'); // Mengurutkan berdasarkan halaman terkecil secara ascending (ASC)
     $query = $this->db->get();
     return $query;
-}
+    }
 
     public function filter_hariisi($hari)
     {
@@ -191,7 +193,7 @@ class Imposisi_m extends CI_Model {
         $this->db->from('order');
         $this->db->join('imposisi', 'order.id_order = imposisi.id_order', 'left');
         $this->db->where('date(imposisi.isi1tglimposisi1)', $hari);
-        $this->db->order_by('imposisi.isi1tglimposisi1');
+        $this->db->order_by('order.halaman', 'ASC'); // Mengurutkan berdasarkan halaman terkecil secara ascending (ASC)
         $query = $this->db->get();
         return $query;
     }
@@ -226,8 +228,26 @@ class Imposisi_m extends CI_Model {
     public function tampil_tambah_imposisi($id = null)
     {
         $this->db->select(
-            'order.id_order as id_order, order.nomor_so as nomor_so, order.tanggal_masuk as tanggal_masuk, order.deadline as deadline, order.nama_pemesan as nama_pemesan,  order.nama_orderan as nama_orderan, order.ukuran as ukuran, order.halaman as halaman, order.oplag as oplag, order.so_status as so_status, 
-            finishing.finishing_akhir_bending as bending, finishing.finishing_akhir_hard_cover as hard_cover, finishing.finishing_akhir_jahit_benang as jahit_benang, finishing.finishing_akhir_jahit_kawat as jahit_kawat, finishing.finishing_akhir_pond as pond,finishing.finishing_akhir_klem as klem, finishing.finishing_akhir_spiral as spiral, imposisi.id_imposisi as id_imposisi'
+            'order.id_order as id_order,
+            order.nomor_so as nomor_so,
+            order.tanggal_masuk as tanggal_masuk, 
+            order.deadline as deadline, 
+            order.nama_pemesan as nama_pemesan,  
+            order.nama_orderan as nama_orderan, 
+            order.ukuran as ukuran, 
+            order.halaman as halaman, 
+            order.oplag as oplag, 
+            order.so_status as so_status, 
+            
+            finishing.finishing_akhir_bending as bending, 
+            finishing.finishing_akhir_hard_cover as hard_cover, 
+            finishing.finishing_akhir_jahit_benang as jahit_benang, 
+            finishing.finishing_akhir_jahit_kawat as jahit_kawat, 
+            finishing.finishing_akhir_pond as pond,
+            finishing.finishing_akhir_klem as klem, 
+            finishing.finishing_akhir_spiral as spiral, 
+            
+            imposisi.id_imposisi as id_imposisi'
         );
         $this->db->from('order');
         $this->db->join('imposisi','imposisi.id_order = order.id_order','left'); 
@@ -440,32 +460,6 @@ class Imposisi_m extends CI_Model {
                 'cover1tglimposisi1' =>$data['cover1tglimposisi1'],
                 'cover1tglimposisi2' =>$data['cover1tglimposisi2'],
                 'cover1tglimposisi3' =>$data['cover1tglimposisi3'],
-                'cover2mesin1' =>$data['cover2mesin1'],
-                'jumlahplatecover2' =>$data['jumlahplatecover2'],
-                'cover2plat1' =>$data['cover2plat1'],
-                'cover2plat2' =>$data['cover2plat2'],
-                'cover2plat3' =>$data['cover2plat3'],
-                'cover2set1' =>$data['cover2set1'],
-                'cover2set2' =>$data['cover2set2'],
-                'cover2set3' =>$data['cover2set3'],
-                'cover2up1' =>$data['cover2up1'],
-                'cover2up2' =>$data['cover2up2'],
-                'cover2up3' =>$data['cover2up3'],
-                'cover2lbrcetak1' =>$data['cover2lbrcetak1'],
-                'cover2lbrcetak2' =>$data['cover2lbrcetak2'],
-                'cover2lbrcetak3' =>$data['cover2lbrcetak3'],
-                'cover2warna1' =>$data['cover2warna1'],
-                'cover2warna2' =>$data['cover2warna2'],
-                'cover2warna3' =>$data['cover2warna3'],
-                'cover2status1' =>$data['cover2status1'],
-                'cover2status2' =>$data['cover2status2'],
-                'cover2status3' =>$data['cover2status3'],
-                'cover2keterangan1' =>$data['cover2keterangan1'],
-                'cover2keterangan2' =>$data['cover2keterangan2'],
-                'cover2keterangan3' =>$data['cover2keterangan3'],
-                'cover2tglimposisi1' =>$data['cover2tglimposisi1'],
-                'cover2tglimposisi2' =>$data['cover2tglimposisi2'],
-                'cover2tglimposisi3' =>$data['cover2tglimposisi3'],
                 'isi1mesin1' =>$data['isi1mesin1'],
                 'jumlahplateisi1' =>$data['jumlahplateisi1'],
                 'isi1plat1' =>$data['isi1plat1'],
@@ -492,65 +486,9 @@ class Imposisi_m extends CI_Model {
                 'isi1tglimposisi1' =>$data['isi1tglimposisi1'],
                 'isi1tglimposisi2' =>$data['isi1tglimposisi2'],
                 'isi1tglimposisi3' =>$data['isi1tglimposisi3'],
-                'isi2mesin1' =>$data['isi2mesin1'],
-                'jumlahplateisi2' =>$data['jumlahplateisi2'],
-                'isi2plat1' =>$data['isi2plat1'],
-                'isi2plat2' =>$data['isi2plat2'],
-                'isi2plat3' =>$data['isi2plat3'],
-                'isi2set1' =>$data['isi2set1'],
-                'isi2set2' =>$data['isi2set2'],
-                'isi2set3' =>$data['isi2set3'],
-                'isi2up1' =>$data['isi2up1'],
-                'isi2up2' =>$data['isi2up2'],
-                'isi2up3' =>$data['isi2up3'],
-                'isi2lbrcetak1' =>$data['isi2lbrcetak1'],
-                'isi2lbrcetak2' =>$data['isi2lbrcetak2'],
-                'isi2lbrcetak3' =>$data['isi2lbrcetak3'],
-                'isi2warna1' =>$data['isi2warna1'],
-                'isi2warna2' =>$data['isi2warna2'],
-                'isi2warna3' =>$data['isi2warna3'],
-                'isi2status1' =>$data['isi2status1'],
-                'isi2status2' =>$data['isi2status2'],
-                'isi2status3' =>$data['isi2status3'],
-                'isi2keterangan1' =>$data['isi2keterangan1'],
-                'isi2keterangan2' =>$data['isi2keterangan2'],
-                'isi2keterangan3' =>$data['isi2keterangan3'],
-                'isi2tglimposisi1' =>$data['isi2tglimposisi1'],
-                'isi2tglimposisi2' =>$data['isi2tglimposisi2'],
-                'isi2tglimposisi3' =>$data['isi2tglimposisi3'],
-                'isi3mesin1' =>$data['isi3mesin1'],
-                'jumlahplateisi3' =>$data['jumlahplateisi3'],
-                'isi3plat1' =>$data['isi3plat1'],
-                'isi3plat2' =>$data['isi3plat2'],
-                'isi3plat3' =>$data['isi3plat3'],
-                'isi3set1' =>$data['isi3set1'],
-                'isi3set2' =>$data['isi3set2'],
-                'isi3set3' =>$data['isi3set3'],
-                'isi3up1' =>$data['isi3up1'],
-                'isi3up2' =>$data['isi3up2'],
-                'isi3up3' =>$data['isi3up3'],
-                'isi3lbrcetak1' =>$data['isi3lbrcetak1'],
-                'isi3lbrcetak2' =>$data['isi3lbrcetak2'],
-                'isi3lbrcetak3' =>$data['isi3lbrcetak3'],
-                'isi3warna1' =>$data['isi3warna1'],
-                'isi3warna2' =>$data['isi3warna2'],
-                'isi3warna3' =>$data['isi3warna3'],
-                'isi3status1' =>$data['isi3status1'],
-                'isi3status2' =>$data['isi3status2'],
-                'isi3status3' =>$data['isi3status3'],
-                'isi3keterangan1' =>$data['isi3keterangan1'],
-                'isi3keterangan2' =>$data['isi3keterangan2'],
-                'isi3keterangan3' =>$data['isi3keterangan3'],
-                'isi3tglimposisi1' =>$data['isi3tglimposisi1'],
-                'isi3tglimposisi2' =>$data['isi3tglimposisi2'],
-                'isi3tglimposisi3' =>$data['isi3tglimposisi3'],
-                // 'tanggal_imposisi_cover' =>$data['tanggal_imposisi_cover'],
-                // 'tanggal_imposisi_isi' =>$data['tanggal_imposisi_isi'],
                 'catatan_imposisi' =>$data['catatan_imposisi']
             );            
-            $this->db->insert('imposisi',$tambah_imposisi);
-
-            
+            $this->db->insert('imposisi',$tambah_imposisi);    
     }
 
     public function status_umum($data)

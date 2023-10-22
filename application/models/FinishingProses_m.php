@@ -127,7 +127,8 @@ public function filter_harilaminasi($hari)
         order.tanggal_masuk as tanggal_masuk, 
         order.deadline as deadline, 
         order.nama_pemesan as nama_pemesan,  
-        order.nama_orderan as nama_orderan, 
+        order.nama_orderan as nama_orderan,
+        order.halaman as halaman, 
         
         laminasi.id_laminasi as id_laminasi,
         laminasi.tanggal_pelaksanaan_laminasi as tanggal_pelaksanaan_laminasi,
@@ -150,7 +151,8 @@ public function filter_harimbo($hari)
         order.tanggal_masuk as tanggal_masuk, 
         order.deadline as deadline, 
         order.nama_pemesan as nama_pemesan,  
-        order.nama_orderan as nama_orderan, 
+        order.nama_orderan as nama_orderan,
+        order.halaman as halaman,  
     
         mbo.id_mbo as id_mbo,
         mbo.tanggal_pelaksanaan_mesin_mbo as tanggal_pelaksanaan_mesin_mbo,
@@ -161,7 +163,8 @@ public function filter_harimbo($hari)
     $this->db->from('order');
     $this->db->join('mbo', 'order.id_order = mbo.id_order', 'left');
     $this->db->where('date(mbo.tanggal_pelaksanaan_mesin_mbo)', $hari);
-    $this->db->order_by('mbo.tanggal_pelaksanaan_mesin_mbo');
+    $this->db->order_by('order.halaman', 'ASC'); // Mengurutkan berdasarkan halaman terkecil secara ascending (ASC)
+    $this->db->order_by('mbo.tanggal_pelaksanaan_mesin_mbo'); // Mengurutkan berdasarkan tanggal terkecil secara ascending (ASC)
     $query = $this->db->get();
     return $query;
 }
@@ -173,7 +176,8 @@ public function filter_harishoe($hari)
         order.tanggal_masuk as tanggal_masuk, 
         order.deadline as deadline, 
         order.nama_pemesan as nama_pemesan,  
-        order.nama_orderan as nama_orderan, 
+        order.nama_orderan as nama_orderan,
+        order.halaman as halaman, 
     
         shoe.id_shoe as id_shoe,
         shoe.tanggal_pelaksanaan_mesin_shoe as tanggal_pelaksanaan_mesin_shoe,
@@ -184,6 +188,7 @@ public function filter_harishoe($hari)
     $this->db->from('order');
     $this->db->join('shoe', 'order.id_order = shoe.id_order', 'left');
     $this->db->where('date(shoe.tanggal_pelaksanaan_mesin_shoe)', $hari);
+    $this->db->order_by('order.halaman', 'ASC'); // Mengurutkan berdasarkan halaman terkecil secara ascending (ASC)
     $this->db->order_by('shoe.tanggal_pelaksanaan_mesin_shoe');
     $query = $this->db->get();
     return $query;
@@ -196,7 +201,8 @@ public function filter_harisub($hari)
         order.tanggal_masuk as tanggal_masuk, 
         order.deadline as deadline, 
         order.nama_pemesan as nama_pemesan,  
-        order.nama_orderan as nama_orderan, 
+        order.nama_orderan as nama_orderan,
+        order.halaman as halaman,  
     
         sub_proses.id_sub as id_sub,
         sub_proses.tanggal_pelaksanaan_sub_proses as tanggal_pelaksanaan_sub_proses,
@@ -207,6 +213,7 @@ public function filter_harisub($hari)
     $this->db->from('order');
     $this->db->join('sub_proses', 'order.id_order = sub_proses.id_order', 'left');
     $this->db->where('date(sub_proses.tanggal_pelaksanaan_sub_proses)', $hari);
+    $this->db->order_by('order.halaman', 'ASC'); // Mengurutkan berdasarkan halaman terkecil secara ascending (ASC)
     $this->db->order_by('sub_proses.tanggal_pelaksanaan_sub_proses');
     $query = $this->db->get();
     return $query;
@@ -219,7 +226,8 @@ public function filter_harisusun($hari)
         order.tanggal_masuk as tanggal_masuk, 
         order.deadline as deadline, 
         order.nama_pemesan as nama_pemesan,  
-        order.nama_orderan as nama_orderan, 
+        order.nama_orderan as nama_orderan,
+        order.halaman as halaman, 
     
         susun.id_susun as id_susun,
         susun.tanggal_pelaksanaan_mesin_susun as tanggal_pelaksanaan_mesin_susun,
@@ -230,6 +238,7 @@ public function filter_harisusun($hari)
     $this->db->from('order');
     $this->db->join('susun', 'order.id_order = susun.id_order', 'left');
     $this->db->where('date(susun.tanggal_pelaksanaan_mesin_susun)', $hari);
+    $this->db->order_by('order.halaman', 'ASC'); // Mengurutkan berdasarkan halaman terkecil secara ascending (ASC)
     $this->db->order_by('susun.tanggal_pelaksanaan_mesin_susun');
     $query = $this->db->get();
     return $query;

@@ -34,18 +34,18 @@
         <div class="card-body">
             <form action="<?=site_url('pracetak/User/tambah_user')?>" method="post">
                 <div class="form-group">
-                    <label>Nama</label>
-                    <input type="text" name="nama" value="<?=set_value('nama')?>" class="form-control">
+                    <label>Nama*</label>
+                    <input type="text" name="nama" value="<?=set_value('nama')?>" class="form-control" required>
                     <?=form_error('nama')?>
                 </div>
                 <div class="form-group">
-                    <label>Email</label>
-                    <input type="text" name="email" value="<?=set_value('email')?>" class="form-control">
+                    <label>Email*</label>
+                    <input type="text" name="email" value="<?=set_value('email')?>" class="form-control" required>
                     <?=form_error('email')?>
                 </div>
                 <div class="form-group">
-                    <label>Level</label>
-                    <select name="level" value="<?=set_value('level')?>" class="form-control">
+                    <label>Level*</label>
+                    <select name="level" value="<?=set_value('level')?>" class="form-control" required>
                         <option>Pilih</option>
                         <option value="1">Pracetak</option>
                         <option value="2">Cetak</option>
@@ -59,18 +59,18 @@
                     <?=form_error('level')?>
                 </div>
                 <div class="form-group">
-                    <label>Username</label>
-                    <input type="text" name="username" value="<?=set_value('username')?>" class="form-control">
+                    <label>Username*</label>
+                    <input type="text" name="username" value="<?=set_value('username')?>" class="form-control" required>
                     <?=form_error('username')?>
                 </div>
                 <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" name="password" class="form-control">
+                    <label>Password*</label>
+                    <input type="password" name="password" class="form-control" required>
                     <?=form_error('password')?>
                 </div>
                 <div class="form-group">
-                    <label>Konfirmasi Password</label>
-                    <input type="password" name="passconf" class="form-control">
+                    <label>Konfirmasi Password*</label>
+                    <input type="password" name="passconf" class="form-control" required>
                     <?=form_error('passconf')?>
                 </div>
                 <div class="form-group">

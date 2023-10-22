@@ -4,7 +4,7 @@
     <div class="row mb-2">
       <div class="col-md-6">
         <ol class="breadcrumb">
-          <a href="<?= site_url('pracetak/Ctcp/ctcp_isi') ?>" class="btn btn-warning">
+          <a href="<?= site_url('pracetak/Imposisi/imposisi_cover') ?>" class="btn btn-warning">
             <i class="fa fa-undo"></i> Kembali
           </a>
         </ol>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="card-body">
-      <table id="table1" class="table table-bordered table-hover" style="font-size: 12px">
+      <table id="" class="table table-bordered table-hover" style="font-size: 12px">
         <thead>
           <tr align="center">
             <td>Prioritas (No SO)</td>
@@ -41,8 +41,9 @@
             <td>Nama Pemesan</td>
             <td>Nama Order</td>
             <td>Processing Time</td>
-            <td>Flow Time</td>
-            <td>Due Date</td>
+            <td>Completion Time</td>
+            <td>EDD</td>
+            <td>SPT</td>
             <td>Lateness</td>
         </thead>
         <?php foreach ($jm as $s => $row) { ?>
@@ -51,15 +52,17 @@
           $total2 = 0;
           $total3 = 0;
           $total4 = 0;
-
-          $tgl1 = strtotime($row->tanggal_pelaksanaan);
+          $tampung = 0;
+          $i = 1;
+          
+          $tgl1 = strtotime($row->isi1tglctcp1);
           $tgl2 = strtotime($row->deadline);
 
           $jarak = $tgl2 - $tgl1;
 
-          $processingtime = $jarak / 60 / 60 / 24;
+          $processingtime = $jarak / (60 * 60 * 24);
 
-          $flowtime = $processingtime;
+          $flowtime = $processingtime + $tampung;
 
           // Due Date
           $tg1 = strtotime($row->tanggal_masuk);
@@ -72,13 +75,14 @@
           ?>
           <tr align="center">
             <td><?= $row->nomor_so; ?></td>
-            <td><?= date('d-m-Y', strtotime($row->tanggal_pelaksanaan)); ?></td>
+            <td><?= date('d-m-Y', strtotime($row->isi1tglctcp1)); ?></td>
             <td style="color: red"><?= date('d-m-Y', strtotime($row->deadline)); ?></td>
             <td><?= $row->nama_pemesan; ?></td>
             <td><?= $row->nama_orderan; ?></td>
             <td><?= $processingtime; ?></td>
             <td><?= $flowtime; ?></td>
             <td><?= $duedate; ?></td>
+            <td><?= $row->halaman; ?></td>
             <td><?= $latenes; ?></td>
           </tr>
 
@@ -86,6 +90,8 @@
           $total2 += $processingtime;
           $total3 += $flowtime;
           $total3 += $latenes;
+          $tampung = $flowtime;
+          $i++;
         } ?>
         <thead>
           <tr>
@@ -126,7 +132,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-4">
-          <br>Waktu penyelesaian rata - rata
+          <br>Waktu penyelesaian rata - rata (hari)
           <br><label class="form-label"><?= $waktu_rata; ?></label>
         </div>
         <div class="col-md-6">

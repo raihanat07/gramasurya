@@ -9,7 +9,7 @@
     <?php if ($this->fungsi->user_login()->level == 2 || $this->fungsi->user_login()->level == 6) { ?>
       <div class="row mb-2">
         <div class="col-sm-6">
-          <label>PROSES HITUNG EDD</label>
+          <label>LIHAT PRIORITAS</label>
           <form action="<?= site_url('cetak/jadwalmesin/filter_hari72') ?>" method="post">
             <div class="row">
               <div class="col-md-3">

@@ -4,7 +4,7 @@
     <div class="row mb-2">
       <div class="col-md-6">
         <ol class="breadcrumb">
-          <a href="<?= site_url('cetak/Jadwalmesin/jadwal_72') ?>" class="btn btn-warning">
+          <a href="<?= site_url('pracetak/Imposisi/imposisi_cover') ?>" class="btn btn-warning">
             <i class="fa fa-undo"></i> Kembali
           </a>
         </ol>
@@ -25,84 +25,94 @@
       <div class="card-tools">
         <button type="button" class="btn btn-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
           <i class="fa fa-minus"></i></button>
-        <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fa fa-times"></i></button>
+        <!-- <button type="button" class="btn btn-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+              <i class="fa fa-times"></i></button> -->
       </div>
 
     </div>
 
-      <div class="card-body">
-        <table id="table1" class="table table-bordered table-hover" style="font-size: 12px">
-          <thead>
-            <tr align="center">
-              <td>Prioritas (No SO)</td>
-              <td>Tanggal Pelaksanaan</td>
-              <td>Deadline</td>
-              <td>Nama Pemesan</td>
-              <td>Nama Order</td>
-              <td>Processing Time</td>
-              <td>Flow Time</td>
-              <td>Due Date</td>
-              <td>Lateness</td>
-          </thead>
-          <?php foreach ($jm as $s => $row) { ?>
-            <?php
-            $total1 = count($jm);
-            $total2 = 0;
-            $total3 = 0;
-            $total4 = 0;
-
-            $tgl1 = strtotime($row->tanggal_pelaksanaan);
-            $tgl2 = strtotime($row->deadline);
-
-            $jarak = $tgl2 - $tgl1;
-
-            $processingtime = $jarak / 60 / 60 / 24;
-
-            $flowtime = $processingtime;
-
-            // Due Date
-            $tg1 = strtotime($row->tanggal_masuk);
-            $tg2 = strtotime($row->deadline);
-
-            $day = $tg2 - $tg1;
-            $duedate = $day / 60 / 60 / 24;
-
-            $latenes = $flowtime - $duedate;
-            ?>
-            <tr align="center">
-              <td><?= $row->nomor_so; ?></td>
-              <td><?= date('d-m-Y', strtotime($row->tanggal_pelaksanaan)); ?></td>
-              <td style="color: red"><?= date('d-m-Y', strtotime($row->deadline)); ?></td>
-              <td><?= $row->nama_pemesan; ?></td>
-              <td><?= $row->nama_orderan; ?></td>
-              <td><?= $processingtime; ?></td>
-              <td><?= $flowtime; ?></td>
-              <td><?= $duedate; ?></td>
-              <td><?= $latenes; ?></td>
-            </tr>
-
+    <div class="card-body">
+      <table id="" class="table table-bordered table-hover" style="font-size: 12px">
+        <thead>
+          <tr align="center">
+            <td>Prioritas (No SO)</td>
+            <td>Tanggal Pelaksanaan</td>
+            <td>Deadline</td>
+            <td>Nama Pemesan</td>
+            <td>Nama Order</td>
+            <td>Processing Time</td>
+            <td>Completion Time</td>
+            <td>EDD</td>
+            <td>SPT</td>
+            <td>Lateness</td>
+        </thead>
+        <?php foreach ($jm as $s => $row) { ?>
           <?php
-            $total2 += $processingtime;
-            $total3 += $flowtime;
-            $total3 += $latenes;
-          } ?>
-          <thead>
-            <tr>
-              <td colspan="4" align="right">Jumlah</td>
-              <td align="center"><?= $total1; ?></td>
-              <td align="center"><?= $total2; ?></td>
-              <td align="center"><?= $total3; ?></td>
-              <td colspan="1"></td>
-              <td align="center"><?= $total4; ?></td>
-            </tr>
-          </thead>
-        </table>
-      </div>
-    </div>
-  
-</section>
+          $total1 = count($jm);
+          $total2 = 0;
+          $total3 = 0;
+          $total4 = 0;
+          $tampung = 0;
+          $i = 1;
+          
+          $tgl1 = strtotime($row->tanggal_pelaksanaan);
+          $tgl2 = strtotime($row->deadline);
 
+          $jarak = $tgl2 - $tgl1;
+
+          $processingtime = $jarak / (60 * 60 * 24);
+
+          $flowtime = $processingtime + $tampung;
+
+          // Due Date
+          $tg1 = strtotime($row->tanggal_masuk);
+          $tg2 = strtotime($row->deadline);
+
+          $day = $tg2 - $tg1;
+          $duedate = $day / 60 / 60 / 24;
+
+          $latenes = $flowtime - $duedate;
+          $i++;
+          ?>
+          <tr align="center">
+            <td><?= $row->nomor_so; ?></td>
+            <td><?= date('d-m-Y', strtotime($row->tanggal_pelaksanaan)); ?></td>
+            <td style="color: red"><?= date('d-m-Y', strtotime($row->deadline)); ?></td>
+            <td><?= $row->nama_pemesan; ?></td>
+            <td><?= $row->nama_orderan; ?></td>
+            <td><?= $processingtime; ?></td>
+            <td><?= $flowtime; ?></td>
+            <td><?= $duedate; ?></td>
+            <td><?= $row->halaman; ?></td>
+            <td><?= $latenes; ?></td>
+          </tr>
+
+        <?php
+          $total2 += $processingtime;
+          $total3 += $flowtime;
+          $total3 += $latenes;
+          $tampung = $flowtime;
+          $i++;
+        } ?>
+        <thead>
+          <tr>
+            <td colspan="4" align="right">Jumlah</td>
+            <td align="center"><?= $total1; ?></td>
+            <td align="center"><?= $total2; ?></td>
+            <td align="center"><?= $total3; ?></td>
+            <td colspan="1"></td>
+            <td align="center"><?= $total4; ?></td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+
+
+
+  <!-- /.card -->
+
+</section>
 <section class="content">
   <!-- Default box -->
   <div class="card">
@@ -123,7 +133,7 @@
     <div class="card-body">
       <div class="row">
         <div class="col-md-4">
-          <br>Waktu penyelesaian rata - rata
+          <br>Waktu penyelesaian rata - rata (hari)
           <br><label class="form-label"><?= $waktu_rata; ?></label>
         </div>
         <div class="col-md-6">
@@ -133,7 +143,7 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <br>Jumlah job rata - rata
+          <br>Jumlah job rata – rata
           <br><label class="form-label"><?= $jumlah_rata; ?></label>
         </div>
         <div class="col-md-4">
@@ -143,8 +153,6 @@
       </div>
       <!-- /.card -->
     </div>
-  </div>
 </section>
-
 <!-- /.content -->
 <!-- /.content -->

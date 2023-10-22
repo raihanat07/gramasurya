@@ -157,7 +157,8 @@ class Ctcp_m extends CI_Model {
             order.tanggal_masuk as tanggal_masuk, 
             order.deadline as deadline, 
             order.nama_pemesan as nama_pemesan,  
-            order.nama_orderan as nama_orderan, 
+            order.nama_orderan as nama_orderan,
+            order.halaman as halaman,   
             
             data_ctcp.id_data_ctcp as id_data_ctcp,
             data_ctcp.ctcp_status as ctcp_status,
@@ -171,7 +172,7 @@ class Ctcp_m extends CI_Model {
         $this->db->from('order');
         $this->db->join('data_ctcp', 'order.id_order = data_ctcp.id_order', 'left');
         $this->db->where('date(data_ctcp.cover1tglctcp1)', $hari);
-        $this->db->order_by('data_ctcp.cover1tglctcp1');
+        $this->db->order_by('order.halaman', 'ASC'); // Mengurutkan berdasarkan halaman terkecil secara ascending (ASC)
         $query = $this->db->get();
         return $query;
     }
@@ -184,6 +185,7 @@ class Ctcp_m extends CI_Model {
             order.deadline as deadline, 
             order.nama_pemesan as nama_pemesan,  
             order.nama_orderan as nama_orderan, 
+            order.halaman as halaman,  
             
             data_ctcp.id_data_ctcp as id_data_ctcp,
             data_ctcp.ctcp_status as ctcp_status,
@@ -197,7 +199,7 @@ class Ctcp_m extends CI_Model {
         $this->db->from('order');
         $this->db->join('data_ctcp', 'order.id_order = data_ctcp.id_order', 'left');
         $this->db->where('date(data_ctcp.isi1tglctcp1)', $hari);
-        $this->db->order_by('data_ctcp.isi1tglctcp1');
+        $this->db->order_by('order.halaman', 'ASC'); // Mengurutkan berdasarkan halaman terkecil secara ascending (ASC)
         $query = $this->db->get();
         return $query;
     }

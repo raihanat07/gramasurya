@@ -46,6 +46,7 @@ class Imposisi extends CI_Controller {
 		//  die;
 		$this->template->load('pracetak/template','pracetak/imposisi/imposisi-isi',$data);
 	}
+
 	public function filter_haricover()
 	{
 		check_not_login();
@@ -54,10 +55,11 @@ class Imposisi extends CI_Controller {
 		$data = array(
 			'judul' => 'EDD',
 			'hari' => $hari,
-			'jm' => $query->result(),
+			'ic' => $query->result(),
 		);
 		$this->template->load('pracetak/template', 'pracetak/imposisi/jadwal-hari-cover', $data);
 	}
+	
 	public function filter_hariisi()
 	{
 		check_not_login();
@@ -162,18 +164,7 @@ class Imposisi extends CI_Controller {
 				$inputan["total_plat_cover"] = $inputan["total_plat_cover"] + $inputan['cover1plat3'];
 			}
 			
-			if($inputan['cover2plat1'] !=null){
-				$inputan["total_plat_cover"] = $inputan["total_plat_cover"] + $inputan['cover2plat1'];
-			}
-			if($inputan['cover2plat2'] !=null){
-				$inputan["total_plat_cover"] = $inputan["total_plat_cover"] + $inputan['cover2plat2'];
-			}	
-			if($inputan['cover2plat3'] !=null){
-				$inputan["total_plat_cover"] = $inputan["total_plat_cover"] + $inputan['cover2plat3'];
-			}
 			
-
-
 			if($inputan['isi1plat1'] !=null){
 				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi1plat1'];
 			}
@@ -183,28 +174,6 @@ class Imposisi extends CI_Controller {
 			if($inputan['isi1plat3'] !=null){
 				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi1plat3'];
 			}
-			
-			if($inputan['isi2plat1'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi2plat1'];
-			}
-			if($inputan['isi2plat2'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi2plat2'];
-			}	
-			if($inputan['isi2plat3'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi2plat3'];
-			}
-
-			if($inputan['isi3plat1'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi3plat1'];
-			}
-			if($inputan['isi3plat2'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi3plat2'];
-			}	
-			if($inputan['isi3plat3'] !=null){
-				$inputan["total_plat_isi"] = $inputan["total_plat_isi"] + $inputan['isi3plat3'];
-			}
-
-
 
 			if($inputan["cover1plat1"] && $inputan["cover1warna1"] !=null ){
 				$inputan["cover1set1"] = $inputan["cover1plat1"] / $inputan["cover1warna1"] ;
@@ -225,8 +194,6 @@ class Imposisi extends CI_Controller {
 			if($inputan["cover2plat3"] && $inputan["cover2warna3"] !=null ){
 				$inputan["cover2set3"] = $inputan["cover2plat3"] / $inputan["cover2warna3"] ;
 			}
-
-
 
 			if($inputan["isi1plat1"] && $inputan["isi1warna1"] !=null ){
 				$inputan["isi1set1"] = $inputan["isi1plat1"] / $inputan["isi1warna1"] ;
@@ -292,30 +259,6 @@ class Imposisi extends CI_Controller {
 				$inputan["jumlahplateisi1"] = $inputan["jumlahplateisi1"] + $inputan["isi1plat3"] ;
 			}
 
-			if($inputan["isi2plat1"] !=null ){
-				$inputan["jumlahplateisi2"] = $inputan["jumlahplateisi2"] + $inputan["isi2plat1"] ;
-			}
-			if($inputan["isi2plat2"] !=null ){
-				$inputan["jumlahplateisi2"] = $inputan["jumlahplateisi2"] + $inputan["isi2plat2"] ;
-			}
-			if($inputan["isi2plat3"] !=null ){
-				$inputan["jumlahplateisi2"] = $inputan["jumlahplateisi2"] + $inputan["isi2plat3"] ;
-			}
-
-			if($inputan["isi3plat1"] !=null ){
-				$inputan["jumlahplateisi3"] = $inputan["jumlahplateisi3"] + $inputan["isi3plat1"] ;
-			}
-			if($inputan["isi3plat2"] !=null ){
-				$inputan["jumlahplateisi3"] = $inputan["jumlahplateisi3"] + $inputan["isi3plat2"] ;
-			}
-			if($inputan["isi3plat3"] !=null ){
-				$inputan["jumlahplateisi3"] = $inputan["jumlahplateisi3"] + $inputan["isi3plat3"] ;
-			}
-
-
-			// if($inputan['isi1plat1'] !=null && $inputan['isi1plat2'] !=null && $inputan['isi1plat3'] !=null && $inputan['isi2plat1'] !=null && $inputan['isi2plat2'] !=null && $inputan['isi2plat3'] !=null && $inputan['isi3plat1'] !=null && $inputan['isi3plat2'] !=null && $inputan['isi3plat3'] !=null){
-			// 	$inputan['total_plat_isi'] = $inputan['isi1plat1'] + $inputan['isi1plat2'] + $inputan['isi1plat3'] + $inputan['isi2plat1'] + $inputan['isi2plat2'] + $inputan['isi2plat3'] + $inputan['isi3plat1'] + $inputan['isi3plat2'] +$inputan['isi3plat3'] ;
-			// }
 
 			$this->imposisi->tambah_imposisi($inputan);							
 			$this->imposisi->status_umum($inputan);						

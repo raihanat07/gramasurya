@@ -72,23 +72,13 @@
                   <td><?= $row->nama_orderan; ?></td>
                   <td><?= $row->ukuran; ?></td>
                   <td><?= $row->oplag; ?></td>
-                  <td><?= $row->total_kertas; ?></td>
-                  <!-- <td> </td>
-                  <td></td>
-                  <td></td>
-                  <td></td> -->
-
-                  <!-- /////////////////////////////////////////////////////////////////////////////////////////////// eksekusi hehe -->
-                      
+                  <td><?= $row->total_kertas; ?></td>                  
                   <td><?= $tgl_cover_72[$nilai]; ?></td>                                   
                   <td><?= $tgl_isi_72[$nilai]; ?></td>
-
                   <td><?= $tgl_cover_74a[$nilai]; ?></td>                                   
                   <td><?= $tgl_isi_74a[$nilai]; ?></td>
-
                   <td><?= $tgl_cover_74b[$nilai]; ?></td>                                   
                   <td><?= $tgl_isi_74b[$nilai]; ?></td>
-
                   <td><?php 
                     if($row->status_cetak ==null) 
                       echo $row->so_status;

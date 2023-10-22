@@ -35,26 +35,6 @@
                             Laminasi
                           </a>
                         </td>
-                        <!-- <td>
-                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp_mbo" class="btn btn-success">
-                            MBO
-                          </a>
-                        </td> -->
-                        <!-- <td>
-                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp_shoe" class="btn btn-success">
-                            Shoe
-                          </a>
-                        </td>
-                        <td>
-                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp_susun" class="btn btn-success">
-                            Susun
-                          </a>
-                        </td>
-                        <td>
-                          <a href="<?=site_url()?>finishing/FinishingProses/jadwal_fp_sub"   class="btn btn-success">
-                            SUB
-                          </a>
-                        </td> -->
                         <td>Status</td>
                         <td>Actions</td>
                       </tr>

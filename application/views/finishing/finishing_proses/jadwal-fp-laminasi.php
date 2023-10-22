@@ -4,7 +4,7 @@
     <div class="row mb-2">
       <div class="col-sm-6">
         <h1>FINISHING PROSES</h1></br>
-        <label>PROSES HITUNG EDD</label>
+        <label>LIHAT PRIORITAS</label>
           <form action="<?= site_url('finishing/FinishingProses/filter_harilaminasi') ?>" method="post">
             <div class="row">
               <div class="col-md-3">

@@ -188,7 +188,7 @@
                   <p>Display Cetak</p>
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a style="font-style: bold;" href="<?=site_url()?>cetak/Prioritas"
                     <?php  if($judul == "Prioritas Cetak"){?>
                       class= "nav-link active"
@@ -199,7 +199,7 @@
                   <i class="fa fa-circle-o nav-icon"></i>
                   <p>Prioritas Cetak</p>
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <a style="font-style: bold;" href="<?=site_url()?>cetak/Jadwalumum" 
                 <?php  if($judul == "Jadwal Umum Cetak"){?>

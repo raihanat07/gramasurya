@@ -114,12 +114,7 @@
                   <a href="<?=site_url('cetak/Displaycetak/edit_dc/'.$row->id_order)?>">
                         <i class="fa fa-pencil" style="font-size:18px"></i>
                       </a>
-                  <?php } ?>
-
-              <!-- tambah imposisi -->
-                
-                  
-               
+                  <?php } ?>     
               </td>
             </tr>
             <?php } ?>
